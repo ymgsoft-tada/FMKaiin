@@ -1,0 +1,36 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Windows.Forms;
+
+namespace App
+{
+
+<$0
+	#region *** $0 ***
+	/// <summary>
+	/// $0のファンクションキー定義クラス
+	/// </summary>
+	public class $0
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+$			new FuncKeyDefine(
+$					Keys.@@2@@,	
+$					"@@4@@",	
+$					"@@5@@"),
+		};
+
+$		/// <summary>
+$		/// @@4@@
+$		/// </summary>
+$		public readonly static FuncKeyDefine @@1@@ = Functions[@@6@@];
+	}
+	#endregion
+
+>$0
+
+}

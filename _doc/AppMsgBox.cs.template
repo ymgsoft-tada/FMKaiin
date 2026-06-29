@@ -1,0 +1,277 @@
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Drawing;
+using System.Windows.Forms;
+
+using ComponentForm;
+
+namespace App
+{
+	#region *** Data Class ***
+	/// <summary>
+	/// AppMsgBoxIndex に準じたデータを示すクラスです。
+	/// </summary>
+	public class AppMsgBoxData
+	{
+		/// <summary>
+		/// メッセージボックスに表示するボタンです。
+		/// </summary>
+		public MessageBoxButtons	Button;
+		/// <summary>
+		/// メッセージボックスに表示するアイコンです。
+		/// </summary>
+		public MessageBoxIcon		Icon;
+		/// <summary>
+		/// 最初に選択されているボタン番号です。
+		/// </summary>
+		public MessageBoxDefaultButton	DefButton;
+		/// <summary>
+		/// タイトル。
+		/// </summary>
+		public string			Title;
+		/// <summary>
+		/// 本文。
+		/// </summary>
+		public string				Text;
+		/// <summary>
+		/// 本文の{0}などを変換した後の文字列。
+		/// </summary>
+		public string				WorkText;
+		
+		#region *** Constructor ***
+		/// <summary>
+		/// コンストラクタ。
+		/// </summary>
+		public AppMsgBoxData(MessageBoxButtons button, MessageBoxIcon icon, string title, string text)
+		{
+			Button	  = button;
+			Icon	  = icon;
+			DefButton = MessageBoxDefaultButton.Button1;
+			Title	  = title;
+			Text	  = text;
+			WorkText  = text;
+		}
+		/// <summary>
+		/// コンストラクタ。
+		/// </summary>
+		public AppMsgBoxData(MessageBoxButtons button, MessageBoxIcon icon, MessageBoxDefaultButton defbutton, string title, string text)
+		{
+			Button	  = button;
+			Icon	  = icon;
+			DefButton = defbutton;
+			Title	  = title;
+			Text	  = text;
+			WorkText  = text;
+		}
+		#endregion
+	}
+	#endregion
+	
+	/// <summary>
+	/// [作成者 fj]
+	/// アプリケーションで使用するメッセージボックスのインデックス名です。
+	/// </summary>
+	public enum AppMsgBoxIndex
+	{
+$		/// <summary>
+$		/// @@1@@
+$		/// </summary>
+$		@@0@@,
+	};
+	
+	/// <summary>
+	/// メッセージボックス情報。
+	/// </summary>
+	public partial class AppMsgBox
+	{
+		static AppMsgBoxData[]	msgBoxData =
+		{
+$			new AppMsgBoxData(
+$				MessageBoxButtons.@@3@@,
+$				MessageBoxIcon.@@4@@,
+$				MessageBoxDefaultButton.@@5@@,
+$				"@@2@@",
+$				"@@1@@"),
+		};
+	}
+	
+	/// <summary>
+	/// アプリケーションで使用するメッセージボックスです。
+	/// </summary>
+	public partial class AppMsgBox
+	{
+		/// <summary>
+		/// 親設定がなかった場合に参照される背景色です。
+		/// </summary>
+		public static Color BackColor
+		{
+			set
+			{
+				backcolor = value;
+			}
+		}
+		static Color	backcolor = AppConst.FormBackColor;
+		/// <summary>
+		/// 親設定がなかった場合に参照される親フォームです。
+		/// </summary>
+		public static Control Parent
+		{
+			set
+			{
+				parent = value;
+			}
+		}
+		static Control parent = null;
+
+		/// <summary>
+		/// 閉じられた理由
+		/// </summary>
+		public static MsgBox.eCloseReason CloseReason
+		{
+			get
+			{
+				return closeReason;
+			}
+		}
+		static MsgBox.eCloseReason closeReason;
+		
+		/// <summary>
+		/// メッセージボックス表示。Owner指定付。
+		/// </summary>
+		/// <param name="owner">ダイアログのオーナー</param>
+		/// <param name="index">AppMsgBoxIndex列挙子</param>
+		/// <param name="arglist">{?} 文字列と置き換えるメッセージ</param>
+		/// <returns>ダイアログボタンの押された結果が返ります。</returns>
+		public static DialogResult Show(Control owner, AppMsgBoxIndex index, params object[] arglist)
+		{
+			string					title;
+			string					text;
+			MessageBoxButtons		buttons;
+			MessageBoxIcon			icon;
+			MessageBoxDefaultButton	defbutton;
+			DialogResult			result;
+			
+			// 表示前に初期化しておく。
+			closeReason = MsgBox.eCloseReason.Default;
+
+			// 表示するメッセージを取得
+			getMessage(index, out title, out text, out buttons, out icon, out defbutton, arglist);
+			
+			// nullなら設定された親を参照しにいく
+			if (owner == null)
+			{
+				owner = parent;
+			}
+			
+			MsgBox form = new MsgBox(owner, text, title, buttons, icon, defbutton);
+			if (owner != null && owner.IsDisposed == false)
+			{
+				form.StartPosition = FormStartPosition.CenterParent;
+				form.BackColor	   = owner.BackColor;
+			}
+			else
+			{
+				// 親がなければ中央に表示
+				form.StartPosition = FormStartPosition.CenterScreen;
+				form.BackColor	   = backcolor;
+			}
+			form.ShowDialog();
+			result = form.Result;
+			closeReason = form.CloseReason;
+			form.Dispose();
+			
+			return result;
+		}
+		
+		/// <summary>
+		/// メッセージボックス表示。
+		/// </summary>
+		/// <param name="index">AppMsgBoxIndex列挙子</param>
+		/// <param name="arglist">{?} 文字列と置き換えるメッセージ</param>
+		/// <returns>ダイアログボタンの押された結果が返ります。</returns>
+		public static DialogResult Show(AppMsgBoxIndex index, params object[] arglist)
+		{
+			return Show(null, index, arglist);
+		}
+		
+		/// <summary>
+		/// メッセージボックス表示。
+		/// </summary>
+		/// <param name="index">AppMsgBoxIndex列挙子</param>
+		/// <returns>ダイアログボタンの押された結果が返ります。</returns>
+		public static DialogResult Show(AppMsgBoxIndex index)
+		{
+			return Show(null, index);
+		}
+		
+		/// <summary>
+		/// 該当するAppMsgBoxIndex列挙子のメッセージデータを返します。
+		/// </summary>
+		/// <param name="index">AppMsgBoxIndex列挙子</param>
+		/// <param name="title">タイトル</param>
+		/// <param name="text">表示メッセージ（取得用）</param>
+		/// <param name="buttons">ボタン（取得用）</param>
+		/// <param name="icon">表示アイコン（取得用）</param>
+		/// <param name="defbutton">最初に選択されているボタン（取得用）</param>
+		/// <param name="arglist">{?} 文字列と置き換えるメッセージ</param>
+		private static void getMessage(
+			AppMsgBoxIndex index,
+			out string title,
+			out string text,
+			out MessageBoxButtons buttons,
+			out MessageBoxIcon icon,
+			out MessageBoxDefaultButton	defbutton,
+			params object[] arglist)
+		{
+			AppMsgBoxData	data = GetData(index, arglist);
+			
+			if (data == null)
+			{
+				title   = "";
+				text    = "";
+				buttons = MessageBoxButtons.OK;
+				icon    = MessageBoxIcon.None;
+				defbutton = MessageBoxDefaultButton.Button1;
+			}
+			else
+			{
+				title	  = data.Title;
+				text	  = data.WorkText;
+				buttons	  = data.Button;
+				icon	  = data.Icon;
+				defbutton = data.DefButton;
+			}
+		}
+		
+		/// <summary>
+		/// 表示テキストを取得します。
+		/// </summary>
+		/// <param name="index">メッセージインデックス。</param>
+		/// <param name="arglist">表示テキストの{0}などを変換するための情報。</param>
+		/// <returns>メッセージボックス情報。</returns>
+		public static AppMsgBoxData GetData(AppMsgBoxIndex index, params object[] arglist)
+		{
+			int		idx = (int)index;
+			
+			if (idx < 0 || idx >= msgBoxData.Length)
+			{
+				return null;
+			}
+			
+			AppMsgBoxData		data = msgBoxData[idx];
+			
+			data.WorkText = data.Text;
+			
+			// 固有パラメータの変換
+			for (int i = 0; i < arglist.Length; i++)
+			{
+				string	param = "{" + i.ToString() + "}";
+				
+				data.WorkText = data.WorkText.Replace(param, arglist[i].ToString());
+			}
+			
+			return data;
+		}
+	}
+}
