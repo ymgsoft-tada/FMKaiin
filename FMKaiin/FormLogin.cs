@@ -54,8 +54,8 @@ namespace App
 			// 自分自身にフォーカスさせる
 			this.Activate();
 
-//iCode.Text = "0";
-//iPwd.Text = "adm";
+iCode.Text = "0";
+iPwd.Text = "adm";
 //btnLogin.PerformClick();
 
 			base.FormFrame_Shown(sender, e);
@@ -93,7 +93,7 @@ namespace App
 						Properties.Settings.Default.LastTantosha = iCode.Text;
 						Properties.Settings.Default.Save();
 
-//						AppGlobal.SetLoginUser(xrow);
+						AppGlobal.SetLoginUser(xrow);
 
 						formCloseReason = FormCloseReason.Exec;
 						this.Close();

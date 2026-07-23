@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKyuyo\_doc\AppFuncKey.xlsx
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKyuyo\_doc\AppFormFuncKey.cs.template
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -28,14 +28,6 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
-					Keys.F5,	
-					"銀行情報",	
-					""),
-			new FuncKeyDefine(
-					Keys.F8,	
-					"マイナンバーパスワード変更",	
-					""),
-			new FuncKeyDefine(
 					Keys.F11,	
 					"登録",	
 					""),
@@ -46,21 +38,13 @@ namespace App
 		};
 
 		/// <summary>
-		/// 銀行情報
-		/// </summary>
-		public readonly static FuncKeyDefine ShowBank = Functions[0];
-		/// <summary>
-		/// マイナンバーパスワード変更
-		/// </summary>
-		public readonly static FuncKeyDefine ShowMynoPWD = Functions[1];
-		/// <summary>
 		/// 登録
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[2];
+		public readonly static FuncKeyDefine Save = Functions[0];
 		/// <summary>
 		/// キャンセル
 		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[3];
+		public readonly static FuncKeyDefine Cancel = Functions[1];
 	}
 	#endregion
 

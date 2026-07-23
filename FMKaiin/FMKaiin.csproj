@@ -98,7 +98,9 @@
     <Compile Include="AppGridCommon.cs" />
     <Compile Include="AppLogView.cs" />
     <Compile Include="AppMsgBox.cs" />
+    <Compile Include="AppStaff.cs" />
     <Compile Include="AppTableCombo.cs" />
+    <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
     <Compile Include="DlgSplash2.cs">
       <SubType>Form</SubType>
@@ -142,6 +144,30 @@
     <Compile Include="FormFrame.Designer.cs">
       <DependentUpon>FormFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMasterBasic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBasic.Designer.cs">
+      <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterTantosha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterTantosha.Designer.cs">
+      <DependentUpon>FormMasterTantosha.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterTantosha_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterTantosha_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterTantosha_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterTantosha_DlgPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterTantosha_DlgPwd.Designer.cs">
+      <DependentUpon>FormMasterTantosha_DlgPwd.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOutBlankSetting.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +179,18 @@
     </Compile>
     <Compile Include="FormReportPreview.Designer.cs">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStaff.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaff.Designer.cs">
+      <DependentUpon>FormStaff.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormStaff_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormStaff_DlgEntry.Designer.cs">
+      <DependentUpon>FormStaff_DlgEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -204,6 +242,9 @@
     <EmbeddedResource Include="DlgSplash2.resx">
       <DependentUpon>DlgSplash2.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormBg_Progress.resx">
       <DependentUpon>FormBg_Progress.cs</DependentUpon>
     </EmbeddedResource>
@@ -219,11 +260,29 @@
     <EmbeddedResource Include="FormLogView.resx">
       <DependentUpon>FormLogView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBasic.resx">
+      <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterTantosha.resx">
+      <DependentUpon>FormMasterTantosha.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterTantosha_DlgEntry.resx">
+      <DependentUpon>FormMasterTantosha_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterTantosha_DlgPwd.resx">
+      <DependentUpon>FormMasterTantosha_DlgPwd.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportPreview.resx">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStaff.resx">
+      <DependentUpon>FormStaff.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormStaff_DlgEntry.resx">
+      <DependentUpon>FormStaff_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

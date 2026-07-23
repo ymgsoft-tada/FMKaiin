@@ -10,8 +10,8 @@ using System.Text;
 namespace App
 {
 	/// <summary>
-	/// [作成者 kj]
 	/// グローバル値の管理
+	/// tachi
 	/// </summary>
 	public class AppGlobal
 	{
@@ -20,6 +20,13 @@ namespace App
 
 		/// <summary>基本情報</summary>
 		public static t_basic Basic { get; private set; }
+		/// <summary>スタッフ情報</summary>
+		public static AppStaff Staffs { get; private set; }
+		/// <summary>担当者情報</summary>
+		public static AppTanto Tantos { get; private set; }
+
+		/// <summary>ログインユーザー</summary>
+		public static Tanto LoginUser { get; private set; }
 
 		/// <summary>
 		/// 全初期化
@@ -31,13 +38,9 @@ namespace App
 
 			RegCommon.SetMasterKey(AppConst.RegKey);
 
-//			ComponentGGridDB.GGridDBCommon.GridSortVectorUp		= Properties.Resources.GridSortVecUp;
-//			ComponentGGridDB.GGridDBCommon.GridSortVectorDown	= Properties.Resources.GridSortVecDown;
-
-//			InitBankCodeMg();
-
 			InitBasic();
-			
+			InitStaff();
+			InitTanto();
 		}
 
 		/// <summary>
@@ -49,12 +52,39 @@ namespace App
 
 			Basic = new t_basic(dv[0]);
 
-			//// 西暦表示固定
-			//AppDate.SetDispSeireki(true);
-			//¶2023/12/31 和暦表示
+			//和暦表示
 			AppDate.SetDispSeireki(false);
 		}
 
+		/// <summary>
+		/// スタッフ情報の初期化
+		/// </summary>
+		public static void InitStaff()
+		{
+			Staffs = new AppStaff();
+			Staffs.Init();
+		}
+
+		/// <summary>
+		/// 職務の初期化
+		/// </summary>
+		public static void InitTanto()
+		{
+			t_tantosha xrow = null;
+			if (LoginUser != null)
+			{
+				xrow = LoginUser.XRow;
+			}
+
+			Tantos = new AppTanto();
+			Tantos.Init();
+
+			// ログインユーザー情報の更新
+			if (xrow != null)
+			{
+				SetLoginUser(xrow);
+			}
+		}
 
 		/// <summary>
 		/// DBの初期化処理
@@ -82,23 +112,23 @@ namespace App
 			}
 		}
 
-		///// <summary>
-		///// ログインユーザーを設定します。
-		///// </summary>
-		///// <param name="trow"></param>
-		//public static void SetLoginUser(t_tantosha trow)
-		//{
-		//	SetLoginUser(trow.ID_Tanto);
-		//}
+		/// <summary>
+		/// ログインユーザーを設定します。
+		/// </summary>
+		/// <param name="trow"></param>
+		public static void SetLoginUser(t_tantosha trow)
+		{
+			SetLoginUser(trow.ID_Tanto);
+		}
 
-		///// <summary>
-		///// ログインユーザーを設定します。
-		///// </summary>
-		///// <param name="id"></param>
-		//public static void SetLoginUser(int id)
-		//{
-		//	LoginUser = Tantos.Get(id);
-		//}
+		/// <summary>
+		/// ログインユーザーを設定します。
+		/// </summary>
+		/// <param name="id"></param>
+		public static void SetLoginUser(int id)
+		{
+			LoginUser = Tantos.Get(id);
+		}
 
 		/// <summary>
 		/// 金額の小数点以下の端数処理をおこないます。

@@ -42,6 +42,38 @@ namespace App
 		public const string Fld_Teishutsusaki = "Fld_Teishutsusaki";
 
 		///// <summary>
+		///// 職務コード検索用iサーチ作成
+		///// </summary>
+		///// <param name="cmb"></param>
+		///// <param name="dv"></param>
+		//public static void SetComboBox_Shokumu(UcTableComboBox cmb, eTypeJob type = eTypeJob.None)
+		//{
+		//	cmb.BeginUpdate();
+		//	cmb.DBView = new DBView(AppGlobal.Shokumus.DbView);
+		//	cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+		//	if (type != eTypeJob.None)
+		//	{
+		//		cmb.RowFilter = DBQuery.GetSql($"{t_shokumu.FSKM_Type} = {(int)type}");
+		//	}
+		//	else
+		//	{
+		//		cmb.RowFilter = "";
+		//	}
+		//	cmb.Sort = DBQuery.GetSql(t_shokumu.FCD_Shokumu);
+		//	cmb.DropDownSize = new Size(380, 300);
+		//	cmb.SetColumn(t_shokumu.FCD_Shokumu, "コード", 80, ContentAlignment.MiddleRight);
+		//	cmb.SetColumn(t_shokumu.FSKM_Name, "名　称", 200);
+		//	cmb.SetColumn(Fld_TypeJobName, "職種", 80);
+
+		//	cmb.CompareValue = t_shokumu.FID_Shokumu;
+		//	cmb.ContentAlignment = ContentAlignment.BottomLeft;
+		//	cmb.SelectedIndexNullLeave = -1;
+		//	cmb.TextSubItemIndex = 1;
+		//	cmb.Find = "";
+		//	cmb.EndUpdate();
+		//}
+
+		///// <summary>
 		///// 銀行検索用iサーチの作成
 		///// </summary>
 		///// <param name="cmb">設定するiサーチ</param>

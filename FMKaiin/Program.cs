@@ -36,19 +36,18 @@ namespace App
 
 			try
 			{
-				Application.Run(new Form1());
-
 				//DlgSplash2 splash = new DlgSplash2();
 				//splash.Show();
 				//splash.Cursor = Cursors.WaitCursor;
 
-				//if (AppGlobal.InitDB() == false)
-				//{
-				//	Application.Restart();
-				//	return;
-				//}
+				if (AppGlobal.InitDB() == false)
+				{
+					Application.Restart();
+					return;
+				}
 
-				//AppGlobal.Init();
+				AppGlobal.Init();
+
 
 				//// スプラッシュを閉じる
 				//if (splash != null)
@@ -58,18 +57,18 @@ namespace App
 				//	splash = null;
 				//}
 
-				//FormLogin login = new FormLogin();
-				//login.ShowDialog();
+				FormLogin login = new FormLogin();
+				login.ShowDialog();
 
-				//if (login.FormCloseReason == FormCloseReason.Exec)
-				//{
-				//	//Form1 frm = new Form1();
-				//	FormMain frm = new FormMain();
+				if (login.FormCloseReason == FormCloseReason.Exec)
+				{
+					//Form1 frm = new Form1();
+					Form1 frm = new Form1();
 
-				//	// メイン画面を最前面へ
-				//	AppApi.SetForegroundWindow(frm.Handle);
-				//	Application.Run(frm);
-				//}
+					// メイン画面を最前面へ
+					AppApi.SetForegroundWindow(frm.Handle);
+					Application.Run(frm);
+				}
 			}
 			catch(Exception ex)
 			{

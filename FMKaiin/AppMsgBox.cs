@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationMessageにより自動的に生成されました。(fj)
 //
 // Inport File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKyuyo\_doc\AppMsgBox.xlsx
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppMsgBox.xlsx
 // Template File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKyuyo\_doc\AppMsgBox.cs.template
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppMsgBox.cs.template
 //
 
 using System;
