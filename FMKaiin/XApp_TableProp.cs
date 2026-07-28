@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -14,8 +14,8 @@ using System.Data;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// Table‚ğ’è‹`‚·‚éƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// Tableã‚’å®šç¾©ã™ã‚‹ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class TableProp
 	{
@@ -31,6 +31,11 @@ namespace App
 		public const string t_basic = "t_basic";
 		
 		/// <summary>
+		/// t_kaihi
+		/// </summary>
+		public const string t_kaihi = "t_kaihi";
+		
+		/// <summary>
 		/// t_staff
 		/// </summary>
 		public const string t_staff = "t_staff";
@@ -43,7 +48,7 @@ namespace App
 		
 		#region *** Public Method ***
 		/// <summary>
-		/// ‘S‚Ä‚Ìƒe[ƒuƒ‹‚Ì—ñ‹“«‘‚ğ‰Šú‰»‚µ‚Ü‚·B
+		/// å…¨ã¦ã®ãƒ†ãƒ¼ãƒ–ãƒ«ã®åˆ—æŒ™è¾æ›¸ã‚’åˆæœŸåŒ–ã—ã¾ã™ã€‚
 		/// </summary>
 		public static void InitAllEnumDictionary()
 		{

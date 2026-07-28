@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,7 +16,7 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [—ñ‹“] f—ÃŠ‹æ•ª
+	/// [åˆ—æŒ™] è¨ºç™‚æ‰€åŒºåˆ†
 	/// </summary>
 	public enum eTypeShinryojo
 	{
@@ -25,17 +25,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// –k
+		/// åŒ—
 		/// </summary>
 		North = 1,
 		/// <summary>
-		/// “ì
+		/// å—
 		/// </summary>
 		South = 2,
 	}
 	
 	/// <summary>
-	/// [—ñ‹“] Eí‹æ•ª
+	/// [åˆ—æŒ™] è·ç¨®åŒºåˆ†
 	/// </summary>
 	public enum eTypeJob
 	{
@@ -44,25 +44,25 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ˆãt
+		/// åŒ»å¸«
 		/// </summary>
 		Dr = 1,
 		/// <summary>
-		/// ŠÅŒìt
+		/// çœ‹è­·å¸«
 		/// </summary>
 		Nurse = 2,
 		/// <summary>
-		/// ––±
+		/// äº‹å‹™
 		/// </summary>
 		Jimu = 3,
 		/// <summary>
-		/// –òÜt
+		/// è–¬å‰¤å¸«
 		/// </summary>
 		Yakuzaishi = 4,
 	}
 	
 	/// <summary>
-	/// [—ñ‹“] «•Ê
+	/// [åˆ—æŒ™] æ€§åˆ¥
 	/// </summary>
 	public enum eSex
 	{
@@ -71,17 +71,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ’j«
+		/// ç”·æ€§
 		/// </summary>
 		Men = 1,
 		/// <summary>
-		/// —«
+		/// å¥³æ€§
 		/// </summary>
 		Women = 2,
 	}
 	
 	/// <summary>
-	/// [—ñ‹“] ’[”ˆ—
+	/// [åˆ—æŒ™] ç«¯æ•°å‡¦ç†
 	/// </summary>
 	public enum eHasu
 	{
@@ -90,21 +90,21 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ØÌ
+		/// åˆ‡æ¨
 		/// </summary>
 		Kirisute = 1,
 		/// <summary>
-		/// Øã
+		/// åˆ‡ä¸Š
 		/// </summary>
 		Kiriage = 2,
 		/// <summary>
-		/// lÌŒÜ“ü
+		/// å››æ¨äº”å…¥
 		/// </summary>
 		Shishagonyu = 3,
 	}
 	
 	/// <summary>
-	/// [—ñ‹“] ŒûÀ‹æ•ª
+	/// [åˆ—æŒ™] å£åº§åŒºåˆ†
 	/// </summary>
 	public enum eTypeKoza
 	{
@@ -113,17 +113,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// •’Ê
+		/// æ™®é€š
 		/// </summary>
 		Futsu = 1,
 		/// <summary>
-		/// “–À
+		/// å½“åº§
 		/// </summary>
 		Touza = 2,
 	}
 	
 	/// <summary>
-	/// [—ñ‹“] Œ ŒÀ‹æ•ª
+	/// [åˆ—æŒ™] æ¨©é™åŒºåˆ†
 	/// </summary>
 	public enum eAuth
 	{
@@ -136,17 +136,17 @@ namespace App
 		/// </summary>
 		SU = 1,
 		/// <summary>
-		/// ŠÇ—Ò
+		/// ç®¡ç†è€…
 		/// </summary>
 		Admin = 2,
 		/// <summary>
-		/// ˆê”Ê
+		/// ä¸€èˆ¬
 		/// </summary>
 		Ippan = 3,
 	}
 	
 	/// <summary>
-	/// [—ñ‹“] ì¬‹æ•ª
+	/// [åˆ—æŒ™] ä½œæˆåŒºåˆ†
 	/// </summary>
 	public enum eCreateType
 	{
@@ -155,88 +155,111 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ƒCƒ“ƒ|[ƒg
+		/// ã‚¤ãƒ³ãƒãƒ¼ãƒˆ
 		/// </summary>
 		Import = 1,
 	}
 	
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [åˆ—æŒ™] iFaxåŒºåˆ†
+	/// </summary>
+	public enum eTypeIfax
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰
+		/// </summary>
+		etc = 99,
+	}
+	
+	/// <summary>
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public static class enumKbn
 	{
 		/// <summary>
-		/// eTypeShinryojo ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eTypeShinryojo ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DTypeShinryojo;
 		/// <summary>
-		/// eTypeJob ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eTypeJob ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DTypeJob;
 		/// <summary>
-		/// eSex ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eSex ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DSex;
 		/// <summary>
-		/// eHasu ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eHasu ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DHasu;
 		/// <summary>
-		/// eTypeKoza ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eTypeKoza ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DTypeKoza;
 		/// <summary>
-		/// eAuth ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eAuth ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DAuth;
 		/// <summary>
-		/// eCreateType ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// eCreateType ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
 		/// </summary>
 		public static Dictionary<int, string> DCreateType;
+		/// <summary>
+		/// eTypeIfax ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// </summary>
+		public static Dictionary<int, string> DTypeIfax;
 		
 		/// <summary>
-		/// —ñ‹“«‘‚ğ‰Šú‰»‚µ‚Ü‚·B
+		/// åˆ—æŒ™è¾æ›¸ã‚’åˆæœŸåŒ–ã—ã¾ã™ã€‚
 		/// </summary>
 		public static void InitEnumDictionary()
 		{
 			DTypeShinryojo = new Dictionary<int, string>();
 			DTypeShinryojo.Add((int)eTypeShinryojo.None, "");
-			DTypeShinryojo.Add((int)eTypeShinryojo.North, "–k");
-			DTypeShinryojo.Add((int)eTypeShinryojo.South, "“ì");
+			DTypeShinryojo.Add((int)eTypeShinryojo.North, "åŒ—");
+			DTypeShinryojo.Add((int)eTypeShinryojo.South, "å—");
 			
 			DTypeJob = new Dictionary<int, string>();
 			DTypeJob.Add((int)eTypeJob.None, "");
-			DTypeJob.Add((int)eTypeJob.Dr, "ˆãt");
-			DTypeJob.Add((int)eTypeJob.Nurse, "ŠÅŒìt");
-			DTypeJob.Add((int)eTypeJob.Jimu, "––±");
-			DTypeJob.Add((int)eTypeJob.Yakuzaishi, "–òÜt");
+			DTypeJob.Add((int)eTypeJob.Dr, "åŒ»å¸«");
+			DTypeJob.Add((int)eTypeJob.Nurse, "çœ‹è­·å¸«");
+			DTypeJob.Add((int)eTypeJob.Jimu, "äº‹å‹™");
+			DTypeJob.Add((int)eTypeJob.Yakuzaishi, "è–¬å‰¤å¸«");
 			
 			DSex = new Dictionary<int, string>();
 			DSex.Add((int)eSex.None, "");
-			DSex.Add((int)eSex.Men, "’j«");
-			DSex.Add((int)eSex.Women, "—«");
+			DSex.Add((int)eSex.Men, "ç”·æ€§");
+			DSex.Add((int)eSex.Women, "å¥³æ€§");
 			
 			DHasu = new Dictionary<int, string>();
 			DHasu.Add((int)eHasu.None, "");
-			DHasu.Add((int)eHasu.Kirisute, "ØÌ");
-			DHasu.Add((int)eHasu.Kiriage, "Øã");
-			DHasu.Add((int)eHasu.Shishagonyu, "lÌŒÜ“ü");
+			DHasu.Add((int)eHasu.Kirisute, "åˆ‡æ¨");
+			DHasu.Add((int)eHasu.Kiriage, "åˆ‡ä¸Š");
+			DHasu.Add((int)eHasu.Shishagonyu, "å››æ¨äº”å…¥");
 			
 			DTypeKoza = new Dictionary<int, string>();
 			DTypeKoza.Add((int)eTypeKoza.None, "");
-			DTypeKoza.Add((int)eTypeKoza.Futsu, "•’Ê");
-			DTypeKoza.Add((int)eTypeKoza.Touza, "“–À");
+			DTypeKoza.Add((int)eTypeKoza.Futsu, "æ™®é€š");
+			DTypeKoza.Add((int)eTypeKoza.Touza, "å½“åº§");
 			
 			DAuth = new Dictionary<int, string>();
 			DAuth.Add((int)eAuth.None, "");
 			DAuth.Add((int)eAuth.SU, "SuperUser");
-			DAuth.Add((int)eAuth.Admin, "ŠÇ—Ò");
-			DAuth.Add((int)eAuth.Ippan, "ˆê”Ê");
+			DAuth.Add((int)eAuth.Admin, "ç®¡ç†è€…");
+			DAuth.Add((int)eAuth.Ippan, "ä¸€èˆ¬");
 			
 			DCreateType = new Dictionary<int, string>();
 			DCreateType.Add((int)eCreateType.None, "");
-			DCreateType.Add((int)eCreateType.Import, "ƒCƒ“ƒ|[ƒg");
+			DCreateType.Add((int)eCreateType.Import, "ã‚¤ãƒ³ãƒãƒ¼ãƒˆ");
+			
+			DTypeIfax = new Dictionary<int, string>();
+			DTypeIfax.Add((int)eTypeIfax.None, "");
+			DTypeIfax.Add((int)eTypeIfax.etc, "ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰");
 		}
 	}
 }
