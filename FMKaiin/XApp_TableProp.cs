@@ -26,6 +26,16 @@ namespace App
 		public const string enumKbn = "enumKbn";
 		
 		/// <summary>
+		/// t_bank
+		/// </summary>
+		public const string t_bank = "t_bank";
+		
+		/// <summary>
+		/// t_bank_code
+		/// </summary>
+		public const string t_bank_code = "t_bank_code";
+		
+		/// <summary>
 		/// t_basic
 		/// </summary>
 		public const string t_basic = "t_basic";
