@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6\fujisawa\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
