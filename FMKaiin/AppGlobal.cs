@@ -22,11 +22,21 @@ namespace App
 		public static t_basic Basic { get; private set; }
 		/// <summary>スタッフ情報</summary>
 		public static AppStaff Staffs { get; private set; }
+		/// <summary>銀行情報</summary>
+		public static AppBank Banks { get; private set; } // Banksが必要かどうか
 		/// <summary>担当者情報</summary>
 		public static AppTanto Tantos { get; private set; }
 
+		/// <summary>医会会費情報</summary>
+		public static AppKaihi Kaihis { get; private set; }
+
 		/// <summary>ログインユーザー</summary>
 		public static Tanto LoginUser { get; private set; }
+
+		/// <summary>
+		/// 銀行コード管理クラス
+		/// </summary>
+		public static BankCodeManager BankCodeMg { get; private set; }
 
 		/// <summary>
 		/// 全初期化
@@ -41,6 +51,7 @@ namespace App
 			InitBasic();
 			InitStaff();
 			InitTanto();
+			InitKaihi();
 		}
 
 		/// <summary>
@@ -51,6 +62,10 @@ namespace App
 			DBView dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_basic));
 
 			Basic = new t_basic(dv[0]);
+
+//			Banks = new AppBank(); // 基本情報に持たないなら全初期化()でInitとしたい,Banks不要なら削除
+//			Banks.Init();
+//			BasicBank = Banks.Get(Basic.ID_Bank);
 
 			//和暦表示
 			AppDate.SetDispSeireki(false);
@@ -84,6 +99,24 @@ namespace App
 			{
 				SetLoginUser(xrow);
 			}
+		}
+
+		/// <summary>
+		/// 医会会費情報の初期化
+		/// </summary>
+		public static void InitKaihi()
+		{
+			Kaihis = new AppKaihi();
+			Kaihis.Init();
+		}
+
+		/// <summary>
+		/// 銀行コード管理クラスの初期化
+		/// </summary>
+		public static void InitBankCodeMg()
+		{
+			BankCodeMg = new BankCodeManager();
+			BankCodeMg.Init();
 		}
 
 		/// <summary>
