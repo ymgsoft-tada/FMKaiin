@@ -80,6 +80,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AppApi.cs" />
+    <Compile Include="AppBank.cs" />
     <Compile Include="AppCombo.cs" />
     <Compile Include="AppCsvExport.cs" />
     <Compile Include="AppCsvImport.cs" />
@@ -98,10 +99,12 @@
     <Compile Include="AppGridCommon.cs" />
     <Compile Include="AppLogView.cs" />
     <Compile Include="AppMsgBox.cs" />
+    <Compile Include="AppKaihi.cs" />
     <Compile Include="AppStaff.cs" />
     <Compile Include="AppTableCombo.cs" />
     <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
+    <Compile Include="BankCodeManager.cs" />
     <Compile Include="DlgSplash2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -144,11 +147,35 @@
     <Compile Include="FormFrame.Designer.cs">
       <DependentUpon>FormFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMasterBankCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBankCode.Designer.cs">
+      <DependentUpon>FormMasterBankCode.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterBankCode_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBankCode_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterBankCode_DlgEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMasterBasic.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormMasterBasic.Designer.cs">
       <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterKaihi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterKaihi.designer.cs">
+      <DependentUpon>FormMasterKaihi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterKaihi_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterKaihi_DlgEntry.designer.cs">
+      <DependentUpon>FormMasterKaihi_DlgEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterTantosha.cs">
       <SubType>Form</SubType>
@@ -179,6 +206,12 @@
     </Compile>
     <Compile Include="FormReportPreview.Designer.cs">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormSelectorBankCode.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSelectorBankCode.Designer.cs">
+      <DependentUpon>FormSelectorBankCode.cs</DependentUpon>
     </Compile>
     <Compile Include="FormStaff.cs">
       <SubType>Form</SubType>
@@ -236,7 +269,10 @@
     <Compile Include="XApp_enumKbn.cs" />
     <Compile Include="XApp_FieldProp.cs" />
     <Compile Include="XApp_TableProp.cs" />
+    <Compile Include="XApp_t_bank.cs" />
+    <Compile Include="XApp_t_bank_code.cs" />
     <Compile Include="XApp_t_basic.cs" />
+    <Compile Include="XApp_t_kaihi.cs" />
     <Compile Include="XApp_t_staff.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
@@ -260,8 +296,20 @@
     <EmbeddedResource Include="FormLogView.resx">
       <DependentUpon>FormLogView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBankCode.resx">
+      <DependentUpon>FormMasterBankCode.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBankCode_DlgEntry.resx">
+      <DependentUpon>FormMasterBankCode_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMasterBasic.resx">
       <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterKaihi.resx">
+      <DependentUpon>FormMasterKaihi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterKaihi_DlgEntry.resx">
+      <DependentUpon>FormMasterKaihi_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterTantosha.resx">
       <DependentUpon>FormMasterTantosha.cs</DependentUpon>
@@ -277,6 +325,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportPreview.resx">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSelectorBankCode.resx">
+      <DependentUpon>FormSelectorBankCode.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormStaff.resx">
       <DependentUpon>FormStaff.cs</DependentUpon>

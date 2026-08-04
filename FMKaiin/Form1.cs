@@ -19,6 +19,8 @@ namespace App
 			btnBasic.Click += BtnBasic_Click;
 			btnStaff.Click += BtnStaff_Click;
 			btnTanto.Click += BtnTanto_Click;
+			btnBankCode.Click += BtnBankCode_Click;
+			btnKaihi.Click += BtnKaihi_Click;
 		}
 
 		private void BtnTanto_Click(object sender, EventArgs e)
@@ -43,6 +45,54 @@ namespace App
 			frm.ShowDialog();
 			frm.Dispose();
 			frm = null;
+		}
+
+		private void BtnBankCode_Click(object sender, EventArgs e)
+		{
+			FormMasterBankCode frm = new FormMasterBankCode();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		private void BtnKaihi_Click(object sender, EventArgs e)
+		{
+			// 銀行コードテーブルの取得
+			initBankCode();
+
+			FormMasterKaihi frm = new FormMasterKaihi();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		/// <summary>
+		/// 銀行コードデータの取得処理
+		/// </summary>
+		void initBankCode()
+		{
+			if (AppGlobal.BankCodeMg == null)
+			{
+				FormBg_Progress prog = new FormBg_Progress();
+				prog.TitleText = "しばらくお待ちください。";
+				prog.LabelText = "データをロードしています。";
+				prog.DoWorkEvent += prog_DoWorkEvent;
+				prog.ShowDialog();
+				prog.Dispose();
+				prog = null;
+			}
+		}
+
+		private void prog_DoWorkEvent(object sender, DoWorkEventArgs e)
+		{
+			FormBg_Progress prog = (FormBg_Progress)sender;
+			prog.AdvanceProgress(100);
+
+			// 銀行コードは大量のデータになるので、スプラッシュ時ではなくログインしてから取得する
+			AppGlobal.DB.GetReFillTable(TableProp.t_bank_code);
+			AppGlobal.InitBankCodeMg();
+			AppGlobal.Banks.Init(); // FBファイル作成に利用
+
 		}
 
 		/// <summary>

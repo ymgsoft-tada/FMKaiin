@@ -208,6 +208,53 @@ namespace App
 			Rule.Add(new GControlDBRuleDate(t_staff.FSTF_DateNyusha));
 			Rule.Add(new GControlDBRuleDate(t_staff.FSTF_DateTaishoku));
 			#endregion
+
+			// ※t_bank作成なしなら削除
+			#region +++ t_bank +++
+			Rule.Add(code4, t_bank.FBNK_Code);
+			Rule.Add(code3, t_bank.FBNK_CodeShiten);
+			Rule.Add(code7, t_bank.FBNK_KozaNo);
+			Rule.Add(new GControlDBRuleText(t_bank.FBNK_Name, 20));
+			Rule.Add(kana20, t_bank.FBNK_NameFurigana);
+			Rule.Add(new GControlDBRuleText(t_bank.FBNK_NameShiten, 20));
+			Rule.Add(kana20, t_bank.FBNK_NameFuriganaShiten);
+			Rule.Add(code10, t_bank.FBNK_CodeCompany);
+			#endregion
+
+			#region +++ t_bank_code +++
+			Rule.Add(code4, t_bank_code.FBCD_Code);
+			Rule.Add(code3, t_bank_code.FBCD_CodeShiten);
+			Rule.Add(new GControlDBRuleRuby(t_bank_code.FBCD_Name, new int[] { 20, 40 }));
+			Rule.Add(new GControlDBRuleRuby(t_bank_code.FBCD_NameShiten, new int[] { 20, 40 }));
+			Rule.Add(new GControlDBRuleText(t_bank_code.FBCD_FullName, 40));
+			#endregion
+
+			#region +++ t_kaihi +++
+			Rule.Add(new GControlDBRuleNumber(t_kaihi.FCD_Kaihi, 5, 5));
+			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Name, 30));
+			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_ShortName, 30));
+			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Bikou, 50));
+			Rule.Add(new GControlDBRuleNumber(t_kaihi.FKaihi_GunCode, 4, 4));
+
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost1, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost2, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost3, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost4, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost5, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost6, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost7, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost8, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost9, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost10, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost11, 9, 0));
+			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost12, 9, 0));
+
+			Rule.Add(code4, t_kaihi.FKaihi_BankCode);
+			Rule.Add(code3, t_kaihi.FKaihi_BankCodeShiten);
+			Rule.Add(code7, t_kaihi.FKaihi_BankKozaNo);
+			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_BankKozaName, 30));
+			#endregion
+
 		}
 
 		/// <summary>
