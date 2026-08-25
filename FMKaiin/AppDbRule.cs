@@ -226,7 +226,7 @@ namespace App
 			Rule.Add(code3, t_bank_code.FBCD_CodeShiten);
 			Rule.Add(new GControlDBRuleRuby(t_bank_code.FBCD_Name, new int[] { 20, 40 }));
 			Rule.Add(new GControlDBRuleRuby(t_bank_code.FBCD_NameShiten, new int[] { 20, 40 }));
-			Rule.Add(new GControlDBRuleText(t_bank_code.FBCD_FullName, 40));
+			//Rule.Add(new GControlDBRuleText(t_bank_code.FBCD_FullName, 40));
 			#endregion
 
 			#region +++ t_kaihi +++
@@ -255,6 +255,17 @@ namespace App
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_BankKozaName, 30));
 			#endregion
 
+			#region +++ t_iryokikan +++
+			Rule.Add(new GControlDBRuleNumber(t_iryokikan.FIRK_Code, 5, 5));
+			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Name, 30));
+			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Kana, 30));
+			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Tsusho, 30));
+
+			Rule.Add(post, t_iryokikan.FIRK_Post);
+			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Add2, 40));
+			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Tel1, new int[] { 5, 4, 5 }));
+			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Tes2, new int[] { 5, 4, 5 }));
+			#endregion
 		}
 
 		/// <summary>

@@ -33,6 +33,8 @@ namespace App
 			this.btnStaff = new System.Windows.Forms.Button();
 			this.btnTanto = new System.Windows.Forms.Button();
 			this.btnIryokikanToroku = new System.Windows.Forms.Button();
+			this.btnKaihi = new System.Windows.Forms.Button();
+			this.btnBankCode = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnBasic
@@ -71,11 +73,31 @@ namespace App
 			this.btnIryokikanToroku.Text = "医療機関登録";
 			this.btnIryokikanToroku.UseVisualStyleBackColor = true;
 			// 
+			// btnKaihi
+			// 
+			this.btnKaihi.Location = new System.Drawing.Point(259, 130);
+			this.btnKaihi.Name = "btnKaihi";
+			this.btnKaihi.Size = new System.Drawing.Size(139, 29);
+			this.btnKaihi.TabIndex = 4;
+			this.btnKaihi.Text = "会費マスタ";
+			this.btnKaihi.UseVisualStyleBackColor = true;
+			// 
+			// btnBankCode
+			// 
+			this.btnBankCode.Location = new System.Drawing.Point(404, 130);
+			this.btnBankCode.Name = "btnBankCode";
+			this.btnBankCode.Size = new System.Drawing.Size(139, 29);
+			this.btnBankCode.TabIndex = 5;
+			this.btnBankCode.Text = "銀行マスタ";
+			this.btnBankCode.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(583, 268);
+			this.Controls.Add(this.btnBankCode);
+			this.Controls.Add(this.btnKaihi);
 			this.Controls.Add(this.btnIryokikanToroku);
 			this.Controls.Add(this.btnTanto);
 			this.Controls.Add(this.btnStaff);
@@ -90,6 +112,8 @@ namespace App
 			this.Controls.SetChildIndex(this.btnStaff, 0);
 			this.Controls.SetChildIndex(this.btnTanto, 0);
 			this.Controls.SetChildIndex(this.btnIryokikanToroku, 0);
+			this.Controls.SetChildIndex(this.btnKaihi, 0);
+			this.Controls.SetChildIndex(this.btnBankCode, 0);
 			this.ResumeLayout(false);
 
 		}
@@ -100,5 +124,7 @@ namespace App
 		private System.Windows.Forms.Button btnStaff;
 		private System.Windows.Forms.Button btnTanto;
 		private System.Windows.Forms.Button btnIryokikanToroku;
+		private System.Windows.Forms.Button btnKaihi;
+		private System.Windows.Forms.Button btnBankCode;
 	}
 }

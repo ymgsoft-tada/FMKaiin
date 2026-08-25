@@ -1,6 +1,6 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public partial class t_bank : FieldProp
 	{
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
+		/// Access ‚‘¬ŒŸõ—p
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡ŒID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âsID]B
 		/// </summary>
 		public const string FID_Bank = "ID_Bank";
 		/// <summary>
-		/// éŠ€è¡ŒID
+		/// ‹âsID
 		/// </summary>
 		public int ID_Bank
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡ŒIDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âsIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Bank_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âsƒR[ƒh]B
 		/// </summary>
 		public const string FBNK_Code = "BNK_Code";
 		/// <summary>
-		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰
+		/// ‹âsƒR[ƒh
 		/// </summary>
 		public int BNK_Code
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? BNK_Code_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œå]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âs–¼]B
 		/// </summary>
 		public const string FBNK_Name = "BNK_Name";
 		/// <summary>
-		/// éŠ€è¡Œå
+		/// ‹âs–¼
 		/// </summary>
 		public string BNK_Name
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡Œåã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âs–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_Name_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“XƒR[ƒh]B
 		/// </summary>
 		public const string FBNK_CodeShiten = "BNK_CodeShiten";
 		/// <summary>
-		/// æ”¯åº—ã‚³ãƒ¼ãƒ‰
+		/// x“XƒR[ƒh
 		/// </summary>
 		public int BNK_CodeShiten
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? BNK_CodeShiten_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—å]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“X–¼]B
 		/// </summary>
 		public const string FBNK_NameShiten = "BNK_NameShiten";
 		/// <summary>
-		/// æ”¯åº—å
+		/// x“X–¼
 		/// </summary>
 		public string BNK_NameShiten
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“X–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_NameShiten_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œåã‚«ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âs–¼ƒJƒi]B
 		/// </summary>
 		public const string FBNK_NameFurigana = "BNK_NameFurigana";
 		/// <summary>
-		/// éŠ€è¡Œåã‚«ãƒŠ
+		/// ‹âs–¼ƒJƒi
 		/// </summary>
 		public string BNK_NameFurigana
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡Œåã‚«ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âs–¼ƒJƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_NameFurigana_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—åã‚«ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“X–¼ƒJƒi]B
 		/// </summary>
 		public const string FBNK_NameFuriganaShiten = "BNK_NameFuriganaShiten";
 		/// <summary>
-		/// æ”¯åº—åã‚«ãƒŠ
+		/// x“X–¼ƒJƒi
 		/// </summary>
 		public string BNK_NameFuriganaShiten
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—åã‚«ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“X–¼ƒJƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_NameFuriganaShiten_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šç¤¾ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïĞƒR[ƒh]B
 		/// </summary>
 		public const string FBNK_CodeCompany = "BNK_CodeCompany";
 		/// <summary>
-		/// ä¼šç¤¾ã‚³ãƒ¼ãƒ‰
+		/// ‰ïĞƒR[ƒh
 		/// </summary>
 		public string BNK_CodeCompany
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šç¤¾ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïĞƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_CodeCompany_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À]B
 		/// </summary>
 		public const string FBNK_KozaType = "BNK_KozaType";
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À
 		/// </summary>
 		public eTypeKoza BNK_KozaType
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–ÀBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? BNK_KozaType_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ”Ô†]B
 		/// </summary>
 		public const string FBNK_KozaNo = "BNK_KozaNo";
 		/// <summary>
-		/// å£åº§ç•ªå·
+		/// ŒûÀ”Ô†
 		/// </summary>
 		public string BNK_KozaNo
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_KozaNo_Null
 		{
@@ -264,11 +264,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[FDãƒ•ã‚¡ã‚¤ãƒ«å]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[FDƒtƒ@ƒCƒ‹–¼]B
 		/// </summary>
 		public const string FBNK_FDFile = "BNK_FDFile";
 		/// <summary>
-		/// FDãƒ•ã‚¡ã‚¤ãƒ«å
+		/// FDƒtƒ@ƒCƒ‹–¼
 		/// </summary>
 		public string BNK_FDFile
 		{
@@ -277,7 +277,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// FDãƒ•ã‚¡ã‚¤ãƒ«åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// FDƒtƒ@ƒCƒ‹–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BNK_FDFile_Null
 		{
@@ -286,11 +286,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
+		/// [—vŠÔ]ÅIXV“ú
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -299,7 +299,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -309,15 +309,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		/// </summary>
-		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
+		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
 		public t_bank(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_bank å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+		/// t_bank Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
 		/// </summary>
-		/// <returns>t_bank å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
+		/// <returns>t_bank Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_bank");

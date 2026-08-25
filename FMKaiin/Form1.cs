@@ -21,6 +21,15 @@ namespace App
 			btnTanto.Click += BtnTanto_Click;
 			btnBankCode.Click += BtnBankCode_Click;
 			btnKaihi.Click += BtnKaihi_Click;
+			btnIryokikanToroku.Click += BtnIryokikanToroku_Click;
+		}
+
+		private void BtnIryokikanToroku_Click(object sender, EventArgs e)
+		{
+			FormMasterIryoKikan frm = new FormMasterIryoKikan();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		private void BtnTanto_Click(object sender, EventArgs e)

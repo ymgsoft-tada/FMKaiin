@@ -147,6 +147,12 @@
     <Compile Include="FormFrame.Designer.cs">
       <DependentUpon>FormFrame.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMasterIryoKikan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterIryoKikan.Designer.cs">
+      <DependentUpon>FormMasterIryoKikan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMasterBankCode.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,12 @@
     </Compile>
     <Compile Include="FormMasterBasic.Designer.cs">
       <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterIryoKikan_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterIryoKikan_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterIryoKikan_DlgEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterKaihi.cs">
       <SubType>Form</SubType>
@@ -272,6 +284,7 @@
     <Compile Include="XApp_t_bank.cs" />
     <Compile Include="XApp_t_bank_code.cs" />
     <Compile Include="XApp_t_basic.cs" />
+    <Compile Include="XApp_t_iryokikan.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
     <Compile Include="XApp_t_staff.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
@@ -296,6 +309,9 @@
     <EmbeddedResource Include="FormLogView.resx">
       <DependentUpon>FormLogView.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterIryoKikan.resx">
+      <DependentUpon>FormMasterIryoKikan.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMasterBankCode.resx">
       <DependentUpon>FormMasterBankCode.cs</DependentUpon>
     </EmbeddedResource>
@@ -304,6 +320,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterBasic.resx">
       <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterIryoKikan_DlgEntry.resx">
+      <DependentUpon>FormMasterIryoKikan_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterKaihi.resx">
       <DependentUpon>FormMasterKaihi.cs</DependentUpon>

@@ -69,6 +69,8 @@ namespace App
 
 			gctl.Add(new GControlDBText(t_basic.FBAS_NameDaihyo, iNameDaihyo));
 
+
+
 			gctl.Add(new GControlDBPostAddr(
 							new string[]{
 								t_basic.FBAS_Post,

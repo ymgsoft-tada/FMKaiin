@@ -1944,6 +1944,86 @@ namespace App
 	}
 	#endregion
 
+	#region *** FuncMasterIryoKikan_DlgEntry ***
+	/// <summary>
+	/// FuncMasterIryoKikan_DlgEntryのファンクションキー定義クラス
+	/// </summary>
+	public class FuncMasterIryoKikan_DlgEntry
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"登録",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 登録
+		/// </summary>
+		public readonly static FuncKeyDefine Save = Functions[0];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncMasterIryoKikan ***
+	/// <summary>
+	/// FuncMasterIryoKikanのファンクションキー定義クラス
+	/// </summary>
+	public class FuncMasterIryoKikan
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F2,	
+					"追加",	
+					""),
+			new FuncKeyDefine(
+					Keys.F3,	
+					"訂正",	
+					""),
+			new FuncKeyDefine(
+					Keys.F4,	
+					"削除",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 追加
+		/// </summary>
+		public readonly static FuncKeyDefine RowAdd = Functions[0];
+		/// <summary>
+		/// 訂正
+		/// </summary>
+		public readonly static FuncKeyDefine RowEdit = Functions[1];
+		/// <summary>
+		/// 削除
+		/// </summary>
+		public readonly static FuncKeyDefine RowDelete = Functions[2];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[3];
+	}
+	#endregion
+
 
 }
 
