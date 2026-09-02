@@ -1,6 +1,6 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public partial class t_bank_code : FieldProp
 	{
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
+		/// Access ‚‘¬ŒŸõ—p
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,33 +44,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ­£å¼éŠ€è¡Œå]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[³®‹âs–¼]B
 		/// </summary>
-		public const string Fï»¿BCD_FullName = "ï»¿BCD_FullName";
+		public const string FBCD_FullName = "BCD_FullName";
 		/// <summary>
-		/// æ­£å¼éŠ€è¡Œå
+		/// ³®‹âs–¼
 		/// </summary>
-		public string ï»¿BCD_FullName
+		public string BCD_FullName
 		{
-			get	{	return Cast.String(row == null ? null : row[Fï»¿BCD_FullName]);	}
-			set	{	_set(Fï»¿BCD_FullName, value);	}
+			get	{	return Cast.String(row == null ? null : row[FBCD_FullName]);	}
+			set	{	_set(FBCD_FullName, value);	}
 		}
 		
 		/// <summary>
-		/// æ­£å¼éŠ€è¡Œåã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ³®‹âs–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
-		public string ï»¿BCD_FullName_Null
+		public string BCD_FullName_Null
 		{
-			get	{	if (row == null || row[Fï»¿BCD_FullName] == System.DBNull.Value) { return null; } else { return Cast.String(row[Fï»¿BCD_FullName]); }	}
-			set	{	_set(Fï»¿BCD_FullName, value);	}
+			get	{	if (row == null || row[FBCD_FullName] == System.DBNull.Value) { return null; } else { return Cast.String(row[FBCD_FullName]); }	}
+			set	{	_set(FBCD_FullName, value);	}
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œå]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âs–¼]B
 		/// </summary>
 		public const string FBCD_Name = "BCD_Name";
 		/// <summary>
-		/// éŠ€è¡Œå
+		/// ‹âs–¼
 		/// </summary>
 		public string BCD_Name
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡Œåã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âs–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BCD_Name_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒ•ãƒªã‚¬ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ƒtƒŠƒKƒi]B
 		/// </summary>
 		public const string FBCD_NameFurigana = "BCD_NameFurigana";
 		/// <summary>
-		/// ãƒ•ãƒªã‚¬ãƒŠ
+		/// ƒtƒŠƒKƒi
 		/// </summary>
 		public string BCD_NameFurigana
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ãƒªã‚¬ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ƒtƒŠƒKƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BCD_NameFurigana_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âsƒR[ƒh]B
 		/// </summary>
 		public const string FBCD_Code = "BCD_Code";
 		/// <summary>
-		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰
+		/// ‹âsƒR[ƒh
 		/// </summary>
 		public int BCD_Code
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? BCD_Code_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—å]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“X–¼]B
 		/// </summary>
 		public const string FBCD_NameShiten = "BCD_NameShiten";
 		/// <summary>
-		/// æ”¯åº—å
+		/// x“X–¼
 		/// </summary>
 		public string BCD_NameShiten
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“X–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BCD_NameShiten_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—åãƒ•ãƒªã‚¬ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“X–¼ƒtƒŠƒKƒi]B
 		/// </summary>
 		public const string FBCD_NameShitenFurigana = "BCD_NameShitenFurigana";
 		/// <summary>
-		/// æ”¯åº—åãƒ•ãƒªã‚¬ãƒŠ
+		/// x“X–¼ƒtƒŠƒKƒi
 		/// </summary>
 		public string BCD_NameShitenFurigana
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—åãƒ•ãƒªã‚¬ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“X–¼ƒtƒŠƒKƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string BCD_NameShitenFurigana_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“XƒR[ƒh]B
 		/// </summary>
 		public const string FBCD_CodeShiten = "BCD_CodeShiten";
 		/// <summary>
-		/// æ”¯åº—ã‚³ãƒ¼ãƒ‰
+		/// x“XƒR[ƒh
 		/// </summary>
 		public int BCD_CodeShiten
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? BCD_CodeShiten_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
+		/// [—vŠÔ]ÅIXV“ú
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -221,15 +221,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		/// </summary>
-		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
+		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
 		public t_bank_code(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_bank_code å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+		/// t_bank_code Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
 		/// </summary>
-		/// <returns>t_bank_code å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
+		/// <returns>t_bank_code Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_bank_code");
@@ -239,7 +239,7 @@ namespace App
 			col = new DataColumn(FID_Auto, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(Fï»¿BCD_FullName, typeof(string));
+			col = new DataColumn(FBCD_FullName, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

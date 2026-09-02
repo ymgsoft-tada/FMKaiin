@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[施設通称カナ]。
+		/// フィールド[施設漢字通称]。
 		/// </summary>
 		public const string FIRK_Tsusho = "IRK_Tsusho";
 		/// <summary>
-		/// 施設通称カナ
+		/// 施設漢字通称
 		/// </summary>
 		public string IRK_Tsusho
 		{
@@ -145,12 +145,34 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 施設通称カナ。System.DBNull.Value の場合 null を示します。
+		/// 施設漢字通称。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public string IRK_Tsusho_Null
 		{
 			get	{	if (row == null || row[FIRK_Tsusho] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Tsusho]); }	}
 			set	{	_set(FIRK_Tsusho, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[施設通称カナ]。
+		/// </summary>
+		public const string FIRK_TsushoKana = "IRK_TsushoKana";
+		/// <summary>
+		/// 施設通称カナ
+		/// </summary>
+		public string IRK_TsushoKana
+		{
+			get	{	return Cast.String(row == null ? null : row[FIRK_TsushoKana]);	}
+			set	{	_set(FIRK_TsushoKana, value);	}
+		}
+		
+		/// <summary>
+		/// 施設通称カナ。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string IRK_TsushoKana_Null
+		{
+			get	{	if (row == null || row[FIRK_TsushoKana] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_TsushoKana]); }	}
+			set	{	_set(FIRK_TsushoKana, value);	}
 		}
 		
 		/// <summary>
@@ -178,45 +200,45 @@ namespace App
 		/// <summary>
 		/// フィールド[住所１]。
 		/// </summary>
-		public const string FIRK_Add1 = "IRK_Add1";
+		public const string FIRK_Addr1 = "IRK_Addr1";
 		/// <summary>
 		/// 住所１
 		/// </summary>
-		public string IRK_Add1
+		public string IRK_Addr1
 		{
-			get	{	return Cast.String(row == null ? null : row[FIRK_Add1]);	}
-			set	{	_set(FIRK_Add1, value);	}
+			get	{	return Cast.String(row == null ? null : row[FIRK_Addr1]);	}
+			set	{	_set(FIRK_Addr1, value);	}
 		}
 		
 		/// <summary>
 		/// 住所１。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public string IRK_Add1_Null
+		public string IRK_Addr1_Null
 		{
-			get	{	if (row == null || row[FIRK_Add1] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Add1]); }	}
-			set	{	_set(FIRK_Add1, value);	}
+			get	{	if (row == null || row[FIRK_Addr1] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Addr1]); }	}
+			set	{	_set(FIRK_Addr1, value);	}
 		}
 		
 		/// <summary>
 		/// フィールド[住所２]。
 		/// </summary>
-		public const string FIRK_Add2 = "IRK_Add2";
+		public const string FIRK_Addr2 = "IRK_Addr2";
 		/// <summary>
 		/// 住所２
 		/// </summary>
-		public string IRK_Add2
+		public string IRK_Addr2
 		{
-			get	{	return Cast.String(row == null ? null : row[FIRK_Add2]);	}
-			set	{	_set(FIRK_Add2, value);	}
+			get	{	return Cast.String(row == null ? null : row[FIRK_Addr2]);	}
+			set	{	_set(FIRK_Addr2, value);	}
 		}
 		
 		/// <summary>
 		/// 住所２。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public string IRK_Add2_Null
+		public string IRK_Addr2_Null
 		{
-			get	{	if (row == null || row[FIRK_Add2] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Add2]); }	}
-			set	{	_set(FIRK_Add2, value);	}
+			get	{	if (row == null || row[FIRK_Addr2] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Addr2]); }	}
+			set	{	_set(FIRK_Addr2, value);	}
 		}
 		
 		/// <summary>
@@ -244,23 +266,23 @@ namespace App
 		/// <summary>
 		/// フィールド[FAX]。
 		/// </summary>
-		public const string FIRK_Tes2 = "IRK_Tes2";
+		public const string FIRK_Fax1 = "IRK_Fax1";
 		/// <summary>
 		/// FAX
 		/// </summary>
-		public string IRK_Tes2
+		public string IRK_Fax1
 		{
-			get	{	return Cast.String(row == null ? null : row[FIRK_Tes2]);	}
-			set	{	_set(FIRK_Tes2, value);	}
+			get	{	return Cast.String(row == null ? null : row[FIRK_Fax1]);	}
+			set	{	_set(FIRK_Fax1, value);	}
 		}
 		
 		/// <summary>
 		/// FAX。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public string IRK_Tes2_Null
+		public string IRK_Fax1_Null
 		{
-			get	{	if (row == null || row[FIRK_Tes2] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Tes2]); }	}
-			set	{	_set(FIRK_Tes2, value);	}
+			get	{	if (row == null || row[FIRK_Fax1] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Fax1]); }	}
+			set	{	_set(FIRK_Fax1, value);	}
 		}
 		
 		/// <summary>
@@ -299,11 +321,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[許可病床]。
+		/// フィールド[許可病床(数)]。
 		/// </summary>
 		public const string FIRK_Kyoka = "IRK_Kyoka";
 		/// <summary>
-		/// 許可病床
+		/// 許可病床(数)
 		/// </summary>
 		public int IRK_Kyoka
 		{
@@ -312,7 +334,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 許可病床。System.DBNull.Value の場合 null を示します。
+		/// 許可病床(数)。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? IRK_Kyoka_Null
 		{
@@ -466,17 +488,22 @@ namespace App
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
+			col = new DataColumn(FIRK_TsushoKana, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
 			col = new DataColumn(FIRK_Post, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIRK_Add1, typeof(string));
+			col = new DataColumn(FIRK_Addr1, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIRK_Add2, typeof(string));
+			col = new DataColumn(FIRK_Addr2, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
@@ -486,7 +513,7 @@ namespace App
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIRK_Tes2, typeof(string));
+			col = new DataColumn(FIRK_Fax1, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

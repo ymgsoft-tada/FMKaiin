@@ -176,6 +176,114 @@ namespace App
 	}
 	
 	/// <summary>
+	/// [列挙] 在籍区分
+	/// </summary>
+	public enum eTypeZaiseki
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 在籍
+		/// </summary>
+		Zaiseki = 1,
+		/// <summary>
+		/// 異動
+		/// </summary>
+		Ido = 2,
+		/// <summary>
+		/// 退会
+		/// </summary>
+		Taikai = 3,
+	}
+	
+	/// <summary>
+	/// [列挙] 施設異動区分
+	/// </summary>
+	public enum eTypeShisetsuIdo
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 勤務先
+		/// </summary>
+		KinmuSaki = 1,
+		/// <summary>
+		/// 休養
+		/// </summary>
+		Kyuyo = 2,
+		/// <summary>
+		/// 廃業
+		/// </summary>
+		Haigyo = 3,
+		/// <summary>
+		/// 退職
+		/// </summary>
+		Taisyoku = 4,
+	}
+	
+	/// <summary>
+	/// [列挙] 異動会員区分
+	/// </summary>
+	public enum eTypeIdoKaiin
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 開業
+		/// </summary>
+		Kaigyo = 1,
+		/// <summary>
+		/// 管理者交代
+		/// </summary>
+		KanriHenko = 2,
+		/// <summary>
+		/// 開設者交代
+		/// </summary>
+		KaisetsuHenko = 3,
+		/// <summary>
+		/// 開設者・管理者交代
+		/// </summary>
+		KanriKaisetsuHenko = 4,
+		/// <summary>
+		/// 廃業
+		/// </summary>
+		Haigyo = 5,
+	}
+	
+	/// <summary>
+	/// [列挙] その他異動区分
+	/// </summary>
+	public enum eTypeIdoEtc
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 移転
+		/// </summary>
+		Iten = 1,
+		/// <summary>
+		/// 名称変更
+		/// </summary>
+		MeisyoHenko = 2,
+		/// <summary>
+		/// 法人化
+		/// </summary>
+		Hojinka = 3,
+		/// <summary>
+		/// 自宅住所変更
+		/// </summary>
+		AddrHenko = 4,
+	}
+	
+	/// <summary>
 	/// [作成者 fj]
 	/// テーブル編集の際に使うクラスです。
 	/// </summary>
@@ -213,6 +321,22 @@ namespace App
 		/// eTypeIfax に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DTypeIfax;
+		/// <summary>
+		/// eTypeZaiseki に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeZaiseki;
+		/// <summary>
+		/// eTypeShisetsuIdo に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeShisetsuIdo;
+		/// <summary>
+		/// eTypeIdoKaiin に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeIdoKaiin;
+		/// <summary>
+		/// eTypeIdoEtc に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeIdoEtc;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -260,6 +384,34 @@ namespace App
 			DTypeIfax = new Dictionary<int, string>();
 			DTypeIfax.Add((int)eTypeIfax.None, "");
 			DTypeIfax.Add((int)eTypeIfax.etc, "その他（iFAX登録なし）");
+			
+			DTypeZaiseki = new Dictionary<int, string>();
+			DTypeZaiseki.Add((int)eTypeZaiseki.None, "");
+			DTypeZaiseki.Add((int)eTypeZaiseki.Zaiseki, "在籍");
+			DTypeZaiseki.Add((int)eTypeZaiseki.Ido, "異動");
+			DTypeZaiseki.Add((int)eTypeZaiseki.Taikai, "退会");
+			
+			DTypeShisetsuIdo = new Dictionary<int, string>();
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.None, "");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.KinmuSaki, "勤務先");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.Kyuyo, "休養");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.Haigyo, "廃業");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.Taisyoku, "退職");
+			
+			DTypeIdoKaiin = new Dictionary<int, string>();
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.None, "");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.Kaigyo, "開業");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.KanriHenko, "管理者交代");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.KaisetsuHenko, "開設者交代");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.KanriKaisetsuHenko, "開設者・管理者交代");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.Haigyo, "廃業");
+			
+			DTypeIdoEtc = new Dictionary<int, string>();
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.None, "");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.Iten, "移転");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.MeisyoHenko, "名称変更");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.Hojinka, "法人化");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.AddrHenko, "自宅住所変更");
 		}
 	}
 }

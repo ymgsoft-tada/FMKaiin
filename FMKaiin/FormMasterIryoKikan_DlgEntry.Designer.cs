@@ -29,8 +29,8 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterIryoKikan_DlgEntry));
-			this.ycLabelEx25 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx22 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx23 = new YControlLabelEx.YcLabelEx();
 			this.iTel2_2 = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -47,28 +47,23 @@ namespace App
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
 			this.iAddr2 = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iAddr1 = new GControlGcTextBoxEx.GcTextBoxEx();
-			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.icode = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iCode = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iShisetsuKana = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
 			this.iShisetsuName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx11 = new YControlLabelEx.YcLabelEx();
-			this.iShisetsuTsusho = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iShisetsuTsushoKana = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx12 = new YControlLabelEx.YcLabelEx();
 			this.iTel1_3 = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iTel2_3 = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx13 = new YControlLabelEx.YcLabelEx();
-			this.iKaisetsushutai = new GControlGcTextBoxEx.GcTextBoxEx();
-			this.lKaisetsushutai = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx15 = new YControlLabelEx.YcLabelEx();
-			this.rdoByoshoTrue = new System.Windows.Forms.RadioButton();
-			this.rdoByoshoFalse = new System.Windows.Forms.RadioButton();
 			this.ycLabelEx16 = new YControlLabelEx.YcLabelEx();
 			this.iKyokabyosho = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx17 = new YControlLabelEx.YcLabelEx();
@@ -78,11 +73,18 @@ namespace App
 			this.ycLabelEx18 = new YControlLabelEx.YcLabelEx();
 			this.lKumiCode = new YControlLabelEx.YcLabelEx();
 			this.iKumiCode = new GControlGcTextBoxEx.GcTextBoxEx();
-			this.chkTaikaiFalse = new System.Windows.Forms.RadioButton();
-			this.rdoTaikaiTrue = new System.Windows.Forms.RadioButton();
 			this.ycLabelEx20 = new YControlLabelEx.YcLabelEx();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.ycLabelEx14 = new YControlLabelEx.YcLabelEx();
+			this.iShisetsuTsusho = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iHyoboKamoku = new App.UcTableComboBox();
+			this.grid_Sinryo = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
+			this.ycLabelEx19 = new YControlLabelEx.YcLabelEx();
+			this.btnKamokuAdd = new System.Windows.Forms.Button();
+			this.btnKamokuDel = new System.Windows.Forms.Button();
+			this.gcShortcut1 = new GrapeCity.Win.Editors.GcShortcut(this.components);
+			this.iByoshoUmu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.iTaikaiKbn = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.iKaisetsushutai = new App.UcTableComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel1_2)).BeginInit();
@@ -91,37 +93,20 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iPost1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iAddr2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iAddr1)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.icode)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShisetsuKana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShisetsuName)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iShisetsuTsusho)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iShisetsuTsushoKana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel1_3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_3)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iKaisetsushutai)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKyokabyosho)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iHeisetsu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKumiCode)).BeginInit();
-			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iShisetsuTsusho)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.grid_Sinryo)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iByoshoUmu)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iTaikaiKbn)).BeginInit();
 			this.SuspendLayout();
-			// 
-			// ycLabelEx25
-			// 
-			this.ycLabelEx25.BackColor = System.Drawing.Color.SteelBlue;
-			this.ycLabelEx25.BackColor2 = System.Drawing.Color.Empty;
-			this.ycLabelEx25.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.ycLabelEx25.ForeColor = System.Drawing.Color.White;
-			this.ycLabelEx25.ForeShadowColor = System.Drawing.Color.Empty;
-			this.ycLabelEx25.IconImage = null;
-			this.ycLabelEx25.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx25.Location = new System.Drawing.Point(486, 414);
-			this.ycLabelEx25.Name = "ycLabelEx25";
-			this.ycLabelEx25.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx25.Size = new System.Drawing.Size(100, 23);
-			this.ycLabelEx25.TabIndex = 421;
-			this.ycLabelEx25.Text = "標榜科目";
-			this.ycLabelEx25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// ycLabelEx22
 			// 
@@ -132,7 +117,7 @@ namespace App
 			this.ycLabelEx22.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx22.IconImage = null;
 			this.ycLabelEx22.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx22.Location = new System.Drawing.Point(278, 293);
+			this.ycLabelEx22.Location = new System.Drawing.Point(278, 324);
 			this.ycLabelEx22.Name = "ycLabelEx22";
 			this.ycLabelEx22.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx22.Size = new System.Drawing.Size(19, 25);
@@ -149,7 +134,7 @@ namespace App
 			this.ycLabelEx23.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx23.IconImage = null;
 			this.ycLabelEx23.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx23.Location = new System.Drawing.Point(41, 293);
+			this.ycLabelEx23.Location = new System.Drawing.Point(41, 324);
 			this.ycLabelEx23.Name = "ycLabelEx23";
 			this.ycLabelEx23.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx23.Size = new System.Drawing.Size(100, 23);
@@ -162,22 +147,22 @@ namespace App
 			this.iTel2_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTel2_2.ExFocusHighlight = true;
 			this.iTel2_2.ImeStr = "";
-			this.iTel2_2.Location = new System.Drawing.Point(225, 293);
+			this.iTel2_2.Location = new System.Drawing.Point(225, 324);
 			this.iTel2_2.Name = "iTel2_2";
 			this.iTel2_2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel2_2.Size = new System.Drawing.Size(50, 23);
-			this.iTel2_2.TabIndex = 13;
+			this.iTel2_2.TabIndex = 14;
 			// 
 			// iTel2_1
 			// 
 			this.iTel2_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTel2_1.ExFocusHighlight = true;
 			this.iTel2_1.ImeStr = "";
-			this.iTel2_1.Location = new System.Drawing.Point(147, 293);
+			this.iTel2_1.Location = new System.Drawing.Point(147, 324);
 			this.iTel2_1.Name = "iTel2_1";
 			this.iTel2_1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel2_1.Size = new System.Drawing.Size(50, 23);
-			this.iTel2_1.TabIndex = 12;
+			this.iTel2_1.TabIndex = 13;
 			// 
 			// ycLabelEx24
 			// 
@@ -188,7 +173,7 @@ namespace App
 			this.ycLabelEx24.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx24.IconImage = null;
 			this.ycLabelEx24.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx24.Location = new System.Drawing.Point(203, 293);
+			this.ycLabelEx24.Location = new System.Drawing.Point(203, 324);
 			this.ycLabelEx24.Name = "ycLabelEx24";
 			this.ycLabelEx24.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx24.Size = new System.Drawing.Size(19, 25);
@@ -205,7 +190,7 @@ namespace App
 			this.ycLabelEx10.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx10.IconImage = null;
 			this.ycLabelEx10.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx10.Location = new System.Drawing.Point(278, 265);
+			this.ycLabelEx10.Location = new System.Drawing.Point(278, 296);
 			this.ycLabelEx10.Name = "ycLabelEx10";
 			this.ycLabelEx10.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx10.Size = new System.Drawing.Size(19, 25);
@@ -222,7 +207,7 @@ namespace App
 			this.ycLabelEx8.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx8.IconImage = null;
 			this.ycLabelEx8.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx8.Location = new System.Drawing.Point(41, 265);
+			this.ycLabelEx8.Location = new System.Drawing.Point(41, 296);
 			this.ycLabelEx8.Name = "ycLabelEx8";
 			this.ycLabelEx8.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx8.Size = new System.Drawing.Size(100, 23);
@@ -235,22 +220,22 @@ namespace App
 			this.iTel1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTel1_2.ExFocusHighlight = true;
 			this.iTel1_2.ImeStr = "";
-			this.iTel1_2.Location = new System.Drawing.Point(225, 265);
+			this.iTel1_2.Location = new System.Drawing.Point(225, 296);
 			this.iTel1_2.Name = "iTel1_2";
 			this.iTel1_2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel1_2.Size = new System.Drawing.Size(50, 23);
-			this.iTel1_2.TabIndex = 10;
+			this.iTel1_2.TabIndex = 11;
 			// 
 			// iTel1_1
 			// 
 			this.iTel1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTel1_1.ExFocusHighlight = true;
 			this.iTel1_1.ImeStr = "";
-			this.iTel1_1.Location = new System.Drawing.Point(147, 265);
+			this.iTel1_1.Location = new System.Drawing.Point(147, 296);
 			this.iTel1_1.Name = "iTel1_1";
 			this.iTel1_1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel1_1.Size = new System.Drawing.Size(50, 23);
-			this.iTel1_1.TabIndex = 9;
+			this.iTel1_1.TabIndex = 10;
 			// 
 			// ycLabelEx9
 			// 
@@ -261,7 +246,7 @@ namespace App
 			this.ycLabelEx9.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx9.IconImage = null;
 			this.ycLabelEx9.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx9.Location = new System.Drawing.Point(203, 265);
+			this.ycLabelEx9.Location = new System.Drawing.Point(203, 296);
 			this.ycLabelEx9.Name = "ycLabelEx9";
 			this.ycLabelEx9.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx9.Size = new System.Drawing.Size(19, 25);
@@ -278,7 +263,7 @@ namespace App
 			this.ycLabelEx5.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx5.IconImage = null;
 			this.ycLabelEx5.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx5.Location = new System.Drawing.Point(41, 176);
+			this.ycLabelEx5.Location = new System.Drawing.Point(41, 207);
 			this.ycLabelEx5.Name = "ycLabelEx5";
 			this.ycLabelEx5.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx5.Size = new System.Drawing.Size(100, 25);
@@ -291,22 +276,22 @@ namespace App
 			this.iPost2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iPost2.ExFocusHighlight = true;
 			this.iPost2.ImeStr = "";
-			this.iPost2.Location = new System.Drawing.Point(213, 176);
+			this.iPost2.Location = new System.Drawing.Point(213, 207);
 			this.iPost2.Name = "iPost2";
 			this.iPost2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iPost2.Size = new System.Drawing.Size(50, 23);
-			this.iPost2.TabIndex = 6;
+			this.iPost2.TabIndex = 7;
 			// 
 			// iPost1
 			// 
 			this.iPost1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iPost1.ExFocusHighlight = true;
 			this.iPost1.ImeStr = "";
-			this.iPost1.Location = new System.Drawing.Point(147, 176);
+			this.iPost1.Location = new System.Drawing.Point(147, 207);
 			this.iPost1.Name = "iPost1";
 			this.iPost1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iPost1.Size = new System.Drawing.Size(40, 23);
-			this.iPost1.TabIndex = 5;
+			this.iPost1.TabIndex = 6;
 			// 
 			// ycLabelEx6
 			// 
@@ -317,7 +302,7 @@ namespace App
 			this.ycLabelEx6.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx6.IconImage = null;
 			this.ycLabelEx6.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx6.Location = new System.Drawing.Point(191, 176);
+			this.ycLabelEx6.Location = new System.Drawing.Point(191, 207);
 			this.ycLabelEx6.Name = "ycLabelEx6";
 			this.ycLabelEx6.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx6.Size = new System.Drawing.Size(19, 25);
@@ -330,45 +315,26 @@ namespace App
 			this.iAddr2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iAddr2.ExFocusHighlight = true;
 			this.iAddr2.ImeStr = "";
-			this.iAddr2.Location = new System.Drawing.Point(147, 237);
+			this.iAddr2.Location = new System.Drawing.Point(147, 268);
 			this.iAddr2.Name = "iAddr2";
 			this.iAddr2.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iAddr2.Size = new System.Drawing.Size(307, 23);
-			this.iAddr2.TabIndex = 8;
+			this.iAddr2.Size = new System.Drawing.Size(342, 23);
+			this.iAddr2.TabIndex = 9;
 			// 
 			// iAddr1
 			// 
 			this.iAddr1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iAddr1.ExFocusHighlight = true;
 			this.iAddr1.ImeStr = "";
-			this.iAddr1.Location = new System.Drawing.Point(147, 206);
+			this.iAddr1.Location = new System.Drawing.Point(147, 237);
 			this.iAddr1.Name = "iAddr1";
 			this.iAddr1.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iAddr1.Size = new System.Drawing.Size(307, 23);
-			this.iAddr1.TabIndex = 7;
-			// 
-			// grid
-			// 
-			this.grid.CaptionHeight = 16;
-			this.grid.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。";
-			this.grid.Images.Add(((System.Drawing.Image)(resources.GetObject("grid.Images"))));
-			this.grid.Location = new System.Drawing.Point(486, 440);
-			this.grid.Name = "grid";
-			this.grid.PreviewInfo.Caption = "印刷プレビューウィンドウ";
-			this.grid.PreviewInfo.Location = new System.Drawing.Point(0, 0);
-			this.grid.PreviewInfo.Size = new System.Drawing.Size(0, 0);
-			this.grid.PreviewInfo.ZoomFactor = 75D;
-			this.grid.PrintInfo.MeasurementDevice = C1.Win.C1TrueDBGrid.PrintInfo.MeasurementDeviceEnum.Screen;
-			this.grid.PrintInfo.MeasurementPrinterName = null;
-			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
-			this.grid.PropBag = resources.GetString("grid.PropBag");
-			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(385, 205);
-			this.grid.TabIndex = 23;
-			this.grid.UseCompatibleTextRendering = false;
+			this.iAddr1.Size = new System.Drawing.Size(342, 23);
+			this.iAddr1.TabIndex = 8;
 			// 
 			// funckey
 			// 
+			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 648);
 			this.funckey.Name = "funckey";
 			this.funckey.Size = new System.Drawing.Size(905, 25);
@@ -421,16 +387,16 @@ namespace App
 			this.ycLabelEx1.Text = "医療機関コード";
 			this.ycLabelEx1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// icode
+			// iCode
 			// 
-			this.icode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.icode.ExFocusHighlight = true;
-			this.icode.ImeStr = "";
-			this.icode.Location = new System.Drawing.Point(147, 56);
-			this.icode.Name = "icode";
-			this.icode.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.icode.Size = new System.Drawing.Size(116, 23);
-			this.icode.TabIndex = 1;
+			this.iCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iCode.ExFocusHighlight = true;
+			this.iCode.ImeStr = "";
+			this.iCode.Location = new System.Drawing.Point(147, 56);
+			this.iCode.Name = "iCode";
+			this.iCode.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iCode.Size = new System.Drawing.Size(116, 23);
+			this.iCode.TabIndex = 1;
 			// 
 			// iShisetsuKana
 			// 
@@ -440,7 +406,7 @@ namespace App
 			this.iShisetsuKana.Location = new System.Drawing.Point(147, 117);
 			this.iShisetsuKana.Name = "iShisetsuKana";
 			this.iShisetsuKana.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iShisetsuKana.Size = new System.Drawing.Size(180, 23);
+			this.iShisetsuKana.Size = new System.Drawing.Size(342, 23);
 			this.iShisetsuKana.TabIndex = 3;
 			// 
 			// ycLabelEx2
@@ -485,7 +451,7 @@ namespace App
 			this.iShisetsuName.Location = new System.Drawing.Point(147, 87);
 			this.iShisetsuName.Name = "iShisetsuName";
 			this.iShisetsuName.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iShisetsuName.Size = new System.Drawing.Size(180, 23);
+			this.iShisetsuName.Size = new System.Drawing.Size(342, 23);
 			this.iShisetsuName.TabIndex = 2;
 			// 
 			// ycLabelEx11
@@ -497,7 +463,7 @@ namespace App
 			this.ycLabelEx11.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx11.IconImage = null;
 			this.ycLabelEx11.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx11.Location = new System.Drawing.Point(41, 146);
+			this.ycLabelEx11.Location = new System.Drawing.Point(41, 177);
 			this.ycLabelEx11.Name = "ycLabelEx11";
 			this.ycLabelEx11.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx11.Size = new System.Drawing.Size(100, 25);
@@ -505,16 +471,16 @@ namespace App
 			this.ycLabelEx11.Text = "施設通称カナ";
 			this.ycLabelEx11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// iShisetsuTsusho
+			// iShisetsuTsushoKana
 			// 
-			this.iShisetsuTsusho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iShisetsuTsusho.ExFocusHighlight = true;
-			this.iShisetsuTsusho.ImeStr = "";
-			this.iShisetsuTsusho.Location = new System.Drawing.Point(147, 147);
-			this.iShisetsuTsusho.Name = "iShisetsuTsusho";
-			this.iShisetsuTsusho.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iShisetsuTsusho.Size = new System.Drawing.Size(180, 23);
-			this.iShisetsuTsusho.TabIndex = 4;
+			this.iShisetsuTsushoKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iShisetsuTsushoKana.ExFocusHighlight = true;
+			this.iShisetsuTsushoKana.ImeStr = "";
+			this.iShisetsuTsushoKana.Location = new System.Drawing.Point(147, 178);
+			this.iShisetsuTsushoKana.Name = "iShisetsuTsushoKana";
+			this.iShisetsuTsushoKana.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iShisetsuTsushoKana.Size = new System.Drawing.Size(271, 23);
+			this.iShisetsuTsushoKana.TabIndex = 5;
 			// 
 			// ycLabelEx4
 			// 
@@ -525,7 +491,7 @@ namespace App
 			this.ycLabelEx4.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.IconImage = null;
 			this.ycLabelEx4.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx4.Location = new System.Drawing.Point(41, 206);
+			this.ycLabelEx4.Location = new System.Drawing.Point(41, 237);
 			this.ycLabelEx4.Name = "ycLabelEx4";
 			this.ycLabelEx4.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.Size = new System.Drawing.Size(100, 25);
@@ -542,7 +508,7 @@ namespace App
 			this.ycLabelEx12.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx12.IconImage = null;
 			this.ycLabelEx12.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx12.Location = new System.Drawing.Point(41, 235);
+			this.ycLabelEx12.Location = new System.Drawing.Point(41, 266);
 			this.ycLabelEx12.Name = "ycLabelEx12";
 			this.ycLabelEx12.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx12.Size = new System.Drawing.Size(100, 25);
@@ -555,22 +521,22 @@ namespace App
 			this.iTel1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTel1_3.ExFocusHighlight = true;
 			this.iTel1_3.ImeStr = "";
-			this.iTel1_3.Location = new System.Drawing.Point(303, 265);
+			this.iTel1_3.Location = new System.Drawing.Point(303, 296);
 			this.iTel1_3.Name = "iTel1_3";
 			this.iTel1_3.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel1_3.Size = new System.Drawing.Size(50, 23);
-			this.iTel1_3.TabIndex = 11;
+			this.iTel1_3.TabIndex = 12;
 			// 
 			// iTel2_3
 			// 
 			this.iTel2_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTel2_3.ExFocusHighlight = true;
 			this.iTel2_3.ImeStr = "";
-			this.iTel2_3.Location = new System.Drawing.Point(303, 295);
+			this.iTel2_3.Location = new System.Drawing.Point(303, 326);
 			this.iTel2_3.Name = "iTel2_3";
 			this.iTel2_3.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel2_3.Size = new System.Drawing.Size(50, 23);
-			this.iTel2_3.TabIndex = 14;
+			this.iTel2_3.TabIndex = 15;
 			// 
 			// ycLabelEx13
 			// 
@@ -581,38 +547,13 @@ namespace App
 			this.ycLabelEx13.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx13.IconImage = null;
 			this.ycLabelEx13.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx13.Location = new System.Drawing.Point(41, 321);
+			this.ycLabelEx13.Location = new System.Drawing.Point(41, 354);
 			this.ycLabelEx13.Name = "ycLabelEx13";
 			this.ycLabelEx13.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx13.Size = new System.Drawing.Size(100, 23);
 			this.ycLabelEx13.TabIndex = 439;
 			this.ycLabelEx13.Text = "開設主体";
 			this.ycLabelEx13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// iKaisetsushutai
-			// 
-			this.iKaisetsushutai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iKaisetsushutai.ExFocusHighlight = true;
-			this.iKaisetsushutai.ImeStr = "";
-			this.iKaisetsushutai.Location = new System.Drawing.Point(147, 322);
-			this.iKaisetsushutai.Name = "iKaisetsushutai";
-			this.iKaisetsushutai.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iKaisetsushutai.Size = new System.Drawing.Size(50, 23);
-			this.iKaisetsushutai.TabIndex = 15;
-			// 
-			// lKaisetsushutai
-			// 
-			this.lKaisetsushutai.AutoSize = true;
-			this.lKaisetsushutai.BackColor2 = System.Drawing.Color.Empty;
-			this.lKaisetsushutai.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.lKaisetsushutai.ForeShadowColor = System.Drawing.Color.Empty;
-			this.lKaisetsushutai.IconImage = null;
-			this.lKaisetsushutai.Location = new System.Drawing.Point(203, 324);
-			this.lKaisetsushutai.Name = "lKaisetsushutai";
-			this.lKaisetsushutai.SingleBorderColor = System.Drawing.Color.Empty;
-			this.lKaisetsushutai.Size = new System.Drawing.Size(88, 20);
-			this.lKaisetsushutai.TabIndex = 441;
-			this.lKaisetsushutai.Text = "ycLabelEx14";
 			// 
 			// ycLabelEx15
 			// 
@@ -623,35 +564,13 @@ namespace App
 			this.ycLabelEx15.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx15.IconImage = null;
 			this.ycLabelEx15.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx15.Location = new System.Drawing.Point(41, 349);
+			this.ycLabelEx15.Location = new System.Drawing.Point(41, 384);
 			this.ycLabelEx15.Name = "ycLabelEx15";
 			this.ycLabelEx15.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx15.Size = new System.Drawing.Size(100, 23);
 			this.ycLabelEx15.TabIndex = 442;
 			this.ycLabelEx15.Text = "病床有無";
 			this.ycLabelEx15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// rdoByoshoTrue
-			// 
-			this.rdoByoshoTrue.AutoSize = true;
-			this.rdoByoshoTrue.Location = new System.Drawing.Point(6, 12);
-			this.rdoByoshoTrue.Name = "rdoByoshoTrue";
-			this.rdoByoshoTrue.Size = new System.Drawing.Size(40, 24);
-			this.rdoByoshoTrue.TabIndex = 443;
-			this.rdoByoshoTrue.TabStop = true;
-			this.rdoByoshoTrue.Text = "有";
-			this.rdoByoshoTrue.UseVisualStyleBackColor = true;
-			// 
-			// rdoByoshoFalse
-			// 
-			this.rdoByoshoFalse.AutoSize = true;
-			this.rdoByoshoFalse.Location = new System.Drawing.Point(59, 12);
-			this.rdoByoshoFalse.Name = "rdoByoshoFalse";
-			this.rdoByoshoFalse.Size = new System.Drawing.Size(40, 24);
-			this.rdoByoshoFalse.TabIndex = 444;
-			this.rdoByoshoFalse.TabStop = true;
-			this.rdoByoshoFalse.Text = "無";
-			this.rdoByoshoFalse.UseVisualStyleBackColor = true;
 			// 
 			// ycLabelEx16
 			// 
@@ -662,12 +581,12 @@ namespace App
 			this.ycLabelEx16.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx16.IconImage = null;
 			this.ycLabelEx16.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx16.Location = new System.Drawing.Point(41, 377);
+			this.ycLabelEx16.Location = new System.Drawing.Point(41, 413);
 			this.ycLabelEx16.Name = "ycLabelEx16";
 			this.ycLabelEx16.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx16.Size = new System.Drawing.Size(100, 23);
 			this.ycLabelEx16.TabIndex = 445;
-			this.ycLabelEx16.Text = "許可病床";
+			this.ycLabelEx16.Text = "許可病床数";
 			this.ycLabelEx16.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// iKyokabyosho
@@ -675,7 +594,7 @@ namespace App
 			this.iKyokabyosho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iKyokabyosho.ExFocusHighlight = true;
 			this.iKyokabyosho.ImeStr = "";
-			this.iKyokabyosho.Location = new System.Drawing.Point(147, 377);
+			this.iKyokabyosho.Location = new System.Drawing.Point(147, 413);
 			this.iKyokabyosho.Name = "iKyokabyosho";
 			this.iKyokabyosho.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKyokabyosho.Size = new System.Drawing.Size(50, 23);
@@ -690,7 +609,7 @@ namespace App
 			this.ycLabelEx17.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx17.IconImage = null;
 			this.ycLabelEx17.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx17.Location = new System.Drawing.Point(41, 405);
+			this.ycLabelEx17.Location = new System.Drawing.Point(41, 442);
 			this.ycLabelEx17.Name = "ycLabelEx17";
 			this.ycLabelEx17.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx17.Size = new System.Drawing.Size(100, 23);
@@ -702,7 +621,7 @@ namespace App
 			// 
 			this.chkKaigo.AutoSize = true;
 			this.chkKaigo.DisabledBackColor = System.Drawing.SystemColors.Control;
-			this.chkKaigo.Location = new System.Drawing.Point(147, 404);
+			this.chkKaigo.Location = new System.Drawing.Point(147, 441);
 			this.chkKaigo.Name = "chkKaigo";
 			this.chkKaigo.Position = YControlYcCheckBoxEx.YcCheckBoxEx.CheckBoxExPosition.Normal;
 			this.chkKaigo.SingleBorderColor = System.Drawing.Color.DimGray;
@@ -715,7 +634,7 @@ namespace App
 			// 
 			this.chkEtc.AutoSize = true;
 			this.chkEtc.DisabledBackColor = System.Drawing.SystemColors.Control;
-			this.chkEtc.Location = new System.Drawing.Point(225, 404);
+			this.chkEtc.Location = new System.Drawing.Point(238, 441);
 			this.chkEtc.Name = "chkEtc";
 			this.chkEtc.Position = YControlYcCheckBoxEx.YcCheckBoxEx.CheckBoxExPosition.Normal;
 			this.chkEtc.SingleBorderColor = System.Drawing.Color.DimGray;
@@ -729,10 +648,10 @@ namespace App
 			this.iHeisetsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iHeisetsu.ExFocusHighlight = true;
 			this.iHeisetsu.ImeStr = "";
-			this.iHeisetsu.Location = new System.Drawing.Point(298, 404);
+			this.iHeisetsu.Location = new System.Drawing.Point(311, 440);
 			this.iHeisetsu.Name = "iHeisetsu";
 			this.iHeisetsu.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iHeisetsu.Size = new System.Drawing.Size(170, 23);
+			this.iHeisetsu.Size = new System.Drawing.Size(178, 23);
 			this.iHeisetsu.TabIndex = 20;
 			// 
 			// ycLabelEx18
@@ -744,7 +663,7 @@ namespace App
 			this.ycLabelEx18.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx18.IconImage = null;
 			this.ycLabelEx18.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx18.Location = new System.Drawing.Point(41, 433);
+			this.ycLabelEx18.Location = new System.Drawing.Point(41, 471);
 			this.ycLabelEx18.Name = "ycLabelEx18";
 			this.ycLabelEx18.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx18.Size = new System.Drawing.Size(100, 23);
@@ -759,45 +678,23 @@ namespace App
 			this.lKumiCode.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
 			this.lKumiCode.ForeShadowColor = System.Drawing.Color.Empty;
 			this.lKumiCode.IconImage = null;
-			this.lKumiCode.Location = new System.Drawing.Point(203, 436);
+			this.lKumiCode.Location = new System.Drawing.Point(203, 474);
 			this.lKumiCode.Name = "lKumiCode";
 			this.lKumiCode.SingleBorderColor = System.Drawing.Color.Empty;
-			this.lKumiCode.Size = new System.Drawing.Size(88, 20);
+			this.lKumiCode.Size = new System.Drawing.Size(79, 20);
 			this.lKumiCode.TabIndex = 453;
-			this.lKumiCode.Text = "ycLabelEx19";
+			this.lKumiCode.Text = "組コードXX";
 			// 
 			// iKumiCode
 			// 
 			this.iKumiCode.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iKumiCode.ExFocusHighlight = true;
 			this.iKumiCode.ImeStr = "";
-			this.iKumiCode.Location = new System.Drawing.Point(147, 434);
+			this.iKumiCode.Location = new System.Drawing.Point(147, 472);
 			this.iKumiCode.Name = "iKumiCode";
 			this.iKumiCode.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKumiCode.Size = new System.Drawing.Size(50, 23);
 			this.iKumiCode.TabIndex = 21;
-			// 
-			// chkTaikaiFalse
-			// 
-			this.chkTaikaiFalse.AutoSize = true;
-			this.chkTaikaiFalse.Location = new System.Drawing.Point(55, 5);
-			this.chkTaikaiFalse.Name = "chkTaikaiFalse";
-			this.chkTaikaiFalse.Size = new System.Drawing.Size(53, 24);
-			this.chkTaikaiFalse.TabIndex = 456;
-			this.chkTaikaiFalse.TabStop = true;
-			this.chkTaikaiFalse.Text = "退会";
-			this.chkTaikaiFalse.UseVisualStyleBackColor = true;
-			// 
-			// rdoTaikaiTrue
-			// 
-			this.rdoTaikaiTrue.AutoSize = true;
-			this.rdoTaikaiTrue.Location = new System.Drawing.Point(5, 5);
-			this.rdoTaikaiTrue.Name = "rdoTaikaiTrue";
-			this.rdoTaikaiTrue.Size = new System.Drawing.Size(53, 24);
-			this.rdoTaikaiTrue.TabIndex = 455;
-			this.rdoTaikaiTrue.TabStop = true;
-			this.rdoTaikaiTrue.Text = "会員";
-			this.rdoTaikaiTrue.UseVisualStyleBackColor = true;
 			// 
 			// ycLabelEx20
 			// 
@@ -808,7 +705,7 @@ namespace App
 			this.ycLabelEx20.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx20.IconImage = null;
 			this.ycLabelEx20.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx20.Location = new System.Drawing.Point(41, 461);
+			this.ycLabelEx20.Location = new System.Drawing.Point(41, 500);
 			this.ycLabelEx20.Name = "ycLabelEx20";
 			this.ycLabelEx20.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx20.Size = new System.Drawing.Size(100, 23);
@@ -816,34 +713,182 @@ namespace App
 			this.ycLabelEx20.Text = "退会区分";
 			this.ycLabelEx20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// groupBox1
+			// ycLabelEx14
 			// 
-			this.groupBox1.Controls.Add(this.rdoByoshoFalse);
-			this.groupBox1.Controls.Add(this.rdoByoshoTrue);
-			this.groupBox1.Location = new System.Drawing.Point(147, 336);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(105, 36);
-			this.groupBox1.TabIndex = 16;
-			this.groupBox1.TabStop = false;
+			this.ycLabelEx14.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx14.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx14.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx14.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx14.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx14.IconImage = null;
+			this.ycLabelEx14.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx14.Location = new System.Drawing.Point(41, 146);
+			this.ycLabelEx14.Name = "ycLabelEx14";
+			this.ycLabelEx14.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx14.Size = new System.Drawing.Size(100, 25);
+			this.ycLabelEx14.TabIndex = 456;
+			this.ycLabelEx14.Text = "施設漢字通称";
+			this.ycLabelEx14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// groupBox2
+			// iShisetsuTsusho
 			// 
-			this.groupBox2.Controls.Add(this.chkTaikaiFalse);
-			this.groupBox2.Controls.Add(this.rdoTaikaiTrue);
-			this.groupBox2.Location = new System.Drawing.Point(140, 456);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(124, 28);
-			this.groupBox2.TabIndex = 22;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "groupBox2";
+			this.iShisetsuTsusho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iShisetsuTsusho.ExFocusHighlight = true;
+			this.iShisetsuTsusho.ImeStr = "";
+			this.iShisetsuTsusho.Location = new System.Drawing.Point(147, 147);
+			this.iShisetsuTsusho.Name = "iShisetsuTsusho";
+			this.iShisetsuTsusho.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iShisetsuTsusho.Size = new System.Drawing.Size(271, 23);
+			this.iShisetsuTsusho.TabIndex = 4;
+			// 
+			// iHyoboKamoku
+			// 
+			this.iHyoboKamoku.BackColor = System.Drawing.Color.Transparent;
+			this.iHyoboKamoku.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iHyoboKamoku.CompareValue = null;
+			this.iHyoboKamoku.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iHyoboKamoku.DBView = null;
+			this.iHyoboKamoku.DiabledBackColor = System.Drawing.SystemColors.Control;
+			this.iHyoboKamoku.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+			this.iHyoboKamoku.DropDownSize = new System.Drawing.Size(100, 44);
+			this.iHyoboKamoku.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.iHyoboKamoku.ForeColor = System.Drawing.Color.Transparent;
+			this.iHyoboKamoku.HighlightText = true;
+			this.iHyoboKamoku.Location = new System.Drawing.Point(534, 128);
+			this.iHyoboKamoku.Name = "iHyoboKamoku";
+			this.iHyoboKamoku.RowFilter = "";
+			this.iHyoboKamoku.SelectedIndexNullLeave = -1;
+			this.iHyoboKamoku.Size = new System.Drawing.Size(120, 27);
+			this.iHyoboKamoku.Sort = "";
+			this.iHyoboKamoku.TabIndex = 490;
+			this.iHyoboKamoku.TextSubItemIndex = -1;
+			// 
+			// grid_Sinryo
+			// 
+			this.grid_Sinryo.CaptionHeight = 16;
+			this.grid_Sinryo.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。";
+			this.grid_Sinryo.Images.Add(((System.Drawing.Image)(resources.GetObject("grid_Sinryo.Images"))));
+			this.grid_Sinryo.Location = new System.Drawing.Point(514, 115);
+			this.grid_Sinryo.Name = "grid_Sinryo";
+			this.grid_Sinryo.PreviewInfo.Caption = "印刷プレビューウィンドウ";
+			this.grid_Sinryo.PreviewInfo.Location = new System.Drawing.Point(0, 0);
+			this.grid_Sinryo.PreviewInfo.Size = new System.Drawing.Size(0, 0);
+			this.grid_Sinryo.PreviewInfo.ZoomFactor = 75D;
+			this.grid_Sinryo.PrintInfo.MeasurementDevice = C1.Win.C1TrueDBGrid.PrintInfo.MeasurementDeviceEnum.Screen;
+			this.grid_Sinryo.PrintInfo.MeasurementPrinterName = null;
+			this.grid_Sinryo.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid_Sinryo.PrintInfo.PageSettings")));
+			this.grid_Sinryo.PropBag = resources.GetString("grid_Sinryo.PropBag");
+			this.grid_Sinryo.RowHeight = 14;
+			this.grid_Sinryo.Size = new System.Drawing.Size(320, 288);
+			this.grid_Sinryo.TabIndex = 24;
+			this.grid_Sinryo.UseCompatibleTextRendering = false;
+			// 
+			// ycLabelEx19
+			// 
+			this.ycLabelEx19.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx19.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx19.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx19.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx19.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx19.IconImage = null;
+			this.ycLabelEx19.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx19.Location = new System.Drawing.Point(513, 87);
+			this.ycLabelEx19.Name = "ycLabelEx19";
+			this.ycLabelEx19.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx19.Size = new System.Drawing.Size(100, 25);
+			this.ycLabelEx19.TabIndex = 491;
+			this.ycLabelEx19.Text = "標榜科目";
+			this.ycLabelEx19.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// btnKamokuAdd
+			// 
+			this.btnKamokuAdd.Location = new System.Drawing.Point(840, 115);
+			this.btnKamokuAdd.Name = "btnKamokuAdd";
+			this.btnKamokuAdd.Size = new System.Drawing.Size(56, 23);
+			this.btnKamokuAdd.TabIndex = 25;
+			this.btnKamokuAdd.Text = "追加";
+			this.btnKamokuAdd.UseVisualStyleBackColor = true;
+			// 
+			// btnKamokuDel
+			// 
+			this.btnKamokuDel.Location = new System.Drawing.Point(840, 140);
+			this.btnKamokuDel.Name = "btnKamokuDel";
+			this.btnKamokuDel.Size = new System.Drawing.Size(56, 23);
+			this.btnKamokuDel.TabIndex = 492;
+			this.btnKamokuDel.Text = "削除";
+			this.btnKamokuDel.UseVisualStyleBackColor = true;
+			// 
+			// iByoshoUmu
+			// 
+			this.iByoshoUmu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iByoshoUmu.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iByoshoUmu.ExCompareContent = null;
+			this.iByoshoUmu.ExCompareValue = null;
+			this.iByoshoUmu.ExDataSource = null;
+			this.iByoshoUmu.ExFocusHighlight = true;
+			this.iByoshoUmu.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iByoshoUmu.ListHeaderPane.Height = 27;
+			this.iByoshoUmu.ListHeaderPane.Visible = false;
+			this.iByoshoUmu.Location = new System.Drawing.Point(147, 382);
+			this.iByoshoUmu.Name = "iByoshoUmu";
+			this.iByoshoUmu.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iByoshoUmu.Size = new System.Drawing.Size(63, 25);
+			this.iByoshoUmu.TabIndex = 496;
+			// 
+			// iTaikaiKbn
+			// 
+			this.iTaikaiKbn.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iTaikaiKbn.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iTaikaiKbn.ExCompareContent = null;
+			this.iTaikaiKbn.ExCompareValue = null;
+			this.iTaikaiKbn.ExDataSource = null;
+			this.iTaikaiKbn.ExFocusHighlight = true;
+			this.iTaikaiKbn.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iTaikaiKbn.ListHeaderPane.Height = 27;
+			this.iTaikaiKbn.ListHeaderPane.Visible = false;
+			this.iTaikaiKbn.Location = new System.Drawing.Point(147, 499);
+			this.iTaikaiKbn.Name = "iTaikaiKbn";
+			this.iTaikaiKbn.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iTaikaiKbn.Size = new System.Drawing.Size(88, 25);
+			this.iTaikaiKbn.TabIndex = 497;
+			// 
+			// iKaisetsushutai
+			// 
+			this.iKaisetsushutai.BackColor = System.Drawing.Color.Transparent;
+			this.iKaisetsushutai.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iKaisetsushutai.CompareValue = null;
+			this.iKaisetsushutai.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iKaisetsushutai.DBView = null;
+			this.iKaisetsushutai.DiabledBackColor = System.Drawing.SystemColors.Control;
+			this.iKaisetsushutai.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+			this.iKaisetsushutai.DropDownSize = new System.Drawing.Size(100, 44);
+			this.iKaisetsushutai.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.iKaisetsushutai.ForeColor = System.Drawing.Color.Transparent;
+			this.iKaisetsushutai.HighlightText = true;
+			this.iKaisetsushutai.Location = new System.Drawing.Point(147, 352);
+			this.iKaisetsushutai.Name = "iKaisetsushutai";
+			this.iKaisetsushutai.RowFilter = "";
+			this.iKaisetsushutai.SelectedIndexNullLeave = -1;
+			this.iKaisetsushutai.Size = new System.Drawing.Size(173, 27);
+			this.iKaisetsushutai.Sort = "";
+			this.iKaisetsushutai.TabIndex = 498;
+			this.iKaisetsushutai.TextSubItemIndex = -1;
 			// 
 			// FormMasterIryoKikan_DlgEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(905, 673);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.iKaisetsushutai);
+			this.Controls.Add(this.iTaikaiKbn);
+			this.Controls.Add(this.iByoshoUmu);
+			this.Controls.Add(this.btnKamokuDel);
+			this.Controls.Add(this.btnKamokuAdd);
+			this.Controls.Add(this.ycLabelEx19);
+			this.Controls.Add(this.iHyoboKamoku);
+			this.Controls.Add(this.grid_Sinryo);
+			this.Controls.Add(this.ycLabelEx14);
+			this.Controls.Add(this.iShisetsuTsusho);
 			this.Controls.Add(this.ycLabelEx20);
 			this.Controls.Add(this.lKumiCode);
 			this.Controls.Add(this.iKumiCode);
@@ -855,26 +900,22 @@ namespace App
 			this.Controls.Add(this.iKyokabyosho);
 			this.Controls.Add(this.ycLabelEx16);
 			this.Controls.Add(this.ycLabelEx15);
-			this.Controls.Add(this.lKaisetsushutai);
-			this.Controls.Add(this.iKaisetsushutai);
 			this.Controls.Add(this.ycLabelEx13);
 			this.Controls.Add(this.iTel2_3);
 			this.Controls.Add(this.iTel1_3);
 			this.Controls.Add(this.ycLabelEx12);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.ycLabelEx11);
-			this.Controls.Add(this.iShisetsuTsusho);
+			this.Controls.Add(this.iShisetsuTsushoKana);
 			this.Controls.Add(this.iShisetsuName);
 			this.Controls.Add(this.ycLabelEx7);
 			this.Controls.Add(this.ycLabelEx2);
 			this.Controls.Add(this.iShisetsuKana);
 			this.Controls.Add(this.ycLabelEx1);
-			this.Controls.Add(this.icode);
+			this.Controls.Add(this.iCode);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.funckey);
-			this.Controls.Add(this.grid);
-			this.Controls.Add(this.ycLabelEx25);
 			this.Controls.Add(this.ycLabelEx22);
 			this.Controls.Add(this.ycLabelEx23);
 			this.Controls.Add(this.iTel2_2);
@@ -895,7 +936,7 @@ namespace App
 			this.KeyPreview = true;
 			this.Name = "FormMasterIryoKikan_DlgEntry";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "医療機関登録";
+			this.Text = "医療機関マスタ";
 			this.Controls.SetChildIndex(this.iAddr1, 0);
 			this.Controls.SetChildIndex(this.iAddr2, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx6, 0);
@@ -912,26 +953,22 @@ namespace App
 			this.Controls.SetChildIndex(this.iTel2_2, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx23, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx22, 0);
-			this.Controls.SetChildIndex(this.ycLabelEx25, 0);
-			this.Controls.SetChildIndex(this.grid, 0);
 			this.Controls.SetChildIndex(this.funckey, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
 			this.Controls.SetChildIndex(this.lblTitle, 0);
-			this.Controls.SetChildIndex(this.icode, 0);
+			this.Controls.SetChildIndex(this.iCode, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx1, 0);
 			this.Controls.SetChildIndex(this.iShisetsuKana, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx7, 0);
 			this.Controls.SetChildIndex(this.iShisetsuName, 0);
-			this.Controls.SetChildIndex(this.iShisetsuTsusho, 0);
+			this.Controls.SetChildIndex(this.iShisetsuTsushoKana, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx11, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx12, 0);
 			this.Controls.SetChildIndex(this.iTel1_3, 0);
 			this.Controls.SetChildIndex(this.iTel2_3, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx13, 0);
-			this.Controls.SetChildIndex(this.iKaisetsushutai, 0);
-			this.Controls.SetChildIndex(this.lKaisetsushutai, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx15, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx16, 0);
 			this.Controls.SetChildIndex(this.iKyokabyosho, 0);
@@ -943,8 +980,16 @@ namespace App
 			this.Controls.SetChildIndex(this.iKumiCode, 0);
 			this.Controls.SetChildIndex(this.lKumiCode, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx20, 0);
-			this.Controls.SetChildIndex(this.groupBox1, 0);
-			this.Controls.SetChildIndex(this.groupBox2, 0);
+			this.Controls.SetChildIndex(this.iShisetsuTsusho, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx14, 0);
+			this.Controls.SetChildIndex(this.grid_Sinryo, 0);
+			this.Controls.SetChildIndex(this.iHyoboKamoku, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx19, 0);
+			this.Controls.SetChildIndex(this.btnKamokuAdd, 0);
+			this.Controls.SetChildIndex(this.btnKamokuDel, 0);
+			this.Controls.SetChildIndex(this.iByoshoUmu, 0);
+			this.Controls.SetChildIndex(this.iTaikaiKbn, 0);
+			this.Controls.SetChildIndex(this.iKaisetsushutai, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel1_2)).EndInit();
@@ -953,28 +998,25 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iPost1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iAddr2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iAddr1)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.icode)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iCode)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShisetsuKana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShisetsuName)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iShisetsuTsusho)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iShisetsuTsushoKana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel1_3)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_3)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iKaisetsushutai)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKyokabyosho)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iHeisetsu)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKumiCode)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iShisetsuTsusho)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.grid_Sinryo)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iByoshoUmu)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iTaikaiKbn)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
 		}
 
 		#endregion
-		private YControlLabelEx.YcLabelEx ycLabelEx25;
 		private YControlLabelEx.YcLabelEx ycLabelEx22;
 		private YControlLabelEx.YcLabelEx ycLabelEx23;
 		private GControlGcTextBoxEx.GcTextBoxEx iTel2_2;
@@ -991,28 +1033,23 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
 		private GControlGcTextBoxEx.GcTextBoxEx iAddr2;
 		private GControlGcTextBoxEx.GcTextBoxEx iAddr1;
-		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
 		private GrapeCity.Win.Bars.GcFunctionKey funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private GControlGcTextBoxEx.GcTextBoxEx icode;
+		private GControlGcTextBoxEx.GcTextBoxEx iCode;
 		private GControlGcTextBoxEx.GcTextBoxEx iShisetsuKana;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private YControlLabelEx.YcLabelEx ycLabelEx7;
 		private GControlGcTextBoxEx.GcTextBoxEx iShisetsuName;
 		private YControlLabelEx.YcLabelEx ycLabelEx11;
-		private GControlGcTextBoxEx.GcTextBoxEx iShisetsuTsusho;
+		private GControlGcTextBoxEx.GcTextBoxEx iShisetsuTsushoKana;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private YControlLabelEx.YcLabelEx ycLabelEx12;
 		private GControlGcTextBoxEx.GcTextBoxEx iTel1_3;
 		private GControlGcTextBoxEx.GcTextBoxEx iTel2_3;
 		private YControlLabelEx.YcLabelEx ycLabelEx13;
-		private GControlGcTextBoxEx.GcTextBoxEx iKaisetsushutai;
-		private YControlLabelEx.YcLabelEx lKaisetsushutai;
 		private YControlLabelEx.YcLabelEx ycLabelEx15;
-		private System.Windows.Forms.RadioButton rdoByoshoTrue;
-		private System.Windows.Forms.RadioButton rdoByoshoFalse;
 		private YControlLabelEx.YcLabelEx ycLabelEx16;
 		private GControlGcTextBoxEx.GcTextBoxEx iKyokabyosho;
 		private YControlLabelEx.YcLabelEx ycLabelEx17;
@@ -1022,10 +1059,17 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx18;
 		private YControlLabelEx.YcLabelEx lKumiCode;
 		private GControlGcTextBoxEx.GcTextBoxEx iKumiCode;
-		private System.Windows.Forms.RadioButton chkTaikaiFalse;
-		private System.Windows.Forms.RadioButton rdoTaikaiTrue;
 		private YControlLabelEx.YcLabelEx ycLabelEx20;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private YControlLabelEx.YcLabelEx ycLabelEx14;
+		private GControlGcTextBoxEx.GcTextBoxEx iShisetsuTsusho;
+		private UcTableComboBox iHyoboKamoku;
+		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid_Sinryo;
+		private YControlLabelEx.YcLabelEx ycLabelEx19;
+		private System.Windows.Forms.Button btnKamokuAdd;
+		private System.Windows.Forms.Button btnKamokuDel;
+		private GrapeCity.Win.Editors.GcShortcut gcShortcut1;
+		private GControlGcComboBoxEx.GcComboBoxEx iByoshoUmu;
+		private GControlGcComboBoxEx.GcComboBoxEx iTaikaiKbn;
+		private UcTableComboBox iKaisetsushutai;
 	}
 }

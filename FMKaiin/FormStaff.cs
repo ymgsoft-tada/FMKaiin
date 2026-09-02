@@ -113,6 +113,8 @@ namespace App
 			btnClear.Click += btnClear_Click;
 			chkUnUsed.CheckedChanged += chkUnUsed_CheckedChanged;
 
+			//chkUnUsed.Visible = false; // 退職者表示チェック不要なら有効化
+
 			base.FormFrame_Shown(sender, e);
 		}
 
@@ -345,12 +347,19 @@ namespace App
 			if (frm.FormCloseReason == FormCloseReason.Save)
 			{
 				dvStaff.Add(frm.Row);
+
+
 				AppGlobal.DB.UpdateTable(TableProp.t_staff);
+				dvStaff.AcceptChanges();
 
 				// 共通クラスの初期化処理
 				AppGlobal.InitStaff();
 				dvStaff.SearchRow(t_staff.FID_Staff, nrow.ID_Staff);
 
+			}
+			else
+			{
+				dvStaff.RejectChanges();
 			}
 
 			frm.Dispose();

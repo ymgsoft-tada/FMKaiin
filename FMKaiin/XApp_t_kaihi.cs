@@ -90,23 +90,23 @@ namespace App
 		/// <summary>
 		/// フィールド[会費区分(ID)]。
 		/// </summary>
-		public const string FID_KbnKkaihi = "ID_KbnKkaihi";
+		public const string FID_KbnKaihi = "ID_KbnKaihi";
 		/// <summary>
 		/// 会費区分(ID)
 		/// </summary>
-		public int ID_KbnKkaihi
+		public int ID_KbnKaihi
 		{
-			get	{	return Cast.Int(row == null ? null : row[FID_KbnKkaihi]);	}
-			set	{	_set(FID_KbnKkaihi, value);	}
+			get	{	return Cast.Int(row == null ? null : row[FID_KbnKaihi]);	}
+			set	{	_set(FID_KbnKaihi, value);	}
 		}
 		
 		/// <summary>
 		/// 会費区分(ID)。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public int? ID_KbnKkaihi_Null
+		public int? ID_KbnKaihi_Null
 		{
-			get	{	if (row == null || row[FID_KbnKkaihi] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KbnKkaihi]); }	}
-			set	{	_set(FID_KbnKkaihi, value);	}
+			get	{	if (row == null || row[FID_KbnKaihi] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KbnKaihi]); }	}
+			set	{	_set(FID_KbnKaihi, value);	}
 		}
 		
 		/// <summary>
@@ -654,7 +654,7 @@ namespace App
 			col = new DataColumn(FCD_Kaihi, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FID_KbnKkaihi, typeof(int));
+			col = new DataColumn(FID_KbnKaihi, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaihi_Name, typeof(string));

@@ -41,14 +41,59 @@ namespace App
 		public const string t_basic = "t_basic";
 		
 		/// <summary>
+		/// t_gakkai
+		/// </summary>
+		public const string t_gakkai = "t_gakkai";
+		
+		/// <summary>
+		/// t_gakko
+		/// </summary>
+		public const string t_gakko = "t_gakko";
+		
+		/// <summary>
 		/// t_iryokikan
 		/// </summary>
 		public const string t_iryokikan = "t_iryokikan";
 		
 		/// <summary>
+		/// t_iryokikan_shinryoka
+		/// </summary>
+		public const string t_iryokikan_shinryoka = "t_iryokikan_shinryoka";
+		
+		/// <summary>
 		/// t_kaihi
 		/// </summary>
 		public const string t_kaihi = "t_kaihi";
+		
+		/// <summary>
+		/// t_kaiin_gakkai
+		/// </summary>
+		public const string t_kaiin_gakkai = "t_kaiin_gakkai";
+		
+		/// <summary>
+		/// t_kaiin_kaihi
+		/// </summary>
+		public const string t_kaiin_kaihi = "t_kaiin_kaihi";
+		
+		/// <summary>
+		/// t_kaiin_shinryoka
+		/// </summary>
+		public const string t_kaiin_shinryoka = "t_kaiin_shinryoka";
+		
+		/// <summary>
+		/// t_kaisetsushutai
+		/// </summary>
+		public const string t_kaisetsushutai = "t_kaisetsushutai";
+		
+		/// <summary>
+		/// t_shinryoka
+		/// </summary>
+		public const string t_shinryoka = "t_shinryoka";
+		
+		/// <summary>
+		/// t_shisetsugyomu
+		/// </summary>
+		public const string t_shisetsugyomu = "t_shisetsugyomu";
 		
 		/// <summary>
 		/// t_staff

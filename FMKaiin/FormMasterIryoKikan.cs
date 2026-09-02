@@ -18,6 +18,11 @@ namespace App
 		DBView dvKikan;
 		GGridDBCommon gcom;
 
+		/// <summary>
+		/// 医療機関-診療科の関連 DBView (_DlgEntryにて操作)
+		/// </summary>
+		DBView dvIryokikanShinryoka;
+
 		public FormMasterIryoKikan()
 		{
 			InitializeComponent();
@@ -36,6 +41,10 @@ namespace App
 			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Code, "コード", 0.15f, GGridDBCellDisp.Right));
 			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Name, "施設正式名", 0.4f));
 			gcom.EndAdd(dvKikan);
+
+
+			dvIryokikanShinryoka = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_iryokikan_shinryoka), this.BindingContext); // BindingContext:DBViewのカレント行とGridのカレント行追従させるため必要
+
 
 			//■ イベント
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
@@ -77,6 +86,7 @@ namespace App
 			FormMasterIryoKikan_DlgEntry frm = new FormMasterIryoKikan_DlgEntry();
 			frm.Mode = FormMasterIryoKikan_DlgEntry.eMode.Add;
 			frm.Row = nrow.Row;
+			frm.DvIryokikanShinryo = dvIryokikanShinryoka; // 標榜科目grid用DBView
 			frm.ShowDialog();
 
 			if (frm.FormCloseReason == FormCloseReason.Save)
@@ -84,10 +94,17 @@ namespace App
 				dvKikan.Add(frm.Row);
 				AppGlobal.DB.UpdateTable(TableProp.t_iryokikan);
 
-				// 共通クラスの初期化処理
-				AppGlobal.InitTanto();
+				AppGlobal.DB.UpdateTable(TableProp.t_iryokikan_shinryoka); // 医療機関-標榜科目 のDB更新
+				dvIryokikanShinryoka.AcceptChanges(); // ここでAcceptChangesして修正起点とする
+
+				// 医療機関情報(共通)の再取得 ※情報が追加されたため
+				AppGlobal.InitIryoKikan();
 
 				dvKikan.SearchRow(t_iryokikan.FID_Iryokikan, nrow.ID_Iryokikan);
+			}
+			else
+			{
+				dvIryokikanShinryoka.RejectChanges(); // DlgEntryでの標榜科目grid変更内容の破棄
 			}
 
 			frm.Dispose();
@@ -109,6 +126,7 @@ namespace App
 				FormMasterIryoKikan_DlgEntry frm = new FormMasterIryoKikan_DlgEntry();
 				frm.Mode = FormMasterIryoKikan_DlgEntry.eMode.Edit;
 				frm.Row = row;
+				frm.DvIryokikanShinryo = dvIryokikanShinryoka; // 標榜科目grid用DBView
 				frm.ShowDialog();
 
 				if (frm.FormCloseReason == FormCloseReason.Save)
@@ -116,8 +134,15 @@ namespace App
 					AppDb.CopyDataRow(frm.Row, dvKikan.CurrentRow.Row);
 					AppGlobal.DB.UpdateTable(TableProp.t_iryokikan);
 
-					// 共通クラスの初期化処理
-					AppGlobal.InitTanto();
+					AppGlobal.DB.UpdateTable(TableProp.t_iryokikan_shinryoka); // 医療機関-標榜科目 のDB更新
+					dvIryokikanShinryoka.AcceptChanges(); // ここでAcceptChangesして修正起点とする
+
+					// 医療機関情報(共通)の再取得
+					AppGlobal.InitIryoKikan();
+				}
+				else
+				{
+					dvIryokikanShinryoka.RejectChanges(); // DlgEntryでの標榜科目grid変更内容の破棄
 				}
 
 				frm.Dispose();
@@ -146,8 +171,8 @@ namespace App
 				{
 					dvKikan.Delete();
 					AppGlobal.DB.UpdateTable(TableProp.t_iryokikan);
-					// 共通クラスの初期化処理
-					AppGlobal.InitTanto();
+					// 医療機関情報(共通)の再取得
+					AppGlobal.InitIryoKikan();
 				}
 			}
 		}

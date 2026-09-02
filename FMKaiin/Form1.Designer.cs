@@ -35,6 +35,7 @@ namespace App
 			this.btnIryokikanToroku = new System.Windows.Forms.Button();
 			this.btnKaihi = new System.Windows.Forms.Button();
 			this.btnBankCode = new System.Windows.Forms.Button();
+			this.btnShinryoka = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnBasic
@@ -52,7 +53,7 @@ namespace App
 			this.btnStaff.Name = "btnStaff";
 			this.btnStaff.Size = new System.Drawing.Size(139, 29);
 			this.btnStaff.TabIndex = 1;
-			this.btnStaff.Text = "スタッフマスタ";
+			this.btnStaff.Text = "会員情報登録";
 			this.btnStaff.UseVisualStyleBackColor = true;
 			// 
 			// btnTanto
@@ -70,7 +71,7 @@ namespace App
 			this.btnIryokikanToroku.Name = "btnIryokikanToroku";
 			this.btnIryokikanToroku.Size = new System.Drawing.Size(139, 29);
 			this.btnIryokikanToroku.TabIndex = 3;
-			this.btnIryokikanToroku.Text = "医療機関登録";
+			this.btnIryokikanToroku.Text = "医療機関マスタ";
 			this.btnIryokikanToroku.UseVisualStyleBackColor = true;
 			// 
 			// btnKaihi
@@ -79,7 +80,7 @@ namespace App
 			this.btnKaihi.Name = "btnKaihi";
 			this.btnKaihi.Size = new System.Drawing.Size(139, 29);
 			this.btnKaihi.TabIndex = 4;
-			this.btnKaihi.Text = "会費マスタ";
+			this.btnKaihi.Text = "医会会費マスタ";
 			this.btnKaihi.UseVisualStyleBackColor = true;
 			// 
 			// btnBankCode
@@ -91,11 +92,21 @@ namespace App
 			this.btnBankCode.Text = "銀行マスタ";
 			this.btnBankCode.UseVisualStyleBackColor = true;
 			// 
+			// btnShinryoka
+			// 
+			this.btnShinryoka.Location = new System.Drawing.Point(404, 202);
+			this.btnShinryoka.Name = "btnShinryoka";
+			this.btnShinryoka.Size = new System.Drawing.Size(139, 29);
+			this.btnShinryoka.TabIndex = 6;
+			this.btnShinryoka.Text = "診療科マスタ";
+			this.btnShinryoka.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(583, 268);
+			this.Controls.Add(this.btnShinryoka);
 			this.Controls.Add(this.btnBankCode);
 			this.Controls.Add(this.btnKaihi);
 			this.Controls.Add(this.btnIryokikanToroku);
@@ -114,6 +125,7 @@ namespace App
 			this.Controls.SetChildIndex(this.btnIryokikanToroku, 0);
 			this.Controls.SetChildIndex(this.btnKaihi, 0);
 			this.Controls.SetChildIndex(this.btnBankCode, 0);
+			this.Controls.SetChildIndex(this.btnShinryoka, 0);
 			this.ResumeLayout(false);
 
 		}
@@ -126,5 +138,6 @@ namespace App
 		private System.Windows.Forms.Button btnIryokikanToroku;
 		private System.Windows.Forms.Button btnKaihi;
 		private System.Windows.Forms.Button btnBankCode;
+		private System.Windows.Forms.Button btnShinryoka;
 	}
 }

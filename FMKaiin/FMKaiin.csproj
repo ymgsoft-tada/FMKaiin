@@ -95,8 +95,14 @@
     <Compile Include="AppDbUpdateManager.cs" />
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
+    <Compile Include="AppIryoKikan.cs" />
     <Compile Include="AppGlobal.cs" />
     <Compile Include="AppGridCommon.cs" />
+    <Compile Include="AppGakkai.cs" />
+    <Compile Include="AppGakko.cs" />
+    <Compile Include="AppKaisetsushutai.cs" />
+    <Compile Include="AppShisetsugyomu.cs" />
+    <Compile Include="AppShinryoka.cs" />
     <Compile Include="AppLogView.cs" />
     <Compile Include="AppMsgBox.cs" />
     <Compile Include="AppKaihi.cs" />
@@ -176,6 +182,12 @@
     </Compile>
     <Compile Include="FormMasterIryoKikan_DlgEntry.Designer.cs">
       <DependentUpon>FormMasterIryoKikan_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterShinryoka.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterShinryoka.designer.cs">
+      <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterKaihi.cs">
       <SubType>Form</SubType>
@@ -284,8 +296,17 @@
     <Compile Include="XApp_t_bank.cs" />
     <Compile Include="XApp_t_bank_code.cs" />
     <Compile Include="XApp_t_basic.cs" />
+    <Compile Include="XApp_t_gakkai.cs" />
+    <Compile Include="XApp_t_gakko.cs" />
     <Compile Include="XApp_t_iryokikan.cs" />
+    <Compile Include="XApp_t_iryokikan_shinryoka.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
+    <Compile Include="XApp_t_kaiin_gakkai.cs" />
+    <Compile Include="XApp_t_kaiin_kaihi.cs" />
+    <Compile Include="XApp_t_kaiin_shinryoka.cs" />
+    <Compile Include="XApp_t_kaisetsushutai.cs" />
+    <Compile Include="XApp_t_shinryoka.cs" />
+    <Compile Include="XApp_t_shisetsugyomu.cs" />
     <Compile Include="XApp_t_staff.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
@@ -323,6 +344,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterIryoKikan_DlgEntry.resx">
       <DependentUpon>FormMasterIryoKikan_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterShinryoka.resx">
+      <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterKaihi.resx">
       <DependentUpon>FormMasterKaihi.cs</DependentUpon>
