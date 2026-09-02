@@ -598,7 +598,7 @@ namespace App
 			this.iKyokabyosho.Name = "iKyokabyosho";
 			this.iKyokabyosho.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKyokabyosho.Size = new System.Drawing.Size(50, 23);
-			this.iKyokabyosho.TabIndex = 17;
+			this.iKyokabyosho.TabIndex = 18;
 			// 
 			// ycLabelEx17
 			// 
@@ -626,7 +626,7 @@ namespace App
 			this.chkKaigo.Position = YControlYcCheckBoxEx.YcCheckBoxEx.CheckBoxExPosition.Normal;
 			this.chkKaigo.SingleBorderColor = System.Drawing.Color.DimGray;
 			this.chkKaigo.Size = new System.Drawing.Size(80, 24);
-			this.chkKaigo.TabIndex = 18;
+			this.chkKaigo.TabIndex = 19;
 			this.chkKaigo.Text = "介護施設";
 			this.chkKaigo.UseVisualStyleBackColor = true;
 			// 
@@ -639,7 +639,7 @@ namespace App
 			this.chkEtc.Position = YControlYcCheckBoxEx.YcCheckBoxEx.CheckBoxExPosition.Normal;
 			this.chkEtc.SingleBorderColor = System.Drawing.Color.DimGray;
 			this.chkEtc.Size = new System.Drawing.Size(67, 24);
-			this.chkEtc.TabIndex = 19;
+			this.chkEtc.TabIndex = 20;
 			this.chkEtc.Text = "その他";
 			this.chkEtc.UseVisualStyleBackColor = true;
 			// 
@@ -652,7 +652,7 @@ namespace App
 			this.iHeisetsu.Name = "iHeisetsu";
 			this.iHeisetsu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iHeisetsu.Size = new System.Drawing.Size(178, 23);
-			this.iHeisetsu.TabIndex = 20;
+			this.iHeisetsu.TabIndex = 21;
 			// 
 			// ycLabelEx18
 			// 
@@ -694,7 +694,7 @@ namespace App
 			this.iKumiCode.Name = "iKumiCode";
 			this.iKumiCode.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKumiCode.Size = new System.Drawing.Size(50, 23);
-			this.iKumiCode.TabIndex = 21;
+			this.iKumiCode.TabIndex = 22;
 			// 
 			// ycLabelEx20
 			// 
@@ -780,7 +780,8 @@ namespace App
 			this.grid_Sinryo.PropBag = resources.GetString("grid_Sinryo.PropBag");
 			this.grid_Sinryo.RowHeight = 14;
 			this.grid_Sinryo.Size = new System.Drawing.Size(320, 288);
-			this.grid_Sinryo.TabIndex = 24;
+			this.grid_Sinryo.TabIndex = 240;
+			this.grid_Sinryo.TabStop = false;
 			this.grid_Sinryo.UseCompatibleTextRendering = false;
 			// 
 			// ycLabelEx19
@@ -814,7 +815,7 @@ namespace App
 			this.btnKamokuDel.Location = new System.Drawing.Point(840, 140);
 			this.btnKamokuDel.Name = "btnKamokuDel";
 			this.btnKamokuDel.Size = new System.Drawing.Size(56, 23);
-			this.btnKamokuDel.TabIndex = 492;
+			this.btnKamokuDel.TabIndex = 26;
 			this.btnKamokuDel.Text = "削除";
 			this.btnKamokuDel.UseVisualStyleBackColor = true;
 			// 
@@ -833,7 +834,7 @@ namespace App
 			this.iByoshoUmu.Name = "iByoshoUmu";
 			this.iByoshoUmu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iByoshoUmu.Size = new System.Drawing.Size(63, 25);
-			this.iByoshoUmu.TabIndex = 496;
+			this.iByoshoUmu.TabIndex = 17;
 			// 
 			// iTaikaiKbn
 			// 
@@ -850,7 +851,7 @@ namespace App
 			this.iTaikaiKbn.Name = "iTaikaiKbn";
 			this.iTaikaiKbn.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTaikaiKbn.Size = new System.Drawing.Size(88, 25);
-			this.iTaikaiKbn.TabIndex = 497;
+			this.iTaikaiKbn.TabIndex = 23;
 			// 
 			// iKaisetsushutai
 			// 
@@ -871,7 +872,7 @@ namespace App
 			this.iKaisetsushutai.SelectedIndexNullLeave = -1;
 			this.iKaisetsushutai.Size = new System.Drawing.Size(173, 27);
 			this.iKaisetsushutai.Sort = "";
-			this.iKaisetsushutai.TabIndex = 498;
+			this.iKaisetsushutai.TabIndex = 16;
 			this.iKaisetsushutai.TextSubItemIndex = -1;
 			// 
 			// FormMasterIryoKikan_DlgEntry
@@ -934,6 +935,7 @@ namespace App
 			this.Controls.Add(this.iAddr1);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
+			this.MaximizeBox = false;
 			this.Name = "FormMasterIryoKikan_DlgEntry";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "医療機関マスタ";

@@ -222,6 +222,7 @@ namespace App
 			this.Controls.Add(this.funckey);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
+			this.MaximizeBox = false;
 			this.Name = "FormStaff";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "会員情報";

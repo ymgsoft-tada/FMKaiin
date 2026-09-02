@@ -279,7 +279,7 @@
 			this.gbxBank.Location = new System.Drawing.Point(395, 309);
 			this.gbxBank.Name = "gbxBank";
 			this.gbxBank.Size = new System.Drawing.Size(462, 190);
-			this.gbxBank.TabIndex = 21;
+			this.gbxBank.TabIndex = 8;
 			this.gbxBank.TabStop = false;
 			this.gbxBank.Text = "銀行情報";
 			// 
@@ -298,7 +298,7 @@
 			this.iBankIfaxType.Name = "iBankIfaxType";
 			this.iBankIfaxType.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iBankIfaxType.Size = new System.Drawing.Size(179, 25);
-			this.iBankIfaxType.TabIndex = 29;
+			this.iBankIfaxType.TabIndex = 7;
 			// 
 			// ycLabelEx4
 			// 
@@ -328,7 +328,7 @@
 			this.iShitenName.Name = "iShitenName";
 			this.iShitenName.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShitenName.Size = new System.Drawing.Size(237, 23);
-			this.iShitenName.TabIndex = 25;
+			this.iShitenName.TabIndex = 3;
 			// 
 			// iBankName
 			// 
@@ -341,7 +341,7 @@
 			this.iBankName.Name = "iBankName";
 			this.iBankName.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iBankName.Size = new System.Drawing.Size(237, 23);
-			this.iBankName.TabIndex = 23;
+			this.iBankName.TabIndex = 1;
 			// 
 			// iKozaType
 			// 
@@ -358,7 +358,7 @@
 			this.iKozaType.Name = "iKozaType";
 			this.iKozaType.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKozaType.Size = new System.Drawing.Size(73, 25);
-			this.iKozaType.TabIndex = 26;
+			this.iKozaType.TabIndex = 4;
 			// 
 			// ycLabelEx15
 			// 
@@ -404,7 +404,7 @@
 			this.iKozaName.Name = "iKozaName";
 			this.iKozaName.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKozaName.Size = new System.Drawing.Size(289, 23);
-			this.iKozaName.TabIndex = 28;
+			this.iKozaName.TabIndex = 6;
 			// 
 			// ycLabelEx12
 			// 
@@ -432,7 +432,7 @@
 			this.iKozaNo.Name = "iKozaNo";
 			this.iKozaNo.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKozaNo.Size = new System.Drawing.Size(101, 23);
-			this.iKozaNo.TabIndex = 27;
+			this.iKozaNo.TabIndex = 5;
 			// 
 			// ycLabelEx11
 			// 
@@ -460,7 +460,7 @@
 			this.iShitenCD.Name = "iShitenCD";
 			this.iShitenCD.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShitenCD.Size = new System.Drawing.Size(46, 23);
-			this.iShitenCD.TabIndex = 24;
+			this.iShitenCD.TabIndex = 2;
 			// 
 			// ycLabelEx7
 			// 
@@ -488,7 +488,7 @@
 			this.iBankCD.Name = "iBankCD";
 			this.iBankCD.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iBankCD.Size = new System.Drawing.Size(46, 23);
-			this.iBankCD.TabIndex = 22;
+			this.iBankCD.TabIndex = 0;
 			// 
 			// ycLabelEx14
 			// 
@@ -579,7 +579,7 @@
 			this.iCost1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost1.Size = new System.Drawing.Size(100, 23);
 			this.iCost1.Spin.SpinOnKeys = false;
-			this.iCost1.TabIndex = 7;
+			this.iCost1.TabIndex = 0;
 			// 
 			// ycLabelEx36
 			// 
@@ -710,7 +710,7 @@
 			this.oCostAll.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.oCostAll.Size = new System.Drawing.Size(100, 23);
 			this.oCostAll.Spin.SpinOnKeys = false;
-			this.oCostAll.TabIndex = 19;
+			this.oCostAll.TabIndex = 12;
 			// 
 			// ycLabelEx44
 			// 
@@ -754,7 +754,7 @@
 			this.iCost12.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost12.Size = new System.Drawing.Size(100, 23);
 			this.iCost12.Spin.SpinOnKeys = false;
-			this.iCost12.TabIndex = 18;
+			this.iCost12.TabIndex = 11;
 			// 
 			// iCost11
 			// 
@@ -781,7 +781,7 @@
 			this.iCost11.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost11.Size = new System.Drawing.Size(100, 23);
 			this.iCost11.Spin.SpinOnKeys = false;
-			this.iCost11.TabIndex = 17;
+			this.iCost11.TabIndex = 10;
 			// 
 			// iCost10
 			// 
@@ -808,7 +808,7 @@
 			this.iCost10.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost10.Size = new System.Drawing.Size(100, 23);
 			this.iCost10.Spin.SpinOnKeys = false;
-			this.iCost10.TabIndex = 16;
+			this.iCost10.TabIndex = 9;
 			// 
 			// iCost9
 			// 
@@ -835,7 +835,7 @@
 			this.iCost9.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost9.Size = new System.Drawing.Size(100, 23);
 			this.iCost9.Spin.SpinOnKeys = false;
-			this.iCost9.TabIndex = 15;
+			this.iCost9.TabIndex = 8;
 			// 
 			// iCost8
 			// 
@@ -862,7 +862,7 @@
 			this.iCost8.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost8.Size = new System.Drawing.Size(100, 23);
 			this.iCost8.Spin.SpinOnKeys = false;
-			this.iCost8.TabIndex = 14;
+			this.iCost8.TabIndex = 7;
 			// 
 			// iCost7
 			// 
@@ -889,7 +889,7 @@
 			this.iCost7.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost7.Size = new System.Drawing.Size(100, 23);
 			this.iCost7.Spin.SpinOnKeys = false;
-			this.iCost7.TabIndex = 13;
+			this.iCost7.TabIndex = 6;
 			// 
 			// iCost6
 			// 
@@ -916,7 +916,7 @@
 			this.iCost6.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost6.Size = new System.Drawing.Size(100, 23);
 			this.iCost6.Spin.SpinOnKeys = false;
-			this.iCost6.TabIndex = 12;
+			this.iCost6.TabIndex = 5;
 			// 
 			// iCost5
 			// 
@@ -943,7 +943,7 @@
 			this.iCost5.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost5.Size = new System.Drawing.Size(100, 23);
 			this.iCost5.Spin.SpinOnKeys = false;
-			this.iCost5.TabIndex = 11;
+			this.iCost5.TabIndex = 4;
 			// 
 			// iCost4
 			// 
@@ -970,7 +970,7 @@
 			this.iCost4.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost4.Size = new System.Drawing.Size(100, 23);
 			this.iCost4.Spin.SpinOnKeys = false;
-			this.iCost4.TabIndex = 10;
+			this.iCost4.TabIndex = 3;
 			// 
 			// iCost3
 			// 
@@ -997,7 +997,7 @@
 			this.iCost3.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost3.Size = new System.Drawing.Size(100, 23);
 			this.iCost3.Spin.SpinOnKeys = false;
-			this.iCost3.TabIndex = 9;
+			this.iCost3.TabIndex = 2;
 			// 
 			// ycLabelEx43
 			// 
@@ -1109,7 +1109,7 @@
 			this.iCost2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCost2.Size = new System.Drawing.Size(100, 23);
 			this.iCost2.Spin.SpinOnKeys = false;
-			this.iCost2.TabIndex = 8;
+			this.iCost2.TabIndex = 1;
 			// 
 			// ycLabelEx38
 			// 

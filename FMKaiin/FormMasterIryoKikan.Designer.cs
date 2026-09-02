@@ -106,6 +106,7 @@ namespace App
 			this.Controls.Add(this.funckey);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
+			this.MaximizeBox = false;
 			this.Name = "FormMasterIryoKikan";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "医療機関マスタ";

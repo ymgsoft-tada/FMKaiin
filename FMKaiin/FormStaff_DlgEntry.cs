@@ -187,6 +187,7 @@ namespace App
 			AppCombo.SetComboBox(iSex, enumKbn.DSex);
 			//			AppCombo.SetComboBox(iJob, enumKbn.DTypeJob);
 			AppCombo.SetComboBox(iUsed, enumKbn.DTypeZaiseki); // 在籍区分
+			iUsed.ExSetSelectedIndexByValue((int)eTypeZaiseki.Zaiseki);
 			AppCombo.SetComboBox(iIdoShisetsuido, enumKbn.DTypeShisetsuIdo); // 施設異動
 			AppCombo.SetComboBox(iIdoKaiinkbn, enumKbn.DTypeIdoKaiin); // 会員区分変更
 			AppCombo.SetComboBox(iIdoEtc, enumKbn.DTypeIdoEtc); // 異動その他
@@ -267,7 +268,7 @@ namespace App
 			gctl.Add(new GControlDBHyphenSplit(t_staff.FSTF_Tel1, new Control[] { iTel1_1, iTel1_2, iTel1_3 }));
 			gctl.Add(new GControlDBHyphenSplit(t_staff.FSTF_Tel2, new Control[] { iTel2_1, iTel2_2, iTel2_3 }));
 
-			gctl.Add(new GControlDBCombo(t_staff.FSTF_Used, iUsed));
+//			gctl.Add(new GControlDBCombo(t_staff.FSTF_Used, iUsed));
 			gctl.Add(new GControlDBDate(t_staff.FSTF_DateBirthday, iBirthday.UcDateCtl));
 			//			gctl.Add(new GControlDBDate(t_staff.FSTF_DateNyusha, iDateNyusha.UcDateCtl));
 			//			gctl.Add(new GControlDBDate(t_staff.FSTF_DateTaishoku, iDateTaishoku.UcDateCtl));
