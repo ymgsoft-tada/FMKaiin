@@ -88,6 +88,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金]。
+		/// </summary>
+		public const string FKaihiShiharai = "KaihiShiharai";
+		/// <summary>
+		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金
+		/// </summary>
+		public eShiharai KaihiShiharai
+		{
+			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaihiShiharai]);	}
+			set	{	_set(FKaihiShiharai, (int)value);	}
+		}
+		
+		/// <summary>
+		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? KaihiShiharai_Null
+		{
+			get	{	if (row == null || row[FKaihiShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihiShiharai]); }	}
+			set	{	_set(FKaihiShiharai, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[[要時間]最終更新日時]。
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
@@ -133,6 +155,9 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Kaihi, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaihiShiharai, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));

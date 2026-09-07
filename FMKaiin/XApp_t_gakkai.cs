@@ -110,6 +110,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[学会索引(カナ)]。
+		/// </summary>
+		public const string FGKAI_Kana = "GKAI_Kana";
+		/// <summary>
+		/// 学会索引(カナ)
+		/// </summary>
+		public string GKAI_Kana
+		{
+			get	{	return Cast.String(row == null ? null : row[FGKAI_Kana]);	}
+			set	{	_set(FGKAI_Kana, value);	}
+		}
+		
+		/// <summary>
+		/// 学会索引(カナ)。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string GKAI_Kana_Null
+		{
+			get	{	if (row == null || row[FGKAI_Kana] == System.DBNull.Value) { return null; } else { return Cast.String(row[FGKAI_Kana]); }	}
+			set	{	_set(FGKAI_Kana, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[[要時間]最終更新日時]。
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
@@ -158,6 +180,11 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FGKAI_Name, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FGKAI_Kana, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

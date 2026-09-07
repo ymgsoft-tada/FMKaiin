@@ -284,6 +284,33 @@ namespace App
 	}
 	
 	/// <summary>
+	/// [列挙] 支払方法
+	/// </summary>
+	public enum eShiharai
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 口座①
+		/// </summary>
+		Koza1 = 1,
+		/// <summary>
+		/// 口座②
+		/// </summary>
+		Koza2 = 2,
+		/// <summary>
+		/// 口座③
+		/// </summary>
+		Koza3 = 3,
+		/// <summary>
+		/// 現金
+		/// </summary>
+		Genkin = 9,
+	}
+	
+	/// <summary>
 	/// [作成者 fj]
 	/// テーブル編集の際に使うクラスです。
 	/// </summary>
@@ -337,6 +364,10 @@ namespace App
 		/// eTypeIdoEtc に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DTypeIdoEtc;
+		/// <summary>
+		/// eShiharai に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DShiharai;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -412,6 +443,13 @@ namespace App
 			DTypeIdoEtc.Add((int)eTypeIdoEtc.MeisyoHenko, "名称変更");
 			DTypeIdoEtc.Add((int)eTypeIdoEtc.Hojinka, "法人化");
 			DTypeIdoEtc.Add((int)eTypeIdoEtc.AddrHenko, "自宅住所変更");
+			
+			DShiharai = new Dictionary<int, string>();
+			DShiharai.Add((int)eShiharai.None, "");
+			DShiharai.Add((int)eShiharai.Koza1, "口座①");
+			DShiharai.Add((int)eShiharai.Koza2, "口座②");
+			DShiharai.Add((int)eShiharai.Koza3, "口座③");
+			DShiharai.Add((int)eShiharai.Genkin, "現金");
 		}
 	}
 }

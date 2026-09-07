@@ -88,47 +88,16 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[医療機関コード]。
+		/// フィールド[診療科目フラグ(標榜科目のうち診療科目とするもの)]。
 		/// </summary>
-		public const string FIRK_Code = "IRK_Code";
+		public const string FChk_Shinryoka = "Chk_Shinryoka";
 		/// <summary>
-		/// 医療機関コード
+		/// 診療科目フラグ(標榜科目のうち診療科目とするもの)
 		/// </summary>
-		public int IRK_Code
+		public bool Chk_Shinryoka
 		{
-			get	{	return Cast.Int(row == null ? null : row[FIRK_Code]);	}
-			set	{	_set(FIRK_Code, value);	}
-		}
-		
-		/// <summary>
-		/// 医療機関コード。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? IRK_Code_Null
-		{
-			get	{	if (row == null || row[FIRK_Code] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FIRK_Code]); }	}
-			set	{	_set(FIRK_Code, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[医療機関名]。
-		/// </summary>
-		public const string FIRK_Name = "IRK_Name";
-		/// <summary>
-		/// 医療機関名
-		/// </summary>
-		public string IRK_Name
-		{
-			get	{	return Cast.String(row == null ? null : row[FIRK_Name]);	}
-			set	{	_set(FIRK_Name, value);	}
-		}
-		
-		/// <summary>
-		/// 医療機関名。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public string IRK_Name_Null
-		{
-			get	{	if (row == null || row[FIRK_Name] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Name]); }	}
-			set	{	_set(FIRK_Name, value);	}
+			get	{	return Cast.Bool(row == null ? null : row[FChk_Shinryoka]);	}
+			set	{	_set(FChk_Shinryoka, value);	}
 		}
 		
 		/// <summary>
@@ -151,28 +120,6 @@ namespace App
 		{
 			get	{	if (row == null || row[FLastUpdate] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FLastUpdate]); }	}
 			set	{	_set_datetime(FLastUpdate, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[施設カナ]。
-		/// </summary>
-		public const string FIRK_Kana = "IRK_Kana";
-		/// <summary>
-		/// 施設カナ
-		/// </summary>
-		public string IRK_Kana
-		{
-			get	{	return Cast.String(row == null ? null : row[FIRK_Kana]);	}
-			set	{	_set(FIRK_Kana, value);	}
-		}
-		
-		/// <summary>
-		/// 施設カナ。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public string IRK_Kana_Null
-		{
-			get	{	if (row == null || row[FIRK_Kana] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Kana]); }	}
-			set	{	_set(FIRK_Kana, value);	}
 		}
 		
 		/// <summary>
@@ -245,20 +192,10 @@ namespace App
 			col = new DataColumn(FID_Shinryoka, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIRK_Code, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FIRK_Name, typeof(string));
-			col.AllowDBNull = true;
-			col.MaxLength = 255;
+			col = new DataColumn(FChk_Shinryoka, typeof(bool));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FIRK_Kana, typeof(string));
-			col.AllowDBNull = true;
-			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FIRK_Tsusho, typeof(string));
