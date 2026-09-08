@@ -298,9 +298,11 @@
     <Compile Include="XApp_t_basic.cs" />
     <Compile Include="XApp_t_gakkai.cs" />
     <Compile Include="XApp_t_gakko.cs" />
+    <Compile Include="XApp_t_ifaxgroup.cs" />
     <Compile Include="XApp_t_iryokikan.cs" />
     <Compile Include="XApp_t_iryokikan_shinryoka.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
+    <Compile Include="XApp_t_kaihikbn.cs" />
     <Compile Include="XApp_t_kaiin_gakkai.cs" />
     <Compile Include="XApp_t_kaiin_kaihi.cs" />
     <Compile Include="XApp_t_kaiin_shinryoka.cs" />

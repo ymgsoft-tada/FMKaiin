@@ -161,21 +161,6 @@ namespace App
 	}
 	
 	/// <summary>
-	/// [列挙] iFax区分
-	/// </summary>
-	public enum eTypeIfax
-	{
-		/// <summary>
-		/// 
-		/// </summary>
-		None = 0,
-		/// <summary>
-		/// その他（iFAX登録なし）
-		/// </summary>
-		etc = 99,
-	}
-	
-	/// <summary>
 	/// [列挙] 在籍区分
 	/// </summary>
 	public enum eTypeZaiseki
@@ -345,10 +330,6 @@ namespace App
 		/// </summary>
 		public static Dictionary<int, string> DCreateType;
 		/// <summary>
-		/// eTypeIfax に対応した辞書です。
-		/// </summary>
-		public static Dictionary<int, string> DTypeIfax;
-		/// <summary>
 		/// eTypeZaiseki に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DTypeZaiseki;
@@ -411,10 +392,6 @@ namespace App
 			DCreateType = new Dictionary<int, string>();
 			DCreateType.Add((int)eCreateType.None, "");
 			DCreateType.Add((int)eCreateType.Import, "インポート");
-			
-			DTypeIfax = new Dictionary<int, string>();
-			DTypeIfax.Add((int)eTypeIfax.None, "");
-			DTypeIfax.Add((int)eTypeIfax.etc, "その他（iFAX登録なし）");
 			
 			DTypeZaiseki = new Dictionary<int, string>();
 			DTypeZaiseki.Add((int)eTypeZaiseki.None, "");

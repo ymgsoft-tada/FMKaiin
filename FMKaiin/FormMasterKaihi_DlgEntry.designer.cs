@@ -40,7 +40,7 @@
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iShortName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.gbxBank = new System.Windows.Forms.GroupBox();
-			this.iBankIfaxType = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.iBankIfax = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.iShitenName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iBankName = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -93,7 +93,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShortName)).BeginInit();
 			this.gbxBank.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.iBankIfaxType)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iBankIfax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKozaType)).BeginInit();
@@ -262,7 +262,7 @@
 			// 
 			// gbxBank
 			// 
-			this.gbxBank.Controls.Add(this.iBankIfaxType);
+			this.gbxBank.Controls.Add(this.iBankIfax);
 			this.gbxBank.Controls.Add(this.ycLabelEx4);
 			this.gbxBank.Controls.Add(this.iShitenName);
 			this.gbxBank.Controls.Add(this.iBankName);
@@ -283,22 +283,22 @@
 			this.gbxBank.TabStop = false;
 			this.gbxBank.Text = "銀行情報";
 			// 
-			// iBankIfaxType
+			// iBankIfax
 			// 
-			this.iBankIfaxType.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iBankIfaxType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.iBankIfaxType.ExCompareContent = null;
-			this.iBankIfaxType.ExCompareValue = null;
-			this.iBankIfaxType.ExDataSource = null;
-			this.iBankIfaxType.ExFocusHighlight = true;
-			this.iBankIfaxType.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
-			this.iBankIfaxType.ListHeaderPane.Height = 27;
-			this.iBankIfaxType.ListHeaderPane.Visible = false;
-			this.iBankIfaxType.Location = new System.Drawing.Point(123, 154);
-			this.iBankIfaxType.Name = "iBankIfaxType";
-			this.iBankIfaxType.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iBankIfaxType.Size = new System.Drawing.Size(179, 25);
-			this.iBankIfaxType.TabIndex = 7;
+			this.iBankIfax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iBankIfax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iBankIfax.ExCompareContent = null;
+			this.iBankIfax.ExCompareValue = null;
+			this.iBankIfax.ExDataSource = null;
+			this.iBankIfax.ExFocusHighlight = true;
+			this.iBankIfax.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iBankIfax.ListHeaderPane.Height = 27;
+			this.iBankIfax.ListHeaderPane.Visible = false;
+			this.iBankIfax.Location = new System.Drawing.Point(123, 154);
+			this.iBankIfax.Name = "iBankIfax";
+			this.iBankIfax.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iBankIfax.Size = new System.Drawing.Size(179, 25);
+			this.iBankIfax.TabIndex = 7;
 			// 
 			// ycLabelEx4
 			// 
@@ -1263,7 +1263,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShortName)).EndInit();
 			this.gbxBank.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.iBankIfaxType)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iBankIfax)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKozaType)).EndInit();
@@ -1352,7 +1352,7 @@
 		private YControlLabelEx.YcLabelEx ycLabelEx45;
 		private GControlGcTextBoxEx.GcTextBoxEx iKaihiGunCode;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
-		private GControlGcComboBoxEx.GcComboBoxEx iBankIfaxType;
+		private GControlGcComboBoxEx.GcComboBoxEx iBankIfax;
 		private GControlGcComboBoxEx.GcComboBoxEx iKbnKaihi;
 	}
 }

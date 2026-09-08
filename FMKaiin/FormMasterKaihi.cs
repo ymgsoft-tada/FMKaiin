@@ -260,7 +260,7 @@ namespace App
 			if (kbnKaihiId != 0)
 			{
 				if (filter != "") filter += " AND ";
-				filter += $"{t_kaihi.FID_KbnKaihi} = {kbnKaihiId}";
+				filter += $"{t_kaihi.FID_KaihiKbn} = {kbnKaihiId}";
 			}
 
 			// 会費コードの検索

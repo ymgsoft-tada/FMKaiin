@@ -135,10 +135,15 @@ namespace App
 			// コンボボックスの値セット
 			// enumをセット
 			AppCombo.SetComboBox(iKozaType, enumKbn.DTypeKoza, (int)eTypeKoza.None);
-			AppCombo.SetComboBox(iBankIfaxType, enumKbn.DTypeIfax);
+//			AppCombo.SetComboBox(iBankIfaxType, enumKbn.DTypeIfax); テーブル取得へ修正する
+// エラー出ないよう1データ手動セット
+			iBankIfax.ExBeginUpdate();
+			iBankIfax.ExAddItem("その他", 1);
+			iBankIfax.ExEndUpdate();
+//ここまで
 
 			// iSearch
-//			AppTableCombo.SetComboBox_Shokumu(iKbnKaihi);
+			//			AppTableCombo.SetComboBox_Shokumu(iKbnKaihi);
 
 			// 手動セット
 			iSearchUsed.ExBeginUpdate();
@@ -154,7 +159,7 @@ namespace App
 			gctl = new GControlDB(this, getDataRow);
 
 //			gctl.Add(new GControlDBCombo(t_kaihi.FID_KbnKaihi, iKbnKaihi.ComboBox)); // 会費区分
-			gctl.Add(new GControlDBCombo(t_kaihi.FID_KbnKaihi, iKbnKaihi)); // 会費区分
+			gctl.Add(new GControlDBCombo(t_kaihi.FID_KaihiKbn, iKbnKaihi)); // 会費区分
 			gctl.Add(new GControlDBText(t_kaihi.FCD_Kaihi, iCode)); // 会費コード
 //			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Name, iName)); // 会費印刷用名称
 //			gctl.Add(new GControlDBText(t_kaihi.FKaihi_ShortName, iShortName)); // 会費略称
@@ -191,7 +196,7 @@ namespace App
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankKozaType, iKozaType));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaNo, iKozaNo));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaName, iKozaName));
-			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfaxType, iBankIfaxType));
+			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfax, iBankIfax));
 
 			gctl.EndAdd(AppDbRule.Rule);
 

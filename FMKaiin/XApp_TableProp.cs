@@ -51,6 +51,11 @@ namespace App
 		public const string t_gakko = "t_gakko";
 		
 		/// <summary>
+		/// t_ifaxgroup
+		/// </summary>
+		public const string t_ifaxgroup = "t_ifaxgroup";
+		
+		/// <summary>
 		/// t_iryokikan
 		/// </summary>
 		public const string t_iryokikan = "t_iryokikan";
@@ -64,6 +69,11 @@ namespace App
 		/// t_kaihi
 		/// </summary>
 		public const string t_kaihi = "t_kaihi";
+		
+		/// <summary>
+		/// t_kaihikbn
+		/// </summary>
+		public const string t_kaihikbn = "t_kaihikbn";
 		
 		/// <summary>
 		/// t_kaiin_gakkai

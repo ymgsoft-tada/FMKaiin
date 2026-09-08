@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会費コード(ID)]。
+		/// フィールド[医会会費ID]。
 		/// </summary>
 		public const string FID_Kaihi = "ID_Kaihi";
 		/// <summary>
-		/// 会費コード(ID)
+		/// 医会会費ID
 		/// </summary>
 		public int ID_Kaihi
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 会費コード(ID)。System.DBNull.Value の場合 null を示します。
+		/// 医会会費ID。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? ID_Kaihi_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会費コード]。
+		/// フィールド[医会会費コード]。
 		/// </summary>
 		public const string FCD_Kaihi = "CD_Kaihi";
 		/// <summary>
-		/// 会費コード
+		/// 医会会費コード
 		/// </summary>
 		public int CD_Kaihi
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 会費コード。System.DBNull.Value の場合 null を示します。
+		/// 医会会費コード。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? CD_Kaihi_Null
 		{
@@ -88,25 +88,25 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会費区分(ID)]。
+		/// フィールド[会費区分ID]。
 		/// </summary>
-		public const string FID_KbnKaihi = "ID_KbnKaihi";
+		public const string FID_KaihiKbn = "ID_KaihiKbn";
 		/// <summary>
-		/// 会費区分(ID)
+		/// 会費区分ID
 		/// </summary>
-		public int ID_KbnKaihi
+		public int ID_KaihiKbn
 		{
-			get	{	return Cast.Int(row == null ? null : row[FID_KbnKaihi]);	}
-			set	{	_set(FID_KbnKaihi, value);	}
+			get	{	return Cast.Int(row == null ? null : row[FID_KaihiKbn]);	}
+			set	{	_set(FID_KaihiKbn, value);	}
 		}
 		
 		/// <summary>
-		/// 会費区分(ID)。System.DBNull.Value の場合 null を示します。
+		/// 会費区分ID。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public int? ID_KbnKaihi_Null
+		public int? ID_KaihiKbn_Null
 		{
-			get	{	if (row == null || row[FID_KbnKaihi] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KbnKaihi]); }	}
-			set	{	_set(FID_KbnKaihi, value);	}
+			get	{	if (row == null || row[FID_KaihiKbn] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KaihiKbn]); }	}
+			set	{	_set(FID_KaihiKbn, value);	}
 		}
 		
 		/// <summary>
@@ -585,25 +585,25 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[iFax区分 0/None/ 99/etc/その他（iFAX登録なし）]。
+		/// フィールド[iFAXグループID]。
 		/// </summary>
-		public const string FKaihi_BankIfaxType = "Kaihi_BankIfaxType";
+		public const string FKaihi_BankIfax = "Kaihi_BankIfax";
 		/// <summary>
-		/// iFax区分 0/None/ 99/etc/その他（iFAX登録なし）
+		/// iFAXグループID
 		/// </summary>
-		public eTypeIfax Kaihi_BankIfaxType
+		public int Kaihi_BankIfax
 		{
-			get	{	return (eTypeIfax)Cast.Int(row == null ? null : row[FKaihi_BankIfaxType]);	}
-			set	{	_set(FKaihi_BankIfaxType, (int)value);	}
+			get	{	return Cast.Int(row == null ? null : row[FKaihi_BankIfax]);	}
+			set	{	_set(FKaihi_BankIfax, value);	}
 		}
 		
 		/// <summary>
-		/// iFax区分 0/None/ 99/etc/その他（iFAX登録なし）。System.DBNull.Value の場合 null を示します。
+		/// iFAXグループID。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public int? Kaihi_BankIfaxType_Null
+		public int? Kaihi_BankIfax_Null
 		{
-			get	{	if (row == null || row[FKaihi_BankIfaxType] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihi_BankIfaxType]); }	}
-			set	{	_set(FKaihi_BankIfaxType, value);	}
+			get	{	if (row == null || row[FKaihi_BankIfax] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihi_BankIfax]); }	}
+			set	{	_set(FKaihi_BankIfax, value);	}
 		}
 		
 		/// <summary>
@@ -654,7 +654,7 @@ namespace App
 			col = new DataColumn(FCD_Kaihi, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FID_KbnKaihi, typeof(int));
+			col = new DataColumn(FID_KaihiKbn, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaihi_Name, typeof(string));
@@ -733,7 +733,7 @@ namespace App
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaihi_BankIfaxType, typeof(int));
+			col = new DataColumn(FKaihi_BankIfax, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));
