@@ -178,9 +178,9 @@ namespace App
 			this.lblTitle.Location = new System.Drawing.Point(46, 16);
 			this.lblTitle.Name = "lblTitle";
 			this.lblTitle.SingleBorderColor = System.Drawing.Color.Empty;
-			this.lblTitle.Size = new System.Drawing.Size(100, 23);
+			this.lblTitle.Size = new System.Drawing.Size(70, 23);
 			this.lblTitle.TabIndex = 77;
-			this.lblTitle.Text = "スタッフ一覧";
+			this.lblTitle.Text = "会員一覧";
 			// 
 			// ycLabelEx1
 			// 
@@ -222,9 +222,10 @@ namespace App
 			this.Controls.Add(this.funckey);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
+			this.MaximizeBox = false;
 			this.Name = "FormStaff";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "FormStaff";
+			this.Text = "会員情報";
 			this.Controls.SetChildIndex(this.funckey, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx1, 0);
 			this.Controls.SetChildIndex(this.lblTitle, 0);

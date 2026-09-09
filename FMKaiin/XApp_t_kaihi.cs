@@ -1,6 +1,6 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public partial class t_kaihi : FieldProp
 	{
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
+		/// Access ‚‘¬ŒŸõ—p
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»ã‚³ãƒ¼ãƒ‰(ID)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆã‰ï‰ï”ïID]B
 		/// </summary>
 		public const string FID_Kaihi = "ID_Kaihi";
 		/// <summary>
-		/// ä¼šè²»ã‚³ãƒ¼ãƒ‰(ID)
+		/// ˆã‰ï‰ï”ïID
 		/// </summary>
 		public int ID_Kaihi
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šè²»ã‚³ãƒ¼ãƒ‰(ID)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆã‰ï‰ï”ïIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Kaihi_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆã‰ï‰ï”ïƒR[ƒh]B
 		/// </summary>
 		public const string FCD_Kaihi = "CD_Kaihi";
 		/// <summary>
-		/// ä¼šè²»ã‚³ãƒ¼ãƒ‰
+		/// ˆã‰ï‰ï”ïƒR[ƒh
 		/// </summary>
 		public int CD_Kaihi
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šè²»ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆã‰ï‰ï”ïƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? CD_Kaihi_Null
 		{
@@ -88,33 +88,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»åŒºåˆ†(ID)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ï”ï‹æ•ªID]B
 		/// </summary>
-		public const string FID_KbnKkaihi = "ID_KbnKkaihi";
+		public const string FID_KaihiKbn = "ID_KaihiKbn";
 		/// <summary>
-		/// ä¼šè²»åŒºåˆ†(ID)
+		/// ‰ï”ï‹æ•ªID
 		/// </summary>
-		public int ID_KbnKkaihi
+		public int ID_KaihiKbn
 		{
-			get	{	return Cast.Int(row == null ? null : row[FID_KbnKkaihi]);	}
-			set	{	_set(FID_KbnKkaihi, value);	}
+			get	{	return Cast.Int(row == null ? null : row[FID_KaihiKbn]);	}
+			set	{	_set(FID_KaihiKbn, value);	}
 		}
 		
 		/// <summary>
-		/// ä¼šè²»åŒºåˆ†(ID)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ï”ï‹æ•ªIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
-		public int? ID_KbnKkaihi_Null
+		public int? ID_KaihiKbn_Null
 		{
-			get	{	if (row == null || row[FID_KbnKkaihi] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KbnKkaihi]); }	}
-			set	{	_set(FID_KbnKkaihi, value);	}
+			get	{	if (row == null || row[FID_KaihiKbn] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KaihiKbn]); }	}
+			set	{	_set(FID_KaihiKbn, value);	}
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»å°åˆ·ç”¨åç§°]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ï”ïˆóü—p–¼Ì]B
 		/// </summary>
 		public const string FKaihi_Name = "Kaihi_Name";
 		/// <summary>
-		/// ä¼šè²»å°åˆ·ç”¨åç§°
+		/// ‰ï”ïˆóü—p–¼Ì
 		/// </summary>
 		public string Kaihi_Name
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šè²»å°åˆ·ç”¨åç§°ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ï”ïˆóü—p–¼ÌBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaihi_Name_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»ç•¥ç§°]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ï”ï—ªÌ]B
 		/// </summary>
 		public const string FKaihi_ShortName = "Kaihi_ShortName";
 		/// <summary>
-		/// ä¼šè²»ç•¥ç§°
+		/// ‰ï”ï—ªÌ
 		/// </summary>
 		public string Kaihi_ShortName
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šè²»ç•¥ç§°ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ï”ï—ªÌBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaihi_ShortName_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å‚™è€ƒ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[”õl]B
 		/// </summary>
 		public const string FKaihi_Bikou = "Kaihi_Bikou";
 		/// <summary>
-		/// å‚™è€ƒ
+		/// ”õl
 		/// </summary>
 		public string Kaihi_Bikou
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å‚™è€ƒã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ”õlBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaihi_Bikou_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»ç¾¤]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ï”ïŒQ]B
 		/// </summary>
 		public const string FKaihi_GunCode = "Kaihi_GunCode";
 		/// <summary>
-		/// ä¼šè²»ç¾¤
+		/// ‰ï”ïŒQ
 		/// </summary>
 		public int Kaihi_GunCode
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šè²»ç¾¤ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ï”ïŒQBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaihi_GunCode_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒã‚¹ã‚¿æ¤œç´¢è¡¨ç¤ºåŒºåˆ†]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ƒ}ƒXƒ^ŒŸõ•\¦‹æ•ª]B
 		/// </summary>
 		public const string FKaihi_SearchUsed = "Kaihi_SearchUsed";
 		/// <summary>
-		/// ãƒã‚¹ã‚¿æ¤œç´¢è¡¨ç¤ºåŒºåˆ†
+		/// ƒ}ƒXƒ^ŒŸõ•\¦‹æ•ª
 		/// </summary>
 		public bool Kaihi_SearchUsed
 		{
@@ -211,11 +211,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_1æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_1Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost1 = "Kaihi_GetsugakuCost1";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_1æœˆ
+		/// ŒŠz”ï—p_1Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost1
 		{
@@ -224,7 +224,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_1æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_1ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost1_Null
 		{
@@ -233,11 +233,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_2æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_2Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost2 = "Kaihi_GetsugakuCost2";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_2æœˆ
+		/// ŒŠz”ï—p_2Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost2
 		{
@@ -246,7 +246,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_2æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_2ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost2_Null
 		{
@@ -255,11 +255,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_3æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_3Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost3 = "Kaihi_GetsugakuCost3";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_3æœˆ
+		/// ŒŠz”ï—p_3Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost3
 		{
@@ -268,7 +268,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_3æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_3ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost3_Null
 		{
@@ -277,11 +277,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_4æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_4Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost4 = "Kaihi_GetsugakuCost4";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_4æœˆ
+		/// ŒŠz”ï—p_4Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost4
 		{
@@ -290,7 +290,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_4æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_4ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost4_Null
 		{
@@ -299,11 +299,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_5æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_5Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost5 = "Kaihi_GetsugakuCost5";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_5æœˆ
+		/// ŒŠz”ï—p_5Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost5
 		{
@@ -312,7 +312,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_5æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_5ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost5_Null
 		{
@@ -321,11 +321,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_6æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_6Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost6 = "Kaihi_GetsugakuCost6";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_6æœˆ
+		/// ŒŠz”ï—p_6Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost6
 		{
@@ -334,7 +334,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_6æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_6ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost6_Null
 		{
@@ -343,11 +343,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_7æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_7Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost7 = "Kaihi_GetsugakuCost7";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_7æœˆ
+		/// ŒŠz”ï—p_7Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost7
 		{
@@ -356,7 +356,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_7æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_7ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost7_Null
 		{
@@ -365,11 +365,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_8æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_8Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost8 = "Kaihi_GetsugakuCost8";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_8æœˆ
+		/// ŒŠz”ï—p_8Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost8
 		{
@@ -378,7 +378,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_8æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_8ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost8_Null
 		{
@@ -387,11 +387,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_9æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_9Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost9 = "Kaihi_GetsugakuCost9";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_9æœˆ
+		/// ŒŠz”ï—p_9Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost9
 		{
@@ -400,7 +400,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_9æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_9ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost9_Null
 		{
@@ -409,11 +409,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_10æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_10Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost10 = "Kaihi_GetsugakuCost10";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_10æœˆ
+		/// ŒŠz”ï—p_10Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost10
 		{
@@ -422,7 +422,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_10æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_10ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost10_Null
 		{
@@ -431,11 +431,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_11æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_11Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost11 = "Kaihi_GetsugakuCost11";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_11æœˆ
+		/// ŒŠz”ï—p_11Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost11
 		{
@@ -444,7 +444,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_11æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_11ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost11_Null
 		{
@@ -453,11 +453,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆé¡è²»ç”¨_12æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒŠz”ï—p_12Œ]B
 		/// </summary>
 		public const string FKaihi_GetsugakuCost12 = "Kaihi_GetsugakuCost12";
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_12æœˆ
+		/// ŒŠz”ï—p_12Œ
 		/// </summary>
 		public decimal Kaihi_GetsugakuCost12
 		{
@@ -466,7 +466,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœˆé¡è²»ç”¨_12æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒŠz”ï—p_12ŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public decimal? Kaihi_GetsugakuCost12_Null
 		{
@@ -475,11 +475,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹âsƒR[ƒh]B
 		/// </summary>
 		public const string FKaihi_BankCode = "Kaihi_BankCode";
 		/// <summary>
-		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰
+		/// ‹âsƒR[ƒh
 		/// </summary>
 		public int Kaihi_BankCode
 		{
@@ -488,7 +488,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaihi_BankCode_Null
 		{
@@ -497,11 +497,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[x“XƒR[ƒh]B
 		/// </summary>
 		public const string FKaihi_BankCodeShiten = "Kaihi_BankCodeShiten";
 		/// <summary>
-		/// æ”¯åº—ã‚³ãƒ¼ãƒ‰
+		/// x“XƒR[ƒh
 		/// </summary>
 		public int Kaihi_BankCodeShiten
 		{
@@ -510,7 +510,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// x“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaihi_BankCodeShiten_Null
 		{
@@ -519,11 +519,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À]B
 		/// </summary>
 		public const string FKaihi_BankKozaType = "Kaihi_BankKozaType";
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À
 		/// </summary>
 		public eTypeKoza Kaihi_BankKozaType
 		{
@@ -532,7 +532,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–ÀBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaihi_BankKozaType_Null
 		{
@@ -541,11 +541,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ”Ô†]B
 		/// </summary>
 		public const string FKaihi_BankKozaNo = "Kaihi_BankKozaNo";
 		/// <summary>
-		/// å£åº§ç•ªå·
+		/// ŒûÀ”Ô†
 		/// </summary>
 		public string Kaihi_BankKozaNo
 		{
@@ -554,7 +554,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaihi_BankKozaNo_Null
 		{
@@ -563,11 +563,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åç¾©]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ–¼‹`]B
 		/// </summary>
 		public const string FKaihi_BankKozaName = "Kaihi_BankKozaName";
 		/// <summary>
-		/// å£åº§åç¾©
+		/// ŒûÀ–¼‹`
 		/// </summary>
 		public string Kaihi_BankKozaName
 		{
@@ -576,7 +576,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§åç¾©ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ–¼‹`BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaihi_BankKozaName_Null
 		{
@@ -585,33 +585,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[iFaxåŒºåˆ† 0/None/ 99/etc/ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[iFAXƒOƒ‹[ƒvID]B
 		/// </summary>
-		public const string FKaihi_BankIfaxType = "Kaihi_BankIfaxType";
+		public const string FKaihi_BankIfax = "Kaihi_BankIfax";
 		/// <summary>
-		/// iFaxåŒºåˆ† 0/None/ 99/etc/ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰
+		/// iFAXƒOƒ‹[ƒvID
 		/// </summary>
-		public eTypeIfax Kaihi_BankIfaxType
+		public int Kaihi_BankIfax
 		{
-			get	{	return (eTypeIfax)Cast.Int(row == null ? null : row[FKaihi_BankIfaxType]);	}
-			set	{	_set(FKaihi_BankIfaxType, (int)value);	}
+			get	{	return Cast.Int(row == null ? null : row[FKaihi_BankIfax]);	}
+			set	{	_set(FKaihi_BankIfax, value);	}
 		}
 		
 		/// <summary>
-		/// iFaxåŒºåˆ† 0/None/ 99/etc/ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// iFAXƒOƒ‹[ƒvIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
-		public int? Kaihi_BankIfaxType_Null
+		public int? Kaihi_BankIfax_Null
 		{
-			get	{	if (row == null || row[FKaihi_BankIfaxType] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihi_BankIfaxType]); }	}
-			set	{	_set(FKaihi_BankIfaxType, value);	}
+			get	{	if (row == null || row[FKaihi_BankIfax] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihi_BankIfax]); }	}
+			set	{	_set(FKaihi_BankIfax, value);	}
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
+		/// [—vŠÔ]ÅIXV“ú
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -620,7 +620,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -630,15 +630,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		/// </summary>
-		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
+		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
 		public t_kaihi(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_kaihi å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+		/// t_kaihi Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
 		/// </summary>
-		/// <returns>t_kaihi å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
+		/// <returns>t_kaihi Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_kaihi");
@@ -654,7 +654,7 @@ namespace App
 			col = new DataColumn(FCD_Kaihi, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FID_KbnKkaihi, typeof(int));
+			col = new DataColumn(FID_KaihiKbn, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaihi_Name, typeof(string));
@@ -733,7 +733,7 @@ namespace App
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaihi_BankIfaxType, typeof(int));
+			col = new DataColumn(FKaihi_BankIfax, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));

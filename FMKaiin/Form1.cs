@@ -22,11 +22,20 @@ namespace App
 			btnBankCode.Click += BtnBankCode_Click;
 			btnKaihi.Click += BtnKaihi_Click;
 			btnIryokikanToroku.Click += BtnIryokikanToroku_Click;
+			btnShinryoka.Click += BtnShinryoka_Click;
 		}
 
 		private void BtnIryokikanToroku_Click(object sender, EventArgs e)
 		{
 			FormMasterIryoKikan frm = new FormMasterIryoKikan();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		private void BtnShinryoka_Click(object sender, EventArgs e)
+		{
+			FormMasterShinryoka frm = new FormMasterShinryoka();
 			frm.ShowDialog();
 			frm.Dispose();
 			frm = null;
@@ -42,6 +51,9 @@ namespace App
 
 		private void BtnStaff_Click(object sender, EventArgs e)
 		{
+			// 銀行コードテーブルの取得 毎回いらない？検討
+			initBankCode();
+
 			FormStaff frm = new FormStaff();
 			frm.ShowDialog();
 			frm.Dispose();
@@ -100,7 +112,7 @@ namespace App
 			// 銀行コードは大量のデータになるので、スプラッシュ時ではなくログインしてから取得する
 			AppGlobal.DB.GetReFillTable(TableProp.t_bank_code);
 			AppGlobal.InitBankCodeMg();
-			AppGlobal.Banks.Init(); // FBファイル作成に利用
+//			AppGlobal.Banks.Init(); // FBファイル作成に利用
 
 		}
 

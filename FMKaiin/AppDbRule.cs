@@ -262,9 +262,9 @@ namespace App
 			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Tsusho, 30));
 
 			Rule.Add(post, t_iryokikan.FIRK_Post);
-			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Add2, 40));
+			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Addr2, 40));
 			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Tel1, new int[] { 5, 4, 5 }));
-			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Tes2, new int[] { 5, 4, 5 }));
+			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Fax1, new int[] { 5, 4, 5 }));
 			#endregion
 		}
 

@@ -27,8 +27,21 @@ namespace App
 		/// <summary>担当者情報</summary>
 		public static AppTanto Tantos { get; private set; }
 
+		/// <summary>医療機関情報</summary>
+		public static AppIryoKikan IryoKikans { get; private set; }
 		/// <summary>医会会費情報</summary>
 		public static AppKaihi Kaihis { get; private set; }
+
+		/// <summary>診療科情報</summary>
+		public static AppShinryoka Shinryokas { get; private set; }
+		/// <summary>学会情報</summary>
+		public static AppGakkai Gakkais { get; private set; }
+		/// <summary>学校情報</summary>
+		public static AppGakko Gakkos { get; private set; }
+		/// <summary>施設・業務情報</summary>
+		public static AppShisetsugyomu Shisetsugyomus { get; private set; } // enum持ちかも
+		/// <summary>開設主体情報</summary>
+		public static AppKaisetsushutai Kaisetsushutais{ get; private set; } // enum持ちかも
 
 		/// <summary>ログインユーザー</summary>
 		public static Tanto LoginUser { get; private set; }
@@ -51,7 +64,13 @@ namespace App
 			InitBasic();
 			InitStaff();
 			InitTanto();
+			InitIryoKikan();
 			InitKaihi();
+			InitShinryoka();
+			InitGakkai();
+			InitGakko();
+			InitShisetsugyomu();
+			InitKaisetsusyutai();
 		}
 
 		/// <summary>
@@ -102,6 +121,24 @@ namespace App
 		}
 
 		/// <summary>
+		/// 銀行コード管理クラスの初期化
+		/// </summary>
+		public static void InitBankCodeMg()
+		{
+			BankCodeMg = new BankCodeManager();
+			BankCodeMg.Init();
+		}
+
+		/// <summary>
+		/// 医療機関情報の初期化
+		/// </summary>
+		public static void InitIryoKikan()
+		{
+			IryoKikans = new AppIryoKikan();
+			IryoKikans.Init();
+		}
+
+		/// <summary>
 		/// 医会会費情報の初期化
 		/// </summary>
 		public static void InitKaihi()
@@ -111,13 +148,50 @@ namespace App
 		}
 
 		/// <summary>
-		/// 銀行コード管理クラスの初期化
+		/// 診療科情報の初期化
 		/// </summary>
-		public static void InitBankCodeMg()
+		public static void InitShinryoka()
 		{
-			BankCodeMg = new BankCodeManager();
-			BankCodeMg.Init();
+			Shinryokas = new AppShinryoka();
+			Shinryokas.Init();
 		}
+
+		/// <summary>
+		/// 学会情報の初期化
+		/// </summary>
+		public static void InitGakkai()
+		{
+			Gakkais = new AppGakkai();
+			Gakkais.Init();
+		}
+
+		/// <summary>
+		/// 学校情報の初期化
+		/// </summary>
+		public static void InitGakko()
+		{
+			Gakkos = new AppGakko();
+			Gakkos.Init();
+		}
+
+		/// <summary>
+		/// 施設・業務情報の初期化
+		/// </summary>
+		public static void InitShisetsugyomu()
+		{
+			Shisetsugyomus = new AppShisetsugyomu();
+			Shisetsugyomus.Init();
+		}
+
+		/// <summary>
+		/// 開設主体情報の初期化
+		/// </summary>
+		public static void InitKaisetsusyutai()
+		{
+			Kaisetsushutais = new AppKaisetsushutai();
+			Kaisetsushutais.Init();
+		}
+		//----
 
 		/// <summary>
 		/// DBの初期化処理

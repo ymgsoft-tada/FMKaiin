@@ -320,14 +320,6 @@ namespace App
 					"削除",	
 					""),
 			new FuncKeyDefine(
-					Keys.F7,	
-					"提出先マスター",	
-					""),
-			new FuncKeyDefine(
-					Keys.F9,	
-					"一覧表印刷",	
-					""),
-			new FuncKeyDefine(
 					Keys.F12,	
 					"閉じる",	
 					""),
@@ -346,17 +338,9 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine RowDelete = Functions[2];
 		/// <summary>
-		/// 提出先マスター
-		/// </summary>
-		public readonly static FuncKeyDefine ShowTeishutsusaki = Functions[3];
-		/// <summary>
-		/// 一覧表印刷
-		/// </summary>
-		public readonly static FuncKeyDefine Print = Functions[4];
-		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[5];
+		public readonly static FuncKeyDefine Close = Functions[3];
 	}
 	#endregion
 
@@ -372,14 +356,6 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
-					Keys.F5,	
-					"銀行コード選択",	
-					""),
-			new FuncKeyDefine(
-					Keys.F8,	
-					"マイナンバー管理",	
-					""),
-			new FuncKeyDefine(
 					Keys.F11,	
 					"登録",	
 					""),
@@ -390,21 +366,13 @@ namespace App
 		};
 
 		/// <summary>
-		/// 銀行コード選択
-		/// </summary>
-		public readonly static FuncKeyDefine ShowBankCode = Functions[0];
-		/// <summary>
-		/// マイナンバー管理
-		/// </summary>
-		public readonly static FuncKeyDefine ShowMyno = Functions[1];
-		/// <summary>
 		/// 登録
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[2];
+		public readonly static FuncKeyDefine Save = Functions[0];
 		/// <summary>
 		/// キャンセル
 		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[3];
+		public readonly static FuncKeyDefine Cancel = Functions[1];
 	}
 	#endregion
 

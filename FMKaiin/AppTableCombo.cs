@@ -173,5 +173,121 @@ namespace App
 		//	cmb.Find = "";
 		//	cmb.EndUpdate();
 		//}
+
+		/// <summary>
+		/// 医療機関iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_IryoKikan(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv;
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = ;
+			cmb.Sort = DBQuery.GetSql(t_iryokikan.FIRK_Code);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_iryokikan.FIRK_Code, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_iryokikan.FIRK_Name, "名称", 220);
+			cmb.CompareValue = t_iryokikan.FID_Iryokikan; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 0; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 診療科目iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Shinryoka(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv;
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = ;
+			cmb.Sort = DBQuery.GetSql(t_shinryoka.FSRK_Code);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_shinryoka.FSRK_Code, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_shinryoka.FSRK_Name, "名称", 220);
+			cmb.CompareValue = t_shinryoka.FID_Shinryoka; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 学会iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Gakkai(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv;
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = ;
+			cmb.Sort = DBQuery.GetSql(t_gakkai.FGKAI_Code);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_gakkai.FGKAI_Code, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_gakkai.FGKAI_Name, "名称", 220);
+			cmb.CompareValue = t_gakkai.FID_Gakkai; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 医会iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Kaihi(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv;
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = ;
+			cmb.Sort = DBQuery.GetSql(t_kaihi.FCD_Kaihi);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_kaihi.FCD_Kaihi, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_kaihi.FKaihi_Name, "名称", 220);
+			cmb.CompareValue = t_kaihi.FID_Kaihi; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 開設主体iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Kaisetsushutai(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv;
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = ;
+			cmb.Sort = DBQuery.GetSql(t_kaisetsushutai.FKST_Code);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_kaisetsushutai.FKST_Code, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_kaisetsushutai.FKST_Name, "名称", 220);
+			cmb.CompareValue = t_kaisetsushutai.FID_Kaisetsushutai; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+	
 	}
 }

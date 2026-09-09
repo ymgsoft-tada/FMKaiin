@@ -1,6 +1,6 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,7 +16,7 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [åˆ—æŒ™] è¨ºç™‚æ‰€åŒºåˆ†
+	/// [—ñ‹“] f—ÃŠ‹æ•ª
 	/// </summary>
 	public enum eTypeShinryojo
 	{
@@ -25,17 +25,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// åŒ—
+		/// –k
 		/// </summary>
 		North = 1,
 		/// <summary>
-		/// å—
+		/// “ì
 		/// </summary>
 		South = 2,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] è·ç¨®åŒºåˆ†
+	/// [—ñ‹“] Eí‹æ•ª
 	/// </summary>
 	public enum eTypeJob
 	{
@@ -44,25 +44,25 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// åŒ»å¸«
+		/// ˆãt
 		/// </summary>
 		Dr = 1,
 		/// <summary>
-		/// çœ‹è­·å¸«
+		/// ŠÅŒìt
 		/// </summary>
 		Nurse = 2,
 		/// <summary>
-		/// äº‹å‹™
+		/// ––±
 		/// </summary>
 		Jimu = 3,
 		/// <summary>
-		/// è–¬å‰¤å¸«
+		/// –òÜt
 		/// </summary>
 		Yakuzaishi = 4,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] æ€§åˆ¥
+	/// [—ñ‹“] «•Ê
 	/// </summary>
 	public enum eSex
 	{
@@ -71,17 +71,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ç”·æ€§
+		/// ’j«
 		/// </summary>
 		Men = 1,
 		/// <summary>
-		/// å¥³æ€§
+		/// —«
 		/// </summary>
 		Women = 2,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] ç«¯æ•°å‡¦ç†
+	/// [—ñ‹“] ’[”ˆ—
 	/// </summary>
 	public enum eHasu
 	{
@@ -90,21 +90,21 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// åˆ‡æ¨
+		/// ØÌ
 		/// </summary>
 		Kirisute = 1,
 		/// <summary>
-		/// åˆ‡ä¸Š
+		/// Øã
 		/// </summary>
 		Kiriage = 2,
 		/// <summary>
-		/// å››æ¨äº”å…¥
+		/// lÌŒÜ“ü
 		/// </summary>
 		Shishagonyu = 3,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] å£åº§åŒºåˆ†
+	/// [—ñ‹“] ŒûÀ‹æ•ª
 	/// </summary>
 	public enum eTypeKoza
 	{
@@ -113,17 +113,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// æ™®é€š
+		/// •’Ê
 		/// </summary>
 		Futsu = 1,
 		/// <summary>
-		/// å½“åº§
+		/// “–À
 		/// </summary>
 		Touza = 2,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] æ¨©é™åŒºåˆ†
+	/// [—ñ‹“] Œ ŒÀ‹æ•ª
 	/// </summary>
 	public enum eAuth
 	{
@@ -136,17 +136,17 @@ namespace App
 		/// </summary>
 		SU = 1,
 		/// <summary>
-		/// ç®¡ç†è€…
+		/// ŠÇ—Ò
 		/// </summary>
 		Admin = 2,
 		/// <summary>
-		/// ä¸€èˆ¬
+		/// ˆê”Ê
 		/// </summary>
 		Ippan = 3,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] ä½œæˆåŒºåˆ†
+	/// [—ñ‹“] ì¬‹æ•ª
 	/// </summary>
 	public enum eCreateType
 	{
@@ -155,167 +155,278 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ã‚¤ãƒ³ãƒãƒ¼ãƒˆ
+		/// ƒCƒ“ƒ|[ƒg
 		/// </summary>
 		Import = 1,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] iFaxåŒºåˆ†
+	/// [—ñ‹“] İĞ‹æ•ª
 	/// </summary>
-	public enum eTypeIfax
+	public enum eTypeZaiseki
 	{
 		/// <summary>
 		/// 
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰
+		/// İĞ
 		/// </summary>
-		etc = 99,
+		Zaiseki = 1,
+		/// <summary>
+		/// ˆÙ“®
+		/// </summary>
+		Ido = 2,
+		/// <summary>
+		/// ‘Ş‰ï
+		/// </summary>
+		Taikai = 3,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] ç—…åºŠæœ‰ç„¡
+	/// [—ñ‹“] {İˆÙ“®‹æ•ª
 	/// </summary>
-	public enum eByosho
+	public enum eTypeShisetsuIdo
 	{
 		/// <summary>
 		/// 
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// æœ‰
+		/// ‹Î–±æ
 		/// </summary>
-		Ari = 1,
+		KinmuSaki = 1,
 		/// <summary>
-		/// ç„¡
+		/// ‹x—{
 		/// </summary>
-		Nashi = 2,
+		Kyuyo = 2,
+		/// <summary>
+		/// ”p‹Æ
+		/// </summary>
+		Haigyo = 3,
+		/// <summary>
+		/// ‘ŞE
+		/// </summary>
+		Taisyoku = 4,
 	}
 	
 	/// <summary>
-	/// [åˆ—æŒ™] é€€ä¼šåŒºåˆ†
+	/// [—ñ‹“] ˆÙ“®‰ïˆõ‹æ•ª
 	/// </summary>
-	public enum eTaikai
+	public enum eTypeIdoKaiin
 	{
 		/// <summary>
 		/// 
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// ä¼šå“¡
+		/// ŠJ‹Æ
 		/// </summary>
-		Kaiin = 1,
+		Kaigyo = 1,
 		/// <summary>
-		/// é€€ä¼š
+		/// ŠÇ—ÒŒğ‘ã
 		/// </summary>
-		Taikai = 2,
+		KanriHenko = 2,
+		/// <summary>
+		/// ŠJİÒŒğ‘ã
+		/// </summary>
+		KaisetsuHenko = 3,
+		/// <summary>
+		/// ŠJİÒEŠÇ—ÒŒğ‘ã
+		/// </summary>
+		KanriKaisetsuHenko = 4,
+		/// <summary>
+		/// ”p‹Æ
+		/// </summary>
+		Haigyo = 5,
 	}
 	
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [—ñ‹“] ‚»‚Ì‘¼ˆÙ“®‹æ•ª
+	/// </summary>
+	public enum eTypeIdoEtc
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// ˆÚ“]
+		/// </summary>
+		Iten = 1,
+		/// <summary>
+		/// –¼Ì•ÏX
+		/// </summary>
+		MeisyoHenko = 2,
+		/// <summary>
+		/// –@l‰»
+		/// </summary>
+		Hojinka = 3,
+		/// <summary>
+		/// ©‘îZŠ•ÏX
+		/// </summary>
+		AddrHenko = 4,
+	}
+	
+	/// <summary>
+	/// [—ñ‹“] x•¥•û–@
+	/// </summary>
+	public enum eShiharai
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// ŒûÀ‡@
+		/// </summary>
+		Koza1 = 1,
+		/// <summary>
+		/// ŒûÀ‡A
+		/// </summary>
+		Koza2 = 2,
+		/// <summary>
+		/// ŒûÀ‡B
+		/// </summary>
+		Koza3 = 3,
+		/// <summary>
+		/// Œ»‹à
+		/// </summary>
+		Genkin = 9,
+	}
+	
+	/// <summary>
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public static class enumKbn
 	{
 		/// <summary>
-		/// eTypeShinryojo ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eTypeShinryojo ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DTypeShinryojo;
 		/// <summary>
-		/// eTypeJob ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eTypeJob ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DTypeJob;
 		/// <summary>
-		/// eSex ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eSex ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DSex;
 		/// <summary>
-		/// eHasu ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eHasu ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DHasu;
 		/// <summary>
-		/// eTypeKoza ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eTypeKoza ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DTypeKoza;
 		/// <summary>
-		/// eAuth ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eAuth ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DAuth;
 		/// <summary>
-		/// eCreateType ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eCreateType ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
 		public static Dictionary<int, string> DCreateType;
 		/// <summary>
-		/// eTypeIfax ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eTypeZaiseki ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
-		public static Dictionary<int, string> DTypeIfax;
+		public static Dictionary<int, string> DTypeZaiseki;
 		/// <summary>
-		/// eByosho ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eTypeShisetsuIdo ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
-		public static Dictionary<int, string> DByosho;
+		public static Dictionary<int, string> DTypeShisetsuIdo;
 		/// <summary>
-		/// eTaikai ã«å¯¾å¿œã—ãŸè¾æ›¸ã§ã™ã€‚
+		/// eTypeIdoKaiin ‚É‘Î‰‚µ‚½«‘‚Å‚·B
 		/// </summary>
-		public static Dictionary<int, string> DTaikai;
+		public static Dictionary<int, string> DTypeIdoKaiin;
+		/// <summary>
+		/// eTypeIdoEtc ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// </summary>
+		public static Dictionary<int, string> DTypeIdoEtc;
+		/// <summary>
+		/// eShiharai ‚É‘Î‰‚µ‚½«‘‚Å‚·B
+		/// </summary>
+		public static Dictionary<int, string> DShiharai;
 		
 		/// <summary>
-		/// åˆ—æŒ™è¾æ›¸ã‚’åˆæœŸåŒ–ã—ã¾ã™ã€‚
+		/// —ñ‹“«‘‚ğ‰Šú‰»‚µ‚Ü‚·B
 		/// </summary>
 		public static void InitEnumDictionary()
 		{
 			DTypeShinryojo = new Dictionary<int, string>();
 			DTypeShinryojo.Add((int)eTypeShinryojo.None, "");
-			DTypeShinryojo.Add((int)eTypeShinryojo.North, "åŒ—");
-			DTypeShinryojo.Add((int)eTypeShinryojo.South, "å—");
+			DTypeShinryojo.Add((int)eTypeShinryojo.North, "–k");
+			DTypeShinryojo.Add((int)eTypeShinryojo.South, "“ì");
 			
 			DTypeJob = new Dictionary<int, string>();
 			DTypeJob.Add((int)eTypeJob.None, "");
-			DTypeJob.Add((int)eTypeJob.Dr, "åŒ»å¸«");
-			DTypeJob.Add((int)eTypeJob.Nurse, "çœ‹è­·å¸«");
-			DTypeJob.Add((int)eTypeJob.Jimu, "äº‹å‹™");
-			DTypeJob.Add((int)eTypeJob.Yakuzaishi, "è–¬å‰¤å¸«");
+			DTypeJob.Add((int)eTypeJob.Dr, "ˆãt");
+			DTypeJob.Add((int)eTypeJob.Nurse, "ŠÅŒìt");
+			DTypeJob.Add((int)eTypeJob.Jimu, "––±");
+			DTypeJob.Add((int)eTypeJob.Yakuzaishi, "–òÜt");
 			
 			DSex = new Dictionary<int, string>();
 			DSex.Add((int)eSex.None, "");
-			DSex.Add((int)eSex.Men, "ç”·æ€§");
-			DSex.Add((int)eSex.Women, "å¥³æ€§");
+			DSex.Add((int)eSex.Men, "’j«");
+			DSex.Add((int)eSex.Women, "—«");
 			
 			DHasu = new Dictionary<int, string>();
 			DHasu.Add((int)eHasu.None, "");
-			DHasu.Add((int)eHasu.Kirisute, "åˆ‡æ¨");
-			DHasu.Add((int)eHasu.Kiriage, "åˆ‡ä¸Š");
-			DHasu.Add((int)eHasu.Shishagonyu, "å››æ¨äº”å…¥");
+			DHasu.Add((int)eHasu.Kirisute, "ØÌ");
+			DHasu.Add((int)eHasu.Kiriage, "Øã");
+			DHasu.Add((int)eHasu.Shishagonyu, "lÌŒÜ“ü");
 			
 			DTypeKoza = new Dictionary<int, string>();
 			DTypeKoza.Add((int)eTypeKoza.None, "");
-			DTypeKoza.Add((int)eTypeKoza.Futsu, "æ™®é€š");
-			DTypeKoza.Add((int)eTypeKoza.Touza, "å½“åº§");
+			DTypeKoza.Add((int)eTypeKoza.Futsu, "•’Ê");
+			DTypeKoza.Add((int)eTypeKoza.Touza, "“–À");
 			
 			DAuth = new Dictionary<int, string>();
 			DAuth.Add((int)eAuth.None, "");
 			DAuth.Add((int)eAuth.SU, "SuperUser");
-			DAuth.Add((int)eAuth.Admin, "ç®¡ç†è€…");
-			DAuth.Add((int)eAuth.Ippan, "ä¸€èˆ¬");
+			DAuth.Add((int)eAuth.Admin, "ŠÇ—Ò");
+			DAuth.Add((int)eAuth.Ippan, "ˆê”Ê");
 			
 			DCreateType = new Dictionary<int, string>();
 			DCreateType.Add((int)eCreateType.None, "");
-			DCreateType.Add((int)eCreateType.Import, "ã‚¤ãƒ³ãƒãƒ¼ãƒˆ");
+			DCreateType.Add((int)eCreateType.Import, "ƒCƒ“ƒ|[ƒg");
 			
-			DTypeIfax = new Dictionary<int, string>();
-			DTypeIfax.Add((int)eTypeIfax.None, "");
-			DTypeIfax.Add((int)eTypeIfax.etc, "ãã®ä»–ï¼ˆiFAXç™»éŒ²ãªã—ï¼‰");
+			DTypeZaiseki = new Dictionary<int, string>();
+			DTypeZaiseki.Add((int)eTypeZaiseki.None, "");
+			DTypeZaiseki.Add((int)eTypeZaiseki.Zaiseki, "İĞ");
+			DTypeZaiseki.Add((int)eTypeZaiseki.Ido, "ˆÙ“®");
+			DTypeZaiseki.Add((int)eTypeZaiseki.Taikai, "‘Ş‰ï");
 			
-			DByosho = new Dictionary<int, string>();
-			DByosho.Add((int)eByosho.None, "");
-			DByosho.Add((int)eByosho.Ari, "æœ‰");
-			DByosho.Add((int)eByosho.Nashi, "ç„¡");
+			DTypeShisetsuIdo = new Dictionary<int, string>();
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.None, "");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.KinmuSaki, "‹Î–±æ");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.Kyuyo, "‹x—{");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.Haigyo, "”p‹Æ");
+			DTypeShisetsuIdo.Add((int)eTypeShisetsuIdo.Taisyoku, "‘ŞE");
 			
-			DTaikai = new Dictionary<int, string>();
-			DTaikai.Add((int)eTaikai.None, "");
-			DTaikai.Add((int)eTaikai.Kaiin, "ä¼šå“¡");
-			DTaikai.Add((int)eTaikai.Taikai, "é€€ä¼š");
+			DTypeIdoKaiin = new Dictionary<int, string>();
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.None, "");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.Kaigyo, "ŠJ‹Æ");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.KanriHenko, "ŠÇ—ÒŒğ‘ã");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.KaisetsuHenko, "ŠJİÒŒğ‘ã");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.KanriKaisetsuHenko, "ŠJİÒEŠÇ—ÒŒğ‘ã");
+			DTypeIdoKaiin.Add((int)eTypeIdoKaiin.Haigyo, "”p‹Æ");
+			
+			DTypeIdoEtc = new Dictionary<int, string>();
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.None, "");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.Iten, "ˆÚ“]");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.MeisyoHenko, "–¼Ì•ÏX");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.Hojinka, "–@l‰»");
+			DTypeIdoEtc.Add((int)eTypeIdoEtc.AddrHenko, "©‘îZŠ•ÏX");
+			
+			DShiharai = new Dictionary<int, string>();
+			DShiharai.Add((int)eShiharai.None, "");
+			DShiharai.Add((int)eShiharai.Koza1, "ŒûÀ‡@");
+			DShiharai.Add((int)eShiharai.Koza2, "ŒûÀ‡A");
+			DShiharai.Add((int)eShiharai.Koza3, "ŒûÀ‡B");
+			DShiharai.Add((int)eShiharai.Genkin, "Œ»‹à");
 		}
 	}
 }
