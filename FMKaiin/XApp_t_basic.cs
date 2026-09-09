@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class t_basic : FieldProp
 	{
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—p
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹âsID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡ŒID]ã€‚
 		/// </summary>
 		public const string FID_Bank = "ID_Bank";
 		/// <summary>
-		/// ‹âsID
+		/// éŠ€è¡ŒID
 		/// </summary>
 		public int ID_Bank
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹âsIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éŠ€è¡ŒIDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Bank_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ïĞ–¼]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šç¤¾å]ã€‚
 		/// </summary>
 		public const string FBAS_Name = "BAS_Name";
 		/// <summary>
-		/// ‰ïĞ–¼
+		/// ä¼šç¤¾å
 		/// </summary>
 		public string BAS_Name
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ïĞ–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šç¤¾åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Name_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ïĞ–¼ƒtƒŠƒKƒi]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šç¤¾åãƒ•ãƒªã‚¬ãƒŠ]ã€‚
 		/// </summary>
 		public const string FBAS_NameFurigana = "BAS_NameFurigana";
 		/// <summary>
-		/// ‰ïĞ–¼ƒtƒŠƒKƒi
+		/// ä¼šç¤¾åãƒ•ãƒªã‚¬ãƒŠ
 		/// </summary>
 		public string BAS_NameFurigana
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ïĞ–¼ƒtƒŠƒKƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šç¤¾åãƒ•ãƒªã‚¬ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_NameFurigana_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‘ã•\Ò–¼]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä»£è¡¨è€…å]ã€‚
 		/// </summary>
 		public const string FBAS_NameDaihyo = "BAS_NameDaihyo";
 		/// <summary>
-		/// ‘ã•\Ò–¼
+		/// ä»£è¡¨è€…å
 		/// </summary>
 		public string BAS_NameDaihyo
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‘ã•\Ò–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä»£è¡¨è€…åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_NameDaihyo_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ïĞ–¼2]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šç¤¾å2]ã€‚
 		/// </summary>
 		public const string FBAS_Name2 = "BAS_Name2";
 		/// <summary>
-		/// ‰ïĞ–¼2
+		/// ä¼šç¤¾å2
 		/// </summary>
 		public string BAS_Name2
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ïĞ–¼2BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šç¤¾å2ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Name2_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‘ã•\Ò–¼2]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä»£è¡¨è€…å2]ã€‚
 		/// </summary>
 		public const string FBAS_NameDaihyo2 = "BAS_NameDaihyo2";
 		/// <summary>
-		/// ‘ã•\Ò–¼2
+		/// ä»£è¡¨è€…å2
 		/// </summary>
 		public string BAS_NameDaihyo2
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‘ã•\Ò–¼2BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä»£è¡¨è€…å2ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_NameDaihyo2_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[—X•Ö”Ô†]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éƒµä¾¿ç•ªå·]ã€‚
 		/// </summary>
 		public const string FBAS_Post = "BAS_Post";
 		/// <summary>
-		/// —X•Ö”Ô†
+		/// éƒµä¾¿ç•ªå·
 		/// </summary>
 		public string BAS_Post
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// —X•Ö”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éƒµä¾¿ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Post_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ZŠ‚P]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€ï¼‘]ã€‚
 		/// </summary>
 		public const string FBAS_Addr1 = "BAS_Addr1";
 		/// <summary>
-		/// ZŠ‚P
+		/// ä½æ‰€ï¼‘
 		/// </summary>
 		public string BAS_Addr1
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ZŠ‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä½æ‰€ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Addr1_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ZŠ‚Q]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€ï¼’]ã€‚
 		/// </summary>
 		public const string FBAS_Addr2 = "BAS_Addr2";
 		/// <summary>
-		/// ZŠ‚Q
+		/// ä½æ‰€ï¼’
 		/// </summary>
 		public string BAS_Addr2
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ZŠ‚QBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä½æ‰€ï¼’ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Addr2_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[“d˜b‚P]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é›»è©±ï¼‘]ã€‚
 		/// </summary>
 		public const string FBAS_Tel1 = "BAS_Tel1";
 		/// <summary>
-		/// “d˜b‚P
+		/// é›»è©±ï¼‘
 		/// </summary>
 		public string BAS_Tel1
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// “d˜b‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// é›»è©±ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Tel1_Null
 		{
@@ -264,11 +264,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[“d˜b2]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é›»è©±2]ã€‚
 		/// </summary>
 		public const string FBAS_Tel2 = "BAS_Tel2";
 		/// <summary>
-		/// “d˜b2
+		/// é›»è©±2
 		/// </summary>
 		public string BAS_Tel2
 		{
@@ -277,7 +277,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// “d˜b2BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// é›»è©±2ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Tel2_Null
 		{
@@ -286,7 +286,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[FAX]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[FAX]ã€‚
 		/// </summary>
 		public const string FBAS_Fax = "BAS_Fax";
 		/// <summary>
@@ -299,7 +299,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// FAXBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// FAXã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_Fax_Null
 		{
@@ -308,7 +308,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[DBVersion]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[DBVersion]ã€‚
 		/// </summary>
 		public const string FBAS_DBVersion = "BAS_DBVersion";
 		/// <summary>
@@ -321,7 +321,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// DBVersionBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// DBVersionã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_DBVersion_Null
 		{
@@ -330,11 +330,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ÅV”NŒ]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœ€æ–°å¹´æœˆ]ã€‚
 		/// </summary>
 		public const string FBAS_DateYMLatest = "BAS_DateYMLatest";
 		/// <summary>
-		/// ÅV”NŒ
+		/// æœ€æ–°å¹´æœˆ
 		/// </summary>
 		public DateTime BAS_DateYMLatest
 		{
@@ -343,7 +343,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ÅV”NŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æœ€æ–°å¹´æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? BAS_DateYMLatest_Null
 		{
@@ -352,11 +352,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ˆ—”NŒ]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å‡¦ç†å¹´æœˆ]ã€‚
 		/// </summary>
 		public const string FBAS_DateYM = "BAS_DateYM";
 		/// <summary>
-		/// ˆ—”NŒ
+		/// å‡¦ç†å¹´æœˆ
 		/// </summary>
 		public DateTime BAS_DateYM
 		{
@@ -365,7 +365,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ˆ—”NŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å‡¦ç†å¹´æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? BAS_DateYM_Null
 		{
@@ -374,11 +374,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[“ü—ÍƒƒbƒN]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å…¥åŠ›ãƒ­ãƒƒã‚¯]ã€‚
 		/// </summary>
 		public const string FBAS_LockInput = "BAS_LockInput";
 		/// <summary>
-		/// “ü—ÍƒƒbƒN
+		/// å…¥åŠ›ãƒ­ãƒƒã‚¯
 		/// </summary>
 		public bool BAS_LockInput
 		{
@@ -387,11 +387,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[¼—ï•\¦]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è¥¿æš¦è¡¨ç¤º]ã€‚
 		/// </summary>
 		public const string FBAS_DispSeireki = "BAS_DispSeireki";
 		/// <summary>
-		/// ¼—ï•\¦
+		/// è¥¿æš¦è¡¨ç¤º
 		/// </summary>
 		public bool BAS_DispSeireki
 		{
@@ -400,11 +400,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[U“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æŒ¯è¾¼æ—¥]ã€‚
 		/// </summary>
 		public const string FBAS_DayFurikomi = "BAS_DayFurikomi";
 		/// <summary>
-		/// U“ú
+		/// æŒ¯è¾¼æ—¥
 		/// </summary>
 		public int BAS_DayFurikomi
 		{
@@ -413,7 +413,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// U“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æŒ¯è¾¼æ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? BAS_DayFurikomi_Null
 		{
@@ -422,11 +422,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[–@l”Ô†]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ³•äººç•ªå·]ã€‚
 		/// </summary>
 		public const string FBAS_HojinNo = "BAS_HojinNo";
 		/// <summary>
-		/// –@l”Ô†
+		/// æ³•äººç•ªå·
 		/// </summary>
 		public string BAS_HojinNo
 		{
@@ -435,7 +435,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// –@l”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ³•äººç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_HojinNo_Null
 		{
@@ -444,11 +444,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[MyNoƒpƒXƒ[ƒh]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[MyNoãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰]ã€‚
 		/// </summary>
 		public const string FBAS_MyNoPWD = "BAS_MyNoPWD";
 		/// <summary>
-		/// MyNoƒpƒXƒ[ƒh
+		/// MyNoãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 		/// </summary>
 		public string BAS_MyNoPWD
 		{
@@ -457,7 +457,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// MyNoƒpƒXƒ[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// MyNoãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string BAS_MyNoPWD_Null
 		{
@@ -466,11 +466,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“ú
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -479,7 +479,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -489,15 +489,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
+		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
 		public t_basic(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_basic Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
+		/// t_basic å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
 		/// </summary>
-		/// <returns>t_basic Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
+		/// <returns>t_basic å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_basic");

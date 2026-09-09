@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class t_staff : FieldProp
 	{
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—p
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒXƒ^ƒbƒtCD]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ã‚¹ã‚¿ãƒƒãƒ•CD]ã€‚
 		/// </summary>
 		public const string FCD_Staff = "CD_Staff";
 		/// <summary>
-		/// ƒXƒ^ƒbƒtCD
+		/// ã‚¹ã‚¿ãƒƒãƒ•CD
 		/// </summary>
 		public int CD_Staff
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒXƒ^ƒbƒtCDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ã‚¹ã‚¿ãƒƒãƒ•CDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? CD_Staff_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒXƒ^ƒbƒtID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ã‚¹ã‚¿ãƒƒãƒ•ID]ã€‚
 		/// </summary>
 		public const string FID_Staff = "ID_Staff";
 		/// <summary>
-		/// ƒXƒ^ƒbƒtID
+		/// ã‚¹ã‚¿ãƒƒãƒ•ID
 		/// </summary>
 		public int ID_Staff
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒXƒ^ƒbƒtIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ã‚¹ã‚¿ãƒƒãƒ•IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Staff_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[E–±ID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è·å‹™ID]ã€‚
 		/// </summary>
 		public const string FID_Shokumu = "ID_Shokumu";
 		/// <summary>
-		/// E–±ID
+		/// è·å‹™ID
 		/// </summary>
 		public int ID_Shokumu
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// E–±IDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// è·å‹™IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Shokumu_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒXƒ^ƒbƒt–¼]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ã‚¹ã‚¿ãƒƒãƒ•å]ã€‚
 		/// </summary>
 		public const string FSTF_Name = "STF_Name";
 		/// <summary>
-		/// ƒXƒ^ƒbƒt–¼
+		/// ã‚¹ã‚¿ãƒƒãƒ•å
 		/// </summary>
 		public string STF_Name
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒXƒ^ƒbƒt–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ã‚¹ã‚¿ãƒƒãƒ•åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Name_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒXƒ^ƒbƒt–¼ƒtƒŠƒKƒi]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ã‚¹ã‚¿ãƒƒãƒ•åãƒ•ãƒªã‚¬ãƒŠ]ã€‚
 		/// </summary>
 		public const string FSTF_NameFurigane = "STF_NameFurigane";
 		/// <summary>
-		/// ƒXƒ^ƒbƒt–¼ƒtƒŠƒKƒi
+		/// ã‚¹ã‚¿ãƒƒãƒ•åãƒ•ãƒªã‚¬ãƒŠ
 		/// </summary>
 		public string STF_NameFurigane
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒXƒ^ƒbƒt–¼ƒtƒŠƒKƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ã‚¹ã‚¿ãƒƒãƒ•åãƒ•ãƒªã‚¬ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_NameFurigane_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[«•Ê 0/None/ 1/Men/’j« 2/Women/—«]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ€§åˆ¥ 0/None/ 1/Men/ç”·æ€§ 2/Women/å¥³æ€§]ã€‚
 		/// </summary>
 		public const string FSTF_Sex = "STF_Sex";
 		/// <summary>
-		/// «•Ê 0/None/ 1/Men/’j« 2/Women/—«
+		/// æ€§åˆ¥ 0/None/ 1/Men/ç”·æ€§ 2/Women/å¥³æ€§
 		/// </summary>
 		public eSex STF_Sex
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// «•Ê 0/None/ 1/Men/’j« 2/Women/—«BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ€§åˆ¥ 0/None/ 1/Men/ç”·æ€§ 2/Women/å¥³æ€§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? STF_Sex_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Eí‹æ•ª 0/None/ 1/Dr/ˆãt 2/Nurse/ŠÅŒìt 3/Jimu/––± 4/Yakuzaishi/–òÜt]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è·ç¨®åŒºåˆ† 0/None/ 1/Dr/åŒ»å¸« 2/Nurse/çœ‹è­·å¸« 3/Jimu/äº‹å‹™ 4/Yakuzaishi/è–¬å‰¤å¸«]ã€‚
 		/// </summary>
 		public const string FSTF_TypeJob = "STF_TypeJob";
 		/// <summary>
-		/// Eí‹æ•ª 0/None/ 1/Dr/ˆãt 2/Nurse/ŠÅŒìt 3/Jimu/––± 4/Yakuzaishi/–òÜt
+		/// è·ç¨®åŒºåˆ† 0/None/ 1/Dr/åŒ»å¸« 2/Nurse/çœ‹è­·å¸« 3/Jimu/äº‹å‹™ 4/Yakuzaishi/è–¬å‰¤å¸«
 		/// </summary>
 		public eTypeJob STF_TypeJob
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Eí‹æ•ª 0/None/ 1/Dr/ˆãt 2/Nurse/ŠÅŒìt 3/Jimu/––± 4/Yakuzaishi/–òÜtBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// è·ç¨®åŒºåˆ† 0/None/ 1/Dr/åŒ»å¸« 2/Nurse/çœ‹è­·å¸« 3/Jimu/äº‹å‹™ 4/Yakuzaishi/è–¬å‰¤å¸«ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? STF_TypeJob_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[f—ÃŠ‹æ•ª 0/None/ 1/North/–k 2/South/“ì]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è¨ºç™‚æ‰€åŒºåˆ† 0/None/ 1/North/åŒ— 2/South/å—]ã€‚
 		/// </summary>
 		public const string FSTF_TypeShinryojo = "STF_TypeShinryojo";
 		/// <summary>
-		/// f—ÃŠ‹æ•ª 0/None/ 1/North/–k 2/South/“ì
+		/// è¨ºç™‚æ‰€åŒºåˆ† 0/None/ 1/North/åŒ— 2/South/å—
 		/// </summary>
 		public eTypeShinryojo STF_TypeShinryojo
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// f—ÃŠ‹æ•ª 0/None/ 1/North/–k 2/South/“ìBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// è¨ºç™‚æ‰€åŒºåˆ† 0/None/ 1/North/åŒ— 2/South/å—ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? STF_TypeShinryojo_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[—X•Ö”Ô†]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éƒµä¾¿ç•ªå·]ã€‚
 		/// </summary>
 		public const string FSTF_Post = "STF_Post";
 		/// <summary>
-		/// —X•Ö”Ô†
+		/// éƒµä¾¿ç•ªå·
 		/// </summary>
 		public string STF_Post
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// —X•Ö”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éƒµä¾¿ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Post_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ZŠ‚P]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€ï¼‘]ã€‚
 		/// </summary>
 		public const string FSTF_Addr1 = "STF_Addr1";
 		/// <summary>
-		/// ZŠ‚P
+		/// ä½æ‰€ï¼‘
 		/// </summary>
 		public string STF_Addr1
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ZŠ‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä½æ‰€ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Addr1_Null
 		{
@@ -264,11 +264,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ZŠ2]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€2]ã€‚
 		/// </summary>
 		public const string FSTF_Addr2 = "STF_Addr2";
 		/// <summary>
-		/// ZŠ2
+		/// ä½æ‰€2
 		/// </summary>
 		public string STF_Addr2
 		{
@@ -277,7 +277,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ZŠ2BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä½æ‰€2ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Addr2_Null
 		{
@@ -286,11 +286,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[“d˜b”Ô†]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é›»è©±ç•ªå·]ã€‚
 		/// </summary>
 		public const string FSTF_Tel1 = "STF_Tel1";
 		/// <summary>
-		/// “d˜b”Ô†
+		/// é›»è©±ç•ªå·
 		/// </summary>
 		public string STF_Tel1
 		{
@@ -299,7 +299,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// “d˜b”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// é›»è©±ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Tel1_Null
 		{
@@ -308,11 +308,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[“d˜b”Ô†‚QiŒg‘Ñ“™j]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é›»è©±ç•ªå·ï¼’ï¼ˆæºå¸¯ç­‰ï¼‰]ã€‚
 		/// </summary>
 		public const string FSTF_Tel2 = "STF_Tel2";
 		/// <summary>
-		/// “d˜b”Ô†‚QiŒg‘Ñ“™j
+		/// é›»è©±ç•ªå·ï¼’ï¼ˆæºå¸¯ç­‰ï¼‰
 		/// </summary>
 		public string STF_Tel2
 		{
@@ -321,7 +321,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// “d˜b”Ô†‚QiŒg‘Ñ“™jBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// é›»è©±ç•ªå·ï¼’ï¼ˆæºå¸¯ç­‰ï¼‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Tel2_Null
 		{
@@ -330,11 +330,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[¶”NŒ“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç”Ÿå¹´æœˆæ—¥]ã€‚
 		/// </summary>
 		public const string FSTF_DateBirthday = "STF_DateBirthday";
 		/// <summary>
-		/// ¶”NŒ“ú
+		/// ç”Ÿå¹´æœˆæ—¥
 		/// </summary>
 		public DateTime STF_DateBirthday
 		{
@@ -343,7 +343,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ¶”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ç”Ÿå¹´æœˆæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? STF_DateBirthday_Null
 		{
@@ -352,11 +352,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[“üĞ“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å…¥ç¤¾æ—¥]ã€‚
 		/// </summary>
 		public const string FSTF_DateNyusha = "STF_DateNyusha";
 		/// <summary>
-		/// “üĞ“ú
+		/// å…¥ç¤¾æ—¥
 		/// </summary>
 		public DateTime STF_DateNyusha
 		{
@@ -365,7 +365,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// “üĞ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å…¥ç¤¾æ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? STF_DateNyusha_Null
 		{
@@ -374,11 +374,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‘ŞE“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é€€è·æ—¥]ã€‚
 		/// </summary>
 		public const string FSTF_DateTaishoku = "STF_DateTaishoku";
 		/// <summary>
-		/// ‘ŞE“ú
+		/// é€€è·æ—¥
 		/// </summary>
 		public DateTime STF_DateTaishoku
 		{
@@ -387,7 +387,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‘ŞE“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// é€€è·æ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? STF_DateTaishoku_Null
 		{
@@ -396,11 +396,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹âsƒR[ƒh]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
 		/// </summary>
 		public const string FSTF_BankCode = "STF_BankCode";
 		/// <summary>
-		/// ‹âsƒR[ƒh
+		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰
 		/// </summary>
 		public int STF_BankCode
 		{
@@ -409,7 +409,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? STF_BankCode_Null
 		{
@@ -418,11 +418,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹âsx“XƒR[ƒh]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
 		/// </summary>
 		public const string FSTF_BankShitenCode = "STF_BankShitenCode";
 		/// <summary>
-		/// ‹âsx“XƒR[ƒh
+		/// éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰
 		/// </summary>
 		public int STF_BankShitenCode
 		{
@@ -431,7 +431,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹âsx“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? STF_BankShitenCode_Null
 		{
@@ -440,11 +440,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹âsŒûÀ”Ô†]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œå£åº§ç•ªå·]ã€‚
 		/// </summary>
 		public const string FSTF_BankKozaNo = "STF_BankKozaNo";
 		/// <summary>
-		/// ‹âsŒûÀ”Ô†
+		/// éŠ€è¡Œå£åº§ç•ªå·
 		/// </summary>
 		public string STF_BankKozaNo
 		{
@@ -453,7 +453,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹âsŒûÀ”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éŠ€è¡Œå£åº§ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_BankKozaNo_Null
 		{
@@ -462,11 +462,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹âsŒûÀ–¼]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éŠ€è¡Œå£åº§å]ã€‚
 		/// </summary>
 		public const string FSTF_BankKozaName = "STF_BankKozaName";
 		/// <summary>
-		/// ‹âsŒûÀ–¼
+		/// éŠ€è¡Œå£åº§å
 		/// </summary>
 		public string STF_BankKozaName
 		{
@@ -475,7 +475,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹âsŒûÀ–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// éŠ€è¡Œå£åº§åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_BankKozaName_Null
 		{
@@ -484,11 +484,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§]ã€‚
 		/// </summary>
 		public const string FSTF_KozaType = "STF_KozaType";
 		/// <summary>
-		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À
+		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§
 		/// </summary>
 		public eTypeKoza STF_KozaType
 		{
@@ -497,7 +497,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–ÀBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? STF_KozaType_Null
 		{
@@ -506,11 +506,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[g—p—L–³]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½¿ç”¨æœ‰ç„¡]ã€‚
 		/// </summary>
 		public const string FSTF_Used = "STF_Used";
 		/// <summary>
-		/// g—p—L–³
+		/// ä½¿ç”¨æœ‰ç„¡
 		/// </summary>
 		public bool STF_Used
 		{
@@ -519,11 +519,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒ[ƒ‹‚P]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒ¡ãƒ¼ãƒ«ï¼‘]ã€‚
 		/// </summary>
 		public const string FSTF_Mail1 = "STF_Mail1";
 		/// <summary>
-		/// ƒ[ƒ‹‚P
+		/// ãƒ¡ãƒ¼ãƒ«ï¼‘
 		/// </summary>
 		public string STF_Mail1
 		{
@@ -532,7 +532,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒ[ƒ‹‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ãƒ¡ãƒ¼ãƒ«ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Mail1_Null
 		{
@@ -541,11 +541,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒ[ƒ‹‚Q]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒ¡ãƒ¼ãƒ«ï¼’]ã€‚
 		/// </summary>
 		public const string FSTF_Mail2 = "STF_Mail2";
 		/// <summary>
-		/// ƒ[ƒ‹‚Q
+		/// ãƒ¡ãƒ¼ãƒ«ï¼’
 		/// </summary>
 		public string STF_Mail2
 		{
@@ -554,7 +554,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒ[ƒ‹‚QBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ãƒ¡ãƒ¼ãƒ«ï¼’ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_Mail2_Null
 		{
@@ -563,11 +563,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒ}ƒCƒiƒ“ƒo[]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒã‚¤ãƒŠãƒ³ãƒãƒ¼]ã€‚
 		/// </summary>
 		public const string FSTF_MyNo = "STF_MyNo";
 		/// <summary>
-		/// ƒ}ƒCƒiƒ“ƒo[
+		/// ãƒã‚¤ãƒŠãƒ³ãƒãƒ¼
 		/// </summary>
 		public string STF_MyNo
 		{
@@ -576,7 +576,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒ}ƒCƒiƒ“ƒo[BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ãƒã‚¤ãƒŠãƒ³ãƒãƒ¼ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_MyNo_Null
 		{
@@ -585,11 +585,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹Œ©]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ—§å§“]ã€‚
 		/// </summary>
 		public const string FSTF_NameOld = "STF_NameOld";
 		/// <summary>
-		/// ‹Œ©
+		/// æ—§å§“
 		/// </summary>
 		public string STF_NameOld
 		{
@@ -598,7 +598,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹Œ©BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ—§å§“ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string STF_NameOld_Null
 		{
@@ -607,11 +607,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[’ñoæID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æå‡ºå…ˆID]ã€‚
 		/// </summary>
 		public const string FID_Teishutsusaki = "ID_Teishutsusaki";
 		/// <summary>
-		/// ’ñoæID
+		/// æå‡ºå…ˆID
 		/// </summary>
 		public int ID_Teishutsusaki
 		{
@@ -620,7 +620,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ’ñoæIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æå‡ºå…ˆIDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Teishutsusaki_Null
 		{
@@ -629,11 +629,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“ú
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -642,7 +642,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -652,15 +652,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
+		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
 		public t_staff(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_staff Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
+		/// t_staff å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
 		/// </summary>
-		/// <returns>t_staff Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
+		/// <returns>t_staff å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_staff");

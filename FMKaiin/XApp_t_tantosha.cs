@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class t_tantosha : FieldProp
 	{
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—p
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[’S“–ÒCD]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ‹…å½“è€…CD]ã€‚
 		/// </summary>
 		public const string FCD_Tanto = "CD_Tanto";
 		/// <summary>
-		/// ’S“–ÒCD
+		/// æ‹…å½“è€…CD
 		/// </summary>
 		public int CD_Tanto
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ’S“–ÒCDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ‹…å½“è€…CDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? CD_Tanto_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[’S“–ÒID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ‹…å½“è€…ID]ã€‚
 		/// </summary>
 		public const string FID_Tanto = "ID_Tanto";
 		/// <summary>
-		/// ’S“–ÒID
+		/// æ‹…å½“è€…ID
 		/// </summary>
 		public int ID_Tanto
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ’S“–ÒIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ‹…å½“è€…IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Tanto_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[’S“–Ò–¼]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ‹…å½“è€…å]ã€‚
 		/// </summary>
 		public const string FTNT_Name = "TNT_Name";
 		/// <summary>
-		/// ’S“–Ò–¼
+		/// æ‹…å½“è€…å
 		/// </summary>
 		public string TNT_Name
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ’S“–Ò–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ‹…å½“è€…åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string TNT_Name_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒpƒXƒ[ƒh]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰]ã€‚
 		/// </summary>
 		public const string FTNT_Password = "TNT_Password";
 		/// <summary>
-		/// ƒpƒXƒ[ƒh
+		/// ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰
 		/// </summary>
 		public string TNT_Password
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒpƒXƒ[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string TNT_Password_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[f—ÃŠ‹æ•ª 0/None/ 1/North/–k 2/South/“ì]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è¨ºç™‚æ‰€åŒºåˆ† 0/None/ 1/North/åŒ— 2/South/å—]ã€‚
 		/// </summary>
 		public const string FTNT_TypeShinryojo = "TNT_TypeShinryojo";
 		/// <summary>
-		/// f—ÃŠ‹æ•ª 0/None/ 1/North/–k 2/South/“ì
+		/// è¨ºç™‚æ‰€åŒºåˆ† 0/None/ 1/North/åŒ— 2/South/å—
 		/// </summary>
 		public eTypeShinryojo TNT_TypeShinryojo
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// f—ÃŠ‹æ•ª 0/None/ 1/North/–k 2/South/“ìBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// è¨ºç™‚æ‰€åŒºåˆ† 0/None/ 1/North/åŒ— 2/South/å—ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? TNT_TypeShinryojo_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Œ ŒÀ‹æ•ª 0/None/ 1/SU/SuperUser 2/Admin/ŠÇ—Ò 3/Ippan/ˆê”Ê]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ¨©é™åŒºåˆ† 0/None/ 1/SU/SuperUser 2/Admin/ç®¡ç†è€… 3/Ippan/ä¸€èˆ¬]ã€‚
 		/// </summary>
 		public const string FTNT_Auth = "TNT_Auth";
 		/// <summary>
-		/// Œ ŒÀ‹æ•ª 0/None/ 1/SU/SuperUser 2/Admin/ŠÇ—Ò 3/Ippan/ˆê”Ê
+		/// æ¨©é™åŒºåˆ† 0/None/ 1/SU/SuperUser 2/Admin/ç®¡ç†è€… 3/Ippan/ä¸€èˆ¬
 		/// </summary>
 		public eAuth TNT_Auth
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Œ ŒÀ‹æ•ª 0/None/ 1/SU/SuperUser 2/Admin/ŠÇ—Ò 3/Ippan/ˆê”ÊBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ¨©é™åŒºåˆ† 0/None/ 1/SU/SuperUser 2/Admin/ç®¡ç†è€… 3/Ippan/ä¸€èˆ¬ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? TNT_Auth_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[g—p—L–³]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½¿ç”¨æœ‰ç„¡]ã€‚
 		/// </summary>
 		public const string FTNT_Used = "TNT_Used";
 		/// <summary>
-		/// g—p—L–³
+		/// ä½¿ç”¨æœ‰ç„¡
 		/// </summary>
 		public bool TNT_Used
 		{
@@ -189,11 +189,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ƒ}ƒCƒiƒ“ƒo[‚ÌŠÇ——L–³]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒã‚¤ãƒŠãƒ³ãƒãƒ¼ã®ç®¡ç†æœ‰ç„¡]ã€‚
 		/// </summary>
 		public const string FTNT_AvailableMyNo = "TNT_AvailableMyNo";
 		/// <summary>
-		/// ƒ}ƒCƒiƒ“ƒo[‚ÌŠÇ——L–³
+		/// ãƒã‚¤ãƒŠãƒ³ãƒãƒ¼ã®ç®¡ç†æœ‰ç„¡
 		/// </summary>
 		public bool TNT_AvailableMyNo
 		{
@@ -202,11 +202,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“ú
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -215,7 +215,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -225,15 +225,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
+		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
 		public t_tantosha(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_tantosha Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
+		/// t_tantosha å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
 		/// </summary>
-		/// <returns>t_tantosha Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
+		/// <returns>t_tantosha å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_tantosha");

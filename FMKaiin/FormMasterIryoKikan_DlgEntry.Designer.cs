@@ -29,6 +29,7 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterIryoKikan_DlgEntry));
 			this.ycLabelEx25 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx22 = new YControlLabelEx.YcLabelEx();
@@ -67,8 +68,6 @@ namespace App
 			this.iKaisetsushutai = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.lKaisetsushutai = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx15 = new YControlLabelEx.YcLabelEx();
-			this.rdoByoshoTrue = new System.Windows.Forms.RadioButton();
-			this.rdoByoshoFalse = new System.Windows.Forms.RadioButton();
 			this.ycLabelEx16 = new YControlLabelEx.YcLabelEx();
 			this.iKyokabyosho = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx17 = new YControlLabelEx.YcLabelEx();
@@ -78,11 +77,9 @@ namespace App
 			this.ycLabelEx18 = new YControlLabelEx.YcLabelEx();
 			this.lKumiCode = new YControlLabelEx.YcLabelEx();
 			this.iKumiCode = new GControlGcTextBoxEx.GcTextBoxEx();
-			this.chkTaikaiFalse = new System.Windows.Forms.RadioButton();
-			this.rdoTaikaiTrue = new System.Windows.Forms.RadioButton();
 			this.ycLabelEx20 = new YControlLabelEx.YcLabelEx();
-			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.groupBox2 = new System.Windows.Forms.GroupBox();
+			this.iByosho = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.iTaikai = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel1_2)).BeginInit();
@@ -102,8 +99,8 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iKyokabyosho)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iHeisetsu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKumiCode)).BeginInit();
-			this.groupBox1.SuspendLayout();
-			this.groupBox2.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iByosho)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iTaikai)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ycLabelEx25
@@ -631,28 +628,6 @@ namespace App
 			this.ycLabelEx15.Text = "病床有無";
 			this.ycLabelEx15.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// rdoByoshoTrue
-			// 
-			this.rdoByoshoTrue.AutoSize = true;
-			this.rdoByoshoTrue.Location = new System.Drawing.Point(6, 12);
-			this.rdoByoshoTrue.Name = "rdoByoshoTrue";
-			this.rdoByoshoTrue.Size = new System.Drawing.Size(40, 24);
-			this.rdoByoshoTrue.TabIndex = 443;
-			this.rdoByoshoTrue.TabStop = true;
-			this.rdoByoshoTrue.Text = "有";
-			this.rdoByoshoTrue.UseVisualStyleBackColor = true;
-			// 
-			// rdoByoshoFalse
-			// 
-			this.rdoByoshoFalse.AutoSize = true;
-			this.rdoByoshoFalse.Location = new System.Drawing.Point(59, 12);
-			this.rdoByoshoFalse.Name = "rdoByoshoFalse";
-			this.rdoByoshoFalse.Size = new System.Drawing.Size(40, 24);
-			this.rdoByoshoFalse.TabIndex = 444;
-			this.rdoByoshoFalse.TabStop = true;
-			this.rdoByoshoFalse.Text = "無";
-			this.rdoByoshoFalse.UseVisualStyleBackColor = true;
-			// 
 			// ycLabelEx16
 			// 
 			this.ycLabelEx16.BackColor = System.Drawing.Color.SteelBlue;
@@ -777,28 +752,6 @@ namespace App
 			this.iKumiCode.Size = new System.Drawing.Size(50, 23);
 			this.iKumiCode.TabIndex = 21;
 			// 
-			// chkTaikaiFalse
-			// 
-			this.chkTaikaiFalse.AutoSize = true;
-			this.chkTaikaiFalse.Location = new System.Drawing.Point(55, 5);
-			this.chkTaikaiFalse.Name = "chkTaikaiFalse";
-			this.chkTaikaiFalse.Size = new System.Drawing.Size(53, 24);
-			this.chkTaikaiFalse.TabIndex = 456;
-			this.chkTaikaiFalse.TabStop = true;
-			this.chkTaikaiFalse.Text = "退会";
-			this.chkTaikaiFalse.UseVisualStyleBackColor = true;
-			// 
-			// rdoTaikaiTrue
-			// 
-			this.rdoTaikaiTrue.AutoSize = true;
-			this.rdoTaikaiTrue.Location = new System.Drawing.Point(5, 5);
-			this.rdoTaikaiTrue.Name = "rdoTaikaiTrue";
-			this.rdoTaikaiTrue.Size = new System.Drawing.Size(53, 24);
-			this.rdoTaikaiTrue.TabIndex = 455;
-			this.rdoTaikaiTrue.TabStop = true;
-			this.rdoTaikaiTrue.Text = "会員";
-			this.rdoTaikaiTrue.UseVisualStyleBackColor = true;
-			// 
 			// ycLabelEx20
 			// 
 			this.ycLabelEx20.BackColor = System.Drawing.Color.SteelBlue;
@@ -816,34 +769,47 @@ namespace App
 			this.ycLabelEx20.Text = "退会区分";
 			this.ycLabelEx20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// groupBox1
+			// iByosho
 			// 
-			this.groupBox1.Controls.Add(this.rdoByoshoFalse);
-			this.groupBox1.Controls.Add(this.rdoByoshoTrue);
-			this.groupBox1.Location = new System.Drawing.Point(147, 336);
-			this.groupBox1.Name = "groupBox1";
-			this.groupBox1.Size = new System.Drawing.Size(105, 36);
-			this.groupBox1.TabIndex = 16;
-			this.groupBox1.TabStop = false;
+			this.iByosho.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iByosho.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iByosho.ExCompareContent = null;
+			this.iByosho.ExCompareValue = null;
+			this.iByosho.ExDataSource = null;
+			this.iByosho.ExFocusHighlight = true;
+			this.iByosho.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iByosho.ListHeaderPane.Height = 27;
+			this.iByosho.ListHeaderPane.Visible = false;
+			this.iByosho.Location = new System.Drawing.Point(147, 348);
+			this.iByosho.Name = "iByosho";
+			this.iByosho.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iByosho.Size = new System.Drawing.Size(95, 25);
+			this.iByosho.TabIndex = 455;
 			// 
-			// groupBox2
+			// iTaikai
 			// 
-			this.groupBox2.Controls.Add(this.chkTaikaiFalse);
-			this.groupBox2.Controls.Add(this.rdoTaikaiTrue);
-			this.groupBox2.Location = new System.Drawing.Point(140, 456);
-			this.groupBox2.Name = "groupBox2";
-			this.groupBox2.Size = new System.Drawing.Size(124, 28);
-			this.groupBox2.TabIndex = 22;
-			this.groupBox2.TabStop = false;
-			this.groupBox2.Text = "groupBox2";
+			this.iTaikai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iTaikai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iTaikai.ExCompareContent = null;
+			this.iTaikai.ExCompareValue = null;
+			this.iTaikai.ExDataSource = null;
+			this.iTaikai.ExFocusHighlight = true;
+			this.iTaikai.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iTaikai.ListHeaderPane.Height = 27;
+			this.iTaikai.ListHeaderPane.Visible = false;
+			this.iTaikai.Location = new System.Drawing.Point(147, 460);
+			this.iTaikai.Name = "iTaikai";
+			this.iTaikai.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iTaikai.Size = new System.Drawing.Size(95, 25);
+			this.iTaikai.TabIndex = 456;
 			// 
 			// FormMasterIryoKikan_DlgEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(905, 673);
-			this.Controls.Add(this.groupBox2);
-			this.Controls.Add(this.groupBox1);
+			this.Controls.Add(this.iTaikai);
+			this.Controls.Add(this.iByosho);
 			this.Controls.Add(this.ycLabelEx20);
 			this.Controls.Add(this.lKumiCode);
 			this.Controls.Add(this.iKumiCode);
@@ -943,8 +909,8 @@ namespace App
 			this.Controls.SetChildIndex(this.iKumiCode, 0);
 			this.Controls.SetChildIndex(this.lKumiCode, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx20, 0);
-			this.Controls.SetChildIndex(this.groupBox1, 0);
-			this.Controls.SetChildIndex(this.groupBox2, 0);
+			this.Controls.SetChildIndex(this.iByosho, 0);
+			this.Controls.SetChildIndex(this.iTaikai, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel1_2)).EndInit();
@@ -964,10 +930,8 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iKyokabyosho)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iHeisetsu)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKumiCode)).EndInit();
-			this.groupBox1.ResumeLayout(false);
-			this.groupBox1.PerformLayout();
-			this.groupBox2.ResumeLayout(false);
-			this.groupBox2.PerformLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iByosho)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iTaikai)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1011,8 +975,6 @@ namespace App
 		private GControlGcTextBoxEx.GcTextBoxEx iKaisetsushutai;
 		private YControlLabelEx.YcLabelEx lKaisetsushutai;
 		private YControlLabelEx.YcLabelEx ycLabelEx15;
-		private System.Windows.Forms.RadioButton rdoByoshoTrue;
-		private System.Windows.Forms.RadioButton rdoByoshoFalse;
 		private YControlLabelEx.YcLabelEx ycLabelEx16;
 		private GControlGcTextBoxEx.GcTextBoxEx iKyokabyosho;
 		private YControlLabelEx.YcLabelEx ycLabelEx17;
@@ -1022,10 +984,8 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx18;
 		private YControlLabelEx.YcLabelEx lKumiCode;
 		private GControlGcTextBoxEx.GcTextBoxEx iKumiCode;
-		private System.Windows.Forms.RadioButton chkTaikaiFalse;
-		private System.Windows.Forms.RadioButton rdoTaikaiTrue;
 		private YControlLabelEx.YcLabelEx ycLabelEx20;
-		private System.Windows.Forms.GroupBox groupBox1;
-		private System.Windows.Forms.GroupBox groupBox2;
+		private GControlGcComboBoxEx.GcComboBoxEx iByosho;
+		private GControlGcComboBoxEx.GcComboBoxEx iTaikai;
 	}
 }
