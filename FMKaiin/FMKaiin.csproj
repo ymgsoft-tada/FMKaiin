@@ -201,6 +201,12 @@
     <Compile Include="FormMasterKaihi_DlgEntry.designer.cs">
       <DependentUpon>FormMasterKaihi_DlgEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMasterShinryoka_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterShinryoka_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterShinryoka_DlgEntry.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMasterTantosha.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -355,6 +361,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterKaihi_DlgEntry.resx">
       <DependentUpon>FormMasterKaihi_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterShinryoka_DlgEntry.resx">
+      <DependentUpon>FormMasterShinryoka_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterTantosha.resx">
       <DependentUpon>FormMasterTantosha.cs</DependentUpon>

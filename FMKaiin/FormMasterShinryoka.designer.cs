@@ -117,7 +117,7 @@
 			this.lblTitle.Location = new System.Drawing.Point(46, 28);
 			this.lblTitle.Name = "lblTitle";
 			this.lblTitle.SingleBorderColor = System.Drawing.Color.Empty;
-			this.lblTitle.Size = new System.Drawing.Size(107, 28);
+			this.lblTitle.Size = new System.Drawing.Size(85, 23);
 			this.lblTitle.TabIndex = 37;
 			this.lblTitle.Text = "診療科一覧";
 			// 
@@ -137,7 +137,7 @@
 			// 
 			// FormMasterShinryoka
 			// 
-			this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 24F);
+			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(808, 540);
 			this.Controls.Add(this.iCodeShinryoka);

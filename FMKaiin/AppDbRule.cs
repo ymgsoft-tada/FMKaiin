@@ -266,6 +266,11 @@ namespace App
 			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Tel1, new int[] { 5, 4, 5 }));
 			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Fax1, new int[] { 5, 4, 5 }));
 			#endregion
+
+			#region +++ t_shinryoka +++
+			Rule.Add(new GControlDBRuleNumber(t_shinryoka.FSRK_Code, 5, 5));
+			Rule.Add(new GControlDBRuleText(t_shinryoka.FSRK_Name, 30));
+			#endregion
 		}
 
 		/// <summary>

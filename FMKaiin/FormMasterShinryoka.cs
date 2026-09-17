@@ -67,25 +67,6 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
-			// コントロールの制御ルール指定
-//			AppDbRule.SetControlByRule(iCodeKaihi, t_shinryoka.FCD_Kaihi);
-
-//			bool select_all = true;
-//			if (select_all == true)
-//			{
-//				iKbnKaihi.ExAddItem("すべて", -1);
-//			}
-
-//			iKbnKaihi.ExEndUpdate();
-
-
-			// 会費コード
-			//			AppCombo.SetComboBox(iDay, enumKbn.DTypeDay, true, (int)eTypeDay.None);
-
-			// 初期選択値
-			//			iKbnKaihi.ExSetSelectedIndexByValue((int)AppGlobal.LoginUser.XRow.TNT_TypeShinryojo);
-			//			iDay.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
-
 			// マスタ追加時の動作仕様のため、再表示時にのみソートする(GetReFillTable()の利用)
 			dvShinryoka = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_shinryoka, $"ORDER BY {t_shinryoka.FSRK_Code}"), this.BindingContext);
 
@@ -206,13 +187,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterKaihi.Functions);
+			appFuncKey = new AppFunctionKey(funckey, FuncMasterShinryokamoku.Functions);
 
-			FuncMasterKaihi.RowAdd.Execute		= rowAdd; // 追加
-			FuncMasterKaihi.RowEdit.Execute	= rowEdit; // 訂正
-			FuncMasterKaihi.RowDelete.Execute	= rowDelete; // 削除
-//			FuncMasterKaihi.CopyAdd.Execute	= copyAdd;
-			FuncMasterKaihi.Close.Execute		= formClose; // 閉じる
+			FuncMasterShinryokamoku.RowAdd.Execute		= rowAdd; // 追加
+			FuncMasterShinryokamoku.RowEdit.Execute	= rowEdit; // 訂正
+			FuncMasterShinryokamoku.RowDelete.Execute	= rowDelete; // 削除
+			FuncMasterShinryokamoku.Close.Execute		= formClose; // 閉じる
 		}
 
 		/// <summary>
@@ -225,11 +205,11 @@ namespace App
 			// 画面項目未関連カラムの値セット
 			nrow.ID_Shinryoka = AppDbID.GetNewID(dvShinryoka, t_shinryoka.FID_Shinryoka);
 
-/*
-			FormMasterShinryoka_DlgEntry frm	= new FormMasterShinryoka_DlgEntry();
-			frm.Mode							= FormMasterShinryoka_DlgEntry.eMode.Add;
-			frm.Row								= nrow.Row;
-//			frm.DbView							= dvShinryoka;
+
+			FormMasterShinryoka_DlgEntry frm = new FormMasterShinryoka_DlgEntry();
+			frm.Mode = FormMasterShinryoka_DlgEntry.eMode.Add;
+			frm.Row = nrow.Row;
+			//			frm.DbView							= dvShinryoka;
 			frm.ShowDialog();
 
 			if (frm.FormCloseReason == FormCloseReason.Save)
@@ -246,7 +226,7 @@ namespace App
 
 			frm.Dispose();
 			frm = null; // なかったが念のため追加
-*/
+
 		}
 
 		/// <summary>
@@ -259,11 +239,11 @@ namespace App
 				DataRow row = dvShinryoka.NewRow();
 
 				AppDb.CopyDataRow(dvShinryoka.CurrentRow.Row, row);
-/*
+
 				FormMasterShinryoka_DlgEntry frm = new FormMasterShinryoka_DlgEntry();
-				frm.Mode		= FormMasterShinryoka_DlgEntry.eMode.Edit;
-				frm.Row			= row;
-//				frm.DbView		= dvShinryoka;
+				frm.Mode = FormMasterShinryoka_DlgEntry.eMode.Edit;
+				frm.Row = row;
+				//				frm.DbView		= dvShinryoka;
 				frm.ShowDialog();
 
 				if (frm.FormCloseReason == FormCloseReason.Save)
@@ -277,7 +257,7 @@ namespace App
 
 				frm.Dispose();
 				frm = null;
-*/
+
 			}
 		}
 
