@@ -215,7 +215,20 @@ namespace App
 			FuncMasterIryoKikan.RowAdd.Execute = rowAdd;
 			FuncMasterIryoKikan.RowEdit.Execute = rowEdit;
 			FuncMasterIryoKikan.RowDelete.Execute = rowDelete;
+			FuncMasterIryoKikan.Preview.Execute = preview;
 			FuncMasterIryoKikan.Close.Execute = formClose;
+		}
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		void preview()
+		{
+			ReportFlexIryoKikan rep = new ReportFlexIryoKikan(new DBView(dvKikan));
+			rep.ReportExec();
+
+			
+			rep = null;
 		}
 
 		/// <summary>
