@@ -74,7 +74,6 @@ namespace App
 
 			//¶kj 各会員の会費情報をセット
 			DBView dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_kaihi));
-
 			for (int i = 0; i < dv.Count; i++)
 			{
 				t_kaiin_kaihi xrow = new t_kaiin_kaihi(dv[i]);
@@ -82,6 +81,30 @@ namespace App
 				if (dics_id.ContainsKey(xrow.ID_Kaiin))
 				{
 					dics_id[xrow.ID_Kaiin].AddKaihi(xrow);
+				}
+			}
+
+			// 学会情報の登録
+			dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_gakkai));
+			for (int i = 0; i < dv.Count; i++)
+			{
+				t_kaiin_gakkai xrow = new t_kaiin_gakkai(dv[i]);
+
+				if (dics_id.ContainsKey(xrow.ID_Kaiin))
+				{
+					dics_id[xrow.ID_Kaiin].AddGakkai(xrow);
+				}
+			}
+
+			// 診療科の登録
+			dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_shinryoka));
+			for (int i = 0; i < dv.Count; i++)
+			{
+				t_kaiin_shinryoka xrow = new t_kaiin_shinryoka(dv[i]);
+
+				if (dics_id.ContainsKey(xrow.ID_Kaiin))
+				{
+					dics_id[xrow.ID_Kaiin].AddShinryoka(xrow);
 				}
 			}
 		}
@@ -153,6 +176,22 @@ namespace App
 		}
 
 		/// <summary>
+		/// 所属している学会
+		/// </summary>
+		public List<Gakkai> Gakkais
+		{
+			get; private set;
+		}
+
+		/// <summary>
+		/// 担当している診療科
+		/// </summary>
+		public List<Shinryoka> Shinryokas
+		{
+			get; private set;
+		}
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		public Kaiin(t_kaiin row)
@@ -164,6 +203,8 @@ namespace App
 			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 
 			Kaihis = new List<Kaihi>();
+			Gakkais = new List<Gakkai>();
+			Shinryokas  = new List<Shinryoka>();
 
 		}
 
@@ -176,6 +217,30 @@ namespace App
 			if (xrow != null && xrow.ID_Kaiin == ID)
 			{
 				Kaihis.Add(AppGlobal.Kaihis.Get(xrow.ID_Kaihi));
+			}
+		}
+
+		/// <summary>
+		/// 学会の登録
+		/// </summary>
+		/// <param name="xrow">学会レコード</param>
+		public void AddGakkai(t_kaiin_gakkai xrow)
+		{
+			if (xrow != null && xrow.ID_Kaiin == ID)
+			{
+				Gakkais.Add(AppGlobal.Gakkais.Get(xrow.ID_Gakkai));
+			}
+		}
+
+		/// <summary>
+		/// 診療科の登録
+		/// </summary>
+		/// <param name="xrow">学会レコード</param>
+		public void AddShinryoka(t_kaiin_shinryoka xrow)
+		{
+			if (xrow != null && xrow.ID_Kaiin == ID)
+			{
+				Shinryokas.Add(AppGlobal.Shinryokas.Get(xrow.ID_Shinryoka));
 			}
 		}
 	}
