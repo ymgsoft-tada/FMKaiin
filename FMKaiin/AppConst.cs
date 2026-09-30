@@ -57,7 +57,7 @@ namespace App
 		public const string SystemFolder = @"system\";
 
 		/// <summary>レポートフォルダ</summary>
-		public const string ReportFolder = @"report\";
+		public const string ReportFolder = @"system\report\";
 
 		/// <summary>郵便番号ファイル</summary>
 		public const string ZipDBPath = SystemFolder + "Post.db";
