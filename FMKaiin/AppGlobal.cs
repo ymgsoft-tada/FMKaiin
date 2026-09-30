@@ -71,7 +71,6 @@ namespace App
 
 			InitBasic();
 //			InitStaff();
-			InitKaiin();
 			InitTanto();
 			InitIryoKikan();
 			InitKaihi();
@@ -83,6 +82,9 @@ namespace App
 			InitShisetsugyomu();
 			InitKaisetsusyutai();
 			InitIfaxGroup();
+
+			// 会員情報は最後に初期化
+			InitKaiin();
 		}
 
 		/// <summary>

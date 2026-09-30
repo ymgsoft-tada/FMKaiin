@@ -47,7 +47,7 @@ namespace App
 			this.grid.CaptionHeight = 16;
 			this.grid.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。";
 			this.grid.Images.Add(((System.Drawing.Image)(resources.GetObject("grid.Images"))));
-			this.grid.Location = new System.Drawing.Point(31, 94);
+			this.grid.Location = new System.Drawing.Point(32, 95);
 			this.grid.Name = "grid";
 			this.grid.PreviewInfo.Caption = "印刷プレビューウィンドウ";
 			this.grid.PreviewInfo.Location = new System.Drawing.Point(0, 0);
@@ -58,16 +58,16 @@ namespace App
 			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(658, 415);
+			this.grid.Size = new System.Drawing.Size(517, 449);
 			this.grid.TabIndex = 56;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
 			// funckey
 			// 
 			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.funckey.Location = new System.Drawing.Point(0, 536);
+			this.funckey.Location = new System.Drawing.Point(0, 570);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(721, 25);
+			this.funckey.Size = new System.Drawing.Size(579, 25);
 			this.funckey.TabIndex = 55;
 			this.funckey.Text = "gcFunctionKey1";
 			// 
@@ -76,7 +76,7 @@ namespace App
 			this.iDateYM.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(242)))), ((int)(((byte)(251)))));
 			this.iDateYM.DisabledForeColor = System.Drawing.Color.Black;
 			this.iDateYM.Font = new System.Drawing.Font("メイリオ", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.iDateYM.Location = new System.Drawing.Point(137, 63);
+			this.iDateYM.Location = new System.Drawing.Point(138, 64);
 			this.iDateYM.Name = "iDateYM";
 			this.iDateYM.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iDateYM.Size = new System.Drawing.Size(120, 25);
@@ -101,7 +101,7 @@ namespace App
 			this.ycLabelEx14.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx14.IconImage = null;
 			this.ycLabelEx14.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx14.Location = new System.Drawing.Point(31, 63);
+			this.ycLabelEx14.Location = new System.Drawing.Point(32, 64);
 			this.ycLabelEx14.Name = "ycLabelEx14";
 			this.ycLabelEx14.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx14.Size = new System.Drawing.Size(100, 25);
@@ -116,7 +116,7 @@ namespace App
 			this.ycLabelEx3.Font = new System.Drawing.Font("メイリオ", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx3.IconImage = null;
-			this.ycLabelEx3.Location = new System.Drawing.Point(47, 22);
+			this.ycLabelEx3.Location = new System.Drawing.Point(48, 23);
 			this.ycLabelEx3.Name = "ycLabelEx3";
 			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx3.Size = new System.Drawing.Size(299, 23);
@@ -131,7 +131,7 @@ namespace App
 			this.ycLabelEx4.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.IconImage = null;
 			this.ycLabelEx4.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRound;
-			this.ycLabelEx4.Location = new System.Drawing.Point(31, 18);
+			this.ycLabelEx4.Location = new System.Drawing.Point(32, 19);
 			this.ycLabelEx4.Name = "ycLabelEx4";
 			this.ycLabelEx4.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.Size = new System.Drawing.Size(10, 30);
@@ -141,7 +141,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(721, 561);
+			this.ClientSize = new System.Drawing.Size(579, 595);
 			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.iDateYM);

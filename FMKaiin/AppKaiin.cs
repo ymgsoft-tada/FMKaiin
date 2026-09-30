@@ -71,6 +71,19 @@ namespace App
 					dics_cd.Add(obj.CD, obj);
 				}
 			}
+
+			//¶kj 各会員の会費情報をセット
+			DBView dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_kaihi));
+
+			for (int i = 0; i < dv.Count; i++)
+			{
+				t_kaiin_kaihi xrow = new t_kaiin_kaihi(dv[i]);
+
+				if (dics_id.ContainsKey(xrow.ID_Kaiin))
+				{
+					dics_id[xrow.ID_Kaiin].AddKaihi(xrow);
+				}
+			}
 		}
 
 		/// <summary>
@@ -132,6 +145,14 @@ namespace App
 		}
 
 		/// <summary>
+		/// 所属している会費情報
+		/// </summary>
+		public List<Kaihi> Kaihis
+		{
+			get; private set;
+		}
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
 		public Kaiin(t_kaiin row)
@@ -142,6 +163,20 @@ namespace App
 			this.CD = XRow.CD_Kaiin;
 			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 
+			Kaihis = new List<Kaihi>();
+
+		}
+
+		/// <summary>
+		/// 会費の登録
+		/// </summary>
+		/// <param name="xrow">会費レコード</param>
+		public void AddKaihi(t_kaiin_kaihi xrow)
+		{
+			if (xrow != null && xrow.ID_Kaiin == ID)
+			{
+				Kaihis.Add(AppGlobal.Kaihis.Get(xrow.ID_Kaihi));
+			}
 		}
 	}
 }

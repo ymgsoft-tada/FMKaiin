@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationMessageにより自動的に生成されました。(fj)
 //
 // Inport File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppMsgBox.xlsx
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppMsgBox.xlsx
 // Template File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppMsgBox.cs.template
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppMsgBox.cs.template
 //
 
 using System;
@@ -201,97 +201,17 @@ namespace App
 		/// </summary>
 		MaxCodeForMaster,
 		/// <summary>
-		/// 「{0}度」への更新処理を実行します。よろしいですか？
+		/// {0}の引落データを作成します。よろしいですか？
 		/// </summary>
-		CreateNextMonth,
+		ConfirmCreateHikiotoshi,
 		/// <summary>
-		/// {0}月度への更新処理が完了しました。
+		/// {0}の引落データは既に存在します。\r\n作成済みのデータは全てクリアされますが、再作成しますか？
 		/// </summary>
-		SuccessNextMonth,
+		ConfirmRemakeHikiotoshi,
 		/// <summary>
-		/// 処理月度「{0}」が選択されました。
+		/// @c(Red)再作成すると元には戻せません。本当によろしいですか？
 		/// </summary>
-		SelectedMonth,
-		/// <summary>
-		/// {0}分のカレンダー情報を登録します。よろしいですか？
-		/// </summary>
-		ConfirmSaveCalendar,
-		/// <summary>
-		/// {0}分のカレンダー情報が登録されていません。\r\nカレンダー管理画面で設定情報を登録してください。
-		/// </summary>
-		NotFoundCalendarNeedCreate,
-		/// <summary>
-		/// パスワードを変更します。よろしいですか？
-		/// </summary>
-		ConfirmChangePassword,
-		/// <summary>
-		/// {0}度の給与計算データは既に作成済みです。再作成してもよろしいですか？\r\n（該当月度の作成済みデータについては全て破棄されます。）
-		/// </summary>
-		ConfirmRemakeKyuyoData,
-		/// <summary>
-		/// {0}度の給与計算データを生成しました。
-		/// </summary>
-		CreateKyuyoData,
-		/// <summary>
-		/// 確定状態を解除するため、作成済みの給与計算データが全てクリアされます。よろしいですか？
-		/// </summary>
-		ConfirmClearKyuyoData,
-		/// <summary>
-		/// {0}度の給与計算データをクリアしました。
-		/// </summary>
-		ClearKyuyoData,
-		/// <summary>
-		/// @c(Red)解除すると元には戻せません。本当によろしいですか？
-		/// </summary>
-		ConfirmClearKyuyoData2,
-		/// <summary>
-		/// {0}度の給与計算データを作成します。よろしいですか？
-		/// </summary>
-		ConfirmCreateKyuyoData,
-		/// <summary>
-		/// ログファイルの出力が完了しました。
-		/// </summary>
-		SuccessExportLog,
-		/// <summary>
-		/// ログファイルの出力に失敗しました。ファイルがなんらかのアプリケーションによって開かれている可能性があります。
-		/// </summary>
-		FailedExportLogReasonSave,
-		/// <summary>
-		/// アプリケーションを終了します。よろしいですか？
-		/// </summary>
-		ShutDown,
-		/// <summary>
-		/// サポートセンターのオペレータによる遠隔支援サービスを開始します。よろしいですか？
-		/// </summary>
-		StartRemoteSupport,
-		/// <summary>
-		/// 給与データが確定済のため、情報を編集する事ができません。
-		/// </summary>
-		FixedKyuyo,
-		/// <summary>
-		/// {0}は現在ログイン中のため、削除することができません。
-		/// </summary>
-		CannotDeleteLoginUser,
-		/// <summary>
-		/// {0}の休日診療データについて、現在の日区分と計算区分を元に再計算します。\r\n既に登録されている金額については全て破棄されます。よろしいですか？
-		/// </summary>
-		ConfirmRecalcKyushin,
-		/// <summary>
-		/// @c(Red)再計算すると元には戻せません。本当によろしいですか？
-		/// </summary>
-		ConfirmRecalcKyushin2,
-		/// <summary>
-		/// {0}件のデータについて、再計算を実行しました。
-		/// </summary>
-		SuccessRecalcKyushin,
-		/// <summary>
-		/// 過去分（最新月度でない）で確定済みの給与計算データを解除する事はできません。
-		/// </summary>
-		CannotCancelFixedKyuyo,
-		/// <summary>
-		/// CSVファイルから{0}件のデータインポートが完了しました。
-		/// </summary>
-		SuccessImportCSV,
+		ConfirmRemakeHikiotoshi2,
 		/// <summary>
 		/// CSVインポートをキャンセルします。よろしいですか？
 		/// </summary>
@@ -301,25 +221,29 @@ namespace App
 		/// </summary>
 		ExecImportCSV,
 		/// <summary>
-		/// 入力された個人番号は有効ではありません。\r\nこのまま登録してもよろしいですか？
+		/// ログファイルの出力が完了しました。
 		/// </summary>
-		ConfirmIlligalMyNumber,
+		SuccessExportLog,
 		/// <summary>
-		/// ログイン中の担当者にマイナンバーを管理する権限がありません。
+		/// {0}は現在ログイン中のため、削除することができません。
 		/// </summary>
-		DisabledMyNumber,
+		CannotDeleteLoginUser,
 		/// <summary>
-		/// マイナンバー管理者のパスワードが登録されていません。\r\nつづけて管理用パスワードを登録してください。
+		/// パスワードを変更します。よろしいですか？
 		/// </summary>
-		MyNumberManagerPWD,
+		ConfirmChangePassword,
 		/// <summary>
-		/// 指定した機能を実行するには、管理者権限が必要です。
+		/// ログファイルの出力に失敗しました。ファイルがなんらかのアプリケーションによって開かれている可能性があります。
 		/// </summary>
-		HavenotAuthAdmin,
+		FailedExportLogReasonSave,
 		/// <summary>
-		/// 同一月度・診療所にインポート済のデータがあります。インポート処理を実行しますか？
+		/// {0}度の引落データを作成しました。
 		/// </summary>
-		ConfirmImportDuplicate,
+		CreateHikiotoshiData,
+		/// <summary>
+		/// 何らかの理由で、引落データの作成に失敗しました。
+		/// </summary>
+		FailedHikiotoshiData,
 	};
 	
 	/// <summary>
@@ -508,139 +432,19 @@ namespace App
 				MessageBoxIcon.Question,
 				MessageBoxDefaultButton.Button2,
 				"確認",
-				"「{0}度」への更新処理を実行します。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"成功",
-				"{0}月度への更新処理が完了しました。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"確認",
-				"処理月度「{0}」が選択されました。"),
+				"{0}の引落データを作成します。よろしいですか？"),
 			new AppMsgBoxData(
 				MessageBoxButtons.YesNo,
 				MessageBoxIcon.Question,
 				MessageBoxDefaultButton.Button2,
 				"確認",
-				"{0}分のカレンダー情報を登録します。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Warning,
-				MessageBoxDefaultButton.Button1,
-				"警告",
-				"{0}分のカレンダー情報が登録されていません。\r\nカレンダー管理画面で設定情報を登録してください。"),
+				"{0}の引落データは既に存在します。\r\n作成済みのデータは全てクリアされますが、再作成しますか？"),
 			new AppMsgBoxData(
 				MessageBoxButtons.YesNo,
 				MessageBoxIcon.Question,
 				MessageBoxDefaultButton.Button2,
 				"確認",
-				"パスワードを変更します。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"{0}度の給与計算データは既に作成済みです。再作成してもよろしいですか？\r\n（該当月度の作成済みデータについては全て破棄されます。）"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"成功",
-				"{0}度の給与計算データを生成しました。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"確定状態を解除するため、作成済みの給与計算データが全てクリアされます。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"成功",
-				"{0}度の給与計算データをクリアしました。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"@c(Red)解除すると元には戻せません。本当によろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"{0}度の給与計算データを作成します。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"確認",
-				"ログファイルの出力が完了しました。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Error,
-				MessageBoxDefaultButton.Button1,
-				"エラー",
-				"ログファイルの出力に失敗しました。ファイルがなんらかのアプリケーションによって開かれている可能性があります。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button1,
-				"確認",
-				"アプリケーションを終了します。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"サポートセンターのオペレータによる遠隔支援サービスを開始します。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Warning,
-				MessageBoxDefaultButton.Button1,
-				"警告",
-				"給与データが確定済のため、情報を編集する事ができません。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Warning,
-				MessageBoxDefaultButton.Button1,
-				"警告",
-				"{0}は現在ログイン中のため、削除することができません。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"{0}の休日診療データについて、現在の日区分と計算区分を元に再計算します。\r\n既に登録されている金額については全て破棄されます。よろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Question,
-				MessageBoxDefaultButton.Button2,
-				"確認",
-				"@c(Red)再計算すると元には戻せません。本当によろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"確認",
-				"{0}件のデータについて、再計算を実行しました。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Warning,
-				MessageBoxDefaultButton.Button1,
-				"警告",
-				"過去分（最新月度でない）で確定済みの給与計算データを解除する事はできません。"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Information,
-				MessageBoxDefaultButton.Button1,
-				"確認",
-				"CSVファイルから{0}件のデータインポートが完了しました。"),
+				"@c(Red)再作成すると元には戻せません。本当によろしいですか？"),
 			new AppMsgBoxData(
 				MessageBoxButtons.YesNo,
 				MessageBoxIcon.Question,
@@ -654,35 +458,41 @@ namespace App
 				"確認",
 				"CSVファイルからデータのインポートを実行します。よろしいですか？"),
 			new AppMsgBoxData(
-				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Warning,
-				MessageBoxDefaultButton.Button2,
-				"警告",
-				"入力された個人番号は有効ではありません。\r\nこのまま登録してもよろしいですか？"),
-			new AppMsgBoxData(
-				MessageBoxButtons.OK,
-				MessageBoxIcon.Warning,
-				MessageBoxDefaultButton.Button1,
-				"警告",
-				"ログイン中の担当者にマイナンバーを管理する権限がありません。"),
-			new AppMsgBoxData(
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Information,
 				MessageBoxDefaultButton.Button1,
 				"確認",
-				"マイナンバー管理者のパスワードが登録されていません。\r\nつづけて管理用パスワードを登録してください。"),
+				"ログファイルの出力が完了しました。"),
 			new AppMsgBoxData(
 				MessageBoxButtons.OK,
 				MessageBoxIcon.Warning,
 				MessageBoxDefaultButton.Button1,
 				"警告",
-				"指定した機能を実行するには、管理者権限が必要です。"),
+				"{0}は現在ログイン中のため、削除することができません。"),
 			new AppMsgBoxData(
 				MessageBoxButtons.YesNo,
-				MessageBoxIcon.Warning,
+				MessageBoxIcon.Question,
 				MessageBoxDefaultButton.Button2,
-				"警告",
-				"同一月度・診療所にインポート済のデータがあります。インポート処理を実行しますか？"),
+				"確認",
+				"パスワードを変更します。よろしいですか？"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Error,
+				MessageBoxDefaultButton.Button1,
+				"エラー",
+				"ログファイルの出力に失敗しました。ファイルがなんらかのアプリケーションによって開かれている可能性があります。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Information,
+				MessageBoxDefaultButton.Button1,
+				"成功",
+				"{0}度の引落データを作成しました。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Error,
+				MessageBoxDefaultButton.Button1,
+				"エラー",
+				"何らかの理由で、引落データの作成に失敗しました。"),
 		};
 	}
 	
