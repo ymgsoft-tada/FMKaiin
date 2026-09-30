@@ -331,8 +331,6 @@
     <Compile Include="XApp_t_shisetsugyomu.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
     <Compile Include="XApp_t_zentodouhuken.cs" />
-    <Compile Include="XRep_Kaihi.cs" />
-    <Compile Include="XRep_ReportProp.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
       <DependentUpon>DlgSplash2.cs</DependentUpon>
     </EmbeddedResource>
