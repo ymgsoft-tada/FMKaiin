@@ -191,7 +191,7 @@ namespace App
 			this.MinimizeBox = false;
 			this.Name = "FormMasterTantosha_DlgPwd";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "担当者マスター(パスワード変更)";
+			this.Text = "担当者マスタ(パスワード変更)";
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
 			this.Controls.SetChildIndex(this.iPwd_New, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx3, 0);

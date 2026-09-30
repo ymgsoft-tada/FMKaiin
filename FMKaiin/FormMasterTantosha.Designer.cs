@@ -109,7 +109,7 @@ namespace App
 			this.MinimizeBox = false;
 			this.Name = "FormMasterTantosha";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "FormMasterTantosha";
+			this.Text = "担当者マスタ";
 			this.Controls.SetChildIndex(this.funckey, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx1, 0);
 			this.Controls.SetChildIndex(this.lblTitle, 0);

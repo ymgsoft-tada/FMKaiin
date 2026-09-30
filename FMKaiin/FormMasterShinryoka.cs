@@ -67,7 +67,7 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
-			// マスタ追加時の動作仕様のため、再表示時にのみソートする(GetReFillTable()の利用)
+			// 追加時の動作仕様のため、再表示時(Shown()時)のみソートする(GetReFillTable()の利用)
 			dvShinryoka = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_shinryoka, $"ORDER BY {t_shinryoka.FSRK_Code}"), this.BindingContext);
 
 			// グリッド作成
@@ -234,6 +234,7 @@ namespace App
 		/// </summary>
 		void rowEdit()
 		{
+
 			if (dvShinryoka.Count > 0)
 			{
 				DataRow row = dvShinryoka.NewRow();

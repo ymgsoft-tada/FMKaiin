@@ -18,7 +18,7 @@ namespace App
 		/// <summary>
 		/// アプリケーション内の日付表示を和暦にするか取得・設定します。(trueなら西暦、falseは和暦）
 		/// </summary>
-		static bool dispSeikreki = true;
+		static bool dispSeireki = true;
 		#endregion
 
 		#region *** Property ***
@@ -27,7 +27,7 @@ namespace App
 		/// </summary>
 		public static bool DispSeireki
 		{
-			get { return dispSeikreki; }
+			get { return dispSeireki; }
 		}
 		#endregion
 
@@ -386,7 +386,7 @@ namespace App
 		/// </summary>
 		public static void SetDispSeireki(bool val)
 		{
-			dispSeikreki = val;
+			dispSeireki = val;
 			UcDate.SetKoyomiSeirekiOn(val);
 			GGridDBCommon.KoyomiSeirekiOn = val;
 		}
@@ -537,7 +537,7 @@ namespace App
 		/// <returns>変換した日付文字列</returns>
 		private static string getDate(DateTime dt, bool splitSlash, string padding, DateType type)
 		{
-			return getDate(dt, splitSlash, padding, type, dispSeikreki);
+			return getDate(dt, splitSlash, padding, type, dispSeireki);
 		}
 		/// <summary>
 		/// 日付を文字列で返します。

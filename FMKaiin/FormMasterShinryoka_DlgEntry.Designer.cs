@@ -150,7 +150,7 @@ namespace App
 			this.KeyPreview = true;
 			this.Name = "FormMasterShinryoka_DlgEntry";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "診療科情報";
+			this.Text = "診療科マスタ";
 			this.Controls.SetChildIndex(this.iCode, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx1, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx7, 0);

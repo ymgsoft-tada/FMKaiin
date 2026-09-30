@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -51,9 +51,9 @@ namespace App
 		public const string t_gakko = "t_gakko";
 		
 		/// <summary>
-		/// t_ifaxgroup
+		/// t_ifax
 		/// </summary>
-		public const string t_ifaxgroup = "t_ifaxgroup";
+		public const string t_ifax = "t_ifax";
 		
 		/// <summary>
 		/// t_iryokikan
@@ -66,19 +66,29 @@ namespace App
 		public const string t_iryokikan_shinryoka = "t_iryokikan_shinryoka";
 		
 		/// <summary>
+		/// t_ishikai
+		/// </summary>
+		public const string t_ishikai = "t_ishikai";
+		
+		/// <summary>
 		/// t_kaihi
 		/// </summary>
 		public const string t_kaihi = "t_kaihi";
 		
 		/// <summary>
-		/// t_kaihikbn
+		/// t_kaiin
 		/// </summary>
-		public const string t_kaihikbn = "t_kaihikbn";
+		public const string t_kaiin = "t_kaiin";
 		
 		/// <summary>
 		/// t_kaiin_gakkai
 		/// </summary>
 		public const string t_kaiin_gakkai = "t_kaiin_gakkai";
+		
+		/// <summary>
+		/// t_kaiin_ido
+		/// </summary>
+		public const string t_kaiin_ido = "t_kaiin_ido";
 		
 		/// <summary>
 		/// t_kaiin_kaihi
@@ -91,9 +101,24 @@ namespace App
 		public const string t_kaiin_shinryoka = "t_kaiin_shinryoka";
 		
 		/// <summary>
+		/// t_kaiinkbn
+		/// </summary>
+		public const string t_kaiinkbn = "t_kaiinkbn";
+		
+		/// <summary>
 		/// t_kaisetsushutai
 		/// </summary>
 		public const string t_kaisetsushutai = "t_kaisetsushutai";
+		
+		/// <summary>
+		/// t_kumicd
+		/// </summary>
+		public const string t_kumicd = "t_kumicd";
+		
+		/// <summary>
+		/// t_nitikbn
+		/// </summary>
+		public const string t_nitikbn = "t_nitikbn";
 		
 		/// <summary>
 		/// t_shinryoka
@@ -106,14 +131,14 @@ namespace App
 		public const string t_shisetsugyomu = "t_shisetsugyomu";
 		
 		/// <summary>
-		/// t_staff
-		/// </summary>
-		public const string t_staff = "t_staff";
-		
-		/// <summary>
 		/// t_tantosha
 		/// </summary>
 		public const string t_tantosha = "t_tantosha";
+		
+		/// <summary>
+		/// t_zentodouhuken
+		/// </summary>
+		public const string t_zentodouhuken = "t_zentodouhuken";
 		#endregion
 		
 		#region *** Public Method ***

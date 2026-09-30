@@ -7,8 +7,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using C1.Win.C1TrueDBGrid;
 using ComponentDB;
 using ComponentGGridDB;
+using ComponentIO;
 
 namespace App
 {
@@ -17,6 +19,11 @@ namespace App
 
 		DBView dvKikan;
 		GGridDBCommon gcom;
+
+		/// <summary>
+		/// 組コード情報 DBView iSearch
+		/// </summary>
+		DBView dvKumi;
 
 		/// <summary>
 		/// 医療機関-診療科の関連 DBView (_DlgEntryにて操作)
@@ -33,23 +40,77 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			// コンボボックス
+			// 手動セット
+			iKbnTaikai.ExBeginUpdate();
+			iKbnTaikai.ExAddItem("", "all"); // "すべて"代替
+			iKbnTaikai.ExAddItem("会員", true);
+			iKbnTaikai.ExAddItem("退会", false);
+			iKbnTaikai.ExEndUpdate();
+
+			// iSearchセット
+			dvKumi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kumicd)); // ソートはAppTableCombo側実施
+			AppTableCombo.SetComboBox_KumiCode(iKumiCode, dvKumi); // 組コード
+
+			// 追加時の動作仕様のため、再表示時(Shown()時)のみソートする(GetReFillTable()の利用)
 			dvKikan = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_iryokikan, $"ORDER BY {t_iryokikan.FIRK_Code}"), this.BindingContext);
 
 			AppGridCommon.StyleSet(grid);
 
 			gcom = new GGridDBCommon(grid, this);
 			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Code, "コード", 0.15f, GGridDBCellDisp.Right));
-			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Name, "施設正式名", 0.4f));
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Name, "施設正式名", 0.6f));
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_KumiCode, "組コード", 0.15f, GGridDBCellDisp.Center));
+			gcom.SetUnboundColumnFetch(ubKumiCode);
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_TaikaiKbn, "退会区分", 0.1f, GGridDBCellDisp.Center));
+			gcom.SetUnboundColumnFetch(ubTaikaiKbn);
 			gcom.EndAdd(dvKikan);
 
+			// _DlgEntry画面のGrid用データ取得
+			dvIryokikanShinryoka = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_iryokikan_shinryoka)); // BindingContext:DBViewのカレント行とGridのカレント行追従させるため必要
 
-			dvIryokikanShinryoka = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_iryokikan_shinryoka), this.BindingContext); // BindingContext:DBViewのカレント行とGridのカレント行追従させるため必要
-
+			changeFilter();
 
 			//■ イベント
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
+			iKbnTaikai.SelectedIndexChanged += iKbnTaikai_SelectedIndexChanged;
+			iKumiCode.SelectIndexChanged += iKumiCode_SelectIndexChanged;
+			iCodeIryo.TextChanged += iCodeIryo_TextChanged;
+			btnClear.Click += btnClear_Click;
 
 			base.FormFrame_Shown(sender, e);
+		}
+
+		string ubKumiCode(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_iryokikan xrow = new t_iryokikan(dvKikan[e.Row]);
+
+			// 組コード情報の取得
+			KumiCode kc = AppGlobal.KumiCodes.Get(Cast.Int(xrow.IRK_KumiCode_Null));
+
+			// 該当情報が存在したら名称をreturn
+			if (kc != null)
+			{
+				return kc.XRow.KMC_Name_Null;
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		string ubTaikaiKbn(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_iryokikan xrow = new t_iryokikan(dvKikan[e.Row]);
+
+			if (xrow.IRK_TaikaiKbn == true)
+			{
+				return "会員";
+			}
+			else
+			{
+				return "退会";
+			}
 		}
 
 		private void grid_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -58,6 +119,90 @@ namespace App
 			{
 				rowEdit();
 			}
+		}
+
+		/// <summary>
+		/// クリアボタンクリック
+		/// </summary>
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			iCodeIryo.TextChanged -= iCodeIryo_TextChanged;
+			iKbnTaikai.SelectedIndexChanged -= iKbnTaikai_SelectedIndexChanged;
+			iKumiCode.SelectIndexChanged -= iKumiCode_SelectIndexChanged;
+
+			// 条件初期化
+			iCodeIryo.ResetText();
+			iKbnTaikai.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
+			iKumiCode.ComboBox.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
+
+			// 初期条件でフィルタ
+			changeFilter();
+
+			iCodeIryo.TextChanged += iCodeIryo_TextChanged;
+			iKbnTaikai.SelectedIndexChanged += iKbnTaikai_SelectedIndexChanged;
+			iKumiCode.SelectIndexChanged += iKumiCode_SelectIndexChanged;
+		}
+
+		/// <summary>
+		/// 医療機関コード 値変更
+		/// </summary>
+		private void iCodeIryo_TextChanged(object sender, EventArgs e)
+		{
+			changeFilter();
+		}
+
+		/// <summary>
+		/// 退会区分コンボボックス変更
+		/// </summary>
+		private void iKbnTaikai_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			changeFilter();
+		}
+
+		/// <summary>
+		/// 組コードiSearch変更
+		/// </summary>
+		private void iKumiCode_SelectIndexChanged(object sender, EventArgs e)
+		{
+			iKumiCode.ComboBox.ExSetSelectedIndexByValue(iKumiCode.Value);
+			changeFilter();
+		}
+
+		/// <summary>
+		/// フィルタ変更
+		/// </summary>
+		void changeFilter()
+		{
+			string filter = "";
+
+			// 退会区分の検索
+			int kbnTaikaiIdx = Cast.Int(iKbnTaikai.SelectedIndex); // 空欄(all)の判断用
+//			eAuth auth = Cast.Enumelate<eAuth>(iKbnTaikai.ExGetValue(), eAuth.None); // Enumコンボの値取得例
+
+			if (kbnTaikaiIdx > 0) // 空欄選択以外
+			{
+//				if (filter != "") filter += " AND ";
+				filter += $"{t_iryokikan.FIRK_TaikaiKbn} = {Cast.Bool(iKbnTaikai.ExGetValue())}";
+			}
+
+			// 組コードの検索
+			int kumiId = Cast.Int(iKumiCode.Value);
+			if (kumiId > 0) // ID=0がない前提
+			{
+				if (filter != "") filter += " AND ";
+				filter += $"{t_iryokikan.FIRK_KumiCode} = {kumiId}";
+			}
+
+			// 医療機関コードの検索(現時点は、完全一致)
+			int iryoKikanCd = Cast.Int(iCodeIryo.Text);
+			if (iryoKikanCd != 0)
+			{
+				if (filter != "") filter += " AND ";
+				filter += string.Format("({0} = {1})", t_iryokikan.FIRK_Code, iryoKikanCd);
+			}
+
+			// フィルタ適用
+			dvKikan.RowFilterQuery(filter);
 		}
 
 		/// <summary>
@@ -82,6 +227,9 @@ namespace App
 
 			nrow.ID_Iryokikan = AppDbID.GetNewID(TableProp.t_iryokikan, t_iryokikan.FID_Iryokikan);
 			nrow.IRK_Code_Null = AppDbID.GetNewCode(TableProp.t_iryokikan, t_iryokikan.FIRK_Code);
+			nrow.IRK_ByoshoUmu = true;
+			nrow.IRK_TaikaiKbn = true;
+			nrow.IRK_Kaigo = true;
 
 			FormMasterIryoKikan_DlgEntry frm = new FormMasterIryoKikan_DlgEntry();
 			frm.Mode = FormMasterIryoKikan_DlgEntry.eMode.Add;
@@ -118,7 +266,7 @@ namespace App
 		{
 			if (dvKikan.Count > 0)
 			{
-				//■ 店舗レコード
+				//■ 医療機関レコード
 				DataRow row = dvKikan.NewRow();
 
 				AppDb.CopyDataRow(dvKikan.CurrentRow.Row, row);
@@ -159,7 +307,8 @@ namespace App
 			{
 				t_iryokikan xrow = new t_iryokikan(dvKikan.CurrentRow);
 
-				if (AppGlobal.DB.CheckUsedOtherTable(TableProp.t_iryokikan, t_iryokikan.FID_Iryokikan, xrow.ID_Iryokikan, TableProp.t_iryokikan) == true)
+				// t_iryokikanとt_iryokikan_shinryoka以外でIDが使用されているかチェック
+				if (AppGlobal.DB.CheckUsedOtherTable(TableProp.t_iryokikan, t_iryokikan.FID_Iryokikan, xrow.ID_Iryokikan, TableProp.t_iryokikan, TableProp.t_iryokikan_shinryoka) == true)
 				{
 					AppMsgBox.Show(this, AppMsgBoxIndex.UsedOtherTable);
 					return;
@@ -167,10 +316,29 @@ namespace App
 
 				string str = string.Format("{0} : {1}", xrow.IRK_Code_Null, xrow.IRK_Name);
 
+				// 削除実行
 				if (AppMsgBox.Show(this, AppMsgBoxIndex.Delete, str) == System.Windows.Forms.DialogResult.Yes)
 				{
+					// 紐づき情報削除
+					DBView tmpDv;
+
+					tmpDv = new DBView(dvIryokikanShinryoka); // 削除操作用のView作成
+					tmpDv.RowFilterQuery($"{t_iryokikan_shinryoka.FID_Iryokikan} = {xrow.ID_Iryokikan}"); // 削除対象の医療機関でフィルタ
+
+					// 0件になるまでDBView.Delete()
+					while(true)
+					{
+						if (tmpDv.Count == 0) break;
+						tmpDv.Delete();
+					}
+
+					// 指定行削除
 					dvKikan.Delete();
+
+					// DB更新
 					AppGlobal.DB.UpdateTable(TableProp.t_iryokikan);
+					AppGlobal.DB.UpdateTable(TableProp.t_iryokikan_shinryoka);
+
 					// 医療機関情報(共通)の再取得
 					AppGlobal.InitIryoKikan();
 				}

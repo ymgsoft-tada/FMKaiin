@@ -49,7 +49,7 @@ namespace App
 		DataRow editrow = null;
 
 		/// <summary>
-		/// 取引先用レコード
+		/// 画面間連携用レコード
 		/// </summary>
 		public DataRow Row 
 		{	
@@ -97,7 +97,7 @@ namespace App
 				title = "【コピー追加】";
 			}
 
-			this.Text +=  title;
+			this.Text += title;
 			base.FormFrame_Load(sender, e);
 		}
 

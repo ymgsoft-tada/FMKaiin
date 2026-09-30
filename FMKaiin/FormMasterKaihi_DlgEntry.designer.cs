@@ -40,7 +40,7 @@
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iShortName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.gbxBank = new System.Windows.Forms.GroupBox();
-			this.iBankIfax = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.iBankIfax = new App.UcTableComboBox();
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.iShitenName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iBankName = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -93,7 +93,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.iName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShortName)).BeginInit();
 			this.gbxBank.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.iBankIfax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKozaType)).BeginInit();
@@ -285,20 +284,25 @@
 			// 
 			// iBankIfax
 			// 
-			this.iBankIfax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iBankIfax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.iBankIfax.ExCompareContent = null;
-			this.iBankIfax.ExCompareValue = null;
-			this.iBankIfax.ExDataSource = null;
-			this.iBankIfax.ExFocusHighlight = true;
-			this.iBankIfax.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
-			this.iBankIfax.ListHeaderPane.Height = 27;
-			this.iBankIfax.ListHeaderPane.Visible = false;
+			this.iBankIfax.BackColor = System.Drawing.Color.Transparent;
+			this.iBankIfax.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iBankIfax.CompareValue = null;
+			this.iBankIfax.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iBankIfax.DBView = null;
+			this.iBankIfax.DiabledBackColor = System.Drawing.SystemColors.Control;
+			this.iBankIfax.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+			this.iBankIfax.DropDownSize = new System.Drawing.Size(100, 44);
+			this.iBankIfax.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.iBankIfax.ForeColor = System.Drawing.Color.Transparent;
+			this.iBankIfax.HighlightText = true;
 			this.iBankIfax.Location = new System.Drawing.Point(123, 154);
 			this.iBankIfax.Name = "iBankIfax";
-			this.iBankIfax.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iBankIfax.Size = new System.Drawing.Size(179, 25);
-			this.iBankIfax.TabIndex = 7;
+			this.iBankIfax.RowFilter = "";
+			this.iBankIfax.SelectedIndexNullLeave = -1;
+			this.iBankIfax.Size = new System.Drawing.Size(183, 23);
+			this.iBankIfax.Sort = "";
+			this.iBankIfax.TabIndex = 357;
+			this.iBankIfax.TextSubItemIndex = -1;
 			// 
 			// ycLabelEx4
 			// 
@@ -1205,7 +1209,7 @@
 			this.iKbnKaihi.Location = new System.Drawing.Point(148, 74);
 			this.iKbnKaihi.Name = "iKbnKaihi";
 			this.iKbnKaihi.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iKbnKaihi.Size = new System.Drawing.Size(111, 25);
+			this.iKbnKaihi.Size = new System.Drawing.Size(97, 25);
 			this.iKbnKaihi.TabIndex = 0;
 			// 
 			// FormMasterKaihi_DlgEntry
@@ -1263,7 +1267,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.iName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShortName)).EndInit();
 			this.gbxBank.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.iBankIfax)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKozaType)).EndInit();
@@ -1352,7 +1355,7 @@
 		private YControlLabelEx.YcLabelEx ycLabelEx45;
 		private GControlGcTextBoxEx.GcTextBoxEx iKaihiGunCode;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
-		private GControlGcComboBoxEx.GcComboBoxEx iBankIfax;
+		private UcTableComboBox iBankIfax;
 		private GControlGcComboBoxEx.GcComboBoxEx iKbnKaihi;
 	}
 }

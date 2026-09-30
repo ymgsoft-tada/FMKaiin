@@ -39,7 +39,7 @@ namespace App
 				{
 					AppGlobal.DB.UpdateTable(TableProp.t_basic);
 
-					// 共通クラスの初期化
+					// Basicクラスの再定義(情報更新の可能性があるため)
 					AppGlobal.InitBasic();
 				}
 			}
@@ -52,6 +52,12 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			// 日付表示コンボボックス
+			iDispSeireki.ExBeginUpdate();
+			iDispSeireki.ExAddItem("西暦", true);
+			iDispSeireki.ExAddItem("和暦", false);
+			iDispSeireki.ExEndUpdate();
+
 			dvBasic = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_basic));
 
 			gctl = new GControlDB(this, getDataRow, AppGlobal.DB.DBZipCode);
@@ -87,6 +93,7 @@ namespace App
 			gctl.Add(new GControlDBHyphenSplit(t_basic.FBAS_Tel2, new Control[] { iTel2_1, iTel2_2, iTel2_3 }));
 			gctl.Add(new GControlDBHyphenSplit(t_basic.FBAS_Fax, new Control[] { iTel2_1, iTel2_2, iTel2_3 }));
 			gctl.Add(new GControlDBText(t_basic.FBAS_HojinNo, iHojinNo));
+			gctl.Add(new GControlDBCombo(t_basic.FBAS_DispSeireki, iDispSeireki));
 
 			gctl.EndAdd(AppDbRule.Rule);
 

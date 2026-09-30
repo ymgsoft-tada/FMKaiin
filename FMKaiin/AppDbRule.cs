@@ -189,6 +189,7 @@ namespace App
 			Rule.Add(eisu20, t_tantosha.FTNT_Password);
 			#endregion
 
+/*
 			#region +++ t_staff +++
 			Rule.Add(code, t_staff.FCD_Staff);
 			Rule.Add(new GControlDBRuleRuby(t_staff.FSTF_Name, new int[] { 15, 30 }));
@@ -207,6 +208,45 @@ namespace App
 			Rule.Add(new GControlDBRuleDate(t_staff.FSTF_DateBirthday));
 			Rule.Add(new GControlDBRuleDate(t_staff.FSTF_DateNyusha));
 			Rule.Add(new GControlDBRuleDate(t_staff.FSTF_DateTaishoku));
+			#endregion
+*/
+			#region +++ t_kaiin +++
+			Rule.Add(code, t_kaiin.FCD_Kaiin);
+			Rule.Add(new GControlDBRuleRuby(t_kaiin.FKaiin_Name, new int[] { 15, 30 }));
+//			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_NameOld, 20));
+			Rule.Add(post, t_kaiin.FKaiin_Post);
+			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_Addr2, 40));
+			Rule.Add(new GControlDBRuleHyphenSplit(t_kaiin.FKaiin_Tel1, new int[] { 5, 4, 5 }));
+			Rule.Add(new GControlDBRuleHyphenSplit(t_kaiin.FKaiin_Tel2, new int[] { 5, 4, 5 }));
+			Rule.Add(new GControlDBRuleHyphenSplit(t_kaiin.FKaiin_Fax, new int[] { 5, 4, 5 }));
+			Rule.Add(new GControlDBRuleNumber(t_kaiin.FKaiin_IsekiTorokuNo, 6, 0));
+			Rule.Add(code4, t_kaiin.FKaiin_BankCode1);
+			Rule.Add(code3, t_kaiin.FKaiin_BankShitenCode1);
+			Rule.Add(code7, t_kaiin.FKaiin_BankKozaNo1);
+			Rule.Add(kana30, t_kaiin.FKaiin_BankKozaName1);
+			Rule.Add(code4, t_kaiin.FKaiin_BankCode2);
+			Rule.Add(code3, t_kaiin.FKaiin_BankShitenCode2);
+			Rule.Add(code7, t_kaiin.FKaiin_BankKozaNo2);
+			Rule.Add(kana30, t_kaiin.FKaiin_BankKozaName2);
+			Rule.Add(code4, t_kaiin.FKaiin_BankCode3);
+			Rule.Add(code3, t_kaiin.FKaiin_BankShitenCode3);
+			Rule.Add(code7, t_kaiin.FKaiin_BankKozaNo3);
+			Rule.Add(kana30, t_kaiin.FKaiin_BankKozaName3);
+			Rule.Add(hankaku, t_kaiin.FKaiin_Mail1);
+//			Rule.Add(hankaku, t_kaiin.FKaiin_Mail2);
+//			Rule.Add(code12, t_kaiin.FKaiin_MyNo);
+			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShusshinKou, 40));
+			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShusshinIn, 40));
+			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_TaikaiEtcmemo, 40));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateBirth));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateIsekiToroku));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateToroku));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateNyuukai));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShonin));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateSotsugyo));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShuryo));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShutokuGakui));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateTaikai));
 			#endregion
 
 			// ※t_bank作成なしなら削除
@@ -230,11 +270,11 @@ namespace App
 			#endregion
 
 			#region +++ t_kaihi +++
-			Rule.Add(new GControlDBRuleNumber(t_kaihi.FCD_Kaihi, 5, 5));
+			Rule.Add(new GControlDBRuleNumber(t_kaihi.FCD_Kaihi, 5, 0));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Name, 30));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_ShortName, 30));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Bikou, 50));
-			Rule.Add(new GControlDBRuleNumber(t_kaihi.FKaihi_GunCode, 4, 4));
+			Rule.Add(new GControlDBRuleNumber(t_kaihi.FKaihi_GunCode, 4, 0));
 
 			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost1, 9, 0));
 			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost2, 9, 0));
@@ -252,11 +292,11 @@ namespace App
 			Rule.Add(code4, t_kaihi.FKaihi_BankCode);
 			Rule.Add(code3, t_kaihi.FKaihi_BankCodeShiten);
 			Rule.Add(code7, t_kaihi.FKaihi_BankKozaNo);
-			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_BankKozaName, 30));
+			Rule.Add(kana30, t_kaihi.FKaihi_BankKozaName);
 			#endregion
 
 			#region +++ t_iryokikan +++
-			Rule.Add(new GControlDBRuleNumber(t_iryokikan.FIRK_Code, 5, 5));
+			Rule.Add(new GControlDBRuleNumber(t_iryokikan.FIRK_Code, 5, 0));
 			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Name, 30));
 			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Kana, 30));
 			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Tsusho, 30));
@@ -265,11 +305,17 @@ namespace App
 			Rule.Add(new GControlDBRuleText(t_iryokikan.FIRK_Addr2, 40));
 			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Tel1, new int[] { 5, 4, 5 }));
 			Rule.Add(new GControlDBRuleHyphenSplit(t_iryokikan.FIRK_Fax1, new int[] { 5, 4, 5 }));
+			Rule.Add(new GControlDBRuleNumber(t_iryokikan.FIRK_Kyoka, 4, 0));
 			#endregion
 
 			#region +++ t_shinryoka +++
 			Rule.Add(new GControlDBRuleNumber(t_shinryoka.FSRK_Code, 5, 5));
 			Rule.Add(new GControlDBRuleText(t_shinryoka.FSRK_Name, 30));
+			#endregion
+
+			#region +++ t_kaiin_ido +++
+			Rule.Add(new GControlDBRuleDate(t_kaiin_ido.FIdoDate));
+			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuEtcMemo, 12));
 			#endregion
 		}
 

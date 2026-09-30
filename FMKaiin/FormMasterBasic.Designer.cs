@@ -29,6 +29,7 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			this.label16 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.label5 = new System.Windows.Forms.Label();
@@ -58,6 +59,8 @@ namespace App
 			this.iPost1 = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iDispSeireki = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.iHojinNo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameFurigana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameDaihyo)).BeginInit();
@@ -72,6 +75,7 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iPost2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iPost1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iName)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iDispSeireki)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label16
@@ -141,7 +145,7 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.Location = new System.Drawing.Point(0, 332);
+			this.funckey.Location = new System.Drawing.Point(0, 350);
 			this.funckey.Name = "funckey";
 			this.funckey.Size = new System.Drawing.Size(579, 25);
 			this.funckey.TabIndex = 266;
@@ -462,11 +466,47 @@ namespace App
 			this.iName.Size = new System.Drawing.Size(296, 23);
 			this.iName.TabIndex = 251;
 			// 
+			// iDispSeireki
+			// 
+			this.iDispSeireki.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iDispSeireki.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iDispSeireki.ExCompareContent = null;
+			this.iDispSeireki.ExCompareValue = null;
+			this.iDispSeireki.ExDataSource = null;
+			this.iDispSeireki.ExFocusHighlight = true;
+			this.iDispSeireki.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iDispSeireki.ListHeaderPane.Height = 27;
+			this.iDispSeireki.ListHeaderPane.Visible = false;
+			this.iDispSeireki.Location = new System.Drawing.Point(166, 318);
+			this.iDispSeireki.Name = "iDispSeireki";
+			this.iDispSeireki.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iDispSeireki.Size = new System.Drawing.Size(76, 23);
+			this.iDispSeireki.TabIndex = 265;
+			// 
+			// ycLabelEx4
+			// 
+			this.ycLabelEx4.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx4.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx4.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx4.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx4.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx4.IconImage = null;
+			this.ycLabelEx4.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx4.Location = new System.Drawing.Point(43, 318);
+			this.ycLabelEx4.Name = "ycLabelEx4";
+			this.ycLabelEx4.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx4.Size = new System.Drawing.Size(118, 23);
+			this.ycLabelEx4.TabIndex = 283;
+			this.ycLabelEx4.Text = "日付表示";
+			this.ycLabelEx4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// FormMasterBasic
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(579, 357);
+			this.ClientSize = new System.Drawing.Size(579, 375);
+			this.Controls.Add(this.ycLabelEx4);
+			this.Controls.Add(this.iDispSeireki);
 			this.Controls.Add(this.ycLabelEx7);
 			this.Controls.Add(this.iHojinNo);
 			this.Controls.Add(this.iNameFurigana);
@@ -532,6 +572,8 @@ namespace App
 			this.Controls.SetChildIndex(this.iNameFurigana, 0);
 			this.Controls.SetChildIndex(this.iHojinNo, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx7, 0);
+			this.Controls.SetChildIndex(this.iDispSeireki, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iHojinNo)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameFurigana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameDaihyo)).EndInit();
@@ -546,6 +588,7 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iPost2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iPost1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iName)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iDispSeireki)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -582,5 +625,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcTextBoxEx.GcTextBoxEx iName;
 		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private GControlGcComboBoxEx.GcComboBoxEx iDispSeireki;
+		private YControlLabelEx.YcLabelEx ycLabelEx4;
 	}
 }

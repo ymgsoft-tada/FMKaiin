@@ -17,7 +17,8 @@ namespace App
 			InitializeComponent();
 
 			btnBasic.Click += BtnBasic_Click;
-			btnStaff.Click += BtnStaff_Click;
+//			btnStaff.Click += BtnStaff_Click;
+			btnKaiin.Click += BtnKaiin_Click;
 			btnTanto.Click += BtnTanto_Click;
 			btnBankCode.Click += BtnBankCode_Click;
 			btnKaihi.Click += BtnKaihi_Click;
@@ -48,13 +49,24 @@ namespace App
 			frm.Dispose();
 			frm = null;
 		}
-
+/*
 		private void BtnStaff_Click(object sender, EventArgs e)
 		{
 			// 銀行コードテーブルの取得 毎回いらない？検討
 			initBankCode();
 
 			FormStaff frm = new FormStaff();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+*/
+		private void BtnKaiin_Click(object sender, EventArgs e)
+		{
+			// 銀行コードテーブルの取得 毎回いらない？検討
+			initBankCode();
+
+			FormKaiin frm = new FormKaiin();
 			frm.ShowDialog();
 			frm.Dispose();
 			frm = null;

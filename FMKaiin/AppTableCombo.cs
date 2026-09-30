@@ -41,139 +41,6 @@ namespace App
 		/// </summary>
 		public const string Fld_Teishutsusaki = "Fld_Teishutsusaki";
 
-		///// <summary>
-		///// 職務コード検索用iサーチ作成
-		///// </summary>
-		///// <param name="cmb"></param>
-		///// <param name="dv"></param>
-		//public static void SetComboBox_Shokumu(UcTableComboBox cmb, eTypeJob type = eTypeJob.None)
-		//{
-		//	cmb.BeginUpdate();
-		//	cmb.DBView = new DBView(AppGlobal.Shokumus.DbView);
-		//	cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-		//	if (type != eTypeJob.None)
-		//	{
-		//		cmb.RowFilter = DBQuery.GetSql($"{t_shokumu.FSKM_Type} = {(int)type}");
-		//	}
-		//	else
-		//	{
-		//		cmb.RowFilter = "";
-		//	}
-		//	cmb.Sort = DBQuery.GetSql(t_shokumu.FCD_Shokumu);
-		//	cmb.DropDownSize = new Size(380, 300);
-		//	cmb.SetColumn(t_shokumu.FCD_Shokumu, "コード", 80, ContentAlignment.MiddleRight);
-		//	cmb.SetColumn(t_shokumu.FSKM_Name, "名　称", 200);
-		//	cmb.SetColumn(Fld_TypeJobName, "職種", 80);
-
-		//	cmb.CompareValue = t_shokumu.FID_Shokumu;
-		//	cmb.ContentAlignment = ContentAlignment.BottomLeft;
-		//	cmb.SelectedIndexNullLeave = -1;
-		//	cmb.TextSubItemIndex = 1;
-		//	cmb.Find = "";
-		//	cmb.EndUpdate();
-		//}
-
-		///// <summary>
-		///// 銀行検索用iサーチの作成
-		///// </summary>
-		///// <param name="cmb">設定するiサーチ</param>
-		///// <param name="dv">ビュー</param>
-		//public static void SetComboBox_Bank(UcTableComboBox cmb, DBView dv)
-		//{
-		//	string F_Name = "F_Name";
-
-		//	DBView dv_tmp = new DBView(dv.DataTable.Copy());
-		//	dv_tmp.DataTable.Columns.Add(F_Name, typeof(string));
-
-		//	for(int i = 0; i < dv_tmp.Count; i++)
-		//	{
-		//		DataRow row = dv_tmp[i].Row;
-
-		//		string name1 = Cast.String(row[t_bank.FBnk_Name]);
-		//		string name2 = Cast.String(row[t_bank.FBnk_NameShiten]);
-
-		//		if (name2 != "")
-		//		{
-		//			name1 += "・" + name2;
-		//		}
-		//		row[F_Name] = name1;
-		//	}
-
-		//	cmb.BeginUpdate();
-		//	cmb.DBView = dv_tmp;
-		//	cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-		//	cmb.RowFilter = "";
-		//	cmb.Sort = DBQuery.GetSql(t_bank.FCD_Bank);
-		//	cmb.DropDownSize = new Size(480, 250);
-		//	cmb.SetColumn(t_bank.FCD_Bank,			"コード",	  80,	ContentAlignment.MiddleRight);
-		//	cmb.SetColumn(F_Name,			"銀行・支店名", 400);
-		//	cmb.CompareValue = t_bank.FID_Bank;
-		//	cmb.ContentAlignment = ContentAlignment.BottomLeft;
-		//	cmb.SelectedIndexNullLeave = -1;
-		//	cmb.TextSubItemIndex = 1;
-		//	cmb.Find = "";
-		//	cmb.EndUpdate();
-		//}
-
-		///// <summary>
-		///// スタッフコード検索用iサーチ作成
-		///// </summary>
-		///// <param name="cmb"></param>
-		///// <param name="all">Trueで退職を含む全スタッフ Falseで在籍のみ</param>
-		//public static void SetComboBox_Staff(UcTableComboBox cmb, bool all = false)
-		//{
-		//	cmb.BeginUpdate();
-		//	cmb.DBView = new DBView(AppGlobal.Staffs.DbView);
-		//	cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-
-		//	if (all == false)
-		//	{
-		//		cmb.RowFilter = DBQuery.GetSql($"{t_staff.FSTF_Used} = TRUE");
-		//	}
-		//	else
-		//	{
-		//		cmb.RowFilter = "";
-		//	}
-
-		//	cmb.Sort = DBQuery.GetSql(t_staff.FCD_Staff);
-		//	cmb.DropDownSize = new Size(420, 300);
-		//	cmb.SetColumn(Fld_CoedString, "コード", 80, ContentAlignment.MiddleRight);
-		//	//cmb.SetColumn(t_staff.FCD_Staff, "コード", 80, ContentAlignment.MiddleRight);
-		//	cmb.SetColumn(t_staff.FSTF_Name, "名　称", 150);
-		//	cmb.SetColumn(t_staff.FSTF_NameFurigane, "フリガナ", 100);
-		//	cmb.SetColumn(Fld_TypeJobName, "職種", 80);
-		//	cmb.CompareValue = t_staff.FID_Staff;
-		//	cmb.ContentAlignment = ContentAlignment.BottomLeft;
-		//	cmb.SelectedIndexNullLeave = -1;
-		//	cmb.TextSubItemIndex = 1;
-		//	cmb.Find = "";
-		//	cmb.EndUpdate();
-		//}
-
-		///// <summary>
-		///// 商品検索用iサーチ作成
-		///// </summary>
-		///// <param name="cmb"></param>
-		///// <param name="dv"></param>
-		//public static void SetComboBox_Shohin(UcTableComboBox cmb, DBView dv)
-		//{
-		//	cmb.BeginUpdate();
-		//	cmb.DBView = dv;
-		//	cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-		//	//cmb.RowFilter = ;
-		//	cmb.Sort = DBQuery.GetSql(t_shohin.FCD_Shohin);
-		//	cmb.DropDownSize = new Size(440, 300);
-		//	cmb.SetColumn(t_shohin.FCD_Shohin, "商品CD", 80, ContentAlignment.MiddleRight);
-		//	cmb.SetColumn(t_shohin.FSho_Name, "商品名", 220);
-		//	cmb.SetColumn(t_shohin.FSho_Hinban, "品番", 120);
-		//	cmb.CompareValue = t_shohin.FID_Shohin;
-		//	cmb.ContentAlignment = ContentAlignment.BottomLeft;
-		//	cmb.SelectedIndexNullLeave = -1;
-		//	cmb.TextSubItemIndex = 1;
-		//	cmb.Find = "";
-		//	cmb.EndUpdate();
-		//}
-
 		/// <summary>
 		/// 医療機関iサーチ作成
 		/// </summary>
@@ -182,9 +49,9 @@ namespace App
 		public static void SetComboBox_IryoKikan(UcTableComboBox cmb, DBView dv)
 		{
 			cmb.BeginUpdate();
-			cmb.DBView = dv;
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = ;
+//			cmb.RowFilter = dv.RowFilter;
 			cmb.Sort = DBQuery.GetSql(t_iryokikan.FIRK_Code);
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_iryokikan.FIRK_Code, "コード", 80, ContentAlignment.MiddleRight);
@@ -205,9 +72,9 @@ namespace App
 		public static void SetComboBox_Shinryoka(UcTableComboBox cmb, DBView dv)
 		{
 			cmb.BeginUpdate();
-			cmb.DBView = dv;
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = ;
+			//cmb.RowFilter = dv.RowFilter;
 			cmb.Sort = DBQuery.GetSql(t_shinryoka.FSRK_Code);
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_shinryoka.FSRK_Code, "コード", 80, ContentAlignment.MiddleRight);
@@ -228,9 +95,9 @@ namespace App
 		public static void SetComboBox_Gakkai(UcTableComboBox cmb, DBView dv)
 		{
 			cmb.BeginUpdate();
-			cmb.DBView = dv;
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = ;
+			//cmb.RowFilter = dv.RowFilter;
 			cmb.Sort = DBQuery.GetSql(t_gakkai.FGKAI_Code);
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_gakkai.FGKAI_Code, "コード", 80, ContentAlignment.MiddleRight);
@@ -244,21 +111,67 @@ namespace App
 		}
 
 		/// <summary>
-		/// 医会iサーチ作成
+		/// 会員区分iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_KaiinKbn(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = dv.RowFilter;
+			cmb.Sort = DBQuery.GetSql(t_kaiinkbn.FCD_KaiinKbn);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_kaiinkbn.FCD_KaiinKbn, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_kaiinkbn.FKIK_Name, "名称", 220);
+			cmb.CompareValue = t_kaiinkbn.FID_KaiinKbn; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 医会会員iサーチ作成
 		/// </summary>
 		/// <param name="cmb"></param>
 		/// <param name="dv"></param>
 		public static void SetComboBox_Kaihi(UcTableComboBox cmb, DBView dv)
 		{
 			cmb.BeginUpdate();
-			cmb.DBView = dv;
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = ;
-			cmb.Sort = DBQuery.GetSql(t_kaihi.FCD_Kaihi);
+			cmb.RowFilter = dv.RowFilter; // dv側絞込み情報を適用
+			cmb.Sort = dv.Sort; // dv側Sort情報を適用
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_kaihi.FCD_Kaihi, "コード", 80, ContentAlignment.MiddleRight);
 			cmb.SetColumn(t_kaihi.FKaihi_Name, "名称", 220);
 			cmb.CompareValue = t_kaihi.FID_Kaihi; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 医師会iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Ishikai(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = dv.RowFilter;
+			cmb.Sort = DBQuery.GetSql(t_ishikai.FCD_Ishikai);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_ishikai.FCD_Ishikai, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_ishikai.FISK_Name, "名称", 220);
+			cmb.CompareValue = t_ishikai.FID_Ishikai; // Comboから取得する列
 			cmb.ContentAlignment = ContentAlignment.BottomLeft;
 			cmb.SelectedIndexNullLeave = -1;
 			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
@@ -274,9 +187,9 @@ namespace App
 		public static void SetComboBox_Kaisetsushutai(UcTableComboBox cmb, DBView dv)
 		{
 			cmb.BeginUpdate();
-			cmb.DBView = dv;
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = ;
+			//cmb.RowFilter = dv.RowFilter;
 			cmb.Sort = DBQuery.GetSql(t_kaisetsushutai.FKST_Code);
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_kaisetsushutai.FKST_Code, "コード", 80, ContentAlignment.MiddleRight);
@@ -288,6 +201,75 @@ namespace App
 			cmb.Find = "";
 			cmb.EndUpdate();
 		}
-	
+
+		/// <summary>
+		/// 組コードiサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_KumiCode(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = dv.RowFilter;
+			cmb.Sort = DBQuery.GetSql(t_kumicd.FCD_KumiCode);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_kumicd.FCD_KumiCode, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_kumicd.FKMC_Name, "名称", 220);
+			cmb.CompareValue = t_kumicd.FID_KumiCode; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// 施設業務iサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Shisetsugyomu(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = dv.RowFilter;
+			cmb.Sort = DBQuery.GetSql(t_shisetsugyomu.FSGY_Code);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_shisetsugyomu.FSGY_Code, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_shisetsugyomu.FSGY_Name, "名称", 220);
+			cmb.CompareValue = t_shisetsugyomu.FID_ShisetsuGyomu; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
+		/// iFAXグループiサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_IfaxGroup(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			//cmb.RowFilter = dv.RowFilter;
+			cmb.Sort = DBQuery.GetSql(t_ifax.FCD_iFax);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_ifax.FCD_iFax, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_ifax.FIFX_Name, "名称", 220);
+			cmb.CompareValue = t_ifax.FID_iFax; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
 	}
 }

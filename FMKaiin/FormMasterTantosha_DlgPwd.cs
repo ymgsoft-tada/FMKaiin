@@ -14,7 +14,7 @@ namespace App
 	public partial class FormMasterTantosha_DlgPwd:FormFrame
 	{
 		/// <summary>
-		/// 取引先用レコード
+		/// 画面間連携用レコード
 		/// </summary>
 		public t_tantosha TantoRow
 		{

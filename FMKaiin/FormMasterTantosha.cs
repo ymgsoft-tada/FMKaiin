@@ -64,6 +64,7 @@ namespace App
 		{
 			login_id = AppGlobal.LoginUser.ID;
 
+			// 追加時の動作仕様のため、再表示時(Shown()時)のみソートする(GetReFillTable()の利用)
 			dvTanto = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_tantosha, $"ORDER BY {t_tantosha.FCD_Tanto}"), this.BindingContext);
 			dvTanto.RowFilterQuery($"{t_tantosha.FTNT_Auth} <> {(int)eAuth.SU}");
 
@@ -74,8 +75,8 @@ namespace App
 			gcom.Add(new GGridDBText(t_tantosha.FTNT_Name, "氏　名", 0.4f));
 			gcom.Add(new GGridDBText(t_tantosha.FTNT_Auth, "権限", 0.3f));
 			gcom.SetUnboundColumnFetch(ubAuth);
-			gcom.Add(new GGridDBText(t_tantosha.FTNT_TypeShinryojo, "診療所", 0.0f, GGridDBCellDisp.Center));
-			gcom.SetUnboundColumnFetch(ubShinryojo);
+//			gcom.Add(new GGridDBText(t_tantosha.FTNT_TypeShinryojo, "診療所", 0.0f, GGridDBCellDisp.Center));
+//			gcom.SetUnboundColumnFetch(ubShinryojo);
 			gcom.EndAdd(dvTanto);
 
 			//■ イベント
@@ -91,13 +92,13 @@ namespace App
 			return enumKbn.DAuth[(int)xrow.TNT_Auth];
 		}
 
-		string ubShinryojo(GGridDBBase col, UnboundColumnFetchEventArgs e)
+/*		string ubShinryojo(GGridDBBase col, UnboundColumnFetchEventArgs e)
 		{
 			t_tantosha xrow = new t_tantosha(dvTanto[e.Row]);
 
 			return enumKbn.DTypeShinryojo[(int)xrow.TNT_TypeShinryojo];
 		}
-
+*/
 		protected override void FormFrame_FormClosing(object sender, FormClosingEventArgs e)
 		{
 			// ShownでRefillしているので終了時に共通クラスを初期化し直す。
@@ -166,7 +167,7 @@ namespace App
 		{
 			if (dvTanto.Count > 0)
 			{
-				//■ 店舗レコード
+				//■ 担当者レコード
 				DataRow row = dvTanto.NewRow();
 
 				AppDb.CopyDataRow(dvTanto.CurrentRow.Row, row);

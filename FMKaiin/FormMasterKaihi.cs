@@ -71,46 +71,33 @@ namespace App
 			AppDbRule.SetControlByRule(iCodeKaihi, t_kaihi.FCD_Kaihi);
 
 			// コンボボックス値セット
-			// 会費区分コード テーブル保存予定のためそこからボックス値をセット予定
-//			AppCombo.SetComboBox(iKbnKaihi, enumKbn.DTypeShinryojo, true, (int)eTypeShinryojo.None);
+			// 会費区分コード Enum
+			AppCombo.SetComboBox(iKbnKaihi, enumKbn.DTypeKaihi);
 
-			//			public static void SetComboBox(GcComboBoxEx cmb, Dictionary<int, string> dics, bool select_all, params int[] ignores)
-			//			{
-			iKbnKaihi.ExBeginUpdate();
-			iKbnKaihi.ExClearItem();
-
-//			AppGlobal.InitKaihi(); // FormFrame_FormClosing()内のInitはここでもよい
-
-			bool select_all = true;
-			if (select_all == true)
-			{
-				iKbnKaihi.ExAddItem("すべて", -1);
-			}
-
-			iKbnKaihi.ExEndUpdate();
-
-
-			// 会費コード
-			//			AppCombo.SetComboBox(iDay, enumKbn.DTypeDay, true, (int)eTypeDay.None);
+			//AppGlobal.InitKaihi(); // メモ:FormFrame_FormClosing()内のInitはここでもよい
 
 			// 初期選択値
 			//			iKbnKaihi.ExSetSelectedIndexByValue((int)AppGlobal.LoginUser.XRow.TNT_TypeShinryojo);
 			//			iDay.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
 
-			// マスタ追加時の動作仕様のため、再表示時にのみソートする(GetReFillTable()の利用)
+			// 追加時の動作仕様のため、再表示時(Shown()時)のみソートする(GetReFillTable()の利用)
 			dvKaihi = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_kaihi, $"ORDER BY {t_kaihi.FCD_Kaihi}"), this.BindingContext);
 
 			// グリッド作成
 			AppGridCommon.StyleSet(grid);
 
 			gcom = new GGridDBCommon(grid, this);
-			gcom.Add(new GGridDBText(t_kaihi.FCD_Kaihi, "会費コード", 75));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Name, "名称", 90));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_ShortName, "略称", 90));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Bikou, "備考", 165));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_GunCode, "会費群", 60));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_SearchUsed, "検索", 60));
+
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_KaihiType, "会費区分", 80));
+			gcom.SetUnboundColumnFetch(ubKaihiKbn);
+			gcom.Add(new GGridDBText(t_kaihi.FCD_Kaihi, "会費コード", 75, GGridDBCellDisp.Right));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Name, "名称", 180));
+//			gcom.Add(new GGridDBText(t_kaihi.FKaihi_ShortName, "略称", 90));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Bikou, "備考", 120));
+//			gcom.Add(new GGridDBText(t_kaihi.FKaihi_GunCode, "会費群", 60));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_SearchUsed, "検索", 50));
 			gcom.SetUnboundColumnFetch(ubUsed);
+			gcom.SetCellDisp(GGridDBCellDisp.Center);
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCode, "銀行コード", 60));
 			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCode, "銀行名", 90));
 			gcom.SetUnboundColumnFetch(ubBankName);
@@ -134,6 +121,17 @@ namespace App
 		}
 
 		/// <summary>
+		/// グリッド上マウスダブルクリック
+		/// </summary>
+		private void grid_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (dvKaihi.Count > 0)
+			{
+				rowEdit();
+			}
+		}
+
+		/// <summary>
 		/// クリアボタンクリック
 		/// </summary>
 		private void btnClear_Click(object sender, EventArgs e)
@@ -153,17 +151,6 @@ namespace App
 		}
 
 		/// <summary>
-		/// グリッド上マウスダブルクリック
-		/// </summary>
-		private void grid_MouseDoubleClick(object sender, MouseEventArgs e)
-		{
-			if (dvKaihi.Count > 0)
-			{
-				rowEdit();
-			}
-		}
-
-		/// <summary>
 		/// 会費区分コンボボックス変更
 		/// </summary>
 		private void iKbnKaihi_SelectedIndexChanged(object sender, EventArgs e)
@@ -177,6 +164,15 @@ namespace App
 		private void iCodeKaihi_TextChanged(object sender, EventArgs e)
 		{
 			changeFilter();
+		}
+
+		/// <summary>
+		/// grid 会費区分の文字列編集
+		/// </summary>
+		string ubKaihiKbn(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaihi xrow = new t_kaihi(dvKaihi[e.Row]);
+			return enumKbn.DTypeKaihi[(int)xrow.Kaihi_KaihiType];
 		}
 
 		/// <summary>
@@ -233,7 +229,7 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			// ShownでRefillしているので終了時に共通クラスを初期化し直す。
+			// ShownでRefillしDataTableが更新されるため医会会費情報(共通)を再取得
 			AppGlobal.InitKaihi();
 
 			base.FormFrame_FormClosing(sender, e);
@@ -254,16 +250,15 @@ namespace App
 			//			}
 
 			// 会費区分の検索
-			// 区分はテーブルで持つ予定 データ量でコンボか入力か決めたい
-			// ※会費コードの頭が会費区分ということなら、会費コードのテキスト検索だけにしたい
-			int kbnKaihiId = Cast.Int(iKbnKaihi.Text); // ★コンボの中身決定後要検討
-			if (kbnKaihiId != 0)
+			int kbnKaihiIdx = iKbnKaihi.SelectedIndex;
+			if (kbnKaihiIdx > 0) // 空欄選択以外
 			{
-				if (filter != "") filter += " AND ";
-				filter += $"{t_kaihi.FID_KaihiKbn} = {kbnKaihiId}";
+//				if (filter != "") filter += " AND ";
+				filter += $"{t_kaihi.FKaihi_KaihiType} = {kbnKaihiIdx}";
 			}
 
 			// 会費コードの検索
+			// 部分一致(or1桁目前方一致)が実装可能なら会費区分と組合せ、不可ならいずれかフィルタでよい(コード指定なら1件か0かだから区分絞り合わせるのは意味ない)
 			// 部分一致検索にしたいため、文字列
 			// 1桁目は前方一致にしたい
 			// 数値用のCreateLikeKanaString()はない。部分一致はできるが前方一致の設定はない。
@@ -271,14 +266,12 @@ namespace App
 			if (kaihiCd != 0)
 			{
 				if (filter != "") filter += " AND ";
-				// 数値のみならコード検索
 				filter += string.Format("({0} = {1})", t_kaihi.FCD_Kaihi, kaihiCd);
 			}
 
 			// フィルタ適用
 			dvKaihi.RowFilterQuery(filter);
 		}
-
 
 		/// <summary>
 		/// ファンクションの設定

@@ -271,7 +271,7 @@ namespace App
 			this.MinimizeBox = false;
 			this.Name = "FormMasterTantosha_DlgEntry";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "担当者マスター";
+			this.Text = "担当者マスタ";
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
 			this.Controls.SetChildIndex(this.iCode, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);

@@ -10,13 +10,13 @@ namespace App
 {
 	/// <summary>
 	/// [作成者 tanaka]
-	/// 医会会費 管理用クラス
+	/// 組コード 管理用クラス
 	/// </summary>
-	public class AppKaihi
+	public class AppKumiCd
 	{
-		List<Kaihi> all_list;
-		Dictionary<int, Kaihi> dics_id;
-		Dictionary<int, Kaihi> dics_cd;
+		List<KumiCode> all_list;
+		Dictionary<int, KumiCode> dics_id;
+		Dictionary<int, KumiCode> dics_cd;
 
 		/// <summary>
 		/// 参照用のビュー
@@ -26,11 +26,11 @@ namespace App
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public AppKaihi()
+		public AppKumiCd()
 		{
-			all_list = new List<Kaihi>();
-			dics_id = new Dictionary<int, Kaihi>();
-			dics_cd = new Dictionary<int, Kaihi>();
+			all_list = new List<KumiCode>();
+			dics_id = new Dictionary<int, KumiCode>();
+			dics_cd = new Dictionary<int, KumiCode>();
 		}
 
 		/// <summary>
@@ -42,7 +42,7 @@ namespace App
 			dics_id.Clear();
 			dics_cd.Clear();
 
-			DbView = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi).Copy());
+			DbView = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kumicd).Copy());
 
 			// テーブルカラム以外で必要な情報を追加？数値カラムの文字型(検索用)など
 			// 職種タイプ名称用のフィールド
@@ -53,14 +53,14 @@ namespace App
 
 			for (int i = 0 ; i < DbView.Count ; i++)
 			{
-				t_kaihi xrow = new t_kaihi(DbView[i]);
+				t_kumicd xrow = new t_kumicd(DbView[i]);
 
 				// 職種タイプ名称のセット
 //			    xrow.Row[AppTableCombo.Fld_TypeJobName] = enumKbn.DTypeJob[(int)xrow.STF_TypeJob];
 				// 0埋めしたコード
 //				xrow.Row[AppTableCombo.Fld_CoedString] = xrow.CD_Kaihi.ToString().PadLeft(6, '0');
 
-				Kaihi obj = new Kaihi(xrow);
+				KumiCode obj = new KumiCode(xrow);
 
 				all_list.Add(obj);
 
@@ -80,7 +80,7 @@ namespace App
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public Kaihi Get(int id)
+		public KumiCode Get(int id)
 		{
 			if (dics_id.ContainsKey(id) == true)
 			{
@@ -95,7 +95,7 @@ namespace App
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		public Kaihi GetCode(object obj)
+		public KumiCode GetCode(object obj)
 		{
 			int cd = Cast.Int(obj);
 			if (dics_cd.ContainsKey(cd) == true)
@@ -108,9 +108,9 @@ namespace App
 	}
 
 	/// <summary>
-	/// 医会会費クラス
+	/// 組コードクラス
 	/// </summary>
-	public class Kaihi
+	public class KumiCode
 	{
 		/// <summary>ID</summary>
 		public int ID
@@ -122,13 +122,13 @@ namespace App
 		{
 			get; private set;
 		}
-		/// <summary>月額費用</summary>
-//		public Decimal GetsugakuCost
+		/// <summary>コード（文字列）</summary>
+//		public string CodeString
 //		{
 //			get; private set;
 //		}
 
-		public t_kaihi XRow
+		public t_kumicd XRow
 		{
 			get; private set;
 		}
@@ -136,15 +136,13 @@ namespace App
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Kaihi(t_kaihi row)
+		public KumiCode(t_kumicd row)
 		{
-			this.XRow = new t_kaihi(row.Row);
+			this.XRow = new t_kumicd(row.Row);
 
-			this.ID = XRow.ID_Kaihi;
-			this.CD = XRow.CD_Kaihi;
+			this.ID = XRow.ID_KumiCode;
+			this.CD = XRow.CD_KumiCode;
 //			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
-
-			//this.GetsugakuCost～
 		}
 	}
 }

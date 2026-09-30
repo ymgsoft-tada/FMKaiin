@@ -47,7 +47,7 @@ namespace App
 		DataRow editrow = null;
 
 		/// <summary>
-		/// 取引先用レコード
+		/// 画面間連携用レコード
 		/// </summary>
 		public DataRow Row
 		{
@@ -69,11 +69,31 @@ namespace App
 				}
 			}
 		}
+
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public FormMasterShinryoka_DlgEntry()
 		{
 			InitializeComponent();
 
 			Mode = eMode.Add;
+		}
+
+		/// <summary>
+		/// フォームロード
+		/// </summary>
+		protected override void FormFrame_Load(object sender, EventArgs e)
+		{
+			string title = "【追加】";
+
+			if (Mode == eMode.Edit)
+			{
+				title = "【訂正】";
+			}
+
+			this.Text += title;
+			base.FormFrame_Load(sender, e);
 		}
 
 		/// <summary>
@@ -91,19 +111,6 @@ namespace App
 			iCode.Select();
 
 			base.FormFrame_Shown(sender, e);
-		}
-
-		protected override void FormFrame_Load(object sender, EventArgs e)
-		{
-			string title = "【追加】";
-
-			if (Mode == eMode.Edit)
-			{
-				title = "【訂正】";
-			}
-
-			this.Text += title;
-			base.FormFrame_Load(sender, e);
 		}
 
 		/// <summary>

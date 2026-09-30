@@ -100,7 +100,24 @@ namespace App
 
 		/// <summary>YMGSOFTのHP</summary>
 		public static string YmgSoftHomePage = "http://www.ymg-soft.com/";
-		
+
+		/// <summary>
+		/// 会員情報 医療機関情報-指定医
+		/// </summary>
+		[Flags]
+		public enum eShiteii
+		{
+			/// <summary>なし</summary>
+			None = 0,
+			/// <summary>保険医</summary>
+			Hokeni = 1 << 1,
+			/// <summary>母体保護</summary>
+			Botai = 1 << 2,
+			/// <summary>精神保護</summary>
+			Seishin = 1 << 3,
+			/// <summary>その他</summary>
+			Etc = 1 << 4,
+		}
 	}
 
 }

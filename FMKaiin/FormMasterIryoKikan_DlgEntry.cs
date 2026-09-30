@@ -39,25 +39,29 @@ namespace App
 		}
 
 		/// <summary>
-		/// 開設主体情報 DBView
+		/// 開設主体情報 DBView iSearch
 		/// </summary>
 		DBView dvKaisetsu;
 
+		/// <summary>
+		/// 組コード情報 DBView iSearch
+		/// </summary>
+		DBView dvKumi;
+
 		// --診療科目Grid--
 		/// <summary>
-		/// 診療科マスタ DBView
+		/// 診療科マスタ DBView iSearch
 		/// </summary>
 		DBView dvShinryo;
 		/// <summary>
 		/// 医療機関-診療科の関連 DBView
 		/// </summary>
+		DBView dvIryokikanShinryo;
 		public DBView DvIryokikanShinryo
 		{
 			//get { return dvIryokikanShinryo; }
 			set { dvIryokikanShinryo = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、DBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
-		DBView dvIryokikanShinryo;
-
 		/// <summary>
 		/// 診療科目Grid
 		/// </summary>
@@ -77,7 +81,7 @@ namespace App
 		DataRow editrow = null;
 
 		/// <summary>
-		/// 取引先用レコード
+		/// 画面間連携用レコード
 		/// </summary>
 		public DataRow Row
 		{
@@ -100,9 +104,57 @@ namespace App
 			}
 		}
 
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
 		public FormMasterIryoKikan_DlgEntry()
 		{
 			InitializeComponent();
+		}
+
+		/// <summary>
+		/// キーダウン処理
+		/// </summary>
+		protected override void FormFrame_KeyDown(object sender, KeyEventArgs e)
+		{
+			switch (e.KeyCode)
+			{
+				case Keys.Enter:
+					if (this.ActiveControl == grid_Sinryo) // Enterでのフォーカス先がGrid
+					{
+						gcom_shinryo.SelectInput(); // Grid内のセルへフォーカス移動
+
+						return;
+					}
+					else
+					if (gcom_shinryo.CheckFocusControl(this.ActiveControl))
+					{
+						if (gcom_shinryo.SelectNextControl(!e.Shift) == false) // 次コントロールが存在しない(最終行)
+						{
+							//iCode.Select(); // どこかにフォーカス移動させる場合実装
+						}
+						return;
+					}
+					break;
+			}
+
+			base.FormFrame_KeyDown(sender, e); // 条件合致しない場合、親のメソッド実行
+		}
+
+		/// <summary>
+		/// フォームロード
+		/// </summary>
+		protected override void FormFrame_Load(object sender, EventArgs e)
+		{
+			string title = "【追加】";
+
+			if (Mode == eMode.Edit)
+			{
+				title = "【訂正】";
+			}
+
+			this.Text += title;
+			base.FormFrame_Load(sender, e);
 		}
 
 		/// <summary>
@@ -110,6 +162,20 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			// 最終更新の情報表示
+			t_iryokikan tmprow = new t_iryokikan(editrow);
+			oLastUpdate.Text = $"{tmprow.LastUpdate:yyyy/MM/dd HH:mm}"; // 最終更新日時
+			Tanto tt = AppGlobal.Tantos.Get(Cast.Int(tmprow.LastUpdateUser_Null));
+			// 該当情報が存在したら名称をreturn
+			if (tt != null)
+			{
+				oLastUpdateUser.Text = tt.Name;
+			}
+			else
+			{
+				oLastUpdateUser.Text = null;
+			}
+
 			// コンボの作成
 			// 手動セット
 			iByoshoUmu.ExBeginUpdate();
@@ -123,8 +189,10 @@ namespace App
 			iTaikaiKbn.ExEndUpdate();
 
 			// iSearchセット
-			dvKaisetsu = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_kaisetsushutai, $"ORDER BY {t_kaisetsushutai.FKST_Code}"), this.BindingContext);
-			AppTableCombo.SetComboBox_Kaisetsushutai(iKaisetsushutai, dvKaisetsu);
+			dvKaisetsu = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaisetsushutai)); // ソートはAppTableCombo側実施
+			AppTableCombo.SetComboBox_Kaisetsushutai(iKaisetsushutai, dvKaisetsu); // 開設主体
+			dvKumi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kumicd)); // ソートはAppTableCombo側実施
+			AppTableCombo.SetComboBox_KumiCode(iKumiCode, dvKumi); // 組コード
 
 			// 画面～DBの紐づけ
 			gctl = new GControlDB(this, getDataRow, AppGlobal.DB.DBZipCode);
@@ -137,10 +205,17 @@ namespace App
 							new Control[] {
 								iShisetsuName,
 								iShisetsuKana
-							}));
-			gctl.Add(new GControlDBText(t_iryokikan.FIRK_Tsusho, iShisetsuTsusho));
-			gctl.Add(new GControlDBText(t_iryokikan.FIRK_TsushoKana, iShisetsuTsushoKana));
-
+							}
+			));
+			gctl.Add(new GControlDBRuby(
+							new string[] {
+								t_iryokikan.FIRK_Tsusho,
+								t_iryokikan.FIRK_TsushoKana},
+							new Control[] {
+								iShisetsuTsusho,
+								iShisetsuTsushoKana
+							}
+			));
 			gctl.Add(new GControlDBPostAddr(
 							new string[]{
 								t_iryokikan.FIRK_Post,
@@ -150,7 +225,8 @@ namespace App
 								iPost1,
 								iPost2,
 								iAddr1
-							}));
+							}
+			));
 			gctl.Add(new GControlDBText(t_iryokikan.FIRK_Addr2, iAddr2));
 			gctl.Add(new GControlDBHyphenSplit(t_iryokikan.FIRK_Tel1, new Control[] { iTel1_1, iTel1_2, iTel1_3 }));
 			gctl.Add(new GControlDBHyphenSplit(t_iryokikan.FIRK_Fax1, new Control[] { iTel2_1, iTel2_2, iTel2_3 }));
@@ -160,25 +236,19 @@ namespace App
 			gctl.Add(new GControlDBCheckBox(t_iryokikan.FIRK_Kaigo, chkKaigo));
 			gctl.Add(new GControlDBCheckBox(t_iryokikan.FIRK_Etc, chkEtc));
 			gctl.Add(new GControlDBText(t_iryokikan.FIRK_Memo, iHeisetsu));
-			gctl.Add(new GControlDBText(t_iryokikan.FIRK_KumiCode, iKumiCode));
+			gctl.Add(new GControlDBCombo(t_iryokikan.FIRK_KumiCode, iKumiCode.ComboBox));
 			gctl.Add(new GControlDBCombo(t_iryokikan.FIRK_TaikaiKbn, iTaikaiKbn));
 
 			gctl.EndAdd(AppDbRule.Rule);
 
 			rowFetch();
 
-			iCode.Select();
+			enabledKyokabyosho(); // 許可病床のEnabled設定
+			//			iCode.Select();
 
-			//-----担当診療科目Grid準備-----
-			// ■データ取得
-			dvShinryo = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_shinryoka, $"ORDER BY {t_shinryoka.FSRK_Code}"), this.BindingContext);
-
-			// ソート順追加など、任意並び替えがあるならRefill側を使う
-			// 追加時の動作仕様のため、再表示時にのみソートする(GetReFillTable()の利用)
-			//			dvKaiinShinryo = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_kaiin_shinryoka, $"ORDER BY {t_kaiin_shinryoka.SRK_Code}"), this.BindingContext);
-//			dvIryokikanShinryo = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_iryokikan_shinryoka), this.BindingContext); // BindingContext:DBViewのカレント行とGridのカレント行追従させるため必要
-
+			//-----標榜科目(診療科目)Grid準備-----
 			// ■コントロール設定
+			dvShinryo = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_shinryoka));
 			AppTableCombo.SetComboBox_Shinryoka(iHyoboKamoku, dvShinryo); // iSearch
 
 			// ■Grid設定
@@ -186,11 +256,18 @@ namespace App
 
 			gcom_shinryo = new GGridDBCommon(grid_Sinryo, this);
 
-			gcom_shinryo.Add(new GGridDBText(t_iryokikan_shinryoka.FID_Shinryoka, "名称", 60));
+			gcom_shinryo.Add(new GGridDBText(t_iryokikan_shinryoka.FID_Shinryoka, "名称", 220));
 			gcom_shinryo.SetCellDisp(GGridDBCellDisp.Left);
 			gcom_shinryo.SetFocusControlInGrid(iHyoboKamoku); // Gridフォーカス時に表示させるコントロール
 			gcom_shinryo.SetUnboundColumnFetch(ubShinryokaName); // ID→名称変換
 			gcom_shinryo.SetTabIndex(1);
+			gcom_shinryo.SetLocked(true);
+
+			gcom_shinryo.Add(new GGridDBText(t_iryokikan_shinryoka.FChk_Shinryoka, "診療科目", 20));
+			gcom_shinryo.SetCellDisp(GGridDBCellDisp.Center);
+			gcom_shinryo.SetFocusControlInGrid(iShinryoKamokuChk); // Gridフォーカス時に表示させるコントロール
+			gcom_shinryo.SetUnboundColumnFetch(ubShinryokaCheckbox); // 名称変換
+			gcom_shinryo.SetTabIndex(2);
 			gcom_shinryo.SetLocked(true);
 
 			gcom_shinryo.EndAdd(dvIryokikanShinryo);
@@ -198,12 +275,14 @@ namespace App
 			// コントロールのDBバインド
 			gctl_shinryo = new GControlDB(this, getDataRowShinryo);
 			gctl_shinryo.Add(new GControlDBCombo(t_iryokikan_shinryoka.FID_Shinryoka, iHyoboKamoku.ComboBox));
+			gctl_shinryo.Add(new GControlDBCheckBox(t_iryokikan_shinryoka.FChk_Shinryoka, iShinryoKamokuChk));
 			gctl_shinryo.EndAdd(AppDbRule.Rule);
 
 			// イベント登録
 			btnKamokuAdd.Click += btnKamokuAdd_Click;
 			btnKamokuDel.Click += btnKamokuDel_Click;
-						
+			iByoshoUmu.SelectedIndexChanged += iByoshoUmu_SelectedIndexChanged;
+
 			dvIryokikanShinryo.RowFetchDemand += dvIryokikanShinryo_RowFetchDemand;
 
 			changeFilterShinryoka(); // 表示中会員の情報のみへフィルタ
@@ -228,6 +307,22 @@ namespace App
 			}
 
 			return name;
+		}
+
+		/// <summary>
+		/// bool値より、Gridに文言を表示します。
+		/// </summary>
+		string ubShinryokaCheckbox(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_iryokikan_shinryoka xrow = new t_iryokikan_shinryoka(dvIryokikanShinryo[e.Row]);
+
+			string name = "";
+			if (xrow.Chk_Shinryoka == true)
+			{
+				name = "○";
+			}
+
+			return name; // Falseの場合、空欄
 		}
 
 		/// <summary>
@@ -285,6 +380,32 @@ namespace App
 			}
 
 			//setEnableFunctionButton();
+		}
+
+		/// <summary>
+		/// 病床有無の変更イベント
+		/// </summary>
+		void iByoshoUmu_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			enabledKyokabyosho();
+		}
+
+		/// <summary>
+		/// 許可病床コントロールの制御変更
+		/// </summary>
+		void enabledKyokabyosho()
+		{
+			// 病床数の活性/非活性
+			if (iByoshoUmu.SelectedIndex == 1) // 「無」
+			{
+				iKyokabyosho.Text = null;
+				this.Row[t_iryokikan.FIRK_Kyoka] = DBNull.Value;
+				iKyokabyosho.Enabled = false;
+			}
+			else // 「有」
+			{
+				iKyokabyosho.Enabled = true;
+			}
 		}
 
 		/// <summary>
@@ -429,10 +550,13 @@ namespace App
 			updateCurrentControlValue(gctl);
 //			updateCurrentControlValue(gctl_shinryo);
 
+			// 更新担当者のセット
+			this.Row[t_iryokikan.FLastUpdateUser] = AppGlobal.LoginUser.ID;
+
 			// 空白チェック
 			Control[] ctls =
 			{
-//				iCode, iName, iShortName, // ★必須は仕様確認
+				iCode, iByoshoUmu, iTaikaiKbn,
 			};
 
 			foreach (Control ctl in ctls)

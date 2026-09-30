@@ -30,7 +30,7 @@ namespace App
 		private void InitializeComponent()
 		{
 			this.btnBasic = new System.Windows.Forms.Button();
-			this.btnStaff = new System.Windows.Forms.Button();
+			this.btnKaiin = new System.Windows.Forms.Button();
 			this.btnTanto = new System.Windows.Forms.Button();
 			this.btnIryokikanToroku = new System.Windows.Forms.Button();
 			this.btnKaihi = new System.Windows.Forms.Button();
@@ -47,14 +47,14 @@ namespace App
 			this.btnBasic.Text = "基本情報";
 			this.btnBasic.UseVisualStyleBackColor = true;
 			// 
-			// btnStaff
+			// btnKaiin
 			// 
-			this.btnStaff.Location = new System.Drawing.Point(54, 56);
-			this.btnStaff.Name = "btnStaff";
-			this.btnStaff.Size = new System.Drawing.Size(139, 29);
-			this.btnStaff.TabIndex = 1;
-			this.btnStaff.Text = "会員情報登録";
-			this.btnStaff.UseVisualStyleBackColor = true;
+			this.btnKaiin.Location = new System.Drawing.Point(54, 56);
+			this.btnKaiin.Name = "btnKaiin";
+			this.btnKaiin.Size = new System.Drawing.Size(139, 29);
+			this.btnKaiin.TabIndex = 1;
+			this.btnKaiin.Text = "会員情報登録";
+			this.btnKaiin.UseVisualStyleBackColor = true;
 			// 
 			// btnTanto
 			// 
@@ -111,7 +111,7 @@ namespace App
 			this.Controls.Add(this.btnKaihi);
 			this.Controls.Add(this.btnIryokikanToroku);
 			this.Controls.Add(this.btnTanto);
-			this.Controls.Add(this.btnStaff);
+			this.Controls.Add(this.btnKaiin);
 			this.Controls.Add(this.btnBasic);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
@@ -120,7 +120,7 @@ namespace App
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form1";
 			this.Controls.SetChildIndex(this.btnBasic, 0);
-			this.Controls.SetChildIndex(this.btnStaff, 0);
+			this.Controls.SetChildIndex(this.btnKaiin, 0);
 			this.Controls.SetChildIndex(this.btnTanto, 0);
 			this.Controls.SetChildIndex(this.btnIryokikanToroku, 0);
 			this.Controls.SetChildIndex(this.btnKaihi, 0);
@@ -133,7 +133,7 @@ namespace App
 		#endregion
 
 		private System.Windows.Forms.Button btnBasic;
-		private System.Windows.Forms.Button btnStaff;
+		private System.Windows.Forms.Button btnKaiin;
 		private System.Windows.Forms.Button btnTanto;
 		private System.Windows.Forms.Button btnIryokikanToroku;
 		private System.Windows.Forms.Button btnKaihi;

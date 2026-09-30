@@ -37,6 +37,11 @@ namespace App
 		public eMode Mode { get; set; }
 
 		/// <summary>
+		/// iFAXグループ情報 DBView
+		/// </summary>
+		DBView dvIfax;
+
+		/// <summary>
 		/// 画面項目とDBとの関連情報
 		/// </summary>
 		GControlDB gctl;
@@ -51,7 +56,7 @@ namespace App
 		DataRow editrow = null;
 
 		/// <summary>
-		/// 画面間連携用
+		/// 画面間連携用レコード
 		/// </summary>
 		public DataRow Row
 		{
@@ -84,7 +89,6 @@ namespace App
 		/// </summary>
 		string[] costsField;
 
-
 	/// <summary>
 	/// コンストラクタ
 	/// </summary>
@@ -114,6 +118,9 @@ namespace App
 			};
 		}
 
+		/// <summary>
+		/// フォームロード
+		/// </summary>
 		protected override void FormFrame_Load(object sender, EventArgs e)
 		{
 			string title = "【追加】";
@@ -123,46 +130,35 @@ namespace App
 				title = "【訂正】";
 			}
 
-			this.Text +=  title;
+			this.Text += title;
 			base.FormFrame_Load(sender, e);
 		}
 
 		/// <summary>
-		/// ロード処理
+		/// 初回描画処理
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
 			// コンボボックスの値セット
 			// enumをセット
-			AppCombo.SetComboBox(iKozaType, enumKbn.DTypeKoza, (int)eTypeKoza.None);
-//			AppCombo.SetComboBox(iBankIfaxType, enumKbn.DTypeIfax); テーブル取得へ修正する
-// エラー出ないよう1データ手動セット
-			iBankIfax.ExBeginUpdate();
-			iBankIfax.ExAddItem("その他", 1);
-			iBankIfax.ExEndUpdate();
-//ここまで
+			AppCombo.SetComboBox(iKozaType, enumKbn.DTypeKoza, (int)eTypeKoza.None); // 口座区分
+			AppCombo.SetComboBox(iKbnKaihi, enumKbn.DTypeKaihi, (int)eTypeKaihi.None); // 会費区分
 
 			// iSearch
-			//			AppTableCombo.SetComboBox_Shokumu(iKbnKaihi);
+			dvIfax = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_ifax));
+			AppTableCombo.SetComboBox_IfaxGroup(iBankIfax, dvIfax); // iFAXグループ
 
 			// 手動セット
-			iSearchUsed.ExBeginUpdate();
+			iSearchUsed.ExBeginUpdate(); // 検索時表示区分
 			iSearchUsed.ExAddItem("表示する", true);
 			iSearchUsed.ExAddItem("表示しない", false);
 			iSearchUsed.ExEndUpdate();
 
-			iKbnKaihi.ExBeginUpdate(); // iKbnKaihi(仮) 会費区分コードはテーブルから取得予定
-			iKbnKaihi.ExAddItem("医師会会費", 1);
-			iKbnKaihi.ExEndUpdate();
-
 			// 画面～DBの紐づけ
 			gctl = new GControlDB(this, getDataRow);
 
-//			gctl.Add(new GControlDBCombo(t_kaihi.FID_KbnKaihi, iKbnKaihi.ComboBox)); // 会費区分
-			gctl.Add(new GControlDBCombo(t_kaihi.FID_KaihiKbn, iKbnKaihi)); // 会費区分
+			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_KaihiType, iKbnKaihi)); // 会費区分
 			gctl.Add(new GControlDBText(t_kaihi.FCD_Kaihi, iCode)); // 会費コード
-//			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Name, iName)); // 会費印刷用名称
-//			gctl.Add(new GControlDBText(t_kaihi.FKaihi_ShortName, iShortName)); // 会費略称
 			gctl.Add(new GControlDBRuby( // 2つ目にカナ入力される
 							new string[] {
 								t_kaihi.FKaihi_Name, // 会費印刷用名称
@@ -170,8 +166,8 @@ namespace App
 							new Control[] {
 								iName,
 								iShortName
-							}));
-
+							}
+			));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Bikou, iBikou)); // 備考
 			gctl.Add(new GControlDBNumber(t_kaihi.FKaihi_GunCode, iKaihiGunCode)); // 会費群
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_SearchUsed, iSearchUsed)); // 検索時表示区分
@@ -196,7 +192,7 @@ namespace App
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankKozaType, iKozaType));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaNo, iKozaNo));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaName, iKozaName));
-			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfax, iBankIfax));
+			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfax, iBankIfax.ComboBox));
 
 			gctl.EndAdd(AppDbRule.Rule);
 
@@ -212,7 +208,7 @@ namespace App
 			iBankName.Enabled = false; // 銀行名
 			iShitenName.Enabled = false; // 支店名
 
-			iCode.Select(); // 初期フォーカスどこに当てるか指定あれば設定
+//			iCode.Select(); // 初期フォーカスどこに当てるか指定あれば設定
 
 			//■ イベントの登録
 			iBankCD.TextChanged += iBankCD_TextChanged;
@@ -382,7 +378,8 @@ namespace App
 			t_kaihi xrow = new t_kaihi(editrow);
 
 			FormSelectorBankCode frm = new FormSelectorBankCode();
-			frm.SelectedBankCode = AppGlobal.BankCodeMg.GetBankCodeRow(Cast.Int(xrow.Kaihi_BankCode), Cast.Int(xrow.Kaihi_BankCodeShiten));
+//			frm.SelectedBankCode = AppGlobal.BankCodeMg.GetBankCodeRow(Cast.Int(xrow.Kaihi_BankCode), Cast.Int(xrow.Kaihi_BankCodeShiten));
+			frm.SelectedBankCode = AppGlobal.BankCodeMg.GetBankCodeRow(Cast.Int(iBankCD.Text), Cast.Int(iShitenCD.Text));
 			frm.ShowDialog();
 			if (frm.FormCloseReason == FormCloseReason.Exec)
 			{				

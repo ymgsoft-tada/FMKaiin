@@ -51,7 +51,7 @@ namespace App
 		DataRow editrow = null;
 
 		/// <summary>
-		/// 取引先用レコード
+		/// 画面間連携用レコード
 		/// </summary>
 		public DataRow Row
 		{
@@ -84,6 +84,9 @@ namespace App
 			Mode = eMode.Add;
 		}
 
+		/// <summary>
+		/// フォームロード
+		/// </summary>
 		protected override void FormFrame_Load(object sender, EventArgs e)
 		{
 			string title = "【追加】";
@@ -111,8 +114,11 @@ namespace App
 			gctl.Add(new GControlDBText(t_tantosha.FTNT_Name, iName));
 			gctl.Add(new GControlDBText(t_tantosha.FTNT_Password, iPwd));
 			gctl.Add(new GControlDBCombo(t_tantosha.FTNT_Auth, iAuth));
-			gctl.Add(new GControlDBCombo(t_tantosha.FTNT_TypeShinryojo, iShinryojo));
+//			gctl.Add(new GControlDBCombo(t_tantosha.FTNT_TypeShinryojo, iShinryojo));
 			gctl.EndAdd(AppDbRule.Rule);
+
+			iShinryojo.Visible = false; // 項目なくなるなら削除
+			ycLabelEx5.Visible = false;
 
 			rowFetch();
 

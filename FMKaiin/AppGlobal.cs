@@ -21,7 +21,9 @@ namespace App
 		/// <summary>基本情報</summary>
 		public static t_basic Basic { get; private set; }
 		/// <summary>スタッフ情報</summary>
-		public static AppStaff Staffs { get; private set; }
+//		public static AppStaff Staffs { get; private set; }
+		/// <summary>会員情報</summary>
+		public static AppKaiin Kaiins { get; private set; }
 		/// <summary>銀行情報</summary>
 		public static AppBank Banks { get; private set; } // Banksが必要かどうか
 		/// <summary>担当者情報</summary>
@@ -32,16 +34,22 @@ namespace App
 		/// <summary>医会会費情報</summary>
 		public static AppKaihi Kaihis { get; private set; }
 
+		/// <summary>組コード情報</summary>
+		public static AppKumiCd KumiCodes { get; private set; }
 		/// <summary>診療科情報</summary>
 		public static AppShinryoka Shinryokas { get; private set; }
+		/// <summary>会員区分情報</summary>
+		public static AppKaiinKbn KaiinKbns { get; private set; }
 		/// <summary>学会情報</summary>
 		public static AppGakkai Gakkais { get; private set; }
 		/// <summary>学校情報</summary>
 		public static AppGakko Gakkos { get; private set; }
 		/// <summary>施設・業務情報</summary>
-		public static AppShisetsugyomu Shisetsugyomus { get; private set; } // enum持ちかも
+		public static AppShisetsugyomu Shisetsugyomus { get; private set; }
 		/// <summary>開設主体情報</summary>
-		public static AppKaisetsushutai Kaisetsushutais{ get; private set; } // enum持ちかも
+		public static AppKaisetsushutai Kaisetsushutais{ get; private set; }
+		/// <summary>iFAXグループ情報</summary>
+		public static AppIfaxGroup IfaxGroups { get; private set; }
 
 		/// <summary>ログインユーザー</summary>
 		public static Tanto LoginUser { get; private set; }
@@ -62,15 +70,19 @@ namespace App
 			RegCommon.SetMasterKey(AppConst.RegKey);
 
 			InitBasic();
-			InitStaff();
+//			InitStaff();
+			InitKaiin();
 			InitTanto();
 			InitIryoKikan();
 			InitKaihi();
 			InitShinryoka();
 			InitGakkai();
 			InitGakko();
+			InitKumiCode();
+			InitKaiinKbn();
 			InitShisetsugyomu();
 			InitKaisetsusyutai();
+			InitIfaxGroup();
 		}
 
 		/// <summary>
@@ -86,21 +98,30 @@ namespace App
 //			Banks.Init();
 //			BasicBank = Banks.Get(Basic.ID_Bank);
 
-			//和暦表示
-			AppDate.SetDispSeireki(false);
+			// 日付西暦和暦表示
+			AppDate.SetDispSeireki(Basic.BAS_DispSeireki);
 		}
 
 		/// <summary>
 		/// スタッフ情報の初期化
 		/// </summary>
-		public static void InitStaff()
+//		public static void InitStaff()
+//		{
+//			Staffs = new AppStaff();
+//			Staffs.Init();
+//		}
+
+		/// <summary>
+		/// 会員情報の初期化
+		/// </summary>
+		public static void InitKaiin()
 		{
-			Staffs = new AppStaff();
-			Staffs.Init();
+			Kaiins = new AppKaiin();
+			Kaiins.Init();
 		}
 
 		/// <summary>
-		/// 職務の初期化
+		/// 担当者の初期化
 		/// </summary>
 		public static void InitTanto()
 		{
@@ -157,6 +178,24 @@ namespace App
 		}
 
 		/// <summary>
+		/// 会員区分情報の初期化
+		/// </summary>
+		public static void InitKaiinKbn()
+		{
+			KaiinKbns = new AppKaiinKbn();
+			KaiinKbns.Init();
+		}
+
+		/// <summary>
+		/// 組コード情報の初期化
+		/// </summary>
+		public static void InitKumiCode()
+		{
+			KumiCodes = new AppKumiCd();
+			KumiCodes.Init();
+		}
+
+		/// <summary>
 		/// 学会情報の初期化
 		/// </summary>
 		public static void InitGakkai()
@@ -190,6 +229,15 @@ namespace App
 		{
 			Kaisetsushutais = new AppKaisetsushutai();
 			Kaisetsushutais.Init();
+		}
+
+		/// <summary>
+		/// iFAXグループ情報の初期化
+		/// </summary>
+		public static void InitIfaxGroup()
+		{
+			IfaxGroups = new AppIfaxGroup();
+			IfaxGroups.Init();
 		}
 		//----
 

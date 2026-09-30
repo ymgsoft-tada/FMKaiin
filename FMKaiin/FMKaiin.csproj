@@ -95,18 +95,21 @@
     <Compile Include="AppDbUpdateManager.cs" />
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
+    <Compile Include="AppIfaxGroup.cs" />
     <Compile Include="AppIryoKikan.cs" />
     <Compile Include="AppGlobal.cs" />
     <Compile Include="AppGridCommon.cs" />
     <Compile Include="AppGakkai.cs" />
     <Compile Include="AppGakko.cs" />
+    <Compile Include="AppKaiin.cs" />
+    <Compile Include="AppKaiinKbn.cs" />
     <Compile Include="AppKaisetsushutai.cs" />
+    <Compile Include="AppKumiCd.cs" />
     <Compile Include="AppShisetsugyomu.cs" />
     <Compile Include="AppShinryoka.cs" />
     <Compile Include="AppLogView.cs" />
     <Compile Include="AppMsgBox.cs" />
     <Compile Include="AppKaihi.cs" />
-    <Compile Include="AppStaff.cs" />
     <Compile Include="AppTableCombo.cs" />
     <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
@@ -243,17 +246,23 @@
     <Compile Include="FormSelectorBankCode.Designer.cs">
       <DependentUpon>FormSelectorBankCode.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStaff.cs">
+    <Compile Include="FormKaiin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStaff.Designer.cs">
-      <DependentUpon>FormStaff.cs</DependentUpon>
+    <Compile Include="FormKaiin.Designer.cs">
+      <DependentUpon>FormKaiin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStaff_DlgEntry.cs">
+    <Compile Include="FormKaiin_DlgEntry.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStaff_DlgEntry.Designer.cs">
-      <DependentUpon>FormStaff_DlgEntry.cs</DependentUpon>
+    <Compile Include="FormKaiin_DlgEntry.Designer.cs">
+      <DependentUpon>FormKaiin_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKaiin_DlgEntry_Idoinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKaiin_DlgEntry_Idoinfo.Designer.cs">
+      <DependentUpon>FormKaiin_DlgEntry_Idoinfo.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -304,19 +313,26 @@
     <Compile Include="XApp_t_basic.cs" />
     <Compile Include="XApp_t_gakkai.cs" />
     <Compile Include="XApp_t_gakko.cs" />
-    <Compile Include="XApp_t_ifaxgroup.cs" />
+    <Compile Include="XApp_t_ifax.cs" />
     <Compile Include="XApp_t_iryokikan.cs" />
     <Compile Include="XApp_t_iryokikan_shinryoka.cs" />
+    <Compile Include="XApp_t_ishikai.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
-    <Compile Include="XApp_t_kaihikbn.cs" />
+    <Compile Include="XApp_t_kaiin.cs" />
+    <Compile Include="XApp_t_kaiinkbn.cs" />
     <Compile Include="XApp_t_kaiin_gakkai.cs" />
+    <Compile Include="XApp_t_kaiin_ido.cs" />
     <Compile Include="XApp_t_kaiin_kaihi.cs" />
     <Compile Include="XApp_t_kaiin_shinryoka.cs" />
     <Compile Include="XApp_t_kaisetsushutai.cs" />
+    <Compile Include="XApp_t_kumicd.cs" />
+    <Compile Include="XApp_t_nitikbn.cs" />
     <Compile Include="XApp_t_shinryoka.cs" />
     <Compile Include="XApp_t_shisetsugyomu.cs" />
-    <Compile Include="XApp_t_staff.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
+    <Compile Include="XApp_t_zentodouhuken.cs" />
+    <Compile Include="XRep_Kaihi.cs" />
+    <Compile Include="XRep_ReportProp.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
       <DependentUpon>DlgSplash2.cs</DependentUpon>
     </EmbeddedResource>
@@ -383,11 +399,14 @@
     <EmbeddedResource Include="FormSelectorBankCode.resx">
       <DependentUpon>FormSelectorBankCode.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStaff.resx">
-      <DependentUpon>FormStaff.cs</DependentUpon>
+    <EmbeddedResource Include="FormKaiin.resx">
+      <DependentUpon>FormKaiin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStaff_DlgEntry.resx">
-      <DependentUpon>FormStaff_DlgEntry.cs</DependentUpon>
+    <EmbeddedResource Include="FormKaiin_DlgEntry.resx">
+      <DependentUpon>FormKaiin_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKaiin_DlgEntry_Idoinfo.resx">
+      <DependentUpon>FormKaiin_DlgEntry_Idoinfo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

@@ -10,13 +10,13 @@ namespace App
 {
 	/// <summary>
 	/// [作成者 tanaka]
-	/// 医会会費 管理用クラス
+	/// 会員管理用クラス
 	/// </summary>
-	public class AppKaihi
+	public class AppKaiin
 	{
-		List<Kaihi> all_list;
-		Dictionary<int, Kaihi> dics_id;
-		Dictionary<int, Kaihi> dics_cd;
+		List<Kaiin> all_list;
+		Dictionary<int, Kaiin> dics_id;
+		Dictionary<int, Kaiin> dics_cd;
 
 		/// <summary>
 		/// 参照用のビュー
@@ -26,11 +26,11 @@ namespace App
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public AppKaihi()
+		public AppKaiin()
 		{
-			all_list = new List<Kaihi>();
-			dics_id = new Dictionary<int, Kaihi>();
-			dics_cd = new Dictionary<int, Kaihi>();
+			all_list = new List<Kaiin>();
+			dics_id = new Dictionary<int, Kaiin>();
+			dics_cd = new Dictionary<int, Kaiin>();
 		}
 
 		/// <summary>
@@ -42,25 +42,23 @@ namespace App
 			dics_id.Clear();
 			dics_cd.Clear();
 
-			DbView = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi).Copy());
-
-			// テーブルカラム以外で必要な情報を追加？数値カラムの文字型(検索用)など
+			DbView = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin).Copy());
 			// 職種タイプ名称用のフィールド
 //			DbView.DataTable.Columns.Add(AppTableCombo.Fld_TypeJobName, typeof(string));
 			// 文字列コード
-//			DbView.DataTable.Columns.Add(AppTableCombo.Fld_CoedString, typeof(string));
-//			DbView.DataTable.Columns[AppTableCombo.Fld_CoedString].SetOrdinal(0);
+			DbView.DataTable.Columns.Add(AppTableCombo.Fld_CoedString, typeof(string));
+			DbView.DataTable.Columns[AppTableCombo.Fld_CoedString].SetOrdinal(0);
 
 			for (int i = 0 ; i < DbView.Count ; i++)
 			{
-				t_kaihi xrow = new t_kaihi(DbView[i]);
+				t_kaiin xrow = new t_kaiin(DbView[i]);
 
 				// 職種タイプ名称のセット
-//			    xrow.Row[AppTableCombo.Fld_TypeJobName] = enumKbn.DTypeJob[(int)xrow.STF_TypeJob];
-				// 0埋めしたコード
-//				xrow.Row[AppTableCombo.Fld_CoedString] = xrow.CD_Kaihi.ToString().PadLeft(6, '0');
+//				xrow.Row[AppTableCombo.Fld_TypeJobName] = enumKbn.DTypeJob[(int)xrow.STF_TypeJob];
+				// 0埋めしたコード 仕様の確認および必要か検討
+				xrow.Row[AppTableCombo.Fld_CoedString] = xrow.CD_Kaiin.ToString().PadLeft(6, '0');
 
-				Kaihi obj = new Kaihi(xrow);
+				Kaiin obj = new Kaiin(xrow);
 
 				all_list.Add(obj);
 
@@ -76,11 +74,11 @@ namespace App
 		}
 
 		/// <summary>
-		/// IDをキーに情報を取得します。
+		/// 会員クラスを取得します。
 		/// </summary>
 		/// <param name="id"></param>
 		/// <returns></returns>
-		public Kaihi Get(int id)
+		public Kaiin Get(int id)
 		{
 			if (dics_id.ContainsKey(id) == true)
 			{
@@ -91,11 +89,11 @@ namespace App
 		}
 
 		/// <summary>
-		/// コードをキーに情報を取得します。
+		/// 会員クラスを取得します。
 		/// </summary>
 		/// <param name="obj"></param>
 		/// <returns></returns>
-		public Kaihi GetCode(object obj)
+		public Kaiin GetCode(object obj)
 		{
 			int cd = Cast.Int(obj);
 			if (dics_cd.ContainsKey(cd) == true)
@@ -108,9 +106,9 @@ namespace App
 	}
 
 	/// <summary>
-	/// 医会会費クラス
+	/// 会員クラス
 	/// </summary>
-	public class Kaihi
+	public class Kaiin
 	{
 		/// <summary>ID</summary>
 		public int ID
@@ -122,13 +120,13 @@ namespace App
 		{
 			get; private set;
 		}
-		/// <summary>月額費用</summary>
-//		public Decimal GetsugakuCost
-//		{
-//			get; private set;
-//		}
+		/// <summary>コード（文字列）</summary>
+		public string CodeString
+		{
+			get; private set;
+		}
 
-		public t_kaihi XRow
+		public t_kaiin XRow
 		{
 			get; private set;
 		}
@@ -136,15 +134,14 @@ namespace App
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Kaihi(t_kaihi row)
+		public Kaiin(t_kaiin row)
 		{
-			this.XRow = new t_kaihi(row.Row);
+			this.XRow = new t_kaiin(row.Row);
 
-			this.ID = XRow.ID_Kaihi;
-			this.CD = XRow.CD_Kaihi;
-//			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
+			this.ID = XRow.ID_Kaiin;
+			this.CD = XRow.CD_Kaiin;
+			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 
-			//this.GetsugakuCost～
 		}
 	}
 }

@@ -57,7 +57,7 @@
 			this.grid.CaptionHeight = 16;
 			this.grid.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。";
 			this.grid.Images.Add(((System.Drawing.Image)(resources.GetObject("grid.Images"))));
-			this.grid.Location = new System.Drawing.Point(26, 107);
+			this.grid.Location = new System.Drawing.Point(26, 99);
 			this.grid.Name = "grid";
 			this.grid.PreviewInfo.Caption = "印刷プレビューウィンドウ";
 			this.grid.PreviewInfo.Location = new System.Drawing.Point(0, 0);
@@ -68,13 +68,13 @@
 			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(750, 388);
+			this.grid.Size = new System.Drawing.Size(754, 388);
 			this.grid.TabIndex = 3;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
 			// btnClear
 			// 
-			this.btnClear.Location = new System.Drawing.Point(457, 72);
+			this.btnClear.Location = new System.Drawing.Point(457, 62);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(99, 28);
 			this.btnClear.TabIndex = 2;
@@ -86,7 +86,7 @@
 			this.iCodeKaihi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iCodeKaihi.ExFocusHighlight = true;
 			this.iCodeKaihi.ImeStr = "";
-			this.iCodeKaihi.Location = new System.Drawing.Point(335, 74);
+			this.iCodeKaihi.Location = new System.Drawing.Point(335, 64);
 			this.iCodeKaihi.Name = "iCodeKaihi";
 			this.iCodeKaihi.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iCodeKaihi.Size = new System.Drawing.Size(88, 25);
@@ -101,7 +101,7 @@
 			this.ycLabelEx4.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.IconImage = null;
 			this.ycLabelEx4.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx4.Location = new System.Drawing.Point(257, 74);
+			this.ycLabelEx4.Location = new System.Drawing.Point(257, 64);
 			this.ycLabelEx4.Name = "ycLabelEx4";
 			this.ycLabelEx4.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.Size = new System.Drawing.Size(72, 25);
@@ -120,7 +120,7 @@
 			this.iKbnKaihi.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
 			this.iKbnKaihi.ListHeaderPane.Height = 27;
 			this.iKbnKaihi.ListHeaderPane.Visible = false;
-			this.iKbnKaihi.Location = new System.Drawing.Point(96, 74);
+			this.iKbnKaihi.Location = new System.Drawing.Point(96, 64);
 			this.iKbnKaihi.Name = "iKbnKaihi";
 			this.iKbnKaihi.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iKbnKaihi.Size = new System.Drawing.Size(144, 25);
@@ -135,7 +135,7 @@
 			this.ycLabelEx2.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx2.IconImage = null;
 			this.ycLabelEx2.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx2.Location = new System.Drawing.Point(26, 74);
+			this.ycLabelEx2.Location = new System.Drawing.Point(26, 64);
 			this.ycLabelEx2.Name = "ycLabelEx2";
 			this.ycLabelEx2.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx2.Size = new System.Drawing.Size(67, 25);
