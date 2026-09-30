@@ -313,6 +313,7 @@
     <Compile Include="XApp_t_basic.cs" />
     <Compile Include="XApp_t_gakkai.cs" />
     <Compile Include="XApp_t_gakko.cs" />
+    <Compile Include="XApp_t_hikiotoshi.cs" />
     <Compile Include="XApp_t_ifax.cs" />
     <Compile Include="XApp_t_iryokikan.cs" />
     <Compile Include="XApp_t_iryokikan_shinryoka.cs" />

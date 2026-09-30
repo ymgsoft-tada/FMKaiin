@@ -1,9 +1,9 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public partial class t_iryokikan : FieldProp
 	{
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
+		/// Access ‚‘¬ŒŸõ—p
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[åŒ»ç™‚æ©Ÿé–¢ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆã—Ã‹@ŠÖID]B
 		/// </summary>
 		public const string FID_Iryokikan = "ID_Iryokikan";
 		/// <summary>
-		/// åŒ»ç™‚æ©Ÿé–¢ID
+		/// ˆã—Ã‹@ŠÖID
 		/// </summary>
 		public int ID_Iryokikan
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// åŒ»ç™‚æ©Ÿé–¢IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆã—Ã‹@ŠÖIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Iryokikan_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[åŒ»ç™‚æ©Ÿé–¢ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆã—Ã‹@ŠÖƒR[ƒh]B
 		/// </summary>
 		public const string FIRK_Code = "IRK_Code";
 		/// <summary>
-		/// åŒ»ç™‚æ©Ÿé–¢ã‚³ãƒ¼ãƒ‰
+		/// ˆã—Ã‹@ŠÖƒR[ƒh
 		/// </summary>
 		public int IRK_Code
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// åŒ»ç™‚æ©Ÿé–¢ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆã—Ã‹@ŠÖƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? IRK_Code_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[åŒ»ç™‚æ©Ÿé–¢å]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆã—Ã‹@ŠÖ–¼]B
 		/// </summary>
 		public const string FIRK_Name = "IRK_Name";
 		/// <summary>
-		/// åŒ»ç™‚æ©Ÿé–¢å
+		/// ˆã—Ã‹@ŠÖ–¼
 		/// </summary>
 		public string IRK_Name
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// åŒ»ç™‚æ©Ÿé–¢åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆã—Ã‹@ŠÖ–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Name_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–½è¨­ã‚«ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[{İƒJƒi]B
 		/// </summary>
 		public const string FIRK_Kana = "IRK_Kana";
 		/// <summary>
-		/// æ–½è¨­ã‚«ãƒŠ
+		/// {İƒJƒi
 		/// </summary>
 		public string IRK_Kana
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ–½è¨­ã‚«ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// {İƒJƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Kana_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–½è¨­æ¼¢å­—é€šç§°]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[{İŠ¿š’ÊÌ]B
 		/// </summary>
 		public const string FIRK_Tsusho = "IRK_Tsusho";
 		/// <summary>
-		/// æ–½è¨­æ¼¢å­—é€šç§°
+		/// {İŠ¿š’ÊÌ
 		/// </summary>
 		public string IRK_Tsusho
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ–½è¨­æ¼¢å­—é€šç§°ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// {İŠ¿š’ÊÌBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Tsusho_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–½è¨­é€šç§°ã‚«ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[{İ’ÊÌƒJƒi]B
 		/// </summary>
 		public const string FIRK_TsushoKana = "IRK_TsushoKana";
 		/// <summary>
-		/// æ–½è¨­é€šç§°ã‚«ãƒŠ
+		/// {İ’ÊÌƒJƒi
 		/// </summary>
 		public string IRK_TsushoKana
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ–½è¨­é€šç§°ã‚«ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// {İ’ÊÌƒJƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_TsushoKana_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éƒµä¾¿ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[—X•Ö”Ô†]B
 		/// </summary>
 		public const string FIRK_Post = "IRK_Post";
 		/// <summary>
-		/// éƒµä¾¿ç•ªå·
+		/// —X•Ö”Ô†
 		/// </summary>
 		public string IRK_Post
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éƒµä¾¿ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// —X•Ö”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Post_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€ï¼‘]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ZŠ‚P]B
 		/// </summary>
 		public const string FIRK_Addr1 = "IRK_Addr1";
 		/// <summary>
-		/// ä½æ‰€ï¼‘
+		/// ZŠ‚P
 		/// </summary>
 		public string IRK_Addr1
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä½æ‰€ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ZŠ‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Addr1_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€ï¼’]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ZŠ‚Q]B
 		/// </summary>
 		public const string FIRK_Addr2 = "IRK_Addr2";
 		/// <summary>
-		/// ä½æ‰€ï¼’
+		/// ZŠ‚Q
 		/// </summary>
 		public string IRK_Addr2
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä½æ‰€ï¼’ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ZŠ‚QBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Addr2_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é›»è©±ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[“d˜b”Ô†]B
 		/// </summary>
 		public const string FIRK_Tel1 = "IRK_Tel1";
 		/// <summary>
-		/// é›»è©±ç•ªå·
+		/// “d˜b”Ô†
 		/// </summary>
 		public string IRK_Tel1
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// é›»è©±ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// “d˜b”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Tel1_Null
 		{
@@ -264,7 +264,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[FAX]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[FAX]B
 		/// </summary>
 		public const string FIRK_Fax1 = "IRK_Fax1";
 		/// <summary>
@@ -277,7 +277,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// FAXã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// FAXBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Fax1_Null
 		{
@@ -286,11 +286,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é–‹è¨­ä¸»ä½“]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŠJİå‘Ì]B
 		/// </summary>
 		public const string FIRK_KaisetsuShutai = "IRK_KaisetsuShutai";
 		/// <summary>
-		/// é–‹è¨­ä¸»ä½“
+		/// ŠJİå‘Ì
 		/// </summary>
 		public int IRK_KaisetsuShutai
 		{
@@ -299,7 +299,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// é–‹è¨­ä¸»ä½“ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŠJİå‘ÌBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? IRK_KaisetsuShutai_Null
 		{
@@ -308,11 +308,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç—…åºŠæœ‰ç„¡]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[•a°—L–³]B
 		/// </summary>
 		public const string FIRK_ByoshoUmu = "IRK_ByoshoUmu";
 		/// <summary>
-		/// ç—…åºŠæœ‰ç„¡
+		/// •a°—L–³
 		/// </summary>
 		public bool IRK_ByoshoUmu
 		{
@@ -321,11 +321,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è¨±å¯ç—…åºŠ(æ•°)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‹–‰Â•a°(”)]B
 		/// </summary>
 		public const string FIRK_Kyoka = "IRK_Kyoka";
 		/// <summary>
-		/// è¨±å¯ç—…åºŠ(æ•°)
+		/// ‹–‰Â•a°(”)
 		/// </summary>
 		public int IRK_Kyoka
 		{
@@ -334,7 +334,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// è¨±å¯ç—…åºŠ(æ•°)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‹–‰Â•a°(”)BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? IRK_Kyoka_Null
 		{
@@ -343,11 +343,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä»‹è­·æ–½è¨­]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰îŒì{İ]B
 		/// </summary>
 		public const string FIRK_Kaigo = "IRK_Kaigo";
 		/// <summary>
-		/// ä»‹è­·æ–½è¨­
+		/// ‰îŒì{İ
 		/// </summary>
 		public bool IRK_Kaigo
 		{
@@ -356,11 +356,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãã®ä»–]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‚»‚Ì‘¼]B
 		/// </summary>
 		public const string FIRK_Etc = "IRK_Etc";
 		/// <summary>
-		/// ãã®ä»–
+		/// ‚»‚Ì‘¼
 		/// </summary>
 		public bool IRK_Etc
 		{
@@ -369,11 +369,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãã®ä»–ãƒ¡ãƒ¢]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‚»‚Ì‘¼ƒƒ‚]B
 		/// </summary>
 		public const string FIRK_Memo = "IRK_Memo";
 		/// <summary>
-		/// ãã®ä»–ãƒ¡ãƒ¢
+		/// ‚»‚Ì‘¼ƒƒ‚
 		/// </summary>
 		public string IRK_Memo
 		{
@@ -382,7 +382,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãã®ä»–ãƒ¡ãƒ¢ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‚»‚Ì‘¼ƒƒ‚BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string IRK_Memo_Null
 		{
@@ -391,11 +391,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[çµ„ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‘gƒR[ƒh]B
 		/// </summary>
 		public const string FIRK_KumiCode = "IRK_KumiCode";
 		/// <summary>
-		/// çµ„ã‚³ãƒ¼ãƒ‰
+		/// ‘gƒR[ƒh
 		/// </summary>
 		public int IRK_KumiCode
 		{
@@ -404,7 +404,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// çµ„ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‘gƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? IRK_KumiCode_Null
 		{
@@ -413,11 +413,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é€€ä¼šåŒºåˆ†]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‘Ş‰ï‹æ•ª]B
 		/// </summary>
 		public const string FIRK_TaikaiKbn = "IRK_TaikaiKbn";
 		/// <summary>
-		/// é€€ä¼šåŒºåˆ†
+		/// ‘Ş‰ï‹æ•ª
 		/// </summary>
 		public bool IRK_TaikaiKbn
 		{
@@ -426,11 +426,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœ€çµ‚æ›´æ–°è€…ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ÅIXVÒID]B
 		/// </summary>
 		public const string FLastUpdateUser = "LastUpdateUser";
 		/// <summary>
-		/// æœ€çµ‚æ›´æ–°è€…ID
+		/// ÅIXVÒID
 		/// </summary>
 		public int LastUpdateUser
 		{
@@ -439,7 +439,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœ€çµ‚æ›´æ–°è€…IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ÅIXVÒIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? LastUpdateUser_Null
 		{
@@ -448,11 +448,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
+		/// [—vŠÔ]ÅIXV“ú
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -461,7 +461,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -471,15 +471,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		/// </summary>
-		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
+		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
 		public t_iryokikan(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_iryokikan å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+		/// t_iryokikan Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
 		/// </summary>
-		/// <returns>t_iryokikan å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
+		/// <returns>t_iryokikan Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_iryokikan");
