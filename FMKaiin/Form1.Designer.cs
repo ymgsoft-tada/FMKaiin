@@ -36,6 +36,7 @@ namespace App
 			this.btnKaihi = new System.Windows.Forms.Button();
 			this.btnBankCode = new System.Windows.Forms.Button();
 			this.btnShinryoka = new System.Windows.Forms.Button();
+			this.btnHikiotoshi = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnBasic
@@ -101,11 +102,21 @@ namespace App
 			this.btnShinryoka.Text = "診療科マスタ";
 			this.btnShinryoka.UseVisualStyleBackColor = true;
 			// 
+			// btnHikiotoshi
+			// 
+			this.btnHikiotoshi.Location = new System.Drawing.Point(54, 130);
+			this.btnHikiotoshi.Name = "btnHikiotoshi";
+			this.btnHikiotoshi.Size = new System.Drawing.Size(139, 29);
+			this.btnHikiotoshi.TabIndex = 7;
+			this.btnHikiotoshi.Text = "引落データ作成";
+			this.btnHikiotoshi.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(583, 268);
+			this.Controls.Add(this.btnHikiotoshi);
 			this.Controls.Add(this.btnShinryoka);
 			this.Controls.Add(this.btnBankCode);
 			this.Controls.Add(this.btnKaihi);
@@ -126,6 +137,7 @@ namespace App
 			this.Controls.SetChildIndex(this.btnKaihi, 0);
 			this.Controls.SetChildIndex(this.btnBankCode, 0);
 			this.Controls.SetChildIndex(this.btnShinryoka, 0);
+			this.Controls.SetChildIndex(this.btnHikiotoshi, 0);
 			this.ResumeLayout(false);
 
 		}
@@ -139,5 +151,6 @@ namespace App
 		private System.Windows.Forms.Button btnKaihi;
 		private System.Windows.Forms.Button btnBankCode;
 		private System.Windows.Forms.Button btnShinryoka;
+		private System.Windows.Forms.Button btnHikiotoshi;
 	}
 }

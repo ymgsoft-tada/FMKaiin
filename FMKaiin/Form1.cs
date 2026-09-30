@@ -24,6 +24,15 @@ namespace App
 			btnKaihi.Click += BtnKaihi_Click;
 			btnIryokikanToroku.Click += BtnIryokikanToroku_Click;
 			btnShinryoka.Click += BtnShinryoka_Click;
+			btnHikiotoshi.Click += BtnHikiotoshi_Click;
+		}
+
+		private void BtnHikiotoshi_Click(object sender, EventArgs e)
+		{
+			FormHikiotoshi frm = new FormHikiotoshi();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		private void BtnIryokikanToroku_Click(object sender, EventArgs e)
