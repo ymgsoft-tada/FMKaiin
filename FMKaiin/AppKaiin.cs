@@ -191,6 +191,9 @@ namespace App
 			get; private set;
 		}
 
+		// 会費単位の支払方法
+		Dictionary<int, eShiharai> dic_shiharai;
+
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
@@ -205,7 +208,31 @@ namespace App
 			Kaihis = new List<Kaihi>();
 			Gakkais = new List<Gakkai>();
 			Shinryokas  = new List<Shinryoka>();
+			dic_shiharai = new Dictionary<int, eShiharai>();
 
+		}
+
+		/// <summary>
+		/// 指定された会費の支払方法を取得します。
+		/// </summary>
+		/// <param name="kai"></param>
+		/// <returns></returns>
+		public eShiharai GetShiharai(Kaihi kai)
+		{
+			return GetShiharai(kai.ID);
+		}
+
+		/// <summary>
+		/// 指定された会費の支払方法を取得します。
+		/// </summary>
+		public eShiharai GetShiharai(int id)
+		{
+			if (dic_shiharai.ContainsKey(id))
+			{
+				return dic_shiharai[id];
+			}
+
+			return eShiharai.None;
 		}
 
 		/// <summary>
@@ -217,6 +244,11 @@ namespace App
 			if (xrow != null && xrow.ID_Kaiin == ID)
 			{
 				Kaihis.Add(AppGlobal.Kaihis.Get(xrow.ID_Kaihi));
+
+				if (dic_shiharai.ContainsKey(xrow.ID_Kaihi) == false)
+				{
+					dic_shiharai.Add(xrow.ID_Kaihi, xrow.KaihiShiharai);
+				}
 			}
 		}
 

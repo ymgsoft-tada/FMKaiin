@@ -146,5 +146,34 @@ namespace App
 
 			//this.GetsugakuCost～
 		}
+
+		/// <summary>
+		/// 指定した日付から該当月を取得して月額金額を取得します。
+		/// </summary>
+		/// <param name="date">日付</param>
+		/// <returns></returns>
+		public decimal? GetCost(DateTime date)
+		{
+			return GetCost(date.Month);
+		}
+
+		/// <summary>
+		/// 指定した月数（1～12）から月額金額を取得します。
+		/// </summary>
+		/// <param name="month"></param>
+		/// <returns></returns>
+		public decimal? GetCost(int month)
+		{
+			string fld = $"{t_kaihi.FKaihi_GetsugakuCost1.Substring(0, t_kaihi.FKaihi_GetsugakuCost1.Length-1)}{month}";
+
+			if (XRow.Row.Table.Columns.Contains(fld))
+			{
+				return Cast.Decimal(XRow.Row[fld]);
+			}
+			else
+			{
+				return null;
+			}
+		}
 	}
 }

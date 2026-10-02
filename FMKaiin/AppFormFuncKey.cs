@@ -2204,8 +2204,12 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
-					Keys.F11,	
+					Keys.F5,	
 					"作成実行",	
+					""),
+			new FuncKeyDefine(
+					Keys.F8,	
+					"編集",	
 					""),
 			new FuncKeyDefine(
 					Keys.F12,	
@@ -2218,9 +2222,45 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine Exec = Functions[0];
 		/// <summary>
+		/// 編集
+		/// </summary>
+		public readonly static FuncKeyDefine Edit = Functions[1];
+		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[1];
+		public readonly static FuncKeyDefine Close = Functions[2];
+	}
+	#endregion
+
+	#region *** FuncHikiotoshi_DlgEntry ***
+	/// <summary>
+	/// FuncHikiotoshi_DlgEntryのファンクションキー定義クラス
+	/// </summary>
+	public class FuncHikiotoshi_DlgEntry
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"登録",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 登録
+		/// </summary>
+		public readonly static FuncKeyDefine Save = Functions[0];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[1];
 	}
 	#endregion
 

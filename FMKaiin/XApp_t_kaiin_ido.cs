@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class t_kaiin_ido : FieldProp
 	{
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—p
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ïˆõID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡ID]ã€‚
 		/// </summary>
 		public const string FID_Kaiin = "ID_Kaiin";
 		/// <summary>
-		/// ‰ïˆõID
+		/// ä¼šå“¡ID
 		/// </summary>
 		public int ID_Kaiin
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ïˆõIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šå“¡IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Kaiin_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ˆÙ“®î•ñID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç•°å‹•æƒ…å ±ID]ã€‚
 		/// </summary>
 		public const string FID_Ido = "ID_Ido";
 		/// <summary>
-		/// ˆÙ“®î•ñID
+		/// ç•°å‹•æƒ…å ±ID
 		/// </summary>
 		public int ID_Ido
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ˆÙ“®î•ñIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ç•°å‹•æƒ…å ±IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Ido_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ˆÙ“®”NŒ“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç•°å‹•å¹´æœˆæ—¥]ã€‚
 		/// </summary>
 		public const string FIdoDate = "IdoDate";
 		/// <summary>
-		/// ˆÙ“®”NŒ“ú
+		/// ç•°å‹•å¹´æœˆæ—¥
 		/// </summary>
 		public DateTime IdoDate
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ˆÙ“®”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ç•°å‹•å¹´æœˆæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? IdoDate_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ˆÙ“®–—R‹æ•ª 0/None/ 1/Kaigyo/{İŠJ‹Æ 2/Ido/{İˆÙ“® 3/Kaiin/‰ïˆõ‹æ•ª•ÏX 4/Etc/‚»‚Ì‘¼]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç•°å‹•äº‹ç”±åŒºåˆ† 0/None/ 1/Kaigyo/æ–½è¨­é–‹æ¥­ 2/Ido/æ–½è¨­ç•°å‹• 3/Kaiin/ä¼šå“¡åŒºåˆ†å¤‰æ›´ 4/Etc/ãã®ä»–]ã€‚
 		/// </summary>
 		public const string FIdoJiyuKbn = "IdoJiyuKbn";
 		/// <summary>
-		/// ˆÙ“®–—R‹æ•ª 0/None/ 1/Kaigyo/{İŠJ‹Æ 2/Ido/{İˆÙ“® 3/Kaiin/‰ïˆõ‹æ•ª•ÏX 4/Etc/‚»‚Ì‘¼
+		/// ç•°å‹•äº‹ç”±åŒºåˆ† 0/None/ 1/Kaigyo/æ–½è¨­é–‹æ¥­ 2/Ido/æ–½è¨­ç•°å‹• 3/Kaiin/ä¼šå“¡åŒºåˆ†å¤‰æ›´ 4/Etc/ãã®ä»–
 		/// </summary>
 		public eTypeIdoJiyu IdoJiyuKbn
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ˆÙ“®–—R‹æ•ª 0/None/ 1/Kaigyo/{İŠJ‹Æ 2/Ido/{İˆÙ“® 3/Kaiin/‰ïˆõ‹æ•ª•ÏX 4/Etc/‚»‚Ì‘¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ç•°å‹•äº‹ç”±åŒºåˆ† 0/None/ 1/Kaigyo/æ–½è¨­é–‹æ¥­ 2/Ido/æ–½è¨­ç•°å‹• 3/Kaiin/ä¼šå“¡åŒºåˆ†å¤‰æ›´ 4/Etc/ãã®ä»–ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? IdoJiyuKbn_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[{İŠJ‹ÆÚ×(‘I‘ğˆ‚È‚µ)]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–½è¨­é–‹æ¥­è©³ç´°(é¸æŠè‚¢ãªã—)]ã€‚
 		/// </summary>
 		public const string FIdoJiyuDetail_Kaigyo = "IdoJiyuDetail_Kaigyo";
 		/// <summary>
-		/// {İŠJ‹ÆÚ×(‘I‘ğˆ‚È‚µ)
+		/// æ–½è¨­é–‹æ¥­è©³ç´°(é¸æŠè‚¢ãªã—)
 		/// </summary>
 		public int IdoJiyuDetail_Kaigyo
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// {İŠJ‹ÆÚ×(‘I‘ğˆ‚È‚µ)BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ–½è¨­é–‹æ¥­è©³ç´°(é¸æŠè‚¢ãªã—)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? IdoJiyuDetail_Kaigyo_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[{İˆÙ“®Ú× 0/None/ 1/KinmuSaki/‹Î–±æ 2/Kyuyo/‹x—{ 3/Haigyo/”p‹Æ 4/Taisyoku/‘ŞE]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–½è¨­ç•°å‹•è©³ç´° 0/None/ 1/KinmuSaki/å‹¤å‹™å…ˆ 2/Kyuyo/ä¼‘é¤Š 3/Haigyo/å»ƒæ¥­ 4/Taisyoku/é€€è·]ã€‚
 		/// </summary>
 		public const string FIdoJiyuDetail_Ido = "IdoJiyuDetail_Ido";
 		/// <summary>
-		/// {İˆÙ“®Ú× 0/None/ 1/KinmuSaki/‹Î–±æ 2/Kyuyo/‹x—{ 3/Haigyo/”p‹Æ 4/Taisyoku/‘ŞE
+		/// æ–½è¨­ç•°å‹•è©³ç´° 0/None/ 1/KinmuSaki/å‹¤å‹™å…ˆ 2/Kyuyo/ä¼‘é¤Š 3/Haigyo/å»ƒæ¥­ 4/Taisyoku/é€€è·
 		/// </summary>
 		public eIdoShisetsu IdoJiyuDetail_Ido
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// {İˆÙ“®Ú× 0/None/ 1/KinmuSaki/‹Î–±æ 2/Kyuyo/‹x—{ 3/Haigyo/”p‹Æ 4/Taisyoku/‘ŞEBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æ–½è¨­ç•°å‹•è©³ç´° 0/None/ 1/KinmuSaki/å‹¤å‹™å…ˆ 2/Kyuyo/ä¼‘é¤Š 3/Haigyo/å»ƒæ¥­ 4/Taisyoku/é€€è·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? IdoJiyuDetail_Ido_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ïˆõ‹æ•ª•ÏXÚ× 0/None/ 1/Kaigyo/ŠJ‹Æ 2/KanriHenko/ŠÇ—ÒŒğ‘ã 3/KaisetsuHenko/ŠJİÒŒğ‘ã 4/KanriKaisetsuHenko/ŠJİÒEŠÇ—ÒŒğ‘ã 5/Haigyo/”p‹Æ]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡åŒºåˆ†å¤‰æ›´è©³ç´° 0/None/ 1/Kaigyo/é–‹æ¥­ 2/KanriHenko/ç®¡ç†è€…äº¤ä»£ 3/KaisetsuHenko/é–‹è¨­è€…äº¤ä»£ 4/KanriKaisetsuHenko/é–‹è¨­è€…ãƒ»ç®¡ç†è€…äº¤ä»£ 5/Haigyo/å»ƒæ¥­]ã€‚
 		/// </summary>
 		public const string FIdoJiyuDetail_Kaiin = "IdoJiyuDetail_Kaiin";
 		/// <summary>
-		/// ‰ïˆõ‹æ•ª•ÏXÚ× 0/None/ 1/Kaigyo/ŠJ‹Æ 2/KanriHenko/ŠÇ—ÒŒğ‘ã 3/KaisetsuHenko/ŠJİÒŒğ‘ã 4/KanriKaisetsuHenko/ŠJİÒEŠÇ—ÒŒğ‘ã 5/Haigyo/”p‹Æ
+		/// ä¼šå“¡åŒºåˆ†å¤‰æ›´è©³ç´° 0/None/ 1/Kaigyo/é–‹æ¥­ 2/KanriHenko/ç®¡ç†è€…äº¤ä»£ 3/KaisetsuHenko/é–‹è¨­è€…äº¤ä»£ 4/KanriKaisetsuHenko/é–‹è¨­è€…ãƒ»ç®¡ç†è€…äº¤ä»£ 5/Haigyo/å»ƒæ¥­
 		/// </summary>
 		public eIdoKaiinHenko IdoJiyuDetail_Kaiin
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ïˆõ‹æ•ª•ÏXÚ× 0/None/ 1/Kaigyo/ŠJ‹Æ 2/KanriHenko/ŠÇ—ÒŒğ‘ã 3/KaisetsuHenko/ŠJİÒŒğ‘ã 4/KanriKaisetsuHenko/ŠJİÒEŠÇ—ÒŒğ‘ã 5/Haigyo/”p‹ÆBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šå“¡åŒºåˆ†å¤‰æ›´è©³ç´° 0/None/ 1/Kaigyo/é–‹æ¥­ 2/KanriHenko/ç®¡ç†è€…äº¤ä»£ 3/KaisetsuHenko/é–‹è¨­è€…äº¤ä»£ 4/KanriKaisetsuHenko/é–‹è¨­è€…ãƒ»ç®¡ç†è€…äº¤ä»£ 5/Haigyo/å»ƒæ¥­ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? IdoJiyuDetail_Kaiin_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[ˆÙ“®‚»‚Ì‘¼Ú× 0/None/ 1/Iten/ˆÚ“] 2/MeisyoHenko/–¼Ì•ÏX 3/Hojinka/–@l‰» 4/AddrHenko/©‘îZŠ•ÏX]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç•°å‹•ãã®ä»–è©³ç´° 0/None/ 1/Iten/ç§»è»¢ 2/MeisyoHenko/åç§°å¤‰æ›´ 3/Hojinka/æ³•äººåŒ– 4/AddrHenko/è‡ªå®…ä½æ‰€å¤‰æ›´]ã€‚
 		/// </summary>
 		public const string FIdoJiyuDetail_Etc = "IdoJiyuDetail_Etc";
 		/// <summary>
-		/// ˆÙ“®‚»‚Ì‘¼Ú× 0/None/ 1/Iten/ˆÚ“] 2/MeisyoHenko/–¼Ì•ÏX 3/Hojinka/–@l‰» 4/AddrHenko/©‘îZŠ•ÏX
+		/// ç•°å‹•ãã®ä»–è©³ç´° 0/None/ 1/Iten/ç§»è»¢ 2/MeisyoHenko/åç§°å¤‰æ›´ 3/Hojinka/æ³•äººåŒ– 4/AddrHenko/è‡ªå®…ä½æ‰€å¤‰æ›´
 		/// </summary>
 		public eIdoEtc IdoJiyuDetail_Etc
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ˆÙ“®‚»‚Ì‘¼Ú× 0/None/ 1/Iten/ˆÚ“] 2/MeisyoHenko/–¼Ì•ÏX 3/Hojinka/–@l‰» 4/AddrHenko/©‘îZŠ•ÏXBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ç•°å‹•ãã®ä»–è©³ç´° 0/None/ 1/Iten/ç§»è»¢ 2/MeisyoHenko/åç§°å¤‰æ›´ 3/Hojinka/æ³•äººåŒ– 4/AddrHenko/è‡ªå®…ä½æ‰€å¤‰æ›´ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? IdoJiyuDetail_Etc_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‚»‚Ì‘¼Ú×‹Lq]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãã®ä»–è©³ç´°è¨˜è¿°]ã€‚
 		/// </summary>
 		public const string FIdoJiyuEtcMemo = "IdoJiyuEtcMemo";
 		/// <summary>
-		/// ‚»‚Ì‘¼Ú×‹Lq
+		/// ãã®ä»–è©³ç´°è¨˜è¿°
 		/// </summary>
 		public string IdoJiyuEtcMemo
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‚»‚Ì‘¼Ú×‹LqBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ãã®ä»–è©³ç´°è¨˜è¿°ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string IdoJiyuEtcMemo_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“ú
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -265,15 +265,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
+		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
 		public t_kaiin_ido(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_kaiin_ido Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
+		/// t_kaiin_ido å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
 		/// </summary>
-		/// <returns>t_kaiin_ido Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
+		/// <returns>t_kaiin_ido å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_kaiin_ido");

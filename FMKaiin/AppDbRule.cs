@@ -317,6 +317,11 @@ namespace App
 			Rule.Add(new GControlDBRuleDate(t_kaiin_ido.FIdoDate));
 			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuEtcMemo, 12));
 			#endregion
+
+			#region +++ t_hikiotoshi +++
+			Rule.Add(curr, t_hikiotoshi.FHiki_Cost);
+			Rule.Add(memo20, t_hikiotoshi.FHiki_Memo);
+			#endregion
 		}
 
 		/// <summary>

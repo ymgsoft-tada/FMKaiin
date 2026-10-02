@@ -1,6 +1,7 @@
 ﻿using ComponentDB;
 using ComponentDebug;
 using ComponentGGridDB;
+using ComponentIO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -35,6 +36,35 @@ namespace App
 			InitializeComponent();
 		}
 
+		/// <summary>
+		/// キー操作
+		/// </summary>
+		protected override void FormFrame_KeyDown(object sender, KeyEventArgs e)
+		{
+			//■ ファンクションキーの標準ショートカットの抑止
+			e.Handled = base.Patcher_CheckShortcutForKillingWindowsAction(e.KeyCode, e.Alt);
+
+			// 処理が必要かどうかチェック。
+			if (base.CheckEnabledFormKeyPreview(e.KeyCode) == true)
+			{
+				return;
+			}
+			if (this.ActiveControl == null)
+			{
+				return;
+			}
+
+			switch (e.KeyCode)
+			{
+				case Keys.Enter:
+					if (this.ActiveControl == grid)
+					{
+						showEdit();
+					}
+					break;
+			}
+		}
+
 		protected override void FormFrame_Load(object sender, EventArgs e)
 		{
 
@@ -60,26 +90,90 @@ namespace App
 
 			dataLoad();
 
+			// イベントの登録
+			iDateYM.UcValueChanged += IDateYM_UcValueChanged;
+			grid.MouseDoubleClick += Grid_MouseDoubleClick;
+
 			base.FormFrame_Shown(sender, e);
 		}
 
+		private void Grid_MouseDoubleClick(object sender, MouseEventArgs e)
+		{
+			if (dvGrid.Count > 0)
+			{
+				showEdit();
+			}
+		}
+
+		private void IDateYM_UcValueChanged(object sender, EventArgs e)
+		{
+			dataLoad();
+		}
+
+		/// <summary>
+		/// 引落データ（個人合算分）のロード
+		/// </summary>
 		void dataLoad()
 		{
 			grid.SuspendBinding();
+
+			DateTime ym;
+			if (iDateYM.UcValue == null)
+			{
+				ym = new DateTime(1900,1,1);
+			}
+			else
+			{
+				ym = iDateYM.UcValue.Value;
+			}
 
 			FormBg_Progress prog = new FormBg_Progress();
 			prog.TitleText = "しばらくお待ちください。";
 			prog.LabelText = "データを取得しています。";
 			prog.DoWorkEvent += prog_DoWorkEvent;
+			prog.Args = new object[] {ym};
 			prog.ShowDialog();
 			prog.Dispose();
 
 			grid.SetDataBinding(dvGrid.DataView, "",true,true);
 			grid.ResumeBinding();
+
+			iTotalCount.Text = dvGrid.Count.ToString("#,##0");
+
+			decimal cost = 0;
+			for (int i = 0; i < dvGrid.Count; i++)
+			{
+				cost += Cast.Decimal(dvGrid[i][F_Hiki_CostTotal]);
+			}
+
+			iTotalCost.Text = cost.ToString("#,##0");
+
+			DBView dv = new DBView(dvHiki);
+			dv.RowFilterQuery($"{t_hikiotoshi.FHiki_DateYM} = #{ym}#");
+			dv.SortQuery($"{t_hikiotoshi.FLastUpdate} DESC");
+
+			string lbl = "";
+
+			if (dv.Count > 0)
+			{
+				t_hikiotoshi xrow = new t_hikiotoshi(dv[0]);
+
+				lbl = $"最終更新：{xrow.LastUpdate.ToString("yyyy/MM/dd hh:mm")}";
+			}
+
+			lblCreateDate.Text = lbl;
+
+			// 編集ボタンの使用可否
+			appFuncKey.SetEnabled(FuncHikiotoshi.Edit.Key, dvGrid.Count > 0);
 		}
 
 		private void prog_DoWorkEvent(object sender, DoWorkEventArgs e)
 		{
+			FormBg_Progress prog = (FormBg_Progress)sender;
+
+			DateTime ym = Cast.DateTime(prog.Args[0]);
+
+			// 集計結果のクエリ
 			string sql = $"SELECT " +
 				 $"{TableProp.t_hikiotoshi}.{t_hikiotoshi.FID_Kaiin}, " +
 				 $"{TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM}, " +
@@ -93,20 +187,13 @@ namespace App
 				 $"{TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM}, " +
 				 $"{TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin}, " +
 				 $"{TableProp.t_kaiin}.{t_kaiin.FKaiin_Name} " +
-				 $"HAVING ((({TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM}) = #{iDateYM.UcValue.Value}#)) " +
+				 $"HAVING ((({TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM}) = #{ym}#)) " +
 				 $"ORDER BY " +
 				 $"{TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin}, " +
 				 $"{TableProp.t_kaiin}.{t_kaiin.FKaiin_Name}";
 
-			//string sql = $"SELECT {TableProp.t_hikiotoshi}.{t_hikiotoshi.FID_Kaiin}," +
-			//			 $"{TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM}," +
-			//			 $"Sum({TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_Cost}) AS {F_Hiki_CostTotal} " +
-			//			 $"FROM {TableProp.t_hikiotoshi} " +
-			//			 $"GROUP BY {TableProp.t_hikiotoshi}.{t_hikiotoshi.FID_Kaiin}, {TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM} " +
-			//			 $"HAVING ((({TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM}) = #{iDateYM.UcValue.Value}#))";
-
 			DataTable dt = AppGlobal.DB.FillQuery(sql);
-			dvGrid = new DBView(dt);
+			dvGrid = new DBView(dt, this.BindingContext);
 
 		}
 
@@ -118,7 +205,36 @@ namespace App
 			appFuncKey = new AppFunctionKey(funckey, FuncHikiotoshi.Functions);
 
 			FuncHikiotoshi.Exec.Execute = doExec;
+			FuncHikiotoshi.Edit.Execute = showEdit;
 			FuncHikiotoshi.Close.Execute = formClose;
+		}
+
+		void showEdit()
+		{
+
+			if (dvGrid.Count > 0)
+			{
+				t_kaiin xrow = new t_kaiin(dvGrid.CurrentRow);
+
+				FormHikiotoshi_DlgEntry frm = new FormHikiotoshi_DlgEntry();
+				frm.SelectYM = iDateYM.UcValue.Value;
+				frm.SelectKaiin = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
+				frm.ShowDialog();
+				
+				if (frm.FormCloseReason == FormCloseReason.Save)
+				{
+					// 現在の位置
+					int frow = grid.FirstRow;
+					int crow = grid.Row;
+
+					// データのロード
+					dataLoad();
+
+					// 元のグリッド位置へ
+					grid.FirstRow = frow;
+					grid.Row = crow;
+				}
+			}
 		}
 
 		void doExec()
@@ -186,7 +302,7 @@ namespace App
 				FormBg_Progress prog = new FormBg_Progress();
 				prog.DoWorkEvent += prog_create;
 				prog.ShowDialog();
-			
+				prog.Dispose();			
 			}
 			catch(Exception ex)
 			{
@@ -198,6 +314,9 @@ namespace App
 			return ret;
 		}
 
+		/// <summary>
+		/// 引落データの生成
+		/// </summary>
 		private void prog_create(object sender, DoWorkEventArgs e)
 		{
 			FormBg_Progress prog = (FormBg_Progress)sender;
@@ -205,22 +324,41 @@ namespace App
 			prog.AdvanceProgress(20);
 
 			DBView dv_kai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin));
-			dv_kai.RowFilterQuery($"{t_kaiin.FKaiin_TypeZaiseki} != {eTypeZaiseki.Taikai}");
+			dv_kai.RowFilterQuery($"{t_kaiin.FKaiin_TypeZaiseki} <> {(int)eTypeZaiseki.Taikai}");
 			dv_kai.SortQuery($"{t_kaiin.FCD_Kaiin}");
 
 
 			prog.AdvanceProgress(100);
 
+			// 新規ID
 			int id = AppDbID.GetNewID(dvHiki, t_hikiotoshi.FID_Hikiotoshi);
+			DateTime ym = iDateYM.UcValue.Value;
 
 			for (int i = 0; i < dv_kai.Count; i++)
 			{
 				t_kaiin xrow = new t_kaiin(dv_kai[i]);
 
+				// 会員情報から所属会費を取得
+				Kaiin ka = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
 
+				if (ka != null)
+				{
+					foreach(Kaihi k in ka.Kaihis)
+					{					
+						t_hikiotoshi nrow = new t_hikiotoshi(dvHiki.NewRow());
+						nrow.ID_Hikiotoshi	= id++;
+						nrow.ID_Kaihi		= k.ID;
+						nrow.ID_Kaiin		= ka.ID;
+						nrow.Hiki_DateYM	= ym;
+						nrow.Hiki_Cost_Null = k.GetCost(ym);
+						nrow.Hiki_Shiharai	= ka.GetShiharai(k);
 
+						dvHiki.Add(nrow.Row);
+					}
+				}
 			}
 
+			AppGlobal.DB.UpdateTable(TableProp.t_hikiotoshi);
 		}
 
 		void formClose()

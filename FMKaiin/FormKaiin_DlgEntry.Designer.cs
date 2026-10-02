@@ -1744,7 +1744,7 @@ namespace App
 			// 
 			// iShiharai
 			// 
-			this.iShiharai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iShiharai.BorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.iShiharai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
 			this.iShiharai.ExCompareContent = null;
 			this.iShiharai.ExCompareValue = null;
@@ -2391,7 +2391,7 @@ namespace App
 			// iSankaIkai
 			// 
 			this.iSankaIkai.BackColor = System.Drawing.Color.Transparent;
-			this.iSankaIkai.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iSankaIkai.ComboBorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.iSankaIkai.CompareValue = null;
 			this.iSankaIkai.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iSankaIkai.DBView = null;

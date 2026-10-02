@@ -29,6 +29,7 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
+			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHikiotoshi));
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
@@ -36,7 +37,16 @@ namespace App
 			this.ycLabelEx14 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
+			this.panel1 = new System.Windows.Forms.Panel();
+			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
+			this.ycLabelEx10 = new YControlLabelEx.YcLabelEx();
+			this.iTotalCost = new GControlGcNumberEx.GcNumberEx(this.components);
+			this.iTotalCount = new GControlGcNumberEx.GcNumberEx(this.components);
+			this.lblCreateDate = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+			this.panel1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iTotalCost)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iTotalCount)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// grid
@@ -58,14 +68,14 @@ namespace App
 			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(517, 449);
+			this.grid.Size = new System.Drawing.Size(517, 473);
 			this.grid.TabIndex = 56;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
 			// funckey
 			// 
 			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.funckey.Location = new System.Drawing.Point(0, 570);
+			this.funckey.Location = new System.Drawing.Point(0, 624);
 			this.funckey.Name = "funckey";
 			this.funckey.Size = new System.Drawing.Size(579, 25);
 			this.funckey.TabIndex = 55;
@@ -116,10 +126,10 @@ namespace App
 			this.ycLabelEx3.Font = new System.Drawing.Font("メイリオ", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx3.IconImage = null;
-			this.ycLabelEx3.Location = new System.Drawing.Point(48, 23);
+			this.ycLabelEx3.Location = new System.Drawing.Point(48, 24);
 			this.ycLabelEx3.Name = "ycLabelEx3";
 			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx3.Size = new System.Drawing.Size(299, 23);
+			this.ycLabelEx3.Size = new System.Drawing.Size(210, 23);
 			this.ycLabelEx3.TabIndex = 335;
 			this.ycLabelEx3.Text = "引落データ作成";
 			// 
@@ -137,11 +147,137 @@ namespace App
 			this.ycLabelEx4.Size = new System.Drawing.Size(10, 30);
 			this.ycLabelEx4.TabIndex = 334;
 			// 
+			// panel1
+			// 
+			this.panel1.Controls.Add(this.ycLabelEx1);
+			this.panel1.Controls.Add(this.ycLabelEx10);
+			this.panel1.Controls.Add(this.iTotalCost);
+			this.panel1.Controls.Add(this.iTotalCount);
+			this.panel1.Location = new System.Drawing.Point(61, 574);
+			this.panel1.Name = "panel1";
+			this.panel1.Size = new System.Drawing.Size(488, 27);
+			this.panel1.TabIndex = 347;
+			// 
+			// ycLabelEx1
+			// 
+			this.ycLabelEx1.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx1.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx1.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx1.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx1.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx1.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx1.IconImage = null;
+			this.ycLabelEx1.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx1.Location = new System.Drawing.Point(224, 1);
+			this.ycLabelEx1.Name = "ycLabelEx1";
+			this.ycLabelEx1.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx1.Size = new System.Drawing.Size(89, 23);
+			this.ycLabelEx1.TabIndex = 346;
+			this.ycLabelEx1.Text = "月額計";
+			this.ycLabelEx1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// ycLabelEx10
+			// 
+			this.ycLabelEx10.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx10.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx10.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx10.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx10.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx10.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx10.IconImage = null;
+			this.ycLabelEx10.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx10.Location = new System.Drawing.Point(28, 0);
+			this.ycLabelEx10.Name = "ycLabelEx10";
+			this.ycLabelEx10.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx10.Size = new System.Drawing.Size(89, 23);
+			this.ycLabelEx10.TabIndex = 343;
+			this.ycLabelEx10.Text = "合計人数";
+			this.ycLabelEx10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// iTotalCost
+			// 
+			this.iTotalCost.AlternateText.DisplayZero.Text = "0";
+			this.iTotalCost.AlternateText.Zero.Text = "0";
+			this.iTotalCost.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iTotalCost.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iTotalCost.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iTotalCost.DisabledForeColor = System.Drawing.Color.Black;
+			this.iTotalCost.Enabled = false;
+			this.iTotalCost.ExAlternateBlank = true;
+			this.iTotalCost.ExCommaDelimiter = ",";
+			this.iTotalCost.ExFocusHighlight = true;
+			this.iTotalCost.ExMaxValue = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
+			this.iTotalCost.ExMinValue = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            -2147483648});
+			this.iTotalCost.ExPrefix = null;
+			this.iTotalCost.ExSuffix = null;
+			this.iTotalCost.Location = new System.Drawing.Point(316, 0);
+			this.iTotalCost.Name = "iTotalCost";
+			this.iTotalCost.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iTotalCost.Size = new System.Drawing.Size(155, 23);
+			this.iTotalCost.Spin.SpinOnKeys = false;
+			this.iTotalCost.TabIndex = 345;
+			// 
+			// iTotalCount
+			// 
+			this.iTotalCount.AlternateText.DisplayZero.Text = "0";
+			this.iTotalCount.AlternateText.Zero.Text = "0";
+			this.iTotalCount.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iTotalCount.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iTotalCount.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iTotalCount.DisabledForeColor = System.Drawing.Color.Black;
+			this.iTotalCount.Enabled = false;
+			this.iTotalCount.ExAlternateBlank = true;
+			this.iTotalCount.ExCommaDelimiter = ",";
+			this.iTotalCount.ExFocusHighlight = true;
+			this.iTotalCount.ExMaxValue = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            0});
+			this.iTotalCount.ExMinValue = new decimal(new int[] {
+            1316134911,
+            2328,
+            0,
+            -2147483648});
+			this.iTotalCount.ExPrefix = null;
+			this.iTotalCount.ExSuffix = null;
+			this.iTotalCount.Location = new System.Drawing.Point(119, 0);
+			this.iTotalCount.Name = "iTotalCount";
+			this.iTotalCount.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iTotalCount.Size = new System.Drawing.Size(90, 23);
+			this.iTotalCount.Spin.SpinOnKeys = false;
+			this.iTotalCount.TabIndex = 344;
+			// 
+			// lblCreateDate
+			// 
+			this.lblCreateDate.BackColor2 = System.Drawing.Color.Empty;
+			this.lblCreateDate.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblCreateDate.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblCreateDate.ForeShadowColor = System.Drawing.Color.Empty;
+			this.lblCreateDate.IconImage = null;
+			this.lblCreateDate.Location = new System.Drawing.Point(264, 64);
+			this.lblCreateDate.Name = "lblCreateDate";
+			this.lblCreateDate.SingleBorderColor = System.Drawing.Color.Empty;
+			this.lblCreateDate.Size = new System.Drawing.Size(285, 25);
+			this.lblCreateDate.TabIndex = 348;
+			this.lblCreateDate.Text = "作成日：9999/99/99";
+			this.lblCreateDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
 			// FormHikiotoshi
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(579, 595);
+			this.ClientSize = new System.Drawing.Size(579, 649);
+			this.Controls.Add(this.lblCreateDate);
+			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.iDateYM);
@@ -160,7 +296,12 @@ namespace App
 			this.Controls.SetChildIndex(this.iDateYM, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
+			this.Controls.SetChildIndex(this.panel1, 0);
+			this.Controls.SetChildIndex(this.lblCreateDate, 0);
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+			this.panel1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.iTotalCost)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iTotalCount)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -174,5 +315,11 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx14;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
+		private System.Windows.Forms.Panel panel1;
+		private YControlLabelEx.YcLabelEx ycLabelEx1;
+		private YControlLabelEx.YcLabelEx ycLabelEx10;
+		private GControlGcNumberEx.GcNumberEx iTotalCost;
+		private GControlGcNumberEx.GcNumberEx iTotalCount;
+		private YControlLabelEx.YcLabelEx lblCreateDate;
 	}
 }

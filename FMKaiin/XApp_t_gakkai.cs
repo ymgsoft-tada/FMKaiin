@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class t_gakkai : FieldProp
 	{
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—p
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Šw‰ïID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å­¦ä¼šID]ã€‚
 		/// </summary>
 		public const string FID_Gakkai = "ID_Gakkai";
 		/// <summary>
-		/// Šw‰ïID
+		/// å­¦ä¼šID
 		/// </summary>
 		public int ID_Gakkai
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Šw‰ïIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å­¦ä¼šIDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Gakkai_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Šw‰ïƒR[ƒh(3Œ…)]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å­¦ä¼šã‚³ãƒ¼ãƒ‰(3æ¡)]ã€‚
 		/// </summary>
 		public const string FGKAI_Code = "GKAI_Code";
 		/// <summary>
-		/// Šw‰ïƒR[ƒh(3Œ…)
+		/// å­¦ä¼šã‚³ãƒ¼ãƒ‰(3æ¡)
 		/// </summary>
 		public int GKAI_Code
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Šw‰ïƒR[ƒh(3Œ…)BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å­¦ä¼šã‚³ãƒ¼ãƒ‰(3æ¡)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? GKAI_Code_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Šw‰ï–¼Ì]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å­¦ä¼šåç§°]ã€‚
 		/// </summary>
 		public const string FGKAI_Name = "GKAI_Name";
 		/// <summary>
-		/// Šw‰ï–¼Ì
+		/// å­¦ä¼šåç§°
 		/// </summary>
 		public string GKAI_Name
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Šw‰ï–¼ÌBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å­¦ä¼šåç§°ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string GKAI_Name_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Šw‰ïõˆø(ƒJƒi)]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å­¦ä¼šç´¢å¼•(ã‚«ãƒŠ)]ã€‚
 		/// </summary>
 		public const string FGKAI_Kana = "GKAI_Kana";
 		/// <summary>
-		/// Šw‰ïõˆø(ƒJƒi)
+		/// å­¦ä¼šç´¢å¼•(ã‚«ãƒŠ)
 		/// </summary>
 		public string GKAI_Kana
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Šw‰ïõˆø(ƒJƒi)BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å­¦ä¼šç´¢å¼•(ã‚«ãƒŠ)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string GKAI_Kana_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“ú
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -155,15 +155,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
+		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
 		public t_gakkai(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_gakkai Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
+		/// t_gakkai å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
 		/// </summary>
-		/// <returns>t_gakkai Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
+		/// <returns>t_gakkai å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_gakkai");
