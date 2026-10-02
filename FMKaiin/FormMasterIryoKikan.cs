@@ -62,7 +62,7 @@ namespace App
 			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Name, "施設正式名", 0.6f));
 			gcom.Add(new GGridDBText(t_iryokikan.FIRK_KumiCode, "組コード", 0.15f, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubKumiCode);
-			gcom.Add(new GGridDBText(t_iryokikan.FIRK_TaikaiKbn, "退会区分", 0.1f, GGridDBCellDisp.Center));
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_TaikaiKbn, "退会区分", 0, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubTaikaiKbn);
 			gcom.EndAdd(dvKikan);
 

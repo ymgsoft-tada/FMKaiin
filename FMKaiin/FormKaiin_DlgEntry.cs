@@ -596,7 +596,7 @@ namespace App
 
 			gcom_shinryo = new GGridDBCommon(grid_Sinryo, this);
 
-			gcom_shinryo.Add(new GGridDBText(t_kaiin_shinryoka.FID_Shinryoka, "名称", 60));
+			gcom_shinryo.Add(new GGridDBText(t_kaiin_shinryoka.FID_Shinryoka, "名称", 0));
 			gcom_shinryo.SetCellDisp(GGridDBCellDisp.Left);
 			gcom_shinryo.SetFocusControlInGrid(iTantoKamoku); // Gridフォーカス時に表示させるコントロール
 			gcom_shinryo.SetUnboundColumnFetch(ubShinryokaName); // ID→名称変換
@@ -629,7 +629,7 @@ namespace App
 
 			gcom_gakkai = new GGridDBCommon(grid_Gakkai, this);
 
-			gcom_gakkai.Add(new GGridDBText(t_kaiin_gakkai.FID_Gakkai, "名称", 60));
+			gcom_gakkai.Add(new GGridDBText(t_kaiin_gakkai.FID_Gakkai, "名称", 0));
 			gcom_gakkai.SetCellDisp(GGridDBCellDisp.Left);
 			gcom_gakkai.SetFocusControlInGrid(iSyozokuGakkai); // Gridフォーカス時に表示させるコントロール
 			gcom_gakkai.SetUnboundColumnFetch(ubGakkaiName); // ID→名称変換
@@ -654,7 +654,7 @@ namespace App
 			//-----参加医会Grid準備-----
 			// ■コントロール設定
 			// コンボボックス
-			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai); // 支払方法
+			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
 
 			dvKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
 			dvKaihi.RowFilterQuery($"{t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ikai}"); // 会費区分2
@@ -673,7 +673,7 @@ namespace App
 			gcom_kaihi.SetTabIndex(1);
 			gcom_kaihi.SetLocked(true);
 
-			gcom_kaihi.Add(new GGridDBText(t_kaiin_kaihi.FKaihiShiharai, "支払方法", 100));
+			gcom_kaihi.Add(new GGridDBText(t_kaiin_kaihi.FKaihiShiharai, "支払方法", 0));
 			gcom_kaihi.SetCellDisp(GGridDBCellDisp.Center);
 			gcom_kaihi.SetFocusControlInGrid(iShiharai); // Gridフォーカス時に表示させるコントロール
 			gcom_kaihi.SetUnboundColumnFetch(ubShiharaiHoho); // 名称変換
@@ -719,7 +719,7 @@ namespace App
 //			gcom_ido.SetTabIndex(3);
 //			gcom_ido.SetLocked(true);
 
-			gcom_ido.Add(new GGridDBText(t_kaiin_ido.FIdoJiyuEtcMemo, "その他詳細"));
+			gcom_ido.Add(new GGridDBText(t_kaiin_ido.FIdoJiyuEtcMemo, "その他詳細", 0));
 			gcom_ido.SetCellDisp(GGridDBCellDisp.Left);
 //			gcom_ido.SetTabIndex(4);
 //			gcom_ido.SetLocked(true);
@@ -1596,6 +1596,9 @@ namespace App
 
 			// NewRowへフィルタ済の会員IDセット
 			nrow.ID_Kaiin = tmprow.ID_Kaiin;
+
+			// 支払方法デフォルトセット
+			nrow.KaihiShiharai = eShiharai.Koza1;
 
 			// 行追加
 			dvKaiinKaihi.Add(nrow.Row);

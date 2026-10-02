@@ -1021,7 +1021,7 @@ namespace App
 			// iSyozokuGakkai
 			// 
 			this.iSyozokuGakkai.BackColor = System.Drawing.Color.Transparent;
-			this.iSyozokuGakkai.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iSyozokuGakkai.ComboBorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.iSyozokuGakkai.CompareValue = null;
 			this.iSyozokuGakkai.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iSyozokuGakkai.DBView = null;
@@ -1053,7 +1053,7 @@ namespace App
 			// iTantoKamoku
 			// 
 			this.iTantoKamoku.BackColor = System.Drawing.Color.Transparent;
-			this.iTantoKamoku.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iTantoKamoku.ComboBorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.iTantoKamoku.CompareValue = null;
 			this.iTantoKamoku.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iTantoKamoku.DBView = null;

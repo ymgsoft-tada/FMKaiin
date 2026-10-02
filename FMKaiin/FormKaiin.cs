@@ -101,7 +101,7 @@ namespace App
 			gcom.SetUnboundColumnFetch(ubSex);
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_TypeZaiseki, "在籍区分", 90, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubZaiseki);
-			gcom.Add(new GGridDBText(t_kaiin.FID_KaiinKbn, "会員区分", 90, GGridDBCellDisp.Center));
+			gcom.Add(new GGridDBText(t_kaiin.FID_KaiinKbn, "会員区分", 0, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubKaiinKbn);
 
 			gcom.EndAdd(dvKaiin);

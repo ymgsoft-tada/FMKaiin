@@ -102,7 +102,7 @@ namespace App
 			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCode, "銀行名", 90));
 			gcom.SetUnboundColumnFetch(ubBankName);
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCodeShiten, "支店コード", 60));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCodeShiten, "支店名", 90));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCodeShiten, "支店名", 0));
 			gcom.SetUnboundColumnFetch(ubBankNameShiten);
 
 			gcom.EndAdd(dvKaihi);

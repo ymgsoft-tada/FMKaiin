@@ -75,7 +75,7 @@ namespace App
 
 			gcom = new GGridDBCommon(grid, this);
 			gcom.Add(new GGridDBText(t_shinryoka.FSRK_Code, "コード", 75));
-			gcom.Add(new GGridDBText(t_shinryoka.FSRK_Name, "名称", 90));
+			gcom.Add(new GGridDBText(t_shinryoka.FSRK_Name, "名称", 0));
 //			gcom.SetUnboundColumnFetch(ubUsed);
 
 			gcom.EndAdd(dvShinryoka);
