@@ -263,7 +263,7 @@ namespace App
 			gcom_shinryo.SetTabIndex(1);
 			gcom_shinryo.SetLocked(true);
 
-			gcom_shinryo.Add(new GGridDBText(t_iryokikan_shinryoka.FChk_Shinryoka, "診療科目", 20));
+			gcom_shinryo.Add(new GGridDBText(t_iryokikan_shinryoka.FChk_Shinryoka, "診療科目", 0));
 			gcom_shinryo.SetCellDisp(GGridDBCellDisp.Center);
 			gcom_shinryo.SetFocusControlInGrid(iShinryoKamokuChk); // Gridフォーカス時に表示させるコントロール
 			gcom_shinryo.SetUnboundColumnFetch(ubShinryokaCheckbox); // 名称変換
