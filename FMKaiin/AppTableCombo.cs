@@ -42,6 +42,31 @@ namespace App
 		public const string Fld_Teishutsusaki = "Fld_Teishutsusaki";
 
 		/// <summary>
+		/// 会員リストiサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Kaiin(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+//			cmb.RowFilter = dv.RowFilter;
+			cmb.Sort = DBQuery.GetSql(t_kaiin.FCD_Kaiin);
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_kaiin.FCD_Kaiin, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_kaiin.FKaiin_Name, "氏名", 150);
+			//cmb.SetColumn(t_kaiin.FKaiin_NameKana, "フリガナ", 100);
+			cmb.SetColumn(t_kaiin.FKaiin_NameKana, "フリガナ", 0);
+			cmb.CompareValue = t_kaiin.FID_Kaiin; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 0; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+		/// <summary>
 		/// 医療機関iサーチ作成
 		/// </summary>
 		/// <param name="cmb"></param>
@@ -97,11 +122,11 @@ namespace App
 			cmb.BeginUpdate();
 			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = dv.RowFilter;
+			cmb.RowFilter = DBQuery.GetSql($"{t_gakkai.FGKAI_DispName} Is Not Null"); // 使用行
 			cmb.Sort = DBQuery.GetSql(t_gakkai.FGKAI_Code);
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_gakkai.FGKAI_Code, "コード", 80, ContentAlignment.MiddleRight);
-			cmb.SetColumn(t_gakkai.FGKAI_Name, "名称", 220);
+			cmb.SetColumn(t_gakkai.FGKAI_DispName, "名称", 220);
 			cmb.CompareValue = t_gakkai.FID_Gakkai; // Comboから取得する列
 			cmb.ContentAlignment = ContentAlignment.BottomLeft;
 			cmb.SelectedIndexNullLeave = -1;
@@ -235,11 +260,11 @@ namespace App
 			cmb.BeginUpdate();
 			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
 			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = dv.RowFilter;
+			cmb.RowFilter = DBQuery.GetSql($"{t_shisetsugyomu.FSGY_DispName} Is Not Null"); // 使用行
 			cmb.Sort = DBQuery.GetSql(t_shisetsugyomu.FSGY_Code);
 			cmb.DropDownSize = new Size(440, 300);
 			cmb.SetColumn(t_shisetsugyomu.FSGY_Code, "コード", 80, ContentAlignment.MiddleRight);
-			cmb.SetColumn(t_shisetsugyomu.FSGY_Name, "名称", 220);
+			cmb.SetColumn(t_shisetsugyomu.FSGY_DispName, "名称", 220);
 			cmb.CompareValue = t_shisetsugyomu.FID_ShisetsuGyomu; // Comboから取得する列
 			cmb.ContentAlignment = ContentAlignment.BottomLeft;
 			cmb.SelectedIndexNullLeave = -1;

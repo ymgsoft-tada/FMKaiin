@@ -548,7 +548,7 @@ namespace App
 		{
 			// 最終フォーカスコントロールをRowへ反映
 			updateCurrentControlValue(gctl);
-//			updateCurrentControlValue(gctl_shinryo);
+			updateCurrentControlValue(gctl_shinryo);
 
 			// 更新担当者のセット
 			this.Row[t_iryokikan.FLastUpdateUser] = AppGlobal.LoginUser.ID;

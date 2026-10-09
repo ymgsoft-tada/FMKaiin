@@ -122,11 +122,6 @@ namespace App
 		{
 			get; private set;
 		}
-		/// <summary>月額費用</summary>
-//		public Decimal GetsugakuCost
-//		{
-//			get; private set;
-//		}
 
 		public t_kaihi XRow
 		{
@@ -143,8 +138,6 @@ namespace App
 			this.ID = XRow.ID_Kaihi;
 			this.CD = XRow.CD_Kaihi;
 //			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
-
-			//this.GetsugakuCost～
 		}
 
 		/// <summary>
