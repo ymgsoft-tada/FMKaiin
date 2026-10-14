@@ -84,8 +84,6 @@ namespace App
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
 			// グリッド作成
-			//			AppCombo.SetComboBox(iJob, enumKbn.DTypeJob, true, (int)eTypeJob.None);
-			//			iJob.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
 			iJob.Enabled = false; // ★職種コントロール削除予定
 
 			// 追加時の動作仕様のため、再表示時(Shown()時)のみソートする(GetReFillTable()の利用)
@@ -113,12 +111,10 @@ namespace App
 			grid.Select();
 
 			// _DlgEntry画面のGrid用データ取得
-			// Gridのソートはするかしないか
 			dvKaiinShinryo = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_shinryoka)); // 本画面のGridと連動しないためBindingContext指定なし
 			dvKaiinGakkai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_gakkai));
 			dvKaiinKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_kaihi));
 			dvKaiinIdo = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_ido));
-
 
 			//■ イベント
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
@@ -341,14 +337,49 @@ namespace App
 			nrow.Kaiin_KaihiUchiwake = true;
 			nrow.Kaiin_KoukaiKbn = true;
 
+			// --日医～市医Grid準備--
+			t_kaiin_kaihi kaihi_nrow;
+
+			kaihi_nrow = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+			// NewRowへ追加予定の会員IDセット
+			kaihi_nrow.ID_Kaiin = nrow.ID_Kaiin;
+			// デフォルト値セット
+			kaihi_nrow.ID_Kaihi = AppGlobal.Kaihis.GetCode(19999).ID; // 19999:日医未入会
+			kaihi_nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+			kaihi_nrow.KaihiTypeIkai = eTypeIkai.Nichii; // 日医
+			// 行追加
+			dvKaiinKaihi.Add(kaihi_nrow.Row);
+
+			kaihi_nrow = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+			// NewRowへ追加予定の会員IDセット
+			kaihi_nrow.ID_Kaiin = nrow.ID_Kaiin;
+			// デフォルト値セット
+			kaihi_nrow.ID_Kaihi = AppGlobal.Kaihis.GetCode(29999).ID; // 29999:県医未入会
+			kaihi_nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+			kaihi_nrow.KaihiTypeIkai = eTypeIkai.Keni; // 県医
+			// 行追加
+			dvKaiinKaihi.Add(kaihi_nrow.Row);
+
+			kaihi_nrow = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+			// NewRowへ追加予定の会員IDセット
+			kaihi_nrow.ID_Kaiin = nrow.ID_Kaiin;
+			// デフォルト値セット
+			kaihi_nrow.ID_Kaihi = AppGlobal.Kaihis.GetCode(39999).ID; // 39999:市医未入会
+			kaihi_nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+			kaihi_nrow.KaihiTypeIkai = eTypeIkai.Shii; // 市医
+			// 行追加
+			dvKaiinKaihi.Add(kaihi_nrow.Row);
+			//----
+
 			// 入力画面呼び出し
 			FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
 			frm.Mode = FormKaiin_DlgEntry.eMode.Add;
 			frm.Row = nrow.Row;
-			frm.DvKaiinShinryo = dvKaiinShinryo; // 担当診療科目grid用DBView
-			frm.DvKaiinGakkai = dvKaiinGakkai;   // 所属学会grid用DBView
-			frm.DvKaiinKaihi = dvKaiinKaihi;     // 参加医会grid用DBView
-			frm.DvKaiinIdo = dvKaiinIdo;         // 異動情報grid用DBView
+			frm.DvKaiinKaihiIshikai = dvKaiinKaihi; // 医師会会員grid用DBView
+			frm.DvKaiinShinryo = dvKaiinShinryo;    // 担当診療科目grid用DBView
+			frm.DvKaiinGakkai = dvKaiinGakkai;      // 所属学会grid用DBView
+			frm.DvKaiinKaihi = dvKaiinKaihi;        // 参加医会grid用DBView
+			frm.DvKaiinIdo = dvKaiinIdo;            // 異動情報grid用DBView
 			frm.ShowDialog();
 
 			if (frm.FormCloseReason == FormCloseReason.Save)
@@ -403,14 +434,57 @@ namespace App
 				DataRow row = dvKaiin.NewRow();
 				AppDb.CopyDataRow(dvKaiin.CurrentRow.Row, row); // 選択行データをコピー
 
+/*
+				t_kaiin nrow = new t_kaiin(row);
+
+				// --日医～市医Grid準備--
+				Kaiin kai = AppGlobal.Kaiins.Get(nrow.ID_Kaiin);
+
+				t_kaiin_kaihi kaihi_nrow;
+
+				//if(kai.Kaihis.Contains( // KaihiTypeIkai=eTypeIkai.Nichii のデータがない場合処理
+
+				kaihi_nrow = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+				// NewRowへ追加予定の会員IDセット
+				kaihi_nrow.ID_Kaiin = nrow.ID_Kaiin;
+				// デフォルト値セット
+				kaihi_nrow.ID_Kaihi = AppGlobal.Kaihis.GetCode(19999).ID; // 19999:日医未入会
+				kaihi_nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+				kaihi_nrow.KaihiTypeIkai = eTypeIkai.Nichii; // 日医
+															 // 行追加
+				dvKaiinKaihi.Add(kaihi_nrow.Row);
+
+				kaihi_nrow = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+				// NewRowへ追加予定の会員IDセット
+				kaihi_nrow.ID_Kaiin = nrow.ID_Kaiin;
+				// デフォルト値セット
+				kaihi_nrow.ID_Kaihi = AppGlobal.Kaihis.GetCode(29999).ID; // 29999:県医未入会
+				kaihi_nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+				kaihi_nrow.KaihiTypeIkai = eTypeIkai.Keni; // 県医
+														   // 行追加
+				dvKaiinKaihi.Add(kaihi_nrow.Row);
+
+				kaihi_nrow = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+				// NewRowへ追加予定の会員IDセット
+				kaihi_nrow.ID_Kaiin = nrow.ID_Kaiin;
+				// デフォルト値セット
+				kaihi_nrow.ID_Kaihi = AppGlobal.Kaihis.GetCode(39999).ID; // 39999:市医未入会
+				kaihi_nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+				kaihi_nrow.KaihiTypeIkai = eTypeIkai.Shii; // 市医
+														   // 行追加
+				dvKaiinKaihi.Add(kaihi_nrow.Row);
+				//----
+*/
+
 				// 入力画面呼び出し
 				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
 				frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
 				frm.Row = row; // 選択中会員データ
-				frm.DvKaiinShinryo = dvKaiinShinryo; // 担当診療科目grid用DBView
-				frm.DvKaiinGakkai = dvKaiinGakkai;   // 所属学会grid用DBView
-				frm.DvKaiinKaihi = dvKaiinKaihi;     // 参加医会grid用DBView
-				frm.DvKaiinIdo = dvKaiinIdo;         // 異動情報grid用DBView
+				frm.DvKaiinKaihiIshikai = dvKaiinKaihi; // 医師会会員grid用DBView
+				frm.DvKaiinShinryo = dvKaiinShinryo;    // 担当診療科目grid用DBView
+				frm.DvKaiinGakkai = dvKaiinGakkai;      // 所属学会grid用DBView
+				frm.DvKaiinKaihi = dvKaiinKaihi;        // 参加医会grid用DBView
+				frm.DvKaiinIdo = dvKaiinIdo;            // 異動情報grid用DBView
 				frm.ShowDialog();
 
 				if (frm.FormCloseReason == FormCloseReason.Save)

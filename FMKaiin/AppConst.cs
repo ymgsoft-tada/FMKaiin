@@ -111,13 +111,26 @@ namespace App
 			None = 0,
 			/// <summary>保険医</summary>
 			Hokeni = 1 << 1,
-			/// <summary>母体保護</summary>
+			/// <summary>母体保護法</summary>
 			Botai = 1 << 2,
 			/// <summary>精神保護</summary>
 			Seishin = 1 << 3,
+			/// <summary>生活保護</summary>
+			Seikatsu = 1 << 4,
+			/// <summary>労災</summary>
+			Rosai = 1 << 5,
+			/// <summary>結核</summary>
+			Kekkaku = 1 << 6,
+			/// <summary>身体障碍者</summary>
+			Shogai = 1 << 7,
+			/// <summary>原爆一般</summary>
+			Genbaku = 1 << 8,
+			/// <summary>難病</summary>
+			Nanbyo = 1 << 9,
 			/// <summary>その他</summary>
-			Etc = 1 << 4,
+			Etc = 1 << 10,
 		}
+
 	}
 
 }
