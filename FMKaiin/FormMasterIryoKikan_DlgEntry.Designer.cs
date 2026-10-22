@@ -721,7 +721,7 @@ namespace App
 			// iHyoboKamoku
 			// 
 			this.iHyoboKamoku.BackColor = System.Drawing.Color.Transparent;
-			this.iHyoboKamoku.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iHyoboKamoku.ComboBorderStyle = System.Windows.Forms.BorderStyle.None;
 			this.iHyoboKamoku.CompareValue = null;
 			this.iHyoboKamoku.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
 			this.iHyoboKamoku.DBView = null;

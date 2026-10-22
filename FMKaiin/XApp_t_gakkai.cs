@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -132,6 +132,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[名称(前sys表示内容)]。
+		/// </summary>
+		public const string FGKAI_DispName = "GKAI_DispName";
+		/// <summary>
+		/// 名称(前sys表示内容)
+		/// </summary>
+		public string GKAI_DispName
+		{
+			get	{	return Cast.String(row == null ? null : row[FGKAI_DispName]);	}
+			set	{	_set(FGKAI_DispName, value);	}
+		}
+		
+		/// <summary>
+		/// 名称(前sys表示内容)。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string GKAI_DispName_Null
+		{
+			get	{	if (row == null || row[FGKAI_DispName] == System.DBNull.Value) { return null; } else { return Cast.String(row[FGKAI_DispName]); }	}
+			set	{	_set(FGKAI_DispName, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[[要時間]最終更新日時]。
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
@@ -185,6 +207,11 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FGKAI_Kana, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FGKAI_DispName, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

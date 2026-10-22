@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -110,6 +110,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[医会区分 0/None/ 1/Nichii/日医 2/Keni/県医 3/Shii/市医 4/Etc/その他]。
+		/// </summary>
+		public const string FKaihiTypeIkai = "KaihiTypeIkai";
+		/// <summary>
+		/// 医会区分 0/None/ 1/Nichii/日医 2/Keni/県医 3/Shii/市医 4/Etc/その他
+		/// </summary>
+		public eTypeIkai KaihiTypeIkai
+		{
+			get	{	return (eTypeIkai)Cast.Int(row == null ? null : row[FKaihiTypeIkai]);	}
+			set	{	_set(FKaihiTypeIkai, (int)value);	}
+		}
+		
+		/// <summary>
+		/// 医会区分 0/None/ 1/Nichii/日医 2/Keni/県医 3/Shii/市医 4/Etc/その他。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? KaihiTypeIkai_Null
+		{
+			get	{	if (row == null || row[FKaihiTypeIkai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihiTypeIkai]); }	}
+			set	{	_set(FKaihiTypeIkai, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[[要時間]最終更新日時]。
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
@@ -158,6 +180,9 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaihiShiharai, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaihiTypeIkai, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));

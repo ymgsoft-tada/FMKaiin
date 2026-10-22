@@ -58,11 +58,6 @@ namespace App
 		DBView dvKaiinKbn;
 
 		/// <summary>
-		/// 医会会費マスタ(医師会会費) DBView iSearch用
-		/// </summary>
-		DBView dvIkai;
-
-		/// <summary>
 		/// 医師会マスタ DBView iSearch用
 		/// </summary>
 		DBView dvIshikai;
@@ -80,6 +75,29 @@ namespace App
 		/// コントロールとデータ連結クラス 医療機関情報用
 		/// </summary>
 		GControlDB gctl_iryo;
+
+		// --医師会会員Grid--
+		/// <summary>
+		/// 医会会費マスタ(医師会会費) DBView iSearch用
+		/// </summary>
+		DBView dvIkai;
+		/// <summary>
+		/// 会員-医会(医師会)の関連 DBView
+		/// </summary>
+		DBView dvKaiinKaihiIshikai;
+		public DBView DvKaiinKaihiIshikai
+		{
+			//get { return dvKaiinKaihi; }
+			set { dvKaiinKaihiIshikai = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
+		}
+		/// <summary>
+		/// 医師会会員Grid
+		/// </summary>
+		GGridDBCommon gcom_kaihiIshikai;
+		/// <summary>
+		/// コントロールとデータ連結クラス_医師会会員Grid用
+		/// </summary>
+		GControlDB gctl_kaihiIshikai;
 
 		// --診療科目Grid--
 		/// <summary>
@@ -281,10 +299,25 @@ namespace App
 					else
 					if (this.ActiveControl == grid_Ido) // Enterでのフォーカス先が異動情報Grid
 					{
-//						gcom_ido.SelectInput(); // Grid内のセルへフォーカス移動
 						if (dvKaiinIdo.Count > 0)
 						{
 							rowEditIdo();
+						}
+						return;
+					}
+					else
+					if (this.ActiveControl == grid_KaihiIshikai) // Enterでのフォーカス先が医師会会員Grid
+					{
+						gcom_kaihiIshikai.SelectInput(); // Grid内のセルへフォーカス移動
+
+						return;
+					}
+					else
+					if (gcom_kaihiIshikai.CheckFocusControl(this.ActiveControl))
+					{
+						if (gcom_kaihiIshikai.SelectNextControl(!e.Shift) == false) // 次コントロールが存在しない(最終行)
+						{
+							//gbxBank.Select(); // 銀行情報グループへフォーカス移動
 						}
 						return;
 					}
@@ -341,11 +374,8 @@ namespace App
 			// enumから
 			AppCombo.SetComboBox(iSex, enumKbn.DSex); // 性別
 			AppCombo.SetComboBox(iZaiseki, enumKbn.DTypeZaiseki, (int)eTypeZaiseki.None); // 在籍区分
-			AppCombo.SetComboBox(iIkaiNichiiShiharai, enumKbn.DShiharai); // 日医支払方法
-			AppCombo.SetComboBox(iIkaiKeniShiharai, enumKbn.DShiharai); // 県医支払方法
-			AppCombo.SetComboBox(iIkaiShiiShiharai, enumKbn.DShiharai); // 市医支払方法
 			AppCombo.SetComboBox(iTaikaiJiyu, enumKbn.DTypeTaikaiJiyu); // 退会事由
-			AppCombo.SetComboBox(iKozaType1, enumKbn.DTypeKoza); // 口座区分 空欄選択あり
+			AppCombo.SetComboBox(iKozaType1, enumKbn.DTypeKoza); // 銀行 口座区分 空欄選択あり
 			AppCombo.SetComboBox(iKozaType2, enumKbn.DTypeKoza);
 			AppCombo.SetComboBox(iKozaType3, enumKbn.DTypeKoza);
 
@@ -356,13 +386,6 @@ namespace App
 
 			dvKaiinKbn = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiinkbn));
 			AppTableCombo.SetComboBox_KaiinKbn(iKaiinKbn, dvKaiinKbn); // 会員区分
-
-			dvIkai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
-			dvIkai.RowFilterQuery($"{t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ishikai}"); // 会費区分1
-			dvIkai.SortQuery($"{ t_kaihi.FCD_Kaihi}");
-			AppTableCombo.SetComboBox_Kaihi(iIkaiNichii, dvIkai); // 日医会員区分
-			AppTableCombo.SetComboBox_Kaihi(iIkaiKeni, dvIkai); // 県医会員区分
-			AppTableCombo.SetComboBox_Kaihi(iIkaiShii, dvIkai); // 市医会員区分
 
 			dvIshikai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_ishikai));
 			AppTableCombo.SetComboBox_Ishikai(iIshikaiIdomae, dvIshikai); // 異動前医師会
@@ -444,13 +467,54 @@ namespace App
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShonin, iShoninDate.UcDateCtl)); // 承認日
 
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_TypeZaiseki, iZaiseki)); // 在籍区分
-			gctl.Add(new GControlDBCombo(t_kaiin.FID_Kaihi_Nichii, iIkaiNichii.ComboBox)); // 日医会員区分
-			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_NichiiShiharai, iIkaiNichiiShiharai)); // 日医会員支払方法
-			gctl.Add(new GControlDBCombo(t_kaiin.FID_Kaihi_Keni, iIkaiKeni.ComboBox)); // 県医会員区分
-			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KeniShiharai, iIkaiKeniShiharai)); // 県医会員支払方法
-			gctl.Add(new GControlDBCombo(t_kaiin.FID_Kaihi_Shii, iIkaiShii.ComboBox)); // 市医会員区分
-			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_ShiiShiharai, iIkaiShiiShiharai)); // 市医会員支払方法
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_Ishikai_Idomae, iIshikaiIdomae.ComboBox)); // 異動前医師会
+
+			// 医師会会員Grid準備
+			// ■コントロール設定
+			// コンボボックス
+			AppCombo.SetComboBox(iIshikaiShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
+
+			dvIkai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
+			dvIkai.RowFilterQuery($"{t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ishikai}"); // 会費区分1
+			dvIkai.SortQuery($"{ t_kaihi.FCD_Kaihi}");
+			AppTableCombo.SetComboBox_Kaihi(iIshikai, dvIkai); // 日医会員区分
+
+			// ■Grid設定
+			AppGridCommon.StyleSet(grid_KaihiIshikai);
+
+			gcom_kaihiIshikai = new GGridDBCommon(grid_KaihiIshikai, this);
+
+			gcom_kaihiIshikai.Add(new GGridDBText(t_kaiin_kaihi.FKaihiTypeIkai, "会員区分", 102));
+			gcom_kaihiIshikai.SetCellDisp(GGridDBCellDisp.Center);
+			gcom_kaihiIshikai.SetUnboundColumnFetch(ubTypeIshikai); // 名称変換
+			gcom_kaihiIshikai.SetLocked(true);
+
+			gcom_kaihiIshikai.Add(new GGridDBText(t_kaiin_kaihi.FID_Kaihi, "医師会名称", 220));
+			gcom_kaihiIshikai.SetCellDisp(GGridDBCellDisp.Left);
+			gcom_kaihiIshikai.SetFocusControlInGrid(iIshikai); // Gridフォーカス時に表示させるコントロール
+			gcom_kaihiIshikai.SetUnboundColumnFetch(ubIkaiNameIshikai); // ID→名称変換
+			gcom_kaihiIshikai.SetTabIndex(0);
+			gcom_kaihiIshikai.SetLocked(true);
+
+			gcom_kaihiIshikai.Add(new GGridDBText(t_kaiin_kaihi.FKaihiShiharai, "支払方法", 0));
+			gcom_kaihiIshikai.SetCellDisp(GGridDBCellDisp.Center);
+			gcom_kaihiIshikai.SetFocusControlInGrid(iIshikaiShiharai); // Gridフォーカス時に表示させるコントロール
+			gcom_kaihiIshikai.SetUnboundColumnFetch(ubShiharaiHohoIshikai); // 名称変換
+			gcom_kaihiIshikai.SetTabIndex(1);
+			gcom_kaihiIshikai.SetLocked(true);
+
+			gcom_kaihiIshikai.EndAdd(dvKaiinKaihiIshikai);
+
+			// コントロールのDBバインド
+			gctl_kaihiIshikai = new GControlDB(this, getDataRowKaihiIshikai);
+			gctl_kaihiIshikai.Add(new GControlDBCombo(t_kaiin_kaihi.FID_Kaihi, iIshikai.ComboBox)); // 医師会ID
+			gctl_kaihiIshikai.Add(new GControlDBCombo(t_kaiin_kaihi.FKaihiShiharai, iIshikaiShiharai)); // 支払方法
+			gctl_kaihiIshikai.EndAdd(AppDbRule.Rule);
+
+			// イベント登録 なし
+
+			changeFilterKaihiIshikai(); // 表示中会員の情報のみへフィルタ
+			rowFetchKaihiIshikai(); // コントロール値セット(グリッド初期表示値)
 
 			// --タブ1--
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_Shinryoka_Main, iTantoMainKamoku.ComboBox)); // 診療科目(主)
@@ -494,10 +558,16 @@ namespace App
 
 			// 医療機関情報-指定医
 			// 指定医情報チェックボックスのTag値設定
-			iIryoShiteii1.Tag = AppConst.eShiteii.Hokeni;
-			iIryoShiteii2.Tag = AppConst.eShiteii.Botai;
-			iIryoShiteii3.Tag = AppConst.eShiteii.Seishin;
-			iIryoShiteii4.Tag = AppConst.eShiteii.Etc;
+			iIryoShiteii1.Tag  = AppConst.eShiteii.Hokeni;
+			iIryoShiteii2.Tag  = AppConst.eShiteii.Botai;
+			iIryoShiteii3.Tag  = AppConst.eShiteii.Seishin;
+			iIryoShiteii4.Tag  = AppConst.eShiteii.Seikatsu;
+			iIryoShiteii5.Tag  = AppConst.eShiteii.Rosai;
+			iIryoShiteii6.Tag  = AppConst.eShiteii.Kekkaku;
+			iIryoShiteii7.Tag  = AppConst.eShiteii.Shogai;
+			iIryoShiteii8.Tag  = AppConst.eShiteii.Genbaku;
+			iIryoShiteii9.Tag  = AppConst.eShiteii.Nanbyo;
+			iIryoShiteii10.Tag = AppConst.eShiteii.Etc;
 
 			// 入力させないコントロールの非活性
 			iBankName1.Enabled = false; // 銀行名
@@ -556,7 +626,9 @@ namespace App
 			gctl_iryo.Add(new GControlDBCheckBox(t_iryokikan.FIRK_Kaigo, iIryoHeisetsu)); // 併設の施設-介護施設
 			gctl_iryo.Add(new GControlDBCheckBox(t_iryokikan.FIRK_Etc, iIryoHeisetsuEtc)); // 併設の施設-その他
 			gctl_iryo.Add(new GControlDBText(t_iryokikan.FIRK_Memo, iIryoHeisetsuName)); // 併設の施設-その他名称
-			gctl_iryo.Add(new GControlDBText(t_iryokikan.FIRK_KumiCode, iIryoKumi)); // 組コード
+			GControlDBText txtKumiCode = new GControlDBText(t_iryokikan.FIRK_KumiCode, iIryoKumi); // 組コード
+			txtKumiCode.FetchRunEx = KumiCodeEx; // 文言変換用メソッドへ
+			gctl_iryo.Add(txtKumiCode);
 
 			gctl_iryo.EndAdd(AppDbRule.Rule);
 
@@ -596,7 +668,7 @@ namespace App
 
 			gcom_shinryo = new GGridDBCommon(grid_Sinryo, this);
 
-			gcom_shinryo.Add(new GGridDBText(t_kaiin_shinryoka.FID_Shinryoka, "名称", 60));
+			gcom_shinryo.Add(new GGridDBText(t_kaiin_shinryoka.FID_Shinryoka, "名称", 0));
 			gcom_shinryo.SetCellDisp(GGridDBCellDisp.Left);
 			gcom_shinryo.SetFocusControlInGrid(iTantoKamoku); // Gridフォーカス時に表示させるコントロール
 			gcom_shinryo.SetUnboundColumnFetch(ubShinryokaName); // ID→名称変換
@@ -629,7 +701,7 @@ namespace App
 
 			gcom_gakkai = new GGridDBCommon(grid_Gakkai, this);
 
-			gcom_gakkai.Add(new GGridDBText(t_kaiin_gakkai.FID_Gakkai, "名称", 60));
+			gcom_gakkai.Add(new GGridDBText(t_kaiin_gakkai.FID_Gakkai, "名称", 0));
 			gcom_gakkai.SetCellDisp(GGridDBCellDisp.Left);
 			gcom_gakkai.SetFocusControlInGrid(iSyozokuGakkai); // Gridフォーカス時に表示させるコントロール
 			gcom_gakkai.SetUnboundColumnFetch(ubGakkaiName); // ID→名称変換
@@ -654,7 +726,7 @@ namespace App
 			//-----参加医会Grid準備-----
 			// ■コントロール設定
 			// コンボボックス
-			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai); // 支払方法
+			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
 
 			dvKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
 			dvKaihi.RowFilterQuery($"{t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ikai}"); // 会費区分2
@@ -673,7 +745,7 @@ namespace App
 			gcom_kaihi.SetTabIndex(1);
 			gcom_kaihi.SetLocked(true);
 
-			gcom_kaihi.Add(new GGridDBText(t_kaiin_kaihi.FKaihiShiharai, "支払方法", 100));
+			gcom_kaihi.Add(new GGridDBText(t_kaiin_kaihi.FKaihiShiharai, "支払方法", 0));
 			gcom_kaihi.SetCellDisp(GGridDBCellDisp.Center);
 			gcom_kaihi.SetFocusControlInGrid(iShiharai); // Gridフォーカス時に表示させるコントロール
 			gcom_kaihi.SetUnboundColumnFetch(ubShiharaiHoho); // 名称変換
@@ -719,7 +791,7 @@ namespace App
 //			gcom_ido.SetTabIndex(3);
 //			gcom_ido.SetLocked(true);
 
-			gcom_ido.Add(new GGridDBText(t_kaiin_ido.FIdoJiyuEtcMemo, "その他詳細"));
+			gcom_ido.Add(new GGridDBText(t_kaiin_ido.FIdoJiyuEtcMemo, "その他詳細", 0));
 			gcom_ido.SetCellDisp(GGridDBCellDisp.Left);
 //			gcom_ido.SetTabIndex(4);
 //			gcom_ido.SetLocked(true);
@@ -731,7 +803,7 @@ namespace App
 			btnIdoEdit.Click += btnIdoEdit_Click;
 			btnIdoDel.Click += btnIdoDel_Click;
 			grid_Ido.MouseDoubleClick += grid_Ido_MouseDoubleClick; // 編集へ
-			dvKaiinIdo.RowFetchDemand += dvKaiinIdo_RowFetchDemand; // 編集へ
+			dvKaiinIdo.RowFetchDemand += dvKaiinIdo_RowFetchDemand;
 
 			changeFilterIdo(); // 表示中会員の情報のみへフィルタ
 
@@ -1022,6 +1094,113 @@ namespace App
 			}
 		}
 
+		// --医師会会員Grid--
+		/// <summary>
+		///  Enum値より、Gridに医会区分名を表示します。
+		/// </summary>
+		string ubTypeIshikai(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaiin_kaihi xrow = new t_kaiin_kaihi(dvKaiinKaihiIshikai[e.Row]);
+
+			if (enumKbn.DTypeIkai.ContainsKey((int)xrow.KaihiTypeIkai) == true)
+			{
+				return enumKbn.DTypeIkai[(int)xrow.KaihiTypeIkai];
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// IDを基に、Gridに医会名を表示します。
+		/// </summary>
+		string ubIkaiNameIshikai(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaiin_kaihi xrow = new t_kaiin_kaihi(dvKaiinKaihiIshikai[e.Row]);
+
+			Kaihi kh = AppGlobal.Kaihis.Get(xrow.ID_Kaihi);
+
+			string name = "";
+			if (kh != null)
+			{
+				name = kh.XRow.Kaihi_Name;
+			}
+
+			return name;
+		}
+
+		/// <summary>
+		/// Enum値より、Gridに支払方法名を表示します。
+		/// </summary>
+		string ubShiharaiHohoIshikai(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaiin_kaihi xrow = new t_kaiin_kaihi(dvKaiinKaihiIshikai[e.Row]);
+			//			eShiharai hoho = Cast.Enumelate<eShiharai>(xrow.KaihiShiharai_Null, eShiharai.None);
+			//			Kaihi kh = AppGlobal.Kaihis.Get(xrow.ID_Kaihi);
+
+			if (enumKbn.DShiharai.ContainsKey((int)xrow.KaihiShiharai) == true)
+			{
+				return enumKbn.DShiharai[(int)xrow.KaihiShiharai];
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// 医師会会員gridの現在行を返します。
+		/// </summary>
+		/// <param name="datatag">タグ</param>
+		/// <returns>現在行</returns>
+		DataRow getDataRowKaihiIshikai(string datatag)
+		{
+			if (dvKaiinKaihiIshikai.CurrentRow != null && dvKaiinKaihiIshikai.Count > 0)
+			{
+				return dvKaiinKaihiIshikai.CurrentRow.Row;
+			}
+
+			return null;
+		}
+
+		/// <summary>
+		/// フィルタ変更(t_kaiin_kaihi)_医師会会員
+		/// </summary>
+		void changeFilterKaihiIshikai()
+		{
+			string filter = "";
+
+			// 該当会員の情報&医会区分が1,2,3へフィルタ
+			t_kaiin tmprow = new t_kaiin(editrow);
+
+			filter =
+				$"{t_kaiin_kaihi.FID_Kaiin} = {tmprow.ID_Kaiin}" +
+				$" AND {t_kaiin_kaihi.FKaihiTypeIkai} IN ({(int)eTypeIkai.Nichii}, {(int)eTypeIkai.Keni}, {(int)eTypeIkai.Shii})";
+
+			// 適用
+			dvKaiinKaihiIshikai.RowFilterQuery(filter);
+		}
+
+		/// <summary>
+		/// Gridカレント行の内容を各コントロールにセットします(医師会会員grid)
+		/// </summary>
+		void rowFetchKaihiIshikai()
+		{
+			if (gctl_kaihiIshikai == null)
+			{
+				//				Debug.WriteLine("GControlDBが設定されていません。");
+				return;
+			}
+
+			if (dvKaiinKaihiIshikai.CurrentRow == null)
+			{
+				// 現在行がないので、コントロールの内容をクリアする。
+				gctl_kaihiIshikai.ClearAll();
+			}
+			else
+			{
+				// 現在行を取得
+				gctl_kaihiIshikai.FetchAll();
+			}
+		}
+
 		// --医療機関情報関連--
 		/// <summary>
 		/// 医療機関情報-開設主体の文字列変換
@@ -1061,6 +1240,26 @@ namespace App
 		}
 
 		/// <summary>
+		/// 医療機関情報-組コードの文字列変換
+		/// <param name="data">バインドしたDB値</param>
+		/// </summary>
+		object KumiCodeEx(DataRow row, object data)
+		{
+			// 組コード情報の取得
+			KumiCode kc = AppGlobal.KumiCodes.Get(Cast.Int(data));
+
+			// 該当情報が存在したら名称をreturn
+			if (kc != null)
+			{
+				return kc.XRow.KMC_Name_Null;
+			}
+			else
+			{
+				return null;
+			}
+		}
+
+		/// <summary>
 		/// 指定医情報をチェックボックスにセットします。
 		/// </summary>
 		void fetchIryoShiteii()
@@ -1071,7 +1270,8 @@ namespace App
 
 			List<YControlYcCheckBoxEx.YcCheckBoxEx> shiteiis = new List<YControlYcCheckBoxEx.YcCheckBoxEx>()
 			{
-				iIryoShiteii1, iIryoShiteii2, iIryoShiteii3, iIryoShiteii4,
+				iIryoShiteii1, iIryoShiteii2, iIryoShiteii3, iIryoShiteii4, iIryoShiteii5,
+				iIryoShiteii6, iIryoShiteii7, iIryoShiteii8, iIryoShiteii9, iIryoShiteii10,
 			};
 
 			// コントロールごとに処理
@@ -1094,7 +1294,8 @@ namespace App
 			// チェックのコントロール配列
 			List<YControlYcCheckBoxEx.YcCheckBoxEx> shiteiis = new List<YControlYcCheckBoxEx.YcCheckBoxEx>()
 			{
-				iIryoShiteii1, iIryoShiteii2, iIryoShiteii3, iIryoShiteii4,
+				iIryoShiteii1, iIryoShiteii2, iIryoShiteii3, iIryoShiteii4, iIryoShiteii5,
+				iIryoShiteii6, iIryoShiteii7, iIryoShiteii8, iIryoShiteii9, iIryoShiteii10,
 			};
 
 			// コントロールごとに処理
@@ -1551,11 +1752,12 @@ namespace App
 		{
 			string filter = "";
 
-			// 該当会員の情報へフィルタ
+			// 該当会員の情報&医会区分が4へフィルタ
 			t_kaiin tmprow = new t_kaiin(editrow);
 
 			filter =
-				$"{t_kaiin_kaihi.FID_Kaiin} = {tmprow.ID_Kaiin}";
+				$"{t_kaiin_kaihi.FID_Kaiin} = {tmprow.ID_Kaiin}" +
+				$" AND {t_kaiin_kaihi.FKaihiTypeIkai} = {(int)eTypeIkai.Etc}";
 
 			// 適用
 			dvKaiinKaihi.RowFilterQuery(filter);
@@ -1596,6 +1798,10 @@ namespace App
 
 			// NewRowへフィルタ済の会員IDセット
 			nrow.ID_Kaiin = tmprow.ID_Kaiin;
+
+			// デフォルト値セット
+			nrow.KaihiShiharai = eShiharai.Koza1; // 支払方法
+			nrow.KaihiTypeIkai = eTypeIkai.Etc; // その他(参加医会)
 
 			// 行追加
 			dvKaiinKaihi.Add(nrow.Row);
@@ -1948,8 +2154,13 @@ namespace App
 		{
 			// 最終フォーカスコントロールをRowへ反映
 			updateCurrentControlValue(gctl);
+			updateCurrentControlValue(gctl_iryo);
+			updateCurrentControlValue(gctl_kaihiIshikai);
+			updateCurrentControlValue(gctl_shinryo);
+			updateCurrentControlValue(gctl_gakkai);
+			updateCurrentControlValue(gctl_kaihi);
 
-			// 医療機関-指定医のDB値セット
+			// 医療機関-指定医のDB値セット(chkbox)
 			updateIryoShiteii();
 
 			// 更新担当者のセット

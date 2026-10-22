@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -132,6 +132,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[名称(前sys表示内容)]。
+		/// </summary>
+		public const string FSGY_DispName = "SGY_DispName";
+		/// <summary>
+		/// 名称(前sys表示内容)
+		/// </summary>
+		public string SGY_DispName
+		{
+			get	{	return Cast.String(row == null ? null : row[FSGY_DispName]);	}
+			set	{	_set(FSGY_DispName, value);	}
+		}
+		
+		/// <summary>
+		/// 名称(前sys表示内容)。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string SGY_DispName_Null
+		{
+			get	{	if (row == null || row[FSGY_DispName] == System.DBNull.Value) { return null; } else { return Cast.String(row[FSGY_DispName]); }	}
+			set	{	_set(FSGY_DispName, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[[要時間]最終更新日時]。
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
@@ -185,6 +207,11 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FSGY_Name, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FSGY_DispName, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

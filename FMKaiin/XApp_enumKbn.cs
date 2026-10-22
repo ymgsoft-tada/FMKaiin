@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -365,6 +365,33 @@ namespace App
 	}
 	
 	/// <summary>
+	/// [列挙] 医会区分
+	/// </summary>
+	public enum eTypeIkai
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 日医
+		/// </summary>
+		Nichii = 1,
+		/// <summary>
+		/// 県医
+		/// </summary>
+		Keni = 2,
+		/// <summary>
+		/// 市医
+		/// </summary>
+		Shii = 3,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 4,
+	}
+	
+	/// <summary>
 	/// [作成者 fj]
 	/// テーブル編集の際に使うクラスです。
 	/// </summary>
@@ -430,6 +457,10 @@ namespace App
 		/// eTypeKaihi に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DTypeKaihi;
+		/// <summary>
+		/// eTypeIkai に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeIkai;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -526,6 +557,13 @@ namespace App
 			DTypeKaihi.Add((int)eTypeKaihi.None, "");
 			DTypeKaihi.Add((int)eTypeKaihi.Ishikai, "医師会会費");
 			DTypeKaihi.Add((int)eTypeKaihi.Ikai, "医会等会費");
+			
+			DTypeIkai = new Dictionary<int, string>();
+			DTypeIkai.Add((int)eTypeIkai.None, "");
+			DTypeIkai.Add((int)eTypeIkai.Nichii, "日医");
+			DTypeIkai.Add((int)eTypeIkai.Keni, "県医");
+			DTypeIkai.Add((int)eTypeIkai.Shii, "市医");
+			DTypeIkai.Add((int)eTypeIkai.Etc, "その他");
 		}
 	}
 }
