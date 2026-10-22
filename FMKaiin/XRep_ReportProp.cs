@@ -17,6 +17,16 @@ namespace App
 				return "IryoKikan.flxr";
 			}
 		}
+		/// <summary>
+		/// KaiinJohoのファイル名称
+		/// </summary>
+		public static string CRepKaiinJohoFilename
+		{
+			get
+			{
+				return "KaiinJoho.flxr";
+			}
+		}
 		
 		/// <summary>
 		/// CRepIryoKikanList レポート名称
@@ -26,6 +36,36 @@ namespace App
 			get
 			{
 				return "IryoKikanList";
+			}
+		}
+		/// <summary>
+		/// CRepIryoKikan レポート名称
+		/// </summary>
+		public static string CRepIryoKikan
+		{
+			get
+			{
+				return "IryoKikan";
+			}
+		}
+		/// <summary>
+		/// CRepKaiinList レポート名称
+		/// </summary>
+		public static string CRepKaiinList
+		{
+			get
+			{
+				return "KaiinList";
+			}
+		}
+		/// <summary>
+		/// CRepKaiinJoho レポート名称
+		/// </summary>
+		public static string CRepKaiinJoho
+		{
+			get
+			{
+				return "KaiinJoho";
 			}
 		}
 		

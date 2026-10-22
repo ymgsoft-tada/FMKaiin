@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -2104,6 +2104,10 @@ namespace App
 					"削除",	
 					""),
 			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
 					Keys.F12,	
 					"閉じる",	
 					""),
@@ -2122,9 +2126,13 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine RowDelete = Functions[2];
 		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[3];
+		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[3];
+		public readonly static FuncKeyDefine Close = Functions[4];
 	}
 	#endregion
 
@@ -2261,6 +2269,38 @@ namespace App
 		/// キャンセル
 		/// </summary>
 		public readonly static FuncKeyDefine Cancel = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutIryoKikan ***
+	/// <summary>
+	/// FuncOutIryoKikanのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutIryoKikan
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
 	}
 	#endregion
 

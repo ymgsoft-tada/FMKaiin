@@ -51,11 +51,16 @@ namespace App
 				return false;
 			}
 
+			while(outView.Count%MAX_LINE != 0)
+			{
+				outView.Add(outView.NewRow());
+			}
+
 			ReportFlex.ReportInfo repinfo = new ReportFlex.ReportInfo
 												(
 													ReportFile,
 													ReportProp.CRepIryoKikanList,
-													"給与所得の源泉徴収票",
+													"",
 													MAX_LINE,
 													outView
 												);
@@ -166,16 +171,26 @@ namespace App
 			}
 
 			//診療科目
-			DataRowView[] rows = dvIryokikan_shinryoka.DataView.FindRows(Cast.String(xrow[t_iryokikan.FID_Iryokikan]));
-
-			for (int i = 0 ; i <= 4 ; i++)
+			if(Cast.String(xrow[t_iryokikan.FID_Iryokikan]) != "")
 			{
+				DataRowView[] rows = dvIryokikan_shinryoka.DataView.FindRows(Cast.String(xrow[t_iryokikan.FID_Iryokikan]));
 
-				if(i<=rows.Length-1)
+				for (int i = 0 ; i <= 4 ; i++)
 				{
-					 setFieldValue(rep, FldKamoku + i, Cast.String(rows[i][t_shinryoka.FID_Shinryoka]).PadLeft(2, '0'));
-				 }
-				else
+
+					if(i<=rows.Length-1)
+					{
+						 setFieldValue(rep, FldKamoku + i, Cast.String(rows[i][t_shinryoka.FID_Shinryoka]).PadLeft(2, '0'));
+					 }
+					else
+					{
+						setFieldValue(rep, FldKamoku + i, "");
+					}
+				}
+			}
+			else
+			{
+				for (int i = 0 ; i <= 4 ; i++)
 				{
 					setFieldValue(rep, FldKamoku + i, "");
 				}

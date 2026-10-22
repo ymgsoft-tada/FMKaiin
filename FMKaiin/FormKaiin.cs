@@ -308,6 +308,7 @@ namespace App
 			FuncKaiin.RowAdd.Execute = rowAdd;
 			FuncKaiin.RowEdit.Execute = rowEdit;
 			FuncKaiin.RowDelete.Execute = rowDelete;
+			FuncKaiin.Preview.Execute = preview;
 			FuncKaiin.Close.Execute = formClose;
 
 			//bool enabled = false;
@@ -321,6 +322,16 @@ namespace App
 			//appFuncKey.SetEnabled(FuncStaff.ShowMyno.Key, enabled);
 			//appFuncKey.SetVisible(FuncStaff.ShowMyno.Key, enabled);
 
+		}
+
+		/// <summary>
+		/// プレビュー
+		/// </summary>
+		void preview()
+		{
+			ReportFlexKaiinList rep = new ReportFlexKaiinList(dvKaiin);
+			rep.ReportExec();
+			rep = null;
 		}
 
 		/// <summary>

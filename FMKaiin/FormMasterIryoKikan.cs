@@ -224,11 +224,10 @@ namespace App
 		/// </summary>
 		void preview()
 		{
-			ReportFlexIryoKikan rep = new ReportFlexIryoKikan(new DBView(dvKikan));
-			rep.ReportExec();
-
-			
-			rep = null;
+			FormOutIryoKikan frm = new FormOutIryoKikan(dvKikan);
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		/// <summary>

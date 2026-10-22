@@ -246,6 +246,12 @@
     <Compile Include="FormOutBlankSetting.Designer.cs">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutIryoKikan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutIryoKikan.Designer.cs">
+      <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportPreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -281,6 +287,8 @@
     <Compile Include="ReportFlex.cs" />
     <Compile Include="ReportFlexCommon.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
+    <Compile Include="ReportFlexIryoKikanJoho.cs" />
+    <Compile Include="ReportFlexKaiinList.cs" />
     <Compile Include="UcDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -346,6 +354,7 @@
     <Compile Include="XApp_t_tantosha.cs" />
     <Compile Include="XApp_t_zentodouhuken.cs" />
     <Compile Include="XRep_IryoKikan.cs" />
+    <Compile Include="XRep_KaiinJoho.cs" />
     <Compile Include="XRep_ReportProp.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
       <DependentUpon>DlgSplash2.cs</DependentUpon>
@@ -412,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutIryoKikan.resx">
+      <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportPreview.resx">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
