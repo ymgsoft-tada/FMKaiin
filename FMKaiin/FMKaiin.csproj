@@ -252,6 +252,12 @@
     <Compile Include="FormOutIryoKikan.Designer.cs">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutKaihiUchiwakeYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeYear.Designer.cs">
+      <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportPreview.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,12 +288,20 @@
     <Compile Include="FormKaiin_DlgEntry_Idoinfo.Designer.cs">
       <DependentUpon>FormKaiin_DlgEntry_Idoinfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutKaihiListBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiListBank.Designer.cs">
+      <DependentUpon>FormOutKaihiListBank.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportFlex.cs" />
     <Compile Include="ReportFlexCommon.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
     <Compile Include="ReportFlexIryoKikanJoho.cs" />
+    <Compile Include="ReportFlexKaihiListBank.cs" />
+    <Compile Include="ReportFlexKaihiUchiwakeYear.cs" />
     <Compile Include="ReportFlexKaiinList.cs" />
     <Compile Include="UcDate.cs">
       <SubType>UserControl</SubType>
@@ -352,8 +366,9 @@
     <Compile Include="XApp_t_shinryoka.cs" />
     <Compile Include="XApp_t_shisetsugyomu.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
-    <Compile Include="XApp_t_zentodouhuken.cs" />
+    <Compile Include="XApp_t_zentodoufuken.cs" />
     <Compile Include="XRep_IryoKikan.cs" />
+    <Compile Include="XRep_Kaihi.cs" />
     <Compile Include="XRep_KaiinJoho.cs" />
     <Compile Include="XRep_ReportProp.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
@@ -425,6 +440,9 @@
     <EmbeddedResource Include="FormOutIryoKikan.resx">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiUchiwakeYear.resx">
+      <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReportPreview.resx">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
     </EmbeddedResource>
@@ -439,6 +457,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKaiin_DlgEntry_Idoinfo.resx">
       <DependentUpon>FormKaiin_DlgEntry_Idoinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiListBank.resx">
+      <DependentUpon>FormOutKaihiListBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">

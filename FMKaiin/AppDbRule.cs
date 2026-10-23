@@ -214,18 +214,20 @@ namespace App
 			Rule.Add(hankaku, t_kaiin.FKaiin_Mail1);
 //			Rule.Add(hankaku, t_kaiin.FKaiin_Mail2);
 //			Rule.Add(code12, t_kaiin.FKaiin_MyNo);
-			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShusshinKou, 40));
+			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShusshinKo, 40));
 			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShusshinIn, 40));
 			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_TaikaiEtcmemo, 40));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateBirth));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateIsekiToroku));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateToroku));
-			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateNyuukai));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateNyukai));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShonin));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateSotsugyo));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShuryo));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShutokuGakui));
 			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateTaikai));
+			Rule.Add(new GControlDBRuleDate(t_kaiin.FKaiin_DateShinsei));
+			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShiteiiEtc, 20));
 			#endregion
 
 			// ※t_bank作成なしなら削除
@@ -252,7 +254,7 @@ namespace App
 			Rule.Add(new GControlDBRuleNumber(t_kaihi.FCD_Kaihi, 5, 0));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Name, 30));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_ShortName, 30));
-			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Bikou, 20));
+			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Biko, 20));
 			Rule.Add(new GControlDBRuleNumber(t_kaihi.FKaihi_GunCode, 4, 0));
 
 			Rule.Add(new GControlDBRuleCurrency(t_kaihi.FKaihi_GetsugakuCost1, 7, 0));
@@ -294,7 +296,11 @@ namespace App
 
 			#region +++ t_kaiin_ido +++
 			Rule.Add(new GControlDBRuleDate(t_kaiin_ido.FIdoDate));
-			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuEtcMemo, 12));
+			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuDetail_IdoMemo, 20));
+			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuDetail_KaiinMemo, 20)); // 未使用列
+			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo, 20));
+			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuDetail_AddressMemo, 20));
+			Rule.Add(new GControlDBRuleText(t_kaiin_ido.FIdoJiyuDetail_EtcMemo, 20));
 			#endregion
 
 			#region +++ t_hikiotoshi +++

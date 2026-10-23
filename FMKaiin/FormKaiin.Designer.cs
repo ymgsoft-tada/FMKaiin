@@ -29,12 +29,9 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKaiin));
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.chkUnUsed = new YControlYcCheckBoxEx.YcCheckBoxEx();
-			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
-			this.iJob = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iSearch = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
@@ -42,7 +39,6 @@ namespace App
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
-			((System.ComponentModel.ISupportInitialize)(this.iJob)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
 			this.SuspendLayout();
@@ -73,42 +69,8 @@ namespace App
 			this.chkUnUsed.Size = new System.Drawing.Size(119, 24);
 			this.chkUnUsed.TabIndex = 74;
 			this.chkUnUsed.TabStop = false;
-			this.chkUnUsed.Text = "非公開を含める";
+			this.chkUnUsed.Text = "退会者を含める";
 			this.chkUnUsed.UseVisualStyleBackColor = true;
-			// 
-			// ycLabelEx3
-			// 
-			this.ycLabelEx3.BackColor = System.Drawing.Color.SteelBlue;
-			this.ycLabelEx3.BackColor2 = System.Drawing.Color.Empty;
-			this.ycLabelEx3.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.ycLabelEx3.ForeColor = System.Drawing.Color.White;
-			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
-			this.ycLabelEx3.IconImage = null;
-			this.ycLabelEx3.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx3.Location = new System.Drawing.Point(376, 64);
-			this.ycLabelEx3.Name = "ycLabelEx3";
-			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx3.Size = new System.Drawing.Size(90, 25);
-			this.ycLabelEx3.TabIndex = 79;
-			this.ycLabelEx3.Text = "職種区分";
-			this.ycLabelEx3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// iJob
-			// 
-			this.iJob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.iJob.ExCompareContent = null;
-			this.iJob.ExCompareValue = null;
-			this.iJob.ExDataSource = null;
-			this.iJob.ExFocusHighlight = true;
-			this.iJob.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
-			this.iJob.ListHeaderPane.Height = 27;
-			this.iJob.ListHeaderPane.Visible = false;
-			this.iJob.Location = new System.Drawing.Point(469, 64);
-			this.iJob.Name = "iJob";
-			this.iJob.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iJob.Size = new System.Drawing.Size(94, 25);
-			this.iJob.TabIndex = 71;
 			// 
 			// iSearch
 			// 
@@ -211,8 +173,6 @@ namespace App
 			this.ClientSize = new System.Drawing.Size(964, 566);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.chkUnUsed);
-			this.Controls.Add(this.ycLabelEx3);
-			this.Controls.Add(this.iJob);
 			this.Controls.Add(this.iSearch);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.ycLabelEx2);
@@ -233,11 +193,8 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
 			this.Controls.SetChildIndex(this.btnClear, 0);
 			this.Controls.SetChildIndex(this.iSearch, 0);
-			this.Controls.SetChildIndex(this.iJob, 0);
-			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
 			this.Controls.SetChildIndex(this.chkUnUsed, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
-			((System.ComponentModel.ISupportInitialize)(this.iJob)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iSearch)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
 			this.ResumeLayout(false);
@@ -249,8 +206,6 @@ namespace App
 
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private YControlYcCheckBoxEx.YcCheckBoxEx chkUnUsed;
-		private YControlLabelEx.YcLabelEx ycLabelEx3;
-		private GControlGcComboBoxEx.GcComboBoxEx iJob;
 		private GControlGcTextBoxEx.GcTextBoxEx iSearch;
 		private System.Windows.Forms.Button btnClear;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;

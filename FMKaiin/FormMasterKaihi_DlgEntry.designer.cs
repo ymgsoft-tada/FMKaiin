@@ -55,7 +55,7 @@
 			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
 			this.iBankCD = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx14 = new YControlLabelEx.YcLabelEx();
-			this.iBikou = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iBiko = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx28 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx31 = new YControlLabelEx.YcLabelEx();
 			this.iCost1 = new GControlGcNumberEx.GcNumberEx(this.components);
@@ -100,7 +100,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iKozaNo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenCD)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankCD)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iBikou)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iBiko)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCost1)).BeginInit();
 			this.gbxKaihiGetsugaku.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.oCostAll)).BeginInit();
@@ -512,16 +512,16 @@
 			this.ycLabelEx14.Text = "会費区分";
 			this.ycLabelEx14.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// iBikou
+			// iBiko
 			// 
-			this.iBikou.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iBikou.ExFocusHighlight = true;
-			this.iBikou.ImeStr = "";
-			this.iBikou.Location = new System.Drawing.Point(148, 187);
-			this.iBikou.Name = "iBikou";
-			this.iBikou.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iBikou.Size = new System.Drawing.Size(180, 23);
-			this.iBikou.TabIndex = 4;
+			this.iBiko.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iBiko.ExFocusHighlight = true;
+			this.iBiko.ImeStr = "";
+			this.iBiko.Location = new System.Drawing.Point(148, 187);
+			this.iBiko.Name = "iBiko";
+			this.iBiko.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iBiko.Size = new System.Drawing.Size(180, 23);
+			this.iBiko.TabIndex = 4;
 			// 
 			// ycLabelEx28
 			// 
@@ -1223,7 +1223,7 @@
 			this.Controls.Add(this.gbxKaihiGetsugaku);
 			this.Controls.Add(this.ycLabelEx31);
 			this.Controls.Add(this.ycLabelEx28);
-			this.Controls.Add(this.iBikou);
+			this.Controls.Add(this.iBiko);
 			this.Controls.Add(this.ycLabelEx14);
 			this.Controls.Add(this.gbxBank);
 			this.Controls.Add(this.iShortName);
@@ -1255,7 +1255,7 @@
 			this.Controls.SetChildIndex(this.iShortName, 0);
 			this.Controls.SetChildIndex(this.gbxBank, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx14, 0);
-			this.Controls.SetChildIndex(this.iBikou, 0);
+			this.Controls.SetChildIndex(this.iBiko, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx28, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx31, 0);
 			this.Controls.SetChildIndex(this.gbxKaihiGetsugaku, 0);
@@ -1274,7 +1274,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iKozaNo)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenCD)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankCD)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iBikou)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iBiko)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCost1)).EndInit();
 			this.gbxKaihiGetsugaku.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.oCostAll)).EndInit();
@@ -1322,7 +1322,7 @@
 		private YControlLabelEx.YcLabelEx ycLabelEx15;
 		private GControlGcTextBoxEx.GcTextBoxEx iShitenName;
 		private GControlGcTextBoxEx.GcTextBoxEx iBankName;
-		private GControlGcTextBoxEx.GcTextBoxEx iBikou;
+		private GControlGcTextBoxEx.GcTextBoxEx iBiko;
 		private YControlLabelEx.YcLabelEx ycLabelEx28;
 		private YControlLabelEx.YcLabelEx ycLabelEx31;
 		private GControlGcNumberEx.GcNumberEx iCost1;

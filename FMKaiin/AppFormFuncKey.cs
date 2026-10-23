@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -1856,6 +1856,26 @@ namespace App
 					"削除",	
 					""),
 			new FuncKeyDefine(
+					Keys.F5,	
+					"帳票1",	
+					""),
+			new FuncKeyDefine(
+					Keys.F6,	
+					"帳票2",	
+					""),
+			new FuncKeyDefine(
+					Keys.F7,	
+					"帳票3",	
+					""),
+			new FuncKeyDefine(
+					Keys.F8,	
+					"帳票4",	
+					""),
+			new FuncKeyDefine(
+					Keys.F9,	
+					"帳票5",	
+					""),
+			new FuncKeyDefine(
 					Keys.F12,	
 					"閉じる",	
 					""),
@@ -1874,9 +1894,29 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine RowDelete = Functions[2];
 		/// <summary>
+		/// 帳票1
+		/// </summary>
+		public readonly static FuncKeyDefine Preview1 = Functions[3];
+		/// <summary>
+		/// 帳票2
+		/// </summary>
+		public readonly static FuncKeyDefine Preview2 = Functions[4];
+		/// <summary>
+		/// 帳票3
+		/// </summary>
+		public readonly static FuncKeyDefine Preview3 = Functions[5];
+		/// <summary>
+		/// 帳票4
+		/// </summary>
+		public readonly static FuncKeyDefine Preview4 = Functions[6];
+		/// <summary>
+		/// 帳票5
+		/// </summary>
+		public readonly static FuncKeyDefine Preview5 = Functions[7];
+		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[3];
+		public readonly static FuncKeyDefine Close = Functions[8];
 	}
 	#endregion
 
@@ -2148,6 +2188,18 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
+					Keys.F5,	
+					"情報1表示",	
+					""),
+			new FuncKeyDefine(
+					Keys.F6,	
+					"情報2表示",	
+					""),
+			new FuncKeyDefine(
+					Keys.F7,	
+					"情報3表示",	
+					""),
+			new FuncKeyDefine(
 					Keys.F11,	
 					"登録",	
 					""),
@@ -2158,13 +2210,25 @@ namespace App
 		};
 
 		/// <summary>
+		/// 情報1表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowTab1 = Functions[0];
+		/// <summary>
+		/// 情報2表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowTab2 = Functions[1];
+		/// <summary>
+		/// 情報3表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowTab3 = Functions[2];
+		/// <summary>
 		/// 登録
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
+		public readonly static FuncKeyDefine Save = Functions[3];
 		/// <summary>
 		/// キャンセル
 		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
+		public readonly static FuncKeyDefine Cancel = Functions[4];
 	}
 	#endregion
 
@@ -2277,6 +2341,70 @@ namespace App
 	/// FuncOutIryoKikanのファンクションキー定義クラス
 	/// </summary>
 	public class FuncOutIryoKikan
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiUchiwakeYear ***
+	/// <summary>
+	/// FuncOutKaihiUchiwakeYearのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiUchiwakeYear
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiListBank ***
+	/// <summary>
+	/// FuncOutKaihiListBankのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiListBank
 	{
 		/// <summary>
 		/// ファンクションキー定義。

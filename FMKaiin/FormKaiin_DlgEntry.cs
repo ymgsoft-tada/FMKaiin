@@ -348,18 +348,27 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
-			// 最終更新の情報表示
-			t_kaiin tmprow = new t_kaiin(editrow);
-			oLastUpdate.Text = $"{tmprow.LastUpdate:yyyy/MM/dd HH:mm}"; // 最終更新日時
-			Tanto tt = AppGlobal.Tantos.Get(Cast.Int(tmprow.LastUpdateUser_Null));
-			// 該当情報が存在したら名称をreturn
-			if (tt != null)
+			// 訂正の場合、最終更新の情報表示
+			if (Mode == eMode.Edit)
 			{
-				oLastUpdateUser.Text = tt.Name;
+				t_kaiin tmprow = new t_kaiin(editrow);
+				oLastUpdate.Text = tmprow.LastUpdate_Null == null ? "" : $"{tmprow.LastUpdate:yyyy/MM/dd HH:mm}"; // 最終更新日時
+				Tanto tt = AppGlobal.Tantos.Get(Cast.Int(tmprow.LastUpdateUser_Null));
+				// 該当情報が存在したら名称をreturn
+				if (tt != null)
+				{
+					oLastUpdateUser.Text = tt.Name;
+				}
+				else
+				{
+					oLastUpdateUser.Text = null;
+				}
 			}
 			else
 			{
-				oLastUpdateUser.Text = null;
+				ycLabelEx60.Visible = false;
+				oLastUpdate.Visible = false;
+				oLastUpdateUser.Visible = false;
 			}
 
 			// 日付コントロール(年月表示)の設定
@@ -416,11 +425,18 @@ namespace App
 			iKaihiUchiwake.ExSetSelectedIndexByValue(true);
 
 			// 公開区分
-			iKbnKoukai.ExBeginUpdate();
-			iKbnKoukai.ExAddItem("公開", true);
-			iKbnKoukai.ExAddItem("非公開", false);
-			iKbnKoukai.ExEndUpdate();
-			iKbnKoukai.ExSetSelectedIndexByValue(true);
+			//iKbnKoukai.ExBeginUpdate();
+			//iKbnKoukai.ExAddItem("公開", true);
+			//iKbnKoukai.ExAddItem("非公開", false);
+			//iKbnKoukai.ExEndUpdate();
+			//iKbnKoukai.ExSetSelectedIndexByValue(true);
+
+			// 自宅住所掲載
+			iJushoKeisai.ExBeginUpdate();
+			iJushoKeisai.ExAddItem("可", true);
+			iJushoKeisai.ExAddItem("不可", false);
+			iJushoKeisai.ExEndUpdate();
+			iJushoKeisai.ExSetSelectedIndexByValue(true);
 
 			gctl = new GControlDB(this, getDataRow, AppGlobal.DB.DBZipCode);
 
@@ -456,15 +472,16 @@ namespace App
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateBirth, iBirthday.UcDateCtl)); // 生年月日
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_Sex, iSex)); // 性別
 
-			gctl.Add(new GControlDBText(t_kaiin.FKaiin_ShusshinKou, iShusshinKou)); // 出身校
+			gctl.Add(new GControlDBText(t_kaiin.FKaiin_ShusshinKo, iShusshinKou)); // 出身校
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateSotsugyo, iSotsugyoNengetsu.UcDateCtl)); // 卒業年月
 			gctl.Add(new GControlDBText(t_kaiin.FKaiin_ShusshinIn, iShusshinDaigakuin)); // 出身校(大学院)
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShuryo, iShuryoNengetsu.UcDateCtl)); // 修了年月
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShutokuGakui, iGakuiNengetsu.UcDateCtl)); // 学位取得年月
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateToroku, iTorokuDate.UcDateCtl)); // 登録日
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_KaiinKbn, iKaiinKbn.ComboBox)); // 会員区分
-			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateNyuukai, iNyuukaiDate.UcDateCtl)); // 入会年月日
+			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateNyukai, iNyuukaiDate.UcDateCtl)); // 入会年月日
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShonin, iShoninDate.UcDateCtl)); // 承認日
+			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShinsei, iShinseiDate.UcDateCtl)); // 申請年月日
 
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_TypeZaiseki, iZaiseki)); // 在籍区分
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_Ishikai_Idomae, iIshikaiIdomae.ComboBox)); // 異動前医師会
@@ -475,9 +492,9 @@ namespace App
 			AppCombo.SetComboBox(iIshikaiShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
 
 			dvIkai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
-			dvIkai.RowFilterQuery($"{t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ishikai}"); // 会費区分1
+			dvIkai.RowFilterQuery($"{t_kaihi.FKaihi_SearchUsed} = TRUE AND {t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ishikai}"); // 会費区分1
 			dvIkai.SortQuery($"{ t_kaihi.FCD_Kaihi}");
-			AppTableCombo.SetComboBox_Kaihi(iIshikai, dvIkai); // 日医会員区分
+			AppTableCombo.SetComboBox_Kaihi(iIshikai, dvIkai); // 医師会会員区分
 
 			// ■Grid設定
 			AppGridCommon.StyleSet(grid_KaihiIshikai);
@@ -552,7 +569,8 @@ namespace App
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_BunshoSofusaki, iBunshoSofu)); // 文書送付先
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_FaxSofusaki, iFaxSofu)); // FAX送付先
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KaihiUchiwake, iKaihiUchiwake)); // 月別会費内訳
-			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KoukaiKbn, iKbnKoukai)); // 公開区分
+			//gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KokaiKbn, iKbnKoukai)); // 公開区分
+			// --自宅住所掲載 のDB列追加の後バインド追記--
 
 			gctl.EndAdd(AppDbRule.Rule);
 
@@ -729,7 +747,7 @@ namespace App
 			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
 
 			dvKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
-			dvKaihi.RowFilterQuery($"{t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ikai}"); // 会費区分2
+			dvKaihi.RowFilterQuery($"{t_kaihi.FKaihi_SearchUsed} = TRUE AND {t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ikai}"); // 会費区分2
 			dvKaihi.SortQuery($"{t_kaihi.FCD_Kaihi}");
 			AppTableCombo.SetComboBox_Kaihi(iSankaIkai, dvKaihi); // iSearch 参加医会
 
@@ -781,17 +799,17 @@ namespace App
 //			gcom_ido.SetLocked(true);
 
 			gcom_ido.Add(new GGridDBText(t_kaiin_ido.FIdoJiyuKbn, "事由", 90));
-			gcom_ido.SetCellDisp(GGridDBCellDisp.Center);
+			gcom_ido.SetCellDisp(GGridDBCellDisp.Left);
 			gcom_ido.SetUnboundColumnFetch(ubIdoJiyuKbn); // 名称変換
 //			gcom_ido.SetTabIndex(2);
 //			gcom_ido.SetLocked(true);
 
 			gcom_ido.Add(new GGridDBUnbound("", "詳細", ubIdoJiyuDetail, 110)); // 利用DB値が1つではないためGGridDBUnbound()を使用
-			gcom_ido.SetCellDisp(GGridDBCellDisp.Center);
+			gcom_ido.SetCellDisp(GGridDBCellDisp.Left);
 //			gcom_ido.SetTabIndex(3);
 //			gcom_ido.SetLocked(true);
 
-			gcom_ido.Add(new GGridDBText(t_kaiin_ido.FIdoJiyuEtcMemo, "その他詳細", 0));
+			gcom_ido.Add(new GGridDBUnbound("", "その他", ubIdoJiyuDetailMemo, 0));
 			gcom_ido.SetCellDisp(GGridDBCellDisp.Left);
 //			gcom_ido.SetTabIndex(4);
 //			gcom_ido.SetLocked(true);
@@ -1282,6 +1300,17 @@ namespace App
 					chk.Checked = true;
 				}
 			}
+
+			// その他チェックありの場合、入力欄を活性
+			if (iIryoShiteii10.Checked == true)
+			{
+				iIryoShiteiiEtc.Enabled = true;
+			}
+			else
+			{
+				iIryoShiteiiEtc.Enabled = false;
+				iIryoShiteiiEtc.Text = null;
+			}
 		}
 
 		/// <summary>
@@ -1308,6 +1337,12 @@ namespace App
 			}
 
 			this.Row[t_kaiin.FKaiin_Shiteii] = shiteii;
+
+			// その他チェックありの場合、DB値をセット
+			if (iIryoShiteii10.Checked == true)
+			{
+				this.Row[t_kaiin.FKaiin_ShiteiiEtc] = iIryoShiteiiEtc.Text;
+			}
 		}
 
 		/// <summary>
@@ -1872,13 +1907,6 @@ namespace App
 		{
 			t_kaiin_ido xrow = new t_kaiin_ido(dvKaiinIdo[e.Row]);
 
-			//			string name = "";
-			//			if (kh != null)
-			//			{
-			//				name = kh.XRow.Kaihi_Name;
-			//			}
-
-			//			return Cast.String(enumKbn.DTypeIdoJiyu[(int)xrow.IdoJiyuKbn]);
 			return enumKbn.DTypeIdoJiyu[(int)xrow.IdoJiyuKbn];
 		}
 
@@ -1893,19 +1921,24 @@ namespace App
 			// 異動事由区分により詳細の参照値を決定
 			switch (xrow.IdoJiyuKbn)
 			{
-				// 施設開業
-				case eTypeIdoJiyu.Kaigyo:
-					name = ""; // 詳細選択肢なし
-					break;
-
-				// 施設異動
+				// 医師会の異動・施設開業・施設異動
 				case eTypeIdoJiyu.Ido:
 					name = enumKbn.DIdoShisetsu[(int)xrow.IdoJiyuDetail_Ido];
 					break;
 
-				// 会員区分変更
+				// 会員区分の変更
 				case eTypeIdoJiyu.Kaiin:
 					name = enumKbn.DIdoKaiinHenko[(int)xrow.IdoJiyuDetail_Kaiin];
+					break;
+
+				// 施設所在地変更
+				case eTypeIdoJiyu.Shozai:
+					name = enumKbn.DIdoShozai[(int)xrow.IdoJiyuDetail_Shozai];
+					break;
+
+				// 現住所変更
+				case eTypeIdoJiyu.Address:
+					name = enumKbn.DIdoAddress[(int)xrow.IdoJiyuDetail_Address];
 					break;
 
 				// その他
@@ -1914,27 +1947,69 @@ namespace App
 					break;
 
 				default:
-					name = ""; // 詳細選択肢なし
 					break;
 			}
 
 			return name;
 		}
 
-//		/// <summary>
-//		/// 異動情報gridの現在行を返します。
-//		/// </summary>
-//		/// <param name="datatag">タグ</param>
-//		/// <returns>現在行</returns>
-//		DataRow getDataRowIdo(string datatag)
-//		{
-//			if (dvKaiinIdo.CurrentRow != null && dvKaiinIdo.Count > 0)
-//			{
-//				return dvKaiinIdo.CurrentRow.Row;
-//			}
+		/// <summary>
+		/// Gridに異動詳細その他のメモを表示します。
+		/// </summary>
+		string ubIdoJiyuDetailMemo(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaiin_ido xrow = new t_kaiin_ido(dvKaiinIdo[e.Row]);
+			string memo = "";
 
-//			return null;
-//		}
+			// 異動事由区分により詳細の参照値を決定
+			switch (xrow.IdoJiyuKbn)
+			{
+				// 医師会の異動・施設開業・施設異動
+				case eTypeIdoJiyu.Ido:
+					memo = xrow.IdoJiyuDetail_IdoMemo_Null;
+					break;
+
+				// 会員区分の変更
+				case eTypeIdoJiyu.Kaiin:
+					//memo = xrow.IdoJiyuDetail_KaiinMemo_Null; // 値登録箇所なし
+					break;
+
+				// 施設所在地変更
+				case eTypeIdoJiyu.Shozai:
+					memo = xrow.IdoJiyuDetail_ShozaiMemo_Null;
+					break;
+
+				// 現住所変更
+				case eTypeIdoJiyu.Address:
+					memo = xrow.IdoJiyuDetail_AddressMemo_Null;
+					break;
+
+				// その他
+				case eTypeIdoJiyu.Etc:
+					memo = xrow.IdoJiyuDetail_EtcMemo_Null;
+					break;
+
+				default:
+					break;
+			}
+
+			return memo;
+		}
+
+		//		/// <summary>
+		//		/// 異動情報gridの現在行を返します。
+		//		/// </summary>
+		//		/// <param name="datatag">タグ</param>
+		//		/// <returns>現在行</returns>
+		//		DataRow getDataRowIdo(string datatag)
+		//		{
+		//			if (dvKaiinIdo.CurrentRow != null && dvKaiinIdo.Count > 0)
+		//			{
+		//				return dvKaiinIdo.CurrentRow.Row;
+		//			}
+
+		//			return null;
+		//		}
 
 		/// <summary>
 		/// フィルタ変更(t_kaiin_ido)
@@ -2130,6 +2205,10 @@ namespace App
 		{
 			appFuncKey = new AppFunctionKey(funckey, FuncKaiin_DlgEntry.Functions);
 
+			FuncKaiin_DlgEntry.ShowTab1.Execute = showTab1;
+			FuncKaiin_DlgEntry.ShowTab2.Execute = showTab2;
+			FuncKaiin_DlgEntry.ShowTab3.Execute = showTab3;
+
 			FuncKaiin_DlgEntry.Save.Execute = saveClose;
 			FuncKaiin_DlgEntry.Cancel.Execute = closeCancel;
 
@@ -2241,6 +2320,30 @@ namespace App
 		void closeCancel()
 		{
 			this.Close();
+		}
+
+		/// <summary>
+		/// タブ表示切替
+		/// </summary>
+		void showTab1()
+		{
+			tabControl1.SelectedIndex = 0;
+		}
+
+		/// <summary>
+		/// タブ表示切替
+		/// </summary>
+		void showTab2()
+		{
+			tabControl1.SelectedIndex = 1;
+		}
+
+		/// <summary>
+		/// タブ表示切替
+		/// </summary>
+		void showTab3()
+		{
+			tabControl1.SelectedIndex = 2;
 		}
 
 		/// <summary>

@@ -93,7 +93,7 @@ namespace App
 			gcom.Add(new GGridDBText(t_kaihi.FCD_Kaihi, "会費コード", 75, GGridDBCellDisp.Right));
 			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Name, "名称", 180));
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_ShortName, "略称", 90));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Bikou, "備考", 120));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Biko, "備考", 120));
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_GunCode, "会費群", 60));
 			gcom.Add(new GGridDBText(t_kaihi.FKaihi_SearchUsed, "検索", 50));
 			gcom.SetUnboundColumnFetch(ubUsed);
@@ -284,6 +284,13 @@ namespace App
 			FuncMasterKaihi.RowEdit.Execute	= rowEdit; // 訂正
 			FuncMasterKaihi.RowDelete.Execute	= rowDelete; // 削除
 //			FuncMasterKaihi.CopyAdd.Execute	= copyAdd;
+
+			FuncMasterKaihi.Preview1.Execute = preview1; // 帳票1
+			FuncMasterKaihi.Preview2.Execute = preview2; // 帳票2
+			FuncMasterKaihi.Preview3.Execute = preview3; // 帳票3
+			FuncMasterKaihi.Preview4.Execute = preview4; // 帳票4
+			FuncMasterKaihi.Preview5.Execute = preview5; // 帳票5
+
 			FuncMasterKaihi.Close.Execute		= formClose; // 閉じる
 		}
 /*
@@ -418,5 +425,74 @@ namespace App
 			this.Close();
 		}
 
+		/// <summary>
+		/// プレビュー④会費月別内訳
+		/// </summary>
+		void preview1()
+		{
+/*
+			// 画面呼び出し
+			FormTest_DlgEntry frm = new FormTest_DlgEntry();
+			//frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
+			frm.ShowDialog();
+
+			frm.Dispose();
+			frm = null;
+*/
+		}
+		/// <summary>
+		/// プレビュー⑤年会費内訳書
+		/// </summary>
+		void preview2()
+		{
+			// 画面呼び出し
+			FormOutKaihiUchiwakeYear frm = new FormOutKaihiUchiwakeYear();
+			frm.ShowDialog();
+
+			frm.Dispose();
+			frm = null;
+		}
+		/// <summary>
+		/// プレビュー⑥会費種別一覧表
+		/// </summary>
+		void preview3()
+		{
+			/*
+						// 画面呼び出し
+						FormTest_DlgEntry frm = new FormTest_DlgEntry();
+						//frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
+						frm.ShowDialog();
+
+						frm.Dispose();
+						frm = null;
+			*/
+		}
+		/// <summary>
+		/// プレビュー⑦会費種別一覧表（銀行有）
+		/// </summary>
+		void preview4()
+		{
+			// 画面呼び出し
+			FormOutKaihiListBank frm = new FormOutKaihiListBank();
+			frm.ShowDialog();
+
+			frm.Dispose();
+			frm = null;
+		}
+		/// <summary>
+		/// プレビュー⑩年間会費徴収予定通知書
+		/// </summary>
+		void preview5()
+		{
+			/*
+						// 画面呼び出し
+						FormTest_DlgEntry frm = new FormTest_DlgEntry();
+						//frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
+						frm.ShowDialog();
+
+						frm.Dispose();
+						frm = null;
+			*/
+		}
 	}
 }

@@ -162,18 +162,27 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
-			// 最終更新の情報表示
-			t_iryokikan tmprow = new t_iryokikan(editrow);
-			oLastUpdate.Text = $"{tmprow.LastUpdate:yyyy/MM/dd HH:mm}"; // 最終更新日時
-			Tanto tt = AppGlobal.Tantos.Get(Cast.Int(tmprow.LastUpdateUser_Null));
-			// 該当情報が存在したら名称をreturn
-			if (tt != null)
+			// 訂正の場合、最終更新の情報表示
+			if (Mode == eMode.Edit)
 			{
-				oLastUpdateUser.Text = tt.Name;
+				t_iryokikan tmprow = new t_iryokikan(editrow);
+				oLastUpdate.Text = tmprow.LastUpdate_Null == null ? "" : $"{tmprow.LastUpdate:yyyy/MM/dd HH:mm}"; // 最終更新日時
+				Tanto tt = AppGlobal.Tantos.Get(Cast.Int(tmprow.LastUpdateUser_Null));
+				// 該当情報が存在したら名称をreturn
+				if (tt != null)
+				{
+					oLastUpdateUser.Text = tt.Name;
+				}
+				else
+				{
+					oLastUpdateUser.Text = null;
+				}
 			}
 			else
 			{
-				oLastUpdateUser.Text = null;
+				ycLabelEx60.Visible = false;
+				oLastUpdate.Visible = false;
+				oLastUpdateUser.Visible = false;
 			}
 
 			// コンボの作成

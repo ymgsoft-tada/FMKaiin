@@ -89,10 +89,10 @@ namespace App
 		/// </summary>
 		string[] costsField;
 
-	/// <summary>
-	/// コンストラクタ
-	/// </summary>
-	public FormMasterKaihi_DlgEntry()
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public FormMasterKaihi_DlgEntry()
 		{
 			InitializeComponent();
 
@@ -168,7 +168,7 @@ namespace App
 								iShortName
 							}
 			));
-			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Bikou, iBikou)); // 備考
+			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Biko, iBiko)); // 備考
 			gctl.Add(new GControlDBNumber(t_kaihi.FKaihi_GunCode, iKaihiGunCode)); // 会費群
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_SearchUsed, iSearchUsed)); // 検索時表示区分
 

@@ -1,9 +1,9 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public partial class t_kaiin : FieldProp
 	{
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
+		/// Access ‚‘¬ŒŸõ—p
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõID]B
 		/// </summary>
 		public const string FID_Kaiin = "ID_Kaiin";
 		/// <summary>
-		/// ä¼šå“¡ID
+		/// ‰ïˆõID
 		/// </summary>
 		public int ID_Kaiin
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Kaiin_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡CD]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõCD]B
 		/// </summary>
 		public const string FCD_Kaiin = "CD_Kaiin";
 		/// <summary>
-		/// ä¼šå“¡CD
+		/// ‰ïˆõCD
 		/// </summary>
 		public int CD_Kaiin
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡CDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõCDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? CD_Kaiin_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡å]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõ–¼]B
 		/// </summary>
 		public const string FKaiin_Name = "Kaiin_Name";
 		/// <summary>
-		/// ä¼šå“¡å
+		/// ‰ïˆõ–¼
 		/// </summary>
 		public string Kaiin_Name
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡åã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõ–¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Name_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡åãƒ•ãƒªã‚¬ãƒŠ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõ–¼ƒtƒŠƒKƒi]B
 		/// </summary>
 		public const string FKaiin_NameKana = "Kaiin_NameKana";
 		/// <summary>
-		/// ä¼šå“¡åãƒ•ãƒªã‚¬ãƒŠ
+		/// ‰ïˆõ–¼ƒtƒŠƒKƒi
 		/// </summary>
 		public string Kaiin_NameKana
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡åãƒ•ãƒªã‚¬ãƒŠã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõ–¼ƒtƒŠƒKƒiBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_NameKana_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ€§åˆ¥ 0/None/ 1/Men/ç”·æ€§ 2/Women/å¥³æ€§]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[«•Ê 0/None/ 1/Men/’j« 2/Women/—«]B
 		/// </summary>
 		public const string FKaiin_Sex = "Kaiin_Sex";
 		/// <summary>
-		/// æ€§åˆ¥ 0/None/ 1/Men/ç”·æ€§ 2/Women/å¥³æ€§
+		/// «•Ê 0/None/ 1/Men/’j« 2/Women/—«
 		/// </summary>
 		public eSex Kaiin_Sex
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ€§åˆ¥ 0/None/ 1/Men/ç”·æ€§ 2/Women/å¥³æ€§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// «•Ê 0/None/ 1/Men/’j« 2/Women/—«BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_Sex_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç”Ÿå¹´æœˆæ—¥]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[¶”NŒ“ú]B
 		/// </summary>
 		public const string FKaiin_DateBirth = "Kaiin_DateBirth";
 		/// <summary>
-		/// ç”Ÿå¹´æœˆæ—¥
+		/// ¶”NŒ“ú
 		/// </summary>
 		public DateTime Kaiin_DateBirth
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ç”Ÿå¹´æœˆæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ¶”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateBirth_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[éƒµä¾¿ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[—X•Ö”Ô†]B
 		/// </summary>
 		public const string FKaiin_Post = "Kaiin_Post";
 		/// <summary>
-		/// éƒµä¾¿ç•ªå·
+		/// —X•Ö”Ô†
 		/// </summary>
 		public string Kaiin_Post
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// éƒµä¾¿ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// —X•Ö”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Post_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€ï¼‘]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ZŠ‚P]B
 		/// </summary>
 		public const string FKaiin_Addr1 = "Kaiin_Addr1";
 		/// <summary>
-		/// ä½æ‰€ï¼‘
+		/// ZŠ‚P
 		/// </summary>
 		public string Kaiin_Addr1
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä½æ‰€ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ZŠ‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Addr1_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä½æ‰€2]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ZŠ2]B
 		/// </summary>
 		public const string FKaiin_Addr2 = "Kaiin_Addr2";
 		/// <summary>
-		/// ä½æ‰€2
+		/// ZŠ2
 		/// </summary>
 		public string Kaiin_Addr2
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä½æ‰€2ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ZŠ2BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Addr2_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é›»è©±ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[“d˜b”Ô†]B
 		/// </summary>
 		public const string FKaiin_Tel1 = "Kaiin_Tel1";
 		/// <summary>
-		/// é›»è©±ç•ªå·
+		/// “d˜b”Ô†
 		/// </summary>
 		public string Kaiin_Tel1
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// é›»è©±ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// “d˜b”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Tel1_Null
 		{
@@ -264,11 +264,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æºå¸¯é›»è©±ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Œg‘Ñ“d˜b”Ô†]B
 		/// </summary>
 		public const string FKaiin_Tel2 = "Kaiin_Tel2";
 		/// <summary>
-		/// æºå¸¯é›»è©±ç•ªå·
+		/// Œg‘Ñ“d˜b”Ô†
 		/// </summary>
 		public string Kaiin_Tel2
 		{
@@ -277,7 +277,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æºå¸¯é›»è©±ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Œg‘Ñ“d˜b”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Tel2_Null
 		{
@@ -286,11 +286,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[FAXç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[FAX”Ô†]B
 		/// </summary>
 		public const string FKaiin_Fax = "Kaiin_Fax";
 		/// <summary>
-		/// FAXç•ªå·
+		/// FAX”Ô†
 		/// </summary>
 		public string Kaiin_Fax
 		{
@@ -299,7 +299,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// FAXç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// FAX”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Fax_Null
 		{
@@ -308,11 +308,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼‘]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ƒ[ƒ‹ƒAƒhƒŒƒX‚P]B
 		/// </summary>
 		public const string FKaiin_Mail1 = "Kaiin_Mail1";
 		/// <summary>
-		/// ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼‘
+		/// ƒ[ƒ‹ƒAƒhƒŒƒX‚P
 		/// </summary>
 		public string Kaiin_Mail1
 		{
@@ -321,7 +321,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ƒ[ƒ‹ƒAƒhƒŒƒX‚PBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Mail1_Null
 		{
@@ -330,11 +330,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼’]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ƒ[ƒ‹ƒAƒhƒŒƒX‚Q]B
 		/// </summary>
 		public const string FKaiin_Mail2 = "Kaiin_Mail2";
 		/// <summary>
-		/// ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼’
+		/// ƒ[ƒ‹ƒAƒhƒŒƒX‚Q
 		/// </summary>
 		public string Kaiin_Mail2
 		{
@@ -343,7 +343,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ¡ãƒ¼ãƒ«ã‚¢ãƒ‰ãƒ¬ã‚¹ï¼’ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ƒ[ƒ‹ƒAƒhƒŒƒX‚QBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_Mail2_Null
 		{
@@ -352,11 +352,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[åŒ»ç±ç™»éŒ²ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆãĞ“o˜^”Ô†]B
 		/// </summary>
 		public const string FKaiin_IsekiTorokuNo = "Kaiin_IsekiTorokuNo";
 		/// <summary>
-		/// åŒ»ç±ç™»éŒ²ç•ªå·
+		/// ˆãĞ“o˜^”Ô†
 		/// </summary>
 		public int Kaiin_IsekiTorokuNo
 		{
@@ -365,7 +365,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// åŒ»ç±ç™»éŒ²ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆãĞ“o˜^”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_IsekiTorokuNo_Null
 		{
@@ -374,11 +374,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[åŒ»ç±ç™»éŒ²å¹´æœˆæ—¥]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆãĞ“o˜^”NŒ“ú]B
 		/// </summary>
 		public const string FKaiin_DateIsekiToroku = "Kaiin_DateIsekiToroku";
 		/// <summary>
-		/// åŒ»ç±ç™»éŒ²å¹´æœˆæ—¥
+		/// ˆãĞ“o˜^”NŒ“ú
 		/// </summary>
 		public DateTime Kaiin_DateIsekiToroku
 		{
@@ -387,7 +387,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// åŒ»ç±ç™»éŒ²å¹´æœˆæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆãĞ“o˜^”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateIsekiToroku_Null
 		{
@@ -396,33 +396,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å‡ºèº«æ ¡]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ogZ]B
 		/// </summary>
-		public const string FKaiin_ShusshinKou = "Kaiin_ShusshinKou";
+		public const string FKaiin_ShusshinKo = "Kaiin_ShusshinKo";
 		/// <summary>
-		/// å‡ºèº«æ ¡
+		/// ogZ
 		/// </summary>
-		public string Kaiin_ShusshinKou
+		public string Kaiin_ShusshinKo
 		{
-			get	{	return Cast.String(row == null ? null : row[FKaiin_ShusshinKou]);	}
-			set	{	_set(FKaiin_ShusshinKou, value);	}
+			get	{	return Cast.String(row == null ? null : row[FKaiin_ShusshinKo]);	}
+			set	{	_set(FKaiin_ShusshinKo, value);	}
 		}
 		
 		/// <summary>
-		/// å‡ºèº«æ ¡ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ogZBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
-		public string Kaiin_ShusshinKou_Null
+		public string Kaiin_ShusshinKo_Null
 		{
-			get	{	if (row == null || row[FKaiin_ShusshinKou] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_ShusshinKou]); }	}
-			set	{	_set(FKaiin_ShusshinKou, value);	}
+			get	{	if (row == null || row[FKaiin_ShusshinKo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_ShusshinKo]); }	}
+			set	{	_set(FKaiin_ShusshinKo, value);	}
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å’æ¥­å¹´æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‘²‹Æ”NŒ]B
 		/// </summary>
 		public const string FKaiin_DateSotsugyo = "Kaiin_DateSotsugyo";
 		/// <summary>
-		/// å’æ¥­å¹´æœˆ
+		/// ‘²‹Æ”NŒ
 		/// </summary>
 		public DateTime Kaiin_DateSotsugyo
 		{
@@ -431,7 +431,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å’æ¥­å¹´æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‘²‹Æ”NŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateSotsugyo_Null
 		{
@@ -440,11 +440,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å‡ºèº«æ ¡(å¤§å­¦é™¢)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ogZ(‘åŠw‰@)]B
 		/// </summary>
 		public const string FKaiin_ShusshinIn = "Kaiin_ShusshinIn";
 		/// <summary>
-		/// å‡ºèº«æ ¡(å¤§å­¦é™¢)
+		/// ogZ(‘åŠw‰@)
 		/// </summary>
 		public string Kaiin_ShusshinIn
 		{
@@ -453,7 +453,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å‡ºèº«æ ¡(å¤§å­¦é™¢)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ogZ(‘åŠw‰@)BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_ShusshinIn_Null
 		{
@@ -462,11 +462,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¿®äº†å¹´æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[C—¹”NŒ]B
 		/// </summary>
 		public const string FKaiin_DateShuryo = "Kaiin_DateShuryo";
 		/// <summary>
-		/// ä¿®äº†å¹´æœˆ
+		/// C—¹”NŒ
 		/// </summary>
 		public DateTime Kaiin_DateShuryo
 		{
@@ -475,7 +475,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¿®äº†å¹´æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// C—¹”NŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateShuryo_Null
 		{
@@ -484,11 +484,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å­¦ä½å–å¾—å¹´æœˆ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŠwˆÊæ“¾”NŒ]B
 		/// </summary>
 		public const string FKaiin_DateShutokuGakui = "Kaiin_DateShutokuGakui";
 		/// <summary>
-		/// å­¦ä½å–å¾—å¹´æœˆ
+		/// ŠwˆÊæ“¾”NŒ
 		/// </summary>
 		public DateTime Kaiin_DateShutokuGakui
 		{
@@ -497,7 +497,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å­¦ä½å–å¾—å¹´æœˆã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŠwˆÊæ“¾”NŒBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateShutokuGakui_Null
 		{
@@ -506,11 +506,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[åœ¨ç±åŒºåˆ† 0/None/ 1/Zaiseki/åœ¨ç± 2/Ido/ç•°å‹• 3/Taikai/é€€ä¼š]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[İĞ‹æ•ª 0/None/ 1/Zaiseki/İĞ 2/Ido/ˆÙ“® 3/Taikai/‘Ş‰ï]B
 		/// </summary>
 		public const string FKaiin_TypeZaiseki = "Kaiin_TypeZaiseki";
 		/// <summary>
-		/// åœ¨ç±åŒºåˆ† 0/None/ 1/Zaiseki/åœ¨ç± 2/Ido/ç•°å‹• 3/Taikai/é€€ä¼š
+		/// İĞ‹æ•ª 0/None/ 1/Zaiseki/İĞ 2/Ido/ˆÙ“® 3/Taikai/‘Ş‰ï
 		/// </summary>
 		public eTypeZaiseki Kaiin_TypeZaiseki
 		{
@@ -519,7 +519,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// åœ¨ç±åŒºåˆ† 0/None/ 1/Zaiseki/åœ¨ç± 2/Ido/ç•°å‹• 3/Taikai/é€€ä¼šã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// İĞ‹æ•ª 0/None/ 1/Zaiseki/İĞ 2/Ido/ˆÙ“® 3/Taikai/‘Ş‰ïBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_TypeZaiseki_Null
 		{
@@ -528,11 +528,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ‰¿èªæ—¥]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[³”F“ú]B
 		/// </summary>
 		public const string FKaiin_DateShonin = "Kaiin_DateShonin";
 		/// <summary>
-		/// æ‰¿èªæ—¥
+		/// ³”F“ú
 		/// </summary>
 		public DateTime Kaiin_DateShonin
 		{
@@ -541,7 +541,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ‰¿èªæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ³”F“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateShonin_Null
 		{
@@ -550,11 +550,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç™»éŒ²æ—¥]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[“o˜^“ú]B
 		/// </summary>
 		public const string FKaiin_DateToroku = "Kaiin_DateToroku";
 		/// <summary>
-		/// ç™»éŒ²æ—¥
+		/// “o˜^“ú
 		/// </summary>
 		public DateTime Kaiin_DateToroku
 		{
@@ -563,7 +563,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ç™»éŒ²æ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// “o˜^“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateToroku_Null
 		{
@@ -572,33 +572,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å…¥ä¼šå¹´æœˆæ—¥]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[“ü‰ï”NŒ“ú]B
 		/// </summary>
-		public const string FKaiin_DateNyuukai = "Kaiin_DateNyuukai";
+		public const string FKaiin_DateNyukai = "Kaiin_DateNyukai";
 		/// <summary>
-		/// å…¥ä¼šå¹´æœˆæ—¥
+		/// “ü‰ï”NŒ“ú
 		/// </summary>
-		public DateTime Kaiin_DateNyuukai
+		public DateTime Kaiin_DateNyukai
 		{
-			get	{	return Cast.DateTime(row == null ? null : row[FKaiin_DateNyuukai]);	}
-			set	{	_set(FKaiin_DateNyuukai, value);	}
+			get	{	return Cast.DateTime(row == null ? null : row[FKaiin_DateNyukai]);	}
+			set	{	_set(FKaiin_DateNyukai, value);	}
 		}
 		
 		/// <summary>
-		/// å…¥ä¼šå¹´æœˆæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// “ü‰ï”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
-		public DateTime? Kaiin_DateNyuukai_Null
+		public DateTime? Kaiin_DateNyukai_Null
 		{
-			get	{	if (row == null || row[FKaiin_DateNyuukai] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FKaiin_DateNyuukai]); }	}
-			set	{	_set(FKaiin_DateNyuukai, value);	}
+			get	{	if (row == null || row[FKaiin_DateNyukai] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FKaiin_DateNyukai]); }	}
+			set	{	_set(FKaiin_DateNyukai, value);	}
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡åŒºåˆ†ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõ‹æ•ªID]B
 		/// </summary>
 		public const string FID_KaiinKbn = "ID_KaiinKbn";
 		/// <summary>
-		/// ä¼šå“¡åŒºåˆ†ID
+		/// ‰ïˆõ‹æ•ªID
 		/// </summary>
 		public int ID_KaiinKbn
 		{
@@ -607,7 +607,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡åŒºåˆ†IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõ‹æ•ªIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_KaiinKbn_Null
 		{
@@ -616,143 +616,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ—¥åŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)]ã€‚
-		/// </summary>
-		public const string FID_Kaihi_Nichii = "ID_Kaihi_Nichii";
-		/// <summary>
-		/// æ—¥åŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)
-		/// </summary>
-		public int ID_Kaihi_Nichii
-		{
-			get	{	return Cast.Int(row == null ? null : row[FID_Kaihi_Nichii]);	}
-			set	{	_set(FID_Kaihi_Nichii, value);	}
-		}
-		
-		/// <summary>
-		/// æ—¥åŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
-		/// </summary>
-		public int? ID_Kaihi_Nichii_Null
-		{
-			get	{	if (row == null || row[FID_Kaihi_Nichii] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Kaihi_Nichii]); }	}
-			set	{	_set(FID_Kaihi_Nichii, value);	}
-		}
-		
-		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘]ã€‚
-		/// </summary>
-		public const string FKaiin_NichiiShiharai = "Kaiin_NichiiShiharai";
-		/// <summary>
-		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘
-		/// </summary>
-		public eShiharai Kaiin_NichiiShiharai
-		{
-			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaiin_NichiiShiharai]);	}
-			set	{	_set(FKaiin_NichiiShiharai, (int)value);	}
-		}
-		
-		/// <summary>
-		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
-		/// </summary>
-		public int? Kaiin_NichiiShiharai_Null
-		{
-			get	{	if (row == null || row[FKaiin_NichiiShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_NichiiShiharai]); }	}
-			set	{	_set(FKaiin_NichiiShiharai, value);	}
-		}
-		
-		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[çœŒåŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)]ã€‚
-		/// </summary>
-		public const string FID_Kaihi_Keni = "ID_Kaihi_Keni";
-		/// <summary>
-		/// çœŒåŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)
-		/// </summary>
-		public int ID_Kaihi_Keni
-		{
-			get	{	return Cast.Int(row == null ? null : row[FID_Kaihi_Keni]);	}
-			set	{	_set(FID_Kaihi_Keni, value);	}
-		}
-		
-		/// <summary>
-		/// çœŒåŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
-		/// </summary>
-		public int? ID_Kaihi_Keni_Null
-		{
-			get	{	if (row == null || row[FID_Kaihi_Keni] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Kaihi_Keni]); }	}
-			set	{	_set(FID_Kaihi_Keni, value);	}
-		}
-		
-		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘]ã€‚
-		/// </summary>
-		public const string FKaiin_KeniShiharai = "Kaiin_KeniShiharai";
-		/// <summary>
-		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘
-		/// </summary>
-		public eShiharai Kaiin_KeniShiharai
-		{
-			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaiin_KeniShiharai]);	}
-			set	{	_set(FKaiin_KeniShiharai, (int)value);	}
-		}
-		
-		/// <summary>
-		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
-		/// </summary>
-		public int? Kaiin_KeniShiharai_Null
-		{
-			get	{	if (row == null || row[FKaiin_KeniShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_KeniShiharai]); }	}
-			set	{	_set(FKaiin_KeniShiharai, value);	}
-		}
-		
-		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å¸‚åŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)]ã€‚
-		/// </summary>
-		public const string FID_Kaihi_Shii = "ID_Kaihi_Shii";
-		/// <summary>
-		/// å¸‚åŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)
-		/// </summary>
-		public int ID_Kaihi_Shii
-		{
-			get	{	return Cast.Int(row == null ? null : row[FID_Kaihi_Shii]);	}
-			set	{	_set(FID_Kaihi_Shii, value);	}
-		}
-		
-		/// <summary>
-		/// å¸‚åŒ»ä¼šå“¡åŒºåˆ†(åŒ»ä¼šä¼šè²»ID)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
-		/// </summary>
-		public int? ID_Kaihi_Shii_Null
-		{
-			get	{	if (row == null || row[FID_Kaihi_Shii] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Kaihi_Shii]); }	}
-			set	{	_set(FID_Kaihi_Shii, value);	}
-		}
-		
-		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘]ã€‚
-		/// </summary>
-		public const string FKaiin_ShiiShiharai = "Kaiin_ShiiShiharai";
-		/// <summary>
-		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘
-		/// </summary>
-		public eShiharai Kaiin_ShiiShiharai
-		{
-			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaiin_ShiiShiharai]);	}
-			set	{	_set(FKaiin_ShiiShiharai, (int)value);	}
-		}
-		
-		/// <summary>
-		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
-		/// </summary>
-		public int? Kaiin_ShiiShiharai_Null
-		{
-			get	{	if (row == null || row[FKaiin_ShiiShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_ShiiShiharai]); }	}
-			set	{	_set(FKaiin_ShiiShiharai, value);	}
-		}
-		
-		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ç•°å‹•å‰åŒ»å¸«ä¼šID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ˆÙ“®‘Oˆãt‰ïID]B
 		/// </summary>
 		public const string FID_Ishikai_Idomae = "ID_Ishikai_Idomae";
 		/// <summary>
-		/// ç•°å‹•å‰åŒ»å¸«ä¼šID
+		/// ˆÙ“®‘Oˆãt‰ïID
 		/// </summary>
 		public int ID_Ishikai_Idomae
 		{
@@ -761,7 +629,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ç•°å‹•å‰åŒ»å¸«ä¼šIDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ˆÙ“®‘Oˆãt‰ïIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Ishikai_Idomae_Null
 		{
@@ -770,11 +638,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[è¨ºç™‚ç§‘ç›®(ä¸»)ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[f—Ã‰È–Ú(å)ID]B
 		/// </summary>
 		public const string FID_Shinryoka_Main = "ID_Shinryoka_Main";
 		/// <summary>
-		/// è¨ºç™‚ç§‘ç›®(ä¸»)ID
+		/// f—Ã‰È–Ú(å)ID
 		/// </summary>
 		public int ID_Shinryoka_Main
 		{
@@ -783,7 +651,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// è¨ºç™‚ç§‘ç›®(ä¸»)IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// f—Ã‰È–Ú(å)IDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Shinryoka_Main_Null
 		{
@@ -792,11 +660,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ‰€å±åŒ»ç™‚æ©Ÿé–¢ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Š‘®ˆã—Ã‹@ŠÖID]B
 		/// </summary>
 		public const string FID_Iryokikan = "ID_Iryokikan";
 		/// <summary>
-		/// æ‰€å±åŒ»ç™‚æ©Ÿé–¢ID
+		/// Š‘®ˆã—Ã‹@ŠÖID
 		/// </summary>
 		public int ID_Iryokikan
 		{
@@ -805,7 +673,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ‰€å±åŒ»ç™‚æ©Ÿé–¢IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Š‘®ˆã—Ã‹@ŠÖIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Iryokikan_Null
 		{
@@ -814,11 +682,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–½è¨­æ¥­å‹™ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[{İ‹Æ–±ID]B
 		/// </summary>
 		public const string FID_ShisetsuGyomu = "ID_ShisetsuGyomu";
 		/// <summary>
-		/// æ–½è¨­æ¥­å‹™ID
+		/// {İ‹Æ–±ID
 		/// </summary>
 		public int ID_ShisetsuGyomu
 		{
@@ -827,7 +695,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ–½è¨­æ¥­å‹™IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// {İ‹Æ–±IDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_ShisetsuGyomu_Null
 		{
@@ -836,11 +704,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æŒ‡å®šåŒ»(chkbox)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[w’èˆã(chkbox)]B
 		/// </summary>
 		public const string FKaiin_Shiteii = "Kaiin_Shiteii";
 		/// <summary>
-		/// æŒ‡å®šåŒ»(chkbox)
+		/// w’èˆã(chkbox)
 		/// </summary>
 		public int Kaiin_Shiteii
 		{
@@ -849,7 +717,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æŒ‡å®šåŒ»(chkbox)ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// w’èˆã(chkbox)BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_Shiteii_Null
 		{
@@ -858,11 +726,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§1_éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[w’èˆã‚»‚Ì‘¼—“]B
+		/// </summary>
+		public const string FKaiin_ShiteiiEtc = "Kaiin_ShiteiiEtc";
+		/// <summary>
+		/// w’èˆã‚»‚Ì‘¼—“
+		/// </summary>
+		public string Kaiin_ShiteiiEtc
+		{
+			get	{	return Cast.String(row == null ? null : row[FKaiin_ShiteiiEtc]);	}
+			set	{	_set(FKaiin_ShiteiiEtc, value);	}
+		}
+		
+		/// <summary>
+		/// w’èˆã‚»‚Ì‘¼—“BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// </summary>
+		public string Kaiin_ShiteiiEtc_Null
+		{
+			get	{	if (row == null || row[FKaiin_ShiteiiEtc] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_ShiteiiEtc]); }	}
+			set	{	_set(FKaiin_ShiteiiEtc, value);	}
+		}
+		
+		/// <summary>
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ1_‹âsƒR[ƒh]B
 		/// </summary>
 		public const string FKaiin_BankCode1 = "Kaiin_BankCode1";
 		/// <summary>
-		/// å£åº§1_éŠ€è¡Œã‚³ãƒ¼ãƒ‰
+		/// ŒûÀ1_‹âsƒR[ƒh
 		/// </summary>
 		public int Kaiin_BankCode1
 		{
@@ -871,7 +761,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§1_éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ1_‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankCode1_Null
 		{
@@ -880,11 +770,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§1_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ1_‹âsx“XƒR[ƒh]B
 		/// </summary>
 		public const string FKaiin_BankShitenCode1 = "Kaiin_BankShitenCode1";
 		/// <summary>
-		/// å£åº§1_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰
+		/// ŒûÀ1_‹âsx“XƒR[ƒh
 		/// </summary>
 		public int Kaiin_BankShitenCode1
 		{
@@ -893,7 +783,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§1_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ1_‹âsx“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankShitenCode1_Null
 		{
@@ -902,11 +792,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À]B
 		/// </summary>
 		public const string FKaiin_BankKozaType1 = "Kaiin_BankKozaType1";
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À
 		/// </summary>
 		public eTypeKoza Kaiin_BankKozaType1
 		{
@@ -915,7 +805,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–ÀBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankKozaType1_Null
 		{
@@ -924,11 +814,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§1_å£åº§ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ1_ŒûÀ”Ô†]B
 		/// </summary>
 		public const string FKaiin_BankKozaNo1 = "Kaiin_BankKozaNo1";
 		/// <summary>
-		/// å£åº§1_å£åº§ç•ªå·
+		/// ŒûÀ1_ŒûÀ”Ô†
 		/// </summary>
 		public string Kaiin_BankKozaNo1
 		{
@@ -937,7 +827,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§1_å£åº§ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ1_ŒûÀ”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_BankKozaNo1_Null
 		{
@@ -946,11 +836,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§1_å£åº§åç¾©]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ1_ŒûÀ–¼‹`]B
 		/// </summary>
 		public const string FKaiin_BankKozaName1 = "Kaiin_BankKozaName1";
 		/// <summary>
-		/// å£åº§1_å£åº§åç¾©
+		/// ŒûÀ1_ŒûÀ–¼‹`
 		/// </summary>
 		public string Kaiin_BankKozaName1
 		{
@@ -959,7 +849,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§1_å£åº§åç¾©ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ1_ŒûÀ–¼‹`BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_BankKozaName1_Null
 		{
@@ -968,11 +858,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§2_éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ2_‹âsƒR[ƒh]B
 		/// </summary>
 		public const string FKaiin_BankCode2 = "Kaiin_BankCode2";
 		/// <summary>
-		/// å£åº§2_éŠ€è¡Œã‚³ãƒ¼ãƒ‰
+		/// ŒûÀ2_‹âsƒR[ƒh
 		/// </summary>
 		public int Kaiin_BankCode2
 		{
@@ -981,7 +871,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§2_éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ2_‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankCode2_Null
 		{
@@ -990,11 +880,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§2_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ2_‹âsx“XƒR[ƒh]B
 		/// </summary>
 		public const string FKaiin_BankShitenCode2 = "Kaiin_BankShitenCode2";
 		/// <summary>
-		/// å£åº§2_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰
+		/// ŒûÀ2_‹âsx“XƒR[ƒh
 		/// </summary>
 		public int Kaiin_BankShitenCode2
 		{
@@ -1003,7 +893,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§2_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ2_‹âsx“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankShitenCode2_Null
 		{
@@ -1012,11 +902,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À]B
 		/// </summary>
 		public const string FKaiin_BankKozaType2 = "Kaiin_BankKozaType2";
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À
 		/// </summary>
 		public eTypeKoza Kaiin_BankKozaType2
 		{
@@ -1025,7 +915,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–ÀBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankKozaType2_Null
 		{
@@ -1034,11 +924,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§2_å£åº§ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ2_ŒûÀ”Ô†]B
 		/// </summary>
 		public const string FKaiin_BankKozaNo2 = "Kaiin_BankKozaNo2";
 		/// <summary>
-		/// å£åº§2_å£åº§ç•ªå·
+		/// ŒûÀ2_ŒûÀ”Ô†
 		/// </summary>
 		public string Kaiin_BankKozaNo2
 		{
@@ -1047,7 +937,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§2_å£åº§ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ2_ŒûÀ”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_BankKozaNo2_Null
 		{
@@ -1056,11 +946,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§2_å£åº§åç¾©]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ2_ŒûÀ–¼‹`]B
 		/// </summary>
 		public const string FKaiin_BankKozaName2 = "Kaiin_BankKozaName2";
 		/// <summary>
-		/// å£åº§2_å£åº§åç¾©
+		/// ŒûÀ2_ŒûÀ–¼‹`
 		/// </summary>
 		public string Kaiin_BankKozaName2
 		{
@@ -1069,7 +959,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§2_å£åº§åç¾©ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ2_ŒûÀ–¼‹`BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_BankKozaName2_Null
 		{
@@ -1078,11 +968,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§3_éŠ€è¡Œã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ3_‹âsƒR[ƒh]B
 		/// </summary>
 		public const string FKaiin_BankCode3 = "Kaiin_BankCode3";
 		/// <summary>
-		/// å£åº§3_éŠ€è¡Œã‚³ãƒ¼ãƒ‰
+		/// ŒûÀ3_‹âsƒR[ƒh
 		/// </summary>
 		public int Kaiin_BankCode3
 		{
@@ -1091,7 +981,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§3_éŠ€è¡Œã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ3_‹âsƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankCode3_Null
 		{
@@ -1100,11 +990,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§3_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ3_‹âsx“XƒR[ƒh]B
 		/// </summary>
 		public const string FKaiin_BankShitenCode3 = "Kaiin_BankShitenCode3";
 		/// <summary>
-		/// å£åº§3_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰
+		/// ŒûÀ3_‹âsx“XƒR[ƒh
 		/// </summary>
 		public int Kaiin_BankShitenCode3
 		{
@@ -1113,7 +1003,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§3_éŠ€è¡Œæ”¯åº—ã‚³ãƒ¼ãƒ‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ3_‹âsx“XƒR[ƒhBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankShitenCode3_Null
 		{
@@ -1122,11 +1012,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À]B
 		/// </summary>
 		public const string FKaiin_BankKozaType3 = "Kaiin_BankKozaType3";
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–À
 		/// </summary>
 		public eTypeKoza Kaiin_BankKozaType3
 		{
@@ -1135,7 +1025,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§åŒºåˆ† 0/None/ 1/Futsu/æ™®é€š 2/Touza/å½“åº§ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ‹æ•ª 0/None/ 1/Futsu/•’Ê 2/Touza/“–ÀBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_BankKozaType3_Null
 		{
@@ -1144,11 +1034,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§3_å£åº§ç•ªå·]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ3_ŒûÀ”Ô†]B
 		/// </summary>
 		public const string FKaiin_BankKozaNo3 = "Kaiin_BankKozaNo3";
 		/// <summary>
-		/// å£åº§3_å£åº§ç•ªå·
+		/// ŒûÀ3_ŒûÀ”Ô†
 		/// </summary>
 		public string Kaiin_BankKozaNo3
 		{
@@ -1157,7 +1047,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§3_å£åº§ç•ªå·ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ3_ŒûÀ”Ô†BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_BankKozaNo3_Null
 		{
@@ -1166,11 +1056,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å£åº§3_å£åº§åç¾©]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[ŒûÀ3_ŒûÀ–¼‹`]B
 		/// </summary>
 		public const string FKaiin_BankKozaName3 = "Kaiin_BankKozaName3";
 		/// <summary>
-		/// å£åº§3_å£åº§åç¾©
+		/// ŒûÀ3_ŒûÀ–¼‹`
 		/// </summary>
 		public string Kaiin_BankKozaName3
 		{
@@ -1179,7 +1069,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å£åº§3_å£åº§åç¾©ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ŒûÀ3_ŒûÀ–¼‹`BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_BankKozaName3_Null
 		{
@@ -1188,11 +1078,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é€€ä¼šå¹´æœˆæ—¥]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‘Ş‰ï”NŒ“ú]B
 		/// </summary>
 		public const string FKaiin_DateTaikai = "Kaiin_DateTaikai";
 		/// <summary>
-		/// é€€ä¼šå¹´æœˆæ—¥
+		/// ‘Ş‰ï”NŒ“ú
 		/// </summary>
 		public DateTime Kaiin_DateTaikai
 		{
@@ -1201,7 +1091,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// é€€ä¼šå¹´æœˆæ—¥ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‘Ş‰ï”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? Kaiin_DateTaikai_Null
 		{
@@ -1210,11 +1100,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é€€ä¼šäº‹ç”±åŒºåˆ† 0/None/ 1/Haiki/å»ƒæ£„ãƒ»é€€è· 2/Shibo/æ­»äº¡ 3/Etc/ãã®ä»–]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‘Ş‰ï–—R‹æ•ª 0/None/ 1/Haiki/”pŠüE‘ŞE 2/Shibo/€–S 3/Etc/‚»‚Ì‘¼]B
 		/// </summary>
 		public const string FKaiin_TypeTaikaiJiyu = "Kaiin_TypeTaikaiJiyu";
 		/// <summary>
-		/// é€€ä¼šäº‹ç”±åŒºåˆ† 0/None/ 1/Haiki/å»ƒæ£„ãƒ»é€€è· 2/Shibo/æ­»äº¡ 3/Etc/ãã®ä»–
+		/// ‘Ş‰ï–—R‹æ•ª 0/None/ 1/Haiki/”pŠüE‘ŞE 2/Shibo/€–S 3/Etc/‚»‚Ì‘¼
 		/// </summary>
 		public eTypeTaikaiJiyu Kaiin_TypeTaikaiJiyu
 		{
@@ -1223,7 +1113,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// é€€ä¼šäº‹ç”±åŒºåˆ† 0/None/ 1/Haiki/å»ƒæ£„ãƒ»é€€è· 2/Shibo/æ­»äº¡ 3/Etc/ãã®ä»–ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‘Ş‰ï–—R‹æ•ª 0/None/ 1/Haiki/”pŠüE‘ŞE 2/Shibo/€–S 3/Etc/‚»‚Ì‘¼BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? Kaiin_TypeTaikaiJiyu_Null
 		{
@@ -1232,11 +1122,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é€€ä¼šäº‹ç”±ãã®ä»–ãƒ¡ãƒ¢]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‘Ş‰ï–—R‚»‚Ì‘¼ƒƒ‚]B
 		/// </summary>
 		public const string FKaiin_TaikaiEtcmemo = "Kaiin_TaikaiEtcmemo";
 		/// <summary>
-		/// é€€ä¼šäº‹ç”±ãã®ä»–ãƒ¡ãƒ¢
+		/// ‘Ş‰ï–—R‚»‚Ì‘¼ƒƒ‚
 		/// </summary>
 		public string Kaiin_TaikaiEtcmemo
 		{
@@ -1245,7 +1135,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// é€€ä¼šäº‹ç”±ãã®ä»–ãƒ¡ãƒ¢ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‘Ş‰ï–—R‚»‚Ì‘¼ƒƒ‚BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string Kaiin_TaikaiEtcmemo_Null
 		{
@@ -1254,11 +1144,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ–‡æ›¸é€ä»˜å…ˆ(æ–½è¨­/è‡ªå®…)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[•¶‘‘—•tæ({İ/©‘î)]B
 		/// </summary>
 		public const string FKaiin_BunshoSofusaki = "Kaiin_BunshoSofusaki";
 		/// <summary>
-		/// æ–‡æ›¸é€ä»˜å…ˆ(æ–½è¨­/è‡ªå®…)
+		/// •¶‘‘—•tæ({İ/©‘î)
 		/// </summary>
 		public bool Kaiin_BunshoSofusaki
 		{
@@ -1267,11 +1157,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[FAXé€ä»˜å…ˆ(æ–½è¨­/è‡ªå®…)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[FAX‘—•tæ({İ/©‘î)]B
 		/// </summary>
 		public const string FKaiin_FaxSofusaki = "Kaiin_FaxSofusaki";
 		/// <summary>
-		/// FAXé€ä»˜å…ˆ(æ–½è¨­/è‡ªå®…)
+		/// FAX‘—•tæ({İ/©‘î)
 		/// </summary>
 		public bool Kaiin_FaxSofusaki
 		{
@@ -1280,11 +1170,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆåˆ¥ä¼šè²»å†…è¨³(ä¸è¦/å¿…è¦)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Œ•Ê‰ï”ï“à–ó(•s—v/•K—v)]B
 		/// </summary>
 		public const string FKaiin_KaihiUchiwake = "Kaiin_KaihiUchiwake";
 		/// <summary>
-		/// æœˆåˆ¥ä¼šè²»å†…è¨³(ä¸è¦/å¿…è¦)
+		/// Œ•Ê‰ï”ï“à–ó(•s—v/•K—v)
 		/// </summary>
 		public bool Kaiin_KaihiUchiwake
 		{
@@ -1293,24 +1183,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å…¬é–‹åŒºåˆ†(å…¬é–‹/éå…¬é–‹)]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[\¿”NŒ“ú]B
 		/// </summary>
-		public const string FKaiin_KoukaiKbn = "Kaiin_KoukaiKbn";
+		public const string FKaiin_DateShinsei = "Kaiin_DateShinsei";
 		/// <summary>
-		/// å…¬é–‹åŒºåˆ†(å…¬é–‹/éå…¬é–‹)
+		/// \¿”NŒ“ú
 		/// </summary>
-		public bool Kaiin_KoukaiKbn
+		public DateTime Kaiin_DateShinsei
 		{
-			get	{	return Cast.Bool(row == null ? null : row[FKaiin_KoukaiKbn]);	}
-			set	{	_set(FKaiin_KoukaiKbn, value);	}
+			get	{	return Cast.DateTime(row == null ? null : row[FKaiin_DateShinsei]);	}
+			set	{	_set(FKaiin_DateShinsei, value);	}
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœ€çµ‚æ›´æ–°è€…ID]ã€‚
+		/// \¿”NŒ“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// </summary>
+		public DateTime? Kaiin_DateShinsei_Null
+		{
+			get	{	if (row == null || row[FKaiin_DateShinsei] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FKaiin_DateShinsei]); }	}
+			set	{	_set(FKaiin_DateShinsei, value);	}
+		}
+		
+		/// <summary>
+		/// ƒtƒB[ƒ‹ƒh[ÅIXVÒID]B
 		/// </summary>
 		public const string FLastUpdateUser = "LastUpdateUser";
 		/// <summary>
-		/// æœ€çµ‚æ›´æ–°è€…ID
+		/// ÅIXVÒID
 		/// </summary>
 		public int LastUpdateUser
 		{
@@ -1319,7 +1218,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æœ€çµ‚æ›´æ–°è€…IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ÅIXVÒIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? LastUpdateUser_Null
 		{
@@ -1328,11 +1227,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
+		/// [—vŠÔ]ÅIXV“ú
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -1341,7 +1240,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -1351,15 +1250,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		/// </summary>
-		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
+		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
 		public t_kaiin(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_kaiin å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+		/// t_kaiin Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
 		/// </summary>
-		/// <returns>t_kaiin å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
+		/// <returns>t_kaiin Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_kaiin");
@@ -1437,7 +1336,7 @@ namespace App
 			col = new DataColumn(FKaiin_DateIsekiToroku, typeof(DateTime));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaiin_ShusshinKou, typeof(string));
+			col = new DataColumn(FKaiin_ShusshinKo, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
@@ -1465,28 +1364,10 @@ namespace App
 			col = new DataColumn(FKaiin_DateToroku, typeof(DateTime));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaiin_DateNyuukai, typeof(DateTime));
+			col = new DataColumn(FKaiin_DateNyukai, typeof(DateTime));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_KaiinKbn, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FID_Kaihi_Nichii, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_NichiiShiharai, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FID_Kaihi_Keni, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_KeniShiharai, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FID_Kaihi_Shii, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_ShiiShiharai, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Ishikai_Idomae, typeof(int));
@@ -1502,6 +1383,11 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaiin_Shiteii, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_ShiteiiEtc, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaiin_BankCode1, typeof(int));
@@ -1581,7 +1467,7 @@ namespace App
 			col = new DataColumn(FKaiin_KaihiUchiwake, typeof(bool));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaiin_KoukaiKbn, typeof(bool));
+			col = new DataColumn(FKaiin_DateShinsei, typeof(DateTime));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdateUser, typeof(int));
