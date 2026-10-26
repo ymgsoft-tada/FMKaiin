@@ -174,6 +174,10 @@ namespace App
 			this.ycLabelEx84 = new YControlLabelEx.YcLabelEx();
 			this.grid_Kaihi = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.tabPage3 = new System.Windows.Forms.TabPage();
+			this.iGenmen = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.ycLabelEx58 = new YControlLabelEx.YcLabelEx();
+			this.iIshikaiIdosaki = new App.UcTableComboBox();
+			this.ycLabelEx18 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx35 = new YControlLabelEx.YcLabelEx();
 			this.btnGakkaiDel = new System.Windows.Forms.Button();
 			this.btnGakkaiAdd = new System.Windows.Forms.Button();
@@ -186,9 +190,7 @@ namespace App
 			this.grid_Ido = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.iTaikaiJiyu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.iJushoKeisai = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iFaxSofu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
-			this.ycLabelEx57 = new YControlLabelEx.YcLabelEx();
 			this.iKaihiUchiwake = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iBunshoSofu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.ycLabelEx20 = new YControlLabelEx.YcLabelEx();
@@ -236,9 +238,10 @@ namespace App
 			this.iIshikai = new App.UcTableComboBox();
 			this.iShinseiDate = new App.UcDate();
 			this.ycLabelEx28 = new YControlLabelEx.YcLabelEx();
-			this.iNameOldFurigana = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iNameFuriganaOld = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iNameOld = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx56 = new YControlLabelEx.YcLabelEx();
+			this.ycLabelEx57 = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.iMail1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_3)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_2)).BeginInit();
@@ -302,12 +305,12 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iBankCD1)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_Kaihi)).BeginInit();
 			this.tabPage3.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iGenmen)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_Gakkai)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyuEtc)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_Ido)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyu)).BeginInit();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.iJushoKeisai)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iFaxSofu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiUchiwake)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBunshoSofu)).BeginInit();
@@ -319,7 +322,7 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iShusshinDaigakuin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_KaihiIshikai)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iIshikaiShiharai)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iNameOldFurigana)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iNameFuriganaOld)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameOld)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -332,7 +335,7 @@ namespace App
 			this.iMail1.Name = "iMail1";
 			this.iMail1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iMail1.Size = new System.Drawing.Size(307, 23);
-			this.iMail1.TabIndex = 1;
+			this.iMail1.TabIndex = 4;
 			// 
 			// ycLabelEx25
 			// 
@@ -360,7 +363,7 @@ namespace App
 			this.iTel2_3.Name = "iTel2_3";
 			this.iTel2_3.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel2_3.Size = new System.Drawing.Size(50, 23);
-			this.iTel2_3.TabIndex = 15;
+			this.iTel2_3.TabIndex = 17;
 			// 
 			// ycLabelEx22
 			// 
@@ -405,7 +408,7 @@ namespace App
 			this.iTel2_2.Name = "iTel2_2";
 			this.iTel2_2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel2_2.Size = new System.Drawing.Size(50, 23);
-			this.iTel2_2.TabIndex = 14;
+			this.iTel2_2.TabIndex = 16;
 			// 
 			// iTel2_1
 			// 
@@ -416,7 +419,7 @@ namespace App
 			this.iTel2_1.Name = "iTel2_1";
 			this.iTel2_1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel2_1.Size = new System.Drawing.Size(50, 23);
-			this.iTel2_1.TabIndex = 13;
+			this.iTel2_1.TabIndex = 15;
 			// 
 			// ycLabelEx24
 			// 
@@ -443,7 +446,7 @@ namespace App
 			this.iBirthday.Name = "iBirthday";
 			this.iBirthday.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iBirthday.Size = new System.Drawing.Size(143, 25);
-			this.iBirthday.TabIndex = 19;
+			this.iBirthday.TabIndex = 24;
 			this.iBirthday.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iBirthday.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iBirthday.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -516,7 +519,7 @@ namespace App
 			this.iTel1_3.Name = "iTel1_3";
 			this.iTel1_3.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel1_3.Size = new System.Drawing.Size(50, 23);
-			this.iTel1_3.TabIndex = 12;
+			this.iTel1_3.TabIndex = 20;
 			// 
 			// ycLabelEx10
 			// 
@@ -561,7 +564,7 @@ namespace App
 			this.iTel1_2.Name = "iTel1_2";
 			this.iTel1_2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel1_2.Size = new System.Drawing.Size(50, 23);
-			this.iTel1_2.TabIndex = 11;
+			this.iTel1_2.TabIndex = 19;
 			// 
 			// iTel1_1
 			// 
@@ -572,7 +575,7 @@ namespace App
 			this.iTel1_1.Name = "iTel1_1";
 			this.iTel1_1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTel1_1.Size = new System.Drawing.Size(50, 23);
-			this.iTel1_1.TabIndex = 10;
+			this.iTel1_1.TabIndex = 18;
 			// 
 			// ycLabelEx9
 			// 
@@ -617,7 +620,7 @@ namespace App
 			this.iPost2.Name = "iPost2";
 			this.iPost2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iPost2.Size = new System.Drawing.Size(50, 23);
-			this.iPost2.TabIndex = 7;
+			this.iPost2.TabIndex = 12;
 			// 
 			// iPost1
 			// 
@@ -628,7 +631,7 @@ namespace App
 			this.iPost1.Name = "iPost1";
 			this.iPost1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iPost1.Size = new System.Drawing.Size(40, 23);
-			this.iPost1.TabIndex = 6;
+			this.iPost1.TabIndex = 11;
 			// 
 			// ycLabelEx6
 			// 
@@ -656,7 +659,7 @@ namespace App
 			this.iAddr2.Name = "iAddr2";
 			this.iAddr2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iAddr2.Size = new System.Drawing.Size(307, 23);
-			this.iAddr2.TabIndex = 9;
+			this.iAddr2.TabIndex = 14;
 			// 
 			// iAddr1
 			// 
@@ -667,7 +670,7 @@ namespace App
 			this.iAddr1.Name = "iAddr1";
 			this.iAddr1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iAddr1.Size = new System.Drawing.Size(307, 23);
-			this.iAddr1.TabIndex = 8;
+			this.iAddr1.TabIndex = 13;
 			// 
 			// ycLabelEx4
 			// 
@@ -695,7 +698,7 @@ namespace App
 			this.iNameFurigana.Name = "iNameFurigana";
 			this.iNameFurigana.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iNameFurigana.Size = new System.Drawing.Size(143, 23);
-			this.iNameFurigana.TabIndex = 5;
+			this.iNameFurigana.TabIndex = 8;
 			// 
 			// iName
 			// 
@@ -706,7 +709,7 @@ namespace App
 			this.iName.Name = "iName";
 			this.iName.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iName.Size = new System.Drawing.Size(143, 23);
-			this.iName.TabIndex = 4;
+			this.iName.TabIndex = 7;
 			// 
 			// ycLabelEx3
 			// 
@@ -735,7 +738,7 @@ namespace App
 			this.iCode.Name = "iCode";
 			this.iCode.SingleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(102)))), ((int)(((byte)(71)))));
 			this.iCode.Size = new System.Drawing.Size(72, 23);
-			this.iCode.TabIndex = 0;
+			this.iCode.TabIndex = 3;
 			// 
 			// ycLabelEx2
 			// 
@@ -769,7 +772,7 @@ namespace App
 			this.iSex.Name = "iSex";
 			this.iSex.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iSex.Size = new System.Drawing.Size(70, 25);
-			this.iSex.TabIndex = 21;
+			this.iSex.TabIndex = 25;
 			// 
 			// ycLabelEx19
 			// 
@@ -2469,6 +2472,11 @@ namespace App
 			// 
 			// tabPage3
 			// 
+			this.tabPage3.Controls.Add(this.ycLabelEx57);
+			this.tabPage3.Controls.Add(this.iGenmen);
+			this.tabPage3.Controls.Add(this.ycLabelEx58);
+			this.tabPage3.Controls.Add(this.iIshikaiIdosaki);
+			this.tabPage3.Controls.Add(this.ycLabelEx18);
 			this.tabPage3.Controls.Add(this.ycLabelEx35);
 			this.tabPage3.Controls.Add(this.btnGakkaiDel);
 			this.tabPage3.Controls.Add(this.btnGakkaiAdd);
@@ -2492,6 +2500,80 @@ namespace App
 			this.tabPage3.Text = "情報3";
 			this.tabPage3.UseVisualStyleBackColor = true;
 			// 
+			// iGenmen
+			// 
+			this.iGenmen.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iGenmen.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iGenmen.ExCompareContent = null;
+			this.iGenmen.ExCompareValue = null;
+			this.iGenmen.ExDataSource = null;
+			this.iGenmen.ExFocusHighlight = true;
+			this.iGenmen.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iGenmen.ListHeaderPane.Height = 27;
+			this.iGenmen.ListHeaderPane.Visible = false;
+			this.iGenmen.Location = new System.Drawing.Point(119, 576);
+			this.iGenmen.Name = "iGenmen";
+			this.iGenmen.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iGenmen.Size = new System.Drawing.Size(126, 25);
+			this.iGenmen.TabIndex = 20;
+			// 
+			// ycLabelEx58
+			// 
+			this.ycLabelEx58.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx58.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx58.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx58.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx58.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx58.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx58.IconImage = null;
+			this.ycLabelEx58.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx58.Location = new System.Drawing.Point(13, 577);
+			this.ycLabelEx58.Name = "ycLabelEx58";
+			this.ycLabelEx58.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx58.Size = new System.Drawing.Size(100, 23);
+			this.ycLabelEx58.TabIndex = 609;
+			this.ycLabelEx58.Text = "会費減免事由";
+			this.ycLabelEx58.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// iIshikaiIdosaki
+			// 
+			this.iIshikaiIdosaki.BackColor = System.Drawing.Color.Transparent;
+			this.iIshikaiIdosaki.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIshikaiIdosaki.CompareValue = null;
+			this.iIshikaiIdosaki.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iIshikaiIdosaki.DBView = null;
+			this.iIshikaiIdosaki.DiabledBackColor = System.Drawing.SystemColors.Control;
+			this.iIshikaiIdosaki.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+			this.iIshikaiIdosaki.DropDownSize = new System.Drawing.Size(100, 44);
+			this.iIshikaiIdosaki.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.iIshikaiIdosaki.ForeColor = System.Drawing.Color.Transparent;
+			this.iIshikaiIdosaki.HighlightText = true;
+			this.iIshikaiIdosaki.Location = new System.Drawing.Point(383, 483);
+			this.iIshikaiIdosaki.Name = "iIshikaiIdosaki";
+			this.iIshikaiIdosaki.RowFilter = "";
+			this.iIshikaiIdosaki.SelectedIndexNullLeave = -1;
+			this.iIshikaiIdosaki.Size = new System.Drawing.Size(183, 23);
+			this.iIshikaiIdosaki.Sort = "";
+			this.iIshikaiIdosaki.TabIndex = 13;
+			this.iIshikaiIdosaki.TextSubItemIndex = -1;
+			// 
+			// ycLabelEx18
+			// 
+			this.ycLabelEx18.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx18.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx18.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx18.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx18.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx18.IconImage = null;
+			this.ycLabelEx18.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx18.Location = new System.Drawing.Point(271, 483);
+			this.ycLabelEx18.Name = "ycLabelEx18";
+			this.ycLabelEx18.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx18.Size = new System.Drawing.Size(106, 23);
+			this.ycLabelEx18.TabIndex = 607;
+			this.ycLabelEx18.Text = "異動先医師会";
+			this.ycLabelEx18.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// ycLabelEx35
 			// 
 			this.ycLabelEx35.BackColor = System.Drawing.Color.SteelBlue;
@@ -2504,7 +2586,7 @@ namespace App
 			this.ycLabelEx35.Location = new System.Drawing.Point(7, 184);
 			this.ycLabelEx35.Name = "ycLabelEx35";
 			this.ycLabelEx35.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx35.Size = new System.Drawing.Size(106, 251);
+			this.ycLabelEx35.Size = new System.Drawing.Size(106, 257);
 			this.ycLabelEx35.TabIndex = 605;
 			this.ycLabelEx35.Text = "異動情報";
 			this.ycLabelEx35.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2568,7 +2650,7 @@ namespace App
 			this.grid_Gakkai.PropBag = resources.GetString("grid_Gakkai.PropBag");
 			this.grid_Gakkai.RowHeight = 14;
 			this.grid_Gakkai.Size = new System.Drawing.Size(435, 165);
-			this.grid_Gakkai.TabIndex = 601;
+			this.grid_Gakkai.TabIndex = 0;
 			this.grid_Gakkai.UseCompatibleTextRendering = false;
 			// 
 			// iTaikaiJiyuEtc
@@ -2576,10 +2658,10 @@ namespace App
 			this.iTaikaiJiyuEtc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTaikaiJiyuEtc.ExFocusHighlight = true;
 			this.iTaikaiJiyuEtc.ImeStr = "";
-			this.iTaikaiJiyuEtc.Location = new System.Drawing.Point(119, 508);
+			this.iTaikaiJiyuEtc.Location = new System.Drawing.Point(383, 509);
 			this.iTaikaiJiyuEtc.Name = "iTaikaiJiyuEtc";
 			this.iTaikaiJiyuEtc.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iTaikaiJiyuEtc.Size = new System.Drawing.Size(195, 23);
+			this.iTaikaiJiyuEtc.Size = new System.Drawing.Size(208, 23);
 			this.iTaikaiJiyuEtc.TabIndex = 12;
 			// 
 			// btnIdoDel
@@ -2627,7 +2709,7 @@ namespace App
 			this.grid_Ido.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid_Ido.PrintInfo.PageSettings")));
 			this.grid_Ido.PropBag = resources.GetString("grid_Ido.PropBag");
 			this.grid_Ido.RowHeight = 14;
-			this.grid_Ido.Size = new System.Drawing.Size(435, 251);
+			this.grid_Ido.Size = new System.Drawing.Size(435, 257);
 			this.grid_Ido.TabIndex = 1;
 			this.grid_Ido.UseCompatibleTextRendering = false;
 			// 
@@ -2642,7 +2724,7 @@ namespace App
 			this.iTaikaiJiyu.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
 			this.iTaikaiJiyu.ListHeaderPane.Height = 27;
 			this.iTaikaiJiyu.ListHeaderPane.Visible = false;
-			this.iTaikaiJiyu.Location = new System.Drawing.Point(119, 477);
+			this.iTaikaiJiyu.Location = new System.Drawing.Point(119, 482);
 			this.iTaikaiJiyu.Name = "iTaikaiJiyu";
 			this.iTaikaiJiyu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTaikaiJiyu.Size = new System.Drawing.Size(124, 25);
@@ -2650,9 +2732,7 @@ namespace App
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.iJushoKeisai);
 			this.groupBox1.Controls.Add(this.iFaxSofu);
-			this.groupBox1.Controls.Add(this.ycLabelEx57);
 			this.groupBox1.Controls.Add(this.iKaihiUchiwake);
 			this.groupBox1.Controls.Add(this.iBunshoSofu);
 			this.groupBox1.Controls.Add(this.ycLabelEx20);
@@ -2664,23 +2744,6 @@ namespace App
 			this.groupBox1.TabIndex = 481;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "処理区分";
-			// 
-			// iJushoKeisai
-			// 
-			this.iJushoKeisai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iJushoKeisai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.iJushoKeisai.ExCompareContent = null;
-			this.iJushoKeisai.ExCompareValue = null;
-			this.iJushoKeisai.ExDataSource = null;
-			this.iJushoKeisai.ExFocusHighlight = true;
-			this.iJushoKeisai.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
-			this.iJushoKeisai.ListHeaderPane.Height = 27;
-			this.iJushoKeisai.ListHeaderPane.Visible = false;
-			this.iJushoKeisai.Location = new System.Drawing.Point(393, 57);
-			this.iJushoKeisai.Name = "iJushoKeisai";
-			this.iJushoKeisai.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iJushoKeisai.Size = new System.Drawing.Size(89, 25);
-			this.iJushoKeisai.TabIndex = 338;
 			// 
 			// iFaxSofu
 			// 
@@ -2698,24 +2761,6 @@ namespace App
 			this.iFaxSofu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iFaxSofu.Size = new System.Drawing.Size(89, 25);
 			this.iFaxSofu.TabIndex = 2;
-			// 
-			// ycLabelEx57
-			// 
-			this.ycLabelEx57.BackColor = System.Drawing.Color.SteelBlue;
-			this.ycLabelEx57.BackColor2 = System.Drawing.Color.Empty;
-			this.ycLabelEx57.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.ycLabelEx57.Font = new System.Drawing.Font("メイリオ", 9.75F);
-			this.ycLabelEx57.ForeColor = System.Drawing.Color.White;
-			this.ycLabelEx57.ForeShadowColor = System.Drawing.Color.Empty;
-			this.ycLabelEx57.IconImage = null;
-			this.ycLabelEx57.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx57.Location = new System.Drawing.Point(287, 59);
-			this.ycLabelEx57.Name = "ycLabelEx57";
-			this.ycLabelEx57.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx57.Size = new System.Drawing.Size(100, 23);
-			this.ycLabelEx57.TabIndex = 339;
-			this.ycLabelEx57.Text = "自宅住所掲載";
-			this.ycLabelEx57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// iKaihiUchiwake
 			// 
@@ -2745,7 +2790,7 @@ namespace App
 			this.iBunshoSofu.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
 			this.iBunshoSofu.ListHeaderPane.Height = 27;
 			this.iBunshoSofu.ListHeaderPane.Visible = false;
-			this.iBunshoSofu.Location = new System.Drawing.Point(139, 23);
+			this.iBunshoSofu.Location = new System.Drawing.Point(139, 24);
 			this.iBunshoSofu.Name = "iBunshoSofu";
 			this.iBunshoSofu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iBunshoSofu.Size = new System.Drawing.Size(89, 25);
@@ -2761,10 +2806,10 @@ namespace App
 			this.ycLabelEx20.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx20.IconImage = null;
 			this.ycLabelEx20.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx20.Location = new System.Drawing.Point(33, 58);
+			this.ycLabelEx20.Location = new System.Drawing.Point(33, 57);
 			this.ycLabelEx20.Name = "ycLabelEx20";
 			this.ycLabelEx20.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx20.Size = new System.Drawing.Size(100, 23);
+			this.ycLabelEx20.Size = new System.Drawing.Size(100, 25);
 			this.ycLabelEx20.TabIndex = 332;
 			this.ycLabelEx20.Text = "FAX送付先";
 			this.ycLabelEx20.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2778,10 +2823,10 @@ namespace App
 			this.ycLabelEx21.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx21.IconImage = null;
 			this.ycLabelEx21.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx21.Location = new System.Drawing.Point(287, 26);
+			this.ycLabelEx21.Location = new System.Drawing.Point(287, 24);
 			this.ycLabelEx21.Name = "ycLabelEx21";
 			this.ycLabelEx21.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx21.Size = new System.Drawing.Size(100, 23);
+			this.ycLabelEx21.Size = new System.Drawing.Size(100, 25);
 			this.ycLabelEx21.TabIndex = 326;
 			this.ycLabelEx21.Text = "月別会費内訳";
 			this.ycLabelEx21.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2798,7 +2843,7 @@ namespace App
 			this.ycLabelEx85.Location = new System.Drawing.Point(33, 24);
 			this.ycLabelEx85.Name = "ycLabelEx85";
 			this.ycLabelEx85.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx85.Size = new System.Drawing.Size(100, 23);
+			this.ycLabelEx85.Size = new System.Drawing.Size(100, 25);
 			this.ycLabelEx85.TabIndex = 324;
 			this.ycLabelEx85.Text = "文書送付先";
 			this.ycLabelEx85.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2812,10 +2857,10 @@ namespace App
 			this.ycLabelEx65.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx65.IconImage = null;
 			this.ycLabelEx65.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx65.Location = new System.Drawing.Point(7, 477);
+			this.ycLabelEx65.Location = new System.Drawing.Point(7, 482);
 			this.ycLabelEx65.Name = "ycLabelEx65";
 			this.ycLabelEx65.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx65.Size = new System.Drawing.Size(106, 54);
+			this.ycLabelEx65.Size = new System.Drawing.Size(106, 25);
 			this.ycLabelEx65.TabIndex = 480;
 			this.ycLabelEx65.Text = "退会事由";
 			this.ycLabelEx65.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -2841,7 +2886,7 @@ namespace App
 			// 
 			this.iTaikaiDate.DisabledBackColor = System.Drawing.SystemColors.Control;
 			this.iTaikaiDate.DisabledForeColor = System.Drawing.Color.Black;
-			this.iTaikaiDate.Location = new System.Drawing.Point(119, 445);
+			this.iTaikaiDate.Location = new System.Drawing.Point(119, 451);
 			this.iTaikaiDate.Name = "iTaikaiDate";
 			this.iTaikaiDate.SingleBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(102)))), ((int)(((byte)(71)))));
 			this.iTaikaiDate.Size = new System.Drawing.Size(143, 25);
@@ -2865,7 +2910,7 @@ namespace App
 			this.ycLabelEx63.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx63.IconImage = null;
 			this.ycLabelEx63.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx63.Location = new System.Drawing.Point(7, 445);
+			this.ycLabelEx63.Location = new System.Drawing.Point(7, 451);
 			this.ycLabelEx63.Name = "ycLabelEx63";
 			this.ycLabelEx63.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx63.Size = new System.Drawing.Size(106, 25);
@@ -2882,7 +2927,7 @@ namespace App
 			this.iFax_3.Name = "iFax_3";
 			this.iFax_3.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iFax_3.Size = new System.Drawing.Size(50, 23);
-			this.iFax_3.TabIndex = 18;
+			this.iFax_3.TabIndex = 23;
 			// 
 			// ycLabelEx7
 			// 
@@ -2927,7 +2972,7 @@ namespace App
 			this.iFax_2.Name = "iFax_2";
 			this.iFax_2.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iFax_2.Size = new System.Drawing.Size(50, 23);
-			this.iFax_2.TabIndex = 17;
+			this.iFax_2.TabIndex = 22;
 			// 
 			// iFax_1
 			// 
@@ -2938,7 +2983,7 @@ namespace App
 			this.iFax_1.Name = "iFax_1";
 			this.iFax_1.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iFax_1.Size = new System.Drawing.Size(50, 23);
-			this.iFax_1.TabIndex = 16;
+			this.iFax_1.TabIndex = 21;
 			// 
 			// ycLabelEx12
 			// 
@@ -2999,7 +3044,7 @@ namespace App
 			this.iIsekiTorokuDate.Name = "iIsekiTorokuDate";
 			this.iIsekiTorokuDate.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iIsekiTorokuDate.Size = new System.Drawing.Size(143, 25);
-			this.iIsekiTorokuDate.TabIndex = 3;
+			this.iIsekiTorokuDate.TabIndex = 6;
 			this.iIsekiTorokuDate.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iIsekiTorokuDate.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iIsekiTorokuDate.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3019,7 +3064,7 @@ namespace App
 			this.iIsekiTourokuNo.Name = "iIsekiTourokuNo";
 			this.iIsekiTourokuNo.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iIsekiTourokuNo.Size = new System.Drawing.Size(71, 23);
-			this.iIsekiTourokuNo.TabIndex = 2;
+			this.iIsekiTourokuNo.TabIndex = 5;
 			// 
 			// ycLabelEx43
 			// 
@@ -3098,7 +3143,7 @@ namespace App
 			this.iSotsugyoNengetsu.Name = "iSotsugyoNengetsu";
 			this.iSotsugyoNengetsu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iSotsugyoNengetsu.Size = new System.Drawing.Size(115, 25);
-			this.iSotsugyoNengetsu.TabIndex = 23;
+			this.iSotsugyoNengetsu.TabIndex = 27;
 			this.iSotsugyoNengetsu.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iSotsugyoNengetsu.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iSotsugyoNengetsu.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3118,7 +3163,7 @@ namespace App
 			this.iShusshinKou.Name = "iShusshinKou";
 			this.iShusshinKou.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShusshinKou.Size = new System.Drawing.Size(221, 23);
-			this.iShusshinKou.TabIndex = 22;
+			this.iShusshinKou.TabIndex = 26;
 			// 
 			// iShuryoNengetsu
 			// 
@@ -3128,7 +3173,7 @@ namespace App
 			this.iShuryoNengetsu.Name = "iShuryoNengetsu";
 			this.iShuryoNengetsu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShuryoNengetsu.Size = new System.Drawing.Size(115, 25);
-			this.iShuryoNengetsu.TabIndex = 25;
+			this.iShuryoNengetsu.TabIndex = 29;
 			this.iShuryoNengetsu.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iShuryoNengetsu.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iShuryoNengetsu.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3148,7 +3193,7 @@ namespace App
 			this.iShusshinDaigakuin.Name = "iShusshinDaigakuin";
 			this.iShusshinDaigakuin.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShusshinDaigakuin.Size = new System.Drawing.Size(222, 23);
-			this.iShusshinDaigakuin.TabIndex = 24;
+			this.iShusshinDaigakuin.TabIndex = 28;
 			// 
 			// ycLabelEx15
 			// 
@@ -3175,7 +3220,7 @@ namespace App
 			this.iGakuiNengetsu.Name = "iGakuiNengetsu";
 			this.iGakuiNengetsu.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iGakuiNengetsu.Size = new System.Drawing.Size(115, 25);
-			this.iGakuiNengetsu.TabIndex = 26;
+			this.iGakuiNengetsu.TabIndex = 30;
 			this.iGakuiNengetsu.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iGakuiNengetsu.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iGakuiNengetsu.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3194,7 +3239,7 @@ namespace App
 			this.iTorokuDate.Name = "iTorokuDate";
 			this.iTorokuDate.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iTorokuDate.Size = new System.Drawing.Size(143, 25);
-			this.iTorokuDate.TabIndex = 27;
+			this.iTorokuDate.TabIndex = 40;
 			this.iTorokuDate.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iTorokuDate.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iTorokuDate.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3247,7 +3292,7 @@ namespace App
 			this.iNyuukaiDate.Name = "iNyuukaiDate";
 			this.iNyuukaiDate.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iNyuukaiDate.Size = new System.Drawing.Size(143, 25);
-			this.iNyuukaiDate.TabIndex = 30;
+			this.iNyuukaiDate.TabIndex = 0;
 			this.iNyuukaiDate.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iNyuukaiDate.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iNyuukaiDate.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3315,7 +3360,7 @@ namespace App
 			this.iShoninDate.Name = "iShoninDate";
 			this.iShoninDate.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShoninDate.Size = new System.Drawing.Size(143, 25);
-			this.iShoninDate.TabIndex = 31;
+			this.iShoninDate.TabIndex = 1;
 			this.iShoninDate.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iShoninDate.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iShoninDate.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3384,7 +3429,7 @@ namespace App
 			this.iKaiinKbn.SelectedIndexNullLeave = -1;
 			this.iKaiinKbn.Size = new System.Drawing.Size(144, 23);
 			this.iKaiinKbn.Sort = "";
-			this.iKaiinKbn.TabIndex = 28;
+			this.iKaiinKbn.TabIndex = 31;
 			this.iKaiinKbn.TextSubItemIndex = -1;
 			// 
 			// oLastUpdate
@@ -3486,7 +3531,7 @@ namespace App
 			this.iShinseiDate.Name = "iShinseiDate";
 			this.iShinseiDate.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iShinseiDate.Size = new System.Drawing.Size(143, 25);
-			this.iShinseiDate.TabIndex = 452;
+			this.iShinseiDate.TabIndex = 2;
 			this.iShinseiDate.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iShinseiDate.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iShinseiDate.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
@@ -3514,16 +3559,16 @@ namespace App
 			this.ycLabelEx28.Text = "申請年月日";
 			this.ycLabelEx28.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// iNameOldFurigana
+			// iNameFuriganaOld
 			// 
-			this.iNameOldFurigana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iNameOldFurigana.ExFocusHighlight = true;
-			this.iNameOldFurigana.ImeStr = "";
-			this.iNameOldFurigana.Location = new System.Drawing.Point(412, 276);
-			this.iNameOldFurigana.Name = "iNameOldFurigana";
-			this.iNameOldFurigana.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iNameOldFurigana.Size = new System.Drawing.Size(144, 23);
-			this.iNameOldFurigana.TabIndex = 455;
+			this.iNameFuriganaOld.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iNameFuriganaOld.ExFocusHighlight = true;
+			this.iNameFuriganaOld.ImeStr = "";
+			this.iNameFuriganaOld.Location = new System.Drawing.Point(412, 276);
+			this.iNameFuriganaOld.Name = "iNameFuriganaOld";
+			this.iNameFuriganaOld.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iNameFuriganaOld.Size = new System.Drawing.Size(144, 23);
+			this.iNameFuriganaOld.TabIndex = 10;
 			// 
 			// iNameOld
 			// 
@@ -3534,7 +3579,7 @@ namespace App
 			this.iNameOld.Name = "iNameOld";
 			this.iNameOld.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iNameOld.Size = new System.Drawing.Size(144, 23);
-			this.iNameOld.TabIndex = 454;
+			this.iNameOld.TabIndex = 9;
 			// 
 			// ycLabelEx56
 			// 
@@ -3553,13 +3598,31 @@ namespace App
 			this.ycLabelEx56.Text = "旧 氏 名\r\nフリガナ";
 			this.ycLabelEx56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// ycLabelEx57
+			// 
+			this.ycLabelEx57.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx57.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx57.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx57.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx57.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx57.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx57.IconImage = null;
+			this.ycLabelEx57.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx57.Location = new System.Drawing.Point(271, 509);
+			this.ycLabelEx57.Name = "ycLabelEx57";
+			this.ycLabelEx57.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx57.Size = new System.Drawing.Size(106, 23);
+			this.ycLabelEx57.TabIndex = 610;
+			this.ycLabelEx57.Text = "その他";
+			this.ycLabelEx57.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
 			// FormKaiin_DlgEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(1224, 869);
 			this.Controls.Add(this.ycLabelEx56);
-			this.Controls.Add(this.iNameOldFurigana);
+			this.Controls.Add(this.iNameFuriganaOld);
 			this.Controls.Add(this.iNameOld);
 			this.Controls.Add(this.iShinseiDate);
 			this.Controls.Add(this.ycLabelEx28);
@@ -3716,7 +3779,7 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx28, 0);
 			this.Controls.SetChildIndex(this.iShinseiDate, 0);
 			this.Controls.SetChildIndex(this.iNameOld, 0);
-			this.Controls.SetChildIndex(this.iNameOldFurigana, 0);
+			this.Controls.SetChildIndex(this.iNameFuriganaOld, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx56, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iMail1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTel2_3)).EndInit();
@@ -3783,12 +3846,12 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iBankCD1)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_Kaihi)).EndInit();
 			this.tabPage3.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.iGenmen)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_Gakkai)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyuEtc)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_Ido)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyu)).EndInit();
 			this.groupBox1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.iJushoKeisai)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iFaxSofu)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiUchiwake)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBunshoSofu)).EndInit();
@@ -3800,7 +3863,7 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.iShusshinDaigakuin)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid_KaihiIshikai)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iIshikaiShiharai)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iNameOldFurigana)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iNameFuriganaOld)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameOld)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -4011,10 +4074,13 @@ namespace App
 		private System.Windows.Forms.Button btnGakkaiAdd;
 		private UcTableComboBox iSyozokuGakkai;
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid_Gakkai;
-		private GControlGcTextBoxEx.GcTextBoxEx iNameOldFurigana;
+		private GControlGcTextBoxEx.GcTextBoxEx iNameFuriganaOld;
 		private GControlGcTextBoxEx.GcTextBoxEx iNameOld;
 		private YControlLabelEx.YcLabelEx ycLabelEx56;
-		private GControlGcComboBoxEx.GcComboBoxEx iJushoKeisai;
+		private UcTableComboBox iIshikaiIdosaki;
+		private YControlLabelEx.YcLabelEx ycLabelEx18;
+		private GControlGcComboBoxEx.GcComboBoxEx iGenmen;
+		private YControlLabelEx.YcLabelEx ycLabelEx58;
 		private YControlLabelEx.YcLabelEx ycLabelEx57;
 	}
 }

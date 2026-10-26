@@ -192,7 +192,8 @@ namespace App
 			#region +++ t_kaiin +++
 			Rule.Add(code, t_kaiin.FCD_Kaiin);
 			Rule.Add(new GControlDBRuleRuby(t_kaiin.FKaiin_Name, new int[] { 15, 30 }));
-//			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_NameOld, 20));
+			Rule.Add(new GControlDBRuleRuby(t_kaiin.FKaiin_NameOld, new int[] { 15, 30 }));
+			//Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_NameOld, 20));
 			Rule.Add(post, t_kaiin.FKaiin_Post);
 			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_Addr2, 40));
 			Rule.Add(new GControlDBRuleHyphenSplit(t_kaiin.FKaiin_Tel1, new int[] { 5, 4, 5 }));

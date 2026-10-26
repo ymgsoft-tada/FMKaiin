@@ -259,9 +259,13 @@ namespace App
 		/// </summary>
 		Shibo = 2,
 		/// <summary>
+		/// 医師会の異動
+		/// </summary>
+		Ido = 3,
+		/// <summary>
 		/// その他
 		/// </summary>
-		Etc = 3,
+		Etc = 4,
 	}
 	
 	/// <summary>
@@ -434,6 +438,45 @@ namespace App
 	}
 	
 	/// <summary>
+	/// [列挙] 会費減免事由
+	/// </summary>
+	public enum eTypeGenmen
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 高齢
+		/// </summary>
+		Korei = 1,
+		/// <summary>
+		/// 疾病その他
+		/// </summary>
+		Shitsubyo = 2,
+		/// <summary>
+		/// 出産育児
+		/// </summary>
+		Ikuji = 3,
+		/// <summary>
+		/// 卒後5年
+		/// </summary>
+		Sotsu5nen = 4,
+		/// <summary>
+		/// 40歳以下
+		/// </summary>
+		Age40 = 5,
+		/// <summary>
+		/// 30歳以下
+		/// </summary>
+		Age30 = 6,
+		/// <summary>
+		/// 研修医
+		/// </summary>
+		Kenshui = 7,
+	}
+	
+	/// <summary>
 	/// [作成者 fj]
 	/// テーブル編集の際に使うクラスです。
 	/// </summary>
@@ -511,6 +554,10 @@ namespace App
 		/// eIdoAddress に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DIdoAddress;
+		/// <summary>
+		/// eTypeGenmen に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeGenmen;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -580,6 +627,7 @@ namespace App
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.None, "");
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Haiki, "廃棄・退職");
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Shibo, "死亡");
+			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Ido, "医師会の異動");
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Etc, "その他");
 			
 			DIdoShisetsu = new Dictionary<int, string>();
@@ -625,6 +673,16 @@ namespace App
 			DIdoAddress.Add((int)eIdoAddress.None, "");
 			DIdoAddress.Add((int)eIdoAddress.Tenkyo, "転居");
 			DIdoAddress.Add((int)eIdoAddress.Etc, "その他");
+			
+			DTypeGenmen = new Dictionary<int, string>();
+			DTypeGenmen.Add((int)eTypeGenmen.None, "");
+			DTypeGenmen.Add((int)eTypeGenmen.Korei, "高齢");
+			DTypeGenmen.Add((int)eTypeGenmen.Shitsubyo, "疾病その他");
+			DTypeGenmen.Add((int)eTypeGenmen.Ikuji, "出産育児");
+			DTypeGenmen.Add((int)eTypeGenmen.Sotsu5nen, "卒後5年");
+			DTypeGenmen.Add((int)eTypeGenmen.Age40, "40歳以下");
+			DTypeGenmen.Add((int)eTypeGenmen.Age30, "30歳以下");
+			DTypeGenmen.Add((int)eTypeGenmen.Kenshui, "研修医");
 		}
 	}
 }

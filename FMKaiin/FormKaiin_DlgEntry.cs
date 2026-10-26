@@ -317,7 +317,7 @@ namespace App
 					{
 						if (gcom_kaihiIshikai.SelectNextControl(!e.Shift) == false) // 次コントロールが存在しない(最終行)
 						{
-							//gbxBank.Select(); // 銀行情報グループへフォーカス移動
+							//gbxBank.Select(); // フォーカス移動
 						}
 						return;
 					}
@@ -387,6 +387,7 @@ namespace App
 			AppCombo.SetComboBox(iKozaType1, enumKbn.DTypeKoza); // 銀行 口座区分 空欄選択あり
 			AppCombo.SetComboBox(iKozaType2, enumKbn.DTypeKoza);
 			AppCombo.SetComboBox(iKozaType3, enumKbn.DTypeKoza);
+			AppCombo.SetComboBox(iGenmen, enumKbn.DTypeGenmen); // 会費減免事由
 
 			// iSearch
 			dvIryoKikan = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_iryokikan)); // 下で会員IDフィルタし情報表示に使うdv
@@ -398,9 +399,13 @@ namespace App
 
 			dvIshikai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_ishikai));
 			AppTableCombo.SetComboBox_Ishikai(iIshikaiIdomae, dvIshikai); // 異動前医師会
+			AppTableCombo.SetComboBox_Ishikai(iIshikaiIdosaki, dvIshikai); // 異動先医師会
 
 			dvShisetsugyomu = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_shisetsugyomu));
 			AppTableCombo.SetComboBox_Shisetsugyomu(iIryoShisetsugyomu, dvShisetsugyomu); // 医療 - 施設・業務
+
+			dvShinryo = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_shinryoka)); // ※下記の担当診療GridのiSearchでも利用
+			AppTableCombo.SetComboBox_Shinryoka(iTantoMainKamoku, dvShinryo); // 診療科目(主担当)
 
 			// 手動
 			// 文書送付先
@@ -431,13 +436,6 @@ namespace App
 			//iKbnKoukai.ExEndUpdate();
 			//iKbnKoukai.ExSetSelectedIndexByValue(true);
 
-			// 自宅住所掲載
-			iJushoKeisai.ExBeginUpdate();
-			iJushoKeisai.ExAddItem("可", true);
-			iJushoKeisai.ExAddItem("不可", false);
-			iJushoKeisai.ExEndUpdate();
-			iJushoKeisai.ExSetSelectedIndexByValue(true);
-
 			gctl = new GControlDB(this, getDataRow, AppGlobal.DB.DBZipCode);
 
 			gctl.Add(new GControlDBText(t_kaiin.FCD_Kaiin, iCode)); // 会員コード
@@ -452,6 +450,16 @@ namespace App
 				new Control[] {
 								iName,
 								iNameFurigana
+				}
+			));
+			gctl.Add(new GControlDBRuby(
+				new string[] {
+								t_kaiin.FKaiin_NameOld,    // 旧氏名
+								t_kaiin.FKaiin_NameKanaOld // 氏名カナ
+				},
+				new Control[] {
+								iNameOld,
+								iNameFuriganaOld
 				}
 			));
 			gctl.Add(new GControlDBPostAddr(
@@ -485,6 +493,8 @@ namespace App
 
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_TypeZaiseki, iZaiseki)); // 在籍区分
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_Ishikai_Idomae, iIshikaiIdomae.ComboBox)); // 異動前医師会
+
+			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_TypeGenmen, iGenmen)); // 会費減免事由
 
 			// 医師会会員Grid準備
 			// ■コントロール設定
@@ -528,8 +538,6 @@ namespace App
 			gctl_kaihiIshikai.Add(new GControlDBCombo(t_kaiin_kaihi.FKaihiShiharai, iIshikaiShiharai)); // 支払方法
 			gctl_kaihiIshikai.EndAdd(AppDbRule.Rule);
 
-			// イベント登録 なし
-
 			changeFilterKaihiIshikai(); // 表示中会員の情報のみへフィルタ
 			rowFetchKaihiIshikai(); // コントロール値セット(グリッド初期表示値)
 
@@ -539,7 +547,8 @@ namespace App
 			// 医療機関
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_Iryokikan, iIryoKikan.ComboBox)); // 医療機関コード
 			gctl.Add(new GControlDBCombo(t_kaiin.FID_ShisetsuGyomu, iIryoShisetsugyomu.ComboBox)); // 施設・業務
-			// 指定医 -> chkbox処理個別対応
+			// 指定医chkbox → バインドでなく個別に対応(fetchIryoShiteii())
+			gctl.Add(new GControlDBText(t_kaiin.FKaiin_ShiteiiEtc, iIryoShiteiiEtc)); // 指定医:その他入力欄
 
 			// --タブ2--
 			// 銀行
@@ -563,14 +572,14 @@ namespace App
 			// 退会
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateTaikai, iTaikaiDate.UcDateCtl)); // 退会年月日
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_TypeTaikaiJiyu, iTaikaiJiyu)); // 退会事由
-			gctl.Add(new GControlDBText(t_kaiin.FKaiin_TaikaiEtcmemo, iTaikaiJiyuEtc)); // 退会事由
+			gctl.Add(new GControlDBText(t_kaiin.FKaiin_TaikaiEtcmemo, iTaikaiJiyuEtc)); // 退会事由その他
+			gctl.Add(new GControlDBCombo(t_kaiin.FID_Ishikai_Idosaki, iIshikaiIdosaki.ComboBox)); // 異動先医師会
 
 			// 処理区分
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_BunshoSofusaki, iBunshoSofu)); // 文書送付先
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_FaxSofusaki, iFaxSofu)); // FAX送付先
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KaihiUchiwake, iKaihiUchiwake)); // 月別会費内訳
 			//gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KokaiKbn, iKbnKoukai)); // 公開区分
-			// --自宅住所掲載 のDB列追加の後バインド追記--
 
 			gctl.EndAdd(AppDbRule.Rule);
 
@@ -604,8 +613,8 @@ namespace App
 
 //			iName.Select(); // フォーカス指定
 
-			// 退会事由その他詳細 状態制御
-			enabled_iTaikaiJiyuEtc();
+			// 退会事由コントロール 状態制御
+			enabled_iTaikaiJiyuCtl();
 
 			//■ イベントの登録
 			iIryoKikan.TextChanged += iIryoKikan_TextChanged;
@@ -622,6 +631,7 @@ namespace App
 			iShitenCD3.TextChanged += iShitenCD_TextChanged;
 			iShitenCD3.MouseDoubleClick += cd_MouseDoubleClick;
 			iTaikaiJiyu.SelectedIndexChanged += iTaikaiJiyu_SelectedIndexChanged; // 退会事由cmb
+			iIryoShiteii10.CheckedChanged += iIryoShiteii10_CheckedChanged; // 医療-指定医その他chk
 
 			// 医療機関情報準備
 			// 医療機関情報バインド
@@ -677,9 +687,7 @@ namespace App
 			//-----担当診療科目Grid準備-----
 			// ■コントロール設定
 			// コンボボックス
-			dvShinryo = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_shinryoka));
 			AppTableCombo.SetComboBox_Shinryoka(iTantoKamoku, dvShinryo); // iSearch
-			AppTableCombo.SetComboBox_Shinryoka(iTantoMainKamoku, dvShinryo); // iSearch(主担当)
 
 			// ■Grid設定
 			AppGridCommon.StyleSet(grid_Sinryo);
@@ -873,14 +881,23 @@ namespace App
 		/// </summary>
 		void iTaikaiJiyu_SelectedIndexChanged(object sender, EventArgs e)
 		{
-			enabled_iTaikaiJiyuEtc();
+			enabled_iTaikaiJiyuCtl();
 		}
 
 		/// <summary>
-		/// 退会事由その他テキストボックス制御
+		/// 退会事由関連コントロール制御
 		/// </summary>
-		void enabled_iTaikaiJiyuEtc()
+		void enabled_iTaikaiJiyuCtl()
 		{
+			if (iTaikaiJiyu.SelectedIndex == (int)eTypeTaikaiJiyu.Ido)
+			{
+				iIshikaiIdosaki.Enabled = true; // 退会事由:医師会の異動→活性
+			}
+			else
+			{
+				iIshikaiIdosaki.Enabled = false;
+			}
+
 			if (iTaikaiJiyu.SelectedIndex == (int)eTypeTaikaiJiyu.Etc)
 			{
 				iTaikaiJiyuEtc.Enabled = true; // 退会事由:その他→活性
@@ -1302,15 +1319,7 @@ namespace App
 			}
 
 			// その他チェックありの場合、入力欄を活性
-			if (iIryoShiteii10.Checked == true)
-			{
-				iIryoShiteiiEtc.Enabled = true;
-			}
-			else
-			{
-				iIryoShiteiiEtc.Enabled = false;
-				iIryoShiteiiEtc.Text = null;
-			}
+			enabled_ShiteiiCtl();
 		}
 
 		/// <summary>
@@ -1338,10 +1347,40 @@ namespace App
 
 			this.Row[t_kaiin.FKaiin_Shiteii] = shiteii;
 
-			// その他チェックありの場合、DB値をセット
-			if (iIryoShiteii10.Checked == true)
+			// その他チェックありの場合、DB値をセット, それ以外はクリア
+			/*if (iIryoShiteii10.Checked == true)
 			{
 				this.Row[t_kaiin.FKaiin_ShiteiiEtc] = iIryoShiteiiEtc.Text;
+			}
+			else
+			{
+				this.Row[t_kaiin.FKaiin_ShiteiiEtc] = null;
+			}*/
+
+		}
+
+		/// <summary>
+		/// 医療機関-指定医:その他 チェック変更
+		/// </summary>
+		void iIryoShiteii10_CheckedChanged(object sender, EventArgs e)
+		{
+			enabled_ShiteiiCtl();
+		}
+
+		/// <summary>
+		/// 指定医情報のその他メモ欄制御
+		/// </summary>
+		void enabled_ShiteiiCtl()
+		{
+			// その他チェックありの場合、入力欄を活性
+			if (iIryoShiteii10.Checked == true)
+			{
+				iIryoShiteiiEtc.Enabled = true;
+			}
+			else
+			{
+				iIryoShiteiiEtc.Enabled = false;
+				iIryoShiteiiEtc.Text = null;
 			}
 		}
 
@@ -2245,8 +2284,13 @@ namespace App
 			// 更新担当者のセット
 			this.Row[t_kaiin.FLastUpdateUser] = AppGlobal.LoginUser.ID;
 
-			// 退会事由-その他詳細のDB値をクリア
-			if (iTaikaiJiyu.SelectedIndex != (int)eTypeTaikaiJiyu.Etc) // 退会事由:その他 以外を選択
+			// 退会事由:医師会の異動 以外を選択→異動先医師会のDB値をクリア
+			if (iTaikaiJiyu.SelectedIndex != (int)eTypeTaikaiJiyu.Ido)
+			{
+				this.Row[t_kaiin.FID_Ishikai_Idosaki] = DBNull.Value;
+			}
+			// 退会事由:その他 以外を選択→退会その他詳細のDB値をクリア
+			if (iTaikaiJiyu.SelectedIndex != (int)eTypeTaikaiJiyu.Etc)
 			{
 				this.Row[t_kaiin.FKaiin_TaikaiEtcmemo] = null;
 			}
