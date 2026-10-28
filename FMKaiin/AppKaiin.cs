@@ -17,6 +17,8 @@ namespace App
 		List<Kaiin> all_list;
 		Dictionary<int, Kaiin> dics_id;
 		Dictionary<int, Kaiin> dics_cd;
+		// グループIDをキーとした履歴情報
+		Dictionary<int, List<Kaiin>> grp_history;
 
 		/// <summary>
 		/// 参照用のビュー
@@ -31,6 +33,7 @@ namespace App
 			all_list = new List<Kaiin>();
 			dics_id = new Dictionary<int, Kaiin>();
 			dics_cd = new Dictionary<int, Kaiin>();
+			grp_history = new Dictionary<int, List<Kaiin>>();
 		}
 
 		/// <summary>
@@ -69,6 +72,20 @@ namespace App
 				if (dics_cd.ContainsKey(obj.CD) == false)
 				{
 					dics_cd.Add(obj.CD, obj);
+				}
+
+				if (xrow.ID_KaiinGroup > 0)
+				{
+					if (grp_history.ContainsKey(obj.GroupID) == false)
+					{
+						grp_history.Add(obj.GroupID, new List<Kaiin>());
+					}
+					else
+					{
+						//　再入会の人は過去分を登録
+						obj.AddHistory(grp_history[obj.GroupID]);
+					}
+					grp_history[obj.GroupID].Add(obj);
 				}
 			}
 
@@ -156,6 +173,11 @@ namespace App
 		{
 			get; private set;
 		}
+		/// <summary>グループID</summary>
+		public int GroupID
+		{
+			get; private set;
+		}
 		/// <summary>コード（文字列）</summary>
 		public string CodeString
 		{
@@ -191,6 +213,9 @@ namespace App
 			get; private set;
 		}
 
+		// 過去の入会情報
+		List<Kaiin> history;
+
 		// 会費単位の支払方法
 		Dictionary<int, eShiharai> dic_shiharai;
 
@@ -203,12 +228,14 @@ namespace App
 
 			this.ID = XRow.ID_Kaiin;
 			this.CD = XRow.CD_Kaiin;
+			this.GroupID = XRow.ID_KaiinGroup;
 			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 
 			Kaihis = new List<Kaihi>();
 			Gakkais = new List<Gakkai>();
 			Shinryokas  = new List<Shinryoka>();
 			dic_shiharai = new Dictionary<int, eShiharai>();
+			history = new List<Kaiin>();
 
 		}
 
@@ -274,6 +301,81 @@ namespace App
 			{
 				Shinryokas.Add(AppGlobal.Shinryokas.Get(xrow.ID_Shinryoka));
 			}
+		}
+
+		/// <summary>
+		/// 履歴の登録
+		/// </summary>
+		/// <param name="vals"></param>
+		public void AddHistory(List<Kaiin> vals)
+		{
+			history.AddRange(vals);
+		}
+
+		/// <summary>
+		/// 過去の入会情報を取得します。
+		/// </summary>
+		/// <returns></returns>
+		public List<Kaiin> GetHistoryList()
+		{
+			return history;
+		}
+
+		/// <summary>
+		/// 在籍期間の合計月数を取得します。
+		/// 現在の会員情報と過去の会員情報（再入会前）の在籍月数を合算します。
+		/// 在籍中の場合はシステム日付までを期間とします。
+		/// </summary>
+		/// <returns>在籍月数の合計</returns>
+		public int GetTotalMembershipMonths()
+		{
+			// 現在の会員情報（退会日なしは在籍中としてシステム日付まで）
+			int total = GetMembershipMonths(XRow.Kaiin_DateNyukai_Null, XRow.Kaiin_DateTaikai_Null ?? DateTime.Today);
+
+			// 過去の会員情報（退会日なしは算出対象外）
+			foreach (Kaiin ka in history)
+			{
+				if (ka.XRow.Kaiin_DateTaikai_Null == null)
+					continue;
+
+				total += GetMembershipMonths(ka.XRow.Kaiin_DateNyukai_Null, ka.XRow.Kaiin_DateTaikai_Null.Value);
+			}
+
+			return total;
+		}
+
+		/// <summary>
+		/// 在籍期間の合計を「n年nヶ月」の文字列で取得します。
+		/// </summary>
+		/// <returns>在籍期間の文字列</returns>
+		public string GetMembershipYearMonth()
+		{
+			int months = GetTotalMembershipMonths();
+
+			return $"{months / 12}年{months % 12}ヶ月";
+		}
+
+		/// <summary>
+		/// 1期間の在籍月数を取得します。入会日がない、または期間が逆転している場合は0を返します。
+		/// </summary>
+		/// <param name="from">入会日</param>
+		/// <param name="to">退会日（在籍中はシステム日付）</param>
+		/// <returns>在籍月数</returns>
+		private static int GetMembershipMonths(DateTime? from, DateTime to)
+		{
+			if (from == null || to < from.Value)
+				return 0;
+
+			DateTime f = from.Value.Date;
+			DateTime t = to.Date.AddDays(1);	// 退会日（当日）を在籍に含める
+
+			int months = (t.Year - f.Year) * 12 + t.Month - f.Month;
+
+			// 経過していない月は差し引く
+			if (t.Day < f.Day)
+				months--;
+
+			return months;
 		}
 	}
 }

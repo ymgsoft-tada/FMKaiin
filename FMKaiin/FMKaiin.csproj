@@ -137,6 +137,12 @@
     <Compile Include="FormHikiotoshi_DlgEntry.Designer.cs">
       <DependentUpon>FormHikiotoshi_DlgEntry.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKaiin_DlgHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKaiin_DlgHistory.Designer.cs">
+      <DependentUpon>FormKaiin_DlgHistory.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -401,6 +407,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHikiotoshi_DlgEntry.resx">
       <DependentUpon>FormHikiotoshi_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKaiin_DlgHistory.resx">
+      <DependentUpon>FormKaiin_DlgHistory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>

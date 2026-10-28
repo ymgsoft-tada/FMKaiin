@@ -300,6 +300,7 @@ namespace App
 			FuncKaiin.RowDelete.Execute = rowDelete;
 			FuncKaiin.CopyAdd.Execute = CopyAdd;
 			FuncKaiin.Rejoin.Execute = RejoinAdd;
+			FuncKaiin.ShowZaiseki.Execute = showZaiseki;
 			FuncKaiin.Preview.Execute = preview;
 			FuncKaiin.Close.Execute = formClose;
 
@@ -314,6 +315,22 @@ namespace App
 			//appFuncKey.SetEnabled(FuncStaff.ShowMyno.Key, enabled);
 			//appFuncKey.SetVisible(FuncStaff.ShowMyno.Key, enabled);
 
+		}
+
+		/// <summary>
+		/// 在籍期間
+		/// </summary>
+		void showZaiseki()
+		{
+			if (dvKaiin.Count > 0)
+			{
+				t_kaiin xrow = new t_kaiin(dvKaiin.CurrentRow);
+
+				FormKaiin_DlgHistory frm = new FormKaiin_DlgHistory();
+				frm.SelectKaiin = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
+				frm.ShowDialog();
+				frm.Dispose();
+			}
 		}
 
 		/// <summary>

@@ -1912,6 +1912,30 @@ namespace App
 	}
 	#endregion
 
+	#region *** FuncKaiin_DlgHistory ***
+	/// <summary>
+	/// FuncKaiin_DlgHistoryのファンクションキー定義クラス
+	/// </summary>
+	public class FuncKaiin_DlgHistory
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[0];
+	}
+	#endregion
+
 
 }
 
