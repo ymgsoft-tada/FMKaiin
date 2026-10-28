@@ -75,8 +75,8 @@ namespace App
 		{
 			dvHiki = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_hikiotoshi));
 
-			// 一か月前を初期値としておく
-			DateTime dt = DateTime.Now.AddMonths(-1);
+			// 初期値はシステム日付（当月）
+			DateTime dt = DateTime.Now;
 
 			iDateYM.UcValue = new DateTime(dt.Year, dt.Month,1);
 
@@ -152,19 +152,28 @@ namespace App
 			dv.RowFilterQuery($"{t_hikiotoshi.FHiki_DateYM} = #{ym}#");
 			dv.SortQuery($"{t_hikiotoshi.FLastUpdate} DESC");
 
-			string lbl = "";
+			string lblupdate = "";
+			string lbluser = "";
 
 			if (dv.Count > 0)
 			{
 				t_hikiotoshi xrow = new t_hikiotoshi(dv[0]);
+				Tanto tnt = AppGlobal.Tantos.Get(xrow.LastUpdateUser);
 
-				lbl = $"最終更新：{xrow.LastUpdate.ToString("yyyy/MM/dd hh:mm")}";
+				lblupdate = $"最終更新：{xrow.LastUpdate.ToString("yyyy/MM/dd hh:mm")}";
+
+				if (tnt != null)
+				{
+					lbluser = $"{tnt.Name}";
+				}
 			}
 
-			lblCreateDate.Text = lbl;
+			lblCreateDate.Text = lblupdate;
+			lblUpdateUser.Text = lbluser;
 
 			// 編集ボタンの使用可否
 			appFuncKey.SetEnabled(FuncHikiotoshi.Edit.Key, dvGrid.Count > 0);
+			appFuncKey.SetEnabled(FuncHikiotoshi.ReMake.Key, dvGrid.Count > 0);
 		}
 
 		private void prog_DoWorkEvent(object sender, DoWorkEventArgs e)
@@ -205,8 +214,51 @@ namespace App
 			appFuncKey = new AppFunctionKey(funckey, FuncHikiotoshi.Functions);
 
 			FuncHikiotoshi.Exec.Execute = doExec;
+			FuncHikiotoshi.ReMake.Execute = reMake;
 			FuncHikiotoshi.Edit.Execute = showEdit;
 			FuncHikiotoshi.Close.Execute = formClose;
+		}
+
+		void reMake()
+		{
+			if (dvGrid.Count > 0)
+			{
+				t_kaiin xrow = new t_kaiin(dvGrid.CurrentRow);
+
+				string name = $"{xrow.CD_Kaiin}：{xrow.Kaiin_Name}";
+
+				if (AppMsgBox.Show(this, AppMsgBoxIndex.ConfirmRemakeHikiotoshiOnlyOne, name) == DialogResult.Yes)
+				{
+					// 既存のデータは消す
+					DBView dv = new DBView(dvHiki);
+					dv.RowFilterQuery($"{t_hikiotoshi.FID_Kaiin} = {xrow.ID_Kaiin}");
+
+					for(;dv.Count > 0;)
+					{
+						dv.Delete();
+					}
+
+					if (createData(xrow.ID_Kaiin) == true)
+					{
+						// 現在の位置
+						int frow = grid.FirstRow;
+						int crow = grid.Row;
+
+						// データのロード
+						dataLoad();
+
+						// 元のグリッド位置へ
+						grid.FirstRow = frow;
+						grid.Row = crow;
+
+						AppMsgBox.Show(this,AppMsgBoxIndex.RemakeHikiotoshiData, name);
+					}
+					else
+					{
+						AppMsgBox.Show(this,AppMsgBoxIndex.FailedHikiotoshiData);
+					}
+				}
+			}
 		}
 
 		void showEdit()
@@ -293,7 +345,7 @@ namespace App
 			}
 		}
 
-		bool createData()
+		bool createData(object kaiin_id = null)
 		{
 			bool ret = true;
 
@@ -301,6 +353,7 @@ namespace App
 			{
 				FormBg_Progress prog = new FormBg_Progress();
 				prog.DoWorkEvent += prog_create;
+				prog.Arg = kaiin_id;
 				prog.ShowDialog();
 				prog.Dispose();			
 			}
@@ -334,12 +387,21 @@ namespace App
 			int id = AppDbID.GetNewID(dvHiki, t_hikiotoshi.FID_Hikiotoshi);
 			DateTime ym = iDateYM.UcValue.Value;
 
+			// 会員IDが指定されていれば数値が入る
+			int kaiin_id = Cast.Int(prog.Arg);
+
 			for (int i = 0; i < dv_kai.Count; i++)
 			{
 				t_kaiin xrow = new t_kaiin(dv_kai[i]);
 
 				// 会員情報から所属会費を取得
-				Kaiin ka = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
+				Kaiin ka = null;
+				
+				// 会員指定がない、または指定された会員であればデータを作成する
+				if (kaiin_id == 0 || kaiin_id == xrow.ID_Kaiin)
+				{				
+					ka = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
+				}
 
 				if (ka != null)
 				{
@@ -352,6 +414,7 @@ namespace App
 						nrow.Hiki_DateYM	= ym;
 						nrow.Hiki_Cost_Null = k.GetCost(ym);
 						nrow.Hiki_Shiharai	= ka.GetShiharai(k);
+						nrow.LastUpdateUser = AppGlobal.LoginUser.ID;
 
 						dvHiki.Add(nrow.Row);
 					}

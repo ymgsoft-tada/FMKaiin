@@ -244,6 +244,14 @@ namespace App
 		/// 何らかの理由で、引落データの作成に失敗しました。
 		/// </summary>
 		FailedHikiotoshiData,
+		/// <summary>
+		/// {0}の引落データを再作成します。\r\n作成済みのデータは全てクリアされますが、よろしいですか？
+		/// </summary>
+		ConfirmRemakeHikiotoshiOnlyOne,
+		/// <summary>
+		/// {0}の引落データを再作成しました。
+		/// </summary>
+		RemakeHikiotoshiData,
 	};
 	
 	/// <summary>
@@ -493,6 +501,18 @@ namespace App
 				MessageBoxDefaultButton.Button1,
 				"エラー",
 				"何らかの理由で、引落データの作成に失敗しました。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Question,
+				MessageBoxDefaultButton.Button2,
+				"確認",
+				"{0}の引落データを再作成します。\r\n作成済みのデータは全てクリアされますが、よろしいですか？"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Information,
+				MessageBoxDefaultButton.Button1,
+				"成功",
+				"{0}の引落データを再作成しました。"),
 		};
 	}
 	

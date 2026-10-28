@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -1315,11 +1315,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[iFAX送付有無(有/無)]。
+		/// フィールド[iFAX出力有無(有/無)]。
 		/// </summary>
 		public const string FKaiin_Ifax = "Kaiin_Ifax";
 		/// <summary>
-		/// iFAX送付有無(有/無)
+		/// iFAX出力有無(有/無)
 		/// </summary>
 		public bool Kaiin_Ifax
 		{

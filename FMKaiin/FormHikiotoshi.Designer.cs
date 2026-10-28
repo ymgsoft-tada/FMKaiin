@@ -43,6 +43,7 @@ namespace App
 			this.iTotalCost = new GControlGcNumberEx.GcNumberEx(this.components);
 			this.iTotalCount = new GControlGcNumberEx.GcNumberEx(this.components);
 			this.lblCreateDate = new YControlLabelEx.YcLabelEx();
+			this.lblUpdateUser = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
 			this.panel1.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.iTotalCost)).BeginInit();
@@ -263,19 +264,35 @@ namespace App
 			this.lblCreateDate.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
 			this.lblCreateDate.ForeShadowColor = System.Drawing.Color.Empty;
 			this.lblCreateDate.IconImage = null;
-			this.lblCreateDate.Location = new System.Drawing.Point(264, 64);
+			this.lblCreateDate.Location = new System.Drawing.Point(318, 52);
 			this.lblCreateDate.Name = "lblCreateDate";
 			this.lblCreateDate.SingleBorderColor = System.Drawing.Color.Empty;
-			this.lblCreateDate.Size = new System.Drawing.Size(285, 25);
+			this.lblCreateDate.Size = new System.Drawing.Size(231, 21);
 			this.lblCreateDate.TabIndex = 348;
 			this.lblCreateDate.Text = "作成日：9999/99/99";
 			this.lblCreateDate.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+			// 
+			// lblUpdateUser
+			// 
+			this.lblUpdateUser.BackColor2 = System.Drawing.Color.Empty;
+			this.lblUpdateUser.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblUpdateUser.Font = new System.Drawing.Font("メイリオ", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+			this.lblUpdateUser.ForeShadowColor = System.Drawing.Color.Empty;
+			this.lblUpdateUser.IconImage = null;
+			this.lblUpdateUser.Location = new System.Drawing.Point(327, 70);
+			this.lblUpdateUser.Name = "lblUpdateUser";
+			this.lblUpdateUser.SingleBorderColor = System.Drawing.Color.Empty;
+			this.lblUpdateUser.Size = new System.Drawing.Size(214, 17);
+			this.lblUpdateUser.TabIndex = 349;
+			this.lblUpdateUser.Text = "SU";
+			this.lblUpdateUser.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
 			// 
 			// FormHikiotoshi
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(579, 649);
+			this.Controls.Add(this.lblUpdateUser);
 			this.Controls.Add(this.lblCreateDate);
 			this.Controls.Add(this.panel1);
 			this.Controls.Add(this.ycLabelEx3);
@@ -298,6 +315,7 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
 			this.Controls.SetChildIndex(this.panel1, 0);
 			this.Controls.SetChildIndex(this.lblCreateDate, 0);
+			this.Controls.SetChildIndex(this.lblUpdateUser, 0);
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
 			this.panel1.ResumeLayout(false);
 			((System.ComponentModel.ISupportInitialize)(this.iTotalCost)).EndInit();
@@ -321,5 +339,6 @@ namespace App
 		private GControlGcNumberEx.GcNumberEx iTotalCost;
 		private GControlGcNumberEx.GcNumberEx iTotalCount;
 		private YControlLabelEx.YcLabelEx lblCreateDate;
+		private YControlLabelEx.YcLabelEx lblUpdateUser;
 	}
 }
