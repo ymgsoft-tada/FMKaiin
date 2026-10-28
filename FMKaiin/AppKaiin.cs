@@ -318,7 +318,7 @@ namespace App
 		/// <returns></returns>
 		public List<Kaiin> GetHistoryList()
 		{
-			return history;
+			return history.ToList();
 		}
 
 		/// <summary>
@@ -329,8 +329,8 @@ namespace App
 		/// <returns>在籍月数の合計</returns>
 		public int GetTotalMembershipMonths()
 		{
-			// 現在の会員情報（退会日なしは在籍中としてシステム日付まで）
-			int total = GetMembershipMonths(XRow.Kaiin_DateNyukai_Null, XRow.Kaiin_DateTaikai_Null ?? DateTime.Today);
+			// 現在の会員情報
+			int total = GetMembershipMonths();
 
 			// 過去の会員情報（退会日なしは算出対象外）
 			foreach (Kaiin ka in history)
@@ -348,9 +348,30 @@ namespace App
 		/// 在籍期間の合計を「n年nヶ月」の文字列で取得します。
 		/// </summary>
 		/// <returns>在籍期間の文字列</returns>
-		public string GetMembershipYearMonth()
+		public string GetTotalMembershipYearMonth()
 		{
 			int months = GetTotalMembershipMonths();
+
+			return $"{months / 12}年{months % 12}ヶ月";
+		}
+
+		/// <summary>
+		/// 現在の会員情報の在籍月数を取得します。
+		/// 在籍中の場合はシステム日付までを期間とします。
+		/// </summary>
+		/// <returns>在籍月数</returns>
+		public int GetMembershipMonths()
+		{
+			return GetMembershipMonths(XRow.Kaiin_DateNyukai_Null, XRow.Kaiin_DateTaikai_Null ?? DateTime.Today);
+		}
+
+		/// <summary>
+		/// 現在の会員情報の在籍期間を「n年nヶ月」の文字列で取得します。
+		/// </summary>
+		/// <returns>在籍期間の文字列</returns>
+		public string GetMembershipYearMonth()
+		{
+			int months = GetMembershipMonths();
 
 			return $"{months / 12}年{months % 12}ヶ月";
 		}
