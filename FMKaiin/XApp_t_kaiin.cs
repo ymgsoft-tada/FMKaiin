@@ -66,6 +66,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[会員グループID(同一人紐付)]。
+		/// </summary>
+		public const string FID_KaiinGroup = "ID_KaiinGroup";
+		/// <summary>
+		/// 会員グループID(同一人紐付)
+		/// </summary>
+		public int ID_KaiinGroup
+		{
+			get	{	return Cast.Int(row == null ? null : row[FID_KaiinGroup]);	}
+			set	{	_set(FID_KaiinGroup, value);	}
+		}
+		
+		/// <summary>
+		/// 会員グループID(同一人紐付)。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? ID_KaiinGroup_Null
+		{
+			get	{	if (row == null || row[FID_KaiinGroup] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KaiinGroup]); }	}
+			set	{	_set(FID_KaiinGroup, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[会員CD]。
 		/// </summary>
 		public const string FCD_Kaiin = "CD_Kaiin";
@@ -594,25 +616,25 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会員区分ID]。
+		/// フィールド[会員区分 0/None/ 1/Incho/病院長 2/Shocho/診療所長 3/Kinmui/勤務医 4/Jitaku/自宅会員 5/Fujisawa/藤沢市勤務会員 6/Kenshui/研修医 9/Etc/その他]。
 		/// </summary>
-		public const string FID_KaiinKbn = "ID_KaiinKbn";
+		public const string FKaiin_TypeKaiin = "Kaiin_TypeKaiin";
 		/// <summary>
-		/// 会員区分ID
+		/// 会員区分 0/None/ 1/Incho/病院長 2/Shocho/診療所長 3/Kinmui/勤務医 4/Jitaku/自宅会員 5/Fujisawa/藤沢市勤務会員 6/Kenshui/研修医 9/Etc/その他
 		/// </summary>
-		public int ID_KaiinKbn
+		public eTypeKaiin Kaiin_TypeKaiin
 		{
-			get	{	return Cast.Int(row == null ? null : row[FID_KaiinKbn]);	}
-			set	{	_set(FID_KaiinKbn, value);	}
+			get	{	return (eTypeKaiin)Cast.Int(row == null ? null : row[FKaiin_TypeKaiin]);	}
+			set	{	_set(FKaiin_TypeKaiin, (int)value);	}
 		}
 		
 		/// <summary>
-		/// 会員区分ID。System.DBNull.Value の場合 null を示します。
+		/// 会員区分 0/None/ 1/Incho/病院長 2/Shocho/診療所長 3/Kinmui/勤務医 4/Jitaku/自宅会員 5/Fujisawa/藤沢市勤務会員 6/Kenshui/研修医 9/Etc/その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public int? ID_KaiinKbn_Null
+		public int? Kaiin_TypeKaiin_Null
 		{
-			get	{	if (row == null || row[FID_KaiinKbn] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KaiinKbn]); }	}
-			set	{	_set(FID_KaiinKbn, value);	}
+			get	{	if (row == null || row[FKaiin_TypeKaiin] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_TypeKaiin]); }	}
+			set	{	_set(FKaiin_TypeKaiin, value);	}
 		}
 		
 		/// <summary>
@@ -1293,6 +1315,32 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[iFAX送付有無(有/無)]。
+		/// </summary>
+		public const string FKaiin_Ifax = "Kaiin_Ifax";
+		/// <summary>
+		/// iFAX送付有無(有/無)
+		/// </summary>
+		public bool Kaiin_Ifax
+		{
+			get	{	return Cast.Bool(row == null ? null : row[FKaiin_Ifax]);	}
+			set	{	_set(FKaiin_Ifax, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[自宅住所掲載(可/不可)]。
+		/// </summary>
+		public const string FKaiin_JushoKeisai = "Kaiin_JushoKeisai";
+		/// <summary>
+		/// 自宅住所掲載(可/不可)
+		/// </summary>
+		public bool Kaiin_JushoKeisai
+		{
+			get	{	return Cast.Bool(row == null ? null : row[FKaiin_JushoKeisai]);	}
+			set	{	_set(FKaiin_JushoKeisai, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[最終更新者ID]。
 		/// </summary>
 		public const string FLastUpdateUser = "LastUpdateUser";
@@ -1357,6 +1405,9 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Kaiin, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FID_KaiinGroup, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FCD_Kaiin, typeof(int));
@@ -1455,7 +1506,7 @@ namespace App
 			col = new DataColumn(FKaiin_DateNyukai, typeof(DateTime));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FID_KaiinKbn, typeof(int));
+			col = new DataColumn(FKaiin_TypeKaiin, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Ishikai_Idomae, typeof(int));
@@ -1572,6 +1623,12 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Ishikai_Idosaki, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_Ifax, typeof(bool));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_JushoKeisai, typeof(bool));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdateUser, typeof(int));

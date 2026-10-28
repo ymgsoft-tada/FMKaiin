@@ -83,6 +83,9 @@ namespace App
 
 		private void BtnBasic_Click(object sender, EventArgs e)
 		{
+			// 銀行コードテーブルの取得
+			initBankCode();
+
 			FormMasterBasic frm = new FormMasterBasic();
 			frm.ShowDialog();
 			frm.Dispose();

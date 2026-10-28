@@ -370,6 +370,10 @@ namespace App
 		/// 医会等会費
 		/// </summary>
 		Ikai = 2,
+		/// <summary>
+		/// グループ会費
+		/// </summary>
+		Group = 3,
 	}
 	
 	/// <summary>
@@ -477,6 +481,45 @@ namespace App
 	}
 	
 	/// <summary>
+	/// [列挙] 会員区分
+	/// </summary>
+	public enum eTypeKaiin
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 病院長
+		/// </summary>
+		Incho = 1,
+		/// <summary>
+		/// 診療所長
+		/// </summary>
+		Shocho = 2,
+		/// <summary>
+		/// 勤務医
+		/// </summary>
+		Kinmui = 3,
+		/// <summary>
+		/// 自宅会員
+		/// </summary>
+		Jitaku = 4,
+		/// <summary>
+		/// 藤沢市勤務会員
+		/// </summary>
+		Fujisawa = 5,
+		/// <summary>
+		/// 研修医
+		/// </summary>
+		Kenshui = 6,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 9,
+	}
+	
+	/// <summary>
 	/// [作成者 fj]
 	/// テーブル編集の際に使うクラスです。
 	/// </summary>
@@ -558,6 +601,10 @@ namespace App
 		/// eTypeGenmen に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DTypeGenmen;
+		/// <summary>
+		/// eTypeKaiin に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeKaiin;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -656,6 +703,7 @@ namespace App
 			DTypeKaihi.Add((int)eTypeKaihi.None, "");
 			DTypeKaihi.Add((int)eTypeKaihi.Ishikai, "医師会会費");
 			DTypeKaihi.Add((int)eTypeKaihi.Ikai, "医会等会費");
+			DTypeKaihi.Add((int)eTypeKaihi.Group, "グループ会費");
 			
 			DTypeIkai = new Dictionary<int, string>();
 			DTypeIkai.Add((int)eTypeIkai.None, "");
@@ -683,6 +731,16 @@ namespace App
 			DTypeGenmen.Add((int)eTypeGenmen.Age40, "40歳以下");
 			DTypeGenmen.Add((int)eTypeGenmen.Age30, "30歳以下");
 			DTypeGenmen.Add((int)eTypeGenmen.Kenshui, "研修医");
+			
+			DTypeKaiin = new Dictionary<int, string>();
+			DTypeKaiin.Add((int)eTypeKaiin.None, "");
+			DTypeKaiin.Add((int)eTypeKaiin.Incho, "病院長");
+			DTypeKaiin.Add((int)eTypeKaiin.Shocho, "診療所長");
+			DTypeKaiin.Add((int)eTypeKaiin.Kinmui, "勤務医");
+			DTypeKaiin.Add((int)eTypeKaiin.Jitaku, "自宅会員");
+			DTypeKaiin.Add((int)eTypeKaiin.Fujisawa, "藤沢市勤務会員");
+			DTypeKaiin.Add((int)eTypeKaiin.Kenshui, "研修医");
+			DTypeKaiin.Add((int)eTypeKaiin.Etc, "その他");
 		}
 	}
 }

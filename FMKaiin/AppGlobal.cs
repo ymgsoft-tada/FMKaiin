@@ -20,12 +20,12 @@ namespace App
 
 		/// <summary>基本情報</summary>
 		public static t_basic Basic { get; private set; }
-		/// <summary>スタッフ情報</summary>
-//		public static AppStaff Staffs { get; private set; }
+		/// <summary>振込元銀行</summary>
+		public static Bank BasicBank { get; private set; }
 		/// <summary>会員情報</summary>
 		public static AppKaiin Kaiins { get; private set; }
 		/// <summary>銀行情報</summary>
-		public static AppBank Banks { get; private set; } // Banksが必要かどうか
+		public static AppBank Banks { get; private set; }
 		/// <summary>担当者情報</summary>
 		public static AppTanto Tantos { get; private set; }
 
@@ -38,8 +38,6 @@ namespace App
 		public static AppKumiCd KumiCodes { get; private set; }
 		/// <summary>診療科情報</summary>
 		public static AppShinryoka Shinryokas { get; private set; }
-		/// <summary>会員区分情報</summary>
-		public static AppKaiinKbn KaiinKbns { get; private set; }
 		/// <summary>学会情報</summary>
 		public static AppGakkai Gakkais { get; private set; }
 		/// <summary>学校情報</summary>
@@ -70,7 +68,6 @@ namespace App
 			RegCommon.SetMasterKey(AppConst.RegKey);
 
 			InitBasic();
-//			InitStaff();
 			InitTanto();
 			InitIryoKikan();
 			InitKaihi();
@@ -78,7 +75,6 @@ namespace App
 			InitGakkai();
 			InitGakko();
 			InitKumiCode();
-			InitKaiinKbn();
 			InitShisetsugyomu();
 			InitKaisetsusyutai();
 			InitIfaxGroup();
@@ -96,22 +92,13 @@ namespace App
 
 			Basic = new t_basic(dv[0]);
 
-//			Banks = new AppBank(); // 基本情報に持たないなら全初期化()でInitとしたい,Banks不要なら削除
-//			Banks.Init();
-//			BasicBank = Banks.Get(Basic.ID_Bank);
+			Banks = new AppBank();
+			Banks.Init();
+			BasicBank = Banks.Get(Basic.ID_Bank);
 
 			// 日付西暦和暦表示
 			AppDate.SetDispSeireki(Basic.BAS_DispSeireki);
 		}
-
-		/// <summary>
-		/// スタッフ情報の初期化
-		/// </summary>
-//		public static void InitStaff()
-//		{
-//			Staffs = new AppStaff();
-//			Staffs.Init();
-//		}
 
 		/// <summary>
 		/// 会員情報の初期化
@@ -177,15 +164,6 @@ namespace App
 		{
 			Shinryokas = new AppShinryoka();
 			Shinryokas.Init();
-		}
-
-		/// <summary>
-		/// 会員区分情報の初期化
-		/// </summary>
-		public static void InitKaiinKbn()
-		{
-			KaiinKbns = new AppKaiinKbn();
-			KaiinKbns.Init();
 		}
 
 		/// <summary>

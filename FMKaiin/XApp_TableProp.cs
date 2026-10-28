@@ -106,11 +106,6 @@ namespace App
 		public const string t_kaiin_shinryoka = "t_kaiin_shinryoka";
 		
 		/// <summary>
-		/// t_kaiinkbn
-		/// </summary>
-		public const string t_kaiinkbn = "t_kaiinkbn";
-		
-		/// <summary>
 		/// t_kaisetsushutai
 		/// </summary>
 		public const string t_kaisetsushutai = "t_kaisetsushutai";

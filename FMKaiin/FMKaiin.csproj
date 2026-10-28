@@ -102,7 +102,6 @@
     <Compile Include="AppGakkai.cs" />
     <Compile Include="AppGakko.cs" />
     <Compile Include="AppKaiin.cs" />
-    <Compile Include="AppKaiinKbn.cs" />
     <Compile Include="AppKaisetsushutai.cs" />
     <Compile Include="AppKumiCd.cs" />
     <Compile Include="AppShisetsugyomu.cs" />
@@ -167,6 +166,18 @@
     </Compile>
     <Compile Include="FormFrame.Designer.cs">
       <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBank.designer.cs">
+      <DependentUpon>FormMasterBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterBank_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBank_DlgEntry.designer.cs">
+      <DependentUpon>FormMasterBank_DlgEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterIryoKikan.cs">
       <SubType>Form</SubType>
@@ -355,7 +366,6 @@
     <Compile Include="XApp_t_ishikai.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
     <Compile Include="XApp_t_kaiin.cs" />
-    <Compile Include="XApp_t_kaiinkbn.cs" />
     <Compile Include="XApp_t_kaiin_gakkai.cs" />
     <Compile Include="XApp_t_kaiin_ido.cs" />
     <Compile Include="XApp_t_kaiin_kaihi.cs" />
@@ -397,6 +407,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogView.resx">
       <DependentUpon>FormLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBank.resx">
+      <DependentUpon>FormMasterBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBank_DlgEntry.resx">
+      <DependentUpon>FormMasterBank_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterIryoKikan.resx">
       <DependentUpon>FormMasterIryoKikan.cs</DependentUpon>

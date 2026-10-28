@@ -17,18 +17,6 @@ namespace App
 	/// </summary>
 	public class AppTableCombo
 	{
-		/// <summary>
-		/// 職種区分の名称用フィールド
-		/// </summary>
-		public const string Fld_TypeJobName = "Fld_TypeJobName";
-		/// <summary>
-		/// 休診判定用フィールド
-		/// </summary>
-		public const string Fld_IsKyushin = "Fld_IsKyushin";
-		/// <summary>
-		/// 事業区分の名称フィールド
-		/// </summary>
-		public const string Fld_JigyoName = "Fld_JigyoName";
 		/// <summary>銀行名＋支店名のフィールド</summary>
 		public const string Fld_BankName = "Fld_BankName";
 
@@ -36,10 +24,31 @@ namespace App
 		/// 文字列扱い（0埋め）となるコードフィールド
 		/// </summary>
 		public const string Fld_CoedString = "Fld_CoedString";
+
 		/// <summary>
-		/// 提出先名
+		/// 銀行検索用iサーチ作成
 		/// </summary>
-		public const string Fld_Teishutsusaki = "Fld_Teishutsusaki";
+		/// <param name="cmb"></param>
+		/// <param name="type"></param>
+		public static void SetComboBox_Bank(UcTableComboBox cmb)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = new DBView(AppGlobal.Banks.DbView);
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+
+			cmb.Sort = DBQuery.GetSql(t_bank.FBNK_Code);
+			cmb.DropDownSize = new Size(470, 300);
+			cmb.SetColumn(t_bank.FBNK_Code, "銀行ｺｰﾄﾞ", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_bank.FBNK_CodeShiten, "支店ｺｰﾄﾞ", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(Fld_BankName, "銀行名", 290);
+
+			cmb.CompareValue = t_bank.FID_Bank;
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 2;
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
 
 		/// <summary>
 		/// 会員リストiサーチ作成
@@ -140,23 +149,23 @@ namespace App
 		/// </summary>
 		/// <param name="cmb"></param>
 		/// <param name="dv"></param>
-		public static void SetComboBox_KaiinKbn(UcTableComboBox cmb, DBView dv)
-		{
-			cmb.BeginUpdate();
-			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
-			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
-			//cmb.RowFilter = dv.RowFilter;
-			cmb.Sort = DBQuery.GetSql(t_kaiinkbn.FCD_KaiinKbn);
-			cmb.DropDownSize = new Size(440, 300);
-			cmb.SetColumn(t_kaiinkbn.FCD_KaiinKbn, "コード", 80, ContentAlignment.MiddleRight);
-			cmb.SetColumn(t_kaiinkbn.FKIK_Name, "名称", 220);
-			cmb.CompareValue = t_kaiinkbn.FID_KaiinKbn; // Comboから取得する列
-			cmb.ContentAlignment = ContentAlignment.BottomLeft;
-			cmb.SelectedIndexNullLeave = -1;
-			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
-			cmb.Find = "";
-			cmb.EndUpdate();
-		}
+		//public static void SetComboBox_KaiinKbn(UcTableComboBox cmb, DBView dv)
+		//{
+		//	cmb.BeginUpdate();
+		//	cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+		//	cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+		//	//cmb.RowFilter = dv.RowFilter;
+		//	cmb.Sort = DBQuery.GetSql(t_kaiinkbn.FCD_KaiinKbn);
+		//	cmb.DropDownSize = new Size(440, 300);
+		//	cmb.SetColumn(t_kaiinkbn.FCD_KaiinKbn, "コード", 80, ContentAlignment.MiddleRight);
+		//	cmb.SetColumn(t_kaiinkbn.FKIK_Name, "名称", 220);
+		//	cmb.CompareValue = t_kaiinkbn.FID_KaiinKbn; // Comboから取得する列
+		//	cmb.ContentAlignment = ContentAlignment.BottomLeft;
+		//	cmb.SelectedIndexNullLeave = -1;
+		//	cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+		//	cmb.Find = "";
+		//	cmb.EndUpdate();
+		//}
 
 		/// <summary>
 		/// 医会会員iサーチ作成
@@ -177,6 +186,31 @@ namespace App
 			cmb.ContentAlignment = ContentAlignment.BottomLeft;
 			cmb.SelectedIndexNullLeave = -1;
 			cmb.TextSubItemIndex = 1; // 選択確定時に表示する列
+			cmb.Find = "";
+			cmb.EndUpdate();
+		}
+
+
+		/// <summary>
+		/// 医会会員iサーチ作成(会費区分表示あり)
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_Kaihi2(UcTableComboBox cmb, DBView dv)
+		{
+			cmb.BeginUpdate();
+			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
+			cmb.ComboBox.ImeMode = ImeMode.Hiragana;
+			cmb.RowFilter = dv.RowFilter; // dv側絞込み情報を適用
+			cmb.Sort = dv.Sort; // dv側Sort情報を適用
+			cmb.DropDownSize = new Size(440, 300);
+			cmb.SetColumn(t_kaihi.FKaihi_KaihiType, "会費区分", 80);
+			cmb.SetColumn(t_kaihi.FCD_Kaihi, "コード", 80, ContentAlignment.MiddleRight);
+			cmb.SetColumn(t_kaihi.FKaihi_Name, "名称", 220);
+			cmb.CompareValue = t_kaihi.FID_Kaihi; // Comboから取得する列
+			cmb.ContentAlignment = ContentAlignment.BottomLeft;
+			cmb.SelectedIndexNullLeave = -1;
+			cmb.TextSubItemIndex = 2; // 選択確定時に表示する列
 			cmb.Find = "";
 			cmb.EndUpdate();
 		}

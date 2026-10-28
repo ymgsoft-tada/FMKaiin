@@ -53,11 +53,6 @@ namespace App
 		DBView dvIryoKikanCmb;
 
 		/// <summary>
-		/// 会員区分マスタ DBView iSearch用
-		/// </summary>
-		DBView dvKaiinKbn;
-
-		/// <summary>
 		/// 医師会マスタ DBView iSearch用
 		/// </summary>
 		DBView dvIshikai;
@@ -382,6 +377,7 @@ namespace App
 			// コンボボックスの作成
 			// enumから
 			AppCombo.SetComboBox(iSex, enumKbn.DSex); // 性別
+			AppCombo.SetComboBox(iKaiinKbn, enumKbn.DTypeKaiin); // 会員区分
 			AppCombo.SetComboBox(iZaiseki, enumKbn.DTypeZaiseki, (int)eTypeZaiseki.None); // 在籍区分
 			AppCombo.SetComboBox(iTaikaiJiyu, enumKbn.DTypeTaikaiJiyu); // 退会事由
 			AppCombo.SetComboBox(iKozaType1, enumKbn.DTypeKoza); // 銀行 口座区分 空欄選択あり
@@ -393,9 +389,6 @@ namespace App
 			dvIryoKikan = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_iryokikan)); // 下で会員IDフィルタし情報表示に使うdv
 			dvIryoKikanCmb = new DBView(dvIryoKikan); // DBViewを複製(フィルタかけない版)
 			AppTableCombo.SetComboBox_IryoKikan(iIryoKikan, dvIryoKikanCmb); // 医療機関コード
-
-			dvKaiinKbn = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiinkbn));
-			AppTableCombo.SetComboBox_KaiinKbn(iKaiinKbn, dvKaiinKbn); // 会員区分
 
 			dvIshikai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_ishikai));
 			AppTableCombo.SetComboBox_Ishikai(iIshikaiIdomae, dvIshikai); // 異動前医師会
@@ -486,8 +479,8 @@ namespace App
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShuryo, iShuryoNengetsu.UcDateCtl)); // 修了年月
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShutokuGakui, iGakuiNengetsu.UcDateCtl)); // 学位取得年月
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateToroku, iTorokuDate.UcDateCtl)); // 登録日
-			gctl.Add(new GControlDBCombo(t_kaiin.FID_KaiinKbn, iKaiinKbn.ComboBox)); // 会員区分
-			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateNyukai, iNyuukaiDate.UcDateCtl)); // 入会年月日
+			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_TypeKaiin, iKaiinKbn)); // 会員区分
+			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateNyukai, iNyukaiDate.UcDateCtl)); // 入会年月日
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShonin, iShoninDate.UcDateCtl)); // 承認日
 			gctl.Add(new GControlDBDate(t_kaiin.FKaiin_DateShinsei, iShinseiDate.UcDateCtl)); // 申請年月日
 
@@ -2298,7 +2291,7 @@ namespace App
 			// 空白チェック
 			Control[] ctls =
 			{
-				iCode, iName, iNameFurigana, iZaiseki, iTorokuDate, iBunshoSofu,
+				iCode, iName, iNameFurigana, iNyukaiDate, iZaiseki, iTorokuDate, iBunshoSofu,
 			};
 
 			foreach (Control ctl in ctls)

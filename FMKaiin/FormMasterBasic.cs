@@ -92,6 +92,7 @@ namespace App
 			gctl.Add(new GControlDBHyphenSplit(t_basic.FBAS_Tel1, new Control[] { iTel1_1, iTel1_2, iTel1_3 }));
 			gctl.Add(new GControlDBHyphenSplit(t_basic.FBAS_Tel2, new Control[] { iTel2_1, iTel2_2, iTel2_3 }));
 			gctl.Add(new GControlDBHyphenSplit(t_basic.FBAS_Fax, new Control[] { iTel2_1, iTel2_2, iTel2_3 }));
+			gctl.Add(new GControlDBCombo(t_basic.FID_Bank, iBank.ComboBox));
 			gctl.Add(new GControlDBText(t_basic.FBAS_HojinNo, iHojinNo));
 			gctl.Add(new GControlDBCombo(t_basic.FBAS_DispSeireki, iDispSeireki));
 
@@ -112,9 +113,24 @@ namespace App
 		{
 			appFuncKey = new AppFunctionKey(funckey, FuncMasterBasic.Functions);
 
+			FuncMasterBasic.ShowBank.Execute = showBank;
 			FuncMasterBasic.Save.Execute = saveClose;
 			FuncMasterBasic.Cancel.Execute = cancelClose;
 
+		}
+
+		/// <summary>
+		/// 銀行情報リスト表示
+		/// </summary>
+		void showBank()
+		{
+			FormMasterBank frm = new FormMasterBank();
+			frm.ShowDialog();
+			frm.Dispose();
+
+			// 銀行情報が変更されている可能性があるので、コンボの再生成
+			AppTableCombo.SetComboBox_Bank(iBank);
+			gctl.FetchByControl(iBank.ComboBox);
 		}
 
 		/// <summary>

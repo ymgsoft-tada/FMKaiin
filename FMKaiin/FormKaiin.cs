@@ -95,9 +95,12 @@ namespace App
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_Name, "氏　名", 200));
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_Sex, "性別", 60, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubSex);
-			gcom.Add(new GGridDBText(t_kaiin.FKaiin_TypeZaiseki, "在籍区分", 90, GGridDBCellDisp.Center));
+			gcom.Add(new GGridDBText(t_kaiin.FKaiin_DateBirth, "生年月日", 90, GGridDBCellDisp.Center)); //GGridDBCommon.KoyomiSeirekiOnが機能するのでは？
+			//gcom.SetUnboundColumnFetch(ubDateBirth);
+			gcom.Add(new GGridDBText(t_kaiin.FKaiin_IsekiTorokuNo, "医籍登録番号", 90, GGridDBCellDisp.Right));
+			gcom.Add(new GGridDBText(t_kaiin.FKaiin_TypeZaiseki, "在籍区分", 80, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubZaiseki);
-			gcom.Add(new GGridDBText(t_kaiin.FID_KaiinKbn, "会員区分", 0, GGridDBCellDisp.Center));
+			gcom.Add(new GGridDBText(t_kaiin.FKaiin_TypeKaiin, "会員区分", 0, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubKaiinKbn);
 			gcom.SetRowStyles(rowStyleUsed);
 
@@ -183,6 +186,21 @@ namespace App
 			return Regex.Replace(enumKbn.DSex[(int)xrow.Kaiin_Sex], "性", "");
 		}
 
+		//string ubDateBirth(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		//{
+		//	t_kaiin xrow = new t_kaiin(dvKaiin[e.Row]);
+
+		//	if (xrow.Kaiin_DateBirth_Null == null)
+		//	{
+		//		return "";
+		//	}
+		//	else
+		//	{
+		//		if (AppGlobal.Basic.BAS_DispSeireki == true) return $"{xrow.Kaiin_DateBirth:yyyy/MM/dd}";
+		//		else return $"{xrow.Kaiin_DateBirth:g.MM.dd}";
+		//	}
+		//}
+
 		string ubZaiseki(GGridDBBase col, UnboundColumnFetchEventArgs e)
 		{
 			t_kaiin xrow = new t_kaiin(dvKaiin[e.Row]);
@@ -194,18 +212,7 @@ namespace App
 		{
 			t_kaiin xrow = new t_kaiin(dvKaiin[e.Row]);
 
-			// 会員情報の取得
-			KaiinKbn kk = AppGlobal.KaiinKbns.Get(Cast.Int(xrow.ID_KaiinKbn_Null));
-
-			// 該当情報が存在したら名称をreturn
-			if (kk != null)
-			{
-				return kk.XRow.KIK_Name_Null;
-			}
-			else
-			{
-				return null;
-			}
+			return enumKbn.DTypeKaiin[(int)xrow.Kaiin_TypeKaiin];
 		}
 
 		protected override void FormFrame_FormClosing(object sender, FormClosingEventArgs e)
@@ -291,6 +298,8 @@ namespace App
 			FuncKaiin.RowAdd.Execute = rowAdd;
 			FuncKaiin.RowEdit.Execute = rowEdit;
 			FuncKaiin.RowDelete.Execute = rowDelete;
+			FuncKaiin.CopyAdd.Execute = CopyAdd;
+			FuncKaiin.Rejoin.Execute = RejoinAdd;
 			FuncKaiin.Preview.Execute = preview;
 			FuncKaiin.Close.Execute = formClose;
 
@@ -326,6 +335,7 @@ namespace App
 
 			// カラム値の初期セット(新規IDやデフォルト値など)
 			nrow.ID_Kaiin = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_Kaiin);
+			nrow.ID_KaiinGroup = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_KaiinGroup);
 			nrow.CD_Kaiin_Null = AppDbID.GetNewCode(dvKaiin, t_kaiin.FCD_Kaiin);
 			nrow.Kaiin_Sex = eSex.Men;
 			nrow.Kaiin_TypeZaiseki = eTypeZaiseki.Zaiseki;
@@ -333,6 +343,8 @@ namespace App
 			nrow.Kaiin_BunshoSofusaki = true;
 			nrow.Kaiin_FaxSofusaki = true;
 			nrow.Kaiin_KaihiUchiwake = true;
+			nrow.Kaiin_Ifax = true; // iFAX送付有無:有
+			nrow.Kaiin_JushoKeisai = false; // 自宅住所掲載:不可
 
 			// --日医～市医Grid準備--
 			addIshikaiKaihi(nrow.ID_Kaiin);
@@ -448,6 +460,156 @@ namespace App
 				}
 				else
 				{
+					dvKaiinShinryo.RejectChanges(); // DlgEntryでの科目grid変更内容破棄
+					dvKaiinGakkai.RejectChanges();  // DlgEntryでの学会grid変更内容破棄
+					dvKaiinKaihi.RejectChanges();   // DlgEntryでの医会grid変更内容破棄
+					dvKaiinIdo.RejectChanges();     // DlgEntryでの異動grid変更内容破棄
+				}
+
+				frm.Dispose();
+				frm = null;
+			}
+		}
+
+		/// <summary>
+		/// コピー追加
+		/// </summary>
+		void CopyAdd()
+		{
+			if (dvKaiin.Count > 0)
+			{
+				t_kaiin nrow = new t_kaiin(dvKaiin.NewRow());
+				t_kaiin srow = new t_kaiin(dvKaiin.CurrentRow);
+
+				AppDb.CopyDataRow(srow.Row, nrow.Row); // 選択中レコードを追加用レコードへコピー
+
+				// カラム値の初期セット(新規IDやデフォルト値など)
+				nrow.ID_Kaiin = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_Kaiin);
+				nrow.ID_KaiinGroup = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_KaiinGroup);
+				nrow.CD_Kaiin_Null = AppDbID.GetNewCode(dvKaiin, t_kaiin.FCD_Kaiin);
+				//nrow.Kaiin_DateToroku = DateTime.Today; // 登録日まで合わせる必要ないなら有効へ
+
+				// 入力画面呼び出し
+				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
+				frm.Mode = FormKaiin_DlgEntry.eMode.Add;
+				frm.Row = nrow.Row;
+				frm.DvKaiinKaihiIshikai = dvKaiinKaihi; // 医師会会員grid用DBView
+				frm.DvKaiinShinryo = dvKaiinShinryo;    // 担当診療科目grid用DBView
+				frm.DvKaiinGakkai = dvKaiinGakkai;      // 所属学会grid用DBView
+				frm.DvKaiinKaihi = dvKaiinKaihi;        // 参加医会grid用DBView
+				frm.DvKaiinIdo = dvKaiinIdo;            // 異動情報grid用DBView
+				frm.ShowDialog();
+
+				if (frm.FormCloseReason == FormCloseReason.Save)
+				{
+					dvKaiin.Add(frm.Row);
+
+					// 会員情報 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin);
+					dvKaiin.AcceptChanges();
+
+					// 会員-診療科目担当 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_shinryoka);
+					dvKaiinShinryo.AcceptChanges(); // 修正の起点
+
+					// 会員-所属学会 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_gakkai);
+					dvKaiinGakkai.AcceptChanges(); // 修正の起点
+
+					// 会員-参加医会 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_kaihi);
+					dvKaiinKaihi.AcceptChanges(); // 修正の起点
+
+					// 会員-診療科目担当 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_ido);
+					dvKaiinIdo.AcceptChanges(); // 修正の起点
+
+					// 共通クラスの初期化処理
+					AppGlobal.InitKaiin();
+					dvKaiin.SearchRow(t_kaiin.FID_Kaiin, nrow.ID_Kaiin);
+				}
+				else
+				{
+					dvKaiin.RejectChanges();
+					dvKaiinShinryo.RejectChanges(); // DlgEntryでの科目grid変更内容破棄
+					dvKaiinGakkai.RejectChanges();  // DlgEntryでの学会grid変更内容破棄
+					dvKaiinKaihi.RejectChanges();   // DlgEntryでの医会grid変更内容破棄
+					dvKaiinIdo.RejectChanges();     // DlgEntryでの異動grid変更内容破棄
+				}
+
+				frm.Dispose();
+				frm = null;
+			}
+		}
+
+		/// <summary>
+		/// 再入会(コピー追加類似)
+		/// </summary>
+		void RejoinAdd()
+		{
+			if (dvKaiin.Count > 0)
+			{
+				t_kaiin nrow = new t_kaiin(dvKaiin.NewRow());
+				t_kaiin srow = new t_kaiin(dvKaiin.CurrentRow);
+
+				AppDb.CopyDataRow(srow.Row, nrow.Row); // 選択中レコードを追加用レコードへコピー
+
+				// カラム値の初期セット(新規IDやデフォルト値など)
+				nrow.ID_Kaiin = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_Kaiin);
+				//nrow.ID_KaiinGroup = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_KaiinGroup); // グループは同一の必要ありのためGetなし
+				nrow.CD_Kaiin_Null = AppDbID.GetNewCode(dvKaiin, t_kaiin.FCD_Kaiin);
+				nrow.Kaiin_Sex = eSex.Men;
+				nrow.Kaiin_TypeZaiseki = eTypeZaiseki.Zaiseki; // 再入会のため在籍とする
+				nrow.Kaiin_DateToroku = DateTime.Today;
+				nrow.Kaiin_DateNyukai_Null = null; // 入会年月日:クリア
+				nrow.Kaiin_DateShonin_Null = null; // 承認日:クリア
+				nrow.Kaiin_DateShinsei_Null = null; // 申請年月日:クリア
+				nrow.Kaiin_DateTaikai_Null = null; // 退会年月日:クリア
+				nrow.Kaiin_TypeTaikaiJiyu = eTypeTaikaiJiyu.None; // 退会事由:クリア
+				nrow.Kaiin_TaikaiEtcmemo_Null = null; // 退会事由その他メモ:クリア
+
+				// 入力画面呼び出し
+				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
+				frm.Mode = FormKaiin_DlgEntry.eMode.Add;
+				frm.Row = nrow.Row;
+				frm.DvKaiinKaihiIshikai = dvKaiinKaihi; // 医師会会員grid用DBView
+				frm.DvKaiinShinryo = dvKaiinShinryo;    // 担当診療科目grid用DBView
+				frm.DvKaiinGakkai = dvKaiinGakkai;      // 所属学会grid用DBView
+				frm.DvKaiinKaihi = dvKaiinKaihi;        // 参加医会grid用DBView
+				frm.DvKaiinIdo = dvKaiinIdo;            // 異動情報grid用DBView
+				frm.ShowDialog();
+
+				if (frm.FormCloseReason == FormCloseReason.Save)
+				{
+					dvKaiin.Add(frm.Row);
+
+					// 会員情報 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin);
+					dvKaiin.AcceptChanges();
+
+					// 会員-診療科目担当 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_shinryoka);
+					dvKaiinShinryo.AcceptChanges(); // 修正の起点
+
+					// 会員-所属学会 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_gakkai);
+					dvKaiinGakkai.AcceptChanges(); // 修正の起点
+
+					// 会員-参加医会 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_kaihi);
+					dvKaiinKaihi.AcceptChanges(); // 修正の起点
+
+					// 会員-診療科目担当 のDB更新
+					AppGlobal.DB.UpdateTable(TableProp.t_kaiin_ido);
+					dvKaiinIdo.AcceptChanges(); // 修正の起点
+
+					// 共通クラスの初期化処理
+					AppGlobal.InitKaiin();
+					dvKaiin.SearchRow(t_kaiin.FID_Kaiin, nrow.ID_Kaiin);
+				}
+				else
+				{
+					dvKaiin.RejectChanges();
 					dvKaiinShinryo.RejectChanges(); // DlgEntryでの科目grid変更内容破棄
 					dvKaiinGakkai.RejectChanges();  // DlgEntryでの学会grid変更内容破棄
 					dvKaiinKaihi.RejectChanges();   // DlgEntryでの医会grid変更内容破棄

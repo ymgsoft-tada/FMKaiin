@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費]。
+		/// フィールド[会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費 3/Group/グループ会費]。
 		/// </summary>
 		public const string FKaihi_KaihiType = "Kaihi_KaihiType";
 		/// <summary>
-		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費
+		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費 3/Group/グループ会費
 		/// </summary>
 		public eTypeKaihi Kaihi_KaihiType
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費。System.DBNull.Value の場合 null を示します。
+		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費 3/Group/グループ会費。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? Kaihi_KaihiType_Null
 		{

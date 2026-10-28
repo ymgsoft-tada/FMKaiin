@@ -61,6 +61,8 @@ namespace App
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iDispSeireki = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
+			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
+			this.iBank = new App.UcTableComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.iHojinNo)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameFurigana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameDaihyo)).BeginInit();
@@ -145,7 +147,7 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.Location = new System.Drawing.Point(0, 350);
+			this.funckey.Location = new System.Drawing.Point(0, 391);
 			this.funckey.Name = "funckey";
 			this.funckey.Size = new System.Drawing.Size(579, 25);
 			this.funckey.TabIndex = 266;
@@ -500,11 +502,52 @@ namespace App
 			this.ycLabelEx4.Text = "日付表示";
 			this.ycLabelEx4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// ycLabelEx6
+			// 
+			this.ycLabelEx6.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx6.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx6.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx6.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx6.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx6.IconImage = null;
+			this.ycLabelEx6.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx6.Location = new System.Drawing.Point(43, 354);
+			this.ycLabelEx6.Name = "ycLabelEx6";
+			this.ycLabelEx6.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx6.Size = new System.Drawing.Size(118, 23);
+			this.ycLabelEx6.TabIndex = 284;
+			this.ycLabelEx6.Text = "振込元銀行";
+			this.ycLabelEx6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// iBank
+			// 
+			this.iBank.BackColor = System.Drawing.Color.Transparent;
+			this.iBank.ComboBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iBank.CompareValue = null;
+			this.iBank.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iBank.DBView = null;
+			this.iBank.DiabledBackColor = System.Drawing.SystemColors.Control;
+			this.iBank.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+			this.iBank.DropDownSize = new System.Drawing.Size(100, 44);
+			this.iBank.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.iBank.ForeColor = System.Drawing.Color.Transparent;
+			this.iBank.HighlightText = true;
+			this.iBank.Location = new System.Drawing.Point(166, 354);
+			this.iBank.Name = "iBank";
+			this.iBank.RowFilter = "";
+			this.iBank.SelectedIndexNullLeave = -1;
+			this.iBank.Size = new System.Drawing.Size(296, 23);
+			this.iBank.Sort = "";
+			this.iBank.TabIndex = 285;
+			this.iBank.TextSubItemIndex = -1;
+			// 
 			// FormMasterBasic
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(579, 375);
+			this.ClientSize = new System.Drawing.Size(579, 416);
+			this.Controls.Add(this.iBank);
+			this.Controls.Add(this.ycLabelEx6);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.iDispSeireki);
 			this.Controls.Add(this.ycLabelEx7);
@@ -574,6 +617,8 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx7, 0);
 			this.Controls.SetChildIndex(this.iDispSeireki, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx6, 0);
+			this.Controls.SetChildIndex(this.iBank, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iHojinNo)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameFurigana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iNameDaihyo)).EndInit();
@@ -627,5 +672,7 @@ namespace App
 		private GrapeCity.Win.Bars.GcFunctionKey funckey;
 		private GControlGcComboBoxEx.GcComboBoxEx iDispSeireki;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
+		private YControlLabelEx.YcLabelEx ycLabelEx6;
+		private UcTableComboBox iBank;
 	}
 }
