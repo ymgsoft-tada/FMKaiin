@@ -231,7 +231,6 @@ namespace App
 			Rule.Add(new GControlDBRuleText(t_kaiin.FKaiin_ShiteiiEtc, 20));
 			#endregion
 
-			// ※t_bank作成なしなら削除
 			#region +++ t_bank +++
 			Rule.Add(code4, t_bank.FBNK_Code);
 			Rule.Add(code3, t_bank.FBNK_CodeShiten);

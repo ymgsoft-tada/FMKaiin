@@ -52,6 +52,9 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			// 銀行iサーチ
+			AppTableCombo.SetComboBox_Bank(iBank);
+
 			// 日付表示コンボボックス
 			iDispSeireki.ExBeginUpdate();
 			iDispSeireki.ExAddItem("西暦", true);
@@ -72,10 +75,7 @@ namespace App
 								iNameFurigana,
 							}));
 
-
 			gctl.Add(new GControlDBText(t_basic.FBAS_NameDaihyo, iNameDaihyo));
-
-
 
 			gctl.Add(new GControlDBPostAddr(
 							new string[]{

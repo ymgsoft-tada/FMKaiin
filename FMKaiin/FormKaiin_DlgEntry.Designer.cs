@@ -189,6 +189,8 @@ namespace App
 			this.grid_Ido = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.iTaikaiJiyu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
+			this.iOutIfax = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.ycLabelEx62 = new YControlLabelEx.YcLabelEx();
 			this.iFaxSofu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iKaihiUchiwake = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iBunshoSofu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
@@ -310,6 +312,7 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.grid_Ido)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyu)).BeginInit();
 			this.groupBox1.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iOutIfax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iFaxSofu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiUchiwake)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBunshoSofu)).BeginInit();
@@ -1153,6 +1156,8 @@ namespace App
 			// iIryoKumi
 			// 
 			this.iIryoKumi.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoKumi.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoKumi.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoKumi.ExFocusHighlight = true;
 			this.iIryoKumi.ImeStr = "";
 			this.iIryoKumi.Location = new System.Drawing.Point(119, 685);
@@ -1250,6 +1255,8 @@ namespace App
 			// iIryoHeisetsuName
 			// 
 			this.iIryoHeisetsuName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoHeisetsuName.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoHeisetsuName.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoHeisetsuName.ExFocusHighlight = true;
 			this.iIryoHeisetsuName.ImeStr = "";
 			this.iIryoHeisetsuName.Location = new System.Drawing.Point(289, 558);
@@ -1278,6 +1285,8 @@ namespace App
 			// iIryoByoshoUmu
 			// 
 			this.iIryoByoshoUmu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoByoshoUmu.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoByoshoUmu.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoByoshoUmu.ExFocusHighlight = true;
 			this.iIryoByoshoUmu.ImeStr = "";
 			this.iIryoByoshoUmu.Location = new System.Drawing.Point(119, 508);
@@ -1289,6 +1298,8 @@ namespace App
 			// iIryoByoshoCnt
 			// 
 			this.iIryoByoshoCnt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoByoshoCnt.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoByoshoCnt.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoByoshoCnt.ExFocusHighlight = true;
 			this.iIryoByoshoCnt.ImeStr = "";
 			this.iIryoByoshoCnt.Location = new System.Drawing.Point(119, 533);
@@ -1351,6 +1362,8 @@ namespace App
 			// iIryoKaisetsushutai
 			// 
 			this.iIryoKaisetsushutai.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoKaisetsushutai.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoKaisetsushutai.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoKaisetsushutai.ExFocusHighlight = true;
 			this.iIryoKaisetsushutai.ImeStr = "";
 			this.iIryoKaisetsushutai.Location = new System.Drawing.Point(119, 483);
@@ -1362,6 +1375,8 @@ namespace App
 			// iIryoFax1_3
 			// 
 			this.iIryoFax1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoFax1_3.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoFax1_3.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoFax1_3.ExFocusHighlight = true;
 			this.iIryoFax1_3.ImeStr = "";
 			this.iIryoFax1_3.Location = new System.Drawing.Point(272, 458);
@@ -1407,6 +1422,8 @@ namespace App
 			// iIryoFax1_2
 			// 
 			this.iIryoFax1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoFax1_2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoFax1_2.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoFax1_2.ExFocusHighlight = true;
 			this.iIryoFax1_2.ImeStr = "";
 			this.iIryoFax1_2.Location = new System.Drawing.Point(197, 458);
@@ -1418,6 +1435,8 @@ namespace App
 			// iIryoFax1_1
 			// 
 			this.iIryoFax1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoFax1_1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoFax1_1.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoFax1_1.ExFocusHighlight = true;
 			this.iIryoFax1_1.ImeStr = "";
 			this.iIryoFax1_1.Location = new System.Drawing.Point(119, 458);
@@ -1446,6 +1465,8 @@ namespace App
 			// iIryoTel1_3
 			// 
 			this.iIryoTel1_3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoTel1_3.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoTel1_3.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoTel1_3.ExFocusHighlight = true;
 			this.iIryoTel1_3.ImeStr = "";
 			this.iIryoTel1_3.Location = new System.Drawing.Point(272, 433);
@@ -1491,6 +1512,8 @@ namespace App
 			// iIryoTel1_2
 			// 
 			this.iIryoTel1_2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoTel1_2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoTel1_2.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoTel1_2.ExFocusHighlight = true;
 			this.iIryoTel1_2.ImeStr = "";
 			this.iIryoTel1_2.Location = new System.Drawing.Point(197, 433);
@@ -1502,6 +1525,8 @@ namespace App
 			// iIryoTel1_1
 			// 
 			this.iIryoTel1_1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoTel1_1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoTel1_1.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoTel1_1.ExFocusHighlight = true;
 			this.iIryoTel1_1.ImeStr = "";
 			this.iIryoTel1_1.Location = new System.Drawing.Point(119, 433);
@@ -1547,6 +1572,8 @@ namespace App
 			// iIryoPost2
 			// 
 			this.iIryoPost2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoPost2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoPost2.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoPost2.ExFocusHighlight = true;
 			this.iIryoPost2.ImeStr = "";
 			this.iIryoPost2.Location = new System.Drawing.Point(184, 358);
@@ -1558,6 +1585,8 @@ namespace App
 			// iIryoPost1
 			// 
 			this.iIryoPost1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoPost1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoPost1.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoPost1.ExFocusHighlight = true;
 			this.iIryoPost1.ImeStr = "";
 			this.iIryoPost1.Location = new System.Drawing.Point(119, 358);
@@ -1586,6 +1615,8 @@ namespace App
 			// iIryoAddr2
 			// 
 			this.iIryoAddr2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoAddr2.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoAddr2.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoAddr2.ExFocusHighlight = true;
 			this.iIryoAddr2.ImeStr = "";
 			this.iIryoAddr2.Location = new System.Drawing.Point(119, 408);
@@ -1597,6 +1628,8 @@ namespace App
 			// iIryoAddr1
 			// 
 			this.iIryoAddr1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoAddr1.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoAddr1.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoAddr1.ExFocusHighlight = true;
 			this.iIryoAddr1.ImeStr = "";
 			this.iIryoAddr1.Location = new System.Drawing.Point(119, 383);
@@ -1659,6 +1692,8 @@ namespace App
 			// iIryoShisetsuNameKana
 			// 
 			this.iIryoShisetsuNameKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoShisetsuNameKana.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoShisetsuNameKana.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoShisetsuNameKana.ExFocusHighlight = true;
 			this.iIryoShisetsuNameKana.ImeStr = "";
 			this.iIryoShisetsuNameKana.Location = new System.Drawing.Point(119, 333);
@@ -1670,6 +1705,8 @@ namespace App
 			// iIryoShisetsuName
 			// 
 			this.iIryoShisetsuName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iIryoShisetsuName.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iIryoShisetsuName.DisabledForeColor = System.Drawing.Color.Black;
 			this.iIryoShisetsuName.ExFocusHighlight = true;
 			this.iIryoShisetsuName.ImeStr = "";
 			this.iIryoShisetsuName.Location = new System.Drawing.Point(119, 309);
@@ -2638,6 +2675,8 @@ namespace App
 			// iTaikaiJiyuEtc
 			// 
 			this.iTaikaiJiyuEtc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iTaikaiJiyuEtc.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iTaikaiJiyuEtc.DisabledForeColor = System.Drawing.Color.Black;
 			this.iTaikaiJiyuEtc.ExFocusHighlight = true;
 			this.iTaikaiJiyuEtc.ImeStr = "";
 			this.iTaikaiJiyuEtc.Location = new System.Drawing.Point(383, 509);
@@ -2714,6 +2753,8 @@ namespace App
 			// 
 			// groupBox1
 			// 
+			this.groupBox1.Controls.Add(this.iOutIfax);
+			this.groupBox1.Controls.Add(this.ycLabelEx62);
 			this.groupBox1.Controls.Add(this.iFaxSofu);
 			this.groupBox1.Controls.Add(this.iKaihiUchiwake);
 			this.groupBox1.Controls.Add(this.iBunshoSofu);
@@ -2726,6 +2767,40 @@ namespace App
 			this.groupBox1.TabIndex = 481;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "処理区分";
+			// 
+			// iOutIfax
+			// 
+			this.iOutIfax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iOutIfax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iOutIfax.ExCompareContent = null;
+			this.iOutIfax.ExCompareValue = null;
+			this.iOutIfax.ExDataSource = null;
+			this.iOutIfax.ExFocusHighlight = true;
+			this.iOutIfax.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iOutIfax.ListHeaderPane.Height = 27;
+			this.iOutIfax.ListHeaderPane.Visible = false;
+			this.iOutIfax.Location = new System.Drawing.Point(393, 57);
+			this.iOutIfax.Name = "iOutIfax";
+			this.iOutIfax.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iOutIfax.Size = new System.Drawing.Size(89, 25);
+			this.iOutIfax.TabIndex = 3;
+			// 
+			// ycLabelEx62
+			// 
+			this.ycLabelEx62.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx62.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx62.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx62.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx62.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx62.IconImage = null;
+			this.ycLabelEx62.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx62.Location = new System.Drawing.Point(287, 57);
+			this.ycLabelEx62.Name = "ycLabelEx62";
+			this.ycLabelEx62.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx62.Size = new System.Drawing.Size(100, 25);
+			this.ycLabelEx62.TabIndex = 334;
+			this.ycLabelEx62.Text = "iFAX出力";
+			this.ycLabelEx62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// iFaxSofu
 			// 
@@ -2915,7 +2990,7 @@ namespace App
 			this.iGenmen.Name = "iGenmen";
 			this.iGenmen.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iGenmen.Size = new System.Drawing.Size(122, 25);
-			this.iGenmen.TabIndex = 20;
+			this.iGenmen.TabIndex = 34;
 			// 
 			// ycLabelEx58
 			// 
@@ -3849,6 +3924,7 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.grid_Ido)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyu)).EndInit();
 			this.groupBox1.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.iOutIfax)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iFaxSofu)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiUchiwake)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBunshoSofu)).EndInit();
@@ -4081,5 +4157,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx58;
 		private YControlLabelEx.YcLabelEx ycLabelEx57;
 		private GControlGcComboBoxEx.GcComboBoxEx iKaiinKbn;
+		private GControlGcComboBoxEx.GcComboBoxEx iOutIfax;
+		private YControlLabelEx.YcLabelEx ycLabelEx62;
 	}
 }

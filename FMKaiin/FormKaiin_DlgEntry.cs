@@ -422,12 +422,12 @@ namespace App
 			iKaihiUchiwake.ExEndUpdate();
 			iKaihiUchiwake.ExSetSelectedIndexByValue(true);
 
-			// 公開区分
-			//iKbnKoukai.ExBeginUpdate();
-			//iKbnKoukai.ExAddItem("公開", true);
-			//iKbnKoukai.ExAddItem("非公開", false);
-			//iKbnKoukai.ExEndUpdate();
-			//iKbnKoukai.ExSetSelectedIndexByValue(true);
+			// iFAX出力
+			iOutIfax.ExBeginUpdate();
+			iOutIfax.ExAddItem("有", true);
+			iOutIfax.ExAddItem("無", false);
+			iOutIfax.ExEndUpdate();
+			iOutIfax.ExSetSelectedIndexByValue(true);
 
 			gctl = new GControlDB(this, getDataRow, AppGlobal.DB.DBZipCode);
 
@@ -494,7 +494,8 @@ namespace App
 			// コンボボックス
 			AppCombo.SetComboBox(iIshikaiShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
 
-			dvIkai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
+			//dvIkai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
+			dvIkai = new DBView(AppGlobal.Kaihis.DbView); // 念のためdvKaihiと合わせてFillから変更
 			dvIkai.RowFilterQuery($"{t_kaihi.FKaihi_SearchUsed} = TRUE AND {t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ishikai}"); // 会費区分1
 			dvIkai.SortQuery($"{ t_kaihi.FCD_Kaihi}");
 			AppTableCombo.SetComboBox_Kaihi(iIshikai, dvIkai); // 医師会会員区分
@@ -572,7 +573,7 @@ namespace App
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_BunshoSofusaki, iBunshoSofu)); // 文書送付先
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_FaxSofusaki, iFaxSofu)); // FAX送付先
 			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KaihiUchiwake, iKaihiUchiwake)); // 月別会費内訳
-			//gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_KokaiKbn, iKbnKoukai)); // 公開区分
+			gctl.Add(new GControlDBCombo(t_kaiin.FKaiin_Ifax, iOutIfax)); // iFAX出力
 
 			gctl.EndAdd(AppDbRule.Rule);
 
@@ -608,6 +609,8 @@ namespace App
 
 			// 退会事由コントロール 状態制御
 			enabled_iTaikaiJiyuCtl();
+			// iFAX出力コントロール 状態制御
+			visible_iKaiinKbnCtl();
 
 			//■ イベントの登録
 			iIryoKikan.TextChanged += iIryoKikan_TextChanged;
@@ -624,6 +627,7 @@ namespace App
 			iShitenCD3.TextChanged += iShitenCD_TextChanged;
 			iShitenCD3.MouseDoubleClick += cd_MouseDoubleClick;
 			iTaikaiJiyu.SelectedIndexChanged += iTaikaiJiyu_SelectedIndexChanged; // 退会事由cmb
+			iKaiinKbn.SelectedIndexChanged += iKaiinKbn_SelectedIndexChanged; // 会員区分cmb
 			iIryoShiteii10.CheckedChanged += iIryoShiteii10_CheckedChanged; // 医療-指定医その他chk
 
 			// 医療機関情報準備
@@ -747,10 +751,11 @@ namespace App
 			// コンボボックス
 			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai, (int)eShiharai.None); // 支払方法
 
-			dvKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
-			dvKaihi.RowFilterQuery($"{t_kaihi.FKaihi_SearchUsed} = TRUE AND {t_kaihi.FKaihi_KaihiType} = {(int)eTypeKaihi.Ikai}"); // 会費区分2
+			//dvKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
+			dvKaihi = new DBView(AppGlobal.Kaihis.DbView); // iサーチ内でテーブル外項目を利用するためFillから変更
+			dvKaihi.RowFilterQuery($"{t_kaihi.FKaihi_SearchUsed} = TRUE AND {t_kaihi.FKaihi_KaihiType} IN ({(int)eTypeKaihi.Ikai}, {(int)eTypeKaihi.Group})"); // 会費区分2,3
 			dvKaihi.SortQuery($"{t_kaihi.FCD_Kaihi}");
-			AppTableCombo.SetComboBox_Kaihi(iSankaIkai, dvKaihi); // iSearch 参加医会
+			AppTableCombo.SetComboBox_Kaihi2(iSankaIkai, dvKaihi); // iSearch 参加医会
 
 			// ■Grid設定
 			AppGridCommon.StyleSet(grid_Kaihi);
@@ -898,6 +903,31 @@ namespace App
 			else
 			{
 				iTaikaiJiyuEtc.Enabled = false;
+			}
+		}
+
+		/// <summary>
+		/// 会員区分コンボボックス変更
+		/// </summary>
+		void iKaiinKbn_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			visible_iKaiinKbnCtl();
+		}
+
+		/// <summary>
+		/// 会員区分関連コントロール制御
+		/// </summary>
+		void visible_iKaiinKbnCtl()
+		{
+			if (iKaiinKbn.SelectedIndex == (int)eTypeKaiin.Jitaku)
+			{
+				iOutIfax.Visible = true; // 区分:自宅会員→表示
+				ycLabelEx62.Visible = true;
+			}
+			else
+			{
+				iOutIfax.Visible = false;
+				ycLabelEx62.Visible = false;
 			}
 		}
 
@@ -2286,6 +2316,12 @@ namespace App
 			if (iTaikaiJiyu.SelectedIndex != (int)eTypeTaikaiJiyu.Etc)
 			{
 				this.Row[t_kaiin.FKaiin_TaikaiEtcmemo] = null;
+			}
+
+			// iFAX出力 自宅会員以外の場合、入力不可のためデフォルト値とする
+			if (iKaiinKbn.SelectedIndex != (int)eTypeKaiin.Jitaku)
+			{
+				this.Row[t_kaiin.FKaiin_Ifax] = true;
 			}
 
 			// 空白チェック

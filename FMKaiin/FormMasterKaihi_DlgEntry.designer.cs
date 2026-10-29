@@ -299,7 +299,7 @@
 			this.iBankIfax.Name = "iBankIfax";
 			this.iBankIfax.RowFilter = "";
 			this.iBankIfax.SelectedIndexNullLeave = -1;
-			this.iBankIfax.Size = new System.Drawing.Size(183, 23);
+			this.iBankIfax.Size = new System.Drawing.Size(221, 23);
 			this.iBankIfax.Sort = "";
 			this.iBankIfax.TabIndex = 357;
 			this.iBankIfax.TextSubItemIndex = -1;
@@ -694,6 +694,8 @@
 			this.oCostAll.AlternateText.DisplayZero.Text = "0";
 			this.oCostAll.AlternateText.Zero.Text = "0";
 			this.oCostAll.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.oCostAll.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.oCostAll.DisabledForeColor = System.Drawing.Color.Black;
 			this.oCostAll.ExAlternateBlank = true;
 			this.oCostAll.ExCommaDelimiter = ",";
 			this.oCostAll.ExFocusHighlight = true;
@@ -1209,7 +1211,7 @@
 			this.iKbnKaihi.Location = new System.Drawing.Point(148, 74);
 			this.iKbnKaihi.Name = "iKbnKaihi";
 			this.iKbnKaihi.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iKbnKaihi.Size = new System.Drawing.Size(97, 25);
+			this.iKbnKaihi.Size = new System.Drawing.Size(116, 25);
 			this.iKbnKaihi.TabIndex = 0;
 			// 
 			// FormMasterKaihi_DlgEntry

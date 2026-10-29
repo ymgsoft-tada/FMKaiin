@@ -95,8 +95,8 @@ namespace App
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_Name, "氏　名", 200));
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_Sex, "性別", 60, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubSex);
-			gcom.Add(new GGridDBText(t_kaiin.FKaiin_DateBirth, "生年月日", 90, GGridDBCellDisp.Center)); //GGridDBCommon.KoyomiSeirekiOnが機能するのでは？
-			//gcom.SetUnboundColumnFetch(ubDateBirth);
+			gcom.Add(new GGridDBText(t_kaiin.FKaiin_DateBirth, "生年月日", 90, GGridDBCellDisp.Center));
+			gcom.SetUnboundColumnFetch(ubDateBirth);
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_IsekiTorokuNo, "医籍登録番号", 90, GGridDBCellDisp.Right));
 			gcom.Add(new GGridDBText(t_kaiin.FKaiin_TypeZaiseki, "在籍区分", 80, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubZaiseki);
@@ -186,20 +186,19 @@ namespace App
 			return Regex.Replace(enumKbn.DSex[(int)xrow.Kaiin_Sex], "性", "");
 		}
 
-		//string ubDateBirth(GGridDBBase col, UnboundColumnFetchEventArgs e)
-		//{
-		//	t_kaiin xrow = new t_kaiin(dvKaiin[e.Row]);
+		string ubDateBirth(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaiin xrow = new t_kaiin(dvKaiin[e.Row]);
 
-		//	if (xrow.Kaiin_DateBirth_Null == null)
-		//	{
-		//		return "";
-		//	}
-		//	else
-		//	{
-		//		if (AppGlobal.Basic.BAS_DispSeireki == true) return $"{xrow.Kaiin_DateBirth:yyyy/MM/dd}";
-		//		else return $"{xrow.Kaiin_DateBirth:g.MM.dd}";
-		//	}
-		//}
+			if (xrow.Kaiin_DateBirth_Null == null)
+			{
+				return "";
+			}
+			else
+			{
+				return AppDate.GetDateSlash(xrow.Kaiin_DateBirth);
+			}
+		}
 
 		string ubZaiseki(GGridDBBase col, UnboundColumnFetchEventArgs e)
 		{
@@ -505,6 +504,15 @@ namespace App
 				nrow.ID_KaiinGroup = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_KaiinGroup);
 				nrow.CD_Kaiin_Null = AppDbID.GetNewCode(dvKaiin, t_kaiin.FCD_Kaiin);
 				//nrow.Kaiin_DateToroku = DateTime.Today; // 登録日まで合わせる必要ないなら有効へ
+				// その他セット項目、クリア項目あれば追記
+
+				// 会員に紐づくデータのコピー
+			//	dvKaiinKaihiIshikai = new DBView(dvKaiinKaihi);
+			//dvKaiinKaihi; // 医師会会員grid用DBView
+			//	dvKaiinShinryo;    // 担当診療科目grid用DBView
+			//	dvKaiinGakkai;      // 所属学会grid用DBView
+			//	dvKaiinKaihi;        // 参加医会grid用DBView
+			//	dvKaiinIdo;            // 異動情報grid用DBView
 
 				// 入力画面呼び出し
 				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();

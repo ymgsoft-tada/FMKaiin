@@ -335,8 +335,9 @@ namespace App
 		{
 			t_kaihi nrow = new t_kaihi(dvKaihi.NewRow());
 
-			// 画面項目未関連カラムの値セット
+			// 内部項目カラムや初期値のセット
 			nrow.ID_Kaihi = AppDbID.GetNewID(dvKaihi, t_kaihi.FID_Kaihi);
+			nrow.Kaihi_SearchUsed = true; // 検索時表示:表示する
 
 			FormMasterKaihi_DlgEntry frm	= new FormMasterKaihi_DlgEntry();
 			frm.Mode							= FormMasterKaihi_DlgEntry.eMode.Add;

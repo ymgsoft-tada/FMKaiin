@@ -42,23 +42,28 @@ namespace App
 			dics_id.Clear();
 			dics_cd.Clear();
 
+			// 参照用Viewの初期化
 			DbView = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi).Copy());
 
-			// テーブルカラム以外で必要な情報を追加？数値カラムの文字型(検索用)など
-			// 職種タイプ名称用のフィールド
-//			DbView.DataTable.Columns.Add(AppTableCombo.Fld_TypeJobName, typeof(string));
+			// テーブルカラム以外で必要な情報を追加 数値カラムの文字型,Enumの文言(検索用,表示用)など
+
+			// 会費区分コード名称用のフィールド
+			DbView.DataTable.Columns.Add(AppTableCombo.Fld_TypeKaihiName, typeof(string));
+			DbView.DataTable.Columns[AppTableCombo.Fld_TypeKaihiName].SetOrdinal(0); // iサーチ項目はViewカラム順表示のようなので、追加項目を任意位置へ修正
+
 			// 文字列コード
-//			DbView.DataTable.Columns.Add(AppTableCombo.Fld_CoedString, typeof(string));
-//			DbView.DataTable.Columns[AppTableCombo.Fld_CoedString].SetOrdinal(0);
+			//			DbView.DataTable.Columns.Add(AppTableCombo.Fld_CoedString, typeof(string));
+			//			DbView.DataTable.Columns[AppTableCombo.Fld_CoedString].SetOrdinal(0);
 
 			for (int i = 0 ; i < DbView.Count ; i++)
 			{
 				t_kaihi xrow = new t_kaihi(DbView[i]);
 
-				// 職種タイプ名称のセット
-//			    xrow.Row[AppTableCombo.Fld_TypeJobName] = enumKbn.DTypeJob[(int)xrow.STF_TypeJob];
+				// 追加行の値セット
+				xrow.Row[AppTableCombo.Fld_TypeKaihiName] = enumKbn.DTypeKaihi[(int)xrow.Kaihi_KaihiType];
+
 				// 0埋めしたコード
-//				xrow.Row[AppTableCombo.Fld_CoedString] = xrow.CD_Kaihi.ToString().PadLeft(6, '0');
+				//xrow.Row[AppTableCombo.Fld_CoedString] = xrow.CD_Kaihi.ToString().PadLeft(6, '0');
 
 				Kaihi obj = new Kaihi(xrow);
 
@@ -122,6 +127,11 @@ namespace App
 		{
 			get; private set;
 		}
+		/// <summary>会費区分名称</summary>
+		public string TypeKaihiName
+		{
+			get; private set;
+		}
 
 		public t_kaihi XRow
 		{
@@ -138,6 +148,7 @@ namespace App
 			this.ID = XRow.ID_Kaihi;
 			this.CD = XRow.CD_Kaihi;
 //			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
+			this.TypeKaihiName = enumKbn.DTypeKaihi[(int)XRow.Kaihi_KaihiType];
 		}
 
 		/// <summary>
