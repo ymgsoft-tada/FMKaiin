@@ -121,6 +121,8 @@ namespace App
 			//■ イベント
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
 			iSearch.TextChanged += iSearch_TextChanged;
+			iSearchBirthday.UcValueChanged += iSearchDateBirth_UcValueChanged;
+			iSearchIsekiTorokuNo.TextChanged += iSearchIsekiTorokuNo_TextChanged;
 			btnClear.Click += btnClear_Click;
 			chkUnUsed.CheckedChanged += chkUnUsed_CheckedChanged;
 
@@ -154,15 +156,36 @@ namespace App
 			changeFilter();
 		}
 
+		private void iSearchDateBirth_UcValueChanged(object sender, EventArgs e)
+		{
+			changeFilter();
+		}
+
+		private void iSearchIsekiTorokuNo_TextChanged(object sender, EventArgs e)
+		{
+			changeFilter();
+		}
+
+		/// <summary>
+		/// クリアボタンクリック
+		/// </summary>
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			iSearch.TextChanged -= iSearch_TextChanged;
+			iSearchBirthday.UcValueChanged -= iSearchDateBirth_UcValueChanged;
+			iSearchIsekiTorokuNo.TextChanged -= iSearchIsekiTorokuNo_TextChanged;
 
+			// 条件初期化
 			iSearch.ResetText();
+			iSearchBirthday.UcValue = null;
+			iSearchIsekiTorokuNo.ResetText();
 
+			// 初期条件でフィルタ
 			changeFilter();
 
 			iSearch.TextChanged += iSearch_TextChanged;
+			iSearchBirthday.UcValueChanged += iSearchDateBirth_UcValueChanged;
+			iSearchIsekiTorokuNo.TextChanged += iSearchIsekiTorokuNo_TextChanged;
 		}
 
 		string ubCode(GGridDBBase col, UnboundColumnFetchEventArgs e)
@@ -260,10 +283,33 @@ namespace App
 												DBQuery.CreateLikeKanaString(t_kaiin.FKaiin_Name, str, true),
 												DBQuery.CreateLikeKanaString(t_kaiin.FKaiin_NameKana, str, true));
 					}
-
 				}
 			}
 
+			// 生年月日
+			if (iSearchBirthday.UcValue != null)
+			{
+				if (filter != "")
+					filter += " AND ";
+				filter += $"({t_kaiin.FKaiin_DateBirth} = #{AppDate.GetDateSeirekiSlash(iSearchBirthday.UcValue.Value)}#)";
+			}
+
+			// 医籍登録番号
+			if (iSearchIsekiTorokuNo.Text != "")
+			{
+				string strIsekino = iSearchIsekiTorokuNo.Text;
+				string str_numchk = StrConv.ToNarrow(strIsekino);
+
+				if (Regex.IsMatch(str_numchk, @"^[-.0-9]+$") == true)
+				{
+					// 数値のみなら番号検索
+					if (filter != "")
+						filter += " AND ";
+					filter += $"({t_kaiin.FKaiin_IsekiTorokuNo} = {Cast.Int(str_numchk)})";
+				}
+			}
+
+			// 在籍区分
 			if (chkUnUsed.Checked == false)
 			{
 				if (filter != "")
@@ -502,6 +548,8 @@ namespace App
 				nrow.ID_KaiinGroup = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_KaiinGroup);
 				nrow.CD_Kaiin_Null = AppDbID.GetNewCode(dvKaiin, t_kaiin.FCD_Kaiin);
 				nrow.Kaiin_DateToroku = DateTime.Today; // 元と登録日合わせるなら無効へ
+				nrow.Kaiin_Name = null; // 氏名:クリア ※コピー追加時、そのまま同じ氏名で誤登録 を防ぐため、必須を空とした
+				nrow.Kaiin_NameKana = null;
 				// その他セット項目、クリア項目あれば追記
 
 				// 会員に紐づくデータのコピー

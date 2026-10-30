@@ -39,8 +39,13 @@ namespace App
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.iSearchIsekiTorokuNo = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
+			this.ycLabelEx5 = new YControlLabelEx.YcLabelEx();
+			this.iSearchBirthday = new App.UcDate();
 			((System.ComponentModel.ISupportInitialize)(this.iSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iSearchIsekiTorokuNo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ycLabelEx4
@@ -85,7 +90,7 @@ namespace App
 			// 
 			// btnClear
 			// 
-			this.btnClear.Location = new System.Drawing.Point(606, 62);
+			this.btnClear.Location = new System.Drawing.Point(834, 63);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(99, 28);
 			this.btnClear.TabIndex = 72;
@@ -166,11 +171,79 @@ namespace App
 			this.funckey.TabIndex = 75;
 			this.funckey.Text = "gcFunctionKey1";
 			// 
+			// iSearchIsekiTorokuNo
+			// 
+			this.iSearchIsekiTorokuNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iSearchIsekiTorokuNo.ExFocusHighlight = true;
+			this.iSearchIsekiTorokuNo.ImeStr = "";
+			this.iSearchIsekiTorokuNo.Location = new System.Drawing.Point(730, 65);
+			this.iSearchIsekiTorokuNo.Name = "iSearchIsekiTorokuNo";
+			this.iSearchIsekiTorokuNo.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iSearchIsekiTorokuNo.Size = new System.Drawing.Size(88, 23);
+			this.iSearchIsekiTorokuNo.TabIndex = 74;
+			// 
+			// ycLabelEx3
+			// 
+			this.ycLabelEx3.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx3.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx3.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx3.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx3.IconImage = null;
+			this.ycLabelEx3.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx3.Location = new System.Drawing.Point(633, 65);
+			this.ycLabelEx3.Name = "ycLabelEx3";
+			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx3.Size = new System.Drawing.Size(91, 23);
+			this.ycLabelEx3.TabIndex = 82;
+			this.ycLabelEx3.Text = "医籍登録番号";
+			this.ycLabelEx3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// ycLabelEx5
+			// 
+			this.ycLabelEx5.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx5.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx5.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx5.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx5.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx5.IconImage = null;
+			this.ycLabelEx5.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx5.Location = new System.Drawing.Point(380, 65);
+			this.ycLabelEx5.Name = "ycLabelEx5";
+			this.ycLabelEx5.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx5.Size = new System.Drawing.Size(80, 23);
+			this.ycLabelEx5.TabIndex = 83;
+			this.ycLabelEx5.Text = "生年月日";
+			this.ycLabelEx5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// iSearchBirthday
+			// 
+			this.iSearchBirthday.DisabledBackColor = System.Drawing.SystemColors.Control;
+			this.iSearchBirthday.DisabledForeColor = System.Drawing.Color.Black;
+			this.iSearchBirthday.Location = new System.Drawing.Point(466, 65);
+			this.iSearchBirthday.Name = "iSearchBirthday";
+			this.iSearchBirthday.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iSearchBirthday.Size = new System.Drawing.Size(143, 25);
+			this.iSearchBirthday.TabIndex = 73;
+			this.iSearchBirthday.UcBackColor = System.Drawing.SystemColors.Window;
+			this.iSearchBirthday.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iSearchBirthday.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
+			this.iSearchBirthday.UcCalenderMinDate = new System.DateTime(1868, 1, 1, 0, 0, 0, 0);
+			this.iSearchBirthday.UcEnabled = true;
+			this.iSearchBirthday.UcFormat = App.UcDate.UcDateFormat.YYYYMMDD;
+			this.iSearchBirthday.UcReadOnly = false;
+			this.iSearchBirthday.UcSideButton = true;
+			this.iSearchBirthday.UcValue = null;
+			// 
 			// FormKaiin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(964, 566);
+			this.Controls.Add(this.iSearchBirthday);
+			this.Controls.Add(this.ycLabelEx5);
+			this.Controls.Add(this.iSearchIsekiTorokuNo);
+			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.chkUnUsed);
 			this.Controls.Add(this.iSearch);
@@ -195,8 +268,13 @@ namespace App
 			this.Controls.SetChildIndex(this.iSearch, 0);
 			this.Controls.SetChildIndex(this.chkUnUsed, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
+			this.Controls.SetChildIndex(this.iSearchIsekiTorokuNo, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx5, 0);
+			this.Controls.SetChildIndex(this.iSearchBirthday, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iSearch)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iSearchIsekiTorokuNo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -213,5 +291,9 @@ namespace App
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private GControlGcTextBoxEx.GcTextBoxEx iSearchIsekiTorokuNo;
+		private YControlLabelEx.YcLabelEx ycLabelEx3;
+		private YControlLabelEx.YcLabelEx ycLabelEx5;
+		private UcDate iSearchBirthday;
 	}
 }
