@@ -536,7 +536,7 @@ namespace App
 			this.iBank.Name = "iBank";
 			this.iBank.RowFilter = "";
 			this.iBank.SelectedIndexNullLeave = -1;
-			this.iBank.Size = new System.Drawing.Size(296, 23);
+			this.iBank.Size = new System.Drawing.Size(329, 23);
 			this.iBank.Sort = "";
 			this.iBank.TabIndex = 285;
 			this.iBank.TextSubItemIndex = -1;

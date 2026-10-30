@@ -136,8 +136,7 @@ namespace App
 			// 銀行コードは大量のデータになるので、スプラッシュ時ではなくログインしてから取得する
 			AppGlobal.DB.GetReFillTable(TableProp.t_bank_code);
 			AppGlobal.InitBankCodeMg();
-//			AppGlobal.Banks.Init(); // FBファイル作成に利用
-
+			AppGlobal.Banks.Init();
 		}
 
 		/// <summary>

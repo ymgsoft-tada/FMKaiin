@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -1315,19 +1315,6 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[iFAX出力有無(有/無)]。
-		/// </summary>
-		public const string FKaiin_Ifax = "Kaiin_Ifax";
-		/// <summary>
-		/// iFAX出力有無(有/無)
-		/// </summary>
-		public bool Kaiin_Ifax
-		{
-			get	{	return Cast.Bool(row == null ? null : row[FKaiin_Ifax]);	}
-			set	{	_set(FKaiin_Ifax, value);	}
-		}
-		
-		/// <summary>
 		/// フィールド[自宅住所掲載(可/不可)]。
 		/// </summary>
 		public const string FKaiin_JushoKeisai = "Kaiin_JushoKeisai";
@@ -1623,9 +1610,6 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Ishikai_Idosaki, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_Ifax, typeof(bool));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaiin_JushoKeisai, typeof(bool));

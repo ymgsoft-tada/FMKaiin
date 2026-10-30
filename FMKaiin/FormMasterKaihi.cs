@@ -266,7 +266,7 @@ namespace App
 			if (kaihiCd != 0)
 			{
 				if (filter != "") filter += " AND ";
-				filter += string.Format("({0} = {1})", t_kaihi.FCD_Kaihi, kaihiCd);
+				filter += $"({t_kaihi.FCD_Kaihi} = {kaihiCd})";
 			}
 
 			// フィルタ適用

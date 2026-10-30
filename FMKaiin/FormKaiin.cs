@@ -359,7 +359,6 @@ namespace App
 			nrow.Kaiin_BunshoSofusaki = true;
 			nrow.Kaiin_FaxSofusaki = true;
 			nrow.Kaiin_KaihiUchiwake = true;
-			nrow.Kaiin_Ifax = true; // iFAX送付有無:有
 			nrow.Kaiin_JushoKeisai = false; // 自宅住所掲載:不可
 
 			// --日医～市医Grid準備--
@@ -429,10 +428,9 @@ namespace App
 				AppDb.CopyDataRow(dvKaiin.CurrentRow.Row, row); // 選択行データをコピー
 
 				t_kaiin kai = new t_kaiin(row);
-				DBView dvIshikai = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_kaihi));
+				DBView dvIshikai = new DBView(dvKaiinKaihi);
 				dvIshikai.RowFilterQuery($"{t_kaiin_kaihi.FID_Kaiin} = {kai.ID_Kaiin} AND {t_kaiin_kaihi.FKaihiTypeIkai} IN ({(int)eTypeIkai.Nichii}, {(int)eTypeIkai.Keni}, {(int)eTypeIkai.Shii})"); // 日医or県医or市医に絞込み
-				// 編集対象者の医師会レコードが存在しない
-				if (dvIshikai.Count == 0)
+				if (dvIshikai.Count == 0) // 編集対象者の医師会レコードが存在しない
 				{
 					// --日医～市医Grid準備--
 					addIshikaiKaihi(kai.ID_Kaiin);
@@ -503,16 +501,95 @@ namespace App
 				nrow.ID_Kaiin = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_Kaiin);
 				nrow.ID_KaiinGroup = AppDbID.GetNewID(dvKaiin, t_kaiin.FID_KaiinGroup);
 				nrow.CD_Kaiin_Null = AppDbID.GetNewCode(dvKaiin, t_kaiin.FCD_Kaiin);
-				//nrow.Kaiin_DateToroku = DateTime.Today; // 登録日まで合わせる必要ないなら有効へ
+				nrow.Kaiin_DateToroku = DateTime.Today; // 元と登録日合わせるなら無効へ
 				// その他セット項目、クリア項目あれば追記
 
 				// 会員に紐づくデータのコピー
-			//	dvKaiinKaihiIshikai = new DBView(dvKaiinKaihi);
-			//dvKaiinKaihi; // 医師会会員grid用DBView
-			//	dvKaiinShinryo;    // 担当診療科目grid用DBView
-			//	dvKaiinGakkai;      // 所属学会grid用DBView
-			//	dvKaiinKaihi;        // 参加医会grid用DBView
-			//	dvKaiinIdo;            // 異動情報grid用DBView
+				// 医会
+				DBView dvKaiinKaihiCp = new DBView(dvKaiinKaihi); // コピー元用
+				dvKaiinKaihiCp.RowFilterQuery($"{t_kaiin_kaihi.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinKaihiCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinKaihiCp.Count; i++)
+					{
+						t_kaiin_kaihi nrow_kh = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+						t_kaiin_kaihi srow_kh = new t_kaiin_kaihi(dvKaiinKaihiCp[i].Row);
+
+						AppDb.CopyDataRow(srow_kh.Row, nrow_kh.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_kh.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinKaihi.Add(nrow_kh.Row);
+					}
+				}
+
+				//--日医～市医が存在しないデータの対応--
+				DBView dvIshikai = new DBView(dvKaiinKaihi);
+				dvIshikai.RowFilterQuery($"{t_kaiin_kaihi.FID_Kaiin} = {nrow.ID_Kaiin} AND {t_kaiin_kaihi.FKaihiTypeIkai} IN ({(int)eTypeIkai.Nichii}, {(int)eTypeIkai.Keni}, {(int)eTypeIkai.Shii})"); // 日医or県医or市医に絞込み
+				if (dvIshikai.Count == 0) // 編集対象者の医師会レコードが存在しない
+				{
+					// --日医～市医Grid準備--
+					addIshikaiKaihi(nrow.ID_Kaiin);
+				}
+				//----
+
+				// 担当診療科
+				DBView dvKaiinShinryoCp = new DBView(dvKaiinShinryo); // コピー元用
+				dvKaiinShinryoCp.RowFilterQuery($"{t_kaiin_shinryoka.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinShinryoCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinShinryoCp.Count; i++)
+					{
+						t_kaiin_shinryoka nrow_sn = new t_kaiin_shinryoka(dvKaiinShinryo.NewRow());
+						t_kaiin_shinryoka srow_sn = new t_kaiin_shinryoka(dvKaiinShinryoCp[i].Row);
+
+						AppDb.CopyDataRow(srow_sn.Row, nrow_sn.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_sn.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinShinryo.Add(nrow_sn.Row);
+					}
+				}
+
+				// 所属学会
+				DBView dvKaiinGakkaiCp = new DBView(dvKaiinGakkai); // コピー元用
+				dvKaiinGakkaiCp.RowFilterQuery($"{t_kaiin_gakkai.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinGakkaiCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinGakkaiCp.Count; i++)
+					{
+						t_kaiin_gakkai nrow_gk = new t_kaiin_gakkai(dvKaiinGakkai.NewRow());
+						t_kaiin_gakkai srow_gk = new t_kaiin_gakkai(dvKaiinGakkaiCp[i].Row);
+
+						AppDb.CopyDataRow(srow_gk.Row, nrow_gk.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_gk.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinGakkai.Add(nrow_gk.Row);
+					}
+				}
+
+				// 異動情報
+				DBView dvKaiinIdoCp = new DBView(dvKaiinIdo); // コピー元用
+				dvKaiinIdoCp.RowFilterQuery($"{t_kaiin_gakkai.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinIdoCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinIdoCp.Count; i++)
+					{
+						t_kaiin_gakkai nrow_do = new t_kaiin_gakkai(dvKaiinIdo.NewRow());
+						t_kaiin_gakkai srow_do = new t_kaiin_gakkai(dvKaiinIdoCp[i].Row);
+
+						AppDb.CopyDataRow(srow_do.Row, nrow_do.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_do.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinIdo.Add(nrow_do.Row);
+					}
+				}
 
 				// 入力画面呼び出し
 				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
@@ -591,7 +668,95 @@ namespace App
 				nrow.Kaiin_DateShinsei_Null = null; // 申請年月日:クリア
 				nrow.Kaiin_DateTaikai_Null = null; // 退会年月日:クリア
 				nrow.Kaiin_TypeTaikaiJiyu = eTypeTaikaiJiyu.None; // 退会事由:クリア
+				nrow.ID_Ishikai_Idosaki_Null = null; // 退会-異動先医師会:クリア
 				nrow.Kaiin_TaikaiEtcmemo_Null = null; // 退会事由その他メモ:クリア
+
+				// 会員に紐づくデータのコピー
+				// 医会
+				DBView dvKaiinKaihiCp = new DBView(dvKaiinKaihi); // コピー元用
+				dvKaiinKaihiCp.RowFilterQuery($"{t_kaiin_kaihi.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinKaihiCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinKaihiCp.Count; i++)
+					{
+						t_kaiin_kaihi nrow_kh = new t_kaiin_kaihi(dvKaiinKaihi.NewRow());
+						t_kaiin_kaihi srow_kh = new t_kaiin_kaihi(dvKaiinKaihiCp[i].Row);
+
+						AppDb.CopyDataRow(srow_kh.Row, nrow_kh.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_kh.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinKaihi.Add(nrow_kh.Row);
+					}
+				}
+
+				//--日医～市医が存在しないデータの対応--
+				DBView dvIshikai = new DBView(dvKaiinKaihi);
+				dvIshikai.RowFilterQuery($"{t_kaiin_kaihi.FID_Kaiin} = {nrow.ID_Kaiin} AND {t_kaiin_kaihi.FKaihiTypeIkai} IN ({(int)eTypeIkai.Nichii}, {(int)eTypeIkai.Keni}, {(int)eTypeIkai.Shii})"); // 日医or県医or市医に絞込み
+				if (dvIshikai.Count == 0) // 編集対象者の医師会レコードが存在しない
+				{
+					// --日医～市医Grid準備--
+					addIshikaiKaihi(nrow.ID_Kaiin);
+				}
+				//----
+
+				// 担当診療科
+				DBView dvKaiinShinryoCp = new DBView(dvKaiinShinryo); // コピー元用
+				dvKaiinShinryoCp.RowFilterQuery($"{t_kaiin_shinryoka.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinShinryoCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinShinryoCp.Count; i++)
+					{
+						t_kaiin_shinryoka nrow_sn = new t_kaiin_shinryoka(dvKaiinShinryo.NewRow());
+						t_kaiin_shinryoka srow_sn = new t_kaiin_shinryoka(dvKaiinShinryoCp[i].Row);
+
+						AppDb.CopyDataRow(srow_sn.Row, nrow_sn.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_sn.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinShinryo.Add(nrow_sn.Row);
+					}
+				}
+
+				// 所属学会
+				DBView dvKaiinGakkaiCp = new DBView(dvKaiinGakkai); // コピー元用
+				dvKaiinGakkaiCp.RowFilterQuery($"{t_kaiin_gakkai.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinGakkaiCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinGakkaiCp.Count; i++)
+					{
+						t_kaiin_gakkai nrow_gk = new t_kaiin_gakkai(dvKaiinGakkai.NewRow());
+						t_kaiin_gakkai srow_gk = new t_kaiin_gakkai(dvKaiinGakkaiCp[i].Row);
+
+						AppDb.CopyDataRow(srow_gk.Row, nrow_gk.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_gk.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinGakkai.Add(nrow_gk.Row);
+					}
+				}
+
+				// 異動情報
+				DBView dvKaiinIdoCp = new DBView(dvKaiinIdo); // コピー元用
+				dvKaiinIdoCp.RowFilterQuery($"{t_kaiin_gakkai.FID_Kaiin} = {srow.ID_Kaiin}");
+
+				if (dvKaiinIdoCp.Count > 0)
+				{
+					// 元にデータ登録あり
+					for (int i = 0; i < dvKaiinIdoCp.Count; i++)
+					{
+						t_kaiin_gakkai nrow_do = new t_kaiin_gakkai(dvKaiinIdo.NewRow());
+						t_kaiin_gakkai srow_do = new t_kaiin_gakkai(dvKaiinIdoCp[i].Row);
+
+						AppDb.CopyDataRow(srow_do.Row, nrow_do.Row); // 元レコードを追加用レコードへコピー
+
+						nrow_do.ID_Kaiin = nrow.ID_Kaiin; // 追加対象の会員IDへ上書き
+						dvKaiinIdo.Add(nrow_do.Row);
+					}
+				}
 
 				// 入力画面呼び出し
 				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();

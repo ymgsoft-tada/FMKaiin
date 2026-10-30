@@ -189,8 +189,6 @@ namespace App
 			this.grid_Ido = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.iTaikaiJiyu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.groupBox1 = new System.Windows.Forms.GroupBox();
-			this.iOutIfax = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
-			this.ycLabelEx62 = new YControlLabelEx.YcLabelEx();
 			this.iFaxSofu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iKaihiUchiwake = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iBunshoSofu = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
@@ -312,7 +310,6 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.grid_Ido)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyu)).BeginInit();
 			this.groupBox1.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.iOutIfax)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iFaxSofu)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiUchiwake)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBunshoSofu)).BeginInit();
@@ -2753,8 +2750,6 @@ namespace App
 			// 
 			// groupBox1
 			// 
-			this.groupBox1.Controls.Add(this.iOutIfax);
-			this.groupBox1.Controls.Add(this.ycLabelEx62);
 			this.groupBox1.Controls.Add(this.iFaxSofu);
 			this.groupBox1.Controls.Add(this.iKaihiUchiwake);
 			this.groupBox1.Controls.Add(this.iBunshoSofu);
@@ -2767,40 +2762,6 @@ namespace App
 			this.groupBox1.TabIndex = 481;
 			this.groupBox1.TabStop = false;
 			this.groupBox1.Text = "処理区分";
-			// 
-			// iOutIfax
-			// 
-			this.iOutIfax.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iOutIfax.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.iOutIfax.ExCompareContent = null;
-			this.iOutIfax.ExCompareValue = null;
-			this.iOutIfax.ExDataSource = null;
-			this.iOutIfax.ExFocusHighlight = true;
-			this.iOutIfax.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
-			this.iOutIfax.ListHeaderPane.Height = 27;
-			this.iOutIfax.ListHeaderPane.Visible = false;
-			this.iOutIfax.Location = new System.Drawing.Point(393, 57);
-			this.iOutIfax.Name = "iOutIfax";
-			this.iOutIfax.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iOutIfax.Size = new System.Drawing.Size(89, 25);
-			this.iOutIfax.TabIndex = 3;
-			// 
-			// ycLabelEx62
-			// 
-			this.ycLabelEx62.BackColor = System.Drawing.Color.SteelBlue;
-			this.ycLabelEx62.BackColor2 = System.Drawing.Color.Empty;
-			this.ycLabelEx62.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.ycLabelEx62.ForeColor = System.Drawing.Color.White;
-			this.ycLabelEx62.ForeShadowColor = System.Drawing.Color.Empty;
-			this.ycLabelEx62.IconImage = null;
-			this.ycLabelEx62.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx62.Location = new System.Drawing.Point(287, 57);
-			this.ycLabelEx62.Name = "ycLabelEx62";
-			this.ycLabelEx62.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx62.Size = new System.Drawing.Size(100, 25);
-			this.ycLabelEx62.TabIndex = 334;
-			this.ycLabelEx62.Text = "iFAX出力";
-			this.ycLabelEx62.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// iFaxSofu
 			// 
@@ -3924,7 +3885,6 @@ namespace App
 			((System.ComponentModel.ISupportInitialize)(this.grid_Ido)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iTaikaiJiyu)).EndInit();
 			this.groupBox1.ResumeLayout(false);
-			((System.ComponentModel.ISupportInitialize)(this.iOutIfax)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iFaxSofu)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiUchiwake)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBunshoSofu)).EndInit();
@@ -4157,7 +4117,5 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx58;
 		private YControlLabelEx.YcLabelEx ycLabelEx57;
 		private GControlGcComboBoxEx.GcComboBoxEx iKaiinKbn;
-		private GControlGcComboBoxEx.GcComboBoxEx iOutIfax;
-		private YControlLabelEx.YcLabelEx ycLabelEx62;
 	}
 }
