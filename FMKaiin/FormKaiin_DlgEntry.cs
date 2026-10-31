@@ -83,7 +83,7 @@ namespace App
 		public DBView DvKaiinKaihiIshikai
 		{
 			//get { return dvKaiinKaihi; }
-			set { dvKaiinKaihiIshikai = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
+			set { dvKaiinKaihiIshikai = CreateChildView(value); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
 		/// <summary>
 		/// 医師会会員Grid
@@ -106,7 +106,7 @@ namespace App
 		public DBView DvKaiinShinryo
 		{
 			//get { return dvKaiinShinryo; }
-			set { dvKaiinShinryo = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
+			set { dvKaiinShinryo = CreateChildView(value); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
 		/// <summary>
 		/// 診療科目Grid
@@ -129,7 +129,7 @@ namespace App
 		public DBView DvKaiinGakkai
 		{
 			//get { return dvKaiinGakkai; }
-			set { dvKaiinGakkai = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
+			set { dvKaiinGakkai = CreateChildView(value); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
 		/// <summary>
 		/// 所属学会Grid
@@ -152,7 +152,7 @@ namespace App
 		public DBView DvKaiinKaihi
 		{
 			//get { return dvKaiinKaihi; }
-			set { dvKaiinKaihi = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
+			set { dvKaiinKaihi = CreateChildView(value); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
 		/// <summary>
 		/// 参加医会Grid
@@ -171,7 +171,7 @@ namespace App
 		public DBView DvKaiinIdo
 		{
 			//get { return dvKaiinIdo; }
-			set { dvKaiinIdo = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
+			set { dvKaiinIdo = CreateChildView(value); } // DlgEntry画面でBindするため、受取ったDBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
 		/// <summary>
 		/// 異動情報Grid

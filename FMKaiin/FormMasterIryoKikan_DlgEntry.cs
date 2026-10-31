@@ -60,7 +60,7 @@ namespace App
 		public DBView DvIryokikanShinryo
 		{
 			//get { return dvIryokikanShinryo; }
-			set { dvIryokikanShinryo = new DBView(value, this.BindingContext); } // DlgEntry画面でBindするため、DBViewを引数にnewして別Viewを準備(DataTableは同じ)
+			set { dvIryokikanShinryo = CreateChildView(value); } // DlgEntry画面でBindするため、DBViewを引数にnewして別Viewを準備(DataTableは同じ)
 		}
 		/// <summary>
 		/// 診療科目Grid

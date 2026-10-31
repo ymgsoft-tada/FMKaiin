@@ -13,6 +13,7 @@ using C1.Win.C1TrueDBGrid;
 using ComponentRegistry;
 using ComponentIO;
 using ComponentGControlDB;
+using ComponentDB;
 
 namespace App
 {
@@ -75,6 +76,10 @@ namespace App
 		/// ダイアログフォームとして表示するかを取得・設定します。ダイアログフォームでない場合は、FormBorderStyle = Noneが指定されます。
 		/// </summary>
 		bool isDialogForm = true;
+		/// <summary>
+		/// このフォームが解放するDBView
+		/// </summary>
+		List<DBView> ownedViews = new List<DBView>();
 		#endregion
 
 		#region *** Property ***
@@ -155,6 +160,12 @@ namespace App
 		/// </summary>
 		protected virtual void FormFrame_Disposed(object sender, EventArgs e)
 		{
+			foreach (DBView dv in ownedViews)
+			{
+				dv.Dispose();
+			}
+			ownedViews.Clear();
+
 			this.BindingContext = null;
 		}
 		/// <summary>
@@ -435,6 +446,19 @@ namespace App
 		#endregion
 
 		#region *** Private Method ***
+		/// <summary>
+		/// 親画面のDBViewから、このフォーム用の別Viewを作成します(DataTableは同じ)。
+		/// 作成したViewはフォームの解放時に解放されます。
+		/// </summary>
+		/// <param name="src">親画面のDBView</param>
+		/// <returns>作成したDBView</returns>
+		protected DBView CreateChildView(DBView src)
+		{
+			DBView dv = new DBView(src, this.BindingContext);
+			ownedViews.Add(dv);
+			return dv;
+		}
+
 		/// <summary>
 		/// フォームのスタイルを設定します。
 		/// </summary>
