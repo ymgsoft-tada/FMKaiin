@@ -423,6 +423,9 @@ namespace App
 		/// </summary>
 		void formClose()
 		{
+			// DBViewの破棄
+			dvKaihi.Dispose();
+
 			this.Close();
 		}
 

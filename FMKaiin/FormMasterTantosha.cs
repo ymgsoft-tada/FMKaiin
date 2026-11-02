@@ -226,6 +226,9 @@ namespace App
 
 		void formClose()
 		{
+			// DBViewの破棄
+			dvTanto.Dispose();
+
 			this.Close();
 		}
 	}

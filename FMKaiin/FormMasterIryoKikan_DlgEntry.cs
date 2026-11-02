@@ -253,6 +253,7 @@ namespace App
 			rowFetch();
 
 			enabledKyokabyosho(); // 許可病床のEnabled設定
+			enabled_EtcMemo(); // 併設施設その他テキスト
 			//			iCode.Select();
 
 			//-----標榜科目(診療科目)Grid準備-----
@@ -291,6 +292,7 @@ namespace App
 			btnKamokuAdd.Click += btnKamokuAdd_Click;
 			btnKamokuDel.Click += btnKamokuDel_Click;
 			iByoshoUmu.SelectedIndexChanged += iByoshoUmu_SelectedIndexChanged;
+			chkEtc.CheckedChanged += chkEtc_CheckedChanged;
 
 			dvIryokikanShinryo.RowFetchDemand += dvIryokikanShinryo_RowFetchDemand;
 
@@ -414,6 +416,29 @@ namespace App
 			else // 「有」
 			{
 				iKyokabyosho.Enabled = true;
+			}
+		}
+
+		/// <summary>
+		/// 併設施設:その他chkbox変更
+		/// </summary>
+		void chkEtc_CheckedChanged(object sender, EventArgs e)
+		{
+			enabled_EtcMemo();
+		}
+
+		/// <summary>
+		/// 退会事由関連コントロール制御
+		/// </summary>
+		void enabled_EtcMemo()
+		{
+			if (chkEtc.Checked == true)
+			{
+				iHeisetsu.Enabled = true; // 併設施設:その他テキスト→活性
+			}
+			else
+			{
+				iHeisetsu.Enabled = false;
 			}
 		}
 
@@ -561,6 +586,12 @@ namespace App
 
 			// 更新担当者のセット
 			this.Row[t_iryokikan.FLastUpdateUser] = AppGlobal.LoginUser.ID;
+
+			// 併設施設:その他 チェックなし→その他テキストのDB値をクリア
+			if (chkEtc.Checked != true)
+			{
+				this.Row[t_iryokikan.FIRK_Memo] = null;
+			}
 
 			// 空白チェック
 			Control[] ctls =

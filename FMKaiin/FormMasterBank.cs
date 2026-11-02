@@ -214,6 +214,9 @@ namespace App
 
 		void formClose()
 		{
+			// DBViewの破棄
+			dvBank.Dispose();
+
 			this.Close();
 		}
 	}
