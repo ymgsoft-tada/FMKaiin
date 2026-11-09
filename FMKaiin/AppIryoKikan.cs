@@ -108,7 +108,7 @@ namespace App
 	}
 
 	/// <summary>
-	/// 学校クラス
+	/// 医療機関クラス
 	/// </summary>
 	public class IryoKikan
 	{
