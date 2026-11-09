@@ -22,8 +22,8 @@ namespace App
 
 		private int LINE_MAX_PAGE = 17;
 
-		/// <summary>選択中の月度</summary>
-		public DateTime SelectedDateYM { get; set; }
+		/// <summary>選択中の年</summary>
+		public DateTime SelectedDateYear { get; set; }
 		/// <summary>出力するビュー</summary>
 		public DBView OutView { get; private set;}
 
@@ -35,17 +35,12 @@ namespace App
 		const string F_Cost1	= "F_Cost1";
 		const string F_BankIdx	= "F_BankIdx";
 		const string F_Biko	= "F_Biko";
-		const string F_BankName = "F_BankName";
-		const string F_BankNameShiten = "F_BankNameShiten";
-		const string F_BankKozaType = "F_BankKozaType";
-		const string F_BankKozaNo = "F_BankKozaNo";
 
 		/// <summary>会員ごと最大ページ数</summary>
 		Dictionary<int, int> maxpages;
 
 		DBView dvKaiinKaihi;
 		DBView dvKaiin;
-		//		DBView dvKyushin;
 
 		SortedDictionary<int, List<eShiharai>> dics_shiharaiKoza;
 		SortedDictionary<int, Decimal?> dics_costTotal;
@@ -60,10 +55,6 @@ namespace App
 			public decimal? Cost;
 			public int BankIdx;
 			public string Biko;
-			//public string BankName;
-			//public string BankNameShiten;
-			//public string BankKozaType;
-			//public string BankKozaNo;
 
 			/// <summary>
 			/// コンストラクタ
@@ -82,10 +73,13 @@ namespace App
 
 		/// <summary>
 		/// 出力用ビュー作成
-		/// <param name="fromVal">出力対象会員From</param>
-		/// <param name="toVal">出力対象会員To</param>
+		/// <param name="fromId">出力対象会員From</param>
+		/// <param name="toId">出力対象会員To</param>
+		/// <param name="fromZaiseki">出力対象在籍区分From</param>
+		/// <param name="toZaiseki">出力対象在籍区分To</param>
+		/// <param name="fromUchiwake">出力対象月別会費内訳From</param>
 		/// </summary>
-		public void CreateView(object fromVal = null, object toVal = null)
+		public void CreateView(object fromId = null, object toId = null, object fromZaiseki = null, object toZaiseki = null, object fromUchiwake = null)
 		{
 			// 出力用テーブルの作成
 			DataTable dt = new DataTable();
@@ -96,10 +90,6 @@ namespace App
 			dt.Columns.Add(F_Cost1, typeof(string));
 			dt.Columns.Add(F_BankIdx, typeof(string));
 			dt.Columns.Add(F_Biko, typeof(string));
-			//dt.Columns.Add(F_BankName, typeof(string)); // 黒塗り部
-			//dt.Columns.Add(F_BankNameShiten, typeof(string)); // 黒塗り部
-			//dt.Columns.Add(F_BankKozaType, typeof(string)); // 黒塗り部
-			//dt.Columns.Add(F_BankKozaNo, typeof(string)); // 黒塗り部
 
 			DBView dv = new DBView(dt);
 			dv.SortQuery($"{F_ID_Kaiin},{F_Page},{F_Line}");
@@ -109,24 +99,58 @@ namespace App
 			//dvKaihi.SortQuery($"{t_kyuyo.FKYU_DateYM}, {t_kyuyo.FID_Staff}");
 			dvKaiinKaihi.SortQuery($"{t_kaiin_kaihi.FID_Kaiin}, {t_kaiin_kaihi.FID_Kaihi}");
 
-			// 日医/県医/市医,その他参加医会があれば明細を作成 -> 日医/県医/市医が必須になるなら会員範囲を取ってその数ループだけでOK
+			// 会員-会費にデータあり
 			if (dvKaiinKaihi.Count > 0)
 			{
 				string where_kaiin = $"1 = 1";
 
-				Kaiin fromKaiin = AppGlobal.Kaiins.Get(Cast.Int(fromVal));
-				Kaiin toKaiin	= AppGlobal.Kaiins.Get(Cast.Int(toVal));
+				Kaiin fromKaiin = AppGlobal.Kaiins.Get(Cast.Int(fromId));
+				Kaiin toKaiin	= AppGlobal.Kaiins.Get(Cast.Int(toId));
 
 				// コードの指定が降順の場合の対応
 				if (fromKaiin != null && toKaiin != null && fromKaiin.CD > toKaiin.CD)
 				{
-					Kaiin sf	= fromKaiin;
+					Kaiin kai	= fromKaiin;
 					fromKaiin	= toKaiin;
-					toKaiin		= sf;
+					toKaiin		= kai;
 				}
 			
 				if (fromKaiin != null) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin} >= {fromKaiin.CD}"; 
 				if (toKaiin != null)   where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin} <= {toKaiin.CD}";
+
+				// 条件:在籍区分
+				int fromZai = Cast.Int(fromZaiseki);
+				int toZai = Cast.Int(toZaiseki);
+
+				// コードの指定が降順の場合の対応
+				if (fromZai != 0 && toZai != 0 && fromZai > toZai)
+				{
+					int zai = fromZai;
+					fromZai = toZai;
+					toZai = zai;
+				}
+
+				if (fromZai != 0) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FKaiin_TypeZaiseki} >= {fromZai}";
+				if (toZai != 0)   where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FKaiin_TypeZaiseki} <= {toZai}";
+
+				// --enumで実装した版--
+				//eTypeZaiseki fromZai = (eTypeZaiseki)fromZaiseki;
+				//eTypeZaiseki toZai = (eTypeZaiseki)toZaiseki;
+
+				//// コードの指定が降順の場合の対応
+				//if (fromZai != eTypeZaiseki.None && toZai != eTypeZaiseki.None && (int)fromZai > (int)toZai)
+				//{
+				//	eTypeZaiseki zai = fromZai;
+				//	fromZai = toZai;
+				//	toZai = zai;
+				//}
+
+				//if (fromZai != eTypeZaiseki.None) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FKaiin_TypeZaiseki} >= {(int)fromZai}";
+				//if (toZai != eTypeZaiseki.None) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FKaiin_TypeZaiseki} <= {(int)toZai}";
+				// ----
+
+				// 条件:月別会費内訳 2択のため選択した対象のみ。コントロールは1つ。両方出す場合は空欄で。
+				if (fromUchiwake != null) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FKaiin_KaihiUchiwake} = {fromUchiwake}";
 
 				// 会員情報
 				dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT {TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin} FROM {TableProp.t_kaiin} WHERE {where_kaiin}"));
@@ -146,13 +170,6 @@ namespace App
 					//Kaiin kin = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
 					Kaiin kin = AppGlobal.Kaiins.GetCode(xrow.CD_Kaiin);
 
-					// 医会会費情報(日医)の取得
-					//Kaihi NichiiInfo = AppGlobal.Kaihis.Get(kin.XRow.ID_Kaihi_Nichii);
-					// 医会会費情報(県医)の取得
-					//Kaihi KeniInfo = AppGlobal.Kaihis.Get(kin.XRow.ID_Kaihi_Keni);
-					// 医会会費情報(市医)の取得
-					//Kaihi ShiiInfo = AppGlobal.Kaihis.Get(kin.XRow.ID_Kaihi_Shii);
-
 					if (kin != null)
 					{
 						if (dics.ContainsKey(kin.CD) == false)
@@ -164,127 +181,6 @@ namespace App
 
 						KaihiData kd;
 
-						// 日医データ
-						//if (NichiiInfo != null)
-						//{
-						//	kd = new KaihiData();
-						//	kd.Kaiin = kin;
-						//	kd.KaihiName = NichiiInfo.XRow.Kaihi_Name_Null;
-						//	kd.Cost = 0;
-						//	for (int j = 1; j <= 12; j++)
-						//	{
-						//		kd.Cost += NichiiInfo.GetCost(j);
-						//	}
-						//	kd.BankIdx = (int)kin.XRow.Kaiin_NichiiShiharai;
-						//	kd.Biko = "";
-
-/*
-							t_bank_code bank;
-							switch (kin.XRow.Kaiin_NichiiShiharai)
-							{
-								case eShiharai.Koza1:
-									kd.BankIdx = (int)eShiharai.Koza1; // 「扱銀行」の数字表示
-
-									bank = AppGlobal.BankCodeMg.GetBankCodeRow(kin.XRow.Kaiin_BankCode1_Null, kin.XRow.Kaiin_BankShitenCode1_Null);
-									if (bank != null)
-									{
-										kd.BankName = bank.BCD_FullName;
-										kd.BankNameShiten = bank.BCD_NameShiten;
-										kd.BankKozaType = kin.XRow.Kaiin_BankKozaType1.ToString();
-										kd.BankKozaNo = kin.XRow.Kaiin_BankKozaNo1;
-									}
-									break;
-
-								case eShiharai.Koza2:
-									kd.BankIdx = (int)eShiharai.Koza2; // 「扱銀行」の数字表示
-
-									bank = AppGlobal.BankCodeMg.GetBankCodeRow(kin.XRow.Kaiin_BankCode2_Null, kin.XRow.Kaiin_BankShitenCode2_Null);
-									if (bank != null)
-									{
-										kd.BankName = bank.BCD_FullName;
-										kd.BankNameShiten = bank.BCD_NameShiten;
-										kd.BankKozaType = kin.XRow.Kaiin_BankKozaType2.ToString();
-										kd.BankKozaNo = kin.XRow.Kaiin_BankKozaNo2;
-									}
-									break;
-
-								case eShiharai.Koza3:
-									kd.BankIdx = (int)eShiharai.Koza3; // 「扱銀行」の数字表示
-
-									bank = AppGlobal.BankCodeMg.GetBankCodeRow(kin.XRow.Kaiin_BankCode3_Null, kin.XRow.Kaiin_BankShitenCode3_Null);
-									if (bank != null)
-									{
-										kd.BankName = bank.BCD_FullName;
-										kd.BankNameShiten = bank.BCD_NameShiten;
-										kd.BankKozaType = kin.XRow.Kaiin_BankKozaType3.ToString();
-										kd.BankKozaNo = kin.XRow.Kaiin_BankKozaNo3;
-									}
-									break;
-							}
-*/
-						//	// 会員ごと会費リスト追加
-						//	dics[kin.CD].Add(kd);
-						//	// 支払方法リストの処理
-						//	if (dics_shiharaiKoza[kin.CD].Contains(kin.XRow.Kaiin_NichiiShiharai) == false)
-						//	{
-						//		dics_shiharaiKoza[kin.CD].Add(kin.XRow.Kaiin_NichiiShiharai);
-						//	}
-						//	//  会費合計の処理
-						//	dics_costTotal[kin.CD] += kd.Cost;
-						//}
-
-						//// 県医データ
-						//if (KeniInfo != null)
-						//{
-						//	kd = new KaihiData();
-						//	kd.Kaiin = kin;
-						//	kd.KaihiName = KeniInfo.XRow.Kaihi_Name_Null;
-						//	kd.Cost = 0;
-						//	for (int j = 1; j <= 12; j++)
-						//	{
-						//		kd.Cost += KeniInfo.GetCost(j);
-						//	}
-
-						//	kd.BankIdx = (int)kin.XRow.Kaiin_KeniShiharai;
-						//	kd.Biko = "";
-
-						//	// 会員ごと会費リスト追加
-						//	dics[kin.CD].Add(kd);
-						//	// 支払方法リストの処理
-						//	if (dics_shiharaiKoza[kin.CD].Contains(kin.XRow.Kaiin_KeniShiharai) == false)
-						//	{
-						//		dics_shiharaiKoza[kin.CD].Add(kin.XRow.Kaiin_KeniShiharai);
-						//	}
-						//	//  会費合計の処理
-						//	dics_costTotal[kin.CD] += kd.Cost;
-						//}
-
-						//// 市医データ
-						//if (ShiiInfo != null)
-						//{
-						//	kd = new KaihiData();
-						//	kd.Kaiin = kin;
-						//	kd.KaihiName = ShiiInfo.XRow.Kaihi_Name_Null;
-						//	kd.Cost = 0;
-						//	for (int j = 1; j <= 12; j++)
-						//	{
-						//		kd.Cost += ShiiInfo.GetCost(j);
-						//	}
-
-						//	kd.BankIdx = (int)kin.XRow.Kaiin_ShiiShiharai;
-						//	kd.Biko = "";
-
-						//	// 会員ごと会費リスト追加
-						//	dics[kin.CD].Add(kd);
-						//	// 支払方法リストの処理
-						//	if (dics_shiharaiKoza[kin.CD].Contains(kin.XRow.Kaiin_ShiiShiharai) == false)
-						//	{
-						//		dics_shiharaiKoza[kin.CD].Add(kin.XRow.Kaiin_ShiiShiharai);
-						//	}
-						//	//  会費合計の処理
-						//	dics_costTotal[kin.CD] += kd.Cost;
-						//}
-
 						// 参加医会データ
 						for (int k = 0; k < kin.Kaihis.Count; k++)
 						{
@@ -295,7 +191,7 @@ namespace App
 							kd.Cost = 0;
 							for (int j = 1; j <= 12; j++)
 							{
-								kd.Cost += kin.Kaihis[k].GetCost(j);
+								kd.Cost += kin.Kaihis[k].GetCost(j); // 年合計
 							}
 							kd.BankIdx = (int)kin.GetShiharai(kin.Kaihis[k].ID);
 							kd.Biko = kin.Kaihis[k].XRow.Kaihi_Biko;
@@ -309,7 +205,7 @@ namespace App
 								dics_shiharaiKoza[kin.CD].Add(kin.GetShiharai(kin.Kaihis[k].ID));
 							}
 
-							//  会費合計の処理
+							// 会費合計の処理
 							dics_costTotal[kin.CD] += kd.Cost;
 						}
 					}
@@ -340,27 +236,16 @@ namespace App
 							nrow[F_Cost1] = kd.Cost;
 							nrow[F_BankIdx] = kd.BankIdx;
 							nrow[F_Biko] = kd.Biko;
-							//nrow[F_BankName] = 
-							//nrow[F_BankNameShiten] =
-							//nrow[F_BankKozaType] =
-							//nrow[F_BankKozaNo] =
 							nrow[F_ID_Kaiin] = kin.ID;
 							nrow[F_Line] = line;
 							nrow[F_Page] = page;
 
-//							nrow[F_Day1]		= kd.Day;
-//							nrow[F_Day1]		= day == "99" ? "-" : day;
-//							nrow[F_Komoku1]		= kd.Komoku;
-//							nrow[F_Cost1]		= kd.Cost;
-//							nrow[F_ID_Staff]	= stf.ID;
-//							nrow[F_Line]		= line;
-//							nrow[F_Page]		= page;
 							dv.Add(nrow);
 							line++;
 						}
 						// 手当2列目出す用？
 						//else
-						//if (dv.FindRow(new object[]{stf.ID, page, no % LINE_MAX_PAGE}) == true)
+						//if (dv.FindRow(new object[]{kin.ID, page, no % LINE_MAX_PAGE}) == true)
 						//{
 						//	nrow			= dv.CurrentRow.Row;
 						//	nrow[F_Day2]	= day == "99" ? "-" : day;
@@ -500,8 +385,7 @@ namespace App
 			int lineNo = (e.Page - 1) * LINE_MAX_PAGE + e.Line;
 			DataRow row = OutView[lineNo].Row;
 
-			//Staff stf = AppGlobal.Staffs.Get(Cast.Int(row[F_ID_Staff]));
-			Kaiin stf = AppGlobal.Kaiins.Get(Cast.Int(row[F_ID_Kaiin]));
+			Kaiin kin = AppGlobal.Kaiins.Get(Cast.Int(row[F_ID_Kaiin]));
 
 			string cd = "";
 			string name = "";
@@ -512,31 +396,38 @@ namespace App
 			string title = "";
 			string pageno = "";
 
-			if (stf != null)
+			if (kin != null)
 			{
-				post = $"〒{stf.XRow.Kaiin_Post}";
-				cd	 = stf.CodeString;
-				name = $"{stf.XRow.Kaiin_Name} 様";
-				addr1 = $"{stf.XRow.Kaiin_Addr1}";
-				addr2 = $"{stf.XRow.Kaiin_Addr2}";
+				post = $"〒{kin.XRow.Kaiin_Post}";
+				cd	 = kin.CodeString;
+				name = $"{kin.XRow.Kaiin_Name}　様";
 
-				// 医療機関名
-				IryoKikan ik = AppGlobal.IryoKikans.Get(stf.XRow.ID_Iryokikan);
+				// 医療機関名, 送付先住所
+				IryoKikan ik = AppGlobal.IryoKikans.Get(kin.XRow.ID_Iryokikan);
 				if (ik != null)
 				{
 					kikanname = ik.XRow.IRK_Name_Null;
+					addr1 = $"{ik.XRow.IRK_Addr1_Null}";
+					addr2 = $"{ik.XRow.IRK_Addr2_Null}";
+				}
+
+				// 送付先住所(自宅指定の場合)
+				if (kin.XRow.Kaiin_BunshoSofusaki == false)
+				{
+					addr1 = $"{kin.XRow.Kaiin_Addr1}";
+					addr2 = $"{kin.XRow.Kaiin_Addr2}";
 				}
 
 				title = $"会費内訳";
-				//title = $"{enumKbn.DTypeJob[(int)stf.XRow.STF_TypeJob]}手当明細書";
+				//title = $"{enumKbn.DTypeJob[(int)kin.XRow.STF_TypeJob]}手当明細書";
 
-				if (maxpages.ContainsKey(stf.ID) == true && maxpages[stf.ID] > 1)
+				if (maxpages.ContainsKey(kin.ID) == true && maxpages[kin.ID] > 1)
 				{
-					pageno = $"{row[F_Page]}/{maxpages[stf.ID]}";
+					pageno = $"{row[F_Page]}/{maxpages[kin.ID]}";
 				}
 			}
 
-			// スタッフ情報
+			// 会員情報
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCode, cd);
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldPost, post);
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldAddr1, addr1);
@@ -547,9 +438,9 @@ namespace App
 			// タイトル
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldTitle, title);
 
-			// 月分
-			//string date = AppDate.GetYearMonth(SelectedDateYM)+"分";
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldDateYM, date);
+			// 年表示
+			//string year = $"{AppDate.GetYearSeireki(SelectedDateYear)}年分";
+			//setFieldValue(rep, CRep.FFldDate, year);
 
 			// 会社名,TEL,FAX
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCompanyName, AppGlobal.Basic.BAS_Name);
@@ -557,135 +448,87 @@ namespace App
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCompanyFax, "FAX:" + AppGlobal.Basic.BAS_Fax);
 
 			// 会費合計
-			setCost(rep, CRep05_KaihiUchiwakeYear.FFldCostTotal, dics_costTotal[stf.CD]);
+			setCost(rep, CRep05_KaihiUchiwakeYear.FFldCostTotal, dics_costTotal[kin.CD]);
 
-			// 扱銀行 まず仕様を確認しないことには(同ページに2銀行以上出る、1ページ1銀行しか出ないなど)
-			//string[,] bankField = new string[,]
-			//{
-			//	{ CRep05_KaihiUchiwakeYear.FFldBankName, CRep05_KaihiUchiwakeYear.FFldBankShitenName, CRep05_KaihiUchiwakeYear.FFldBankType, CRep05_KaihiUchiwakeYear.FFldBankNo, },
-				//{ CRep05_KaihiUchiwakeYear.FFldBankName, CRep05_KaihiUchiwakeYear.FFldBankShitenName, CRep05_KaihiUchiwakeYear.FFldBankType, CRep05_KaihiUchiwakeYear.FFldBankNo },
-			//};
+			// 扱銀行
+			string lblbank1 = "";
 			string bankname1 = "";
 			string bankshitenname1 = "";
 			string bankkozatype1 = "";
 			string bankkozano1 = "";
+			string lblbank2 = "";
 			string bankname2 = "";
 			string bankshitenname2 = "";
 			string bankkozatype2 = "";
 			string bankkozano2 = "";
+			string lblbank3 = "";
 			string bankname3 = "";
 			string bankshitenname3 = "";
 			string bankkozatype3 = "";
 			string bankkozano3 = "";
 
-			for (int i = 0; i < dics_shiharaiKoza[stf.CD].Count; i++)
+			for (int i = 0; i < dics_shiharaiKoza[kin.CD].Count; i++)
 			{
 				t_bank_code bank;
-				
-				switch (dics_shiharaiKoza[stf.CD][i])
+
+				switch (dics_shiharaiKoza[kin.CD][i])
 				{
 					case eShiharai.Koza1:
-						bank = AppGlobal.BankCodeMg.GetBankCodeRow(stf.XRow.Kaiin_BankCode1_Null, stf.XRow.Kaiin_BankShitenCode1_Null);
+						bank = AppGlobal.BankCodeMg.GetBankCodeRow(kin.XRow.Kaiin_BankCode1_Null, kin.XRow.Kaiin_BankShitenCode1_Null);
 						if (bank != null)
 						{
-							//KaiinBankinfo kb = new KaiinBankinfo();
-							//kb.shiharaiIdx = dics_shiharaiKoza[stf.CD][i];
-							//kb.bankname = bank.BCD_FullName;
-							//kb.banknameshiten = bank.BCD_NameShiten;
-							//kb.bankkozatype = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType1];
-							//kb.bankkozano = stf.XRow.Kaiin_BankKozaNo1;
+							lblbank1 = "扱銀行 １．";
 							bankname1 = bank.BCD_FullName;
 							bankshitenname1 = bank.BCD_NameShiten;
-							bankkozatype1 = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType1];
-							bankkozano1 = stf.XRow.Kaiin_BankKozaNo1;
+							bankkozatype1 = enumKbn.DTypeKoza[(int)kin.XRow.Kaiin_BankKozaType1];
+							bankkozano1 = kin.XRow.Kaiin_BankKozaNo1;
 
 						}
 						break;
 
 					case eShiharai.Koza2:
-						bank = AppGlobal.BankCodeMg.GetBankCodeRow(stf.XRow.Kaiin_BankCode2_Null, stf.XRow.Kaiin_BankShitenCode2_Null);
+						bank = AppGlobal.BankCodeMg.GetBankCodeRow(kin.XRow.Kaiin_BankCode2_Null, kin.XRow.Kaiin_BankShitenCode2_Null);
 						if (bank != null)
 						{
+							lblbank2 = "扱銀行 ２．";
 							bankname2 = bank.BCD_FullName;
 							bankshitenname2 = bank.BCD_NameShiten;
-							bankkozatype2 = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType2];
-							bankkozano2 = stf.XRow.Kaiin_BankKozaNo2;
+							bankkozatype2 = enumKbn.DTypeKoza[(int)kin.XRow.Kaiin_BankKozaType2];
+							bankkozano2 = kin.XRow.Kaiin_BankKozaNo2;
 						}
 						break;
 
 					case eShiharai.Koza3:
-						bank = AppGlobal.BankCodeMg.GetBankCodeRow(stf.XRow.Kaiin_BankCode3_Null, stf.XRow.Kaiin_BankShitenCode3_Null);
+						bank = AppGlobal.BankCodeMg.GetBankCodeRow(kin.XRow.Kaiin_BankCode3_Null, kin.XRow.Kaiin_BankShitenCode3_Null);
 						if (bank != null)
 						{
+							lblbank3 = "扱銀行 ３．";
 							bankname3 = bank.BCD_FullName;
 							bankshitenname3 = bank.BCD_NameShiten;
-							bankkozatype3 = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType3];
-							bankkozano3 = stf.XRow.Kaiin_BankKozaNo3;
+							bankkozatype3 = enumKbn.DTypeKoza[(int)kin.XRow.Kaiin_BankKozaType3];
+							bankkozano3 = kin.XRow.Kaiin_BankKozaNo3;
 						}
 						break;
 				}
 			}
 
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName, bankname1);
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName, bankshitenname1);
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType, bankkozatype1);
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo, bankkozano1);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBanklbl1, lblbank1);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName1, bankname1);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName1, bankshitenname1);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType1, bankkozatype1);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo1, bankkozano1);
 
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBanklbl2, lblbank2);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName2, bankname2);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName2, bankshitenname2);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType2, bankkozatype2);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo2, bankkozano2);
 
-			//				eShiharai sh = dics_shiharai[stf.CD][i];
-
-			//	t_bank_code bank;
-			//	switch (dics_shiharaiKoza[stf.CD][i])
-			//	{
-			//		case eShiharai.Koza1:
-			//			bank = AppGlobal.BankCodeMg.GetBankCodeRow(stf.XRow.Kaiin_BankCode1_Null, stf.XRow.Kaiin_BankShitenCode1_Null);
-			//			if (bank != null)
-			//			{
-			//				KaiinBankinfo kb = new KaiinBankinfo();
-			//				kb.shiharaiIdx = dics_shiharaiKoza[stf.CD][i];
-			//				kb.bankname = bank.BCD_FullName;
-			//				kb.banknameshiten = bank.BCD_NameShiten;
-			//				kb.bankkozatype = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType1];
-			//				kb.bankkozano = stf.XRow.Kaiin_BankKozaNo1;
-			//			}
-			//			break;
-
-			//		case eShiharai.Koza2:
-			//			bank = AppGlobal.BankCodeMg.GetBankCodeRow(stf.XRow.Kaiin_BankCode2_Null, stf.XRow.Kaiin_BankShitenCode2_Null);
-			//			if (bank != null)
-			//			{
-			//				bankname2 = bank.BCD_FullName;
-			//				bankshitenname2 = bank.BCD_NameShiten;
-			//				bankkozatype2 = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType2];
-			//				bankkozano2 = stf.XRow.Kaiin_BankKozaNo2;
-			//			}
-			//			break;
-
-			//		case eShiharai.Koza3:
-			//			bank = AppGlobal.BankCodeMg.GetBankCodeRow(stf.XRow.Kaiin_BankCode3_Null, stf.XRow.Kaiin_BankShitenCode3_Null);
-			//			if (bank != null)
-			//			{
-			//				bankname3 = bank.BCD_FullName;
-			//				bankshitenname3 = bank.BCD_NameShiten;
-			//				bankkozatype3 = enumKbn.DTypeKoza[(int)stf.XRow.Kaiin_BankKozaType3];
-			//				bankkozano3 = stf.XRow.Kaiin_BankKozaNo3;
-			//			}
-			//			break;
-			//	}
-			//}
-
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName, bankname1);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName, bankshitenname1);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType, bankkozatype1);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo, bankkozano1);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName2, bankname2);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName2, bankshitenname2);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType2, bankkozatype2);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo2, bankkozano2);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName3, bankname3);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName3, bankshitenname3);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType3, bankkozatype3);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo3, bankkozano3);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBanklbl3, lblbank3);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankName3, bankname3);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankShitenName3, bankshitenname3);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankType3, bankkozatype3);
+			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankNo3, bankkozano3);
 
 			// 発行日
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldDateOut, $"{DateTime.Now:yyyy年MM月dd日}");
@@ -734,15 +577,10 @@ namespace App
 
 			DataRow row = OutView[lineNo].Row;
 
-			//setCode(rep, row);
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKaihiName, row[F_KaihiName]);
 			setCost(rep, CRep05_KaihiUchiwakeYear.FFldCost1, row[F_Cost1]);
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankIdx, row[F_BankIdx]);
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBiko, row[F_Biko]);
-
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldDay2, row[F_Day2]);
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKomoku2, row[F_Komoku2]);
-			//setCost(rep, CRep05_KaihiUchiwakeYear.FFldCost2, row[F_Cost2]);
 		}
 
 		/// <summary>
@@ -807,45 +645,6 @@ namespace App
 			else
 			{
 				ErrLog.WriteLine($"レポートフィールド「{fldname}」は見つかりません。");
-			}
-		}
-
-		/// <summary>
-		/// 会員ごと銀行情報用クラス
-		/// </summary>
-		public class KaiinBankinfo
-		{
-			/// <summary>銀行インデックス</summary>
-			public eShiharai shiharaiIdx
-			{
-				get; set;
-			}
-			/// <summary>銀行名</summary>
-			public string bankname
-			{
-				get; set;
-			}
-			/// <summary>銀行支店名</summary>
-			public string banknameshiten
-			{
-				get; set;
-			}
-			/// <summary>口座区分</summary>
-			public string bankkozatype
-			{
-				get; set;
-			}
-			/// <summary>口座番号</summary>
-			public string bankkozano
-			{
-				get; set;
-			}
-
-			/// <summary>
-			/// コンストラクタ
-			/// </summary>
-			public KaiinBankinfo()
-			{
 			}
 		}
 	}

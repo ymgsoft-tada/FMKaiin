@@ -269,6 +269,24 @@
     <Compile Include="FormOutIryoKikan.Designer.cs">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutKaihiList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiList.Designer.cs">
+      <DependentUpon>FormOutKaihiList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeMonth.Designer.cs">
+      <DependentUpon>FormOutKaihiUchiwakeMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutKaihiYoteiYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiYoteiYear.Designer.cs">
+      <DependentUpon>FormOutKaihiYoteiYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOutKaihiUchiwakeYear.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -317,7 +335,10 @@
     <Compile Include="ReportFlexCommon.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
     <Compile Include="ReportFlexIryoKikanJoho.cs" />
+    <Compile Include="ReportFlexKaihiList.cs" />
     <Compile Include="ReportFlexKaihiListBank.cs" />
+    <Compile Include="ReportFlexKaihiUchiwakeMonth.cs" />
+    <Compile Include="ReportFlexKaihiYoteiYear.cs" />
     <Compile Include="ReportFlexKaihiUchiwakeYear.cs" />
     <Compile Include="ReportFlexKaiinList.cs" />
     <Compile Include="UcDate.cs">
@@ -464,6 +485,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutIryoKikan.resx">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiList.resx">
+      <DependentUpon>FormOutKaihiList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiUchiwakeMonth.resx">
+      <DependentUpon>FormOutKaihiUchiwakeMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiYoteiYear.resx">
+      <DependentUpon>FormOutKaihiYoteiYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutKaihiUchiwakeYear.resx">
       <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>

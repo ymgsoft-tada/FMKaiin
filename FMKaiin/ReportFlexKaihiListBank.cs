@@ -20,7 +20,7 @@ namespace App
 		/// <summary>レポートファイル名</summary>
 		private string ReportFile = $"{AppConst.ReportFolder}{ReportProp.CRepKaihiFilename}";
 
-		private int LINE_MAX_PAGE = 13;
+		private int LINE_MAX_PAGE = 14;
 
 		/// <summary>選択中の月度</summary>
 		public DateTime SelectedDateYM { get; set; }
@@ -105,12 +105,12 @@ namespace App
 
 		/// <summary>
 		/// 出力用ビュー作成
-		/// <param name="fromKbnCd">出力対象区分コードFrom</param>
-		/// <param name="toKbnCd">出力対象区分コードTo</param>
-		/// <param name="fromCd">出力対象コードFrom</param>
-		/// <param name="toCd">出力対象コードTo</param>
+		/// <param name="fromKbnCd">出力対象会費区分From</param>
+		/// <param name="toKbnCd">出力対象会費区分To</param>
+		/// <param name="fromId">出力対象医会From</param>
+		/// <param name="toId">出力対象医会To</param>
 		/// </summary>
-		public void CreateView(object fromKbnCd = null, object toKbnCd = null, object fromCd = null, object toCd = null)
+		public void CreateView(object fromKbnCd = null, object toKbnCd = null, object fromId = null, object toId = null)
 		{
 			// 出力用テーブルの作成
 			DataTable dt = new DataTable();
@@ -142,11 +142,6 @@ namespace App
 			DBView dv = new DBView(dt);
 			dv.SortQuery($"{F_CD_Kaihi},{F_Page},{F_Line}"); // 出力用:会費コード順
 
-			//dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin} WHERE {t_kaiin.FKYU_DateYM} = #{SelectedDateYM}#"));
-			//dvKaihi = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaihi}"));
-			//dvKaihi.SortQuery($"{t_kyuyo.FKYU_DateYM}, {t_kyuyo.FID_Staff}");
-			//dvKaihi.SortQuery($"{t_kaihi.FID_Kaihi}");
-
 			// 抽出条件作成
 			string where_kaihi = $"1 = 1";
 
@@ -168,8 +163,8 @@ namespace App
 			if (toKbnKaihi > (int)eTypeKaihi.None) where_kaihi += $" AND {TableProp.t_kaihi}.{t_kaihi.FKaihi_KaihiType} <= {toKbnKaihi}";
 
 			// 会費コード条件
-			Kaihi fromKaihi = AppGlobal.Kaihis.Get(Cast.Int(fromCd));
-			Kaihi toKaihi	= AppGlobal.Kaihis.Get(Cast.Int(toCd));
+			Kaihi fromKaihi = AppGlobal.Kaihis.Get(Cast.Int(fromId));
+			Kaihi toKaihi	= AppGlobal.Kaihis.Get(Cast.Int(toId));
 
 			// コードの指定が降順の場合の対応
 			if (fromKaihi != null && toKaihi != null && fromKaihi.CD > toKaihi.CD)
@@ -241,8 +236,9 @@ namespace App
 							kd.BankKozaType = krow.Kaihi_BankKozaType;
 							kd.BankKozaNo = krow.Kaihi_BankKozaNo;
 							kd.BankKozaName = krow.Kaihi_BankKozaName;
-							kd.BankIfax = krow.Kaihi_BankIfax;
 						}
+
+						kd.BankIfax = krow.Kaihi_BankIfax;
 
 						// 会費区分コードごとに会費リスト追加
 						dics[kvp.Key].Add(kd);
@@ -254,8 +250,6 @@ namespace App
 				// 出力用DBViewにデータ行を追加
 				foreach(var kvp in dics)
 				{
-					//					kvp.Value.Sort((a, b) => a.Day - b.Day);
-
 					int kaihitype = kvp.Key;
 
 					int line	= 0;
@@ -264,8 +258,6 @@ namespace App
 					{
 						KaihiData kd = kvp.Value[i];
 						DataRow nrow = null;
-
-						//string day = $"{kd.Day}";
 
 						if (no < LINE_MAX_PAGE)
 						{
@@ -305,7 +297,6 @@ namespace App
 						}
 
 						no++;
-						//if (no >= LINE_MAX_PAGE*2)
 						if (no >= LINE_MAX_PAGE)
 						{
 							page++;
@@ -448,10 +439,6 @@ namespace App
 			// タイトル
 			setFieldValue(rep, CRep07_KaihiListBank.FFldTitle, title);
 
-			// 月分
-			//string date = AppDate.GetYearMonth(SelectedDateYM)+"分";
-			//setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldDateYM, date);
-
 			// 会社名,TEL,FAX
 			setFieldValue(rep, CRep07_KaihiListBank.FFldCompanyName, AppGlobal.Basic.BAS_Name);
 
@@ -463,7 +450,7 @@ namespace App
 			setFieldValue(rep, CRep07_KaihiListBank.FFldDate, $"{DateTime.Now:yyyy/MM/dd HH:mm} 作成");
 
 			// ページ番号
-			setFieldValue(rep, CRep07_KaihiListBank.FFldPage, pageno); // 現行踏襲かどうか(他と合わせる
+			setFieldValue(rep, CRep07_KaihiListBank.FFldPage, pageno);
 		}
 
 		private void Repinfo_StartSection(object sender, ReportFlex.ReportEventArgsEx e)
@@ -562,6 +549,7 @@ namespace App
 			setFieldValue(rep, CRep07_KaihiListBank.FFldBankKozaName, row[F_BankKozaName]);
 
 			setFieldValue(rep, CRep07_KaihiListBank.FFldBankIfax, row[F_BankIfax]);
+
 		}
 
 		/// <summary>

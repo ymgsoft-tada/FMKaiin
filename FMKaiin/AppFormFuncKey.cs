@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -1933,6 +1933,102 @@ namespace App
 		/// 閉じる
 		/// </summary>
 		public readonly static FuncKeyDefine Close = Functions[0];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiYoteiYear ***
+	/// <summary>
+	/// FuncOutKaihiYoteiYearのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiYoteiYear
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiList ***
+	/// <summary>
+	/// FuncOutKaihiListのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiList
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiUchiwakeMonth ***
+	/// <summary>
+	/// FuncOutKaihiUchiwakeMonthのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiUchiwakeMonth
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
 	}
 	#endregion
 

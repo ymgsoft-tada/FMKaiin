@@ -79,6 +79,36 @@ namespace App
 			}
 		}
 		/// <summary>
+		/// CRep10_KaihiYoteiYear レポート名称
+		/// </summary>
+		public static string CRep10_KaihiYoteiYear
+		{
+			get
+			{
+				return "10_KaihiYoteiYear";
+			}
+		}
+		/// <summary>
+		/// CRep04_KaihiUchiwakeMonth レポート名称
+		/// </summary>
+		public static string CRep04_KaihiUchiwakeMonth
+		{
+			get
+			{
+				return "04_KaihiUchiwakeMonth";
+			}
+		}
+		/// <summary>
+		/// CRep06_KaihiList レポート名称
+		/// </summary>
+		public static string CRep06_KaihiList
+		{
+			get
+			{
+				return "06_KaihiList";
+			}
+		}
+		/// <summary>
 		/// CRepKaiinList レポート名称
 		/// </summary>
 		public static string CRepKaiinList

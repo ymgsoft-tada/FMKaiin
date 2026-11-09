@@ -434,15 +434,12 @@ namespace App
 		/// </summary>
 		void preview1()
 		{
-/*
 			// 画面呼び出し
-			FormTest_DlgEntry frm = new FormTest_DlgEntry();
-			//frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
+			FormOutKaihiUchiwakeMonth frm = new FormOutKaihiUchiwakeMonth();
 			frm.ShowDialog();
 
 			frm.Dispose();
 			frm = null;
-*/
 		}
 		/// <summary>
 		/// プレビュー⑤年会費内訳書
@@ -461,15 +458,12 @@ namespace App
 		/// </summary>
 		void preview3()
 		{
-			/*
-						// 画面呼び出し
-						FormTest_DlgEntry frm = new FormTest_DlgEntry();
-						//frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
-						frm.ShowDialog();
+			// 画面呼び出し
+			FormOutKaihiList frm = new FormOutKaihiList();
+			frm.ShowDialog();
 
-						frm.Dispose();
-						frm = null;
-			*/
+			frm.Dispose();
+			frm = null;
 		}
 		/// <summary>
 		/// プレビュー⑦会費種別一覧表（銀行有）
@@ -488,15 +482,12 @@ namespace App
 		/// </summary>
 		void preview5()
 		{
-			/*
-						// 画面呼び出し
-						FormTest_DlgEntry frm = new FormTest_DlgEntry();
-						//frm.Mode = FormKaiin_DlgEntry.eMode.Edit;
-						frm.ShowDialog();
+			// 画面呼び出し
+			FormOutKaihiYoteiYear frm = new FormOutKaihiYoteiYear();
+			frm.ShowDialog();
 
-						frm.Dispose();
-						frm = null;
-			*/
+			frm.Dispose();
+			frm = null;
 		}
 	}
 }

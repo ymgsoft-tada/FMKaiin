@@ -156,7 +156,7 @@ namespace App
 			this.iTypeKaihiFrom.Location = new System.Drawing.Point(130, 55);
 			this.iTypeKaihiFrom.Name = "iTypeKaihiFrom";
 			this.iTypeKaihiFrom.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iTypeKaihiFrom.Size = new System.Drawing.Size(71, 25);
+			this.iTypeKaihiFrom.Size = new System.Drawing.Size(105, 25);
 			this.iTypeKaihiFrom.TabIndex = 1;
 			// 
 			// ycLabelEx14
@@ -191,7 +191,7 @@ namespace App
 			this.iTypeKaihiTo.Location = new System.Drawing.Point(316, 55);
 			this.iTypeKaihiTo.Name = "iTypeKaihiTo";
 			this.iTypeKaihiTo.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iTypeKaihiTo.Size = new System.Drawing.Size(71, 25);
+			this.iTypeKaihiTo.Size = new System.Drawing.Size(105, 25);
 			this.iTypeKaihiTo.TabIndex = 2;
 			// 
 			// FormOutKaihiListBank

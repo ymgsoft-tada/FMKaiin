@@ -32,6 +32,11 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			// 年初期値:当日
+			iTaishoYear.UcFormat = UcDate.UcDateFormat.YYYY;
+			iTaishoYear.UcDateCtl.DropDownCalendar.CalendarType = GrapeCity.Win.Editors.CalendarType.YearMonth; // 年だけはあるのか
+			iTaishoYear.UcValue = DateTime.Now;
+
 			// コンボの作成
 			// 会員コード
 			DBView dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin));
@@ -41,6 +46,17 @@ namespace App
 			// 在籍区分
 			AppCombo.SetComboBox(iZaisekiFrom, enumKbn.DTypeZaiseki);
 			AppCombo.SetComboBox(iZaisekiTo, enumKbn.DTypeZaiseki);
+
+			// 月別会費内訳
+			iUchiwakeFrom.ExBeginUpdate();
+			iUchiwakeFrom.ExAddItem("", null);
+			iUchiwakeFrom.ExAddItem("不要", true);
+			iUchiwakeFrom.ExAddItem("必要", false);
+			iUchiwakeFrom.ExEndUpdate();
+			//iUchiwakeTo.ExBeginUpdate();
+			//iUchiwakeTo.ExAddItem("不要", true);
+			//iUchiwakeTo.ExAddItem("必要", false);
+			//iUchiwakeTo.ExEndUpdate();
 
 			//■ イベントの登録
 
@@ -62,26 +78,61 @@ namespace App
 		/// 検証処理
 		/// </summary>
 		/// <returns></returns>
-		//bool validateRow()
-		//{
-		//	return true;
-		//}
+		bool validateRow()
+		{
+			// 空白チェック
+			Control[] ctls =
+			{
+				iTaishoYear,
+			};
+
+			foreach (Control ctl in ctls)
+			{
+				int len = ctl.Text.Length;
+
+				if (ctl is UcDate)
+				{
+					UcDate tmp = (UcDate)ctl; // プロパティ指定のためいったん変換して格納
+					if (tmp.UcValue == null) // 日付変換できない場合UcValueはnull
+					{
+						ctl.Select();
+						appToolTip.Show(ctl, AppToolTipIndex.CannotUseBlank);
+						return false;
+					}
+				}
+				else
+				{
+					if (ctl is UcTableComboBox)
+					{
+						len = ((UcTableComboBox)ctl).Text.Length;
+					}
+
+					if (len == 0)
+					{
+						ctl.Select();
+						appToolTip.Show(ctl, AppToolTipIndex.CannotUseBlank);
+						return false;
+					}
+				}
+			}
+
+			return true;
+		}
 
 		/// <summary>
 		/// プレビュー
 		/// </summary>
 		void preview()
 		{
-			//if (validateRow() == true)
-			//{
+			if (validateRow() == true)
+			{
+				ReportFlexKaihiUchiwakeYear rep = new ReportFlexKaihiUchiwakeYear();
+				rep.CreateView(iKaiinFrom.Value, iKaiinTo.Value, iZaisekiFrom.ExGetValue(iZaisekiFrom.SelectedIndex), iZaisekiTo.ExGetValue(iZaisekiTo.SelectedIndex), iUchiwakeFrom.ExGetValue(iUchiwakeFrom.SelectedIndex));
+				rep.SelectedDateYear = Cast.DateTime(iTaishoYear.UcValue);
+				rep.ReportExec();
 
-			ReportFlexKaihiUchiwakeYear rep = new ReportFlexKaihiUchiwakeYear();
-			rep.CreateView(iKaiinFrom.Value, iKaiinTo.Value);
-			rep.ReportExec();
-
-			rep = null;
-
-			//}
+				rep = null;
+			}
 		}
 
 		/// <summary>
