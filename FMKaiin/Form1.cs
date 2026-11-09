@@ -25,6 +25,17 @@ namespace App
 			btnIryokikanToroku.Click += BtnIryokikanToroku_Click;
 			btnShinryoka.Click += BtnShinryoka_Click;
 			btnHikiotoshi.Click += BtnHikiotoshi_Click;
+			btnFB.Click += BtnFB_Click;
+		}
+
+		private void BtnFB_Click(object sender, EventArgs e)
+		{
+			initBankCode();
+
+			FormCreateBankFile frm = new FormCreateBankFile();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		private void BtnHikiotoshi_Click(object sender, EventArgs e)
