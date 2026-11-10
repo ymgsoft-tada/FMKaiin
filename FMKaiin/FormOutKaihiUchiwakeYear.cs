@@ -34,7 +34,7 @@ namespace App
 		{
 			// 年初期値:当日
 			iTaishoYear.UcFormat = UcDate.UcDateFormat.YYYY;
-			iTaishoYear.UcDateCtl.DropDownCalendar.CalendarType = GrapeCity.Win.Editors.CalendarType.YearMonth; // 年だけはあるのか
+			iTaishoYear.UcSideButton = false; // 年のみのためカレンダーは出さない
 			iTaishoYear.UcValue = DateTime.Now;
 
 			// コンボの作成

@@ -235,7 +235,7 @@ namespace App
 							kd.BankNameShiten = bank.BCD_NameShiten;
 							kd.BankKozaType = krow.Kaihi_BankKozaType;
 							kd.BankKozaNo = krow.Kaihi_BankKozaNo;
-							kd.BankKozaName = krow.Kaihi_BankKozaName;
+							kd.BankKozaName = krow.Kaihi_BankKozaNameKana_Null;
 						}
 
 						kd.BankIfax = krow.Kaihi_BankIfax;
