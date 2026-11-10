@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -585,6 +585,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[口座名義カナ]。
+		/// </summary>
+		public const string FKaihi_BankKozaNameKana = "Kaihi_BankKozaNameKana";
+		/// <summary>
+		/// 口座名義カナ
+		/// </summary>
+		public string Kaihi_BankKozaNameKana
+		{
+			get	{	return Cast.String(row == null ? null : row[FKaihi_BankKozaNameKana]);	}
+			set	{	_set(FKaihi_BankKozaNameKana, value);	}
+		}
+		
+		/// <summary>
+		/// 口座名義カナ。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string Kaihi_BankKozaNameKana_Null
+		{
+			get	{	if (row == null || row[FKaihi_BankKozaNameKana] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaihi_BankKozaNameKana]); }	}
+			set	{	_set(FKaihi_BankKozaNameKana, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[iFAXグループID]。
 		/// </summary>
 		public const string FKaihi_BankIfax = "Kaihi_BankIfax";
@@ -729,6 +751,11 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaihi_BankKozaName, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaihi_BankKozaNameKana, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

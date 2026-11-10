@@ -162,7 +162,7 @@ namespace App
 			gctl.Add(new GControlDBRuby( // 2つ目にカナ入力される
 							new string[] {
 								t_kaihi.FKaihi_Name, // 会費印刷用名称
-								t_kaihi.FKaihi_ShortName}, // 会費略称
+								t_kaihi.FKaihi_ShortName}, // 会費略称 ※RuleはRubyにしていない(略称は完全にカナではないようであるため)
 							new Control[] {
 								iName,
 								iShortName
@@ -191,7 +191,15 @@ namespace App
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankCodeShiten, iShitenCD));
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankKozaType, iKozaType));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaNo, iKozaNo));
-			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaName, iKozaName));
+			gctl.Add(new GControlDBRuby( // 2つ目にカナ入力される
+							new string[] {
+								t_kaihi.FKaihi_BankKozaName, // 口座名義
+								t_kaihi.FKaihi_BankKozaNameKana}, // カナ
+							new Control[] {
+								iKozaName,
+								iKozaNameKana
+							}
+			));
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfax, iBankIfax.ComboBox));
 
 			gctl.EndAdd(AppDbRule.Rule);

@@ -255,7 +255,8 @@ namespace App
 			#region +++ t_kaihi +++
 			Rule.Add(new GControlDBRuleNumber(t_kaihi.FCD_Kaihi, 5, 0));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Name, 30));
-			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_ShortName, 30));
+			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_ShortName, 30)); // 完全にフリガナではなさそうなので個別にRule
+			//Rule.Add(new GControlDBRuleRuby(t_kaihi.FKaihi_Name, new int[] { 15, 30 }));
 			Rule.Add(new GControlDBRuleText(t_kaihi.FKaihi_Biko, 20));
 			Rule.Add(new GControlDBRuleNumber(t_kaihi.FKaihi_GunCode, 4, 0));
 
@@ -275,7 +276,8 @@ namespace App
 			Rule.Add(code4, t_kaihi.FKaihi_BankCode);
 			Rule.Add(code3, t_kaihi.FKaihi_BankCodeShiten);
 			Rule.Add(code7, t_kaihi.FKaihi_BankKozaNo);
-			Rule.Add(kana30, t_kaihi.FKaihi_BankKozaName);
+			//Rule.Add(kana30, t_kaihi.FKaihi_BankKozaName);
+			Rule.Add(new GControlDBRuleRuby(t_kaihi.FKaihi_BankKozaName, new int[] { 15, 30 }));
 			#endregion
 
 			#region +++ t_iryokikan +++

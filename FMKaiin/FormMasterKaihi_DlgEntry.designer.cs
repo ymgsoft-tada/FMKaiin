@@ -88,6 +88,7 @@
 			this.ycLabelEx45 = new YControlLabelEx.YcLabelEx();
 			this.iKaihiGunCode = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iKbnKaihi = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.iKozaNameKana = new GControlGcTextBoxEx.GcTextBoxEx();
 			((System.ComponentModel.ISupportInitialize)(this.iSearchUsed)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iName)).BeginInit();
@@ -117,12 +118,13 @@
 			((System.ComponentModel.ISupportInitialize)(this.iCost2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiGunCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKbnKaihi)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iKozaNameKana)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// funckey
 			// 
 			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
-			this.funckey.Location = new System.Drawing.Point(0, 528);
+			this.funckey.Location = new System.Drawing.Point(0, 539);
 			this.funckey.Name = "funckey";
 			this.funckey.Size = new System.Drawing.Size(907, 25);
 			this.funckey.TabIndex = 34;
@@ -261,6 +263,7 @@
 			// 
 			// gbxBank
 			// 
+			this.gbxBank.Controls.Add(this.iKozaNameKana);
 			this.gbxBank.Controls.Add(this.iBankIfax);
 			this.gbxBank.Controls.Add(this.ycLabelEx4);
 			this.gbxBank.Controls.Add(this.iShitenName);
@@ -277,7 +280,7 @@
 			this.gbxBank.Controls.Add(this.iBankCD);
 			this.gbxBank.Location = new System.Drawing.Point(395, 309);
 			this.gbxBank.Name = "gbxBank";
-			this.gbxBank.Size = new System.Drawing.Size(462, 190);
+			this.gbxBank.Size = new System.Drawing.Size(462, 219);
 			this.gbxBank.TabIndex = 8;
 			this.gbxBank.TabStop = false;
 			this.gbxBank.Text = "銀行情報";
@@ -295,13 +298,13 @@
 			this.iBankIfax.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
 			this.iBankIfax.ForeColor = System.Drawing.Color.Transparent;
 			this.iBankIfax.HighlightText = true;
-			this.iBankIfax.Location = new System.Drawing.Point(123, 154);
+			this.iBankIfax.Location = new System.Drawing.Point(123, 178);
 			this.iBankIfax.Name = "iBankIfax";
 			this.iBankIfax.RowFilter = "";
 			this.iBankIfax.SelectedIndexNullLeave = -1;
 			this.iBankIfax.Size = new System.Drawing.Size(221, 23);
 			this.iBankIfax.Sort = "";
-			this.iBankIfax.TabIndex = 357;
+			this.iBankIfax.TabIndex = 8;
 			this.iBankIfax.TextSubItemIndex = -1;
 			// 
 			// ycLabelEx4
@@ -313,7 +316,7 @@
 			this.ycLabelEx4.ForeShadowColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.IconImage = null;
 			this.ycLabelEx4.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx4.Location = new System.Drawing.Point(17, 154);
+			this.ycLabelEx4.Location = new System.Drawing.Point(17, 178);
 			this.ycLabelEx4.Name = "ycLabelEx4";
 			this.ycLabelEx4.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx4.Size = new System.Drawing.Size(100, 23);
@@ -394,7 +397,7 @@
 			this.ycLabelEx13.Location = new System.Drawing.Point(17, 125);
 			this.ycLabelEx13.Name = "ycLabelEx13";
 			this.ycLabelEx13.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx13.Size = new System.Drawing.Size(100, 23);
+			this.ycLabelEx13.Size = new System.Drawing.Size(100, 47);
 			this.ycLabelEx13.TabIndex = 330;
 			this.ycLabelEx13.Text = "口座名義";
 			this.ycLabelEx13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1214,11 +1217,22 @@
 			this.iKbnKaihi.Size = new System.Drawing.Size(116, 25);
 			this.iKbnKaihi.TabIndex = 0;
 			// 
+			// iKozaNameKana
+			// 
+			this.iKozaNameKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iKozaNameKana.ExFocusHighlight = true;
+			this.iKozaNameKana.ImeStr = "";
+			this.iKozaNameKana.Location = new System.Drawing.Point(123, 149);
+			this.iKozaNameKana.Name = "iKozaNameKana";
+			this.iKozaNameKana.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iKozaNameKana.Size = new System.Drawing.Size(289, 23);
+			this.iKozaNameKana.TabIndex = 7;
+			// 
 			// FormMasterKaihi_DlgEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(907, 553);
+			this.ClientSize = new System.Drawing.Size(907, 564);
 			this.Controls.Add(this.iKbnKaihi);
 			this.Controls.Add(this.ycLabelEx45);
 			this.Controls.Add(this.iKaihiGunCode);
@@ -1293,6 +1307,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iCost2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiGunCode)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKbnKaihi)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iKozaNameKana)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1359,5 +1374,6 @@
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private UcTableComboBox iBankIfax;
 		private GControlGcComboBoxEx.GcComboBoxEx iKbnKaihi;
+		private GControlGcTextBoxEx.GcTextBoxEx iKozaNameKana;
 	}
 }

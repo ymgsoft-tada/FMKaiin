@@ -72,7 +72,7 @@ namespace App
 			this.chkUnUsed.Position = YControlYcCheckBoxEx.YcCheckBoxEx.CheckBoxExPosition.Normal;
 			this.chkUnUsed.SingleBorderColor = System.Drawing.Color.DimGray;
 			this.chkUnUsed.Size = new System.Drawing.Size(119, 24);
-			this.chkUnUsed.TabIndex = 74;
+			this.chkUnUsed.TabIndex = 20;
 			this.chkUnUsed.TabStop = false;
 			this.chkUnUsed.Text = "退会者を含める";
 			this.chkUnUsed.UseVisualStyleBackColor = true;
@@ -86,14 +86,14 @@ namespace App
 			this.iSearch.Name = "iSearch";
 			this.iSearch.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iSearch.Size = new System.Drawing.Size(250, 23);
-			this.iSearch.TabIndex = 70;
+			this.iSearch.TabIndex = 0;
 			// 
 			// btnClear
 			// 
 			this.btnClear.Location = new System.Drawing.Point(834, 63);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(99, 28);
-			this.btnClear.TabIndex = 72;
+			this.btnClear.TabIndex = 3;
 			this.btnClear.Text = "検索クリア";
 			this.btnClear.UseVisualStyleBackColor = true;
 			// 
@@ -131,7 +131,7 @@ namespace App
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
 			this.grid.Size = new System.Drawing.Size(907, 407);
-			this.grid.TabIndex = 73;
+			this.grid.TabIndex = 10;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
 			// lblTitle
@@ -180,7 +180,7 @@ namespace App
 			this.iSearchIsekiTorokuNo.Name = "iSearchIsekiTorokuNo";
 			this.iSearchIsekiTorokuNo.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iSearchIsekiTorokuNo.Size = new System.Drawing.Size(88, 23);
-			this.iSearchIsekiTorokuNo.TabIndex = 74;
+			this.iSearchIsekiTorokuNo.TabIndex = 2;
 			// 
 			// ycLabelEx3
 			// 
@@ -224,7 +224,7 @@ namespace App
 			this.iSearchBirthday.Name = "iSearchBirthday";
 			this.iSearchBirthday.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iSearchBirthday.Size = new System.Drawing.Size(143, 25);
-			this.iSearchBirthday.TabIndex = 73;
+			this.iSearchBirthday.TabIndex = 1;
 			this.iSearchBirthday.UcBackColor = System.Drawing.SystemColors.Window;
 			this.iSearchBirthday.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
 			this.iSearchBirthday.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
