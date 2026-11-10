@@ -244,6 +244,25 @@ namespace App
 				// Enterによるフォーカス移動で、Gridへの移動に対応するための記述
 
 				case Keys.Enter:
+					if (this.ActiveControl == iIshikaiShiharai && grid_KaihiIshikai.Row == 2 && grid_KaihiIshikai.Col == 2)
+					{
+						tabControl1.SelectedIndex =  0;
+						iTantoMainKamoku.Select();
+
+						return;
+					}
+					else
+					if(this.ActiveControl == iGenmen)
+					{
+						grid_KaihiIshikai.Select();
+						grid_KaihiIshikai.Row = 0;
+						grid_KaihiIshikai.Col = 1;
+						
+						gcom_kaihiIshikai.SelectInput();
+
+						return;
+					}
+					else
 					if (this.ActiveControl == grid_Sinryo) // Enterでのフォーカス先が診療Grid
 					{
 						gcom_shinryo.SelectInput(); // Grid内のセルへフォーカス移動

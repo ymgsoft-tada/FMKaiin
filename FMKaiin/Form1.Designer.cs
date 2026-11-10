@@ -38,6 +38,7 @@ namespace App
 			this.btnShinryoka = new System.Windows.Forms.Button();
 			this.btnHikiotoshi = new System.Windows.Forms.Button();
 			this.btnFB = new System.Windows.Forms.Button();
+			this.button1 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnBasic
@@ -121,11 +122,21 @@ namespace App
 			this.btnFB.Text = "FBデータ作成";
 			this.btnFB.UseVisualStyleBackColor = true;
 			// 
+			// button1
+			// 
+			this.button1.Location = new System.Drawing.Point(54, 266);
+			this.button1.Name = "button1";
+			this.button1.Size = new System.Drawing.Size(139, 29);
+			this.button1.TabIndex = 9;
+			this.button1.Text = "iFAXデータ出力";
+			this.button1.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(583, 268);
+			this.ClientSize = new System.Drawing.Size(583, 330);
+			this.Controls.Add(this.button1);
 			this.Controls.Add(this.btnFB);
 			this.Controls.Add(this.btnHikiotoshi);
 			this.Controls.Add(this.btnShinryoka);
@@ -150,6 +161,7 @@ namespace App
 			this.Controls.SetChildIndex(this.btnShinryoka, 0);
 			this.Controls.SetChildIndex(this.btnHikiotoshi, 0);
 			this.Controls.SetChildIndex(this.btnFB, 0);
+			this.Controls.SetChildIndex(this.button1, 0);
 			this.ResumeLayout(false);
 
 		}
@@ -165,5 +177,6 @@ namespace App
 		private System.Windows.Forms.Button btnShinryoka;
 		private System.Windows.Forms.Button btnHikiotoshi;
 		private System.Windows.Forms.Button btnFB;
+		private System.Windows.Forms.Button button1;
 	}
 }

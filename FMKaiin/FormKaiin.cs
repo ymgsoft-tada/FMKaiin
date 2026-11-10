@@ -76,6 +76,8 @@ namespace App
 					}
 					break;
 			}
+
+			base.FormFrame_KeyDown(sender, e);
 		}
 
 		/// <summary>
@@ -107,6 +109,7 @@ namespace App
 			gcom.EndAdd(dvKaiin);
 
 			AppDbRule.SetControlByRule(iSearch, t_kaiin.FKaiin_Name);
+			AppDbRule.SetControlByRule(iSearchBirthday.UcDateCtl, AppDbRule.RuleDate);
 
 			changeFilter();
 

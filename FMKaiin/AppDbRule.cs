@@ -37,6 +37,8 @@ namespace App
 		/// <summary>少数点第3用</summary>
 		public const string RuleRatio3 = "Ratio3";
 
+		public const string RuleDate = "Date";
+
 		public const int Code6 = 6;
 
 		/// <summary>
@@ -163,7 +165,7 @@ namespace App
 
 
 			// 検索用などの日付入力フィールド
-			Rule.Add(new GControlDBRuleDate("Date"));
+			Rule.Add(new GControlDBRuleDate(RuleDate));
 
 			#region +++ t_basic +++
 			Rule.Add(new GControlDBRuleRuby(t_basic.FBAS_Name, new int[] { 40, 80 }));
