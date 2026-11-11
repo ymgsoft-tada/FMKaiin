@@ -8,6 +8,9 @@
     <Setting Name="FBSavePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="IfaxSavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="BackUpDir" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>

@@ -26,6 +26,15 @@ namespace App
 			btnShinryoka.Click += BtnShinryoka_Click;
 			btnHikiotoshi.Click += BtnHikiotoshi_Click;
 			btnFB.Click += BtnFB_Click;
+			button1.Click += BtnIfax_Click; //¶ 2026/11/11 CC iFAXデータ出力
+		}
+
+		private void BtnIfax_Click(object sender, EventArgs e)
+		{
+			FormCreateIfaxFile frm = new FormCreateIfaxFile();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		private void BtnFB_Click(object sender, EventArgs e)

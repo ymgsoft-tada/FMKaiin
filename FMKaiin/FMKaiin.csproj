@@ -96,6 +96,7 @@
     <Compile Include="AppDbUpdateManager.cs" />
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
+    <Compile Include="AppIfaxFile.cs" />
     <Compile Include="AppIfaxGroup.cs" />
     <Compile Include="AppIryoKikan.cs" />
     <Compile Include="AppGlobal.cs" />
@@ -131,6 +132,12 @@
     </Compile>
     <Compile Include="FormCreateBankFile.Designer.cs">
       <DependentUpon>FormCreateBankFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateIfaxFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateIfaxFile.Designer.cs">
+      <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
@@ -429,6 +436,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateBankFile.resx">
       <DependentUpon>FormCreateBankFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateIfaxFile.resx">
+      <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFrame.resx">
       <DependentUpon>FormFrame.cs</DependentUpon>

@@ -46,6 +46,18 @@ namespace App.Properties {
                 this["FBSavePath"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string IfaxSavePath {
+            get {
+                return ((string)(this["IfaxSavePath"]));
+            }
+            set {
+                this["IfaxSavePath"] = value;
+            }
+        }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
