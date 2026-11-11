@@ -407,6 +407,7 @@
     <Compile Include="XApp_t_ishikai.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
     <Compile Include="XApp_t_kaiin.cs" />
+    <Compile Include="XApp_t_kaiin_chosei.cs" />
     <Compile Include="XApp_t_kaiin_gakkai.cs" />
     <Compile Include="XApp_t_kaiin_ido.cs" />
     <Compile Include="XApp_t_kaiin_kaihi.cs" />

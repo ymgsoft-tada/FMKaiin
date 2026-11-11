@@ -86,6 +86,11 @@ namespace App
 		public const string t_kaiin = "t_kaiin";
 		
 		/// <summary>
+		/// t_kaiin_chosei
+		/// </summary>
+		public const string t_kaiin_chosei = "t_kaiin_chosei";
+		
+		/// <summary>
 		/// t_kaiin_gakkai
 		/// </summary>
 		public const string t_kaiin_gakkai = "t_kaiin_gakkai";
