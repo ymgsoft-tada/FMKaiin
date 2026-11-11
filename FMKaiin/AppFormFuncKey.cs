@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -1592,6 +1592,10 @@ namespace App
 					"再入会",	
 					""),
 			new FuncKeyDefine(
+					Keys.F8,	
+					"会費調整",	
+					""),
+			new FuncKeyDefine(
 					Keys.F9,	
 					"印刷プレビュー",	
 					""),
@@ -1626,17 +1630,21 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine Rejoin = Functions[4];
 		/// <summary>
+		/// 会費調整
+		/// </summary>
+		public readonly static FuncKeyDefine ShowChosei = Functions[5];
+		/// <summary>
 		/// 印刷プレビュー
 		/// </summary>
-		public readonly static FuncKeyDefine Preview = Functions[5];
+		public readonly static FuncKeyDefine Preview = Functions[6];
 		/// <summary>
 		/// 在籍期間表示
 		/// </summary>
-		public readonly static FuncKeyDefine ShowZaiseki = Functions[6];
+		public readonly static FuncKeyDefine ShowZaiseki = Functions[7];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[7];
+		public readonly static FuncKeyDefine Close = Functions[8];
 	}
 	#endregion
 
