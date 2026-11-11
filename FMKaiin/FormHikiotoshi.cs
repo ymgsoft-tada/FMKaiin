@@ -414,6 +414,7 @@ namespace App
 						nrow.Hiki_DateYM	= ym;
 						nrow.Hiki_Cost_Null = k.GetCost(ym);
 						nrow.Hiki_Shiharai	= ka.GetShiharai(k);
+						nrow.Hiki_TypeIkai	= k.LinkRow == null ? eTypeIkai.None : k.LinkRow.KaihiTypeIkai;
 						nrow.LastUpdateUser = AppGlobal.LoginUser.ID;
 
 						dvHiki.Add(nrow.Row);

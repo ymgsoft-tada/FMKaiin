@@ -139,16 +139,26 @@ namespace App
 		}
 
 		/// <summary>
+		/// 会員情報と紐づくレコード情報
+		/// </summary>
+		public t_kaiin_kaihi LinkRow
+		{
+			get; private set;
+		}
+
+		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		public Kaihi(t_kaihi row)
+		public Kaihi(t_kaihi row, t_kaiin_kaihi lrow = null)
 		{
+
 			this.XRow = new t_kaihi(row.Row);
 
 			this.ID = XRow.ID_Kaihi;
 			this.CD = XRow.CD_Kaihi;
 //			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 			this.TypeKaihiName = enumKbn.DTypeKaihi[(int)XRow.Kaihi_KaihiType];
+			this.LinkRow = lrow;
 		}
 
 		/// <summary>

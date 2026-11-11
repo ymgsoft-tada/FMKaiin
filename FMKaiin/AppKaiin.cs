@@ -198,6 +198,11 @@ namespace App
 		}
 
 		/// <summary>
+		/// 所属している会費と紐づく元レコード
+		/// </summary>
+		private List<t_kaiin_kaihi> kaihiLinks;
+
+		/// <summary>
 		/// 所属している学会
 		/// </summary>
 		public List<Gakkai> Gakkais
@@ -232,6 +237,7 @@ namespace App
 			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 
 			Kaihis = new List<Kaihi>();
+			kaihiLinks = new List<t_kaiin_kaihi>();
 			Gakkais = new List<Gakkai>();
 			Shinryokas  = new List<Shinryoka>();
 			dic_shiharai = new Dictionary<int, eShiharai>();
@@ -270,11 +276,17 @@ namespace App
 		{
 			if (xrow != null && xrow.ID_Kaiin == ID)
 			{
-				Kaihis.Add(AppGlobal.Kaihis.Get(xrow.ID_Kaihi));
-
-				if (dic_shiharai.ContainsKey(xrow.ID_Kaihi) == false)
+				Kaihi ka = AppGlobal.Kaihis.Get(xrow.ID_Kaihi);
+				
+				if (ka != null)
 				{
-					dic_shiharai.Add(xrow.ID_Kaihi, xrow.KaihiShiharai);
+					//¶ 2026/11/11 kj 会員情報と紐づくレコードを渡して、再生成する。
+					Kaihis.Add(new Kaihi(ka.XRow, xrow));
+
+					if (dic_shiharai.ContainsKey(xrow.ID_Kaihi) == false)
+					{
+						dic_shiharai.Add(xrow.ID_Kaihi, xrow.KaihiShiharai);
+					}
 				}
 			}
 		}
