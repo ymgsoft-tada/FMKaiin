@@ -29,6 +29,8 @@ namespace App
 			Add,
 			/// <summary>訂正</summary>
 			Edit,
+			/// <summary>コピー追加</summary>
+			Copy
 		}
 
 		/// <summary>
@@ -129,6 +131,10 @@ namespace App
 			{
 				title = "【訂正】";
 			}
+			else if (Mode == eMode.Copy)
+			{
+				title = "【コピー追加】";
+			}
 
 			this.Text += title;
 			base.FormFrame_Load(sender, e);
@@ -143,6 +149,7 @@ namespace App
 			// enumをセット
 			AppCombo.SetComboBox(iKozaType, enumKbn.DTypeKoza, (int)eTypeKoza.None); // 口座区分
 			AppCombo.SetComboBox(iKbnKaihi, enumKbn.DTypeKaihi, (int)eTypeKaihi.None); // 会費区分
+			AppCombo.SetComboBox(iKaihiZokusei, enumKbn.DKaihiZokusei, (int)eKaihiZokusei.None); // 会費属性
 
 			// iSearch
 			dvIfax = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_ifax));
@@ -201,6 +208,7 @@ namespace App
 							}
 			));
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfax, iBankIfax.ComboBox));
+			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_Zokusei, iKaihiZokusei));
 
 			gctl.EndAdd(AppDbRule.Rule);
 
@@ -410,7 +418,7 @@ namespace App
 			// 空白チェック
 			Control [] ctls =
 			{
-				iCode, iName, iShortName, // ★必須は仕様確認
+				iKbnKaihi, iCode, iName, iShortName, iKaihiZokusei
 			};
 
 			foreach (Control ctl in ctls)

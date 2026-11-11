@@ -33,6 +33,10 @@ namespace App
 			Add,
 			/// <summary>訂正</summary>
 			Edit,
+			/// <summary>コピー追加</summary>
+			Copy,
+			/// <summary>再入会</summary>
+			Rejoin,
 		}
 
 		/// <summary>
@@ -348,9 +352,19 @@ namespace App
 		{
 			string title = "【追加】";
 
-			if (Mode == eMode.Edit)
+			switch(Mode)
 			{
-				title = "【訂正】";
+				case eMode.Edit:
+					title = "【訂正】";
+					break;
+
+				case eMode.Copy:
+					title = "【コピー追加】";
+					break;
+
+				case eMode.Rejoin:
+					title = "【追加(再入会)】";
+					break;
 			}
 
 			this.Text += title;

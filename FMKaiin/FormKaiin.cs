@@ -644,7 +644,7 @@ namespace App
 
 				// 入力画面呼び出し
 				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
-				frm.Mode = FormKaiin_DlgEntry.eMode.Add;
+				frm.Mode = FormKaiin_DlgEntry.eMode.Copy;
 				frm.Row = nrow.Row;
 				frm.DvKaiinKaihiIshikai = dvKaiinKaihi; // 医師会会員grid用DBView
 				frm.DvKaiinShinryo = dvKaiinShinryo;    // 担当診療科目grid用DBView
@@ -811,7 +811,7 @@ namespace App
 
 				// 入力画面呼び出し
 				FormKaiin_DlgEntry frm = new FormKaiin_DlgEntry();
-				frm.Mode = FormKaiin_DlgEntry.eMode.Add;
+				frm.Mode = FormKaiin_DlgEntry.eMode.Rejoin;
 				frm.Row = nrow.Row;
 				frm.DvKaiinKaihiIshikai = dvKaiinKaihi; // 医師会会員grid用DBView
 				frm.DvKaiinShinryo = dvKaiinShinryo;    // 担当診療科目grid用DBView

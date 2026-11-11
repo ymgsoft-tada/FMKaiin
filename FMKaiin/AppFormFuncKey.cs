@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -1289,22 +1289,26 @@ namespace App
 					""),
 			new FuncKeyDefine(
 					Keys.F5,	
-					"帳票1",	
+					"コピー追加",	
 					""),
 			new FuncKeyDefine(
 					Keys.F6,	
-					"帳票2",	
+					"帳票1",	
 					""),
 			new FuncKeyDefine(
 					Keys.F7,	
-					"帳票3",	
+					"帳票2",	
 					""),
 			new FuncKeyDefine(
 					Keys.F8,	
-					"帳票4",	
+					"帳票3",	
 					""),
 			new FuncKeyDefine(
 					Keys.F9,	
+					"帳票4",	
+					""),
+			new FuncKeyDefine(
+					Keys.F10,	
 					"帳票5",	
 					""),
 			new FuncKeyDefine(
@@ -1326,29 +1330,33 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine RowDelete = Functions[2];
 		/// <summary>
+		/// コピー追加
+		/// </summary>
+		public readonly static FuncKeyDefine CopyAdd = Functions[3];
+		/// <summary>
 		/// 帳票1
 		/// </summary>
-		public readonly static FuncKeyDefine Preview1 = Functions[3];
+		public readonly static FuncKeyDefine Preview1 = Functions[4];
 		/// <summary>
 		/// 帳票2
 		/// </summary>
-		public readonly static FuncKeyDefine Preview2 = Functions[4];
+		public readonly static FuncKeyDefine Preview2 = Functions[5];
 		/// <summary>
 		/// 帳票3
 		/// </summary>
-		public readonly static FuncKeyDefine Preview3 = Functions[5];
+		public readonly static FuncKeyDefine Preview3 = Functions[6];
 		/// <summary>
 		/// 帳票4
 		/// </summary>
-		public readonly static FuncKeyDefine Preview4 = Functions[6];
+		public readonly static FuncKeyDefine Preview4 = Functions[7];
 		/// <summary>
 		/// 帳票5
 		/// </summary>
-		public readonly static FuncKeyDefine Preview5 = Functions[7];
+		public readonly static FuncKeyDefine Preview5 = Functions[8];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[8];
+		public readonly static FuncKeyDefine Close = Functions[9];
 	}
 	#endregion
 

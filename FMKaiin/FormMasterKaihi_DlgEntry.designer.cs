@@ -40,6 +40,7 @@
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iShortName = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.gbxBank = new System.Windows.Forms.GroupBox();
+			this.iKozaNameKana = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iBankIfax = new App.UcTableComboBox();
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.iShitenName = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -88,12 +89,14 @@
 			this.ycLabelEx45 = new YControlLabelEx.YcLabelEx();
 			this.iKaihiGunCode = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iKbnKaihi = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
-			this.iKozaNameKana = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.iKaihiZokusei = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
+			this.ycLabelEx5 = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.iSearchUsed)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShortName)).BeginInit();
 			this.gbxBank.SuspendLayout();
+			((System.ComponentModel.ISupportInitialize)(this.iKozaNameKana)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankName)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKozaType)).BeginInit();
@@ -118,7 +121,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iCost2)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiGunCode)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKbnKaihi)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.iKozaNameKana)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iKaihiZokusei)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// funckey
@@ -281,9 +284,20 @@
 			this.gbxBank.Location = new System.Drawing.Point(395, 309);
 			this.gbxBank.Name = "gbxBank";
 			this.gbxBank.Size = new System.Drawing.Size(462, 219);
-			this.gbxBank.TabIndex = 8;
+			this.gbxBank.TabIndex = 20;
 			this.gbxBank.TabStop = false;
 			this.gbxBank.Text = "銀行情報";
+			// 
+			// iKozaNameKana
+			// 
+			this.iKozaNameKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iKozaNameKana.ExFocusHighlight = true;
+			this.iKozaNameKana.ImeStr = "";
+			this.iKozaNameKana.Location = new System.Drawing.Point(123, 149);
+			this.iKozaNameKana.Name = "iKozaNameKana";
+			this.iKozaNameKana.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iKozaNameKana.Size = new System.Drawing.Size(289, 23);
+			this.iKozaNameKana.TabIndex = 7;
 			// 
 			// iBankIfax
 			// 
@@ -499,7 +513,7 @@
 			// 
 			// ycLabelEx14
 			// 
-			this.ycLabelEx14.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(126)))), ((int)(((byte)(113)))));
 			this.ycLabelEx14.BackColor2 = System.Drawing.Color.Empty;
 			this.ycLabelEx14.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
 			this.ycLabelEx14.Font = new System.Drawing.Font("メイリオ", 9.75F);
@@ -688,7 +702,7 @@
 			this.gbxKaihiGetsugaku.Location = new System.Drawing.Point(395, 35);
 			this.gbxKaihiGetsugaku.Name = "gbxKaihiGetsugaku";
 			this.gbxKaihiGetsugaku.Size = new System.Drawing.Size(462, 258);
-			this.gbxKaihiGetsugaku.TabIndex = 7;
+			this.gbxKaihiGetsugaku.TabIndex = 10;
 			this.gbxKaihiGetsugaku.TabStop = false;
 			this.gbxKaihiGetsugaku.Text = "月額費用";
 			// 
@@ -1217,22 +1231,48 @@
 			this.iKbnKaihi.Size = new System.Drawing.Size(116, 25);
 			this.iKbnKaihi.TabIndex = 0;
 			// 
-			// iKozaNameKana
+			// iKaihiZokusei
 			// 
-			this.iKozaNameKana.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iKozaNameKana.ExFocusHighlight = true;
-			this.iKozaNameKana.ImeStr = "";
-			this.iKozaNameKana.Location = new System.Drawing.Point(123, 149);
-			this.iKozaNameKana.Name = "iKozaNameKana";
-			this.iKozaNameKana.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iKozaNameKana.Size = new System.Drawing.Size(289, 23);
-			this.iKozaNameKana.TabIndex = 7;
+			this.iKaihiZokusei.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iKaihiZokusei.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iKaihiZokusei.ExCompareContent = null;
+			this.iKaihiZokusei.ExCompareValue = null;
+			this.iKaihiZokusei.ExDataSource = null;
+			this.iKaihiZokusei.ExFocusHighlight = true;
+			this.iKaihiZokusei.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iKaihiZokusei.ListHeaderPane.Height = 27;
+			this.iKaihiZokusei.ListHeaderPane.Visible = false;
+			this.iKaihiZokusei.Location = new System.Drawing.Point(148, 273);
+			this.iKaihiZokusei.Name = "iKaihiZokusei";
+			this.iKaihiZokusei.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iKaihiZokusei.Size = new System.Drawing.Size(194, 25);
+			this.iKaihiZokusei.TabIndex = 7;
+			// 
+			// ycLabelEx5
+			// 
+			this.ycLabelEx5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(126)))), ((int)(((byte)(113)))));
+			this.ycLabelEx5.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx5.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx5.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx5.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx5.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx5.IconImage = null;
+			this.ycLabelEx5.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx5.Location = new System.Drawing.Point(43, 273);
+			this.ycLabelEx5.Name = "ycLabelEx5";
+			this.ycLabelEx5.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx5.Size = new System.Drawing.Size(100, 25);
+			this.ycLabelEx5.TabIndex = 357;
+			this.ycLabelEx5.Text = "会費属性";
+			this.ycLabelEx5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// FormMasterKaihi_DlgEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(907, 564);
+			this.Controls.Add(this.iKaihiZokusei);
+			this.Controls.Add(this.ycLabelEx5);
 			this.Controls.Add(this.iKbnKaihi);
 			this.Controls.Add(this.ycLabelEx45);
 			this.Controls.Add(this.iKaihiGunCode);
@@ -1278,11 +1318,14 @@
 			this.Controls.SetChildIndex(this.iKaihiGunCode, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx45, 0);
 			this.Controls.SetChildIndex(this.iKbnKaihi, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx5, 0);
+			this.Controls.SetChildIndex(this.iKaihiZokusei, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iSearchUsed)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCode)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShortName)).EndInit();
 			this.gbxBank.ResumeLayout(false);
+			((System.ComponentModel.ISupportInitialize)(this.iKozaNameKana)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iShitenName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iBankName)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKozaType)).EndInit();
@@ -1307,7 +1350,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.iCost2)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaihiGunCode)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKbnKaihi)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.iKozaNameKana)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iKaihiZokusei)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -1375,5 +1418,7 @@
 		private UcTableComboBox iBankIfax;
 		private GControlGcComboBoxEx.GcComboBoxEx iKbnKaihi;
 		private GControlGcTextBoxEx.GcTextBoxEx iKozaNameKana;
+		private GControlGcComboBoxEx.GcComboBoxEx iKaihiZokusei;
+		private YControlLabelEx.YcLabelEx ycLabelEx5;
 	}
 }

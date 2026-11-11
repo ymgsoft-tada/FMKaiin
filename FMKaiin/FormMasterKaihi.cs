@@ -280,10 +280,10 @@ namespace App
 		{
 			appFuncKey = new AppFunctionKey(funckey, FuncMasterKaihi.Functions);
 
-			FuncMasterKaihi.RowAdd.Execute		= rowAdd; // 追加
-			FuncMasterKaihi.RowEdit.Execute	= rowEdit; // 訂正
-			FuncMasterKaihi.RowDelete.Execute	= rowDelete; // 削除
-//			FuncMasterKaihi.CopyAdd.Execute	= copyAdd;
+			FuncMasterKaihi.RowAdd.Execute = rowAdd; // 追加
+			FuncMasterKaihi.RowEdit.Execute = rowEdit; // 訂正
+			FuncMasterKaihi.RowDelete.Execute = rowDelete; // 削除
+			FuncMasterKaihi.CopyAdd.Execute = copyAdd; // コピー追加
 
 			FuncMasterKaihi.Preview1.Execute = preview1; // 帳票1
 			FuncMasterKaihi.Preview2.Execute = preview2; // 帳票2
@@ -291,43 +291,9 @@ namespace App
 			FuncMasterKaihi.Preview4.Execute = preview4; // 帳票4
 			FuncMasterKaihi.Preview5.Execute = preview5; // 帳票5
 
-			FuncMasterKaihi.Close.Execute		= formClose; // 閉じる
+			FuncMasterKaihi.Close.Execute = formClose; // 閉じる
 		}
-/*
-		/// <summary>
-		/// コピー追加
-		/// </summary>
-		void copyAdd()
-		{
-			if (dvKaihi.Count > 0)
-			{
-				t_kaihi nrow = new t_kaihi(dvKaihi.NewRow());
-				t_kaihi srow = new t_kaihi(dvKaihi.CurrentRow);
 
-				AppDb.CopyDataRow(srow.Row, nrow.Row);
-
-				nrow.ID_ShokumuPrice		= AppDbID.GetNewID(dvKaihi, t_kaihi.FID_ShokumuPrice);
-
-				FormMasterKinmuTanka_DlgEntry frm	= new FormMasterKinmuTanka_DlgEntry();
-				frm.Mode							= FormMasterKinmuTanka_DlgEntry.eMode.Copy;
-				frm.Row								= nrow.Row;
-				frm.DbView							= dvKaihi;
-				frm.ShowDialog();
-
-				if (frm.FormCloseReason == FormCloseReason.Save)
-				{
-					dvKaihi.Add(frm.Row);
-					AppGlobal.DB.UpdateTable(TableProp.t_kaihi);
-
-					// 共通クラスの初期化処理
-					AppGlobal.InitShokumuPrice();
-					dvKaihi.SearchRow(t_kaihi.FID_ShokumuPrice, nrow.ID_ShokumuPrice);
-				}
-
-				frm.Dispose();
-			}
-		}
-*/
 		/// <summary>
 		/// 追加
 		/// </summary>
@@ -339,10 +305,9 @@ namespace App
 			nrow.ID_Kaihi = AppDbID.GetNewID(dvKaihi, t_kaihi.FID_Kaihi);
 			nrow.Kaihi_SearchUsed = true; // 検索時表示:表示する
 
-			FormMasterKaihi_DlgEntry frm	= new FormMasterKaihi_DlgEntry();
-			frm.Mode							= FormMasterKaihi_DlgEntry.eMode.Add;
-			frm.Row								= nrow.Row;
-//			frm.DbView							= dvKaihi;
+			FormMasterKaihi_DlgEntry frm = new FormMasterKaihi_DlgEntry();
+			frm.Mode = FormMasterKaihi_DlgEntry.eMode.Add;
+			frm.Row = nrow.Row;
 			frm.ShowDialog();
 
 			if (frm.FormCloseReason == FormCloseReason.Save)
@@ -362,6 +327,45 @@ namespace App
 		}
 
 		/// <summary>
+		/// コピー追加
+		/// </summary>
+		void copyAdd()
+		{
+			if (dvKaihi.Count > 0)
+			{
+				t_kaihi nrow = new t_kaihi(dvKaihi.NewRow());
+				t_kaihi srow = new t_kaihi(dvKaihi.CurrentRow);
+
+				AppDb.CopyDataRow(srow.Row, nrow.Row);
+
+				// 内部項目カラムや初期値のセット
+				nrow.ID_Kaihi = AppDbID.GetNewID(dvKaihi, t_kaihi.FID_Kaihi);
+				nrow.CD_Kaihi_Null = null; // 会費コード:クリア
+				//nrow.Kaihi_SearchUsed = true; // 検索時表示 引き継ぐ
+
+				FormMasterKaihi_DlgEntry frm = new FormMasterKaihi_DlgEntry();
+				frm.Mode = FormMasterKaihi_DlgEntry.eMode.Copy;
+				frm.Row = nrow.Row;
+				frm.ShowDialog();
+
+				if (frm.FormCloseReason == FormCloseReason.Save)
+				{
+					dvKaihi.Add(frm.Row);
+					AppGlobal.DB.UpdateTable(TableProp.t_kaihi);
+
+					// 医会会費情報(共通)の再取得 ※情報が追加されたため
+					AppGlobal.InitKaihi();
+
+					// 追加行にフォーカス
+					dvKaihi.SearchRow(t_kaihi.FID_Kaihi, nrow.ID_Kaihi);
+				}
+
+				frm.Dispose();
+				frm = null;
+			}
+		}
+
+		/// <summary>
 		/// 編集
 		/// </summary>
 		void rowEdit()
@@ -373,9 +377,8 @@ namespace App
 				AppDb.CopyDataRow(dvKaihi.CurrentRow.Row, row);
 
 				FormMasterKaihi_DlgEntry frm = new FormMasterKaihi_DlgEntry();
-				frm.Mode		= FormMasterKaihi_DlgEntry.eMode.Edit;
-				frm.Row			= row;
-//				frm.DbView		= dvKaihi;
+				frm.Mode = FormMasterKaihi_DlgEntry.eMode.Edit;
+				frm.Row = row;
 				frm.ShowDialog();
 
 				if (frm.FormCloseReason == FormCloseReason.Save)
