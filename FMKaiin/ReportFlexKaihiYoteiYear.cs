@@ -33,18 +33,8 @@ namespace App
 		const string F_Page		= "F_Page";
 		const string F_ID_Kaiin = "F_ID_Kaiin";
 		const string F_KaihiName = "F_KaihiName";
-		const string F_Cost1 = "F_Cost1";
-		const string F_Cost2 = "F_Cost2";
-		const string F_Cost3 = "F_Cost3";
-		const string F_Cost4 = "F_Cost4";
-		const string F_Cost5 = "F_Cost5";
-		const string F_Cost6 = "F_Cost6";
-		const string F_Cost7 = "F_Cost7";
-		const string F_Cost8 = "F_Cost8";
-		const string F_Cost9 = "F_Cost9";
-		const string F_Cost10 = "F_Cost10";
-		const string F_Cost11 = "F_Cost11";
-		const string F_Cost12 = "F_Cost12";
+		static readonly string[] F_Costs = { "F_Cost1", "FCost2", "F_Cost3", "F_Cost4", "F_Cost5", "F_Cost6",
+											 "F_Cost7", "F_Cost8", "F_Cost9", "F_Cost10", "F_Cost11", "F_Cost12",};
 		const string F_CostTotalKaihi = "F_CostTotalKaihi"; // 行の合計
 		const string F_BankIdx	= "F_BankIdx"; // 扱銀行
 
@@ -52,6 +42,11 @@ namespace App
 		/// 帳票-月額field名
 		/// </summary>
 		string[] repCostsField;
+		string[] repCostsColTotalField;
+
+
+		/// <summary>表示対象月</summary>
+		int selectedMonth;
 
 		/// <summary>会員ごと最大ページ数</summary>
 		Dictionary<int, int> maxpages;
@@ -90,6 +85,16 @@ namespace App
 		{
 			repCostsField = new string[]
 			{
+				CRep10_KaihiYoteiYear.FFldCost1,  CRep10_KaihiYoteiYear.FFldCost2,
+				CRep10_KaihiYoteiYear.FFldCost3,  CRep10_KaihiYoteiYear.FFldCost4,
+				CRep10_KaihiYoteiYear.FFldCost5,  CRep10_KaihiYoteiYear.FFldCost6,
+				CRep10_KaihiYoteiYear.FFldCost7,  CRep10_KaihiYoteiYear.FFldCost8,
+				CRep10_KaihiYoteiYear.FFldCost9,  CRep10_KaihiYoteiYear.FFldCost10,
+				CRep10_KaihiYoteiYear.FFldCost11, CRep10_KaihiYoteiYear.FFldCost12,
+			};
+
+			repCostsColTotalField = new string[]
+			{
 				CRep10_KaihiYoteiYear.FFldCostColTotal1,  CRep10_KaihiYoteiYear.FFldCostColTotal2,
 				CRep10_KaihiYoteiYear.FFldCostColTotal3,  CRep10_KaihiYoteiYear.FFldCostColTotal4,
 				CRep10_KaihiYoteiYear.FFldCostColTotal5,  CRep10_KaihiYoteiYear.FFldCostColTotal6,
@@ -116,18 +121,10 @@ namespace App
 			dt.Columns.Add(F_Page, typeof(int));
 			dt.Columns.Add(F_ID_Kaiin, typeof(int));
 			dt.Columns.Add(F_KaihiName, typeof(string));
-			dt.Columns.Add(F_Cost1, typeof(string));
-			dt.Columns.Add(F_Cost2, typeof(string));
-			dt.Columns.Add(F_Cost3, typeof(string));
-			dt.Columns.Add(F_Cost4, typeof(string));
-			dt.Columns.Add(F_Cost5, typeof(string));
-			dt.Columns.Add(F_Cost6, typeof(string));
-			dt.Columns.Add(F_Cost7, typeof(string));
-			dt.Columns.Add(F_Cost8, typeof(string));
-			dt.Columns.Add(F_Cost9, typeof(string));
-			dt.Columns.Add(F_Cost10, typeof(string));
-			dt.Columns.Add(F_Cost11, typeof(string));
-			dt.Columns.Add(F_Cost12, typeof(string));
+			for (int i = 0; i < 12; i++)
+			{
+				dt.Columns.Add(F_Costs[i], typeof(string));
+			}
 			dt.Columns.Add(F_CostTotalKaihi, typeof(string));
 			dt.Columns.Add(F_BankIdx, typeof(string));
 
@@ -193,7 +190,7 @@ namespace App
 
 				// 対象月
 				string selected_ym = AppDate.GetYearMonthSeirekiSlash(SelectedDateYM);
-				int selectedMonth = Cast.Int(selected_ym.Substring(selected_ym.Length - 2));
+				selectedMonth = Cast.Int(selected_ym.Substring(selected_ym.Length - 2));
 
 				// スタッフ別に集計しておく
 				SortedDictionary<int, List<KaihiData>> dics  = new SortedDictionary<int, List<KaihiData>>();
@@ -282,18 +279,10 @@ namespace App
 						{
 							nrow = dt.NewRow();
 							nrow[F_KaihiName] = kd.KaihiName;
-							nrow[F_Cost1] = kd.dics_cost[1];
-							nrow[F_Cost2] = kd.dics_cost[2];
-							nrow[F_Cost3] = kd.dics_cost[3];
-							nrow[F_Cost4] = kd.dics_cost[4];
-							nrow[F_Cost5] = kd.dics_cost[5];
-							nrow[F_Cost6] = kd.dics_cost[6];
-							nrow[F_Cost7] = kd.dics_cost[7];
-							nrow[F_Cost8] = kd.dics_cost[8];
-							nrow[F_Cost9] = kd.dics_cost[9];
-							nrow[F_Cost10] = kd.dics_cost[10];
-							nrow[F_Cost11] = kd.dics_cost[11];
-							nrow[F_Cost12] = kd.dics_cost[12];
+							for (int j = 1; j <= 12; j++)
+							{
+								nrow[F_Costs[j - 1]] = kd.dics_cost[j];
+							}
 							nrow[F_CostTotalKaihi] = kd.CostTotalKaihi;
 							nrow[F_BankIdx] = kd.BankIdx;
 							nrow[F_ID_Kaiin] = kin.ID;
@@ -505,20 +494,19 @@ namespace App
 			// 会費合計(列)
 			for (int j = 1; j <= 12; j++)
 			{
-				Decimal? dec = 0m; // 初期化
-				if (dics_costTotalMonth[kin.CD].TryGetValue(j, out dec))
+				if (dics_costTotalMonth[kin.CD].TryGetValue(j, out Decimal? dec))
 				{
-					setCost(rep, repCostsField[j - 1], dec);
+					setCost_zero(rep, repCostsColTotalField[j - 1], dec);
 				}
 				else
 				{
-					setFieldValue(rep, repCostsField[j - 1], "0"); // 空欄か0を明示か確認
+					setCost(rep, repCostsColTotalField[j - 1], dec); // 空欄用
 				}
 			}
 
 			// 会費合計
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCostTotal, dics_costTotal[kin.CD]);
-			setFieldValue(rep, CRep10_KaihiYoteiYear.FFldCostTotalDisp, $"{Cast.Decimal(dics_costTotal[kin.CD]).ToString("#,###")}円");
+			setCost_zero(rep, CRep10_KaihiYoteiYear.FFldCostTotal, dics_costTotal[kin.CD]);
+			setFieldValue(rep, CRep10_KaihiYoteiYear.FFldCostTotalDisp, $"{Cast.Decimal(dics_costTotal[kin.CD]).ToString("#,##0")}円");
 
 			// 扱銀行
 			string lblbank1 = "";
@@ -647,21 +635,37 @@ namespace App
 
 			DataRow row = OutView[lineNo].Row;
 
-			setFieldValue(rep, CRep10_KaihiYoteiYear.FFldKaihiName, row[F_KaihiName]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost1, row[F_Cost1]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost2, row[F_Cost2]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost3, row[F_Cost3]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost4, row[F_Cost4]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost5, row[F_Cost5]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost6, row[F_Cost6]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost7, row[F_Cost7]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost8, row[F_Cost8]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost9, row[F_Cost9]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost10, row[F_Cost10]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost11, row[F_Cost11]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCost12, row[F_Cost12]);
-			setCost(rep, CRep10_KaihiYoteiYear.FFldCostRowTotal, row[F_CostTotalKaihi]);
-			setFieldValue(rep, CRep10_KaihiYoteiYear.FFldBankIdx, row[F_BankIdx]);
+			if (row[F_KaihiName] != DBNull.Value) // 会費名が空なら空行とみなす
+			{
+				setFieldValue(rep, CRep10_KaihiYoteiYear.FFldKaihiName, row[F_KaihiName]);
+				// 会費1-12月 対象月以降は金額表示
+				for (int j = 1; j <= 12; j++)
+				{
+					if (j >= selectedMonth)
+					{
+						setCost_zero(rep, repCostsField[j - 1], row[F_Costs[j - 1]]);
+					}
+					else
+					{
+						setCost(rep, repCostsField[j - 1], row[F_Costs[j - 1]]); // 空欄用
+					}
+				}
+				setCost_zero(rep, CRep10_KaihiYoteiYear.FFldCostRowTotal, row[F_CostTotalKaihi]);
+
+				setFieldValue(rep, CRep10_KaihiYoteiYear.FFldBankIdx, row[F_BankIdx]);
+			}
+			else
+			{
+				// 各項目に空をセット
+				setFieldValue(rep, CRep10_KaihiYoteiYear.FFldKaihiName, "");
+				for (int j = 1; j <= 12; j++)
+				{
+					setFieldValue(rep, repCostsField[j - 1], "");
+				}
+				setFieldValue(rep, CRep10_KaihiYoteiYear.FFldCostRowTotal, "");
+
+				setFieldValue(rep, CRep10_KaihiYoteiYear.FFldBankIdx, "");
+			}
 		}
 
 		/// <summary>
@@ -692,7 +696,7 @@ namespace App
 		}
 
 		/// <summary>
-		/// 金額表示の編集
+		/// 金額表示の編集 (0表示なし)
 		/// </summary>
 		/// <param name="rep"></param>
 		/// <param name="fldname"></param>
@@ -704,6 +708,24 @@ namespace App
 			if (val != null)
 			{
 				cost = $"{Cast.Decimal(val).ToString("#,###")}";
+			}
+
+			setFieldValue(rep, fldname, cost);
+		}
+
+		/// <summary>
+		/// 金額表示の編集 (0表示あり)
+		/// </summary>
+		/// <param name="rep"></param>
+		/// <param name="fldname"></param>
+		/// <param name="dec"></param>
+		void setCost_zero(C1FlexReport rep, string fldname, object val)
+		{
+			string cost = "";
+
+			if (val != null)
+			{
+				cost = $"{Cast.Decimal(val).ToString("#,##0")}";
 			}
 
 			setFieldValue(rep, fldname, cost);

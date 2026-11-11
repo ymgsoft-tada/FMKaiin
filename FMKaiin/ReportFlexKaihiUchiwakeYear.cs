@@ -448,7 +448,7 @@ namespace App
 			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCompanyFax, "FAX:" + AppGlobal.Basic.BAS_Fax);
 
 			// 会費合計
-			setCost(rep, CRep05_KaihiUchiwakeYear.FFldCostTotal, dics_costTotal[kin.CD]);
+			setCost_zero(rep, CRep05_KaihiUchiwakeYear.FFldCostTotal, dics_costTotal[kin.CD]);
 
 			// 扱銀行
 			string lblbank1 = "";
@@ -577,10 +577,21 @@ namespace App
 
 			DataRow row = OutView[lineNo].Row;
 
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKaihiName, row[F_KaihiName]);
-			setCost(rep, CRep05_KaihiUchiwakeYear.FFldCost1, row[F_Cost1]);
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankIdx, row[F_BankIdx]);
-			setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBiko, row[F_Biko]);
+			if (row[F_KaihiName] != DBNull.Value) // 会費名が空なら空行とみなす
+			{
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKaihiName, row[F_KaihiName]);
+				setCost_zero(rep, CRep05_KaihiUchiwakeYear.FFldCost1, row[F_Cost1]);
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankIdx, row[F_BankIdx]);
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBiko, row[F_Biko]);
+			}
+			else
+			{
+				// 各項目に空をセット
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKaihiName, "");
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCost1, "");
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankIdx, "");
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBiko, "");
+			}
 		}
 
 		/// <summary>
@@ -611,7 +622,7 @@ namespace App
 		}
 
 		/// <summary>
-		/// 金額表示の編集
+		/// 金額表示の編集 (0表示なし)
 		/// </summary>
 		/// <param name="rep"></param>
 		/// <param name="fldname"></param>
@@ -623,6 +634,24 @@ namespace App
 			if (val != null)
 			{
 				cost = $"{Cast.Decimal(val).ToString("#,###")}";
+			}
+
+			setFieldValue(rep, fldname, cost);
+		}
+
+		/// <summary>
+		/// 金額表示の編集 (0表示あり)
+		/// </summary>
+		/// <param name="rep"></param>
+		/// <param name="fldname"></param>
+		/// <param name="dec"></param>
+		void setCost_zero(C1FlexReport rep, string fldname, object val)
+		{
+			string cost = "";
+
+			if (val != null)
+			{
+				cost = $"{Cast.Decimal(val).ToString("#,##0")}";
 			}
 
 			setFieldValue(rep, fldname, cost);
