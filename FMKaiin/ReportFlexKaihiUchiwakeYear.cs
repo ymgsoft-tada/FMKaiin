@@ -32,7 +32,7 @@ namespace App
 		const string F_Page		= "F_Page";
 		const string F_ID_Kaiin = "F_ID_Kaiin";
 		const string F_KaihiName = "F_KaihiName";
-		const string F_Cost1	= "F_Cost1";
+		const string F_Cost	= "F_Cost";
 		const string F_BankIdx	= "F_BankIdx";
 		const string F_Biko	= "F_Biko";
 
@@ -87,7 +87,7 @@ namespace App
 			dt.Columns.Add(F_Page, typeof(int));
 			dt.Columns.Add(F_ID_Kaiin, typeof(int));
 			dt.Columns.Add(F_KaihiName, typeof(string));
-			dt.Columns.Add(F_Cost1, typeof(string));
+			dt.Columns.Add(F_Cost, typeof(string));
 			dt.Columns.Add(F_BankIdx, typeof(string));
 			dt.Columns.Add(F_Biko, typeof(string));
 
@@ -233,7 +233,7 @@ namespace App
 						{
 							nrow = dt.NewRow();
 							nrow[F_KaihiName] = kd.KaihiName;
-							nrow[F_Cost1] = kd.Cost;
+							nrow[F_Cost] = kd.Cost;
 							nrow[F_BankIdx] = kd.BankIdx;
 							nrow[F_Biko] = kd.Biko;
 							nrow[F_ID_Kaiin] = kin.ID;
@@ -580,7 +580,7 @@ namespace App
 			if (row[F_KaihiName] != DBNull.Value) // 会費名が空なら空行とみなす
 			{
 				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKaihiName, row[F_KaihiName]);
-				setCost_zero(rep, CRep05_KaihiUchiwakeYear.FFldCost1, row[F_Cost1]);
+				setCost_zero(rep, CRep05_KaihiUchiwakeYear.FFldCost, row[F_Cost]);
 				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankIdx, row[F_BankIdx]);
 				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBiko, row[F_Biko]);
 			}
@@ -588,7 +588,7 @@ namespace App
 			{
 				// 各項目に空をセット
 				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldKaihiName, "");
-				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCost1, "");
+				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldCost, "");
 				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBankIdx, "");
 				setFieldValue(rep, CRep05_KaihiUchiwakeYear.FFldBiko, "");
 			}

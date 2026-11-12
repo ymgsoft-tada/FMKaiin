@@ -246,9 +246,9 @@ namespace App
 		public const string FFldBiko = "FldBiko";
 
 		/// <summary>
-		/// フィールド[FldCost1]。
+		/// フィールド[FldCost]。
 		/// </summary>
-		public const string FFldCost1 = "FldCost1";
+		public const string FFldCost = "FldCost";
 
 		/// <summary>
 		/// フィールド[FldBankIdx]。
@@ -1649,9 +1649,9 @@ namespace App
 		public const string FFldBiko = "FldBiko";
 
 		/// <summary>
-		/// フィールド[FldCost1]。
+		/// フィールド[FldCost]。
 		/// </summary>
-		public const string FFldCost1 = "FldCost1";
+		public const string FFldCost = "FldCost";
 
 		/// <summary>
 		/// フィールド[FldBankIdx]。
