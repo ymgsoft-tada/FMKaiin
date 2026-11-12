@@ -2080,6 +2080,54 @@ namespace App
 	}
 	#endregion
 
+	#region *** FuncKaiin_DlgChosei ***
+	/// <summary>
+	/// FuncKaiin_DlgChoseiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncKaiin_DlgChosei
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F2,	
+					"追加",	
+					""),
+			new FuncKeyDefine(
+					Keys.F4,	
+					"削除",	
+					""),
+			new FuncKeyDefine(
+					Keys.F11,	
+					"登録",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 追加
+		/// </summary>
+		public readonly static FuncKeyDefine RowAdd = Functions[0];
+		/// <summary>
+		/// 削除
+		/// </summary>
+		public readonly static FuncKeyDefine RowDelete = Functions[1];
+		/// <summary>
+		/// 登録
+		/// </summary>
+		public readonly static FuncKeyDefine Save = Functions[2];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[3];
+	}
+	#endregion
+
 
 }
 

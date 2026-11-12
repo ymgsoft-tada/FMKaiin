@@ -348,6 +348,7 @@ namespace App
 			FuncKaiin.RowDelete.Execute = rowDelete;
 			FuncKaiin.CopyAdd.Execute = CopyAdd;
 			FuncKaiin.Rejoin.Execute = RejoinAdd;
+			FuncKaiin.ShowChosei.Execute = showChosei;
 			FuncKaiin.ShowZaiseki.Execute = showZaiseki;
 			FuncKaiin.Preview.Execute = preview;
 			FuncKaiin.Close.Execute = formClose;
@@ -363,6 +364,22 @@ namespace App
 			//appFuncKey.SetEnabled(FuncStaff.ShowMyno.Key, enabled);
 			//appFuncKey.SetVisible(FuncStaff.ShowMyno.Key, enabled);
 
+		}
+
+		/// <summary>
+		/// 会費予定額の調整
+		/// </summary>
+		void showChosei()
+		{
+			if (dvKaiin.Count > 0)
+			{
+				t_kaiin xrow = new t_kaiin(dvKaiin.CurrentRow);
+
+				FormKaiin_DlgChosei frm = new FormKaiin_DlgChosei();
+				frm.SelectKaiin = AppGlobal.Kaiins.Get(xrow.ID_Kaiin);
+				frm.ShowDialog();
+				frm.Dispose();
+			}
 		}
 
 		/// <summary>
