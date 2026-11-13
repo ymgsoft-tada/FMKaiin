@@ -632,7 +632,7 @@
         </Text>
       </TextField>
       <TextField>
-        <Name>FldCost1</Name>
+        <Name>FldCost</Name>
         <Section>Detail</Section>
         <Left>3373</Left>
         <Top>0</Top>
@@ -5075,7 +5075,7 @@
         </Text>
       </TextField>
       <TextField>
-        <Name>FldCost1</Name>
+        <Name>FldCost</Name>
         <Section>Detail</Section>
         <Left>3373</Left>
         <Top>0</Top>
