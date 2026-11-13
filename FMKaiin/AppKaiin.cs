@@ -124,6 +124,18 @@ namespace App
 					dics_id[xrow.ID_Kaiin].AddShinryoka(xrow);
 				}
 			}
+
+			// 調整金額の登録
+			dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin_chosei));
+			for (int i = 0; i < dv.Count; i++)
+			{
+				t_kaiin_chosei xrow = new t_kaiin_chosei(dv[i]);
+
+				if (dics_id.ContainsKey(xrow.ID_Kaiin))
+				{
+					dics_id[xrow.ID_Kaiin].AddChosei(xrow);
+				}
+			}
 		}
 
 		/// <summary>
@@ -198,9 +210,9 @@ namespace App
 		}
 
 		/// <summary>
-		/// 所属している会費と紐づく元レコード
+		/// 月別の調整金額
 		/// </summary>
-		private List<t_kaiin_kaihi> kaihiLinks;
+		public Dictionary<DateTime, List<t_kaiin_chosei>> Choseis { get; private set; }
 
 		/// <summary>
 		/// 所属している学会
@@ -237,9 +249,9 @@ namespace App
 			this.CodeString = Cast.String(XRow.Row[AppTableCombo.Fld_CoedString]);
 
 			Kaihis = new List<Kaihi>();
-			kaihiLinks = new List<t_kaiin_kaihi>();
 			Gakkais = new List<Gakkai>();
 			Shinryokas  = new List<Shinryoka>();
+			Choseis = new Dictionary<DateTime, List<t_kaiin_chosei>>();
 			dic_shiharai = new Dictionary<int, eShiharai>();
 			history = new List<Kaiin>();
 
@@ -312,6 +324,22 @@ namespace App
 			if (xrow != null && xrow.ID_Kaiin == ID)
 			{
 				Shinryokas.Add(AppGlobal.Shinryokas.Get(xrow.ID_Shinryoka));
+			}
+		}
+
+		/// <summary>
+		/// 調整金額の登録
+		/// </summary>
+		/// <param name="xrow">会費調整金額レコード</param>
+		public void AddChosei(t_kaiin_chosei xrow)
+		{
+			if (xrow != null && xrow.ID_Kaiin == ID)
+			{
+				if (Choseis.ContainsKey(xrow.KCS_DateYM) == false)
+				{
+					Choseis.Add(xrow.KCS_DateYM, new List<t_kaiin_chosei>());
+				}
+				Choseis[xrow.KCS_DateYM].Add(xrow);
 			}
 		}
 

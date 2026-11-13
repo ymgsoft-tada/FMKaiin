@@ -1,6 +1,6 @@
-
+ï»¿
 //
-// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
+// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ì¬Ò fj]
-	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
+	/// [ä½œæˆè€… fj]
+	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
 	/// </summary>
 	public partial class t_kaiin_chosei : FieldProp
 	{
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—p
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ïˆõID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡ID]ã€‚
 		/// </summary>
 		public const string FID_Kaiin = "ID_Kaiin";
 		/// <summary>
-		/// ‰ïˆõID
+		/// ä¼šå“¡ID
 		/// </summary>
 		public int ID_Kaiin
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ïˆõIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šå“¡IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Kaiin_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‰ï”ïID]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šè²»ID]ã€‚
 		/// </summary>
 		public const string FID_Kaihi = "ID_Kaihi";
 		/// <summary>
-		/// ‰ï”ïID
+		/// ä¼šè²»ID
 		/// </summary>
 		public int ID_Kaihi
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‰ï”ïIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// ä¼šè²»IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public int? ID_Kaihi_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[Œ•ª]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æœˆåˆ†]ã€‚
 		/// </summary>
 		public const string FKCS_DateYM = "KCS_DateYM";
 		/// <summary>
-		/// Œ•ª
+		/// æœˆåˆ†
 		/// </summary>
 		public DateTime KCS_DateYM
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Œ•ªBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// æœˆåˆ†ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? KCS_DateYM_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[‹àŠz]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[é‡‘é¡]ã€‚
 		/// </summary>
 		public const string FKCS_Cost = "KCS_Cost";
 		/// <summary>
-		/// ‹àŠz
+		/// é‡‘é¡
 		/// </summary>
 		public decimal KCS_Cost
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ‹àŠzBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// é‡‘é¡ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public decimal? KCS_Cost_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[”õl]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å‚™è€ƒ]ã€‚
 		/// </summary>
 		public const string FKCS_Memo = "KCS_Memo";
 		/// <summary>
-		/// ”õl
+		/// å‚™è€ƒ
 		/// </summary>
 		public string KCS_Memo
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ”õlBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// å‚™è€ƒã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public string KCS_Memo_Null
 		{
@@ -154,11 +154,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ƒtƒB[ƒ‹ƒh[[—vŠÔ]ÅIXV“ú]B
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘]ã€‚
+		/// </summary>
+		public const string FKCS_Shiharai = "KCS_Shiharai";
+		/// <summary>
+		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘
+		/// </summary>
+		public eShiharai KCS_Shiharai
+		{
+			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKCS_Shiharai]);	}
+			set	{	_set(FKCS_Shiharai, (int)value);	}
+		}
+		
+		/// <summary>
+		/// æ”¯æ‰•æ–¹æ³• 0/None/ 1/Koza1/å£åº§â‘  2/Koza2/å£åº§â‘¡ 3/Koza3/å£åº§â‘¢ 9/Genkin/ç¾é‡‘ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// </summary>
+		public int? KCS_Shiharai_Null
+		{
+			get	{	if (row == null || row[FKCS_Shiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKCS_Shiharai]); }	}
+			set	{	_set(FKCS_Shiharai, value);	}
+		}
+		
+		/// <summary>
+		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“ú
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -167,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// [—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
+		/// [è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -177,15 +199,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		/// </summary>
-		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
+		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
 		public t_kaiin_chosei(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_kaiin_chosei Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
+		/// t_kaiin_chosei å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
 		/// </summary>
-		/// <returns>t_kaiin_chosei Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
+		/// <returns>t_kaiin_chosei å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_kaiin_chosei");
@@ -210,6 +232,9 @@ namespace App
 			col = new DataColumn(FKCS_Memo, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKCS_Shiharai, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));

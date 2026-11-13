@@ -88,10 +88,12 @@ namespace App
 			dvGrid = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_kaiin_chosei, $"ORDER BY {t_kaiin_chosei.FKCS_DateYM}"), this.BindingContext);
 			dvGrid.RowFilterQuery($"{t_kaiin_chosei.FID_Kaiin} = {SelectKaiin.ID}");
 
+			AppCombo.SetComboBox(iShiharai, enumKbn.DShiharai, (int)eShiharai.None);
+
 			AppGridCommon.StyleSet(grid);
 
 			gcom = new GGridDBCommon(grid, this);
-			gcom.Add(new GGridDBText(t_kaiin_chosei.FKCS_DateYM, "月分", 120));
+			gcom.Add(new GGridDBText(t_kaiin_chosei.FKCS_DateYM, "月分", 110, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubYM);
 			gcom.SetTabIndex(0);
 			gcom.SetLocked(true);
@@ -101,19 +103,25 @@ namespace App
 			gcom.SetLocked(true);
 			gcom.SetTabIndex(1);
 			gcom.SetFocusControlInGrid(iKaihi);
-			gcom.Add(new GGridDBCurrency(t_kaiin_chosei.FKCS_Cost, "金額", 150));
+			gcom.Add(new GGridDBCurrency(t_kaiin_chosei.FKCS_Cost, "金額", 120));
 			gcom.SetLocked(true);
 			gcom.SetTabIndex(2);
 			gcom.SetFocusControlInGrid(iCost);
-			gcom.Add(new GGridDBText(t_kaiin_chosei.FKCS_Memo, "備考", 0));
+			gcom.Add(new GGridDBText(t_kaiin_chosei.FKCS_Shiharai, "支払方法", 100, GGridDBCellDisp.Center));
+			gcom.SetUnboundColumnFetch(ubShiharai);
 			gcom.SetLocked(true);
 			gcom.SetTabIndex(3);
+			gcom.SetFocusControlInGrid(iShiharai);
+			gcom.Add(new GGridDBText(t_kaiin_chosei.FKCS_Memo, "備考", 0));
+			gcom.SetLocked(true);
+			gcom.SetTabIndex(4);
 			gcom.SetFocusControlInGrid(iMemo);
 			gcom.EndAdd(dvGrid);
 
 			gctl = new GControlDB(this, getDataRow);
 			gctl.Add(new GControlDBDate(t_kaiin_chosei.FKCS_DateYM, iDateYM.UcDateCtl));
 			gctl.Add(new GControlDBCombo(t_kaiin_chosei.FID_Kaihi, iKaihi.ComboBox));
+			gctl.Add(new GControlDBCombo(t_kaiin_chosei.FKCS_Shiharai, iShiharai));
 			gctl.Add(new GControlDBNumber(t_kaiin_chosei.FKCS_Cost, iCost));
 			gctl.Add(new GControlDBText(t_kaiin_chosei.FKCS_Memo, iMemo));
 			gctl.EndAdd(AppDbRule.Rule);
@@ -123,7 +131,7 @@ namespace App
 			base.FormFrame_Shown(sender, e);
 		}
 
-		string	ubYM(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		string ubYM(GGridDBBase col, UnboundColumnFetchEventArgs e)
 		{
 			t_kaiin_chosei xrow = new t_kaiin_chosei(dvGrid[e.Row]);
 
@@ -133,6 +141,13 @@ namespace App
 			}
 
 			return AppDate.GetYearMonth(xrow.KCS_DateYM);
+		}
+
+		string ubShiharai(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_kaiin_chosei xrow = new t_kaiin_chosei(dvGrid[e.Row]);
+
+			return enumKbn.DShiharai[(int)xrow.KCS_Shiharai];
 		}
 
 		/// <summary>
@@ -188,6 +203,7 @@ namespace App
 		{
 			t_kaiin_chosei xrow = new t_kaiin_chosei(dvGrid.NewRow());
 			xrow.ID_Kaiin = SelectKaiin.ID;
+			xrow.KCS_Shiharai = eShiharai.Koza1;
 			dvGrid.Add(xrow.Row);
 
 			grid.Row = grid.RowCount-1;
@@ -244,6 +260,7 @@ namespace App
 
 					return false;
 				}
+
 			}
 
 			return true;

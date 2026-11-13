@@ -42,10 +42,12 @@ namespace App
 			this.iCost = new GControlGcNumberEx.GcNumberEx(this.components);
 			this.iMemo = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iDateYM = new App.UcDate();
+			this.iShiharai = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			((System.ComponentModel.ISupportInitialize)(this.iKaiin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCost)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iMemo)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iShiharai)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// funckey
@@ -53,7 +55,7 @@ namespace App
 			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 426);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(740, 25);
+			this.funckey.Size = new System.Drawing.Size(848, 25);
 			this.funckey.TabIndex = 56;
 			this.funckey.Text = "gcFunctionKey1";
 			// 
@@ -94,7 +96,7 @@ namespace App
 			this.lblCreateDate.ForeColor = System.Drawing.Color.RoyalBlue;
 			this.lblCreateDate.ForeShadowColor = System.Drawing.Color.Empty;
 			this.lblCreateDate.IconImage = null;
-			this.lblCreateDate.Location = new System.Drawing.Point(408, 70);
+			this.lblCreateDate.Location = new System.Drawing.Point(626, 70);
 			this.lblCreateDate.Name = "lblCreateDate";
 			this.lblCreateDate.SingleBorderColor = System.Drawing.Color.Empty;
 			this.lblCreateDate.Size = new System.Drawing.Size(182, 25);
@@ -156,7 +158,7 @@ namespace App
 			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(680, 306);
+			this.grid.Size = new System.Drawing.Size(788, 306);
 			this.grid.TabIndex = 355;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
@@ -242,11 +244,29 @@ namespace App
 			this.iDateYM.UcSideButton = true;
 			this.iDateYM.UcValue = new System.DateTime(2023, 1, 1, 0, 0, 0, 0);
 			// 
+			// iShiharai
+			// 
+			this.iShiharai.BorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.iShiharai.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+			this.iShiharai.ExCompareContent = null;
+			this.iShiharai.ExCompareValue = null;
+			this.iShiharai.ExDataSource = null;
+			this.iShiharai.ExFocusHighlight = true;
+			this.iShiharai.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
+			this.iShiharai.ListHeaderPane.Height = 27;
+			this.iShiharai.ListHeaderPane.Visible = false;
+			this.iShiharai.Location = new System.Drawing.Point(349, 213);
+			this.iShiharai.Name = "iShiharai";
+			this.iShiharai.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iShiharai.Size = new System.Drawing.Size(42, 25);
+			this.iShiharai.TabIndex = 452;
+			// 
 			// FormKaiin_DlgChosei
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(740, 451);
+			this.ClientSize = new System.Drawing.Size(848, 451);
+			this.Controls.Add(this.iShiharai);
 			this.Controls.Add(this.iDateYM);
 			this.Controls.Add(this.iKaihi);
 			this.Controls.Add(this.iCost);
@@ -275,10 +295,12 @@ namespace App
 			this.Controls.SetChildIndex(this.iCost, 0);
 			this.Controls.SetChildIndex(this.iKaihi, 0);
 			this.Controls.SetChildIndex(this.iDateYM, 0);
+			this.Controls.SetChildIndex(this.iShiharai, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iKaiin)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iCost)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iMemo)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iShiharai)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -297,5 +319,6 @@ namespace App
 		private GControlGcNumberEx.GcNumberEx iCost;
 		private GControlGcTextBoxEx.GcTextBoxEx iMemo;
 		private UcDate iDateYM;
+		private GControlGcComboBoxEx.GcComboBoxEx iShiharai;
 	}
 }

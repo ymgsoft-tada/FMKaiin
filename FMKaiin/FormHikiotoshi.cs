@@ -414,10 +414,27 @@ namespace App
 						nrow.Hiki_DateYM	= ym;
 						nrow.Hiki_Cost_Null = k.GetCost(ym);
 						nrow.Hiki_Shiharai	= ka.GetShiharai(k);
-						nrow.Hiki_TypeIkai	= k.LinkRow == null ? eTypeIkai.None : k.LinkRow.KaihiTypeIkai;
 						nrow.LastUpdateUser = AppGlobal.LoginUser.ID;
 
 						dvHiki.Add(nrow.Row);
+					}
+
+					// 調整金額
+					if (ka.Choseis.ContainsKey(ym))
+					{
+						foreach(var crow in ka.Choseis[ym])
+						{
+							t_hikiotoshi nrow = new t_hikiotoshi(dvHiki.NewRow());
+							nrow.ID_Hikiotoshi	= id++;
+							nrow.ID_Kaihi		= crow.ID_Kaihi;
+							nrow.ID_Kaiin		= ka.ID;
+							nrow.Hiki_DateYM	= ym;
+							nrow.Hiki_Cost_Null = crow.KCS_Cost_Null;
+							nrow.Hiki_Shiharai	= crow.KCS_Shiharai;
+							nrow.LastUpdateUser = AppGlobal.LoginUser.ID;
+
+							dvHiki.Add(nrow.Row);
+						}
 					}
 				}
 			}
