@@ -58,6 +58,18 @@ namespace App.Properties {
                 this["IfaxSavePath"] = value;
             }
         }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcelShiminByoinSavePath {
+            get {
+                return ((string)(this["ExcelShiminByoinSavePath"]));
+            }
+            set {
+                this["ExcelShiminByoinSavePath"] = value;
+            }
+        }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

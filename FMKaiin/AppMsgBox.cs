@@ -252,6 +252,14 @@ namespace App
 		/// {0}の引落データを再作成しました。
 		/// </summary>
 		RemakeHikiotoshiData,
+		/// <summary>
+		/// Excelの出力が完了しました。
+		/// </summary>
+		CreateExcelFile,
+		/// <summary>
+		/// 何らかの理由で、Excelの作成に失敗しました。
+		/// </summary>
+		FailedExcelFile,
 	};
 	
 	/// <summary>
@@ -513,6 +521,18 @@ namespace App
 				MessageBoxDefaultButton.Button1,
 				"成功",
 				"{0}の引落データを再作成しました。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Information,
+				MessageBoxDefaultButton.Button1,
+				"成功",
+				"Excelの出力が完了しました。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Error,
+				MessageBoxDefaultButton.Button1,
+				"エラー",
+				"何らかの理由で、Excelの作成に失敗しました。"),
 		};
 	}
 	

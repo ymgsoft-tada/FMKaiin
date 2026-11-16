@@ -38,6 +38,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.C1Excel.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.C1Pdf.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da" />
     <Reference Include="C1.C1Report.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=594a0605db190bb9, processorArchitecture=MSIL" />
     <Reference Include="C1.C1Zip.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da" />
@@ -94,6 +95,12 @@
     <Compile Include="AppDbUpdate.cs" />
     <Compile Include="AppDbUpdate.Data.DB.cs" />
     <Compile Include="AppDbUpdateManager.cs" />
+    <Compile Include="AppExcel.cs" />
+    <Compile Include="AppExcelImport.cs" />
+    <Compile Include="AppExcelImportIryoKikan.cs" />
+    <Compile Include="AppExcelImportKaihi.cs" />
+    <Compile Include="AppExcelImportKaiin.cs" />
+    <Compile Include="AppExcelShiminByoinKaihi.cs" />
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
     <Compile Include="AppIfaxFile.cs" />
@@ -138,6 +145,12 @@
     </Compile>
     <Compile Include="FormCreateIfaxFile.Designer.cs">
       <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExcelMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExcelMenu.Designer.cs">
+      <DependentUpon>FormExcelMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
@@ -241,6 +254,12 @@
     <Compile Include="FormMasterShinryoka.designer.cs">
       <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMasterImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterImport.Designer.cs">
+      <DependentUpon>FormMasterImport.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMasterKaihi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,6 +301,12 @@
     </Compile>
     <Compile Include="FormOutBlankSetting.Designer.cs">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelShimingyoinKaihi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelShimingyoinKaihi.Designer.cs">
+      <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOutIryoKikan.cs">
       <SubType>Form</SubType>
@@ -447,6 +472,9 @@
     <EmbeddedResource Include="FormCreateIfaxFile.resx">
       <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormExcelMenu.resx">
+      <DependentUpon>FormExcelMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormFrame.resx">
       <DependentUpon>FormFrame.cs</DependentUpon>
     </EmbeddedResource>
@@ -492,6 +520,9 @@
     <EmbeddedResource Include="FormMasterShinryoka.resx">
       <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterImport.resx">
+      <DependentUpon>FormMasterImport.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMasterKaihi.resx">
       <DependentUpon>FormMasterKaihi.cs</DependentUpon>
     </EmbeddedResource>
@@ -512,6 +543,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelShimingyoinKaihi.resx">
+      <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutIryoKikan.resx">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
