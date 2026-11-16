@@ -56,11 +56,33 @@ namespace App
 		}
 
 		/// <summary>
-		/// 会員リストiサーチ作成
+		/// 会員リストiサーチ作成（選択後は氏名を表示）
 		/// </summary>
 		/// <param name="cmb"></param>
 		/// <param name="dv"></param>
 		public static void SetComboBox_Kaiin(UcTableComboBox cmb, DBView dv)
+		{
+			//¶ 2026/11/16 CC 通常は氏名を表示する。コードを表示する場合は SetComboBox_KaiinCode を使う
+			setComboBox_Kaiin(cmb, dv, 1);
+		}
+
+		/// <summary>
+		/// 会員リストiサーチ作成（選択後はコードを表示）
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		public static void SetComboBox_KaiinCode(UcTableComboBox cmb, DBView dv)
+		{
+			setComboBox_Kaiin(cmb, dv, 0);
+		}
+
+		/// <summary>
+		/// 会員リストiサーチ作成
+		/// </summary>
+		/// <param name="cmb"></param>
+		/// <param name="dv"></param>
+		/// <param name="textSubItemIndex">選択確定時に表示する列（0:コード 1:氏名）</param>
+		static void setComboBox_Kaiin(UcTableComboBox cmb, DBView dv, int textSubItemIndex)
 		{
 			cmb.BeginUpdate();
 			cmb.DBView = dv; // set時にDBViewがnewされる → 引数のdvとcmb.DBViewは別物となる(DataTableは同じ)
@@ -74,7 +96,7 @@ namespace App
 			cmb.CompareValue = t_kaiin.FID_Kaiin; // Comboから取得する列
 			cmb.ContentAlignment = ContentAlignment.BottomLeft;
 			cmb.SelectedIndexNullLeave = -1;
-			cmb.TextSubItemIndex = 0; // 選択確定時に表示する列
+			cmb.TextSubItemIndex = textSubItemIndex; // 選択確定時に表示する列
 			cmb.Find = "";
 			cmb.EndUpdate();
 		}

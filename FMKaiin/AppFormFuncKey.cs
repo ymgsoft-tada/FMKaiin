@@ -2184,6 +2184,70 @@ namespace App
 	}
 	#endregion
 
+	#region *** FuncOutExcelNenkanChoshu ***
+	/// <summary>
+	/// FuncOutExcelNenkanChoshuのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelNenkanChoshu
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutExcelKaihiShinsei ***
+	/// <summary>
+	/// FuncOutExcelKaihiShinseiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelKaihiShinsei
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
 
 }
 

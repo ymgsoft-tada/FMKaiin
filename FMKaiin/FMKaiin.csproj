@@ -100,6 +100,8 @@
     <Compile Include="AppExcelImportIryoKikan.cs" />
     <Compile Include="AppExcelImportKaihi.cs" />
     <Compile Include="AppExcelImportKaiin.cs" />
+    <Compile Include="AppExcelKaihiShinsei.cs" />
+    <Compile Include="AppExcelNenkanChoshu.cs" />
     <Compile Include="AppExcelShiminByoinKaihi.cs" />
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
@@ -301,6 +303,18 @@
     </Compile>
     <Compile Include="FormOutBlankSetting.Designer.cs">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelKaihiShinsei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelKaihiShinsei.Designer.cs">
+      <DependentUpon>FormOutExcelKaihiShinsei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelNenkanChoshu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelNenkanChoshu.Designer.cs">
+      <DependentUpon>FormOutExcelNenkanChoshu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOutExcelShimingyoinKaihi.cs">
       <SubType>Form</SubType>
@@ -543,6 +557,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelKaihiShinsei.resx">
+      <DependentUpon>FormOutExcelKaihiShinsei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelNenkanChoshu.resx">
+      <DependentUpon>FormOutExcelNenkanChoshu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutExcelShimingyoinKaihi.resx">
       <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>

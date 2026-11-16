@@ -40,8 +40,8 @@ namespace App
 			// コンボの作成
 			// 会員コード
 			DBView dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin));
-			AppTableCombo.SetComboBox_Kaiin(iKaiinFrom, dv);
-			AppTableCombo.SetComboBox_Kaiin(iKaiinTo, dv);
+			AppTableCombo.SetComboBox_KaiinCode(iKaiinFrom, dv);
+			AppTableCombo.SetComboBox_KaiinCode(iKaiinTo, dv);
 
 			// 在籍区分
 			AppCombo.SetComboBox(iZaisekiFrom, enumKbn.DTypeZaiseki);

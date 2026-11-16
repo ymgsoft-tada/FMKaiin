@@ -74,6 +74,30 @@ namespace App.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcelNenkanChoshuSavePath {
+            get {
+                return ((string)(this["ExcelNenkanChoshuSavePath"]));
+            }
+            set {
+                this["ExcelNenkanChoshuSavePath"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcelKaihiShinseiSavePath {
+            get {
+                return ((string)(this["ExcelKaihiShinseiSavePath"]));
+            }
+            set {
+                this["ExcelKaihiShinseiSavePath"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string BackUpDir {
             get {
                 return ((string)(this["BackUpDir"]));

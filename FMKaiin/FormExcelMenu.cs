@@ -27,8 +27,24 @@ namespace App
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
 			btnShiminbyoinKaihi.Click += BtnShiminbyoinKaihi_Click;
+			btnNenkanChoshu.Click += BtnNenkanChoshu_Click;
+			btnKaihiShinsei.Click += BtnKaihiShinsei_Click;
 
 			base.FormFrame_Shown(sender, e);
+		}
+
+		private void BtnKaihiShinsei_Click(object sender, EventArgs e)
+		{
+			FormOutExcelKaihiShinsei frm = new FormOutExcelKaihiShinsei();
+			frm.ShowDialog();
+			frm.Dispose();
+		}
+
+		private void BtnNenkanChoshu_Click(object sender, EventArgs e)
+		{
+			FormOutExcelNenkanChoshu frm = new FormOutExcelNenkanChoshu();
+			frm.ShowDialog();
+			frm.Dispose();
 		}
 
 		private void BtnShiminbyoinKaihi_Click(object sender, EventArgs e)
