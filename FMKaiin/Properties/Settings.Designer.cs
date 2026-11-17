@@ -94,6 +94,42 @@ namespace App.Properties {
                 this["ExcelKaihiShinseiSavePath"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcelFurikomiSavePath {
+            get {
+                return ((string)(this["ExcelFurikomiSavePath"]));
+            }
+            set {
+                this["ExcelFurikomiSavePath"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcelNofushoSavePath {
+            get {
+                return ((string)(this["ExcelNofushoSavePath"]));
+            }
+            set {
+                this["ExcelNofushoSavePath"] = value;
+            }
+        }
+
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string ExcelFurikomiIraiSavePath {
+            get {
+                return ((string)(this["ExcelFurikomiIraiSavePath"]));
+            }
+            set {
+                this["ExcelFurikomiIraiSavePath"] = value;
+            }
+        }
 
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

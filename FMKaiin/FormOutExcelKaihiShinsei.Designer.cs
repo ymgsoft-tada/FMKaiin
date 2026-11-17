@@ -64,9 +64,9 @@ namespace App
 			this.lblTitle.Location = new System.Drawing.Point(50, 30);
 			this.lblTitle.Name = "lblTitle";
 			this.lblTitle.SingleBorderColor = System.Drawing.Color.Empty;
-			this.lblTitle.Size = new System.Drawing.Size(100, 23);
+			this.lblTitle.Size = new System.Drawing.Size(130, 23);
 			this.lblTitle.TabIndex = 79;
-			this.lblTitle.Text = "会費申請書類";
+			this.lblTitle.Text = "各種医会等申請書";
 			// 
 			// ycLabelEx1
 			// 
@@ -225,7 +225,7 @@ namespace App
 			this.MaximizeBox = false;
 			this.Name = "FormOutExcelKaihiShinsei";
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-			this.Text = "Excel出力 - 会費申請書類";
+			this.Text = "Excel出力 - 各種医会等申請書";
 			this.Controls.SetChildIndex(this.funckey, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx1, 0);
 			this.Controls.SetChildIndex(this.lblTitle, 0);

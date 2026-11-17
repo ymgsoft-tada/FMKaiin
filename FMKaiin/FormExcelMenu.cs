@@ -29,8 +29,32 @@ namespace App
 			btnShiminbyoinKaihi.Click += BtnShiminbyoinKaihi_Click;
 			btnNenkanChoshu.Click += BtnNenkanChoshu_Click;
 			btnKaihiShinsei.Click += BtnKaihiShinsei_Click;
+			btnFurikomi.Click += BtnFurikomi_Click;
+			btnNofusho.Click += BtnNofusho_Click;
+			button2.Click += BtnFurikomiIrai_Click;
 
 			base.FormFrame_Shown(sender, e);
+		}
+
+		private void BtnFurikomiIrai_Click(object sender, EventArgs e)
+		{
+			FormOutExcelFurikomiIrai frm = new FormOutExcelFurikomiIrai();
+			frm.ShowDialog();
+			frm.Dispose();
+		}
+
+		private void BtnNofusho_Click(object sender, EventArgs e)
+		{
+			FormOutExcelNofusho frm = new FormOutExcelNofusho();
+			frm.ShowDialog();
+			frm.Dispose();
+		}
+
+		private void BtnFurikomi_Click(object sender, EventArgs e)
+		{
+			FormOutExcelFurikomi frm = new FormOutExcelFurikomi();
+			frm.ShowDialog();
+			frm.Dispose();
 		}
 
 		private void BtnKaihiShinsei_Click(object sender, EventArgs e)

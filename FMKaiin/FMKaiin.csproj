@@ -96,6 +96,10 @@
     <Compile Include="AppDbUpdate.Data.DB.cs" />
     <Compile Include="AppDbUpdateManager.cs" />
     <Compile Include="AppExcel.cs" />
+    <Compile Include="AppExcelFurikomi.cs" />
+    <Compile Include="AppExcelFurikomiIrai.cs" />
+    <Compile Include="AppXlsx.cs" />
+    <Compile Include="AppExcelNofusho.cs" />
     <Compile Include="AppExcelImport.cs" />
     <Compile Include="AppExcelImportIryoKikan.cs" />
     <Compile Include="AppExcelImportKaihi.cs" />
@@ -303,6 +307,24 @@
     </Compile>
     <Compile Include="FormOutBlankSetting.Designer.cs">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomiIrai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomiIrai.Designer.cs">
+      <DependentUpon>FormOutExcelFurikomiIrai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelNofusho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelNofusho.Designer.cs">
+      <DependentUpon>FormOutExcelNofusho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomi.Designer.cs">
+      <DependentUpon>FormOutExcelFurikomi.cs</DependentUpon>
     </Compile>
     <Compile Include="FormOutExcelKaihiShinsei.cs">
       <SubType>Form</SubType>
@@ -557,6 +579,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelFurikomiIrai.resx">
+      <DependentUpon>FormOutExcelFurikomiIrai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelNofusho.resx">
+      <DependentUpon>FormOutExcelNofusho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelFurikomi.resx">
+      <DependentUpon>FormOutExcelFurikomi.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutExcelKaihiShinsei.resx">
       <DependentUpon>FormOutExcelKaihiShinsei.cs</DependentUpon>

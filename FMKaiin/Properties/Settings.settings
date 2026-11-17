@@ -20,6 +20,15 @@
     <Setting Name="ExcelKaihiShinseiSavePath" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
+    <Setting Name="ExcelFurikomiSavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExcelNofushoSavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="ExcelFurikomiIraiSavePath" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
     <Setting Name="BackUpDir" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
