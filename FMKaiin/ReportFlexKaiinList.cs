@@ -15,6 +15,7 @@ namespace App
 	/// 会員一覧表（銀行名）印刷
 	/// tachi
 	/// </summary>
+	[System.Runtime.InteropServices.Guid("4BBF57BF-E40A-40BE-B112-0948338BEFDA")]
 	class ReportFlexKaiinList
 	{       /// <summary>レポートファイル名</summary>
 		private string ReportFile = $"{AppConst.ReportFolder}{ReportProp.CRepKaiinJohoFilename}";

@@ -126,6 +126,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -361,6 +367,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBg_Progress.resx">
       <DependentUpon>FormBg_Progress.cs</DependentUpon>
@@ -774,9 +783,6 @@
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\ribbon.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\label_nencho.png" />
   </ItemGroup>
   <ItemGroup>
@@ -937,6 +943,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_normal_Remote1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ribbon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
