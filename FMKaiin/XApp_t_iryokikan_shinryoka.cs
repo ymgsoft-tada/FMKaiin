@@ -122,50 +122,6 @@ namespace App
 			set	{	_set_datetime(FLastUpdate, value);	}
 		}
 		
-		/// <summary>
-		/// フィールド[施設通称カナ]。
-		/// </summary>
-		public const string FIRK_Tsusho = "IRK_Tsusho";
-		/// <summary>
-		/// 施設通称カナ
-		/// </summary>
-		public string IRK_Tsusho
-		{
-			get	{	return Cast.String(row == null ? null : row[FIRK_Tsusho]);	}
-			set	{	_set(FIRK_Tsusho, value);	}
-		}
-		
-		/// <summary>
-		/// 施設通称カナ。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public string IRK_Tsusho_Null
-		{
-			get	{	if (row == null || row[FIRK_Tsusho] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIRK_Tsusho]); }	}
-			set	{	_set(FIRK_Tsusho, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[開設主体]。
-		/// </summary>
-		public const string FIRK_KaisetsuShutai = "IRK_KaisetsuShutai";
-		/// <summary>
-		/// 開設主体
-		/// </summary>
-		public int IRK_KaisetsuShutai
-		{
-			get	{	return Cast.Int(row == null ? null : row[FIRK_KaisetsuShutai]);	}
-			set	{	_set(FIRK_KaisetsuShutai, value);	}
-		}
-		
-		/// <summary>
-		/// 開設主体。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? IRK_KaisetsuShutai_Null
-		{
-			get	{	if (row == null || row[FIRK_KaisetsuShutai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FIRK_KaisetsuShutai]); }	}
-			set	{	_set(FIRK_KaisetsuShutai, value);	}
-		}
-		
 		#region *** Constructor ***
 		/// <summary>
 		/// コンストラクタ
@@ -196,14 +152,6 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FIRK_Tsusho, typeof(string));
-			col.AllowDBNull = true;
-			col.MaxLength = 255;
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FIRK_KaisetsuShutai, typeof(int));
 			dt.Columns.Add(col);
 			
 			return dt;

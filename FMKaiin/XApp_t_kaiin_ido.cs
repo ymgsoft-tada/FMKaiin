@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[異動事由区分 0/None/ 1/Kaigyo/施設開業 2/Ido/施設異動 3/Kaiin/会員区分変更 4/Etc/その他]。
+		/// フィールド[異動事由区分 0/None/ 1/Ido/医師会の異動・施設開業・施設異動 2/Kaiin/会員区分の変更 3/Shozai/施設所在地変更 4/Address/現住所変更 5/Etc/その他]。
 		/// </summary>
 		public const string FIdoJiyuKbn = "IdoJiyuKbn";
 		/// <summary>
-		/// 異動事由区分 0/None/ 1/Kaigyo/施設開業 2/Ido/施設異動 3/Kaiin/会員区分変更 4/Etc/その他
+		/// 異動事由区分 0/None/ 1/Ido/医師会の異動・施設開業・施設異動 2/Kaiin/会員区分の変更 3/Shozai/施設所在地変更 4/Address/現住所変更 5/Etc/その他
 		/// </summary>
 		public eTypeIdoJiyu IdoJiyuKbn
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 異動事由区分 0/None/ 1/Kaigyo/施設開業 2/Ido/施設異動 3/Kaiin/会員区分変更 4/Etc/その他。System.DBNull.Value の場合 null を示します。
+		/// 異動事由区分 0/None/ 1/Ido/医師会の異動・施設開業・施設異動 2/Kaiin/会員区分の変更 3/Shozai/施設所在地変更 4/Address/現住所変更 5/Etc/その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? IdoJiyuKbn_Null
 		{
@@ -132,33 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[施設開業詳細(選択肢なし)]。
-		/// </summary>
-		public const string FIdoJiyuDetail_Kaigyo = "IdoJiyuDetail_Kaigyo";
-		/// <summary>
-		/// 施設開業詳細(選択肢なし)
-		/// </summary>
-		public int IdoJiyuDetail_Kaigyo
-		{
-			get	{	return Cast.Int(row == null ? null : row[FIdoJiyuDetail_Kaigyo]);	}
-			set	{	_set(FIdoJiyuDetail_Kaigyo, value);	}
-		}
-		
-		/// <summary>
-		/// 施設開業詳細(選択肢なし)。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? IdoJiyuDetail_Kaigyo_Null
-		{
-			get	{	if (row == null || row[FIdoJiyuDetail_Kaigyo] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FIdoJiyuDetail_Kaigyo]); }	}
-			set	{	_set(FIdoJiyuDetail_Kaigyo, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[施設異動詳細 0/None/ 1/KinmuSaki/勤務先 2/Kyuyo/休養 3/Haigyo/廃業 4/Taisyoku/退職]。
+		/// フィールド[施設異動詳細 0/None/ 1/KinmuSaki/勤務先 2/Kyuyo/休養 3/Haigyo/廃業 4/Taisｈoku/退職 5/Etc/その他]。
 		/// </summary>
 		public const string FIdoJiyuDetail_Ido = "IdoJiyuDetail_Ido";
 		/// <summary>
-		/// 施設異動詳細 0/None/ 1/KinmuSaki/勤務先 2/Kyuyo/休養 3/Haigyo/廃業 4/Taisyoku/退職
+		/// 施設異動詳細 0/None/ 1/KinmuSaki/勤務先 2/Kyuyo/休養 3/Haigyo/廃業 4/Taisｈoku/退職 5/Etc/その他
 		/// </summary>
 		public eIdoShisetsu IdoJiyuDetail_Ido
 		{
@@ -167,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 施設異動詳細 0/None/ 1/KinmuSaki/勤務先 2/Kyuyo/休養 3/Haigyo/廃業 4/Taisyoku/退職。System.DBNull.Value の場合 null を示します。
+		/// 施設異動詳細 0/None/ 1/KinmuSaki/勤務先 2/Kyuyo/休養 3/Haigyo/廃業 4/Taisｈoku/退職 5/Etc/その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? IdoJiyuDetail_Ido_Null
 		{
@@ -176,11 +154,33 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会員区分変更詳細 0/None/ 1/Kaigyo/開業 2/KanriHenko/管理者交代 3/KaisetsuHenko/開設者交代 4/KanriKaisetsuHenko/開設者・管理者交代 5/Haigyo/廃業]。
+		/// フィールド[事由:医師会の異動～-その他詳細記述]。
+		/// </summary>
+		public const string FIdoJiyuDetail_IdoMemo = "IdoJiyuDetail_IdoMemo";
+		/// <summary>
+		/// 事由:医師会の異動～-その他詳細記述
+		/// </summary>
+		public string IdoJiyuDetail_IdoMemo
+		{
+			get	{	return Cast.String(row == null ? null : row[FIdoJiyuDetail_IdoMemo]);	}
+			set	{	_set(FIdoJiyuDetail_IdoMemo, value);	}
+		}
+		
+		/// <summary>
+		/// 事由:医師会の異動～-その他詳細記述。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string IdoJiyuDetail_IdoMemo_Null
+		{
+			get	{	if (row == null || row[FIdoJiyuDetail_IdoMemo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIdoJiyuDetail_IdoMemo]); }	}
+			set	{	_set(FIdoJiyuDetail_IdoMemo, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[会員区分変更詳細 0/None/ 1/Kaigyo/開業 2/KanriHenko/管理者交代 3/KaisetsuHenko/開設者交代 4/KanriKaisetsuHenko/開設者・管理者交代 5/Haigyo/廃業・その他]。
 		/// </summary>
 		public const string FIdoJiyuDetail_Kaiin = "IdoJiyuDetail_Kaiin";
 		/// <summary>
-		/// 会員区分変更詳細 0/None/ 1/Kaigyo/開業 2/KanriHenko/管理者交代 3/KaisetsuHenko/開設者交代 4/KanriKaisetsuHenko/開設者・管理者交代 5/Haigyo/廃業
+		/// 会員区分変更詳細 0/None/ 1/Kaigyo/開業 2/KanriHenko/管理者交代 3/KaisetsuHenko/開設者交代 4/KanriKaisetsuHenko/開設者・管理者交代 5/Haigyo/廃業・その他
 		/// </summary>
 		public eIdoKaiinHenko IdoJiyuDetail_Kaiin
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 会員区分変更詳細 0/None/ 1/Kaigyo/開業 2/KanriHenko/管理者交代 3/KaisetsuHenko/開設者交代 4/KanriKaisetsuHenko/開設者・管理者交代 5/Haigyo/廃業。System.DBNull.Value の場合 null を示します。
+		/// 会員区分変更詳細 0/None/ 1/Kaigyo/開業 2/KanriHenko/管理者交代 3/KaisetsuHenko/開設者交代 4/KanriKaisetsuHenko/開設者・管理者交代 5/Haigyo/廃業・その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? IdoJiyuDetail_Kaiin_Null
 		{
@@ -198,11 +198,121 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[異動その他詳細 0/None/ 1/Iten/移転 2/MeisyoHenko/名称変更 3/Hojinka/法人化 4/AddrHenko/自宅住所変更]。
+		/// フィールド[(入力なし)事由:会員区分の変更-その他詳細記述]。
+		/// </summary>
+		public const string FIdoJiyuDetail_KaiinMemo = "IdoJiyuDetail_KaiinMemo";
+		/// <summary>
+		/// (入力なし)事由:会員区分の変更-その他詳細記述
+		/// </summary>
+		public string IdoJiyuDetail_KaiinMemo
+		{
+			get	{	return Cast.String(row == null ? null : row[FIdoJiyuDetail_KaiinMemo]);	}
+			set	{	_set(FIdoJiyuDetail_KaiinMemo, value);	}
+		}
+		
+		/// <summary>
+		/// (入力なし)事由:会員区分の変更-その他詳細記述。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string IdoJiyuDetail_KaiinMemo_Null
+		{
+			get	{	if (row == null || row[FIdoJiyuDetail_KaiinMemo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIdoJiyuDetail_KaiinMemo]); }	}
+			set	{	_set(FIdoJiyuDetail_KaiinMemo, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[施設所在地変更詳細 0/None/ 1/Iten/移転 2/Etc/その他]。
+		/// </summary>
+		public const string FIdoJiyuDetail_Shozai = "IdoJiyuDetail_Shozai";
+		/// <summary>
+		/// 施設所在地変更詳細 0/None/ 1/Iten/移転 2/Etc/その他
+		/// </summary>
+		public eIdoShozai IdoJiyuDetail_Shozai
+		{
+			get	{	return (eIdoShozai)Cast.Int(row == null ? null : row[FIdoJiyuDetail_Shozai]);	}
+			set	{	_set(FIdoJiyuDetail_Shozai, (int)value);	}
+		}
+		
+		/// <summary>
+		/// 施設所在地変更詳細 0/None/ 1/Iten/移転 2/Etc/その他。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? IdoJiyuDetail_Shozai_Null
+		{
+			get	{	if (row == null || row[FIdoJiyuDetail_Shozai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FIdoJiyuDetail_Shozai]); }	}
+			set	{	_set(FIdoJiyuDetail_Shozai, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[事由:施設所在地変更-その他詳細記述]。
+		/// </summary>
+		public const string FIdoJiyuDetail_ShozaiMemo = "IdoJiyuDetail_ShozaiMemo";
+		/// <summary>
+		/// 事由:施設所在地変更-その他詳細記述
+		/// </summary>
+		public string IdoJiyuDetail_ShozaiMemo
+		{
+			get	{	return Cast.String(row == null ? null : row[FIdoJiyuDetail_ShozaiMemo]);	}
+			set	{	_set(FIdoJiyuDetail_ShozaiMemo, value);	}
+		}
+		
+		/// <summary>
+		/// 事由:施設所在地変更-その他詳細記述。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string IdoJiyuDetail_ShozaiMemo_Null
+		{
+			get	{	if (row == null || row[FIdoJiyuDetail_ShozaiMemo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIdoJiyuDetail_ShozaiMemo]); }	}
+			set	{	_set(FIdoJiyuDetail_ShozaiMemo, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[現住所変更詳細 0/None/ 1/Tenkyo/転居 2/Etc/その他]。
+		/// </summary>
+		public const string FIdoJiyuDetail_Address = "IdoJiyuDetail_Address";
+		/// <summary>
+		/// 現住所変更詳細 0/None/ 1/Tenkyo/転居 2/Etc/その他
+		/// </summary>
+		public eIdoAddress IdoJiyuDetail_Address
+		{
+			get	{	return (eIdoAddress)Cast.Int(row == null ? null : row[FIdoJiyuDetail_Address]);	}
+			set	{	_set(FIdoJiyuDetail_Address, (int)value);	}
+		}
+		
+		/// <summary>
+		/// 現住所変更詳細 0/None/ 1/Tenkyo/転居 2/Etc/その他。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? IdoJiyuDetail_Address_Null
+		{
+			get	{	if (row == null || row[FIdoJiyuDetail_Address] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FIdoJiyuDetail_Address]); }	}
+			set	{	_set(FIdoJiyuDetail_Address, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[事由:現住所変更-その他詳細記述]。
+		/// </summary>
+		public const string FIdoJiyuDetail_AddressMemo = "IdoJiyuDetail_AddressMemo";
+		/// <summary>
+		/// 事由:現住所変更-その他詳細記述
+		/// </summary>
+		public string IdoJiyuDetail_AddressMemo
+		{
+			get	{	return Cast.String(row == null ? null : row[FIdoJiyuDetail_AddressMemo]);	}
+			set	{	_set(FIdoJiyuDetail_AddressMemo, value);	}
+		}
+		
+		/// <summary>
+		/// 事由:現住所変更-その他詳細記述。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string IdoJiyuDetail_AddressMemo_Null
+		{
+			get	{	if (row == null || row[FIdoJiyuDetail_AddressMemo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIdoJiyuDetail_AddressMemo]); }	}
+			set	{	_set(FIdoJiyuDetail_AddressMemo, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[異動その他詳細 0/None/ 1/MeishoHenko/名称変更 2/Hojinka/法人化 3/Etc/その他]。
 		/// </summary>
 		public const string FIdoJiyuDetail_Etc = "IdoJiyuDetail_Etc";
 		/// <summary>
-		/// 異動その他詳細 0/None/ 1/Iten/移転 2/MeisyoHenko/名称変更 3/Hojinka/法人化 4/AddrHenko/自宅住所変更
+		/// 異動その他詳細 0/None/ 1/MeishoHenko/名称変更 2/Hojinka/法人化 3/Etc/その他
 		/// </summary>
 		public eIdoEtc IdoJiyuDetail_Etc
 		{
@@ -211,7 +321,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 異動その他詳細 0/None/ 1/Iten/移転 2/MeisyoHenko/名称変更 3/Hojinka/法人化 4/AddrHenko/自宅住所変更。System.DBNull.Value の場合 null を示します。
+		/// 異動その他詳細 0/None/ 1/MeishoHenko/名称変更 2/Hojinka/法人化 3/Etc/その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? IdoJiyuDetail_Etc_Null
 		{
@@ -220,25 +330,25 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[その他詳細記述]。
+		/// フィールド[事由:その他-その他詳細記述]。
 		/// </summary>
-		public const string FIdoJiyuEtcMemo = "IdoJiyuEtcMemo";
+		public const string FIdoJiyuDetail_EtcMemo = "IdoJiyuDetail_EtcMemo";
 		/// <summary>
-		/// その他詳細記述
+		/// 事由:その他-その他詳細記述
 		/// </summary>
-		public string IdoJiyuEtcMemo
+		public string IdoJiyuDetail_EtcMemo
 		{
-			get	{	return Cast.String(row == null ? null : row[FIdoJiyuEtcMemo]);	}
-			set	{	_set(FIdoJiyuEtcMemo, value);	}
+			get	{	return Cast.String(row == null ? null : row[FIdoJiyuDetail_EtcMemo]);	}
+			set	{	_set(FIdoJiyuDetail_EtcMemo, value);	}
 		}
 		
 		/// <summary>
-		/// その他詳細記述。System.DBNull.Value の場合 null を示します。
+		/// 事由:その他-その他詳細記述。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public string IdoJiyuEtcMemo_Null
+		public string IdoJiyuDetail_EtcMemo_Null
 		{
-			get	{	if (row == null || row[FIdoJiyuEtcMemo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIdoJiyuEtcMemo]); }	}
-			set	{	_set(FIdoJiyuEtcMemo, value);	}
+			get	{	if (row == null || row[FIdoJiyuDetail_EtcMemo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FIdoJiyuDetail_EtcMemo]); }	}
+			set	{	_set(FIdoJiyuDetail_EtcMemo, value);	}
 		}
 		
 		/// <summary>
@@ -295,19 +405,42 @@ namespace App
 			col = new DataColumn(FIdoJiyuKbn, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIdoJiyuDetail_Kaigyo, typeof(int));
+			col = new DataColumn(FIdoJiyuDetail_Ido, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIdoJiyuDetail_Ido, typeof(int));
+			col = new DataColumn(FIdoJiyuDetail_IdoMemo, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FIdoJiyuDetail_Kaiin, typeof(int));
 			dt.Columns.Add(col);
 			
+			col = new DataColumn(FIdoJiyuDetail_KaiinMemo, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FIdoJiyuDetail_Shozai, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FIdoJiyuDetail_ShozaiMemo, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FIdoJiyuDetail_Address, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FIdoJiyuDetail_AddressMemo, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
 			col = new DataColumn(FIdoJiyuDetail_Etc, typeof(int));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FIdoJiyuEtcMemo, typeof(string));
+			col = new DataColumn(FIdoJiyuDetail_EtcMemo, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);

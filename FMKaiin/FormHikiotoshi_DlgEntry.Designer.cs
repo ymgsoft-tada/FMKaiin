@@ -42,6 +42,7 @@ namespace App
 			this.iMemo = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iCost = new GControlGcNumberEx.GcNumberEx(this.components);
 			this.lblCreateDate = new YControlLabelEx.YcLabelEx();
+			this.iKaihi = new App.UcTableComboBox();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaiin)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.iDateYM)).BeginInit();
@@ -251,14 +252,37 @@ namespace App
 			this.lblCreateDate.SingleBorderColor = System.Drawing.Color.Empty;
 			this.lblCreateDate.Size = new System.Drawing.Size(182, 25);
 			this.lblCreateDate.TabIndex = 351;
-			this.lblCreateDate.Text = "金額と備考を編集できます。";
+			this.lblCreateDate.Text = "グリッドで直接編集できます。";
 			this.lblCreateDate.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+			// 
+			// iKaihi
+			// 
+			this.iKaihi.BackColor = System.Drawing.Color.Transparent;
+			this.iKaihi.ComboBorderStyle = System.Windows.Forms.BorderStyle.None;
+			this.iKaihi.CompareValue = null;
+			this.iKaihi.ContentAlignment = System.Drawing.ContentAlignment.MiddleLeft;
+			this.iKaihi.DBView = null;
+			this.iKaihi.DiabledBackColor = System.Drawing.SystemColors.Control;
+			this.iKaihi.DisabledForeColor = System.Drawing.SystemColors.GrayText;
+			this.iKaihi.DropDownSize = new System.Drawing.Size(100, 44);
+			this.iKaihi.EnterImeMode = System.Windows.Forms.ImeMode.NoControl;
+			this.iKaihi.ForeColor = System.Drawing.Color.Transparent;
+			this.iKaihi.HighlightText = true;
+			this.iKaihi.Location = new System.Drawing.Point(89, 217);
+			this.iKaihi.Name = "iKaihi";
+			this.iKaihi.RowFilter = "";
+			this.iKaihi.SelectedIndexNullLeave = -1;
+			this.iKaihi.Size = new System.Drawing.Size(120, 20);
+			this.iKaihi.Sort = "";
+			this.iKaihi.TabIndex = 352;
+			this.iKaihi.TextSubItemIndex = -1;
 			// 
 			// FormHikiotoshi_DlgEntry
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(636, 369);
+			this.Controls.Add(this.iKaihi);
 			this.Controls.Add(this.lblCreateDate);
 			this.Controls.Add(this.iCost);
 			this.Controls.Add(this.iMemo);
@@ -287,6 +311,7 @@ namespace App
 			this.Controls.SetChildIndex(this.iMemo, 0);
 			this.Controls.SetChildIndex(this.iCost, 0);
 			this.Controls.SetChildIndex(this.lblCreateDate, 0);
+			this.Controls.SetChildIndex(this.iKaihi, 0);
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iKaiin)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.iDateYM)).EndInit();
@@ -311,5 +336,6 @@ namespace App
 		private GControlGcTextBoxEx.GcTextBoxEx iMemo;
 		private GControlGcNumberEx.GcNumberEx iCost;
 		private YControlLabelEx.YcLabelEx lblCreateDate;
+		private UcTableComboBox iKaihi;
 	}
 }

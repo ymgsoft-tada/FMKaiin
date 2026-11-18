@@ -18,6 +18,16 @@ namespace App
 			}
 		}
 		/// <summary>
+		/// Kaihiのファイル名称
+		/// </summary>
+		public static string CRepKaihiFilename
+		{
+			get
+			{
+				return "Kaihi.flxr";
+			}
+		}
+		/// <summary>
 		/// KaiinJohoのファイル名称
 		/// </summary>
 		public static string CRepKaiinJohoFilename
@@ -46,6 +56,56 @@ namespace App
 			get
 			{
 				return "IryoKikan";
+			}
+		}
+		/// <summary>
+		/// CRep05_KaihiUchiwakeYear レポート名称
+		/// </summary>
+		public static string CRep05_KaihiUchiwakeYear
+		{
+			get
+			{
+				return "05_KaihiUchiwakeYear";
+			}
+		}
+		/// <summary>
+		/// CRep07_KaihiListBank レポート名称
+		/// </summary>
+		public static string CRep07_KaihiListBank
+		{
+			get
+			{
+				return "07_KaihiListBank";
+			}
+		}
+		/// <summary>
+		/// CRep10_KaihiYoteiYear レポート名称
+		/// </summary>
+		public static string CRep10_KaihiYoteiYear
+		{
+			get
+			{
+				return "10_KaihiYoteiYear";
+			}
+		}
+		/// <summary>
+		/// CRep04_KaihiUchiwakeMonth レポート名称
+		/// </summary>
+		public static string CRep04_KaihiUchiwakeMonth
+		{
+			get
+			{
+				return "04_KaihiUchiwakeMonth";
+			}
+		}
+		/// <summary>
+		/// CRep06_KaihiList レポート名称
+		/// </summary>
+		public static string CRep06_KaihiList
+		{
+			get
+			{
+				return "06_KaihiList";
 			}
 		}
 		/// <summary>

@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費]。
+		/// フィールド[会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費 3/Group/グループ会費]。
 		/// </summary>
 		public const string FKaihi_KaihiType = "Kaihi_KaihiType";
 		/// <summary>
-		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費
+		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費 3/Group/グループ会費
 		/// </summary>
 		public eTypeKaihi Kaihi_KaihiType
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費。System.DBNull.Value の場合 null を示します。
+		/// 会費区分 0/None/ 1/Ishikai/医師会会費 2/Ikai/医会等会費 3/Group/グループ会費。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? Kaihi_KaihiType_Null
 		{
@@ -156,23 +156,23 @@ namespace App
 		/// <summary>
 		/// フィールド[備考]。
 		/// </summary>
-		public const string FKaihi_Bikou = "Kaihi_Bikou";
+		public const string FKaihi_Biko = "Kaihi_Biko";
 		/// <summary>
 		/// 備考
 		/// </summary>
-		public string Kaihi_Bikou
+		public string Kaihi_Biko
 		{
-			get	{	return Cast.String(row == null ? null : row[FKaihi_Bikou]);	}
-			set	{	_set(FKaihi_Bikou, value);	}
+			get	{	return Cast.String(row == null ? null : row[FKaihi_Biko]);	}
+			set	{	_set(FKaihi_Biko, value);	}
 		}
 		
 		/// <summary>
 		/// 備考。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public string Kaihi_Bikou_Null
+		public string Kaihi_Biko_Null
 		{
-			get	{	if (row == null || row[FKaihi_Bikou] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaihi_Bikou]); }	}
-			set	{	_set(FKaihi_Bikou, value);	}
+			get	{	if (row == null || row[FKaihi_Biko] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaihi_Biko]); }	}
+			set	{	_set(FKaihi_Biko, value);	}
 		}
 		
 		/// <summary>
@@ -585,6 +585,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[口座名義カナ]。
+		/// </summary>
+		public const string FKaihi_BankKozaNameKana = "Kaihi_BankKozaNameKana";
+		/// <summary>
+		/// 口座名義カナ
+		/// </summary>
+		public string Kaihi_BankKozaNameKana
+		{
+			get	{	return Cast.String(row == null ? null : row[FKaihi_BankKozaNameKana]);	}
+			set	{	_set(FKaihi_BankKozaNameKana, value);	}
+		}
+		
+		/// <summary>
+		/// 口座名義カナ。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string Kaihi_BankKozaNameKana_Null
+		{
+			get	{	if (row == null || row[FKaihi_BankKozaNameKana] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaihi_BankKozaNameKana]); }	}
+			set	{	_set(FKaihi_BankKozaNameKana, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[iFAXグループID]。
 		/// </summary>
 		public const string FKaihi_BankIfax = "Kaihi_BankIfax";
@@ -604,6 +626,28 @@ namespace App
 		{
 			get	{	if (row == null || row[FKaihi_BankIfax] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihi_BankIfax]); }	}
 			set	{	_set(FKaihi_BankIfax, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[会費属性 0/None/ 1/Nichii/日本医師会 2/Keni/神奈川県医師会 3/Shii/藤沢市医師会 4/GakkoShii/学校医部会（市医） 5/Sangyo/産業医部会 6/Josei/女性医部会 7/Naika/内科医会 8/Shonika/小児科医会 9/GekaRinsho/臨床外科医会 10/GekaNoshin/脳神経外科医会 11/GekaSeikei/整形外科医会 12/Sanfujinka/産婦人科医会 13/Hifuka/皮膚科医会 14/Ganka/眼科医会 15/Jibika/耳鼻科医会 16/Hinyokika/泌尿器科医会 17/Shokakika/消化器病医会 18/Sports/健康スポーツ医部会 19/Kokyuki/呼吸器・循環器研究会 20/NaikaTaiken/内科体験学習 21/Group1/第１グループ会 22/Group2/第２グループ会 23/Group3/第３グループ会 24/Group4/第４グループ会 25/Group5/第５グループ会 26/Group5Gojo/第５グループ会（互助） 27/Group6/第６グループ会 28/Group7/第７グループ会 29/Group8/第８グループ会 30/Group9/第９グループ会 31/Group10/第10グループ会 32/Jidosha/医療用自動車協会 33/GakkoKeni/学校医部会（県医） 34/HoikuKeni/県医保育園医部会 35/NaikaRinsho/日本臨床内科医会 36/Aoiku/葵句会 37/Shogi/将棋部会 38/KaihiKurikoshi/会費繰越金精算 39/RenmeiNichii/日医医師連盟 40/RenmeiKeni/県医医師連盟 41/KumiGroup/組グループ 99/Etc/その他]。
+		/// </summary>
+		public const string FKaihi_Zokusei = "Kaihi_Zokusei";
+		/// <summary>
+		/// 会費属性 0/None/ 1/Nichii/日本医師会 2/Keni/神奈川県医師会 3/Shii/藤沢市医師会 4/GakkoShii/学校医部会（市医） 5/Sangyo/産業医部会 6/Josei/女性医部会 7/Naika/内科医会 8/Shonika/小児科医会 9/GekaRinsho/臨床外科医会 10/GekaNoshin/脳神経外科医会 11/GekaSeikei/整形外科医会 12/Sanfujinka/産婦人科医会 13/Hifuka/皮膚科医会 14/Ganka/眼科医会 15/Jibika/耳鼻科医会 16/Hinyokika/泌尿器科医会 17/Shokakika/消化器病医会 18/Sports/健康スポーツ医部会 19/Kokyuki/呼吸器・循環器研究会 20/NaikaTaiken/内科体験学習 21/Group1/第１グループ会 22/Group2/第２グループ会 23/Group3/第３グループ会 24/Group4/第４グループ会 25/Group5/第５グループ会 26/Group5Gojo/第５グループ会（互助） 27/Group6/第６グループ会 28/Group7/第７グループ会 29/Group8/第８グループ会 30/Group9/第９グループ会 31/Group10/第10グループ会 32/Jidosha/医療用自動車協会 33/GakkoKeni/学校医部会（県医） 34/HoikuKeni/県医保育園医部会 35/NaikaRinsho/日本臨床内科医会 36/Aoiku/葵句会 37/Shogi/将棋部会 38/KaihiKurikoshi/会費繰越金精算 39/RenmeiNichii/日医医師連盟 40/RenmeiKeni/県医医師連盟 41/KumiGroup/組グループ 99/Etc/その他
+		/// </summary>
+		public eKaihiZokusei Kaihi_Zokusei
+		{
+			get	{	return (eKaihiZokusei)Cast.Int(row == null ? null : row[FKaihi_Zokusei]);	}
+			set	{	_set(FKaihi_Zokusei, (int)value);	}
+		}
+		
+		/// <summary>
+		/// 会費属性 0/None/ 1/Nichii/日本医師会 2/Keni/神奈川県医師会 3/Shii/藤沢市医師会 4/GakkoShii/学校医部会（市医） 5/Sangyo/産業医部会 6/Josei/女性医部会 7/Naika/内科医会 8/Shonika/小児科医会 9/GekaRinsho/臨床外科医会 10/GekaNoshin/脳神経外科医会 11/GekaSeikei/整形外科医会 12/Sanfujinka/産婦人科医会 13/Hifuka/皮膚科医会 14/Ganka/眼科医会 15/Jibika/耳鼻科医会 16/Hinyokika/泌尿器科医会 17/Shokakika/消化器病医会 18/Sports/健康スポーツ医部会 19/Kokyuki/呼吸器・循環器研究会 20/NaikaTaiken/内科体験学習 21/Group1/第１グループ会 22/Group2/第２グループ会 23/Group3/第３グループ会 24/Group4/第４グループ会 25/Group5/第５グループ会 26/Group5Gojo/第５グループ会（互助） 27/Group6/第６グループ会 28/Group7/第７グループ会 29/Group8/第８グループ会 30/Group9/第９グループ会 31/Group10/第10グループ会 32/Jidosha/医療用自動車協会 33/GakkoKeni/学校医部会（県医） 34/HoikuKeni/県医保育園医部会 35/NaikaRinsho/日本臨床内科医会 36/Aoiku/葵句会 37/Shogi/将棋部会 38/KaihiKurikoshi/会費繰越金精算 39/RenmeiNichii/日医医師連盟 40/RenmeiKeni/県医医師連盟 41/KumiGroup/組グループ 99/Etc/その他。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? Kaihi_Zokusei_Null
+		{
+			get	{	if (row == null || row[FKaihi_Zokusei] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaihi_Zokusei]); }	}
+			set	{	_set(FKaihi_Zokusei, value);	}
 		}
 		
 		/// <summary>
@@ -667,7 +711,7 @@ namespace App
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaihi_Bikou, typeof(string));
+			col = new DataColumn(FKaihi_Biko, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
@@ -733,7 +777,15 @@ namespace App
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
+			col = new DataColumn(FKaihi_BankKozaNameKana, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
 			col = new DataColumn(FKaihi_BankIfax, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaihi_Zokusei, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));

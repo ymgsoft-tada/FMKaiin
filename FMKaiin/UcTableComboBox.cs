@@ -22,7 +22,8 @@ namespace App
 	/// DBView(DataView)をDataSourceにセットするタイプのComboBoxです。
 	/// インクリメンタルサーチ機能も実装されています。
 	/// </summary>
-	public partial class UcTableComboBox : UcInputControl_Super
+	//¶ 2026/10/28 ClaudeCode ホイールでの選択変更を抑止するため IMessageFilter を実装
+	public partial class UcTableComboBox : UcInputControl_Super, IMessageFilter
 	{
 		#region *** Event ***
 		/// <summary>
@@ -698,6 +699,9 @@ namespace App
 		/// </summary>
 		void UcTableComboBox_Enter(object sender, EventArgs e)
 		{
+			//¶ 2026/10/28 ClaudeCode フォーカス中だけホイールを横取りする
+			addWheelFilter();
+
 			cmb.Select();
 			cmb.SelectAll();
 		}
@@ -723,7 +727,102 @@ namespace App
 			
 			// ドロップダウン禁止で終わらせる。
 			disabledDropDown = true;
+
+			//¶ 2026/10/28 ClaudeCode フォーカスが外れたらホイールの横取りを解除
+			removeWheelFilter();
 		}
+
+		//¶ 2026/10/28 ClaudeCode ここから ホイールで選択値が回る・グリッドのスクロールにコンボが追従しない問題の対策
+		const int WM_MOUSEWHEEL = 0x020A;
+
+		[System.Runtime.InteropServices.DllImport("user32.dll")]
+		static extern IntPtr WindowFromPoint(Point pt);
+
+		[System.Runtime.InteropServices.DllImport("user32.dll")]
+		static extern IntPtr SendMessage(IntPtr hWnd, int msg, IntPtr wParam, IntPtr lParam);
+
+		/// <summary>
+		/// ホイール用メッセージフィルタを登録済みか
+		/// </summary>
+		bool wheelFilterAdded = false;
+
+		/// <summary>
+		/// ホイール用メッセージフィルタを登録します。
+		/// </summary>
+		void addWheelFilter()
+		{
+			if (wheelFilterAdded == false)
+			{
+				Application.AddMessageFilter(this);
+				wheelFilterAdded = true;
+			}
+		}
+
+		/// <summary>
+		/// ホイール用メッセージフィルタを解除します。
+		/// </summary>
+		void removeWheelFilter()
+		{
+			if (wheelFilterAdded == true)
+			{
+				Application.RemoveMessageFilter(this);
+				wheelFilterAdded = false;
+			}
+		}
+
+		/// <summary>
+		/// フォーカスを持ったまま破棄された場合にフィルタを解除します。
+		/// </summary>
+		protected override void OnHandleDestroyed(EventArgs e)
+		{
+			removeWheelFilter();
+			base.OnHandleDestroyed(e);
+		}
+
+		/// <summary>
+		/// ドロップダウンが閉じている間のホイールはコンボに渡さず、マウス直下のコントロールへ回します。
+		/// グリッド上でホイールした場合は、グリッドへフォーカスを移して編集を終了させてからスクロールさせます。
+		/// </summary>
+		public bool PreFilterMessage(ref Message m)
+		{
+			if (m.Msg != WM_MOUSEWHEEL)
+			{
+				return false;
+			}
+
+			// リスト表示中は通常どおりリストをスクロールさせる
+			if (cmb.DroppedDown == true)
+			{
+				return false;
+			}
+
+			// 宛先が自分（内部の cmb 含む）でなければ関与しない
+			Control target = Control.FromChildHandle(m.HWnd);
+			if (target == null || (target != this && this.Contains(target) == false))
+			{
+				return false;
+			}
+
+			// マウス直下のコントロール
+			IntPtr  hUnder = WindowFromPoint(Cursor.Position);
+			Control under  = Control.FromChildHandle(hUnder);
+
+			// 自分の上でのホイールは捨てる（選択値を回さない）
+			if (under == null || under == this || this.Contains(under) == true)
+			{
+				return true;
+			}
+
+			// グリッドならここで Validating → 行書き込み → コンボ退避 が走る
+			if (under.CanSelect == true)
+			{
+				under.Select();
+			}
+			SendMessage(hUnder, WM_MOUSEWHEEL, m.WParam, m.LParam);
+
+			return true;
+		}
+		//¶ 2026/10/28 ClaudeCode ここまで
 		
 		/// <summary>
 		/// ユーザーコントロールのサイズ変更にコンボボックスを追従させる。

@@ -25,6 +25,35 @@ namespace App
 			btnIryokikanToroku.Click += BtnIryokikanToroku_Click;
 			btnShinryoka.Click += BtnShinryoka_Click;
 			btnHikiotoshi.Click += BtnHikiotoshi_Click;
+			btnFB.Click += BtnFB_Click;
+			button1.Click += BtnIfax_Click; //¶ 2026/11/11 CC iFAXデータ出力
+			btnMasterImport.Click += BtnMasterImport_Click; //¶ 2026/11/14 CC マスター取込
+		}
+
+		private void BtnMasterImport_Click(object sender, EventArgs e)
+		{
+			FormMasterImport frm = new FormMasterImport();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		private void BtnIfax_Click(object sender, EventArgs e)
+		{
+			FormCreateIfaxFile frm = new FormCreateIfaxFile();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		private void BtnFB_Click(object sender, EventArgs e)
+		{
+			initBankCode();
+
+			FormCreateBankFile frm = new FormCreateBankFile();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		private void BtnHikiotoshi_Click(object sender, EventArgs e)
@@ -83,6 +112,9 @@ namespace App
 
 		private void BtnBasic_Click(object sender, EventArgs e)
 		{
+			// 銀行コードテーブルの取得
+			initBankCode();
+
 			FormMasterBasic frm = new FormMasterBasic();
 			frm.ShowDialog();
 			frm.Dispose();
@@ -133,8 +165,7 @@ namespace App
 			// 銀行コードは大量のデータになるので、スプラッシュ時ではなくログインしてから取得する
 			AppGlobal.DB.GetReFillTable(TableProp.t_bank_code);
 			AppGlobal.InitBankCodeMg();
-//			AppGlobal.Banks.Init(); // FBファイル作成に利用
-
+			AppGlobal.Banks.Init();
 		}
 
 		/// <summary>
@@ -143,6 +174,13 @@ namespace App
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
 			base.FormFrame_Shown(sender, e);
+		}
+
+		private void button3_Click(object sender, EventArgs e)
+		{
+			FormExcelMenu frm = new FormExcelMenu();
+			frm.ShowDialog();
+			frm.Dispose();
 		}
 	}
 }

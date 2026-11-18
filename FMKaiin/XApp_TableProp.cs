@@ -86,6 +86,11 @@ namespace App
 		public const string t_kaiin = "t_kaiin";
 		
 		/// <summary>
+		/// t_kaiin_chosei
+		/// </summary>
+		public const string t_kaiin_chosei = "t_kaiin_chosei";
+		
+		/// <summary>
 		/// t_kaiin_gakkai
 		/// </summary>
 		public const string t_kaiin_gakkai = "t_kaiin_gakkai";
@@ -104,11 +109,6 @@ namespace App
 		/// t_kaiin_shinryoka
 		/// </summary>
 		public const string t_kaiin_shinryoka = "t_kaiin_shinryoka";
-		
-		/// <summary>
-		/// t_kaiinkbn
-		/// </summary>
-		public const string t_kaiinkbn = "t_kaiinkbn";
 		
 		/// <summary>
 		/// t_kaisetsushutai
@@ -141,9 +141,9 @@ namespace App
 		public const string t_tantosha = "t_tantosha";
 		
 		/// <summary>
-		/// t_zentodouhuken
+		/// t_zentodoufuken
 		/// </summary>
-		public const string t_zentodouhuken = "t_zentodouhuken";
+		public const string t_zentodoufuken = "t_zentodoufuken";
 		#endregion
 		
 		#region *** Public Method ***

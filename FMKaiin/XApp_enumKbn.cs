@@ -3,7 +3,7 @@
 // ※このプログラムはDBAutoProperties2Access2000により自動的に生成されました。(fj)
 //
 // MDB File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
 //
 
 using System;
@@ -220,21 +220,25 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// 施設開業
+		/// 医師会の異動・施設開業・施設異動
 		/// </summary>
-		Kaigyo = 1,
+		Ido = 1,
 		/// <summary>
-		/// 施設異動
+		/// 会員区分の変更
 		/// </summary>
-		Ido = 2,
+		Kaiin = 2,
 		/// <summary>
-		/// 会員区分変更
+		/// 施設所在地変更
 		/// </summary>
-		Kaiin = 3,
+		Shozai = 3,
+		/// <summary>
+		/// 現住所変更
+		/// </summary>
+		Address = 4,
 		/// <summary>
 		/// その他
 		/// </summary>
-		Etc = 4,
+		Etc = 5,
 	}
 	
 	/// <summary>
@@ -255,9 +259,13 @@ namespace App
 		/// </summary>
 		Shibo = 2,
 		/// <summary>
+		/// 医師会の異動
+		/// </summary>
+		Ido = 3,
+		/// <summary>
 		/// その他
 		/// </summary>
-		Etc = 3,
+		Etc = 4,
 	}
 	
 	/// <summary>
@@ -284,7 +292,11 @@ namespace App
 		/// <summary>
 		/// 退職
 		/// </summary>
-		Taisyoku = 4,
+		Taisｈoku = 4,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 5,
 	}
 	
 	/// <summary>
@@ -313,7 +325,7 @@ namespace App
 		/// </summary>
 		KanriKaisetsuHenko = 4,
 		/// <summary>
-		/// 廃業
+		/// 廃業・その他
 		/// </summary>
 		Haigyo = 5,
 	}
@@ -328,21 +340,17 @@ namespace App
 		/// </summary>
 		None = 0,
 		/// <summary>
-		/// 移転
-		/// </summary>
-		Iten = 1,
-		/// <summary>
 		/// 名称変更
 		/// </summary>
-		MeisyoHenko = 2,
+		MeishoHenko = 1,
 		/// <summary>
 		/// 法人化
 		/// </summary>
-		Hojinka = 3,
+		Hojinka = 2,
 		/// <summary>
-		/// 自宅住所変更
+		/// その他
 		/// </summary>
-		AddrHenko = 4,
+		Etc = 3,
 	}
 	
 	/// <summary>
@@ -362,6 +370,10 @@ namespace App
 		/// 医会等会費
 		/// </summary>
 		Ikai = 2,
+		/// <summary>
+		/// グループ会費
+		/// </summary>
+		Group = 3,
 	}
 	
 	/// <summary>
@@ -389,6 +401,301 @@ namespace App
 		/// その他
 		/// </summary>
 		Etc = 4,
+	}
+	
+	/// <summary>
+	/// [列挙] 施設所在地変更詳細
+	/// </summary>
+	public enum eIdoShozai
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 移転
+		/// </summary>
+		Iten = 1,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 2,
+	}
+	
+	/// <summary>
+	/// [列挙] 現住所変更詳細
+	/// </summary>
+	public enum eIdoAddress
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 転居
+		/// </summary>
+		Tenkyo = 1,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 2,
+	}
+	
+	/// <summary>
+	/// [列挙] 会費減免事由
+	/// </summary>
+	public enum eTypeGenmen
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 高齢
+		/// </summary>
+		Korei = 1,
+		/// <summary>
+		/// 疾病その他
+		/// </summary>
+		Shitsubyo = 2,
+		/// <summary>
+		/// 出産育児
+		/// </summary>
+		Ikuji = 3,
+		/// <summary>
+		/// 卒後5年
+		/// </summary>
+		Sotsu5nen = 4,
+		/// <summary>
+		/// 40歳以下
+		/// </summary>
+		Age40 = 5,
+		/// <summary>
+		/// 30歳以下
+		/// </summary>
+		Age30 = 6,
+		/// <summary>
+		/// 研修医
+		/// </summary>
+		Kenshui = 7,
+	}
+	
+	/// <summary>
+	/// [列挙] 会員区分
+	/// </summary>
+	public enum eTypeKaiin
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 病院長
+		/// </summary>
+		Incho = 1,
+		/// <summary>
+		/// 診療所長
+		/// </summary>
+		Shocho = 2,
+		/// <summary>
+		/// 勤務医
+		/// </summary>
+		Kinmui = 3,
+		/// <summary>
+		/// 自宅会員
+		/// </summary>
+		Jitaku = 4,
+		/// <summary>
+		/// 藤沢市勤務会員
+		/// </summary>
+		Fujisawa = 5,
+		/// <summary>
+		/// 研修医
+		/// </summary>
+		Kenshui = 6,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 9,
+	}
+	
+	/// <summary>
+	/// [列挙] 会費属性
+	/// </summary>
+	public enum eKaihiZokusei
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 日本医師会
+		/// </summary>
+		Nichii = 1,
+		/// <summary>
+		/// 神奈川県医師会
+		/// </summary>
+		Keni = 2,
+		/// <summary>
+		/// 藤沢市医師会
+		/// </summary>
+		Shii = 3,
+		/// <summary>
+		/// 学校医部会（市医）
+		/// </summary>
+		GakkoShii = 4,
+		/// <summary>
+		/// 産業医部会
+		/// </summary>
+		Sangyo = 5,
+		/// <summary>
+		/// 女性医部会
+		/// </summary>
+		Josei = 6,
+		/// <summary>
+		/// 内科医会
+		/// </summary>
+		Naika = 7,
+		/// <summary>
+		/// 小児科医会
+		/// </summary>
+		Shonika = 8,
+		/// <summary>
+		/// 臨床外科医会
+		/// </summary>
+		GekaRinsho = 9,
+		/// <summary>
+		/// 脳神経外科医会
+		/// </summary>
+		GekaNoshin = 10,
+		/// <summary>
+		/// 整形外科医会
+		/// </summary>
+		GekaSeikei = 11,
+		/// <summary>
+		/// 産婦人科医会
+		/// </summary>
+		Sanfujinka = 12,
+		/// <summary>
+		/// 皮膚科医会
+		/// </summary>
+		Hifuka = 13,
+		/// <summary>
+		/// 眼科医会
+		/// </summary>
+		Ganka = 14,
+		/// <summary>
+		/// 耳鼻科医会
+		/// </summary>
+		Jibika = 15,
+		/// <summary>
+		/// 泌尿器科医会
+		/// </summary>
+		Hinyokika = 16,
+		/// <summary>
+		/// 消化器病医会
+		/// </summary>
+		Shokakika = 17,
+		/// <summary>
+		/// 健康スポーツ医部会
+		/// </summary>
+		Sports = 18,
+		/// <summary>
+		/// 呼吸器・循環器研究会
+		/// </summary>
+		Kokyuki = 19,
+		/// <summary>
+		/// 内科体験学習
+		/// </summary>
+		NaikaTaiken = 20,
+		/// <summary>
+		/// 第１グループ会
+		/// </summary>
+		Group1 = 21,
+		/// <summary>
+		/// 第２グループ会
+		/// </summary>
+		Group2 = 22,
+		/// <summary>
+		/// 第３グループ会
+		/// </summary>
+		Group3 = 23,
+		/// <summary>
+		/// 第４グループ会
+		/// </summary>
+		Group4 = 24,
+		/// <summary>
+		/// 第５グループ会
+		/// </summary>
+		Group5 = 25,
+		/// <summary>
+		/// 第５グループ会（互助）
+		/// </summary>
+		Group5Gojo = 26,
+		/// <summary>
+		/// 第６グループ会
+		/// </summary>
+		Group6 = 27,
+		/// <summary>
+		/// 第７グループ会
+		/// </summary>
+		Group7 = 28,
+		/// <summary>
+		/// 第８グループ会
+		/// </summary>
+		Group8 = 29,
+		/// <summary>
+		/// 第９グループ会
+		/// </summary>
+		Group9 = 30,
+		/// <summary>
+		/// 第10グループ会
+		/// </summary>
+		Group10 = 31,
+		/// <summary>
+		/// 医療用自動車協会
+		/// </summary>
+		Jidosha = 32,
+		/// <summary>
+		/// 学校医部会（県医）
+		/// </summary>
+		GakkoKeni = 33,
+		/// <summary>
+		/// 県医保育園医部会
+		/// </summary>
+		HoikuKeni = 34,
+		/// <summary>
+		/// 日本臨床内科医会
+		/// </summary>
+		NaikaRinsho = 35,
+		/// <summary>
+		/// 葵句会
+		/// </summary>
+		Aoiku = 36,
+		/// <summary>
+		/// 将棋部会
+		/// </summary>
+		Shogi = 37,
+		/// <summary>
+		/// 会費繰越金精算
+		/// </summary>
+		KaihiKurikoshi = 38,
+		/// <summary>
+		/// 日医医師連盟
+		/// </summary>
+		RenmeiNichii = 39,
+		/// <summary>
+		/// 県医医師連盟
+		/// </summary>
+		RenmeiKeni = 40,
+		/// <summary>
+		/// 組グループ
+		/// </summary>
+		KumiGroup = 41,
+		/// <summary>
+		/// その他
+		/// </summary>
+		Etc = 99,
 	}
 	
 	/// <summary>
@@ -461,6 +768,26 @@ namespace App
 		/// eTypeIkai に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DTypeIkai;
+		/// <summary>
+		/// eIdoShozai に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DIdoShozai;
+		/// <summary>
+		/// eIdoAddress に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DIdoAddress;
+		/// <summary>
+		/// eTypeGenmen に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeGenmen;
+		/// <summary>
+		/// eTypeKaiin に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DTypeKaiin;
+		/// <summary>
+		/// eKaihiZokusei に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DKaihiZokusei;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -520,15 +847,17 @@ namespace App
 			
 			DTypeIdoJiyu = new Dictionary<int, string>();
 			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.None, "");
-			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Kaigyo, "施設開業");
-			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Ido, "施設異動");
-			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Kaiin, "会員区分変更");
+			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Ido, "医師会の異動・施設開業・施設異動");
+			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Kaiin, "会員区分の変更");
+			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Shozai, "施設所在地変更");
+			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Address, "現住所変更");
 			DTypeIdoJiyu.Add((int)eTypeIdoJiyu.Etc, "その他");
 			
 			DTypeTaikaiJiyu = new Dictionary<int, string>();
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.None, "");
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Haiki, "廃棄・退職");
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Shibo, "死亡");
+			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Ido, "医師会の異動");
 			DTypeTaikaiJiyu.Add((int)eTypeTaikaiJiyu.Etc, "その他");
 			
 			DIdoShisetsu = new Dictionary<int, string>();
@@ -536,7 +865,8 @@ namespace App
 			DIdoShisetsu.Add((int)eIdoShisetsu.KinmuSaki, "勤務先");
 			DIdoShisetsu.Add((int)eIdoShisetsu.Kyuyo, "休養");
 			DIdoShisetsu.Add((int)eIdoShisetsu.Haigyo, "廃業");
-			DIdoShisetsu.Add((int)eIdoShisetsu.Taisyoku, "退職");
+			DIdoShisetsu.Add((int)eIdoShisetsu.Taisｈoku, "退職");
+			DIdoShisetsu.Add((int)eIdoShisetsu.Etc, "その他");
 			
 			DIdoKaiinHenko = new Dictionary<int, string>();
 			DIdoKaiinHenko.Add((int)eIdoKaiinHenko.None, "");
@@ -544,19 +874,19 @@ namespace App
 			DIdoKaiinHenko.Add((int)eIdoKaiinHenko.KanriHenko, "管理者交代");
 			DIdoKaiinHenko.Add((int)eIdoKaiinHenko.KaisetsuHenko, "開設者交代");
 			DIdoKaiinHenko.Add((int)eIdoKaiinHenko.KanriKaisetsuHenko, "開設者・管理者交代");
-			DIdoKaiinHenko.Add((int)eIdoKaiinHenko.Haigyo, "廃業");
+			DIdoKaiinHenko.Add((int)eIdoKaiinHenko.Haigyo, "廃業・その他");
 			
 			DIdoEtc = new Dictionary<int, string>();
 			DIdoEtc.Add((int)eIdoEtc.None, "");
-			DIdoEtc.Add((int)eIdoEtc.Iten, "移転");
-			DIdoEtc.Add((int)eIdoEtc.MeisyoHenko, "名称変更");
+			DIdoEtc.Add((int)eIdoEtc.MeishoHenko, "名称変更");
 			DIdoEtc.Add((int)eIdoEtc.Hojinka, "法人化");
-			DIdoEtc.Add((int)eIdoEtc.AddrHenko, "自宅住所変更");
+			DIdoEtc.Add((int)eIdoEtc.Etc, "その他");
 			
 			DTypeKaihi = new Dictionary<int, string>();
 			DTypeKaihi.Add((int)eTypeKaihi.None, "");
 			DTypeKaihi.Add((int)eTypeKaihi.Ishikai, "医師会会費");
 			DTypeKaihi.Add((int)eTypeKaihi.Ikai, "医会等会費");
+			DTypeKaihi.Add((int)eTypeKaihi.Group, "グループ会費");
 			
 			DTypeIkai = new Dictionary<int, string>();
 			DTypeIkai.Add((int)eTypeIkai.None, "");
@@ -564,6 +894,81 @@ namespace App
 			DTypeIkai.Add((int)eTypeIkai.Keni, "県医");
 			DTypeIkai.Add((int)eTypeIkai.Shii, "市医");
 			DTypeIkai.Add((int)eTypeIkai.Etc, "その他");
+			
+			DIdoShozai = new Dictionary<int, string>();
+			DIdoShozai.Add((int)eIdoShozai.None, "");
+			DIdoShozai.Add((int)eIdoShozai.Iten, "移転");
+			DIdoShozai.Add((int)eIdoShozai.Etc, "その他");
+			
+			DIdoAddress = new Dictionary<int, string>();
+			DIdoAddress.Add((int)eIdoAddress.None, "");
+			DIdoAddress.Add((int)eIdoAddress.Tenkyo, "転居");
+			DIdoAddress.Add((int)eIdoAddress.Etc, "その他");
+			
+			DTypeGenmen = new Dictionary<int, string>();
+			DTypeGenmen.Add((int)eTypeGenmen.None, "");
+			DTypeGenmen.Add((int)eTypeGenmen.Korei, "高齢");
+			DTypeGenmen.Add((int)eTypeGenmen.Shitsubyo, "疾病その他");
+			DTypeGenmen.Add((int)eTypeGenmen.Ikuji, "出産育児");
+			DTypeGenmen.Add((int)eTypeGenmen.Sotsu5nen, "卒後5年");
+			DTypeGenmen.Add((int)eTypeGenmen.Age40, "40歳以下");
+			DTypeGenmen.Add((int)eTypeGenmen.Age30, "30歳以下");
+			DTypeGenmen.Add((int)eTypeGenmen.Kenshui, "研修医");
+			
+			DTypeKaiin = new Dictionary<int, string>();
+			DTypeKaiin.Add((int)eTypeKaiin.None, "");
+			DTypeKaiin.Add((int)eTypeKaiin.Incho, "病院長");
+			DTypeKaiin.Add((int)eTypeKaiin.Shocho, "診療所長");
+			DTypeKaiin.Add((int)eTypeKaiin.Kinmui, "勤務医");
+			DTypeKaiin.Add((int)eTypeKaiin.Jitaku, "自宅会員");
+			DTypeKaiin.Add((int)eTypeKaiin.Fujisawa, "藤沢市勤務会員");
+			DTypeKaiin.Add((int)eTypeKaiin.Kenshui, "研修医");
+			DTypeKaiin.Add((int)eTypeKaiin.Etc, "その他");
+			
+			DKaihiZokusei = new Dictionary<int, string>();
+			DKaihiZokusei.Add((int)eKaihiZokusei.None, "");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Nichii, "日本医師会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Keni, "神奈川県医師会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Shii, "藤沢市医師会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.GakkoShii, "学校医部会（市医）");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Sangyo, "産業医部会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Josei, "女性医部会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Naika, "内科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Shonika, "小児科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.GekaRinsho, "臨床外科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.GekaNoshin, "脳神経外科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.GekaSeikei, "整形外科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Sanfujinka, "産婦人科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Hifuka, "皮膚科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Ganka, "眼科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Jibika, "耳鼻科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Hinyokika, "泌尿器科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Shokakika, "消化器病医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Sports, "健康スポーツ医部会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Kokyuki, "呼吸器・循環器研究会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.NaikaTaiken, "内科体験学習");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group1, "第１グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group2, "第２グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group3, "第３グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group4, "第４グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group5, "第５グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group5Gojo, "第５グループ会（互助）");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group6, "第６グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group7, "第７グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group8, "第８グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group9, "第９グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Group10, "第10グループ会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Jidosha, "医療用自動車協会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.GakkoKeni, "学校医部会（県医）");
+			DKaihiZokusei.Add((int)eKaihiZokusei.HoikuKeni, "県医保育園医部会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.NaikaRinsho, "日本臨床内科医会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Aoiku, "葵句会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Shogi, "将棋部会");
+			DKaihiZokusei.Add((int)eKaihiZokusei.KaihiKurikoshi, "会費繰越金精算");
+			DKaihiZokusei.Add((int)eKaihiZokusei.RenmeiNichii, "日医医師連盟");
+			DKaihiZokusei.Add((int)eKaihiZokusei.RenmeiKeni, "県医医師連盟");
+			DKaihiZokusei.Add((int)eKaihiZokusei.KumiGroup, "組グループ");
+			DKaihiZokusei.Add((int)eKaihiZokusei.Etc, "その他");
 		}
 	}
 }

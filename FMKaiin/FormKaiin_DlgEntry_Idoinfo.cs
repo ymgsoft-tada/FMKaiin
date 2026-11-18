@@ -28,8 +28,6 @@ namespace App
 			Add,
 			/// <summary>訂正</summary>
 			Edit,
-			/// <summary>コピー追加</summary>
-//			Copy
 		}
 
 		/// <summary>
@@ -96,11 +94,6 @@ namespace App
 			{
 				title = "【訂正】";
 			}
-//			else
-//			if (Mode == eMode.Copy)
-//			{
-//				title = "【コピー追加】";
-//			}
 
 			this.Text += title;
 			base.FormFrame_Load(sender, e);
@@ -114,8 +107,10 @@ namespace App
 			// コンボボックスの作成
 			// enumから
 			AppCombo.SetComboBox(iIdoKbn, enumKbn.DTypeIdoJiyu); // 異動事由区分
-			AppCombo.SetComboBox(iIdoIdo, enumKbn.DIdoShisetsu); // 施設異動:詳細
-			AppCombo.SetComboBox(iIdoKaiin, enumKbn.DIdoKaiinHenko); // 会員区分変更:詳細
+			AppCombo.SetComboBox(iIdoIdo, enumKbn.DIdoShisetsu); // 医師会の異動・施設開業・施設異動:詳細
+			AppCombo.SetComboBox(iIdoKaiin, enumKbn.DIdoKaiinHenko); // 会員区分の変更:詳細
+			AppCombo.SetComboBox(iIdoShozai, enumKbn.DIdoShozai); // 施設所在地変更:詳細
+			AppCombo.SetComboBox(iIdoAddress, enumKbn.DIdoAddress); // 現住所変更:詳細
 			AppCombo.SetComboBox(iIdoEtc, enumKbn.DIdoEtc); // その他:詳細
 
 			// 画面～DBの紐づけ
@@ -124,24 +119,36 @@ namespace App
 			gctl.Add(new GControlDBDate(t_kaiin_ido.FIdoDate, iIdoDate.UcDateCtl));
 			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuKbn, iIdoKbn));
 
-//			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuDetail_Kaigyo, iIdoKaigyo)); // コンボなし登録値なしだがバインドしないとエラーになるか？
 			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuDetail_Ido, iIdoIdo));
+			gctl.Add(new GControlDBText(t_kaiin_ido.FIdoJiyuDetail_IdoMemo, iIdoIdoMemo));
 			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuDetail_Kaiin, iIdoKaiin));
+			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuDetail_Shozai, iIdoShozai));
+			gctl.Add(new GControlDBText(t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo, iIdoShozaiMemo));
+			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuDetail_Address, iIdoAddress));
+			gctl.Add(new GControlDBText(t_kaiin_ido.FIdoJiyuDetail_AddressMemo, iIdoAddressMemo));
 			gctl.Add(new GControlDBCombo(t_kaiin_ido.FIdoJiyuDetail_Etc, iIdoEtc));
-			gctl.Add(new GControlDBText(t_kaiin_ido.FIdoJiyuEtcMemo, iIdoEtcmemo));
+			gctl.Add(new GControlDBText(t_kaiin_ido.FIdoJiyuDetail_EtcMemo, iIdoEtcMemo));
 
 			gctl.EndAdd(AppDbRule.Rule);
 
 			rowFetchIdo();
-			idoDetailDisp(iIdoKbn.SelectedIndex); // 詳細部コントロール表示制御
-
-			funckey.Select(); // ?????
-			iIdoDate.Select();
 
 			// コントロール制御
+			// 詳細部コントロール表示制御
+			idoDetailDisp(iIdoKbn.SelectedIndex);
+			enabled_iIdoEtcMemo();
+
+			funckey.Select();
+			iIdoDate.Select();
 
 			// ■イベント
 			iIdoKbn.SelectedIndexChanged += iIdoKbn_SelectedIndexChanged;
+
+			iIdoIdo.SelectedIndexChanged += iIdoIdo_SelectedIndexChanged;
+			//iIdoKaiin.SelectedIndexChanged += iIdoKaiin_SelectedIndexChanged;
+			iIdoShozai.SelectedIndexChanged += iIdoShozai_SelectedIndexChanged;
+			iIdoAddress.SelectedIndexChanged += iIdoAddress_SelectedIndexChanged;
+			iIdoEtc.SelectedIndexChanged += iIdoEtc_SelectedIndexChanged;
 
 			base.FormFrame_Shown(sender, e);
 		}
@@ -162,39 +169,154 @@ namespace App
 		{
 			switch (selectIdx)
 			{
-				// 施設開業
-				case (int)eTypeIdoJiyu.Kaigyo:
-					pnl_Ido.Visible = false; // 施設異動
-					pnl_Kaiin.Visible = false; // 会員区分変更
-					pnl_Etc.Visible = false; // その他
-					break;
-
-				// 施設異動
+				// 医師会の異動・施設開業・施設異動
 				case (int)eTypeIdoJiyu.Ido:
-					pnl_Ido.Visible = true; // 施設異動
-					pnl_Kaiin.Visible = false; // 会員区分変更
+					pnl_Ido.Visible = true; // 医師会の異動・施設開業・施設異動
+					pnl_Kaiin.Visible = false; // 会員区分の変更
+					pnl_Shozai.Visible = false; // 施設所在地変更
+					pnl_Address.Visible = false; // 現住所変更
 					pnl_Etc.Visible = false; // その他
 					break;
 
-				// 会員区分変更
+				// 会員区分の変更
 				case (int)eTypeIdoJiyu.Kaiin:
-					pnl_Ido.Visible = false; // 施設異動
-					pnl_Kaiin.Visible = true; // 会員区分変更
+					pnl_Ido.Visible = false; // 医師会の異動・施設開業・施設異動
+					pnl_Kaiin.Visible = true; // 会員区分の変更
+					pnl_Shozai.Visible = false; // 施設所在地変更
+					pnl_Address.Visible = false; // 現住所変更
+					pnl_Etc.Visible = false; // その他
+					break;
+
+				// 施設所在地変更
+				case (int)eTypeIdoJiyu.Shozai:
+					pnl_Ido.Visible = false; // 医師会の異動・施設開業・施設異動
+					pnl_Kaiin.Visible = false; // 会員区分の変更
+					pnl_Shozai.Visible = true; // 施設所在地変更
+					pnl_Address.Visible = false; // 現住所変更
+					pnl_Etc.Visible = false; // その他
+					break;
+
+				// 現住所変更
+				case (int)eTypeIdoJiyu.Address:
+					pnl_Ido.Visible = false; // 医師会の異動・施設開業・施設異動
+					pnl_Kaiin.Visible = false; // 会員区分の変更
+					pnl_Shozai.Visible = false; // 施設所在地変更
+					pnl_Address.Visible = true; // 現住所変更
 					pnl_Etc.Visible = false; // その他
 					break;
 
 				// その他
 				case (int)eTypeIdoJiyu.Etc:
-					pnl_Ido.Visible = false; // 施設異動
-					pnl_Kaiin.Visible = false; // 会員区分変更
+					pnl_Ido.Visible = false; // 医師会の異動・施設開業・施設異動
+					pnl_Kaiin.Visible = false; // 会員区分の変更
+					pnl_Shozai.Visible = false; // 施設所在地変更
+					pnl_Address.Visible = false; // 現住所変更
 					pnl_Etc.Visible = true; // その他
 					break;
 
 				default:
-					pnl_Ido.Visible = false; // 施設異動
-					pnl_Kaiin.Visible = false; // 会員区分変更
+					pnl_Ido.Visible = false; // 医師会の異動・施設開業・施設異動
+					pnl_Kaiin.Visible = false; // 会員区分の変更
+					pnl_Shozai.Visible = false; // 施設所在地変更
+					pnl_Address.Visible = false; // 現住所変更
 					pnl_Etc.Visible = false; // その他
 					break;
+			}
+		}
+
+		/// <summary>
+		/// 異動事由:異動 詳細区分変更イベント
+		/// </summary>
+		void iIdoIdo_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			enabled_iIdoEtcMemo();
+		}
+
+		/// <summary>
+		/// 異動事由:会員 詳細区分変更イベント
+		/// </summary>
+		//void iIdoKaiin_SelectedIndexChanged(object sender, EventArgs e)
+		//{
+		// 会員区分の変更:廃業・その他 入力欄なし
+		//}
+
+		/// <summary>
+		/// 異動事由:施設所在地 詳細区分変更イベント
+		/// </summary>
+		void iIdoShozai_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			enabled_iIdoEtcMemo();
+		}
+
+		/// <summary>
+		/// 異動事由:現住所 詳細区分変更イベント
+		/// </summary>
+		void iIdoAddress_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			enabled_iIdoEtcMemo();
+		}
+
+		/// <summary>
+		/// 異動事由:その他 詳細区分変更イベント
+		/// </summary>
+		void iIdoEtc_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			enabled_iIdoEtcMemo();
+		}
+
+		/// <summary>
+		/// 異動事由詳細 その他テキストボックス制御
+		/// </summary>
+		void enabled_iIdoEtcMemo()
+		{
+			// 医師会の異動・施設開業・施設異動:その他
+			if (iIdoIdo.SelectedIndex == (int)eIdoShisetsu.Etc)
+			{
+				iIdoIdoMemo.Enabled = true;
+			}
+			else
+			{
+				iIdoIdoMemo.Enabled = false;
+				iIdoIdoMemo.Text = null;
+				this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+			}
+
+			// 会員区分の変更:廃業・その他 入力欄なし
+
+			// 施設所在地変更:その他
+			if (iIdoShozai.SelectedIndex == (int)eIdoShozai.Etc)
+			{
+				iIdoShozaiMemo.Enabled = true;
+			}
+			else
+			{
+				iIdoShozaiMemo.Enabled = false;
+				iIdoShozaiMemo.Text = null;
+				this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+			}
+
+			// 現住所変更:その他
+			if (iIdoAddress.SelectedIndex == (int)eIdoAddress.Etc)
+			{
+				iIdoAddressMemo.Enabled = true;
+			}
+			else
+			{
+				iIdoAddressMemo.Enabled = false;
+				iIdoAddressMemo.Text = null;
+				this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+			}
+
+			// その他:その他
+			if (iIdoEtc.SelectedIndex == (int)eIdoEtc.Etc)
+			{
+				iIdoEtcMemo.Enabled = true;
+			}
+			else
+			{
+				iIdoEtcMemo.Enabled = false;
+				iIdoEtcMemo.Text = null;
+				this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
 			}
 		}
 
@@ -269,87 +391,89 @@ namespace App
 			// 現在の異動事由区分関連以外の詳細値クリア
 			switch (iIdoKbn.SelectedIndex)
 			{
-				// 施設開業
-				case (int)eTypeIdoJiyu.Kaigyo:
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = (int)eIdoShisetsu.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = (int)eIdoKaiinHenko.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = (int)eIdoEtc.None;
-					this.Row[t_kaiin_ido.FIdoJiyuEtcMemo] = null;
-					break;
-
-				// 施設異動
+				// 医師会の異動・施設開業・施設異動
 				case (int)eTypeIdoJiyu.Ido:
-					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = (int)eIdoShisetsu.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = (int)eIdoKaiinHenko.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = (int)eIdoEtc.None;
-					this.Row[t_kaiin_ido.FIdoJiyuEtcMemo] = null;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = eIdoShisetsu.None;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = eIdoKaiinHenko.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Shozai] = eIdoShozai.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Address] = eIdoAddress.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = eIdoEtc.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
 					break;
 
-				// 会員区分変更
+				// 会員区分の変更
 				case (int)eTypeIdoJiyu.Kaiin:
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = (int)eIdoShisetsu.None;
-					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = (int)eIdoKaiinHenko.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = (int)eIdoEtc.None;
-					this.Row[t_kaiin_ido.FIdoJiyuEtcMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = eIdoShisetsu.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = eIdoKaiinHenko.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Shozai] = eIdoShozai.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Address] = eIdoAddress.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = eIdoEtc.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
+					break;
+
+				// 施設所在地変更
+				case (int)eTypeIdoJiyu.Shozai:
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = eIdoShisetsu.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = eIdoKaiinHenko.None;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Shozai] = eIdoShozai.None;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Address] = eIdoAddress.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = eIdoEtc.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
+					break;
+
+				// 現住所変更
+				case (int)eTypeIdoJiyu.Address:
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = eIdoShisetsu.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = eIdoKaiinHenko.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Shozai] = eIdoShozai.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Address] = eIdoAddress.None;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = eIdoEtc.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
 					break;
 
 				// その他
 				case (int)eTypeIdoJiyu.Etc:
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = (int)eIdoShisetsu.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = (int)eIdoKaiinHenko.None;
-					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = (int)eIdoEtc.None;
-					//this.Row[t_kaiin_ido.FIdoJiyuEtcMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = eIdoShisetsu.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = eIdoKaiinHenko.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Shozai] = eIdoShozai.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Address] = eIdoAddress.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = eIdoEtc.None;
+					//this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
 					break;
 
 				default:
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = (int)eIdoShisetsu.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = (int)eIdoKaiinHenko.None;
-					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = (int)eIdoEtc.None;
-					this.Row[t_kaiin_ido.FIdoJiyuEtcMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Ido] = eIdoShisetsu.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_IdoMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Kaiin] = eIdoKaiinHenko.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Shozai] = eIdoShozai.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_ShozaiMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Address] = eIdoAddress.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_AddressMemo] = null;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_Etc] = eIdoEtc.None;
+					this.Row[t_kaiin_ido.FIdoJiyuDetail_EtcMemo] = null;
 					break;
 			}
 
-			//			funckey.Select(); // ?????
-			//			iIdoDate.Select();
-
-
 			// 空白チェック
-/*			Control [] ctls =
-			{
-				iIdoDate
-			};
+			// なし
 
-			foreach (Control ctl in ctls)
-			{
-				int len = ctl.Text.Length;
-
-				if (ctl is UcDate)
-				{
-					UcDate tmp = (UcDate)ctl; // プロパティ指定のためいったん変換して格納
-					if (tmp.UcValue == null) // 日付変換できない場合UcValueはnull
-					{
-						ctl.Select();
-						appToolTip.Show(ctl, AppToolTipIndex.CannotUseBlank);
-						return false;
-					}
-				}
-				else
-				{
-					if (ctl is UcTableComboBox)
-					{
-						len = ((UcTableComboBox)ctl).Text.Length;
-					}
-
-					if (len == 0)
-					{
-						ctl.Select();
-						appToolTip.Show(ctl, AppToolTipIndex.CannotUseBlank);
-						return false;
-					}
-				}
-			}
-*/
 			// 重複チェック
+			// なし
 
 			return true;
 		}

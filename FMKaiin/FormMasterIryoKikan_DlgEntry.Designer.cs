@@ -648,6 +648,8 @@ namespace App
 			// iHeisetsu
 			// 
 			this.iHeisetsu.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iHeisetsu.DisabledBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(235)))), ((int)(((byte)(240)))), ((int)(((byte)(255)))));
+			this.iHeisetsu.DisabledForeColor = System.Drawing.Color.Black;
 			this.iHeisetsu.ExFocusHighlight = true;
 			this.iHeisetsu.ImeStr = "";
 			this.iHeisetsu.Location = new System.Drawing.Point(311, 440);

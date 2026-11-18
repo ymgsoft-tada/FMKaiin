@@ -219,6 +219,28 @@ namespace App
 			set	{	_set_datetime(FLastUpdate, value);	}
 		}
 		
+		/// <summary>
+		/// フィールド[最終更新者]。
+		/// </summary>
+		public const string FLastUpdateUser = "LastUpdateUser";
+		/// <summary>
+		/// 最終更新者
+		/// </summary>
+		public int LastUpdateUser
+		{
+			get	{	return Cast.Int(row == null ? null : row[FLastUpdateUser]);	}
+			set	{	_set(FLastUpdateUser, value);	}
+		}
+		
+		/// <summary>
+		/// 最終更新者。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? LastUpdateUser_Null
+		{
+			get	{	if (row == null || row[FLastUpdateUser] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FLastUpdateUser]); }	}
+			set	{	_set(FLastUpdateUser, value);	}
+		}
+		
 		#region *** Constructor ***
 		/// <summary>
 		/// コンストラクタ
@@ -263,6 +285,9 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdate, typeof(DateTime));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FLastUpdateUser, typeof(int));
 			dt.Columns.Add(col);
 			
 			return dt;

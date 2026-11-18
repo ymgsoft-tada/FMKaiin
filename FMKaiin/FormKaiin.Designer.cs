@@ -29,12 +29,9 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKaiin));
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.chkUnUsed = new YControlYcCheckBoxEx.YcCheckBoxEx();
-			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
-			this.iJob = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.iSearch = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
@@ -42,9 +39,13 @@ namespace App
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
-			((System.ComponentModel.ISupportInitialize)(this.iJob)).BeginInit();
+			this.iSearchIsekiTorokuNo = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
+			this.ycLabelEx5 = new YControlLabelEx.YcLabelEx();
+			this.iSearchBirthday = new App.UcDate();
 			((System.ComponentModel.ISupportInitialize)(this.iSearch)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iSearchIsekiTorokuNo)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// ycLabelEx4
@@ -71,44 +72,10 @@ namespace App
 			this.chkUnUsed.Position = YControlYcCheckBoxEx.YcCheckBoxEx.CheckBoxExPosition.Normal;
 			this.chkUnUsed.SingleBorderColor = System.Drawing.Color.DimGray;
 			this.chkUnUsed.Size = new System.Drawing.Size(119, 24);
-			this.chkUnUsed.TabIndex = 74;
+			this.chkUnUsed.TabIndex = 20;
 			this.chkUnUsed.TabStop = false;
-			this.chkUnUsed.Text = "非公開を含める";
+			this.chkUnUsed.Text = "退会者を含める";
 			this.chkUnUsed.UseVisualStyleBackColor = true;
-			// 
-			// ycLabelEx3
-			// 
-			this.ycLabelEx3.BackColor = System.Drawing.Color.SteelBlue;
-			this.ycLabelEx3.BackColor2 = System.Drawing.Color.Empty;
-			this.ycLabelEx3.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.ycLabelEx3.ForeColor = System.Drawing.Color.White;
-			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
-			this.ycLabelEx3.IconImage = null;
-			this.ycLabelEx3.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
-			this.ycLabelEx3.Location = new System.Drawing.Point(376, 64);
-			this.ycLabelEx3.Name = "ycLabelEx3";
-			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx3.Size = new System.Drawing.Size(90, 25);
-			this.ycLabelEx3.TabIndex = 79;
-			this.ycLabelEx3.Text = "職種区分";
-			this.ycLabelEx3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-			// 
-			// iJob
-			// 
-			this.iJob.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-			this.iJob.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-			this.iJob.ExCompareContent = null;
-			this.iJob.ExCompareValue = null;
-			this.iJob.ExDataSource = null;
-			this.iJob.ExFocusHighlight = true;
-			this.iJob.FlatStyle = GrapeCity.Win.Editors.FlatStyleEx.Flat;
-			this.iJob.ListHeaderPane.Height = 27;
-			this.iJob.ListHeaderPane.Visible = false;
-			this.iJob.Location = new System.Drawing.Point(469, 64);
-			this.iJob.Name = "iJob";
-			this.iJob.SingleBorderColor = System.Drawing.Color.DarkGray;
-			this.iJob.Size = new System.Drawing.Size(94, 25);
-			this.iJob.TabIndex = 71;
 			// 
 			// iSearch
 			// 
@@ -119,14 +86,14 @@ namespace App
 			this.iSearch.Name = "iSearch";
 			this.iSearch.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.iSearch.Size = new System.Drawing.Size(250, 23);
-			this.iSearch.TabIndex = 70;
+			this.iSearch.TabIndex = 0;
 			// 
 			// btnClear
 			// 
-			this.btnClear.Location = new System.Drawing.Point(606, 62);
+			this.btnClear.Location = new System.Drawing.Point(834, 63);
 			this.btnClear.Name = "btnClear";
 			this.btnClear.Size = new System.Drawing.Size(99, 28);
-			this.btnClear.TabIndex = 72;
+			this.btnClear.TabIndex = 3;
 			this.btnClear.Text = "検索クリア";
 			this.btnClear.UseVisualStyleBackColor = true;
 			// 
@@ -164,7 +131,7 @@ namespace App
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
 			this.grid.Size = new System.Drawing.Size(907, 407);
-			this.grid.TabIndex = 73;
+			this.grid.TabIndex = 10;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
 			// lblTitle
@@ -204,15 +171,81 @@ namespace App
 			this.funckey.TabIndex = 75;
 			this.funckey.Text = "gcFunctionKey1";
 			// 
+			// iSearchIsekiTorokuNo
+			// 
+			this.iSearchIsekiTorokuNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iSearchIsekiTorokuNo.ExFocusHighlight = true;
+			this.iSearchIsekiTorokuNo.ImeStr = "";
+			this.iSearchIsekiTorokuNo.Location = new System.Drawing.Point(730, 65);
+			this.iSearchIsekiTorokuNo.Name = "iSearchIsekiTorokuNo";
+			this.iSearchIsekiTorokuNo.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iSearchIsekiTorokuNo.Size = new System.Drawing.Size(88, 23);
+			this.iSearchIsekiTorokuNo.TabIndex = 2;
+			// 
+			// ycLabelEx3
+			// 
+			this.ycLabelEx3.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx3.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx3.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx3.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx3.IconImage = null;
+			this.ycLabelEx3.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx3.Location = new System.Drawing.Point(633, 65);
+			this.ycLabelEx3.Name = "ycLabelEx3";
+			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx3.Size = new System.Drawing.Size(91, 23);
+			this.ycLabelEx3.TabIndex = 82;
+			this.ycLabelEx3.Text = "医籍登録番号";
+			this.ycLabelEx3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// ycLabelEx5
+			// 
+			this.ycLabelEx5.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx5.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx5.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx5.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx5.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx5.IconImage = null;
+			this.ycLabelEx5.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx5.Location = new System.Drawing.Point(380, 65);
+			this.ycLabelEx5.Name = "ycLabelEx5";
+			this.ycLabelEx5.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx5.Size = new System.Drawing.Size(80, 23);
+			this.ycLabelEx5.TabIndex = 83;
+			this.ycLabelEx5.Text = "生年月日";
+			this.ycLabelEx5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// iSearchBirthday
+			// 
+			this.iSearchBirthday.DisabledBackColor = System.Drawing.SystemColors.Control;
+			this.iSearchBirthday.DisabledForeColor = System.Drawing.Color.Black;
+			this.iSearchBirthday.Location = new System.Drawing.Point(466, 65);
+			this.iSearchBirthday.Name = "iSearchBirthday";
+			this.iSearchBirthday.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iSearchBirthday.Size = new System.Drawing.Size(143, 25);
+			this.iSearchBirthday.TabIndex = 1;
+			this.iSearchBirthday.UcBackColor = System.Drawing.SystemColors.Window;
+			this.iSearchBirthday.UcBorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iSearchBirthday.UcCalenderMaxDate = new System.DateTime(2100, 12, 31, 23, 59, 59, 0);
+			this.iSearchBirthday.UcCalenderMinDate = new System.DateTime(1868, 1, 1, 0, 0, 0, 0);
+			this.iSearchBirthday.UcEnabled = true;
+			this.iSearchBirthday.UcFormat = App.UcDate.UcDateFormat.YYYYMMDD;
+			this.iSearchBirthday.UcReadOnly = false;
+			this.iSearchBirthday.UcSideButton = true;
+			this.iSearchBirthday.UcValue = null;
+			// 
 			// FormKaiin
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(964, 566);
+			this.Controls.Add(this.iSearchBirthday);
+			this.Controls.Add(this.ycLabelEx5);
+			this.Controls.Add(this.iSearchIsekiTorokuNo);
+			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.chkUnUsed);
-			this.Controls.Add(this.ycLabelEx3);
-			this.Controls.Add(this.iJob);
 			this.Controls.Add(this.iSearch);
 			this.Controls.Add(this.btnClear);
 			this.Controls.Add(this.ycLabelEx2);
@@ -233,13 +266,15 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
 			this.Controls.SetChildIndex(this.btnClear, 0);
 			this.Controls.SetChildIndex(this.iSearch, 0);
-			this.Controls.SetChildIndex(this.iJob, 0);
-			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
 			this.Controls.SetChildIndex(this.chkUnUsed, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
-			((System.ComponentModel.ISupportInitialize)(this.iJob)).EndInit();
+			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
+			this.Controls.SetChildIndex(this.iSearchIsekiTorokuNo, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx5, 0);
+			this.Controls.SetChildIndex(this.iSearchBirthday, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iSearch)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iSearchIsekiTorokuNo)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -249,8 +284,6 @@ namespace App
 
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private YControlYcCheckBoxEx.YcCheckBoxEx chkUnUsed;
-		private YControlLabelEx.YcLabelEx ycLabelEx3;
-		private GControlGcComboBoxEx.GcComboBoxEx iJob;
 		private GControlGcTextBoxEx.GcTextBoxEx iSearch;
 		private System.Windows.Forms.Button btnClear;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
@@ -258,5 +291,9 @@ namespace App
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private GControlGcTextBoxEx.GcTextBoxEx iSearchIsekiTorokuNo;
+		private YControlLabelEx.YcLabelEx ycLabelEx3;
+		private YControlLabelEx.YcLabelEx ycLabelEx5;
+		private UcDate iSearchBirthday;
 	}
 }

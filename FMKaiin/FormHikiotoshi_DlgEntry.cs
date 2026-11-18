@@ -2,6 +2,7 @@
 using ComponentDB;
 using ComponentGControlDB;
 using ComponentGGridDB;
+using ComponentIO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -88,21 +89,39 @@ namespace App
 			iDateYM.Text = AppDate.GetYearMonth(SelectYM);
 			iKaiin.Text = $"{SelectKaiin.CD} {SelectKaiin.XRow.Kaiin_Name}";
 
+			// 選択された会員の会費だけで抽出する
+			DBView dvKaihi = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaihi));
+			dvKaihi.SortQuery($"{t_kaihi.FCD_Kaihi}");
+			string filter = "";
+			foreach(Kaihi ka in SelectKaiin.Kaihis)
+			{
+				if (filter != "") filter += " OR ";
+
+				filter += $"{t_kaihi.FID_Kaihi} = {ka.ID}";
+			}
+			dvKaihi.RowFilterQuery(filter);
+
+			AppTableCombo.SetComboBox_Kaihi(iKaihi, dvKaihi); // iSearch 参加医会
+
 			AppGridCommon.StyleSet(grid);
 
 			gcom = new GGridDBCommon(grid, this);
 			gcom.Add(new GGridDBText(t_hikiotoshi.FID_Kaihi, "参加医会",180));
 			gcom.SetUnboundColumnFetch(ubIkai);
-			gcom.SetLocked(true);
+			gcom.SetFocusControlInGrid(iKaihi);
+			gcom.SetTabIndex(0);
 			gcom.Add(new GGridDBCurrency(t_hikiotoshi.FHiki_Cost, "金額", 150));
 			gcom.SetFocusControlInGrid(iCost);
-			gcom.SetTabIndex(0);
+			gcom.SetTabIndex(1);
 			gcom.Add(new GGridDBText(t_hikiotoshi.FHiki_Memo, "備考", 0));
 			gcom.SetFocusControlInGrid(iMemo);
-			gcom.SetTabIndex(1);
+			gcom.SetTabIndex(2);
 			gcom.EndAdd(dvHiki);
 
 			gctl = new GControlDB(this, getDataRow);
+			GControlDBCombo cmb = new GControlDBCombo(t_hikiotoshi.FID_Kaihi, iKaihi.ComboBox);
+			cmb.UpdateRunEx = cmbUpdateRunEx;
+			gctl.Add(cmb);
 			gctl.Add(new GControlDBNumber(t_hikiotoshi.FHiki_Cost, iCost));
 			gctl.Add(new GControlDBText(t_hikiotoshi.FHiki_Memo, iMemo));
 			gctl.EndAdd(AppDbRule.Rule);
@@ -115,6 +134,21 @@ namespace App
 			iCost.ValueChanged += ICost_ValueChanged;
 
 			base.FormFrame_Shown(sender, e);
+		}
+
+		object	cmbUpdateRunEx(DataRow row, object data)
+		{
+			t_hikiotoshi xrow = new t_hikiotoshi(row);
+			xrow.Hiki_Shiharai = eShiharai.None;
+
+			Kaihi kaihi = AppGlobal.Kaihis.Get(Cast.Int(data));
+
+			if (kaihi != null)
+			{
+				xrow.Hiki_Shiharai = SelectKaiin.GetShiharai(kaihi);
+			}
+
+			return data;
 		}
 
 		protected override void FormFrame_FormClosing(object sender, FormClosingEventArgs e)
@@ -196,14 +230,69 @@ namespace App
 		{
 			appFuncKey = new AppFunctionKey(funckey, FuncHikiotoshi_DlgEntry.Functions);
 
+			FuncHikiotoshi_DlgEntry.RowAdd.Execute = rowAdd;
+			FuncHikiotoshi_DlgEntry.RowDelete.Execute = rowDelete;
 			FuncHikiotoshi_DlgEntry.Save.Execute = saveClose;
 			FuncHikiotoshi_DlgEntry.Cancel.Execute = formClose;
 		}
 
+		void rowAdd()
+		{
+			t_hikiotoshi xrow  = new t_hikiotoshi(dvHiki.NewRow());
+
+			xrow.ID_Hikiotoshi	= AppDbID.GetNewID(dvHiki, t_hikiotoshi.FID_Hikiotoshi);
+			xrow.ID_Kaiin		= SelectKaiin.ID;
+			xrow.Hiki_DateYM	= SelectYM;
+			xrow.LastUpdateUser = AppGlobal.LoginUser.ID;
+
+			dvHiki.Add(xrow.Row);
+
+			grid.Col = 0;
+			grid.Row = grid.RowCount-1;
+			gcom.SelectInput();
+		}
+
+		void rowDelete()
+		{
+			if (AppMsgBox.Show(this, AppMsgBoxIndex.DeleteSelectedRow) == DialogResult.Yes)
+			{
+				dvHiki.Delete();
+			}
+		}
+
+		bool validateRow()
+		{
+			for (int i = 0; i < dvHiki.Count; i++)
+			{
+				t_hikiotoshi xrow = new t_hikiotoshi(dvHiki[i]);
+
+				if (xrow.ID_Kaihi_Null == null)
+				{
+					grid.Row = i;
+					grid.Col = 0;
+					gcom.SelectInput();
+
+					appToolTip.Show(iKaihi, AppToolTipIndex.CannotUseBlank);
+
+					return false;
+				}
+
+				if (xrow.Row.RowState != DataRowState.Unchanged)
+				{
+					xrow.LastUpdateUser =	AppGlobal.LoginUser.ID;
+				}
+			}
+
+			return true;
+		}
+
 		void saveClose()
 		{			
-			formCloseReason = FormCloseReason.Save;
-			this.Close();
+			if (validateRow() == true)
+			{
+				formCloseReason = FormCloseReason.Save;
+				this.Close();
+			}
 		}
 
 		void formClose()

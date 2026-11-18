@@ -359,6 +359,9 @@ namespace App
 
 		void formClose()
 		{
+			// DBViewの破棄
+			dvKikan.Dispose();
+
 			this.Close();
 		}
 	}

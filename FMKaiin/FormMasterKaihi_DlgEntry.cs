@@ -29,6 +29,8 @@ namespace App
 			Add,
 			/// <summary>訂正</summary>
 			Edit,
+			/// <summary>コピー追加</summary>
+			Copy
 		}
 
 		/// <summary>
@@ -89,10 +91,10 @@ namespace App
 		/// </summary>
 		string[] costsField;
 
-	/// <summary>
-	/// コンストラクタ
-	/// </summary>
-	public FormMasterKaihi_DlgEntry()
+		/// <summary>
+		/// コンストラクタ
+		/// </summary>
+		public FormMasterKaihi_DlgEntry()
 		{
 			InitializeComponent();
 
@@ -129,6 +131,10 @@ namespace App
 			{
 				title = "【訂正】";
 			}
+			else if (Mode == eMode.Copy)
+			{
+				title = "【コピー追加】";
+			}
 
 			this.Text += title;
 			base.FormFrame_Load(sender, e);
@@ -143,6 +149,7 @@ namespace App
 			// enumをセット
 			AppCombo.SetComboBox(iKozaType, enumKbn.DTypeKoza, (int)eTypeKoza.None); // 口座区分
 			AppCombo.SetComboBox(iKbnKaihi, enumKbn.DTypeKaihi, (int)eTypeKaihi.None); // 会費区分
+			AppCombo.SetComboBox(iKaihiZokusei, enumKbn.DKaihiZokusei, (int)eKaihiZokusei.None); // 会費属性
 
 			// iSearch
 			dvIfax = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_ifax));
@@ -162,13 +169,13 @@ namespace App
 			gctl.Add(new GControlDBRuby( // 2つ目にカナ入力される
 							new string[] {
 								t_kaihi.FKaihi_Name, // 会費印刷用名称
-								t_kaihi.FKaihi_ShortName}, // 会費略称
+								t_kaihi.FKaihi_ShortName}, // 会費略称 ※RuleはRubyにしていない(略称は完全にカナではないようであるため)
 							new Control[] {
 								iName,
 								iShortName
 							}
 			));
-			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Bikou, iBikou)); // 備考
+			gctl.Add(new GControlDBText(t_kaihi.FKaihi_Biko, iBiko)); // 備考
 			gctl.Add(new GControlDBNumber(t_kaihi.FKaihi_GunCode, iKaihiGunCode)); // 会費群
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_SearchUsed, iSearchUsed)); // 検索時表示区分
 
@@ -191,8 +198,17 @@ namespace App
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankCodeShiten, iShitenCD));
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankKozaType, iKozaType));
 			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaNo, iKozaNo));
-			gctl.Add(new GControlDBText(t_kaihi.FKaihi_BankKozaName, iKozaName));
+			gctl.Add(new GControlDBRuby( // 2つ目にカナ入力される
+							new string[] {
+								t_kaihi.FKaihi_BankKozaName, // 口座名義
+								t_kaihi.FKaihi_BankKozaNameKana}, // カナ
+							new Control[] {
+								iKozaName,
+								iKozaNameKana
+							}
+			));
 			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_BankIfax, iBankIfax.ComboBox));
+			gctl.Add(new GControlDBCombo(t_kaihi.FKaihi_Zokusei, iKaihiZokusei));
 
 			gctl.EndAdd(AppDbRule.Rule);
 
@@ -402,7 +418,7 @@ namespace App
 			// 空白チェック
 			Control [] ctls =
 			{
-				iCode, iName, iShortName, // ★必須は仕様確認
+				iKbnKaihi, iCode, iName, iShortName, iKaihiZokusei
 			};
 
 			foreach (Control ctl in ctls)

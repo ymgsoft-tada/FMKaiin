@@ -66,6 +66,28 @@ namespace App
 		}
 		
 		/// <summary>
+		/// フィールド[会員グループID(同一人紐付)]。
+		/// </summary>
+		public const string FID_KaiinGroup = "ID_KaiinGroup";
+		/// <summary>
+		/// 会員グループID(同一人紐付)
+		/// </summary>
+		public int ID_KaiinGroup
+		{
+			get	{	return Cast.Int(row == null ? null : row[FID_KaiinGroup]);	}
+			set	{	_set(FID_KaiinGroup, value);	}
+		}
+		
+		/// <summary>
+		/// 会員グループID(同一人紐付)。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? ID_KaiinGroup_Null
+		{
+			get	{	if (row == null || row[FID_KaiinGroup] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KaiinGroup]); }	}
+			set	{	_set(FID_KaiinGroup, value);	}
+		}
+		
+		/// <summary>
 		/// フィールド[会員CD]。
 		/// </summary>
 		public const string FCD_Kaiin = "CD_Kaiin";
@@ -398,23 +420,23 @@ namespace App
 		/// <summary>
 		/// フィールド[出身校]。
 		/// </summary>
-		public const string FKaiin_ShusshinKou = "Kaiin_ShusshinKou";
+		public const string FKaiin_ShusshinKo = "Kaiin_ShusshinKo";
 		/// <summary>
 		/// 出身校
 		/// </summary>
-		public string Kaiin_ShusshinKou
+		public string Kaiin_ShusshinKo
 		{
-			get	{	return Cast.String(row == null ? null : row[FKaiin_ShusshinKou]);	}
-			set	{	_set(FKaiin_ShusshinKou, value);	}
+			get	{	return Cast.String(row == null ? null : row[FKaiin_ShusshinKo]);	}
+			set	{	_set(FKaiin_ShusshinKo, value);	}
 		}
 		
 		/// <summary>
 		/// 出身校。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public string Kaiin_ShusshinKou_Null
+		public string Kaiin_ShusshinKo_Null
 		{
-			get	{	if (row == null || row[FKaiin_ShusshinKou] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_ShusshinKou]); }	}
-			set	{	_set(FKaiin_ShusshinKou, value);	}
+			get	{	if (row == null || row[FKaiin_ShusshinKo] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_ShusshinKo]); }	}
+			set	{	_set(FKaiin_ShusshinKo, value);	}
 		}
 		
 		/// <summary>
@@ -574,177 +596,45 @@ namespace App
 		/// <summary>
 		/// フィールド[入会年月日]。
 		/// </summary>
-		public const string FKaiin_DateNyuukai = "Kaiin_DateNyuukai";
+		public const string FKaiin_DateNyukai = "Kaiin_DateNyukai";
 		/// <summary>
 		/// 入会年月日
 		/// </summary>
-		public DateTime Kaiin_DateNyuukai
+		public DateTime Kaiin_DateNyukai
 		{
-			get	{	return Cast.DateTime(row == null ? null : row[FKaiin_DateNyuukai]);	}
-			set	{	_set(FKaiin_DateNyuukai, value);	}
+			get	{	return Cast.DateTime(row == null ? null : row[FKaiin_DateNyukai]);	}
+			set	{	_set(FKaiin_DateNyukai, value);	}
 		}
 		
 		/// <summary>
 		/// 入会年月日。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public DateTime? Kaiin_DateNyuukai_Null
+		public DateTime? Kaiin_DateNyukai_Null
 		{
-			get	{	if (row == null || row[FKaiin_DateNyuukai] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FKaiin_DateNyuukai]); }	}
-			set	{	_set(FKaiin_DateNyuukai, value);	}
+			get	{	if (row == null || row[FKaiin_DateNyukai] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FKaiin_DateNyukai]); }	}
+			set	{	_set(FKaiin_DateNyukai, value);	}
 		}
 		
 		/// <summary>
-		/// フィールド[会員区分ID]。
+		/// フィールド[会員区分 0/None/ 1/Incho/病院長 2/Shocho/診療所長 3/Kinmui/勤務医 4/Jitaku/自宅会員 5/Fujisawa/藤沢市勤務会員 6/Kenshui/研修医 9/Etc/その他]。
 		/// </summary>
-		public const string FID_KaiinKbn = "ID_KaiinKbn";
+		public const string FKaiin_TypeKaiin = "Kaiin_TypeKaiin";
 		/// <summary>
-		/// 会員区分ID
+		/// 会員区分 0/None/ 1/Incho/病院長 2/Shocho/診療所長 3/Kinmui/勤務医 4/Jitaku/自宅会員 5/Fujisawa/藤沢市勤務会員 6/Kenshui/研修医 9/Etc/その他
 		/// </summary>
-		public int ID_KaiinKbn
+		public eTypeKaiin Kaiin_TypeKaiin
 		{
-			get	{	return Cast.Int(row == null ? null : row[FID_KaiinKbn]);	}
-			set	{	_set(FID_KaiinKbn, value);	}
+			get	{	return (eTypeKaiin)Cast.Int(row == null ? null : row[FKaiin_TypeKaiin]);	}
+			set	{	_set(FKaiin_TypeKaiin, (int)value);	}
 		}
 		
 		/// <summary>
-		/// 会員区分ID。System.DBNull.Value の場合 null を示します。
+		/// 会員区分 0/None/ 1/Incho/病院長 2/Shocho/診療所長 3/Kinmui/勤務医 4/Jitaku/自宅会員 5/Fujisawa/藤沢市勤務会員 6/Kenshui/研修医 9/Etc/その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
-		public int? ID_KaiinKbn_Null
+		public int? Kaiin_TypeKaiin_Null
 		{
-			get	{	if (row == null || row[FID_KaiinKbn] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_KaiinKbn]); }	}
-			set	{	_set(FID_KaiinKbn, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[日医会員区分(医会会費ID)]。
-		/// </summary>
-		public const string FID_Kaihi_Nichii = "ID_Kaihi_Nichii";
-		/// <summary>
-		/// 日医会員区分(医会会費ID)
-		/// </summary>
-		public int ID_Kaihi_Nichii
-		{
-			get	{	return Cast.Int(row == null ? null : row[FID_Kaihi_Nichii]);	}
-			set	{	_set(FID_Kaihi_Nichii, value);	}
-		}
-		
-		/// <summary>
-		/// 日医会員区分(医会会費ID)。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? ID_Kaihi_Nichii_Null
-		{
-			get	{	if (row == null || row[FID_Kaihi_Nichii] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Kaihi_Nichii]); }	}
-			set	{	_set(FID_Kaihi_Nichii, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金]。
-		/// </summary>
-		public const string FKaiin_NichiiShiharai = "Kaiin_NichiiShiharai";
-		/// <summary>
-		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金
-		/// </summary>
-		public eShiharai Kaiin_NichiiShiharai
-		{
-			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaiin_NichiiShiharai]);	}
-			set	{	_set(FKaiin_NichiiShiharai, (int)value);	}
-		}
-		
-		/// <summary>
-		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? Kaiin_NichiiShiharai_Null
-		{
-			get	{	if (row == null || row[FKaiin_NichiiShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_NichiiShiharai]); }	}
-			set	{	_set(FKaiin_NichiiShiharai, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[県医会員区分(医会会費ID)]。
-		/// </summary>
-		public const string FID_Kaihi_Keni = "ID_Kaihi_Keni";
-		/// <summary>
-		/// 県医会員区分(医会会費ID)
-		/// </summary>
-		public int ID_Kaihi_Keni
-		{
-			get	{	return Cast.Int(row == null ? null : row[FID_Kaihi_Keni]);	}
-			set	{	_set(FID_Kaihi_Keni, value);	}
-		}
-		
-		/// <summary>
-		/// 県医会員区分(医会会費ID)。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? ID_Kaihi_Keni_Null
-		{
-			get	{	if (row == null || row[FID_Kaihi_Keni] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Kaihi_Keni]); }	}
-			set	{	_set(FID_Kaihi_Keni, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金]。
-		/// </summary>
-		public const string FKaiin_KeniShiharai = "Kaiin_KeniShiharai";
-		/// <summary>
-		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金
-		/// </summary>
-		public eShiharai Kaiin_KeniShiharai
-		{
-			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaiin_KeniShiharai]);	}
-			set	{	_set(FKaiin_KeniShiharai, (int)value);	}
-		}
-		
-		/// <summary>
-		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? Kaiin_KeniShiharai_Null
-		{
-			get	{	if (row == null || row[FKaiin_KeniShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_KeniShiharai]); }	}
-			set	{	_set(FKaiin_KeniShiharai, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[市医会員区分(医会会費ID)]。
-		/// </summary>
-		public const string FID_Kaihi_Shii = "ID_Kaihi_Shii";
-		/// <summary>
-		/// 市医会員区分(医会会費ID)
-		/// </summary>
-		public int ID_Kaihi_Shii
-		{
-			get	{	return Cast.Int(row == null ? null : row[FID_Kaihi_Shii]);	}
-			set	{	_set(FID_Kaihi_Shii, value);	}
-		}
-		
-		/// <summary>
-		/// 市医会員区分(医会会費ID)。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? ID_Kaihi_Shii_Null
-		{
-			get	{	if (row == null || row[FID_Kaihi_Shii] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Kaihi_Shii]); }	}
-			set	{	_set(FID_Kaihi_Shii, value);	}
-		}
-		
-		/// <summary>
-		/// フィールド[支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金]。
-		/// </summary>
-		public const string FKaiin_ShiiShiharai = "Kaiin_ShiiShiharai";
-		/// <summary>
-		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金
-		/// </summary>
-		public eShiharai Kaiin_ShiiShiharai
-		{
-			get	{	return (eShiharai)Cast.Int(row == null ? null : row[FKaiin_ShiiShiharai]);	}
-			set	{	_set(FKaiin_ShiiShiharai, (int)value);	}
-		}
-		
-		/// <summary>
-		/// 支払方法 0/None/ 1/Koza1/口座① 2/Koza2/口座② 3/Koza3/口座③ 9/Genkin/現金。System.DBNull.Value の場合 null を示します。
-		/// </summary>
-		public int? Kaiin_ShiiShiharai_Null
-		{
-			get	{	if (row == null || row[FKaiin_ShiiShiharai] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_ShiiShiharai]); }	}
-			set	{	_set(FKaiin_ShiiShiharai, value);	}
+			get	{	if (row == null || row[FKaiin_TypeKaiin] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_TypeKaiin]); }	}
+			set	{	_set(FKaiin_TypeKaiin, value);	}
 		}
 		
 		/// <summary>
@@ -855,6 +745,28 @@ namespace App
 		{
 			get	{	if (row == null || row[FKaiin_Shiteii] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_Shiteii]); }	}
 			set	{	_set(FKaiin_Shiteii, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[指定医その他欄]。
+		/// </summary>
+		public const string FKaiin_ShiteiiEtc = "Kaiin_ShiteiiEtc";
+		/// <summary>
+		/// 指定医その他欄
+		/// </summary>
+		public string Kaiin_ShiteiiEtc
+		{
+			get	{	return Cast.String(row == null ? null : row[FKaiin_ShiteiiEtc]);	}
+			set	{	_set(FKaiin_ShiteiiEtc, value);	}
+		}
+		
+		/// <summary>
+		/// 指定医その他欄。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string Kaiin_ShiteiiEtc_Null
+		{
+			get	{	if (row == null || row[FKaiin_ShiteiiEtc] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_ShiteiiEtc]); }	}
+			set	{	_set(FKaiin_ShiteiiEtc, value);	}
 		}
 		
 		/// <summary>
@@ -1210,11 +1122,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[退会事由区分 0/None/ 1/Haiki/廃棄・退職 2/Shibo/死亡 3/Etc/その他]。
+		/// フィールド[退会事由区分 0/None/ 1/Haiki/廃棄・退職 2/Shibo/死亡 3/Ido/医師会の異動 4/Etc/その他]。
 		/// </summary>
 		public const string FKaiin_TypeTaikaiJiyu = "Kaiin_TypeTaikaiJiyu";
 		/// <summary>
-		/// 退会事由区分 0/None/ 1/Haiki/廃棄・退職 2/Shibo/死亡 3/Etc/その他
+		/// 退会事由区分 0/None/ 1/Haiki/廃棄・退職 2/Shibo/死亡 3/Ido/医師会の異動 4/Etc/その他
 		/// </summary>
 		public eTypeTaikaiJiyu Kaiin_TypeTaikaiJiyu
 		{
@@ -1223,7 +1135,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 退会事由区分 0/None/ 1/Haiki/廃棄・退職 2/Shibo/死亡 3/Etc/その他。System.DBNull.Value の場合 null を示します。
+		/// 退会事由区分 0/None/ 1/Haiki/廃棄・退職 2/Shibo/死亡 3/Ido/医師会の異動 4/Etc/その他。System.DBNull.Value の場合 null を示します。
 		/// </summary>
 		public int? Kaiin_TypeTaikaiJiyu_Null
 		{
@@ -1293,16 +1205,126 @@ namespace App
 		}
 		
 		/// <summary>
-		/// フィールド[公開区分(公開/非公開)]。
+		/// フィールド[申請年月日]。
 		/// </summary>
-		public const string FKaiin_KoukaiKbn = "Kaiin_KoukaiKbn";
+		public const string FKaiin_DateShinsei = "Kaiin_DateShinsei";
 		/// <summary>
-		/// 公開区分(公開/非公開)
+		/// 申請年月日
 		/// </summary>
-		public bool Kaiin_KoukaiKbn
+		public DateTime Kaiin_DateShinsei
 		{
-			get	{	return Cast.Bool(row == null ? null : row[FKaiin_KoukaiKbn]);	}
-			set	{	_set(FKaiin_KoukaiKbn, value);	}
+			get	{	return Cast.DateTime(row == null ? null : row[FKaiin_DateShinsei]);	}
+			set	{	_set(FKaiin_DateShinsei, value);	}
+		}
+		
+		/// <summary>
+		/// 申請年月日。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public DateTime? Kaiin_DateShinsei_Null
+		{
+			get	{	if (row == null || row[FKaiin_DateShinsei] == System.DBNull.Value) { return null; } else { return Cast.DateTime(row[FKaiin_DateShinsei]); }	}
+			set	{	_set(FKaiin_DateShinsei, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[会費減免事由 0/None/ 1/Korei/高齢 2/Shitsubyo/疾病その他 3/Ikuji/出産育児 4/Sotsu5nen/卒後5年 5/Age40/40歳以下 6/Age30/30歳以下 7/Kenshui/研修医]。
+		/// </summary>
+		public const string FKaiin_TypeGenmen = "Kaiin_TypeGenmen";
+		/// <summary>
+		/// 会費減免事由 0/None/ 1/Korei/高齢 2/Shitsubyo/疾病その他 3/Ikuji/出産育児 4/Sotsu5nen/卒後5年 5/Age40/40歳以下 6/Age30/30歳以下 7/Kenshui/研修医
+		/// </summary>
+		public eTypeGenmen Kaiin_TypeGenmen
+		{
+			get	{	return (eTypeGenmen)Cast.Int(row == null ? null : row[FKaiin_TypeGenmen]);	}
+			set	{	_set(FKaiin_TypeGenmen, (int)value);	}
+		}
+		
+		/// <summary>
+		/// 会費減免事由 0/None/ 1/Korei/高齢 2/Shitsubyo/疾病その他 3/Ikuji/出産育児 4/Sotsu5nen/卒後5年 5/Age40/40歳以下 6/Age30/30歳以下 7/Kenshui/研修医。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? Kaiin_TypeGenmen_Null
+		{
+			get	{	if (row == null || row[FKaiin_TypeGenmen] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FKaiin_TypeGenmen]); }	}
+			set	{	_set(FKaiin_TypeGenmen, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[旧氏名]。
+		/// </summary>
+		public const string FKaiin_NameOld = "Kaiin_NameOld";
+		/// <summary>
+		/// 旧氏名
+		/// </summary>
+		public string Kaiin_NameOld
+		{
+			get	{	return Cast.String(row == null ? null : row[FKaiin_NameOld]);	}
+			set	{	_set(FKaiin_NameOld, value);	}
+		}
+		
+		/// <summary>
+		/// 旧氏名。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string Kaiin_NameOld_Null
+		{
+			get	{	if (row == null || row[FKaiin_NameOld] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_NameOld]); }	}
+			set	{	_set(FKaiin_NameOld, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[旧氏名フリガナ]。
+		/// </summary>
+		public const string FKaiin_NameKanaOld = "Kaiin_NameKanaOld";
+		/// <summary>
+		/// 旧氏名フリガナ
+		/// </summary>
+		public string Kaiin_NameKanaOld
+		{
+			get	{	return Cast.String(row == null ? null : row[FKaiin_NameKanaOld]);	}
+			set	{	_set(FKaiin_NameKanaOld, value);	}
+		}
+		
+		/// <summary>
+		/// 旧氏名フリガナ。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public string Kaiin_NameKanaOld_Null
+		{
+			get	{	if (row == null || row[FKaiin_NameKanaOld] == System.DBNull.Value) { return null; } else { return Cast.String(row[FKaiin_NameKanaOld]); }	}
+			set	{	_set(FKaiin_NameKanaOld, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[異動先医師会ID]。
+		/// </summary>
+		public const string FID_Ishikai_Idosaki = "ID_Ishikai_Idosaki";
+		/// <summary>
+		/// 異動先医師会ID
+		/// </summary>
+		public int ID_Ishikai_Idosaki
+		{
+			get	{	return Cast.Int(row == null ? null : row[FID_Ishikai_Idosaki]);	}
+			set	{	_set(FID_Ishikai_Idosaki, value);	}
+		}
+		
+		/// <summary>
+		/// 異動先医師会ID。System.DBNull.Value の場合 null を示します。
+		/// </summary>
+		public int? ID_Ishikai_Idosaki_Null
+		{
+			get	{	if (row == null || row[FID_Ishikai_Idosaki] == System.DBNull.Value) { return null; } else { return Cast.Int(row[FID_Ishikai_Idosaki]); }	}
+			set	{	_set(FID_Ishikai_Idosaki, value);	}
+		}
+		
+		/// <summary>
+		/// フィールド[自宅住所掲載(可/不可)]。
+		/// </summary>
+		public const string FKaiin_JushoKeisai = "Kaiin_JushoKeisai";
+		/// <summary>
+		/// 自宅住所掲載(可/不可)
+		/// </summary>
+		public bool Kaiin_JushoKeisai
+		{
+			get	{	return Cast.Bool(row == null ? null : row[FKaiin_JushoKeisai]);	}
+			set	{	_set(FKaiin_JushoKeisai, value);	}
 		}
 		
 		/// <summary>
@@ -1372,6 +1394,9 @@ namespace App
 			col = new DataColumn(FID_Kaiin, typeof(int));
 			dt.Columns.Add(col);
 			
+			col = new DataColumn(FID_KaiinGroup, typeof(int));
+			dt.Columns.Add(col);
+			
 			col = new DataColumn(FCD_Kaiin, typeof(int));
 			dt.Columns.Add(col);
 			
@@ -1437,7 +1462,7 @@ namespace App
 			col = new DataColumn(FKaiin_DateIsekiToroku, typeof(DateTime));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaiin_ShusshinKou, typeof(string));
+			col = new DataColumn(FKaiin_ShusshinKo, typeof(string));
 			col.AllowDBNull = true;
 			col.MaxLength = 255;
 			dt.Columns.Add(col);
@@ -1465,28 +1490,10 @@ namespace App
 			col = new DataColumn(FKaiin_DateToroku, typeof(DateTime));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaiin_DateNyuukai, typeof(DateTime));
+			col = new DataColumn(FKaiin_DateNyukai, typeof(DateTime));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FID_KaiinKbn, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FID_Kaihi_Nichii, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_NichiiShiharai, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FID_Kaihi_Keni, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_KeniShiharai, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FID_Kaihi_Shii, typeof(int));
-			dt.Columns.Add(col);
-			
-			col = new DataColumn(FKaiin_ShiiShiharai, typeof(int));
+			col = new DataColumn(FKaiin_TypeKaiin, typeof(int));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FID_Ishikai_Idomae, typeof(int));
@@ -1502,6 +1509,11 @@ namespace App
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaiin_Shiteii, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_ShiteiiEtc, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FKaiin_BankCode1, typeof(int));
@@ -1581,7 +1593,26 @@ namespace App
 			col = new DataColumn(FKaiin_KaihiUchiwake, typeof(bool));
 			dt.Columns.Add(col);
 			
-			col = new DataColumn(FKaiin_KoukaiKbn, typeof(bool));
+			col = new DataColumn(FKaiin_DateShinsei, typeof(DateTime));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_TypeGenmen, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_NameOld, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_NameKanaOld, typeof(string));
+			col.AllowDBNull = true;
+			col.MaxLength = 255;
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FID_Ishikai_Idosaki, typeof(int));
+			dt.Columns.Add(col);
+			
+			col = new DataColumn(FKaiin_JushoKeisai, typeof(bool));
 			dt.Columns.Add(col);
 			
 			col = new DataColumn(FLastUpdateUser, typeof(int));

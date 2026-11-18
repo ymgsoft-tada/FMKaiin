@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -28,253 +28,9 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
-		/// <summary>
-		/// 登録
-		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
-	}
-	#endregion
-
-	#region *** FuncMasterShokumu ***
-	/// <summary>
-	/// FuncMasterShokumuのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterShokumu
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F2,	
-					"追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F3,	
-					"訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F4,	
-					"削除",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"閉じる",	
-					""),
-		};
-
-		/// <summary>
-		/// 追加
-		/// </summary>
-		public readonly static FuncKeyDefine RowAdd = Functions[0];
-		/// <summary>
-		/// 訂正
-		/// </summary>
-		public readonly static FuncKeyDefine RowEdit = Functions[1];
-		/// <summary>
-		/// 削除
-		/// </summary>
-		public readonly static FuncKeyDefine RowDelete = Functions[2];
-		/// <summary>
-		/// 閉じる
-		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[3];
-	}
-	#endregion
-
-	#region *** FuncMasterShokumu_DlgEntry ***
-	/// <summary>
-	/// FuncMasterShokumu_DlgEntryのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterShokumu_DlgEntry
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
-		/// <summary>
-		/// 登録
-		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
-	}
-	#endregion
-
-	#region *** FuncMasterTeate ***
-	/// <summary>
-	/// FuncMasterTeateのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterTeate
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F2,	
-					"追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F3,	
-					"訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F4,	
-					"削除",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"閉じる",	
-					""),
-		};
-
-		/// <summary>
-		/// 追加
-		/// </summary>
-		public readonly static FuncKeyDefine RowAdd = Functions[0];
-		/// <summary>
-		/// 訂正
-		/// </summary>
-		public readonly static FuncKeyDefine RowEdit = Functions[1];
-		/// <summary>
-		/// 削除
-		/// </summary>
-		public readonly static FuncKeyDefine RowDelete = Functions[2];
-		/// <summary>
-		/// 閉じる
-		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[3];
-	}
-	#endregion
-
-	#region *** FuncMasterTeate_DlgEntry ***
-	/// <summary>
-	/// FuncMasterTeate_DlgEntryのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterTeate_DlgEntry
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
-		/// <summary>
-		/// 登録
-		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
-	}
-	#endregion
-
-	#region *** FuncMasterKinmuTanka ***
-	/// <summary>
-	/// FuncMasterKinmuTankaのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterKinmuTanka
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F2,	
-					"追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F3,	
-					"訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F4,	
-					"削除",	
-					""),
-			new FuncKeyDefine(
 					Keys.F5,	
-					"コピー追加",	
+					"銀行情報",	
 					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"閉じる",	
-					""),
-		};
-
-		/// <summary>
-		/// 追加
-		/// </summary>
-		public readonly static FuncKeyDefine RowAdd = Functions[0];
-		/// <summary>
-		/// 訂正
-		/// </summary>
-		public readonly static FuncKeyDefine RowEdit = Functions[1];
-		/// <summary>
-		/// 削除
-		/// </summary>
-		public readonly static FuncKeyDefine RowDelete = Functions[2];
-		/// <summary>
-		/// コピー追加
-		/// </summary>
-		public readonly static FuncKeyDefine CopyAdd = Functions[3];
-		/// <summary>
-		/// 閉じる
-		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[4];
-	}
-	#endregion
-
-	#region *** FuncMasterKinmuTanka_DlgEntry ***
-	/// <summary>
-	/// FuncMasterKinmuTanka_DlgEntryのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterKinmuTanka_DlgEntry
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
 			new FuncKeyDefine(
 					Keys.F11,	
 					"登録",	
@@ -286,93 +42,17 @@ namespace App
 		};
 
 		/// <summary>
-		/// 登録
+		/// 銀行情報
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
-	}
-	#endregion
-
-	#region *** FuncStaff ***
-	/// <summary>
-	/// FuncStaffのファンクションキー定義クラス
-	/// </summary>
-	public class FuncStaff
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F2,	
-					"追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F3,	
-					"訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F4,	
-					"削除",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"閉じる",	
-					""),
-		};
-
-		/// <summary>
-		/// 追加
-		/// </summary>
-		public readonly static FuncKeyDefine RowAdd = Functions[0];
-		/// <summary>
-		/// 訂正
-		/// </summary>
-		public readonly static FuncKeyDefine RowEdit = Functions[1];
-		/// <summary>
-		/// 削除
-		/// </summary>
-		public readonly static FuncKeyDefine RowDelete = Functions[2];
-		/// <summary>
-		/// 閉じる
-		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[3];
-	}
-	#endregion
-
-	#region *** FuncStaff_DlgEntry ***
-	/// <summary>
-	/// FuncStaff_DlgEntryのファンクションキー定義クラス
-	/// </summary>
-	public class FuncStaff_DlgEntry
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
+		public readonly static FuncKeyDefine ShowBank = Functions[0];
 		/// <summary>
 		/// 登録
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
+		public readonly static FuncKeyDefine Save = Functions[1];
 		/// <summary>
 		/// キャンセル
 		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
+		public readonly static FuncKeyDefine Cancel = Functions[2];
 	}
 	#endregion
 
@@ -480,214 +160,6 @@ namespace App
 	}
 	#endregion
 
-	#region *** FuncKinmubo ***
-	/// <summary>
-	/// FuncKinmuboのファンクションキー定義クラス
-	/// </summary>
-	public class FuncKinmubo
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F1,	
-					"摘要辞書",	
-					""),
-			new FuncKeyDefine(
-					Keys.F2,	
-					"休診追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F3,	
-					"休診訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F4,	
-					"休診削除",	
-					""),
-			new FuncKeyDefine(
-					Keys.F5,	
-					"事業手当追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F6,	
-					"事業手当訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F7,	
-					"事業手当削除",	
-					""),
-			new FuncKeyDefine(
-					Keys.F9,	
-					"月度手当追加",	
-					""),
-			new FuncKeyDefine(
-					Keys.F10,	
-					"月度手当訂正",	
-					""),
-			new FuncKeyDefine(
-					Keys.F11,	
-					"月度手当削除",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"閉じる",	
-					""),
-		};
-
-		/// <summary>
-		/// 摘要辞書
-		/// </summary>
-		public readonly static FuncKeyDefine ShowTekiyo = Functions[0];
-		/// <summary>
-		/// 休診追加
-		/// </summary>
-		public readonly static FuncKeyDefine AddKyushin = Functions[1];
-		/// <summary>
-		/// 休診訂正
-		/// </summary>
-		public readonly static FuncKeyDefine EditKyushin = Functions[2];
-		/// <summary>
-		/// 休診削除
-		/// </summary>
-		public readonly static FuncKeyDefine DeleteKyushin = Functions[3];
-		/// <summary>
-		/// 事業手当追加
-		/// </summary>
-		public readonly static FuncKeyDefine AddTeate = Functions[4];
-		/// <summary>
-		/// 事業手当訂正
-		/// </summary>
-		public readonly static FuncKeyDefine EditTeate = Functions[5];
-		/// <summary>
-		/// 事業手当削除
-		/// </summary>
-		public readonly static FuncKeyDefine DeleteTeate = Functions[6];
-		/// <summary>
-		/// 月度手当追加
-		/// </summary>
-		public readonly static FuncKeyDefine AddTeateMonth = Functions[7];
-		/// <summary>
-		/// 月度手当訂正
-		/// </summary>
-		public readonly static FuncKeyDefine EditTeateMonth = Functions[8];
-		/// <summary>
-		/// 月度手当削除
-		/// </summary>
-		public readonly static FuncKeyDefine DeleteTeateMoth = Functions[9];
-		/// <summary>
-		/// 閉じる
-		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[10];
-	}
-	#endregion
-
-	#region *** FuncKnmubo_DlgEntryTeate ***
-	/// <summary>
-	/// FuncKnmubo_DlgEntryTeateのファンクションキー定義クラス
-	/// </summary>
-	public class FuncKnmubo_DlgEntryTeate
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
-		/// <summary>
-		/// 登録
-		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
-	}
-	#endregion
-
-	#region *** FuncKnmubo_DlgEntryKyushin ***
-	/// <summary>
-	/// FuncKnmubo_DlgEntryKyushinのファンクションキー定義クラス
-	/// </summary>
-	public class FuncKnmubo_DlgEntryKyushin
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F5,	
-					"摘要選択",	
-					""),
-			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
-		/// <summary>
-		/// 摘要選択
-		/// </summary>
-		public readonly static FuncKeyDefine ShowTekiyo = Functions[0];
-		/// <summary>
-		/// 登録
-		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[1];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[2];
-	}
-	#endregion
-
-	#region *** FuncMasterGensen ***
-	/// <summary>
-	/// FuncMasterGensenのファンクションキー定義クラス
-	/// </summary>
-	public class FuncMasterGensen
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F11,	
-					"登録",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"キャンセル",	
-					""),
-		};
-
-		/// <summary>
-		/// 登録
-		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
-		/// <summary>
-		/// キャンセル
-		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
-	}
-	#endregion
-
 	#region *** FuncMasterBank ***
 	/// <summary>
 	/// FuncMasterBankのファンクションキー定義クラス
@@ -773,46 +245,6 @@ namespace App
 		/// キャンセル
 		/// </summary>
 		public readonly static FuncKeyDefine Cancel = Functions[2];
-	}
-	#endregion
-
-	#region *** FuncFixedKyuyo ***
-	/// <summary>
-	/// FuncFixedKyuyoのファンクションキー定義クラス
-	/// </summary>
-	public class FuncFixedKyuyo
-	{
-		/// <summary>
-		/// ファンクションキー定義。
-		/// </summary>
-		public readonly static FuncKeyDefine[]	Functions =
-		{
-			new FuncKeyDefine(
-					Keys.F9,	
-					"印刷プレビュー",	
-					""),
-			new FuncKeyDefine(
-					Keys.F11,	
-					"作成実行",	
-					""),
-			new FuncKeyDefine(
-					Keys.F12,	
-					"閉じる",	
-					""),
-		};
-
-		/// <summary>
-		/// 印刷プレビュー
-		/// </summary>
-		public readonly static FuncKeyDefine Preview = Functions[0];
-		/// <summary>
-		/// 作成実行
-		/// </summary>
-		public readonly static FuncKeyDefine Exec = Functions[1];
-		/// <summary>
-		/// 閉じる
-		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[2];
 	}
 	#endregion
 
@@ -1856,6 +1288,30 @@ namespace App
 					"削除",	
 					""),
 			new FuncKeyDefine(
+					Keys.F5,	
+					"コピー追加",	
+					""),
+			new FuncKeyDefine(
+					Keys.F6,	
+					"帳票1",	
+					""),
+			new FuncKeyDefine(
+					Keys.F7,	
+					"帳票2",	
+					""),
+			new FuncKeyDefine(
+					Keys.F8,	
+					"帳票3",	
+					""),
+			new FuncKeyDefine(
+					Keys.F9,	
+					"帳票4",	
+					""),
+			new FuncKeyDefine(
+					Keys.F10,	
+					"帳票5",	
+					""),
+			new FuncKeyDefine(
 					Keys.F12,	
 					"閉じる",	
 					""),
@@ -1874,9 +1330,33 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine RowDelete = Functions[2];
 		/// <summary>
+		/// コピー追加
+		/// </summary>
+		public readonly static FuncKeyDefine CopyAdd = Functions[3];
+		/// <summary>
+		/// 帳票1
+		/// </summary>
+		public readonly static FuncKeyDefine Preview1 = Functions[4];
+		/// <summary>
+		/// 帳票2
+		/// </summary>
+		public readonly static FuncKeyDefine Preview2 = Functions[5];
+		/// <summary>
+		/// 帳票3
+		/// </summary>
+		public readonly static FuncKeyDefine Preview3 = Functions[6];
+		/// <summary>
+		/// 帳票4
+		/// </summary>
+		public readonly static FuncKeyDefine Preview4 = Functions[7];
+		/// <summary>
+		/// 帳票5
+		/// </summary>
+		public readonly static FuncKeyDefine Preview5 = Functions[8];
+		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[3];
+		public readonly static FuncKeyDefine Close = Functions[9];
 	}
 	#endregion
 
@@ -2104,8 +1584,24 @@ namespace App
 					"削除",	
 					""),
 			new FuncKeyDefine(
+					Keys.F5,	
+					"コピー追加",	
+					""),
+			new FuncKeyDefine(
+					Keys.F6,	
+					"再入会",	
+					""),
+			new FuncKeyDefine(
+					Keys.F8,	
+					"会費調整",	
+					""),
+			new FuncKeyDefine(
 					Keys.F9,	
 					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F10,	
+					"在籍期間表示",	
 					""),
 			new FuncKeyDefine(
 					Keys.F12,	
@@ -2126,13 +1622,29 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine RowDelete = Functions[2];
 		/// <summary>
+		/// コピー追加
+		/// </summary>
+		public readonly static FuncKeyDefine CopyAdd = Functions[3];
+		/// <summary>
+		/// 再入会
+		/// </summary>
+		public readonly static FuncKeyDefine Rejoin = Functions[4];
+		/// <summary>
+		/// 会費調整
+		/// </summary>
+		public readonly static FuncKeyDefine ShowChosei = Functions[5];
+		/// <summary>
 		/// 印刷プレビュー
 		/// </summary>
-		public readonly static FuncKeyDefine Preview = Functions[3];
+		public readonly static FuncKeyDefine Preview = Functions[6];
+		/// <summary>
+		/// 在籍期間表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowZaiseki = Functions[7];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[4];
+		public readonly static FuncKeyDefine Close = Functions[8];
 	}
 	#endregion
 
@@ -2148,6 +1660,18 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
+					Keys.F5,	
+					"情報1表示",	
+					""),
+			new FuncKeyDefine(
+					Keys.F6,	
+					"情報2表示",	
+					""),
+			new FuncKeyDefine(
+					Keys.F7,	
+					"情報3表示",	
+					""),
+			new FuncKeyDefine(
 					Keys.F11,	
 					"登録",	
 					""),
@@ -2158,13 +1682,25 @@ namespace App
 		};
 
 		/// <summary>
+		/// 情報1表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowTab1 = Functions[0];
+		/// <summary>
+		/// 情報2表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowTab2 = Functions[1];
+		/// <summary>
+		/// 情報3表示
+		/// </summary>
+		public readonly static FuncKeyDefine ShowTab3 = Functions[2];
+		/// <summary>
 		/// 登録
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
+		public readonly static FuncKeyDefine Save = Functions[3];
 		/// <summary>
 		/// キャンセル
 		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
+		public readonly static FuncKeyDefine Cancel = Functions[4];
 	}
 	#endregion
 
@@ -2216,6 +1752,10 @@ namespace App
 					"作成実行",	
 					""),
 			new FuncKeyDefine(
+					Keys.F6,	
+					"個別再作成",	
+					""),
+			new FuncKeyDefine(
 					Keys.F8,	
 					"編集",	
 					""),
@@ -2230,13 +1770,17 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine Exec = Functions[0];
 		/// <summary>
+		/// 個別再作成
+		/// </summary>
+		public readonly static FuncKeyDefine ReMake = Functions[1];
+		/// <summary>
 		/// 編集
 		/// </summary>
-		public readonly static FuncKeyDefine Edit = Functions[1];
+		public readonly static FuncKeyDefine Edit = Functions[2];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[2];
+		public readonly static FuncKeyDefine Close = Functions[3];
 	}
 	#endregion
 
@@ -2252,6 +1796,14 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
+					Keys.F2,	
+					"追加",	
+					""),
+			new FuncKeyDefine(
+					Keys.F4,	
+					"削除",	
+					""),
+			new FuncKeyDefine(
 					Keys.F11,	
 					"登録",	
 					""),
@@ -2262,13 +1814,21 @@ namespace App
 		};
 
 		/// <summary>
+		/// 追加
+		/// </summary>
+		public readonly static FuncKeyDefine RowAdd = Functions[0];
+		/// <summary>
+		/// 削除
+		/// </summary>
+		public readonly static FuncKeyDefine RowDelete = Functions[1];
+		/// <summary>
 		/// 登録
 		/// </summary>
-		public readonly static FuncKeyDefine Save = Functions[0];
+		public readonly static FuncKeyDefine Save = Functions[2];
 		/// <summary>
 		/// キャンセル
 		/// </summary>
-		public readonly static FuncKeyDefine Cancel = Functions[1];
+		public readonly static FuncKeyDefine Cancel = Functions[3];
 	}
 	#endregion
 
@@ -2297,6 +1857,486 @@ namespace App
 		/// 印刷プレビュー
 		/// </summary>
 		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiUchiwakeYear ***
+	/// <summary>
+	/// FuncOutKaihiUchiwakeYearのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiUchiwakeYear
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiListBank ***
+	/// <summary>
+	/// FuncOutKaihiListBankのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiListBank
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncKaiin_DlgHistory ***
+	/// <summary>
+	/// FuncKaiin_DlgHistoryのファンクションキー定義クラス
+	/// </summary>
+	public class FuncKaiin_DlgHistory
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[0];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiYoteiYear ***
+	/// <summary>
+	/// FuncOutKaihiYoteiYearのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiYoteiYear
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiList ***
+	/// <summary>
+	/// FuncOutKaihiListのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiList
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutKaihiUchiwakeMonth ***
+	/// <summary>
+	/// FuncOutKaihiUchiwakeMonthのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutKaihiUchiwakeMonth
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncCreateIfaxFile ***
+	/// <summary>
+	/// FuncCreateIfaxFileのファンクションキー定義クラス
+	/// </summary>
+	public class FuncCreateIfaxFile
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"作成実行",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 作成実行
+		/// </summary>
+		public readonly static FuncKeyDefine Exec = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncKaiin_DlgChosei ***
+	/// <summary>
+	/// FuncKaiin_DlgChoseiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncKaiin_DlgChosei
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F2,	
+					"追加",	
+					""),
+			new FuncKeyDefine(
+					Keys.F4,	
+					"削除",	
+					""),
+			new FuncKeyDefine(
+					Keys.F11,	
+					"登録",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 追加
+		/// </summary>
+		public readonly static FuncKeyDefine RowAdd = Functions[0];
+		/// <summary>
+		/// 削除
+		/// </summary>
+		public readonly static FuncKeyDefine RowDelete = Functions[1];
+		/// <summary>
+		/// 登録
+		/// </summary>
+		public readonly static FuncKeyDefine Save = Functions[2];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[3];
+	}
+	#endregion
+
+	#region *** FuncExcelMenu ***
+	/// <summary>
+	/// FuncExcelMenuのファンクションキー定義クラス
+	/// </summary>
+	public class FuncExcelMenu
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[0];
+	}
+	#endregion
+
+	#region *** FuncOutExcelShimingyoinKaihi ***
+	/// <summary>
+	/// FuncOutExcelShimingyoinKaihiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelShimingyoinKaihi
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutExcelNenkanChoshu ***
+	/// <summary>
+	/// FuncOutExcelNenkanChoshuのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelNenkanChoshu
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutExcelKaihiShinsei ***
+	/// <summary>
+	/// FuncOutExcelKaihiShinseiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelKaihiShinsei
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutExcelFurikomi ***
+	/// <summary>
+	/// FuncOutExcelFurikomiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelFurikomi
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutExcelNofusho ***
+	/// <summary>
+	/// FuncOutExcelNofushoのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelNofusho
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutExcelFurikomiIrai ***
+	/// <summary>
+	/// FuncOutExcelFurikomiIraiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutExcelFurikomiIrai
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"Excel出力",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// Excel出力
+		/// </summary>
+		public readonly static FuncKeyDefine OutExcel = Functions[0];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
