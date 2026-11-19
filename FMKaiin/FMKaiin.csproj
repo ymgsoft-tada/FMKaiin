@@ -38,6 +38,7 @@
     </ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="C1.C1Excel.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
     <Reference Include="C1.C1Pdf.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da" />
     <Reference Include="C1.C1Report.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=594a0605db190bb9, processorArchitecture=MSIL" />
     <Reference Include="C1.C1Zip.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da" />
@@ -81,6 +82,7 @@
   <ItemGroup>
     <Compile Include="AppApi.cs" />
     <Compile Include="AppBank.cs" />
+    <Compile Include="AppBankFile.cs" />
     <Compile Include="AppCombo.cs" />
     <Compile Include="AppCsvExport.cs" />
     <Compile Include="AppCsvImport.cs" />
@@ -93,8 +95,21 @@
     <Compile Include="AppDbUpdate.cs" />
     <Compile Include="AppDbUpdate.Data.DB.cs" />
     <Compile Include="AppDbUpdateManager.cs" />
+    <Compile Include="AppExcel.cs" />
+    <Compile Include="AppExcelFurikomi.cs" />
+    <Compile Include="AppExcelFurikomiIrai.cs" />
+    <Compile Include="AppXlsx.cs" />
+    <Compile Include="AppExcelNofusho.cs" />
+    <Compile Include="AppExcelImport.cs" />
+    <Compile Include="AppExcelImportIryoKikan.cs" />
+    <Compile Include="AppExcelImportKaihi.cs" />
+    <Compile Include="AppExcelImportKaiin.cs" />
+    <Compile Include="AppExcelKaihiShinsei.cs" />
+    <Compile Include="AppExcelNenkanChoshu.cs" />
+    <Compile Include="AppExcelShiminByoinKaihi.cs" />
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
+    <Compile Include="AppIfaxFile.cs" />
     <Compile Include="AppIfaxGroup.cs" />
     <Compile Include="AppIryoKikan.cs" />
     <Compile Include="AppGlobal.cs" />
@@ -102,7 +117,6 @@
     <Compile Include="AppGakkai.cs" />
     <Compile Include="AppGakko.cs" />
     <Compile Include="AppKaiin.cs" />
-    <Compile Include="AppKaiinKbn.cs" />
     <Compile Include="AppKaisetsushutai.cs" />
     <Compile Include="AppKumiCd.cs" />
     <Compile Include="AppShisetsugyomu.cs" />
@@ -126,11 +140,23 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormMain.cs">
+    <Compile Include="FormCreateBankFile.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormMain.Designer.cs">
-      <DependentUpon>FormMain.cs</DependentUpon>
+    <Compile Include="FormCreateBankFile.Designer.cs">
+      <DependentUpon>FormCreateBankFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormCreateIfaxFile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormCreateIfaxFile.Designer.cs">
+      <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormExcelMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormExcelMenu.Designer.cs">
+      <DependentUpon>FormExcelMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
@@ -143,6 +169,18 @@
     </Compile>
     <Compile Include="FormHikiotoshi_DlgEntry.Designer.cs">
       <DependentUpon>FormHikiotoshi_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKaiin_DlgChosei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKaiin_DlgChosei.Designer.cs">
+      <DependentUpon>FormKaiin_DlgChosei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormKaiin_DlgHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKaiin_DlgHistory.Designer.cs">
+      <DependentUpon>FormKaiin_DlgHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -173,6 +211,18 @@
     </Compile>
     <Compile Include="FormFrame.Designer.cs">
       <DependentUpon>FormFrame.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBank.designer.cs">
+      <DependentUpon>FormMasterBank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterBank_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterBank_DlgEntry.designer.cs">
+      <DependentUpon>FormMasterBank_DlgEntry.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterIryoKikan.cs">
       <SubType>Form</SubType>
@@ -209,6 +259,12 @@
     </Compile>
     <Compile Include="FormMasterShinryoka.designer.cs">
       <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMasterImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMasterImport.Designer.cs">
+      <DependentUpon>FormMasterImport.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterKaihi.cs">
       <SubType>Form</SubType>
@@ -252,11 +308,71 @@
     <Compile Include="FormOutBlankSetting.Designer.cs">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutExcelFurikomiIrai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomiIrai.Designer.cs">
+      <DependentUpon>FormOutExcelFurikomiIrai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelNofusho.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelNofusho.Designer.cs">
+      <DependentUpon>FormOutExcelNofusho.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelFurikomi.Designer.cs">
+      <DependentUpon>FormOutExcelFurikomi.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelKaihiShinsei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelKaihiShinsei.Designer.cs">
+      <DependentUpon>FormOutExcelKaihiShinsei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelNenkanChoshu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelNenkanChoshu.Designer.cs">
+      <DependentUpon>FormOutExcelNenkanChoshu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutExcelShimingyoinKaihi.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutExcelShimingyoinKaihi.Designer.cs">
+      <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOutIryoKikan.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FormOutIryoKikan.Designer.cs">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutKaihiList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiList.Designer.cs">
+      <DependentUpon>FormOutKaihiList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeMonth.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeMonth.Designer.cs">
+      <DependentUpon>FormOutKaihiUchiwakeMonth.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutKaihiYoteiYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiYoteiYear.Designer.cs">
+      <DependentUpon>FormOutKaihiYoteiYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiUchiwakeYear.Designer.cs">
+      <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReportPreview.cs">
       <SubType>Form</SubType>
@@ -288,12 +404,23 @@
     <Compile Include="FormKaiin_DlgEntry_Idoinfo.Designer.cs">
       <DependentUpon>FormKaiin_DlgEntry_Idoinfo.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutKaihiListBank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutKaihiListBank.Designer.cs">
+      <DependentUpon>FormOutKaihiListBank.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportFlex.cs" />
     <Compile Include="ReportFlexCommon.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
     <Compile Include="ReportFlexIryoKikanJoho.cs" />
+    <Compile Include="ReportFlexKaihiList.cs" />
+    <Compile Include="ReportFlexKaihiListBank.cs" />
+    <Compile Include="ReportFlexKaihiUchiwakeMonth.cs" />
+    <Compile Include="ReportFlexKaihiYoteiYear.cs" />
+    <Compile Include="ReportFlexKaihiUchiwakeYear.cs" />
     <Compile Include="ReportFlexKaiinList.cs" />
     <Compile Include="UcDate.cs">
       <SubType>UserControl</SubType>
@@ -347,7 +474,7 @@
     <Compile Include="XApp_t_ishikai.cs" />
     <Compile Include="XApp_t_kaihi.cs" />
     <Compile Include="XApp_t_kaiin.cs" />
-    <Compile Include="XApp_t_kaiinkbn.cs" />
+    <Compile Include="XApp_t_kaiin_chosei.cs" />
     <Compile Include="XApp_t_kaiin_gakkai.cs" />
     <Compile Include="XApp_t_kaiin_ido.cs" />
     <Compile Include="XApp_t_kaiin_kaihi.cs" />
@@ -358,8 +485,9 @@
     <Compile Include="XApp_t_shinryoka.cs" />
     <Compile Include="XApp_t_shisetsugyomu.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
-    <Compile Include="XApp_t_zentodouhuken.cs" />
+    <Compile Include="XApp_t_zentodoufuken.cs" />
     <Compile Include="XRep_IryoKikan.cs" />
+    <Compile Include="XRep_Kaihi.cs" />
     <Compile Include="XRep_KaiinJoho.cs" />
     <Compile Include="XRep_ReportProp.cs" />
     <EmbeddedResource Include="DlgSplash2.resx">
@@ -368,14 +496,20 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormMain.resx">
-      <DependentUpon>FormMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormBg_Progress.resx">
       <DependentUpon>FormBg_Progress.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBg_Worker.resx">
       <DependentUpon>FormBg_Worker.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateBankFile.resx">
+      <DependentUpon>FormCreateBankFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormCreateIfaxFile.resx">
+      <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormExcelMenu.resx">
+      <DependentUpon>FormExcelMenu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormFrame.resx">
       <DependentUpon>FormFrame.cs</DependentUpon>
@@ -386,11 +520,23 @@
     <EmbeddedResource Include="FormHikiotoshi_DlgEntry.resx">
       <DependentUpon>FormHikiotoshi_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKaiin_DlgChosei.resx">
+      <DependentUpon>FormKaiin_DlgChosei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKaiin_DlgHistory.resx">
+      <DependentUpon>FormKaiin_DlgHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogView.resx">
       <DependentUpon>FormLogView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBank.resx">
+      <DependentUpon>FormMasterBank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterBank_DlgEntry.resx">
+      <DependentUpon>FormMasterBank_DlgEntry.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterIryoKikan.resx">
       <DependentUpon>FormMasterIryoKikan.cs</DependentUpon>
@@ -409,6 +555,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterShinryoka.resx">
       <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMasterImport.resx">
+      <DependentUpon>FormMasterImport.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterKaihi.resx">
       <DependentUpon>FormMasterKaihi.cs</DependentUpon>
@@ -431,8 +580,38 @@
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelFurikomiIrai.resx">
+      <DependentUpon>FormOutExcelFurikomiIrai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelNofusho.resx">
+      <DependentUpon>FormOutExcelNofusho.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelFurikomi.resx">
+      <DependentUpon>FormOutExcelFurikomi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelKaihiShinsei.resx">
+      <DependentUpon>FormOutExcelKaihiShinsei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelNenkanChoshu.resx">
+      <DependentUpon>FormOutExcelNenkanChoshu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutExcelShimingyoinKaihi.resx">
+      <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOutIryoKikan.resx">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiList.resx">
+      <DependentUpon>FormOutKaihiList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiUchiwakeMonth.resx">
+      <DependentUpon>FormOutKaihiUchiwakeMonth.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiYoteiYear.resx">
+      <DependentUpon>FormOutKaihiYoteiYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiUchiwakeYear.resx">
+      <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportPreview.resx">
       <DependentUpon>FormReportPreview.cs</DependentUpon>
@@ -448,6 +627,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKaiin_DlgEntry_Idoinfo.resx">
       <DependentUpon>FormKaiin_DlgEntry_Idoinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutKaihiListBank.resx">
+      <DependentUpon>FormOutKaihiListBank.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -783,6 +965,9 @@
     <None Include="Resources\icon.ico" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ribbon.png" />
+  </ItemGroup>
+  <ItemGroup>
     <None Include="Resources\label_nencho.png" />
   </ItemGroup>
   <ItemGroup>
@@ -943,9 +1128,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_normal_Remote1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ribbon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

@@ -16,7 +16,7 @@ namespace App
 	/// [作成者 kj]
 	/// メイン画面
 	/// </summary>
-	public partial class FormMain:FormFrame
+	public partial class FormMain : FormFrame
 	{
 		List<MenuButton> menuBtns;
 
@@ -35,8 +35,8 @@ namespace App
 			/// </summary>
 			public MenuButton(UcImgButton _ib, ButtonClickMethod _method)
 			{
-				ib = _ib;
-				method = _method;
+				ib		= _ib;
+				method	= _method;
 
 				setEvent();
 			}
@@ -70,9 +70,9 @@ namespace App
 		/// </summary>
 		void setTitle()
 		{
-			//this.Text = $"{AppConst.AppTitle} Version{AppConst.AppVersion}";
-			//FileInfo fi = new FileInfo(Application.ExecutablePath);
-			//lblVer.Text = $"Version:{AppConst.AppVersion}";//\r\nUpdate:{AppDate.GetDateSeirekiSlash(fi.LastWriteTime)}";
+			this.Text = $"{AppConst.AppTitle} Version{AppConst.AppVersion}";
+			FileInfo fi = new FileInfo(Application.ExecutablePath);
+			lblVer.Text = $"Version:{AppConst.AppVersion}";//\r\nUpdate:{AppDate.GetDateSeirekiSlash(fi.LastWriteTime)}";
 		}
 
 		bool restart = false;
@@ -82,14 +82,14 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_FormClosing(object sender, FormClosingEventArgs e)
 		{
-			//if (restart == false)
-			//{
-			//	if (formCloseReason != FormCloseReason.Exec && AppMsgBox.Show(this, AppMsgBoxIndex.ShutDown) == DialogResult.No)
-			//	{
-			//		e.Cancel = true;
-			//		return;
-			//	}
-			//}
+			if (restart == false)
+			{
+				if (formCloseReason != FormCloseReason.Exec && AppMsgBox.Show(this, AppMsgBoxIndex.ShutDown) == DialogResult.No)
+				{
+					e.Cancel = true;
+					return;
+				}
+			}
 
 			base.FormFrame_FormClosing(sender, e);
 		}
@@ -100,30 +100,40 @@ namespace App
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
 			menuBtns = new List<MenuButton>();
-			menuBtns.Add(new MenuButton(ibTantosha, showTanto));
-			menuBtns.Add(new MenuButton(ibKaihi, showKaihi));
-			//menuBtns.Add(new MenuButton(ibShokumu, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibBasic, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibBankCode, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibShokumuPrice, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibShikuchosaon, showSelectorYM));
-			
-			//menuBtns.Add(new MenuButton(ibFixedKyuyo, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibOutKyuyoMeisai, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibOutBankFile, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibOutCheckKinmu, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibOutCheckTeate, showSelectorYM));
-			
-			//menuBtns.Add(new MenuButton(ibNencho, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibGensenchoshuhyo, showSelectorYM));
-			//menuBtns.Add(new MenuButton(ibEtax, showSelectorYM));
+			//menuBtns.Add(new MenuButton(ibSelectYM, showSelectorYM));
+			//menuBtns.Add(new MenuButton(ibCalendar, showCalendar));
+			//menuBtns.Add(new MenuButton(ibKinmubo, showKinmubo));
+			//menuBtns.Add(new MenuButton(ibStaff, showStaff));
+			//menuBtns.Add(new MenuButton(ibOutCheckKinmu, outCheckKinmu));
+			//menuBtns.Add(new MenuButton(ibOutCheckTeate, outCheckTeate));
+			//menuBtns.Add(new MenuButton(ibFixedKyuyo, showFixedKyuyo));
+			//menuBtns.Add(new MenuButton(ibOutKyuyoMeisai, outKyuyoMeisai));
+			//menuBtns.Add(new MenuButton(ibOutBankFile, outBankFile));
 
+			//menuBtns.Add(new MenuButton(ibNencho, showNencho));
+			//menuBtns.Add(new MenuButton(ibGensenchoshuhyo, outGensenchoshuhyo));
+			//menuBtns.Add(new MenuButton(ibEtax, outEtaxEltax));
+
+			//menuBtns.Add(new MenuButton(ibBasic, showBasic));
+			//menuBtns.Add(new MenuButton(ibShokumu, showShokumu));
+			//menuBtns.Add(new MenuButton(ibShokumuPrice, showShokumuPrice));
+			//menuBtns.Add(new MenuButton(ibGensen, showGensen));
+			//menuBtns.Add(new MenuButton(ibTantosha, showTantosha));
+			//menuBtns.Add(new MenuButton(ibJigyo, showJigyo));
+			//menuBtns.Add(new MenuButton(ibTeateTanka, showTeateTanka));
+			//menuBtns.Add(new MenuButton(ibShikuchosaon, showShikuchoson));
+			//menuBtns.Add(new MenuButton(ibBankCode, showBankCode));
+
+			//menuBtns.Add(new MenuButton(ibBackup, dataBackup));
+			//menuBtns.Add(new MenuButton(ibRestore, dataRestore));
+			//menuBtns.Add(new MenuButton(ibRemote, execRemote));
+			//menuBtns.Add(new MenuButton(ibLogout, formClose));
 
 			setTitle();
 			setEnable();
 			updateLable();
 
-			//txtDummy.Select();
+			txtDummy.Select();
 
 
 			base.FormFrame_Shown(sender, e);
@@ -131,21 +141,21 @@ namespace App
 
 		void setEnable()
 		{
-			//bool enabled_su = false;
-			////			if (AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.SU)
-			//{
-			//	enabled_su = true;
-			//}
-			//gbxDebug.Visible = enabled_su;
-			//gbxDebugGensen.Visible = enabled_su;
+			bool enabled_su = false;
+//			if (AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.SU)
+			{
+				enabled_su = true;
+			}
+			gbxDebug.Visible		= enabled_su;
+			gbxDebugGensen.Visible	= enabled_su;
 		}
 
 		void updateLable()
 		{
 			lblCompany.Text = $"{AppGlobal.Basic.BAS_Name}";
 
-			
-			iTantosha.Text	= $" {AppGlobal.LoginUser.CD}:{AppGlobal.LoginUser.Name}";
+			iDateYM.Text	= $"{AppDate.GetYearMonth(AppGlobal.Basic.BAS_DateYM)}";
+//			iTantosha.Text	= $" {AppGlobal.LoginUser.CD}:{AppGlobal.LoginUser.Name}";
 		}
 
 		/// <summary>
@@ -153,10 +163,10 @@ namespace App
 		/// </summary>
 		void execRemote()
 		{
-			//if (AppMsgBox.Show(AppMsgBoxIndex.StartRemoteSupport) == System.Windows.Forms.DialogResult.No)
-			//{
-			//	return;
-			//}
+			if (AppMsgBox.Show(AppMsgBoxIndex.StartRemoteSupport) == System.Windows.Forms.DialogResult.No)
+			{
+				return;
+			}
 
 			try
 			{
@@ -238,46 +248,19 @@ namespace App
 			}
 		}
 
-		/// <summary>
-		/// ユーザーマスタ
-		/// </summary>
-		void showTanto()
-		{
-			FormMasterTantosha frm = new FormMasterTantosha();
-			frm.ShowDialog();
-			frm.Dispose();
-			frm = null;
-		}
-
-		/// <summary>
-		/// 会費マスタ
-		/// </summary>
-		void showKaihi()
-		{
-			initBankCode();
-
-			FormKaiin frm = new FormKaiin();
-			frm.ShowDialog();
-			frm.Dispose();
-			frm = null;
-		}
-
-		/// <summary>
-		/// 銀行コードデータの取得処理
-		/// </summary>
-		void initBankCode()
-		{
-			if (AppGlobal.BankCodeMg == null)
-			{
-				FormBg_Progress prog = new FormBg_Progress();
-				prog.TitleText = "しばらくお待ちください。";
-				prog.LabelText = "データをロードしています。";
-				prog.DoWorkEvent += prog_DoWorkEvent;
-				prog.ShowDialog();
-				prog.Dispose();
-				prog = null;
-			}
-		}
+		///// <summary>
+		///// 手当単価マスタの表示
+		///// </summary>
+		//void showTeateTanka()
+		//{
+		//	if (checkAuthAdmin() == true)
+		//	{
+		//		FormMasterTeate frm = new FormMasterTeate();
+		//		frm.ShowDialog();
+		//		frm.Dispose();
+		//		frm = null;
+		//	}
+		//}
 
 		/// <summary>
 		/// ログアウト
@@ -287,17 +270,21 @@ namespace App
 			this.Close();
 		}
 
-
-		private void prog_DoWorkEvent(object sender, DoWorkEventArgs e)
+		bool checkAuthAdmin()
 		{
-			FormBg_Progress prog = (FormBg_Progress)sender;
-			prog.AdvanceProgress(100);
+			bool ret = false;
 
-			// 銀行コードは大量のデータになるので、スプラッシュ時ではなくログインしてから取得する
-			AppGlobal.DB.GetReFillTable(TableProp.t_bank_code);
-			AppGlobal.InitBankCodeMg();
-			//			AppGlobal.Banks.Init(); // FBファイル作成に利用
+			//if (AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.Admin ||
+			//	AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.SU)
+			//{
+			//	ret = true;
+			//}
+			//else
+			{
+				AppMsgBox.Show(this, AppMsgBoxIndex.HavenotAuthAdmin);
+			}
 
+			return ret;
 		}
 	}
 }
