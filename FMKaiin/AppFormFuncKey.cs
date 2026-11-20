@@ -1616,6 +1616,70 @@ namespace App
 	}
 	#endregion
 
+	#region *** FuncOutIkaiHikiotoshiMeisai ***
+	/// <summary>
+	/// FuncOutIkaiHikiotoshiMeisaiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutIkaiHikiotoshiMeisai
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutIkaiHikiotoshiShukei ***
+	/// <summary>
+	/// FuncOutIkaiHikiotoshiShukeiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutIkaiHikiotoshiShukei
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
 
 }
 
