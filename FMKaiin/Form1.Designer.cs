@@ -42,6 +42,8 @@ namespace App
 			this.button2 = new System.Windows.Forms.Button();
 			this.button3 = new System.Windows.Forms.Button();
 			this.btnMasterImport = new System.Windows.Forms.Button();
+			this.btnRep1 = new System.Windows.Forms.Button();
+			this.btnRep2 = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnBasic
@@ -162,11 +164,31 @@ namespace App
 			this.btnMasterImport.Text = "マスター取込";
 			this.btnMasterImport.UseVisualStyleBackColor = true;
 			// 
+			// btnRep1
+			// 
+			this.btnRep1.Location = new System.Drawing.Point(259, 266);
+			this.btnRep1.Name = "btnRep1";
+			this.btnRep1.Size = new System.Drawing.Size(139, 29);
+			this.btnRep1.TabIndex = 13;
+			this.btnRep1.Text = "帳票1-10";
+			this.btnRep1.UseVisualStyleBackColor = true;
+			// 
+			// btnRep2
+			// 
+			this.btnRep2.Location = new System.Drawing.Point(404, 266);
+			this.btnRep2.Name = "btnRep2";
+			this.btnRep2.Size = new System.Drawing.Size(139, 29);
+			this.btnRep2.TabIndex = 14;
+			this.btnRep2.Text = "帳票11-17";
+			this.btnRep2.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(806, 405);
+			this.Controls.Add(this.btnRep2);
+			this.Controls.Add(this.btnRep1);
 			this.Controls.Add(this.btnMasterImport);
 			this.Controls.Add(this.button3);
 			this.Controls.Add(this.button2);
@@ -199,6 +221,8 @@ namespace App
 			this.Controls.SetChildIndex(this.button2, 0);
 			this.Controls.SetChildIndex(this.button3, 0);
 			this.Controls.SetChildIndex(this.btnMasterImport, 0);
+			this.Controls.SetChildIndex(this.btnRep1, 0);
+			this.Controls.SetChildIndex(this.btnRep2, 0);
 			this.ResumeLayout(false);
 
 		}
@@ -218,5 +242,7 @@ namespace App
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
 		private System.Windows.Forms.Button btnMasterImport;
+		private System.Windows.Forms.Button btnRep1;
+		private System.Windows.Forms.Button btnRep2;
 	}
 }

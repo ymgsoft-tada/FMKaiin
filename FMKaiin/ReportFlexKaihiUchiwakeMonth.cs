@@ -39,16 +39,16 @@ namespace App
 		/// <summary>会員ごと最大ページ数</summary>
 		Dictionary<int, int> maxpages;
 
-		DBView dvKaiinKaihi;
+		DBView dvHikiotoshi;
 		DBView dvKaiin;
 
 		SortedDictionary<int, List<eShiharai>> dics_shiharaiKoza;
 		SortedDictionary<int, Decimal?> dics_costTotal;
 
 		/// <summary>
-		/// 会費管理クラス(明細1行)
+		/// 引落管理クラス(明細1行)
 		/// </summary>
-		class KaihiData
+		class HikiotoshiData
 		{
 			public Kaiin Kaiin;
 			public string KaihiName;
@@ -59,7 +59,7 @@ namespace App
 			/// <summary>
 			/// コンストラクタ
 			/// </summary>
-			public KaihiData()
+			public HikiotoshiData()
 			{
 			}
 		}
@@ -94,13 +94,13 @@ namespace App
 			DBView dv = new DBView(dt);
 			dv.SortQuery($"{F_ID_Kaiin},{F_Page},{F_Line}");
 
-			//dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin} WHERE {t_kaiin.FKYU_DateYM} = #{SelectedDateYM}#"));
-			dvKaiinKaihi = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin_kaihi}"));
-			//dvKaihi.SortQuery($"{t_kyuyo.FKYU_DateYM}, {t_kyuyo.FID_Staff}");
-			dvKaiinKaihi.SortQuery($"{t_kaiin_kaihi.FID_Kaiin}, {t_kaiin_kaihi.FID_Kaihi}");
+			string where_hikiotoshi = $"{TableProp.t_hikiotoshi}.{t_hikiotoshi.FHiki_DateYM} = #{SelectedDateYM}#"; // 対象年月
 
-			// 会員-会費にデータあり
-			if (dvKaiinKaihi.Count > 0)
+			dvHikiotoshi = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_hikiotoshi} WHERE {where_hikiotoshi}"));
+			dvHikiotoshi.SortQuery($"{t_hikiotoshi.FID_Kaiin}, {t_hikiotoshi.FID_Kaihi}");
+
+			// 引落情報にデータあり
+			if (dvHikiotoshi.Count > 0)
 			{
 				string where_kaiin = $"1 = 1";
 
@@ -143,8 +143,8 @@ namespace App
 				string selected_ym = AppDate.GetYearMonthSeirekiSlash(SelectedDateYM);
 				int selectedMonth = Cast.Int(selected_ym.Substring(selected_ym.Length - 2));
 
-				// スタッフ別に集計しておく
-				SortedDictionary<int, List<KaihiData>> dics  = new SortedDictionary<int, List<KaihiData>>();
+				// 会員別に集計しておく
+				SortedDictionary<int, List<HikiotoshiData>> dics  = new SortedDictionary<int, List<HikiotoshiData>>();
 				dics_shiharaiKoza = new SortedDictionary<int, List<eShiharai>>();
 				dics_costTotal = new SortedDictionary<int, Decimal?>();
 
@@ -160,37 +160,44 @@ namespace App
 
 					if (kin != null)
 					{
+						dvHikiotoshi.RowFilterQuery($"{t_hikiotoshi.FID_Kaiin} = {kin.ID}"); // 条件の会員でフィルタ
+
 						if (dics.ContainsKey(kin.CD) == false)
 						{
-							dics.Add(kin.CD, new List<KaihiData>());
+							dics.Add(kin.CD, new List<HikiotoshiData>());
 							dics_shiharaiKoza.Add(kin.CD, new List<eShiharai>());
 							dics_costTotal.Add(kin.CD, new Decimal());
 						}
 
-						KaihiData kd;
+						HikiotoshiData hd;
 
-						// 参加医会データ
-						for (int k = 0; k < kin.Kaihis.Count; k++)
+						// 引落データ
+						for (int j = 0; j < dvHikiotoshi.Count; j++)
 						{
-							// 会費情報の格納
-							kd = new KaihiData();
-							kd.Kaiin = kin;
-							kd.KaihiName = kin.Kaihis[k].XRow.Kaihi_Name_Null;
-							kd.Cost = kin.Kaihis[k].GetCost(selectedMonth);
-							kd.BankIdx = (int)kin.GetShiharai(kin.Kaihis[k].ID);
-							kd.Biko = kin.Kaihis[k].XRow.Kaihi_Biko;
+							t_hikiotoshi tmprow = new t_hikiotoshi(dvHikiotoshi[j]);
+
+							// 引落データの会費情報(コード,名称)
+							Kaihi kh = AppGlobal.Kaihis.Get(tmprow.ID_Kaihi);
+
+							// 引落情報の格納
+							hd = new HikiotoshiData();
+							hd.Kaiin = kin;
+							hd.KaihiName = kh.XRow.Kaihi_Name_Null;
+							hd.Cost = tmprow.Hiki_Cost;
+							hd.BankIdx = (int)tmprow.Hiki_Shiharai;
+							hd.Biko = kh.XRow.Kaihi_Biko_Null;
 
 							// 会員ごと会費リスト追加
-							dics[kin.CD].Add(kd);
+							dics[kin.CD].Add(hd);
 
 							// 支払方法リストの処理
-							if (dics_shiharaiKoza[kin.CD].Contains(kin.GetShiharai(kin.Kaihis[k].ID)) == false)
+							if (dics_shiharaiKoza[kin.CD].Contains(tmprow.Hiki_Shiharai) == false)
 							{
-								dics_shiharaiKoza[kin.CD].Add(kin.GetShiharai(kin.Kaihis[k].ID));
+								dics_shiharaiKoza[kin.CD].Add(tmprow.Hiki_Shiharai);
 							}
 
 							// 会費合計の処理
-							dics_costTotal[kin.CD] += kd.Cost;
+							dics_costTotal[kin.CD] += hd.Cost;
 						}
 					}
 				}
@@ -200,18 +207,14 @@ namespace App
 				// 出力用DBViewにデータ行を追加
 				foreach(var kvp in dics)
 				{
-//					kvp.Value.Sort((a, b) => a.Day - b.Day);
-
 					Kaiin kin = AppGlobal.Kaiins.GetCode(kvp.Key);
 
 					int line	= 0;
 					int no		= 0;
 					for(int i = 0; i < kvp.Value.Count; i++)
 					{
-						KaihiData kd = kvp.Value[i];
+						HikiotoshiData kd = kvp.Value[i];
 						DataRow nrow = null;
-
-						//string day = $"{kd.Day}";
 
 						if (no < LINE_MAX_PAGE)
 						{
@@ -227,18 +230,8 @@ namespace App
 							dv.Add(nrow);
 							line++;
 						}
-						// 手当2列目出す用？
-						//else
-						//if (dv.FindRow(new object[]{kin.ID, page, no % LINE_MAX_PAGE}) == true)
-						//{
-						//	nrow			= dv.CurrentRow.Row;
-						//	nrow[F_Day2]	= day == "99" ? "-" : day;
-						//	nrow[F_Komoku2] = kd.Komoku;
-						//	nrow[F_Cost2]	= kd.Cost;
-						//}
 
 						no++;
-						//if (no >= LINE_MAX_PAGE*2)
 						if (no >= LINE_MAX_PAGE)
 						{
 							page++;
@@ -278,7 +271,7 @@ namespace App
 			// 登録順のまま出力ビューへ反映
 			OutView = new DBView(dt);
 
-			// スタッフ別の最大ページ数を取得
+			// 会員別の最大ページ数を取得
 			for (int i = 0; i < OutView.Count; i++)
 			{
 				int id	 = Cast.Int(OutView[i][F_ID_Kaiin]);
@@ -404,7 +397,6 @@ namespace App
 
 
 				title = $"{AppDate.GetYearMonth(SelectedDateYM)}　会費内訳";
-				//title = $"{enumKbn.DTypeJob[(int)kin.XRow.STF_TypeJob]}手当明細書";
 
 				if (maxpages.ContainsKey(kin.ID) == true && maxpages[kin.ID] > 1)
 				{
@@ -523,21 +515,6 @@ namespace App
 			C1FlexReport rep = (C1FlexReport)sender;
 
 			int lineNo = (e.Page - 1) * LINE_MAX_PAGE + e.Line;
-
-			// 最後のLine
-			//ShapeField end1 = (ShapeField)rep.Fields[CRep04_KaihiUchiwakeMonth.FFldLineEnd1];
-			//ShapeField end2 = (ShapeField)rep.Fields[CRep04_KaihiUchiwakeMonth.FFldLineEnd2];
-
-			//if (e.Line == LINE_MAX_PAGE-1)
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 15;
-			//}
-			//else
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 5;
-			//}
 		}
 
 		/// <summary>
@@ -558,7 +535,7 @@ namespace App
 
 			DataRow row = OutView[lineNo].Row;
 
-			if (row[F_KaihiName] != DBNull.Value) // 会費名が空なら空行とみなす
+			if (row[F_KaihiName] != DBNull.Value) // 会費名が空なら空行とみなす (0円会費は\0、空行は空欄を実現するため下記コードとなっている)
 			{
 				setFieldValue(rep, CRep04_KaihiUchiwakeMonth.FFldKaihiName, row[F_KaihiName]);
 				setCost_zero(rep, CRep04_KaihiUchiwakeMonth.FFldCost, row[F_Cost]);

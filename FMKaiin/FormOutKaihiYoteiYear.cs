@@ -36,13 +36,13 @@ namespace App
 			// 年月初期値:当日
 			iTaishoYM.UcFormat = UcDate.UcDateFormat.YYYYMM;
 			iTaishoYM.UcDateCtl.DropDownCalendar.CalendarType = GrapeCity.Win.Editors.CalendarType.YearMonth;
-			iTaishoYM.UcValue = DateTime.Now;
-			
+			iTaishoYM.UcValue = AppDate.ParseDateFirstDay(DateTime.Now); // 調整データは○月1日登録のため加工する
+
 			// コンボの作成
 			// 会員コード
 			DBView dv = new DBView(AppGlobal.DB.GetFillTable(TableProp.t_kaiin));
-			AppTableCombo.SetComboBox_KaiinCode(iKaiinFrom, dv);
-			AppTableCombo.SetComboBox_KaiinCode(iKaiinTo, dv);
+			AppTableCombo.SetComboBox_Kaiin(iKaiinFrom, dv);
+			AppTableCombo.SetComboBox_Kaiin(iKaiinTo, dv);
 
 			// 在籍区分
 			AppCombo.SetComboBox(iZaisekiFrom, enumKbn.DTypeZaiseki);

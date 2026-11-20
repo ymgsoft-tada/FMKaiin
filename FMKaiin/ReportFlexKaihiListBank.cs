@@ -458,21 +458,6 @@ namespace App
 			C1FlexReport rep = (C1FlexReport)sender;
 
 			int lineNo = (e.Page - 1) * LINE_MAX_PAGE + e.Line;
-
-			// 最後のLine
-			//ShapeField end1 = (ShapeField)rep.Fields[CRep05_KaihiUchiwakeYear.FFldLineEnd1];
-			//ShapeField end2 = (ShapeField)rep.Fields[CRep05_KaihiUchiwakeYear.FFldLineEnd2];
-
-			//if (e.Line == LINE_MAX_PAGE-1)
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 15;
-			//}
-			//else
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 5;
-			//}
 		}
 
 		/// <summary>

@@ -17,7 +17,6 @@ namespace App
 			InitializeComponent();
 
 			btnBasic.Click += BtnBasic_Click;
-//			btnStaff.Click += BtnStaff_Click;
 			btnKaiin.Click += BtnKaiin_Click;
 			btnTanto.Click += BtnTanto_Click;
 			btnBankCode.Click += BtnBankCode_Click;
@@ -28,6 +27,8 @@ namespace App
 			btnFB.Click += BtnFB_Click;
 			button1.Click += BtnIfax_Click; //¶ 2026/11/11 CC iFAXデータ出力
 			btnMasterImport.Click += BtnMasterImport_Click; //¶ 2026/11/14 CC マスター取込
+			btnRep1.Click += BtnRep1_Click; // 2026/11/19 帳票メニュー用1
+			btnRep2.Click += BtnRep2_Click; // 2026/11/19 帳票メニュー用2
 		}
 
 		private void BtnMasterImport_Click(object sender, EventArgs e)
@@ -87,18 +88,7 @@ namespace App
 			frm.Dispose();
 			frm = null;
 		}
-/*
-		private void BtnStaff_Click(object sender, EventArgs e)
-		{
-			// 銀行コードテーブルの取得 毎回いらない？検討
-			initBankCode();
 
-			FormStaff frm = new FormStaff();
-			frm.ShowDialog();
-			frm.Dispose();
-			frm = null;
-		}
-*/
 		private void BtnKaiin_Click(object sender, EventArgs e)
 		{
 			// 銀行コードテーブルの取得 毎回いらない？検討
@@ -135,6 +125,28 @@ namespace App
 			initBankCode();
 
 			FormMasterKaihi frm = new FormMasterKaihi();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		private void BtnRep1_Click(object sender, EventArgs e)
+		{
+			// 銀行コードテーブルの取得 時間かかるか知らないがもうGrobalでInitでいいのでは・・・？
+			initBankCode();
+
+			FormReportMenu1 frm = new FormReportMenu1();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+		}
+
+		private void BtnRep2_Click(object sender, EventArgs e)
+		{
+			// 銀行コードテーブルの取得
+			initBankCode();
+
+			FormReportMenu2 frm = new FormReportMenu2();
 			frm.ShowDialog();
 			frm.Dispose();
 			frm = null;

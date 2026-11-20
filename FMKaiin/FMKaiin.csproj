@@ -152,6 +152,18 @@
     <Compile Include="FormCreateIfaxFile.Designer.cs">
       <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormReportMenu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportMenu2.Designer.cs">
+      <DependentUpon>FormReportMenu2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormReportMenu1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormReportMenu1.Designer.cs">
+      <DependentUpon>FormReportMenu1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormExcelMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -308,6 +320,12 @@
     <Compile Include="FormOutBlankSetting.Designer.cs">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutChosyuMeisaiYear.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutChosyuMeisaiYear.Designer.cs">
+      <DependentUpon>FormOutChosyuMeisaiYear.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOutExcelFurikomiIrai.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +362,12 @@
     <Compile Include="FormOutExcelShimingyoinKaihi.Designer.cs">
       <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutHikiotoshiKakunin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutHikiotoshiKakunin.Designer.cs">
+      <DependentUpon>FormOutHikiotoshiKakunin.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOutIryoKikan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -373,6 +397,12 @@
     </Compile>
     <Compile Include="FormOutKaihiUchiwakeYear.Designer.cs">
       <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutSeikyuMinyukin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutSeikyuMinyukin.Designer.cs">
+      <DependentUpon>FormOutSeikyuMinyukin.cs</DependentUpon>
     </Compile>
     <Compile Include="FormReportPreview.cs">
       <SubType>Form</SubType>
@@ -413,7 +443,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ReportFlex.cs" />
+    <Compile Include="ReportFlexChoshuMeisaiYear.cs" />
     <Compile Include="ReportFlexCommon.cs" />
+    <Compile Include="ReportFlexHikiotoshiKakunin.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
     <Compile Include="ReportFlexIryoKikanJoho.cs" />
     <Compile Include="ReportFlexKaihiList.cs" />
@@ -422,6 +454,7 @@
     <Compile Include="ReportFlexKaihiYoteiYear.cs" />
     <Compile Include="ReportFlexKaihiUchiwakeYear.cs" />
     <Compile Include="ReportFlexKaiinList.cs" />
+    <Compile Include="ReportFlexSeikyuMinyukin.cs" />
     <Compile Include="UcDate.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -486,6 +519,7 @@
     <Compile Include="XApp_t_shisetsugyomu.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
     <Compile Include="XApp_t_zentodoufuken.cs" />
+    <Compile Include="XRep_Hikiotoshi.cs" />
     <Compile Include="XRep_IryoKikan.cs" />
     <Compile Include="XRep_Kaihi.cs" />
     <Compile Include="XRep_KaiinJoho.cs" />
@@ -507,6 +541,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormCreateIfaxFile.resx">
       <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportMenu2.resx">
+      <DependentUpon>FormReportMenu2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormReportMenu1.resx">
+      <DependentUpon>FormReportMenu1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormExcelMenu.resx">
       <DependentUpon>FormExcelMenu.cs</DependentUpon>
@@ -580,6 +620,9 @@
     <EmbeddedResource Include="FormOutBlankSetting.resx">
       <DependentUpon>FormOutBlankSetting.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutChosyuMeisaiYear.resx">
+      <DependentUpon>FormOutChosyuMeisaiYear.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOutExcelFurikomiIrai.resx">
       <DependentUpon>FormOutExcelFurikomiIrai.cs</DependentUpon>
     </EmbeddedResource>
@@ -598,6 +641,9 @@
     <EmbeddedResource Include="FormOutExcelShimingyoinKaihi.resx">
       <DependentUpon>FormOutExcelShimingyoinKaihi.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormOutHikiotoshiKakunin.resx">
+      <DependentUpon>FormOutHikiotoshiKakunin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOutIryoKikan.resx">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>
     </EmbeddedResource>
@@ -612,6 +658,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutKaihiUchiwakeYear.resx">
       <DependentUpon>FormOutKaihiUchiwakeYear.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutSeikyuMinyukin.resx">
+      <DependentUpon>FormOutSeikyuMinyukin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportPreview.resx">
       <DependentUpon>FormReportPreview.cs</DependentUpon>

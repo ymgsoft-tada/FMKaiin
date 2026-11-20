@@ -8,6 +8,16 @@ namespace App
 	{
 		#region *** Property ***
 		/// <summary>
+		/// Hikiotoshiのファイル名称
+		/// </summary>
+		public static string CRepHikiotoshiFilename
+		{
+			get
+			{
+				return "Hikiotoshi.flxr";
+			}
+		}
+		/// <summary>
 		/// IryoKikanのファイル名称
 		/// </summary>
 		public static string CRepIryoKikanFilename
@@ -38,6 +48,36 @@ namespace App
 			}
 		}
 		
+		/// <summary>
+		/// CRep15_SeikyuMinyukin レポート名称
+		/// </summary>
+		public static string CRep15_SeikyuMinyukin
+		{
+			get
+			{
+				return "15_SeikyuMinyukin";
+			}
+		}
+		/// <summary>
+		/// CRep14_HikiotoshiKakunin レポート名称
+		/// </summary>
+		public static string CRep14_HikiotoshiKakunin
+		{
+			get
+			{
+				return "14_HikiotoshiKakunin";
+			}
+		}
+		/// <summary>
+		/// CRep16_ChoshuMeisaiYear レポート名称
+		/// </summary>
+		public static string CRep16_ChoshuMeisaiYear
+		{
+			get
+			{
+				return "16_ChoshuMeisaiYear";
+			}
+		}
 		/// <summary>
 		/// CRepIryoKikanList レポート名称
 		/// </summary>

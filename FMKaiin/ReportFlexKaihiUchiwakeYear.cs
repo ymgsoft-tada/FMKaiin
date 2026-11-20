@@ -94,9 +94,7 @@ namespace App
 			DBView dv = new DBView(dt);
 			dv.SortQuery($"{F_ID_Kaiin},{F_Page},{F_Line}");
 
-			//dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin} WHERE {t_kaiin.FKYU_DateYM} = #{SelectedDateYM}#"));
 			dvKaiinKaihi = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin_kaihi}"));
-			//dvKaihi.SortQuery($"{t_kyuyo.FKYU_DateYM}, {t_kyuyo.FID_Staff}");
 			dvKaiinKaihi.SortQuery($"{t_kaiin_kaihi.FID_Kaiin}, {t_kaiin_kaihi.FID_Kaihi}");
 
 			// 会員-会費にデータあり
@@ -155,7 +153,7 @@ namespace App
 				// 会員情報
 				dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT {TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin} FROM {TableProp.t_kaiin} WHERE {where_kaiin}"));
 
-				// スタッフ別に集計しておく
+				// 会員別に集計しておく
 				SortedDictionary<int, List<KaihiData>> dics  = new SortedDictionary<int, List<KaihiData>>();
 				dics_shiharaiKoza = new SortedDictionary<int, List<eShiharai>>();
 				dics_costTotal = new SortedDictionary<int, Decimal?>();
@@ -216,8 +214,6 @@ namespace App
 				// 出力用DBViewにデータ行を追加
 				foreach(var kvp in dics)
 				{
-//					kvp.Value.Sort((a, b) => a.Day - b.Day);
-
 					Kaiin kin = AppGlobal.Kaiins.GetCode(kvp.Key);
 
 					int line	= 0;
@@ -226,8 +222,6 @@ namespace App
 					{
 						KaihiData kd = kvp.Value[i];
 						DataRow nrow = null;
-
-						//string day = $"{kd.Day}";
 
 						if (no < LINE_MAX_PAGE)
 						{
@@ -243,18 +237,8 @@ namespace App
 							dv.Add(nrow);
 							line++;
 						}
-						// 手当2列目出す用？
-						//else
-						//if (dv.FindRow(new object[]{kin.ID, page, no % LINE_MAX_PAGE}) == true)
-						//{
-						//	nrow			= dv.CurrentRow.Row;
-						//	nrow[F_Day2]	= day == "99" ? "-" : day;
-						//	nrow[F_Komoku2] = kd.Komoku;
-						//	nrow[F_Cost2]	= kd.Cost;
-						//}
 
 						no++;
-						//if (no >= LINE_MAX_PAGE*2)
 						if (no >= LINE_MAX_PAGE)
 						{
 							page++;
@@ -294,7 +278,7 @@ namespace App
 			// 登録順のまま出力ビューへ反映
 			OutView = new DBView(dt);
 
-			// スタッフ別の最大ページ数を取得
+			// 会員別の最大ページ数を取得
 			for (int i = 0; i < OutView.Count; i++)
 			{
 				int id	 = Cast.Int(OutView[i][F_ID_Kaiin]);
@@ -419,7 +403,6 @@ namespace App
 				}
 
 				title = $"会費内訳";
-				//title = $"{enumKbn.DTypeJob[(int)kin.XRow.STF_TypeJob]}手当明細書";
 
 				if (maxpages.ContainsKey(kin.ID) == true && maxpages[kin.ID] > 1)
 				{
@@ -542,21 +525,6 @@ namespace App
 			C1FlexReport rep = (C1FlexReport)sender;
 
 			int lineNo = (e.Page - 1) * LINE_MAX_PAGE + e.Line;
-
-			// 最後のLine
-			//ShapeField end1 = (ShapeField)rep.Fields[CRep05_KaihiUchiwakeYear.FFldLineEnd1];
-			//ShapeField end2 = (ShapeField)rep.Fields[CRep05_KaihiUchiwakeYear.FFldLineEnd2];
-
-			//if (e.Line == LINE_MAX_PAGE-1)
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 15;
-			//}
-			//else
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 5;
-			//}
 		}
 
 		/// <summary>

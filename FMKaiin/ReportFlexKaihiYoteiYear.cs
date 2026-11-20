@@ -44,7 +44,6 @@ namespace App
 		string[] repCostsField;
 		string[] repCostsColTotalField;
 
-
 		/// <summary>表示対象月</summary>
 		int selectedMonth;
 
@@ -52,6 +51,7 @@ namespace App
 		Dictionary<int, int> maxpages;
 
 		DBView dvKaiinKaihi;
+		DBView dvKaiinChosei;
 		DBView dvKaiin;
 
 		SortedDictionary<int, List<eShiharai>> dics_shiharaiKoza;
@@ -131,13 +131,20 @@ namespace App
 			DBView dv = new DBView(dt);
 			dv.SortQuery($"{F_ID_Kaiin},{F_Page},{F_Line}");
 
-			//dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin} WHERE {t_kaiin.FKYU_DateYM} = #{SelectedDateYM}#"));
+			// 会費データ
 			dvKaiinKaihi = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin_kaihi}"));
-			//dvKaihi.SortQuery($"{t_kyuyo.FKYU_DateYM}, {t_kyuyo.FID_Staff}");
 			dvKaiinKaihi.SortQuery($"{t_kaiin_kaihi.FID_Kaiin}, {t_kaiin_kaihi.FID_Kaihi}");
 
-			// 会員-会費にデータあり
-			if (dvKaiinKaihi.Count > 0)
+			// 会費調整データ
+			// 指定年内の確認のため、該当年の1月1日を作成
+			DateTime taishoDateFrom = new DateTime(SelectedDateYM.Year, 1, 1);
+			DateTime taishoDateTo = taishoDateFrom.AddYears(1); // 次年の1月1日 ※Whereでは含まないよう設定
+
+			dvKaiinChosei = new DBView(AppGlobal.DB.FillQuery($"SELECT * FROM {TableProp.t_kaiin_chosei} WHERE {TableProp.t_kaiin_chosei}.{t_kaiin_chosei.FKCS_DateYM} >= #{taishoDateFrom}# AND {TableProp.t_kaiin_chosei}.{t_kaiin_chosei.FKCS_DateYM} < #{taishoDateTo}#"));
+			dvKaiinChosei.SortQuery($"{t_kaiin_chosei.FID_Kaiin}, {t_kaiin_chosei.FID_Kaihi}");
+
+			// 会員-会費 または 会費調整にデータあり
+			if (dvKaiinKaihi.Count > 0 || dvKaiinChosei.Count > 0)
 			{
 				string where_kaiin = $"1 = 1";
 
@@ -171,28 +178,29 @@ namespace App
 				if (toZai != 0) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FKaiin_TypeZaiseki} <= {toZai}";
 
 				// 条件:医療機関
-				//IryoKikan fromIryo = AppGlobal.IryoKikans.Get(Cast.Int(fromIryoId));
-				//IryoKikan toIryo = AppGlobal.IryoKikans.Get(Cast.Int(toIryoId));
+				IryoKikan fromIryo = AppGlobal.IryoKikans.Get(Cast.Int(fromIryoId));
+				IryoKikan toIryo = AppGlobal.IryoKikans.Get(Cast.Int(toIryoId));
 
-				//// コードの指定が降順の場合の対応
-				//if (fromIryo != null && toIryo != null && fromKaiin.CD > toIryo.CD)
-				//{
-				//	IryoKikan ir = fromIryo;
-				//	fromIryo = toIryo;
-				//	toIryo = ir;
-				//}
+				// コードの指定が降順の場合の対応
+				if (fromIryo != null && toIryo != null && fromIryo.CD > toIryo.CD)
+				{
+					IryoKikan ir = fromIryo;
+					fromIryo = toIryo;
+					toIryo = ir;
+				}
 
-				//if (fromIryo != null) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FID_Iryokikan} >= {fromIryo.CD}";
-				//if (toIryo != null) where_kaiin += $" AND {TableProp.t_kaiin}.{t_kaiin.FID_Iryokikan} <= {fromIryo.CD}";
+				if (fromIryo != null) where_kaiin += $" AND {TableProp.t_iryokikan}.{t_iryokikan.FIRK_Code} >= {fromIryo.CD}";
+				if (toIryo != null) where_kaiin += $" AND {TableProp.t_iryokikan}.{t_iryokikan.FIRK_Code} <= {toIryo.CD}";
 
 				// 会員情報
-				dvKaiin = new DBView(AppGlobal.DB.FillQuery($"SELECT {TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin} FROM {TableProp.t_kaiin} WHERE {where_kaiin}"));
+				string sqlstr = $"SELECT {TableProp.t_kaiin}.{t_kaiin.FCD_Kaiin} FROM {TableProp.t_kaiin} LEFT OUTER JOIN {TableProp.t_iryokikan} ON {TableProp.t_kaiin}.{t_kaiin.FID_Iryokikan} = {TableProp.t_iryokikan}.{t_iryokikan.FID_Iryokikan}";
+				dvKaiin = new DBView(AppGlobal.DB.FillQuery($"{sqlstr} WHERE {where_kaiin}"));
 
 				// 対象月
 				string selected_ym = AppDate.GetYearMonthSeirekiSlash(SelectedDateYM);
 				selectedMonth = Cast.Int(selected_ym.Substring(selected_ym.Length - 2));
 
-				// スタッフ別に集計しておく
+				// 会員別に集計しておく
 				SortedDictionary<int, List<KaihiData>> dics  = new SortedDictionary<int, List<KaihiData>>();
 				dics_shiharaiKoza = new SortedDictionary<int, List<eShiharai>>();
 				dics_costTotal = new SortedDictionary<int, Decimal?>();
@@ -218,41 +226,85 @@ namespace App
 							dics_costTotalMonth.Add(kin.CD, new Dictionary<int, Decimal?>());
 						}
 
-						KaihiData kd;
-						
 						// 参加医会データ
-						for (int k = 0; k < kin.Kaihis.Count; k++)
+						KaihiData kd;
+						for (int j = 0; j < kin.Kaihis.Count; j++)
 						{
 							// 会費情報の格納
 							kd = new KaihiData();
 							kd.Kaiin = kin;
-							kd.KaihiName = kin.Kaihis[k].XRow.Kaihi_Name_Null;
+							kd.KaihiName = kin.Kaihis[j].XRow.Kaihi_Name_Null;
 
 							kd.CostTotalKaihi = 0;
-							for (int j = 1; j <= 12; j++)
+							for (int k = 1; k <= 12; k++)
 							{
-								kd.dics_cost[j] = 0m; // 月額の初期化
-								if (j >= selectedMonth)
+								kd.dics_cost[k] = 0m; // 月額の初期化
+								if (k >= selectedMonth)
 								{
 									// 基準月から印字あり？
-									kd.dics_cost[j] = kin.Kaihis[k].GetCost(j); // 月額
-									kd.CostTotalKaihi += kin.Kaihis[k].GetCost(j); // 該当月を行合計に含める
-									AddFee(dics_costTotalMonth, kin.CD, j, kin.Kaihis[k].GetCost(j)); // 該当月の列合計に含める
+									kd.dics_cost[k] = kin.Kaihis[j].GetCost(k); // 月額
+									kd.CostTotalKaihi += kin.Kaihis[j].GetCost(k); // 該当月を行合計に含める
+									AddFee(dics_costTotalMonth, kin.CD, k, kin.Kaihis[j].GetCost(k)); // 該当月の列合計に含める
 								}
 							}
-							kd.BankIdx = (int)kin.GetShiharai(kin.Kaihis[k].ID);
+							kd.BankIdx = (int)kin.GetShiharai(kin.Kaihis[j].ID);
 
 							// 会員ごと会費リストへ追加
 							dics[kin.CD].Add(kd);
 
 							// 支払方法リストの処理
-							if (dics_shiharaiKoza[kin.CD].Contains(kin.GetShiharai(kin.Kaihis[k].ID)) == false)
+							if (dics_shiharaiKoza[kin.CD].Contains(kin.GetShiharai(kin.Kaihis[j].ID)) == false)
 							{
-								dics_shiharaiKoza[kin.CD].Add(kin.GetShiharai(kin.Kaihis[k].ID));
+								dics_shiharaiKoza[kin.CD].Add(kin.GetShiharai(kin.Kaihis[j].ID));
 							}
 
 							//  会費合計(全行)の処理
 							dics_costTotal[kin.CD] += kd.CostTotalKaihi;
+						}
+
+						// 調整額データ
+						KaihiData kd2;
+
+						dvKaiinChosei.RowFilterQuery($"{t_kaiin_chosei.FID_Kaiin} = {kin.ID}"); // 条件の会員でフィルタ
+						for (int j = 0; j < dvKaiinChosei.Count; j++)
+						{
+							t_kaiin_chosei tmprow = new t_kaiin_chosei(dvKaiinChosei[j]);
+
+							string selected_ym2 = AppDate.GetYearMonthSeirekiSlash(tmprow.KCS_DateYM);
+							int selectedMonth2 = Cast.Int(selected_ym2.Substring(selected_ym.Length - 2)); // 調整額の月
+
+							// 調整データの会費情報
+							Kaihi kh = AppGlobal.Kaihis.Get(tmprow.ID_Kaihi);
+
+							// 会費情報の格納
+							kd2 = new KaihiData();
+							kd2.Kaiin = kin;
+							kd2.KaihiName = kh.XRow.Kaihi_Name_Null; ;
+							kd2.CostTotalKaihi = 0;
+							for (int k = 1; k <= 12; k++)
+							{
+								kd2.dics_cost[k] = 0m; // 月額の初期化
+								if (k >= selectedMonth && k == selectedMonth2)
+								{
+									// 調整月が基準月以降
+									kd2.dics_cost[k] = tmprow.KCS_Cost; // 月額
+									kd2.CostTotalKaihi += tmprow.KCS_Cost; // 該当月を行合計に含める
+									AddFee(dics_costTotalMonth, kin.CD, k, tmprow.KCS_Cost); // 該当月の列合計に含める
+								}
+							}
+							kd2.BankIdx = (int)tmprow.KCS_Shiharai; // 支払 空ある？
+
+							// 会員ごと会費リストへ追加
+							dics[kin.CD].Add(kd2);
+
+							// 支払方法リストの処理
+							if (dics_shiharaiKoza[kin.CD].Contains(tmprow.KCS_Shiharai) == false)
+							{
+								dics_shiharaiKoza[kin.CD].Add(tmprow.KCS_Shiharai);
+							}
+
+							//  会費合計(全行)の処理
+							dics_costTotal[kin.CD] += kd2.CostTotalKaihi;
 						}
 					}
 				}
@@ -262,8 +314,6 @@ namespace App
 				// 出力用DBViewにデータ行を追加
 				foreach(var kvp in dics)
 				{
-//					kvp.Value.Sort((a, b) => a.Day - b.Day);
-
 					Kaiin kin = AppGlobal.Kaiins.GetCode(kvp.Key);
 
 					int line	= 0;
@@ -272,8 +322,6 @@ namespace App
 					{
 						KaihiData kd = kvp.Value[i];
 						DataRow nrow = null;
-
-						//string day = $"{kd.Day}";
 
 						if (no < LINE_MAX_PAGE)
 						{
@@ -294,7 +342,6 @@ namespace App
 						}
 
 						no++;
-						//if (no >= LINE_MAX_PAGE*2)
 						if (no >= LINE_MAX_PAGE)
 						{
 							page++;
@@ -334,7 +381,7 @@ namespace App
 			// 登録順のまま出力ビューへ反映
 			OutView = new DBView(dt);
 
-			// スタッフ別の最大ページ数を取得
+			// 会員別の最大ページ数を取得
 			for (int i = 0; i < OutView.Count; i++)
 			{
 				int id	 = Cast.Int(OutView[i][F_ID_Kaiin]);
@@ -459,7 +506,6 @@ namespace App
 				}
 
 				title = $"年間会費徴収予定通知書";
-				//title = $"{enumKbn.DTypeJob[(int)kin.XRow.STF_TypeJob]}手当明細書";
 
 				if (maxpages.ContainsKey(kin.ID) == true && maxpages[kin.ID] > 1)
 				{
@@ -600,21 +646,6 @@ namespace App
 			C1FlexReport rep = (C1FlexReport)sender;
 
 			int lineNo = (e.Page - 1) * LINE_MAX_PAGE + e.Line;
-
-			// 最後のLine
-			//ShapeField end1 = (ShapeField)rep.Fields[CRep10_KaihiYoteiYear.FFldLineEnd1];
-			//ShapeField end2 = (ShapeField)rep.Fields[CRep10_KaihiYoteiYear.FFldLineEnd2];
-
-			//if (e.Line == LINE_MAX_PAGE-1)
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 15;
-			//}
-			//else
-			//{
-			//	end1.Line.Width =
-			//	end2.Line.Width = 5;
-			//}
 		}
 
 		/// <summary>

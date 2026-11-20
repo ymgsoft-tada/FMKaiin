@@ -42,7 +42,6 @@ namespace App
 			this.iIryoTo = new App.UcTableComboBox();
 			this.iIryoFrom = new App.UcTableComboBox();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
-			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.iTaishoYM = new App.UcDate();
 			this.ycLabelEx33 = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.iZaisekiFrom)).BeginInit();
@@ -262,21 +261,6 @@ namespace App
 			this.ycLabelEx2.Text = "医療機関";
 			this.ycLabelEx2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
-			// ycLabelEx4
-			// 
-			this.ycLabelEx4.AutoSize = true;
-			this.ycLabelEx4.BackColor2 = System.Drawing.Color.Empty;
-			this.ycLabelEx4.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
-			this.ycLabelEx4.Font = new System.Drawing.Font("メイリオ", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-			this.ycLabelEx4.ForeShadowColor = System.Drawing.Color.Empty;
-			this.ycLabelEx4.IconImage = null;
-			this.ycLabelEx4.Location = new System.Drawing.Point(409, 210);
-			this.ycLabelEx4.Name = "ycLabelEx4";
-			this.ycLabelEx4.SingleBorderColor = System.Drawing.Color.Empty;
-			this.ycLabelEx4.Size = new System.Drawing.Size(70, 23);
-			this.ycLabelEx4.TabIndex = 399;
-			this.ycLabelEx4.Text = "※未実装";
-			// 
 			// iTaishoYM
 			// 
 			this.iTaishoYM.DisabledBackColor = System.Drawing.SystemColors.Control;
@@ -320,7 +304,6 @@ namespace App
 			this.ClientSize = new System.Drawing.Size(491, 262);
 			this.Controls.Add(this.iTaishoYM);
 			this.Controls.Add(this.ycLabelEx33);
-			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.iIryoTo);
 			this.Controls.Add(this.iIryoFrom);
 			this.Controls.Add(this.ycLabelEx2);
@@ -352,7 +335,6 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
 			this.Controls.SetChildIndex(this.iIryoFrom, 0);
 			this.Controls.SetChildIndex(this.iIryoTo, 0);
-			this.Controls.SetChildIndex(this.ycLabelEx4, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx33, 0);
 			this.Controls.SetChildIndex(this.iTaishoYM, 0);
 			((System.ComponentModel.ISupportInitialize)(this.iZaisekiFrom)).EndInit();
@@ -375,7 +357,6 @@ namespace App
 		private UcTableComboBox iIryoTo;
 		private UcTableComboBox iIryoFrom;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
-		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private UcDate iTaishoYM;
 		private YControlLabelEx.YcLabelEx ycLabelEx33;
 	}
