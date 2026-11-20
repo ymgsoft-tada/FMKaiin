@@ -152,6 +152,12 @@
     <Compile Include="FormCreateIfaxFile.Designer.cs">
       <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportMenu2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -542,6 +548,9 @@
     <EmbeddedResource Include="FormCreateIfaxFile.resx">
       <DependentUpon>FormCreateIfaxFile.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormReportMenu2.resx">
       <DependentUpon>FormReportMenu2.cs</DependentUpon>
     </EmbeddedResource>
@@ -855,9 +864,6 @@
     <None Include="Resources\button_hover_remote.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\button_normal_1Staff.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button_normal_2Calender.png" />
   </ItemGroup>
   <ItemGroup>
@@ -913,9 +919,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_normal_Remote.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\button_push_1Staff.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_push_2Calender.png" />
@@ -975,9 +978,6 @@
     <None Include="Resources\button_push_Remote.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\button_hover_1Staff.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\button_hover_2Calender.png" />
   </ItemGroup>
   <ItemGroup>
@@ -1012,9 +1012,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ribbon.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\label_nencho.png" />
@@ -1177,6 +1174,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_normal_Remote1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ribbon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_normal_1Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_push_1Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_hover_1Staff.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

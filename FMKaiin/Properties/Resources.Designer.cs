@@ -63,6 +63,16 @@ namespace App.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap button_hover_1Staff {
+            get {
+                object obj = ResourceManager.GetObject("button_hover_1Staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap button_hover_datafukkyu {
             get {
                 object obj = ResourceManager.GetObject("button_hover_datafukkyu", resourceCulture);
@@ -126,6 +136,16 @@ namespace App.Properties {
         internal static System.Drawing.Bitmap button_hover_remote1 {
             get {
                 object obj = ResourceManager.GetObject("button_hover_remote1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap button_normal_1Staff {
+            get {
+                object obj = ResourceManager.GetObject("button_normal_1Staff", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +233,16 @@ namespace App.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap button_push_1Staff {
+            get {
+                object obj = ResourceManager.GetObject("button_push_1Staff", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap button_push_DataFukkyu {
             get {
                 object obj = ResourceManager.GetObject("button_push_DataFukkyu", resourceCulture);
@@ -266,6 +296,16 @@ namespace App.Properties {
         internal static System.Drawing.Bitmap information {
             get {
                 object obj = ResourceManager.GetObject("information", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
+        internal static System.Drawing.Bitmap ribbon {
+            get {
+                object obj = ResourceManager.GetObject("ribbon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
