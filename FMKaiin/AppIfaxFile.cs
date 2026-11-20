@@ -63,10 +63,10 @@ namespace App
 
 		/// <summary>
 		/// 同一グループ内の同じ会員を1行にまとめるかどうかを取得、設定します。
-		/// true  : まとめる（既定）
-		/// false : 会員の会費（t_kaiin_kaihi）1件につき1行出力する
+		/// true  : まとめる
+		/// false : 会員の会費（t_kaiin_kaihi）1件につき1行出力する（既定。現行運用と同じ）
 		/// </summary>
-		public bool MergeDuplicate { get; set; } = true;
+		public bool MergeDuplicate { get; set; } = false; //¶ 2026/11/17 CC 先方回答により、全グループで現行通り複数行出力する
 
 		/// <summary>
 		/// ログ情報を取得します。
@@ -143,7 +143,7 @@ namespace App
 
 			int cnt_detail		= dt.Rows.Count;	//¶ 2026/11/11 CC 取得件数
 			int cnt_record		= 0;				//¶ 2026/11/11 CC 出力した宛先行数
-			int cnt_duplicate	= 0;				//¶ 2026/11/11 CC 同一グループ内の同じ会員としてまとめた件数
+			int cnt_duplicate	= 0;				//¶ 2026/11/17 CC 同一グループ内で同じ会員が重複した件数（2行目以降の行数）
 			int cnt_faxnone		= 0;				//¶ 2026/11/11 CC FAX番号が未登録の宛先行数
 
 			HashSet<string> keys	= new HashSet<string>();
@@ -163,12 +163,16 @@ namespace App
 				int id_kaiin	= Cast.Int(row[t_kaiin.FID_Kaiin]);
 				int cd_kaiin	= Cast.Int(row[t_kaiin.FCD_Kaiin]);
 
-				//¶ 2026/11/11 CC 同一グループ内の同じ会員は1行にまとめる
-				if (MergeDuplicate == true)
+				//¶ 2026/11/17 CC 同一グループ内の同じ会員（2行目以降）かどうか
+				bool duplicate = (keys.Add($"{cd_ifax}_{id_kaiin}") == false);
+
+				if (duplicate == true)
 				{
-					if (keys.Add($"{cd_ifax}_{id_kaiin}") == false)
+					cnt_duplicate++;
+
+					//¶ 2026/11/17 CC まとめる設定の場合は、2行目以降を出力しない
+					if (MergeDuplicate == true)
 					{
-						cnt_duplicate++;
 						continue;
 					}
 				}
@@ -183,7 +187,11 @@ namespace App
 					fax = FaxNone;
 					cnt_faxnone++;
 
-					Logs.Apend(LogTable.eStatus.Warning, $"グループ:{getGroupCd(cd_ifax)} 会員番号:{getKaiinCd(cd_kaiin)} {Cast.String(row[t_kaiin.FKaiin_Name]).Trim()} のFAX番号（{(sofu_shisetsu == true ? "施設" : "自宅")}）が未登録のため、{FaxNone}で出力しました。");
+					//¶ 2026/11/17 CC 複数行出力する場合も、警告は同一グループ内の同じ会員につき1回だけ表示する
+					if (duplicate == false)
+					{
+						Logs.Apend(LogTable.eStatus.Warning, $"グループ:{getGroupCd(cd_ifax)} 会員番号:{getKaiinCd(cd_kaiin)} {Cast.String(row[t_kaiin.FKaiin_Name]).Trim()} のFAX番号（{(sofu_shisetsu == true ? "施設" : "自宅")}）が未登録のため、{FaxNone}で出力しました。");
+					}
 				}
 
 				sb.Append(getGroupCd(cd_ifax));
@@ -213,11 +221,18 @@ namespace App
 			{
 				if (cnt_duplicate > 0)
 				{
-					Logs.Apend(LogTable.eStatus.None, $"同一グループ内で重複する会員{cnt_duplicate}件は1行にまとめました。");
+					if (MergeDuplicate == true)
+					{
+						Logs.Apend(LogTable.eStatus.None, $"同一グループ内で重複する会員{cnt_duplicate}件は1行にまとめました。");
+					}
+					else
+					{
+						Logs.Apend(LogTable.eStatus.None, $"同一グループ内で同じ会員の行が重複しています（2行目以降：{cnt_duplicate}行）。会費ごとに1行出力しています。");
+					}
 				}
 				if (cnt_faxnone > 0)
 				{
-					Logs.Apend(LogTable.eStatus.None, $"FAX番号が未登録の宛先は{cnt_faxnone}件です。");
+					Logs.Apend(LogTable.eStatus.None, $"FAX番号が未登録の宛先は{cnt_faxnone}行です。");
 				}
 				Logs.Apend(LogTable.eStatus.None, $"{groups.Count}グループ、{cnt_record}件の宛先を作成しました。");
 
