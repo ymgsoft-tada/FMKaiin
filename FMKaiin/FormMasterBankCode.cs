@@ -1,6 +1,7 @@
 ﻿using C1.Win.C1TrueDBGrid;
 using ComponentDB;
 using ComponentGGridDB;
+using ComponentIO;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,6 +9,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -93,17 +95,149 @@ namespace App
 
 			gcom = new GGridDBCommon(grid, this);
 			
-			gcom.Add(new GGridDBText(t_bank_code.FBCD_Code, "銀行ｺｰﾄﾞ", 0.15f, GGridDBCellDisp.Right));
-			gcom.Add(new GGridDBText(t_bank_code.FBCD_FullName, "銀行名（正式名称）", 0.35f));
-			gcom.Add(new GGridDBText(t_bank_code.FBCD_CodeShiten, "支店ｺｰﾄﾞ", 0.15f, GGridDBCellDisp.Right));
+			gcom.Add(new GGridDBText(t_bank_code.FBCD_Code, "銀行ｺｰﾄﾞ", 0.10f, GGridDBCellDisp.Right));
+			gcom.SetUnboundColumnFetch(ubCode); //¶ 2026/11/20 CC 4桁ゼロ埋めで表示
+			gcom.Add(new GGridDBText(t_bank_code.FBCD_FullName, "銀行名（正式名称）", 0.45f));
+			gcom.Add(new GGridDBText(t_bank_code.FBCD_CodeShiten, "支店ｺｰﾄﾞ", 0.10f, GGridDBCellDisp.Right));
+			gcom.SetUnboundColumnFetch(ubCodeShiten); //¶ 2026/11/20 CC 3桁ゼロ埋めで表示
 			gcom.Add(new GGridDBText(t_bank_code.FBCD_NameShiten, "支店名", 0.0f));
 
 			gcom.EndAdd(dvBankCode);
 
+			//¶ 2026/11/20 CC 検索欄の入力ルール（FormSelectorBankCodeと同じ）
+			AppDbRule.SetControlByRule(iBank, t_bank_code.FBCD_Name);
+			AppDbRule.SetControlByRule(iShiten, t_bank_code.FBCD_NameShiten);
+
 			//■ イベント
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
+			iBank.TextChanged += iBank_TextChanged;
+			iShiten.TextChanged += iShiten_TextChanged;
+			btnClear.Click += btnClear_Click;
 
 			base.FormFrame_Shown(sender, e);
+		}
+
+		/// <summary>
+		/// grid 銀行コードの文字列編集（4桁ゼロ埋め）
+		/// </summary>
+		string ubCode(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_bank_code xrow = new t_bank_code(dvBankCode[e.Row]);
+
+			return Cast.String(xrow.BCD_Code).PadLeft(4, '0');
+		}
+
+		/// <summary>
+		/// grid 支店コードの文字列編集（3桁ゼロ埋め）
+		/// </summary>
+		string ubCodeShiten(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_bank_code xrow = new t_bank_code(dvBankCode[e.Row]);
+
+			return Cast.String(xrow.BCD_CodeShiten).PadLeft(3, '0');
+		}
+
+		/// <summary>
+		/// フィルタ変更（検索条件は FormSelectorBankCode と同じ）
+		/// </summary>
+		void viewFilter()
+		{
+			string filter = "";
+
+			if (iBank.Text != "")
+			{
+				string str = iBank.Text;
+				string str_numchk = StrConv.ToNarrow(str);
+
+				if (Regex.IsMatch(str_numchk, @"^[-.0-9]+$") == true)
+				{
+					//¶ 2026/11/20 CC 数値のみならコード検索
+					filter += string.Format("({0} = {1})", t_bank_code.FBCD_Code, str_numchk);
+				}
+				else
+				if (str.Length == 1)
+				{
+					//¶ 2026/11/20 CC 一文字だけなら先頭一致
+					filter += string.Format("({0} OR {1})",
+												DBQuery.CreateLikeKanaString(t_bank_code.FBCD_FullName, str),
+												DBQuery.CreateLikeKanaString(t_bank_code.FBCD_NameFurigana, str));
+				}
+				else
+				{
+					//¶ 2026/11/20 CC 部分一致
+					filter += string.Format("({0} OR {1})",
+											DBQuery.CreateLikeKanaString(t_bank_code.FBCD_FullName, str, true),
+											DBQuery.CreateLikeKanaString(t_bank_code.FBCD_NameFurigana, str, true));
+				}
+			}
+			if (iShiten.Text != "")
+			{
+				string str = iShiten.Text;
+				string str_numchk = StrConv.ToNarrow(str);
+
+				if (filter != "") filter += " AND ";
+
+				if (Regex.IsMatch(str_numchk, @"^[-.0-9]+$") == true)
+				{
+					//¶ 2026/11/20 CC 数値のみならコード検索
+					filter += string.Format("({0} = {1})", t_bank_code.FBCD_CodeShiten, str_numchk);
+				}
+				else
+				if (str.Length == 1)
+				{
+					//¶ 2026/11/20 CC 一文字だけなら先頭一致
+					filter += string.Format("({0} OR {1})",
+												DBQuery.CreateLikeKanaString(t_bank_code.FBCD_NameShiten, str),
+												DBQuery.CreateLikeKanaString(t_bank_code.FBCD_NameShitenFurigana, str));
+				}
+				else
+				{
+					//¶ 2026/11/20 CC 部分一致
+					filter += string.Format("({0} OR {1})",
+											DBQuery.CreateLikeKanaString(t_bank_code.FBCD_NameShiten, str, true),
+											DBQuery.CreateLikeKanaString(t_bank_code.FBCD_NameShitenFurigana, str, true));
+				}
+			}
+
+			dvBankCode.RowFilterQuery(filter);
+		}
+
+		/// <summary>
+		/// 銀行検索 値変更
+		/// </summary>
+		private void iBank_TextChanged(object sender, EventArgs e)
+		{
+			viewFilter();
+			grid.Row = 0;
+		}
+
+		/// <summary>
+		/// 支店検索 値変更
+		/// </summary>
+		private void iShiten_TextChanged(object sender, EventArgs e)
+		{
+			viewFilter();
+			grid.Row = 0;
+		}
+
+		/// <summary>
+		/// 検索クリアボタンクリック
+		/// </summary>
+		private void btnClear_Click(object sender, EventArgs e)
+		{
+			iBank.TextChanged -= iBank_TextChanged;
+			iShiten.TextChanged -= iShiten_TextChanged;
+
+			iBank.Clear();
+			iShiten.Clear();
+
+			viewFilter();
+			grid.Row = 0;
+
+			iBank.Select();
+
+			iBank.TextChanged += iBank_TextChanged;
+			iShiten.TextChanged += iShiten_TextChanged;
 		}
 
 		protected override void FormFrame_FormClosing(object sender, FormClosingEventArgs e)

@@ -386,7 +386,7 @@ namespace App
 			this.ycLabelEx1.SingleBorderColor = System.Drawing.Color.Empty;
 			this.ycLabelEx1.Size = new System.Drawing.Size(100, 25);
 			this.ycLabelEx1.TabIndex = 428;
-			this.ycLabelEx1.Text = "医療機関コード";
+			this.ycLabelEx1.Text = "コード";
 			this.ycLabelEx1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// iCode
@@ -783,7 +783,7 @@ namespace App
 			// 
 			this.btnKamokuAdd.Location = new System.Drawing.Point(840, 115);
 			this.btnKamokuAdd.Name = "btnKamokuAdd";
-			this.btnKamokuAdd.Size = new System.Drawing.Size(56, 23);
+			this.btnKamokuAdd.Size = new System.Drawing.Size(56, 28);
 			this.btnKamokuAdd.TabIndex = 250;
 			this.btnKamokuAdd.TabStop = false;
 			this.btnKamokuAdd.Text = "追加";
@@ -791,9 +791,9 @@ namespace App
 			// 
 			// btnKamokuDel
 			// 
-			this.btnKamokuDel.Location = new System.Drawing.Point(840, 140);
+			this.btnKamokuDel.Location = new System.Drawing.Point(841, 149);
 			this.btnKamokuDel.Name = "btnKamokuDel";
-			this.btnKamokuDel.Size = new System.Drawing.Size(56, 23);
+			this.btnKamokuDel.Size = new System.Drawing.Size(56, 28);
 			this.btnKamokuDel.TabIndex = 260;
 			this.btnKamokuDel.TabStop = false;
 			this.btnKamokuDel.Text = "削除";

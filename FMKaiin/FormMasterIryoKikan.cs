@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using C1.Win.C1TrueDBGrid;
@@ -36,10 +37,43 @@ namespace App
 		}
 
 		/// <summary>
+		/// キー操作
+		/// </summary>
+		protected override void FormFrame_KeyDown(object sender, KeyEventArgs e)
+		{
+			//¶ 2026/11/20 CC 他のマスター一覧と同じ処理。一覧でEnterを押すと訂正を開く
+			//■ ファンクションキーの標準ショートカットの抑止
+			e.Handled = base.Patcher_CheckShortcutForKillingWindowsAction(e.KeyCode, e.Alt);
+
+			//¶ 2026/11/20 CC 処理が必要かどうかチェック。
+			if (base.CheckEnabledFormKeyPreview(e.KeyCode) == true)
+			{
+				return;
+			}
+			if (this.ActiveControl == null)
+			{
+				return;
+			}
+
+			switch (e.KeyCode)
+			{
+				case Keys.Enter:
+					if (this.ActiveControl == grid)
+					{
+						rowEdit();
+					}
+					break;
+			}
+		}
+
+		/// <summary>
 		/// 初回描画処理
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			//¶ 2026/11/20 CC 名称検索欄の入力ルール
+			AppDbRule.SetControlByRule(iNameIryo, t_iryokikan.FIRK_Name);
+
 			// コンボボックス
 			// 手動セット
 			iKbnTaikai.ExBeginUpdate();
@@ -58,10 +92,12 @@ namespace App
 			AppGridCommon.StyleSet(grid);
 
 			gcom = new GGridDBCommon(grid, this);
-			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Code, "コード", 0.15f, GGridDBCellDisp.Right));
-			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Name, "施設正式名", 0.6f));
-			gcom.Add(new GGridDBText(t_iryokikan.FIRK_KumiCode, "組コード", 0.15f, GGridDBCellDisp.Center));
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Code, "コード", 0.10f, GGridDBCellDisp.Right));
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_Name, "施設正式名", 0.5f));
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_KumiCode, "組コード", 0.15f, GGridDBCellDisp.Left));
 			gcom.SetUnboundColumnFetch(ubKumiCode);
+			gcom.Add(new GGridDBText(t_iryokikan.FIRK_KaisetsuShutai, "開設主体", 0.15f)); //¶ 2026/11/20 CC 開設主体の列を追加（IDを名称に変換して表示）
+			gcom.SetUnboundColumnFetch(ubKaisetsuShutai);
 			gcom.Add(new GGridDBText(t_iryokikan.FIRK_TaikaiKbn, "退会区分", 0, GGridDBCellDisp.Center));
 			gcom.SetUnboundColumnFetch(ubTaikaiKbn);
 			gcom.EndAdd(dvKikan);
@@ -76,9 +112,31 @@ namespace App
 			iKbnTaikai.SelectedIndexChanged += iKbnTaikai_SelectedIndexChanged;
 			iKumiCode.SelectIndexChanged += iKumiCode_SelectIndexChanged;
 			iCodeIryo.TextChanged += iCodeIryo_TextChanged;
+			iNameIryo.TextChanged += iNameIryo_TextChanged;
 			btnClear.Click += btnClear_Click;
 
 			base.FormFrame_Shown(sender, e);
+		}
+
+		/// <summary>
+		/// grid 開設主体の文字列編集
+		/// </summary>
+		string ubKaisetsuShutai(GGridDBBase col, UnboundColumnFetchEventArgs e)
+		{
+			t_iryokikan xrow = new t_iryokikan(dvKikan[e.Row]);
+
+			//¶ 2026/11/20 CC 開設主体情報の取得
+			Kaisetsushutai ks = AppGlobal.Kaisetsushutais.Get(Cast.Int(xrow.IRK_KaisetsuShutai_Null));
+
+			//¶ 2026/11/20 CC 該当情報が存在したら名称をreturn
+			if (ks != null)
+			{
+				return ks.XRow.KST_Name_Null;
+			}
+			else
+			{
+				return null;
+			}
 		}
 
 		string ubKumiCode(GGridDBBase col, UnboundColumnFetchEventArgs e)
@@ -127,20 +185,31 @@ namespace App
 		private void btnClear_Click(object sender, EventArgs e)
 		{
 			iCodeIryo.TextChanged -= iCodeIryo_TextChanged;
+			iNameIryo.TextChanged -= iNameIryo_TextChanged;
 			iKbnTaikai.SelectedIndexChanged -= iKbnTaikai_SelectedIndexChanged;
 			iKumiCode.SelectIndexChanged -= iKumiCode_SelectIndexChanged;
 
 			// 条件初期化
 			iCodeIryo.ResetText();
-			iKbnTaikai.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
+			iNameIryo.ResetText();
+			iKbnTaikai.ExSetSelectedIndexByValue("all"); //¶ 2026/11/20 CC 先頭の空欄項目に戻す（SelectAllValueは項目に無く未選択になっていた）
 			iKumiCode.ComboBox.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
 
 			// 初期条件でフィルタ
 			changeFilter();
 
 			iCodeIryo.TextChanged += iCodeIryo_TextChanged;
+			iNameIryo.TextChanged += iNameIryo_TextChanged;
 			iKbnTaikai.SelectedIndexChanged += iKbnTaikai_SelectedIndexChanged;
 			iKumiCode.SelectIndexChanged += iKumiCode_SelectIndexChanged;
+		}
+
+		/// <summary>
+		/// 名称 値変更
+		/// </summary>
+		private void iNameIryo_TextChanged(object sender, EventArgs e)
+		{
+			changeFilter();
 		}
 
 		/// <summary>
@@ -193,12 +262,22 @@ namespace App
 				filter += $"{t_iryokikan.FIRK_KumiCode} = {kumiId}";
 			}
 
-			// 医療機関コードの検索(現時点は、完全一致)
-			int iryoKikanCd = Cast.Int(iCodeIryo.Text);
-			if (iryoKikanCd != 0)
+			//¶ 2026/11/20 CC 医療機関コードの検索。前方一致に変更。数値列を文字列に変換してLIKEで比較する
+			string iryoKikanCd = StrConv.ToNarrow(iCodeIryo.Text).Trim();
+			if (Regex.IsMatch(iryoKikanCd, @"^[0-9]+$") == true)
 			{
 				if (filter != "") filter += " AND ";
-				filter += string.Format("({0} = {1})", t_iryokikan.FIRK_Code, iryoKikanCd);
+				filter += $"(CONVERT({t_iryokikan.FIRK_Code}, 'System.String') LIKE '{iryoKikanCd}%')";
+			}
+
+			//¶ 2026/11/20 CC 名称の検索（施設正式名・施設カナ・通称のいずれかに部分一致）
+			if (iNameIryo.Text != "")
+			{
+				if (filter != "") filter += " AND ";
+				filter += string.Format("({0} OR {1} OR {2})",
+											DBQuery.CreateLikeKanaString(t_iryokikan.FIRK_Name, iNameIryo.Text, true),
+											DBQuery.CreateLikeKanaString(t_iryokikan.FIRK_Kana, iNameIryo.Text, true),
+											DBQuery.CreateLikeKanaString(t_iryokikan.FIRK_Tsusho, iNameIryo.Text, true));
 			}
 
 			// フィルタ適用

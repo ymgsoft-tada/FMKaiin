@@ -34,7 +34,14 @@ namespace App
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.iBank = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
+			this.iShiten = new GControlGcTextBoxEx.GcTextBoxEx();
+			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
+			this.btnClear = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iBank)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.iShiten)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// grid
@@ -42,7 +49,7 @@ namespace App
 			this.grid.CaptionHeight = 16;
 			this.grid.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。";
 			this.grid.Images.Add(((System.Drawing.Image)(resources.GetObject("grid.Images"))));
-			this.grid.Location = new System.Drawing.Point(24, 63);
+			this.grid.Location = new System.Drawing.Point(24, 93);
 			this.grid.Name = "grid";
 			this.grid.PreviewInfo.Caption = "印刷プレビューウィンドウ";
 			this.grid.PreviewInfo.Location = new System.Drawing.Point(0, 0);
@@ -53,7 +60,7 @@ namespace App
 			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(502, 413);
+			this.grid.Size = new System.Drawing.Size(664, 413);
 			this.grid.TabIndex = 46;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
@@ -88,17 +95,89 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.Location = new System.Drawing.Point(0, 493);
+			this.funckey.Location = new System.Drawing.Point(0, 523);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(538, 25);
+			this.funckey.Size = new System.Drawing.Size(700, 25);
 			this.funckey.TabIndex = 43;
 			this.funckey.Text = "gcFunctionKey1";
-			// 
+			//
+			// iBank
+			//
+			this.iBank.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iBank.ExFocusHighlight = true;
+			this.iBank.ImeStr = "";
+			this.iBank.Location = new System.Drawing.Point(98, 62);
+			this.iBank.Name = "iBank";
+			this.iBank.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iBank.Size = new System.Drawing.Size(180, 23);
+			this.iBank.TabIndex = 47;
+			//
+			// ycLabelEx2
+			//
+			this.ycLabelEx2.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx2.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx2.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx2.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx2.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx2.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx2.IconImage = null;
+			this.ycLabelEx2.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx2.Location = new System.Drawing.Point(24, 62);
+			this.ycLabelEx2.Name = "ycLabelEx2";
+			this.ycLabelEx2.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx2.Size = new System.Drawing.Size(71, 23);
+			this.ycLabelEx2.TabIndex = 48;
+			this.ycLabelEx2.Text = "銀行検索";
+			this.ycLabelEx2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			//
+			// iShiten
+			//
+			this.iShiten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+			this.iShiten.ExFocusHighlight = true;
+			this.iShiten.ImeStr = "";
+			this.iShiten.Location = new System.Drawing.Point(363, 62);
+			this.iShiten.Name = "iShiten";
+			this.iShiten.SingleBorderColor = System.Drawing.Color.DarkGray;
+			this.iShiten.Size = new System.Drawing.Size(180, 23);
+			this.iShiten.TabIndex = 49;
+			//
+			// ycLabelEx3
+			//
+			this.ycLabelEx3.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx3.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx3.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx3.Font = new System.Drawing.Font("メイリオ", 9.75F);
+			this.ycLabelEx3.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx3.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx3.IconImage = null;
+			this.ycLabelEx3.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx3.Location = new System.Drawing.Point(292, 62);
+			this.ycLabelEx3.Name = "ycLabelEx3";
+			this.ycLabelEx3.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx3.Size = new System.Drawing.Size(69, 23);
+			this.ycLabelEx3.TabIndex = 50;
+			this.ycLabelEx3.Text = "支店検索";
+			this.ycLabelEx3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			//
+			// btnClear
+			//
+			this.btnClear.Location = new System.Drawing.Point(589, 59);
+			this.btnClear.Name = "btnClear";
+			this.btnClear.Size = new System.Drawing.Size(99, 28);
+			this.btnClear.TabIndex = 51;
+			this.btnClear.Text = "検索クリア";
+			this.btnClear.UseVisualStyleBackColor = true;
+			//
 			// FormMasterBankCode
-			// 
+			//
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(538, 518);
+			this.ClientSize = new System.Drawing.Size(700, 548);
+			this.Controls.Add(this.btnClear);
+			this.Controls.Add(this.iShiten);
+			this.Controls.Add(this.ycLabelEx3);
+			this.Controls.Add(this.iBank);
+			this.Controls.Add(this.ycLabelEx2);
 			this.Controls.Add(this.grid);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.ycLabelEx1);
@@ -114,7 +193,14 @@ namespace App
 			this.Controls.SetChildIndex(this.ycLabelEx1, 0);
 			this.Controls.SetChildIndex(this.lblTitle, 0);
 			this.Controls.SetChildIndex(this.grid, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
+			this.Controls.SetChildIndex(this.iBank, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx3, 0);
+			this.Controls.SetChildIndex(this.iShiten, 0);
+			this.Controls.SetChildIndex(this.btnClear, 0);
 			((System.ComponentModel.ISupportInitialize)(this.grid)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iBank)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.iShiten)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -125,5 +211,10 @@ namespace App
         private YControlLabelEx.YcLabelEx lblTitle;
         private YControlLabelEx.YcLabelEx ycLabelEx1;
         private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private GControlGcTextBoxEx.GcTextBoxEx iBank;
+		private YControlLabelEx.YcLabelEx ycLabelEx2;
+		private GControlGcTextBoxEx.GcTextBoxEx iShiten;
+		private YControlLabelEx.YcLabelEx ycLabelEx3;
+		private System.Windows.Forms.Button btnClear;
     }
 }

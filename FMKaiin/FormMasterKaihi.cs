@@ -74,6 +74,16 @@ namespace App
 			// 会費区分コード Enum
 			AppCombo.SetComboBox(iKbnKaihi, enumKbn.DTypeKaihi);
 
+			//¶ 2026/11/20 CC 検索表示コンボ（手動セット。FormMasterIryoKikanの退会区分と同じ作り）
+			iKbnUsed.ExBeginUpdate();
+			iKbnUsed.ExAddItem("", "all"); //¶ 2026/11/20 CC "すべて"代替
+			iKbnUsed.ExAddItem("表示", true);
+			iKbnUsed.ExAddItem("非表示", false);
+			iKbnUsed.ExEndUpdate();
+
+			//¶ 2026/11/20 CC 名称検索欄の入力ルール
+			AppDbRule.SetControlByRule(iNameKaihi, t_kaihi.FKaihi_Name);
+
 			//AppGlobal.InitKaihi(); // メモ:FormFrame_FormClosing()内のInitはここでもよい
 
 			// 初期選択値
@@ -88,22 +98,23 @@ namespace App
 
 			gcom = new GGridDBCommon(grid, this);
 
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_KaihiType, "会費区分", 80));
+			//¶ 2026/11/20 CC 列幅を見直し。備考は全件が空のため右端（残り幅）へ移動
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_KaihiType, "区分", 80));
 			gcom.SetUnboundColumnFetch(ubKaihiKbn);
-			gcom.Add(new GGridDBText(t_kaihi.FCD_Kaihi, "会費コード", 75, GGridDBCellDisp.Right));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Name, "名称", 180));
+			gcom.Add(new GGridDBText(t_kaihi.FCD_Kaihi, "コード", 70, GGridDBCellDisp.Right));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Name, "名称", 200));
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_ShortName, "略称", 90));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Biko, "備考", 120));
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_GunCode, "会費群", 60));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_SearchUsed, "検索", 50));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_SearchUsed, "検索表示", 70));
 			gcom.SetUnboundColumnFetch(ubUsed);
 			gcom.SetCellDisp(GGridDBCellDisp.Center);
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCode, "銀行コード", 60));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCode, "銀行名", 90));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCode, "銀行名", 130));
 			gcom.SetUnboundColumnFetch(ubBankName);
 //			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCodeShiten, "支店コード", 60));
-			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCodeShiten, "支店名", 0));
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_BankCodeShiten, "支店名", 130));
 			gcom.SetUnboundColumnFetch(ubBankNameShiten);
+			gcom.Add(new GGridDBText(t_kaihi.FKaihi_Biko, "備考", 0));
 
 			gcom.EndAdd(dvKaihi);
 
@@ -115,6 +126,8 @@ namespace App
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
 			iKbnKaihi.SelectedIndexChanged += iKbnKaihi_SelectedIndexChanged;
 			iCodeKaihi.TextChanged += iCodeKaihi_TextChanged;
+			iNameKaihi.TextChanged += iNameKaihi_TextChanged;
+			iKbnUsed.SelectedIndexChanged += iKbnUsed_SelectedIndexChanged;
 			btnClear.Click += btnClear_Click;
 
 			base.FormFrame_Shown(sender, e);
@@ -138,16 +151,38 @@ namespace App
 		{
 			iKbnKaihi.SelectedIndexChanged -= iKbnKaihi_SelectedIndexChanged;
 			iCodeKaihi.TextChanged -= iCodeKaihi_TextChanged;
+			iNameKaihi.TextChanged -= iNameKaihi_TextChanged;
+			iKbnUsed.SelectedIndexChanged -= iKbnUsed_SelectedIndexChanged;
 
 			// 条件初期化
-			iKbnKaihi.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
+			iKbnKaihi.ExSetSelectedIndexByValue((int)eTypeKaihi.None); //¶ 2026/11/20 CC 先頭の空欄項目に戻す（SelectAllValueは項目に無く未選択になっていた）
 			iCodeKaihi.ResetText();
+			iNameKaihi.ResetText();
+			iKbnUsed.ExSetSelectedIndexByValue("all");
 
 			// 初期条件でフィルタ
 			changeFilter();
 
 			iKbnKaihi.SelectedIndexChanged += iKbnKaihi_SelectedIndexChanged;
 			iCodeKaihi.TextChanged += iCodeKaihi_TextChanged;
+			iNameKaihi.TextChanged += iNameKaihi_TextChanged;
+			iKbnUsed.SelectedIndexChanged += iKbnUsed_SelectedIndexChanged;
+		}
+
+		/// <summary>
+		/// 名称 値変更
+		/// </summary>
+		private void iNameKaihi_TextChanged(object sender, EventArgs e)
+		{
+			changeFilter();
+		}
+
+		/// <summary>
+		/// 検索表示コンボボックス変更
+		/// </summary>
+		private void iKbnUsed_SelectedIndexChanged(object sender, EventArgs e)
+		{
+			changeFilter();
 		}
 
 		/// <summary>
@@ -262,11 +297,26 @@ namespace App
 			// 部分一致検索にしたいため、文字列
 			// 1桁目は前方一致にしたい
 			// 数値用のCreateLikeKanaString()はない。部分一致はできるが前方一致の設定はない。
-			int kaihiCd = Cast.Int(iCodeKaihi.Text);
-			if (kaihiCd != 0)
+			//¶ 2026/11/20 CC 前方一致に変更。数値列を文字列に変換してLIKEで比較する
+			string kaihiCd = StrConv.ToNarrow(iCodeKaihi.Text).Trim();
+			if (Regex.IsMatch(kaihiCd, @"^[0-9]+$") == true)
 			{
 				if (filter != "") filter += " AND ";
-				filter += $"({t_kaihi.FCD_Kaihi} = {kaihiCd})";
+				filter += $"(CONVERT({t_kaihi.FCD_Kaihi}, 'System.String') LIKE '{kaihiCd}%')";
+			}
+
+			//¶ 2026/11/20 CC 名称の検索（部分一致）
+			if (iNameKaihi.Text != "")
+			{
+				if (filter != "") filter += " AND ";
+				filter += DBQuery.CreateLikeKanaString(t_kaihi.FKaihi_Name, iNameKaihi.Text, true);
+			}
+
+			//¶ 2026/11/20 CC 検索表示の検索
+			if (iKbnUsed.SelectedIndex > 0) //¶ 2026/11/20 CC 空欄選択以外
+			{
+				if (filter != "") filter += " AND ";
+				filter += $"{t_kaihi.FKaihi_SearchUsed} = {Cast.Bool(iKbnUsed.ExGetValue())}";
 			}
 
 			// フィルタ適用

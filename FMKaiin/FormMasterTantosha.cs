@@ -73,7 +73,7 @@ namespace App
 			gcom = new GGridDBCommon(grid, this);
 			gcom.Add(new GGridDBText(t_tantosha.FCD_Tanto, "コード", 0.15f, GGridDBCellDisp.Right));
 			gcom.Add(new GGridDBText(t_tantosha.FTNT_Name, "氏　名", 0.4f));
-			gcom.Add(new GGridDBText(t_tantosha.FTNT_Auth, "権限", 0.3f));
+			gcom.Add(new GGridDBText(t_tantosha.FTNT_Auth, "権限", 0.0f)); //¶ 2026/11/20 CC 残り幅いっぱいにして右端の空白をなくす
 			gcom.SetUnboundColumnFetch(ubAuth);
 //			gcom.Add(new GGridDBText(t_tantosha.FTNT_TypeShinryojo, "診療所", 0.0f, GGridDBCellDisp.Center));
 //			gcom.SetUnboundColumnFetch(ubShinryojo);

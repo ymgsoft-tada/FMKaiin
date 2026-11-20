@@ -67,14 +67,17 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			//¶ 2026/11/20 CC 名称検索欄の入力ルール
+			AppDbRule.SetControlByRule(iNameShinryoka, t_shinryoka.FSRK_Name);
+
 			// 追加時の動作仕様のため、再表示時(Shown()時)のみソートする(GetReFillTable()の利用)
-			dvShinryoka = new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_shinryoka, $"ORDER BY {t_shinryoka.FSRK_Code}"), this.BindingContext);
+			dvShinryoka =new DBView(AppGlobal.DB.GetReFillTable(TableProp.t_shinryoka, $"ORDER BY {t_shinryoka.FSRK_Code}"), this.BindingContext);
 
 			// グリッド作成
 			AppGridCommon.StyleSet(grid);
 
 			gcom = new GGridDBCommon(grid, this);
-			gcom.Add(new GGridDBText(t_shinryoka.FSRK_Code, "コード", 75));
+			gcom.Add(new GGridDBText(t_shinryoka.FSRK_Code, "コード", 75, GGridDBCellDisp.Right)); //¶ 2026/11/20 CC 他のマスターに合わせて右寄せ
 			gcom.Add(new GGridDBText(t_shinryoka.FSRK_Name, "名称", 0));
 //			gcom.SetUnboundColumnFetch(ubUsed);
 
@@ -88,6 +91,7 @@ namespace App
 			grid.MouseDoubleClick += grid_MouseDoubleClick;
 //			iKbnKaihi.SelectedIndexChanged += iKbnKaihi_SelectedIndexChanged;
 			iCodeShinryoka.TextChanged += iCodeShinryoka_TextChanged;
+			iNameShinryoka.TextChanged += iNameShinryoka_TextChanged;
 			btnClear.Click += btnClear_Click;
 
 			base.FormFrame_Shown(sender, e);
@@ -100,16 +104,27 @@ namespace App
 		{
 //			iKbnKaihi.SelectedIndexChanged -= iKbnKaihi_SelectedIndexChanged;
 			iCodeShinryoka.TextChanged -= iCodeShinryoka_TextChanged;
+			iNameShinryoka.TextChanged -= iNameShinryoka_TextChanged;
 
 			// 条件初期化
 //			iKbnKaihi.ExSetSelectedIndexByValue(AppCombo.SelectAllValue);
 			iCodeShinryoka.ResetText();
+			iNameShinryoka.ResetText();
 
 			// 初期条件でフィルタ
 			changeFilter();
 
 //			iKbnKaihi.SelectedIndexChanged += iKbnKaihi_SelectedIndexChanged;
 			iCodeShinryoka.TextChanged += iCodeShinryoka_TextChanged;
+			iNameShinryoka.TextChanged += iNameShinryoka_TextChanged;
+		}
+
+		/// <summary>
+		/// 名称 値変更
+		/// </summary>
+		private void iNameShinryoka_TextChanged(object sender, EventArgs e)
+		{
+			changeFilter();
 		}
 
 		/// <summary>
@@ -170,12 +185,20 @@ namespace App
 
 			// コードの検索
 			// 部分一致検索にしたいため、文字列
-			int cd = Cast.Int(iCodeShinryoka.Text);
-			if (cd != 0)
+			//¶ 2026/11/20 CC 前方一致に変更。数値列を文字列に変換してLIKEで比較する
+			string cd = StrConv.ToNarrow(iCodeShinryoka.Text).Trim();
+			if (Regex.IsMatch(cd, @"^[0-9]+$") == true)
 			{
 				if (filter != "") filter += " AND ";
 				// 数値のみならコード検索
-				filter += string.Format("({0} = {1})", t_shinryoka.FSRK_Code, cd);
+				filter += $"(CONVERT({t_shinryoka.FSRK_Code}, 'System.String') LIKE '{cd}%')";
+			}
+
+			//¶ 2026/11/20 CC 名称の検索（部分一致）
+			if (iNameShinryoka.Text != "")
+			{
+				if (filter != "") filter += " AND ";
+				filter += DBQuery.CreateLikeKanaString(t_shinryoka.FSRK_Name, iNameShinryoka.Text, true);
 			}
 
 			// フィルタ適用
