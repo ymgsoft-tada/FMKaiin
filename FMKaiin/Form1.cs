@@ -29,6 +29,15 @@ namespace App
 			btnMasterImport.Click += BtnMasterImport_Click; //¶ 2026/11/14 CC マスター取込
 			btnRep1.Click += BtnRep1_Click; // 2026/11/19 帳票メニュー用1
 			btnRep2.Click += BtnRep2_Click; // 2026/11/19 帳票メニュー用2
+			btnMamisImport.Click += BtnMamisImport_Click; //¶ 2026/11/21 CC MAMISデータ取込
+		}
+
+		private void BtnMamisImport_Click(object sender, EventArgs e)
+		{
+			FormMamisImport frm = new FormMamisImport();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
 		}
 
 		private void BtnMasterImport_Click(object sender, EventArgs e)

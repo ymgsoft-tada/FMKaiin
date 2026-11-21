@@ -110,6 +110,7 @@
     <Compile Include="AppFormFuncKey.cs" />
     <Compile Include="AppFunctionKey.cs" />
     <Compile Include="AppIfaxFile.cs" />
+    <Compile Include="AppMamisImport.cs" />
     <Compile Include="AppIfaxGroup.cs" />
     <Compile Include="AppIryoKikan.cs" />
     <Compile Include="AppGlobal.cs" />
@@ -277,6 +278,24 @@
     </Compile>
     <Compile Include="FormMasterShinryoka.designer.cs">
       <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMamisImport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMamisImport.Designer.cs">
+      <DependentUpon>FormMamisImport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMamisImport_DlgConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMamisImport_DlgConfirm.Designer.cs">
+      <DependentUpon>FormMamisImport_DlgConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMamisImport_DlgLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMamisImport_DlgLog.Designer.cs">
+      <DependentUpon>FormMamisImport_DlgLog.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterImport.cs">
       <SubType>Form</SubType>
@@ -520,6 +539,8 @@
     <Compile Include="XApp_t_kaiin_shinryoka.cs" />
     <Compile Include="XApp_t_kaisetsushutai.cs" />
     <Compile Include="XApp_t_kumicd.cs" />
+    <Compile Include="XApp_t_mamis_log.cs" />
+    <Compile Include="XApp_t_mamis_log_detail.cs" />
     <Compile Include="XApp_t_nitikbn.cs" />
     <Compile Include="XApp_t_shinryoka.cs" />
     <Compile Include="XApp_t_shisetsugyomu.cs" />
@@ -604,6 +625,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterShinryoka.resx">
       <DependentUpon>FormMasterShinryoka.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMamisImport.resx">
+      <DependentUpon>FormMamisImport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMamisImport_DlgConfirm.resx">
+      <DependentUpon>FormMamisImport_DlgConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMamisImport_DlgLog.resx">
+      <DependentUpon>FormMamisImport_DlgLog.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterImport.resx">
       <DependentUpon>FormMasterImport.cs</DependentUpon>

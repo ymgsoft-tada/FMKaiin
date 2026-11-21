@@ -121,6 +121,16 @@ namespace App
 		public const string t_kumicd = "t_kumicd";
 		
 		/// <summary>
+		/// t_mamis_log
+		/// </summary>
+		public const string t_mamis_log = "t_mamis_log";
+		
+		/// <summary>
+		/// t_mamis_log_detail
+		/// </summary>
+		public const string t_mamis_log_detail = "t_mamis_log_detail";
+		
+		/// <summary>
 		/// t_nitikbn
 		/// </summary>
 		public const string t_nitikbn = "t_nitikbn";

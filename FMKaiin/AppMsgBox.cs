@@ -260,6 +260,22 @@ namespace App
 		/// 何らかの理由で、Excelの作成に失敗しました。
 		/// </summary>
 		FailedExcelFile,
+		/// <summary>
+		/// {0}名の会員情報をMAMISのデータで更新します。よろしいですか？
+		/// </summary>
+		ExecMamisImport,
+		/// <summary>
+		/// 指定されたファイルは、MAMISの申請情報CSVではありません。
+		/// </summary>
+		NotMamisImportFile,
+		/// <summary>
+		/// 取込できる会員データがありません。
+		/// </summary>
+		NotFoundMamisImportData,
+		/// <summary>
+		/// MAMISデータの取込に失敗しました。\r\nデータベースは更新していません。
+		/// </summary>
+		FailedMamisImport,
 	};
 	
 	/// <summary>
@@ -533,6 +549,30 @@ namespace App
 				MessageBoxDefaultButton.Button1,
 				"エラー",
 				"何らかの理由で、Excelの作成に失敗しました。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.YesNo,
+				MessageBoxIcon.Question,
+				MessageBoxDefaultButton.Button2,
+				"確認",
+				"{0}名の会員情報をMAMISのデータで更新します。よろしいですか？"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Warning,
+				MessageBoxDefaultButton.Button1,
+				"警告",
+				"指定されたファイルは、MAMISの申請情報CSVではありません。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Information,
+				MessageBoxDefaultButton.Button1,
+				"確認",
+				"取込できる会員データがありません。"),
+			new AppMsgBoxData(
+				MessageBoxButtons.OK,
+				MessageBoxIcon.Warning,
+				MessageBoxDefaultButton.Button1,
+				"警告",
+				"MAMISデータの取込に失敗しました。\r\nデータベースは更新していません。"),
 		};
 	}
 	

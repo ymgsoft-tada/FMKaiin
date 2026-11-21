@@ -704,7 +704,7 @@ namespace App
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
 			this.Name = "FormMain";
-			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
 			this.Text = "Form2";
 			this.Controls.SetChildIndex(this.panel4, 0);
 			this.Controls.SetChildIndex(this.panel1, 0);

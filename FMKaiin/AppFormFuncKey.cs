@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -768,6 +768,10 @@ namespace App
 					"再入会",	
 					""),
 			new FuncKeyDefine(
+					Keys.F7,	
+					"MAMIS取込",	
+					""),
+			new FuncKeyDefine(
 					Keys.F8,	
 					"会費調整",	
 					""),
@@ -806,21 +810,25 @@ namespace App
 		/// </summary>
 		public readonly static FuncKeyDefine Rejoin = Functions[4];
 		/// <summary>
+		/// MAMIS取込
+		/// </summary>
+		public readonly static FuncKeyDefine ShowMamis = Functions[5];
+		/// <summary>
 		/// 会費調整
 		/// </summary>
-		public readonly static FuncKeyDefine ShowChosei = Functions[5];
+		public readonly static FuncKeyDefine ShowChosei = Functions[6];
 		/// <summary>
 		/// 印刷プレビュー
 		/// </summary>
-		public readonly static FuncKeyDefine Preview = Functions[6];
+		public readonly static FuncKeyDefine Preview = Functions[7];
 		/// <summary>
 		/// 在籍期間表示
 		/// </summary>
-		public readonly static FuncKeyDefine ShowZaiseki = Functions[7];
+		public readonly static FuncKeyDefine ShowZaiseki = Functions[8];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[8];
+		public readonly static FuncKeyDefine Close = Functions[9];
 	}
 	#endregion
 
@@ -1677,6 +1685,102 @@ namespace App
 		/// 閉じる
 		/// </summary>
 		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncMamisImport ***
+	/// <summary>
+	/// FuncMamisImportのファンクションキー定義クラス
+	/// </summary>
+	public class FuncMamisImport
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"履歴",	
+					""),
+			new FuncKeyDefine(
+					Keys.F11,	
+					"取込開始",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 履歴
+		/// </summary>
+		public readonly static FuncKeyDefine History = Functions[0];
+		/// <summary>
+		/// 取込開始
+		/// </summary>
+		public readonly static FuncKeyDefine Exec = Functions[1];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[2];
+	}
+	#endregion
+
+	#region *** FuncMamisImport_DlgConfirm ***
+	/// <summary>
+	/// FuncMamisImport_DlgConfirmのファンクションキー定義クラス
+	/// </summary>
+	public class FuncMamisImport_DlgConfirm
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F11,	
+					"実行",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 実行
+		/// </summary>
+		public readonly static FuncKeyDefine Exec = Functions[0];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncMamisImport_DlgLog ***
+	/// <summary>
+	/// FuncMamisImport_DlgLogのファンクションキー定義クラス
+	/// </summary>
+	public class FuncMamisImport_DlgLog
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[0];
 	}
 	#endregion
 

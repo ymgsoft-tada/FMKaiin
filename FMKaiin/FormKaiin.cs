@@ -348,6 +348,7 @@ namespace App
 			FuncKaiin.RowDelete.Execute = rowDelete;
 			FuncKaiin.CopyAdd.Execute = CopyAdd;
 			FuncKaiin.Rejoin.Execute = RejoinAdd;
+			FuncKaiin.ShowMamis.Execute = showMamis; //¶ 2026/11/21 CC MAMISデータ取込
 			FuncKaiin.ShowChosei.Execute = showChosei;
 			FuncKaiin.ShowZaiseki.Execute = showZaiseki;
 			FuncKaiin.Preview.Execute = preview;
@@ -364,6 +365,20 @@ namespace App
 			//appFuncKey.SetEnabled(FuncStaff.ShowMyno.Key, enabled);
 			//appFuncKey.SetVisible(FuncStaff.ShowMyno.Key, enabled);
 
+		}
+
+		/// <summary>
+		/// MAMISデータ取込
+		/// </summary>
+		void showMamis()
+		{
+			FormMamisImport frm = new FormMamisImport();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+
+			//¶ 2026/11/21 CC 取込は一覧と同じ会員テーブルを更新するため、表示だけ描き直す
+			grid.Refresh();
 		}
 
 		/// <summary>

@@ -130,7 +130,7 @@ namespace App
 			this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
 			this.grid.PropBag = resources.GetString("grid.PropBag");
 			this.grid.RowHeight = 14;
-			this.grid.Size = new System.Drawing.Size(907, 407);
+			this.grid.Size = new System.Drawing.Size(1046, 407);
 			this.grid.TabIndex = 10;
 			this.grid.UseCompatibleTextRendering = false;
 			// 
@@ -167,7 +167,7 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 541);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(964, 25);
+			this.funckey.Size = new System.Drawing.Size(1084, 25);
 			this.funckey.TabIndex = 75;
 			this.funckey.Text = "gcFunctionKey1";
 			// 
@@ -239,7 +239,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(964, 566);
+			this.ClientSize = new System.Drawing.Size(1084, 566);
 			this.Controls.Add(this.iSearchBirthday);
 			this.Controls.Add(this.ycLabelEx5);
 			this.Controls.Add(this.iSearchIsekiTorokuNo);

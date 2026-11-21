@@ -699,6 +699,25 @@ namespace App
 	}
 	
 	/// <summary>
+	/// [列挙] MAMIS取込変更区分
+	/// </summary>
+	public enum eMamisLogType
+	{
+		/// <summary>
+		/// 
+		/// </summary>
+		None = 0,
+		/// <summary>
+		/// 追加
+		/// </summary>
+		Add = 1,
+		/// <summary>
+		/// 置換
+		/// </summary>
+		Replace = 2,
+	}
+	
+	/// <summary>
 	/// [作成者 fj]
 	/// テーブル編集の際に使うクラスです。
 	/// </summary>
@@ -788,6 +807,10 @@ namespace App
 		/// eKaihiZokusei に対応した辞書です。
 		/// </summary>
 		public static Dictionary<int, string> DKaihiZokusei;
+		/// <summary>
+		/// eMamisLogType に対応した辞書です。
+		/// </summary>
+		public static Dictionary<int, string> DMamisLogType;
 		
 		/// <summary>
 		/// 列挙辞書を初期化します。
@@ -969,6 +992,11 @@ namespace App
 			DKaihiZokusei.Add((int)eKaihiZokusei.RenmeiKeni, "県医医師連盟");
 			DKaihiZokusei.Add((int)eKaihiZokusei.KumiGroup, "組グループ");
 			DKaihiZokusei.Add((int)eKaihiZokusei.Etc, "その他");
+			
+			DMamisLogType = new Dictionary<int, string>();
+			DMamisLogType.Add((int)eMamisLogType.None, "");
+			DMamisLogType.Add((int)eMamisLogType.Add, "追加");
+			DMamisLogType.Add((int)eMamisLogType.Replace, "置換");
 		}
 	}
 }

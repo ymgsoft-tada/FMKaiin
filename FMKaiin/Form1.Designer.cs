@@ -44,6 +44,7 @@ namespace App
 			this.btnMasterImport = new System.Windows.Forms.Button();
 			this.btnRep1 = new System.Windows.Forms.Button();
 			this.btnRep2 = new System.Windows.Forms.Button();
+			this.btnMamisImport = new System.Windows.Forms.Button();
 			this.SuspendLayout();
 			// 
 			// btnBasic
@@ -182,11 +183,21 @@ namespace App
 			this.btnRep2.Text = "帳票11-17";
 			this.btnRep2.UseVisualStyleBackColor = true;
 			// 
+			// btnMamisImport
+			// 
+			this.btnMamisImport.Location = new System.Drawing.Point(593, 202);
+			this.btnMamisImport.Name = "btnMamisImport";
+			this.btnMamisImport.Size = new System.Drawing.Size(139, 29);
+			this.btnMamisImport.TabIndex = 15;
+			this.btnMamisImport.Text = "MAMISデータ取込";
+			this.btnMamisImport.UseVisualStyleBackColor = true;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(806, 405);
+			this.Controls.Add(this.btnMamisImport);
 			this.Controls.Add(this.btnRep2);
 			this.Controls.Add(this.btnRep1);
 			this.Controls.Add(this.btnMasterImport);
@@ -223,6 +234,7 @@ namespace App
 			this.Controls.SetChildIndex(this.btnMasterImport, 0);
 			this.Controls.SetChildIndex(this.btnRep1, 0);
 			this.Controls.SetChildIndex(this.btnRep2, 0);
+			this.Controls.SetChildIndex(this.btnMamisImport, 0);
 			this.ResumeLayout(false);
 
 		}
@@ -244,5 +256,6 @@ namespace App
 		private System.Windows.Forms.Button btnMasterImport;
 		private System.Windows.Forms.Button btnRep1;
 		private System.Windows.Forms.Button btnRep2;
+		private System.Windows.Forms.Button btnMamisImport;
 	}
 }
