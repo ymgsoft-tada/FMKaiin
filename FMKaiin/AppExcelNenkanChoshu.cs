@@ -452,8 +452,8 @@ namespace App
 
 				eShiharai shiharai = hrow.Hiki_Shiharai;
 
-				//¶ 2026/11/16 CC 口座引落（口座①～③）だけを対象にする。現金も含める場合は、この判定を変える
-				if (isKoza(shiharai) == false)
+				//¶ 2026/11/24 CC 口座引落（口座①～③）と現金を対象にする。現金は口座とは別の1シートにまとめる（顧客回答）
+				if (isKoza(shiharai) == false && shiharai != eShiharai.Genkin)
 				{
 					continue;
 				}
@@ -464,7 +464,8 @@ namespace App
 					SheetData nsd = new SheetData();
 					nsd.Kaiin = ka;
 					nsd.Shiharai = shiharai;
-					nsd.SheetName = $"{ka.CodeString}_{key}";
+					//¶ 2026/11/24 CC 現金のシート名は「会員コード_現金」
+					nsd.SheetName = (shiharai == eShiharai.Genkin) ? $"{ka.CodeString}_現金" : $"{ka.CodeString}_{key}";
 					dics.Add(key, nsd);
 				}
 
