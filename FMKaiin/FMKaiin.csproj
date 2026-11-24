@@ -129,6 +129,65 @@
     <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
     <Compile Include="BankCodeManager.cs" />
+    <Compile Include="Controls\BorderedComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BufferedPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\BufferedTableLayoutPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CardTileButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\CardTileLayout.cs" />
+    <Compile Include="Controls\DropShadow.cs" />
+    <Compile Include="Controls\FunctionKeyBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\FunctionKeyBarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\GlassBackdropForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\GradientForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\IBackdropBlurSource.cs" />
+    <Compile Include="Controls\IconBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IconButtonBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\LayoutScale.cs" />
+    <Compile Include="Controls\MenuIconKind.cs" />
+    <Compile Include="Controls\MenuIconPainter.cs" />
+    <Compile Include="Controls\MenuTileButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\OrganizationLogoShape.cs" />
+    <Compile Include="Controls\PaintHelper.cs" />
+    <Compile Include="Controls\SectionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SingleLineLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SmoothPictureBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\StepHeaderLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\SideMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\ToolbarButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="DlgSplash2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -140,6 +199,12 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNewMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNewMain.Designer.cs">
+      <DependentUpon>FormNewMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCreateBankFile.cs">
       <SubType>Form</SubType>
@@ -159,6 +224,12 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain2.Designer.cs">
+      <DependentUpon>FormMain2.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportMenu2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -177,6 +248,10 @@
     <Compile Include="FormExcelMenu.Designer.cs">
       <DependentUpon>FormExcelMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHelpers\FontFallback.cs" />
+    <Compile Include="FormHelpers\FunctionKeyBinder.cs" />
+    <Compile Include="FormHelpers\ProcessingMonthChoices.cs" />
+    <Compile Include="FormHelpers\TitleBarColor.cs" />
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -556,6 +631,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNewMain.resx">
+      <DependentUpon>FormNewMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain2.resx">
+      <DependentUpon>FormMain2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormBg_Progress.resx">
       <DependentUpon>FormBg_Progress.cs</DependentUpon>
@@ -1216,6 +1297,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_hover_1Staff.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundWave2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

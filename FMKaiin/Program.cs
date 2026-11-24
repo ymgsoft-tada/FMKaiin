@@ -65,7 +65,7 @@ namespace App
 					//Form1 frm = new Form1();
 					//Form1 frm = new Form1();
 
-					FormMain frm = new FormMain();
+					FormMain2 frm = new FormMain2();
 
 					// メイン画面を最前面へ
 					AppApi.SetForegroundWindow(frm.Handle);

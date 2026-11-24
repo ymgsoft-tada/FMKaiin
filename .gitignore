@@ -2,3 +2,6 @@ bin/
 obj/
 .vs/
 packages/
+
+# Excel や Word がファイルを開いている間だけ作るロック ファイル
+~$*
