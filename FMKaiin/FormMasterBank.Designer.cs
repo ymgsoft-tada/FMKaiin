@@ -33,7 +33,7 @@ namespace App
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -90,15 +90,14 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 208);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(584, 25);
+			this.funckey.Size = new System.Drawing.Size(584, 66);
 			this.funckey.TabIndex = 43;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// FormMasterBank
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(584, 233);
+			this.ClientSize = new System.Drawing.Size(584, 274);
 			this.Controls.Add(this.grid);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.ycLabelEx1);
@@ -124,6 +123,6 @@ namespace App
         private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
         private YControlLabelEx.YcLabelEx lblTitle;
         private YControlLabelEx.YcLabelEx ycLabelEx1;
-        private GrapeCity.Win.Bars.GcFunctionKey funckey;
+        private App.Controls.FunctionKeyBar funckey;
     }
 }

@@ -520,10 +520,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterIryoKikan_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterIryoKikan_DlgEntry.Functions);
 
-			FuncMasterIryoKikan_DlgEntry.Save.Execute = saveClose;
-			FuncMasterIryoKikan_DlgEntry.Cancel.Execute = closeCancel;
+			funcKeys.On(FuncMasterIryoKikan_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncMasterIryoKikan_DlgEntry.Cancel, closeCancel);
 		}
 
 		/// <summary>

@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.gcShortcut1 = new GrapeCity.Win.Editors.GcShortcut(this.components);
@@ -66,9 +66,8 @@
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 260);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(711, 25);
+			this.funckey.Size = new System.Drawing.Size(711, 66);
 			this.funckey.TabIndex = 34;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -374,7 +373,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(711, 285);
+			this.ClientSize = new System.Drawing.Size(711, 326);
 			this.Controls.Add(this.iShitenCode);
 			this.Controls.Add(this.iBankCode);
 			this.Controls.Add(this.iKozaNo);
@@ -440,7 +439,7 @@
 
 		#endregion
 
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GrapeCity.Win.Editors.GcShortcut gcShortcut1;

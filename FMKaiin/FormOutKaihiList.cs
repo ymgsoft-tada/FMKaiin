@@ -52,10 +52,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutKaihiList.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutKaihiList.Functions);
 
-			FuncOutKaihiList.Preview.Execute = preview;
-			FuncOutKaihiList.Close.Execute = formClose;
+			funcKeys.On(FuncOutKaihiList.Preview, preview);
+			funcKeys.On(FuncOutKaihiList.Close, formClose);
 		}
 
 		/// <summary>

@@ -54,20 +54,24 @@ namespace App.Controls
         private const int DefaultBarHeight = 66;
         /// <summary>帯の上端から区切り線までの間隔。</summary>
         private const int SeparatorTop = 6;
-        /// <summary>ボタン本体の高さ。</summary>
-        private const int ButtonHeight = 36;
+        /// <summary>横並びのときの、ボタン本体の高さ。</summary>
+        private const int HorizontalButtonHeight = 36;
+        /// <summary>2 段のときの、ボタン本体の高さ。</summary>
+        private const int VerticalButtonHeight = 44;
+        /// <summary>2 段のときの、ボタン本体の幅の下限。名称が短いボタンが小さくなりすぎないようにする。</summary>
+        private const int VerticalButtonMinimumWidth = 60;
         /// <summary>帯の左右の端からボタンまでの余白。</summary>
         private const int SideMargin = 12;
         /// <summary>帯の上下の端からボタンまでの余白の下限。</summary>
-        private const int MinimumVerticalMargin = 3;
+        private const int MinimumVerticalMargin = 2;
 
         private const string FontFamilyName = "BIZ UDPゴシック";
         /// <summary><see cref="FontFamilyName"/> が PC に入っていない場合に使うフォント。</summary>
         private const string FallbackFontFamilyName = "Meiryo UI";
         /// <summary>名称の文字の大きさ（ポイント）。</summary>
-        private const float BaseFontSize = 10.5f;
+        private const float BaseFontSize = 9.5f;
         /// <summary>幅に収めるために文字を小さくするときの下限（ポイント）。</summary>
-        private const float MinimumFontSize = 9f;
+        private const float MinimumFontSize = 8.5f;
         /// <summary>幅に収めるために文字を小さくするときの刻み（ポイント）。</summary>
         private const float FontSizeStep = 0.5f;
         /// <summary>名称の文字に対する、バッジの文字の大きさの比率。</summary>
@@ -99,7 +103,7 @@ namespace App.Controls
         /// <summary>間隔と余白を詰めた並べ方。文字の大きさは標準のまま。</summary>
         private static readonly Density TightDensity = new Density(4, 8, 8, BaseFontSize);
         /// <summary>間隔と余白を限界まで詰め、文字も下限まで小さくした並べ方。ボタンが多い画面の最後の手段。</summary>
-        private static readonly Density CompactDensity = new Density(2, 5, 4, MinimumFontSize);
+        private static readonly Density CompactDensity = new Density(2, 4, 4, MinimumFontSize);
 
         /// <summary>
         /// キー メッセージを、ウィンドウに届く前に受け取るためのフィルター。
@@ -130,6 +134,7 @@ namespace App.Controls
         private bool _handleKeys = true;
         private bool _arranging;
         private Color _separatorColor = DefaultSeparatorColor;
+        private FunctionKeyButtonLayout _buttonLayout = FunctionKeyButtonLayout.Vertical;
 
         public FunctionKeyBar()
         {
@@ -168,6 +173,32 @@ namespace App.Controls
         {
             get { return _handleKeys; }
             set { _handleKeys = value; }
+        }
+
+        /// <summary>
+        /// ボタンの中での、キー名と名称の並べ方。既定は 2 段（キー名が上、名称が下）。
+        /// 2 段はボタンの幅が狭くて済むので、ボタンの多い画面でも名称が収まる。
+        /// </summary>
+        [Category("Appearance")]
+        [DefaultValue(FunctionKeyButtonLayout.Vertical)]
+        [Description("ボタンの中での、キー名と名称の並べ方。Vertical は 2 段（キー名が上、名称が下）、Horizontal は横並び。")]
+        public FunctionKeyButtonLayout ButtonLayout
+        {
+            get { return _buttonLayout; }
+            set
+            {
+                if (!Enum.IsDefined(typeof(FunctionKeyButtonLayout), value))
+                {
+                    throw new InvalidEnumArgumentException(nameof(value), (int)value, typeof(FunctionKeyButtonLayout));
+                }
+                if (_buttonLayout == value)
+                {
+                    return;
+                }
+                _buttonLayout = value;
+                PerformLayout();
+                Invalidate(true);
+            }
         }
 
         /// <summary>
@@ -345,7 +376,8 @@ namespace App.Controls
             int areaHeight = Height - areaTop;
             int shadowHeight = FunctionKeyBarButton.GetControlHeight(0, scale);
             int maxSurfaceHeight = areaHeight - (int)Math.Round(MinimumVerticalMargin * scale) * 2 - shadowHeight;
-            int surfaceHeight = Math.Max(0, Math.Min((int)Math.Round(ButtonHeight * scale), maxSurfaceHeight));
+            int buttonHeight = _buttonLayout == FunctionKeyButtonLayout.Vertical ? VerticalButtonHeight : HorizontalButtonHeight;
+            int surfaceHeight = Math.Max(0, Math.Min((int)Math.Round(buttonHeight * scale), maxSurfaceHeight));
             int controlHeight = FunctionKeyBarButton.GetControlHeight(surfaceHeight, scale);
             int top = areaTop + (areaHeight - controlHeight) / 2;
 
@@ -397,15 +429,19 @@ namespace App.Controls
         private int[] ApplyDensity(List<FunctionKeyBarButton> buttons, Density density, float scale)
         {
             Font[] fonts = GetFonts(density.FontSize);
+            int minimumWidth = _buttonLayout == FunctionKeyButtonLayout.Vertical
+                ? (int)Math.Round(VerticalButtonMinimumWidth * scale)
+                : 0;
             var widths = new int[buttons.Count];
             for (int i = 0; i < buttons.Count; i++)
             {
                 FunctionKeyBarButton button = buttons[i];
+                button.ContentLayout = _buttonLayout;
                 button.Font = fonts[0];
                 button.BadgeFont = fonts[1];
                 button.InnerPadding = density.InnerPadding;
                 button.BadgeGap = density.BadgeGap;
-                widths[i] = button.MeasureWidth(scale);
+                widths[i] = Math.Max(minimumWidth, button.MeasureWidth(scale));
             }
             return widths;
         }

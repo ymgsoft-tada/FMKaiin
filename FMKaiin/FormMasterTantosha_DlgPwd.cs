@@ -63,10 +63,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterTanto_DlgPwd.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterTanto_DlgPwd.Functions);
 
-			FuncMasterTanto_DlgPwd.Save.Execute = saveClose;
-			FuncMasterTanto_DlgPwd.Cancel.Execute = closeCancel;
+			funcKeys.On(FuncMasterTanto_DlgPwd.Save, saveClose);
+			funcKeys.On(FuncMasterTanto_DlgPwd.Cancel, closeCancel);
 		}
 
 		/// <summary>

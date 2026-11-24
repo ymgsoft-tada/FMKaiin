@@ -36,10 +36,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutIryoKikan.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutIryoKikan.Functions);
 
-			FuncOutIryoKikan.Preview.Execute = preview;
-			FuncOutIryoKikan.Close.Execute = formClose;
+			funcKeys.On(FuncOutIryoKikan.Preview, preview);
+			funcKeys.On(FuncOutIryoKikan.Close, formClose);
 		}
 
 		void preview()

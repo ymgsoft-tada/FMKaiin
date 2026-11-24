@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterShinryoka));
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.iCodeShinryoka = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -45,12 +45,10 @@
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 515);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(498, 25);
+			this.funckey.Size = new System.Drawing.Size(498, 66);
 			this.funckey.TabIndex = 33;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// grid
 			// 
@@ -170,7 +168,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(498, 540);
+			this.ClientSize = new System.Drawing.Size(498, 581);
 			this.Controls.Add(this.iNameShinryoka);
 			this.Controls.Add(this.ycLabelEx5);
 			this.Controls.Add(this.iCodeShinryoka);
@@ -208,7 +206,7 @@
 
 		private GControlGcTextBoxEx.GcTextBoxEx iNameShinryoka;
 		private YControlLabelEx.YcLabelEx ycLabelEx5;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;

@@ -50,10 +50,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncCreateIfaxFile.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncCreateIfaxFile.Functions);
 
-			FuncCreateIfaxFile.Exec.Execute = doExec;
-			FuncCreateIfaxFile.Close.Execute = formClose;
+			funcKeys.On(FuncCreateIfaxFile.Exec, doExec);
+			funcKeys.On(FuncCreateIfaxFile.Close, formClose);
 		}
 
 		void doExec()

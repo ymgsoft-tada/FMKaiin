@@ -41,11 +41,11 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMamisImport.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMamisImport.Functions);
 
-			FuncMamisImport.History.Execute = showHistory;
-			FuncMamisImport.Exec.Execute = doExec;
-			FuncMamisImport.Close.Execute = formClose;
+			funcKeys.On(FuncMamisImport.History, showHistory);
+			funcKeys.On(FuncMamisImport.Exec, doExec);
+			funcKeys.On(FuncMamisImport.Close, formClose);
 		}
 
 		/// <summary>

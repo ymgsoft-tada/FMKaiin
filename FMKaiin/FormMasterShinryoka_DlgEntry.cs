@@ -118,10 +118,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterShinryokamoku_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterShinryokamoku_DlgEntry.Functions);
 
-			FuncMasterShinryokamoku_DlgEntry.Save.Execute = saveClose;
-			FuncMasterShinryokamoku_DlgEntry.Cancel.Execute = closeCancel; 
+			funcKeys.On(FuncMasterShinryokamoku_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncMasterShinryokamoku_DlgEntry.Cancel, closeCancel); 
 		}
 
 		/// <summary>

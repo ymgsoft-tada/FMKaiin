@@ -47,7 +47,7 @@ namespace App
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
 			this.iAddr2 = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iAddr1 = new GControlGcTextBoxEx.GcTextBoxEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
@@ -336,12 +336,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 648);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(905, 25);
+			this.funckey.Size = new System.Drawing.Size(905, 66);
 			this.funckey.TabIndex = 424;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -940,7 +938,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(905, 673);
+			this.ClientSize = new System.Drawing.Size(905, 714);
 			this.Controls.Add(this.oLastUpdateUser);
 			this.Controls.Add(this.oLastUpdate);
 			this.Controls.Add(this.ycLabelEx60);
@@ -1101,7 +1099,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
 		private GControlGcTextBoxEx.GcTextBoxEx iAddr2;
 		private GControlGcTextBoxEx.GcTextBoxEx iAddr1;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;

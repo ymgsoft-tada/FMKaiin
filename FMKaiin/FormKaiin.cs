@@ -341,18 +341,18 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncKaiin.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncKaiin.Functions);
 
-			FuncKaiin.RowAdd.Execute = rowAdd;
-			FuncKaiin.RowEdit.Execute = rowEdit;
-			FuncKaiin.RowDelete.Execute = rowDelete;
-			FuncKaiin.CopyAdd.Execute = CopyAdd;
-			FuncKaiin.Rejoin.Execute = RejoinAdd;
-			FuncKaiin.ShowMamis.Execute = showMamis; //¶ 2026/11/21 CC MAMISデータ取込
-			FuncKaiin.ShowChosei.Execute = showChosei;
-			FuncKaiin.ShowZaiseki.Execute = showZaiseki;
-			FuncKaiin.Preview.Execute = preview;
-			FuncKaiin.Close.Execute = formClose;
+			funcKeys.On(FuncKaiin.RowAdd, rowAdd);
+			funcKeys.On(FuncKaiin.RowEdit, rowEdit);
+			funcKeys.On(FuncKaiin.RowDelete, rowDelete);
+			funcKeys.On(FuncKaiin.CopyAdd, CopyAdd);
+			funcKeys.On(FuncKaiin.Rejoin, RejoinAdd);
+			funcKeys.On(FuncKaiin.ShowMamis, showMamis); //¶ 2026/11/21 CC MAMISデータ取込
+			funcKeys.On(FuncKaiin.ShowChosei, showChosei);
+			funcKeys.On(FuncKaiin.ShowZaiseki, showZaiseki);
+			funcKeys.On(FuncKaiin.Preview, preview);
+			funcKeys.On(FuncKaiin.Close, formClose);
 
 			//bool enabled = false;
 

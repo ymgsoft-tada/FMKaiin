@@ -328,13 +328,13 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterKaihi.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterKaihi.Functions);
 
-			FuncMasterKaihi.RowAdd.Execute = rowAdd; // 追加
-			FuncMasterKaihi.RowEdit.Execute = rowEdit; // 訂正
-			FuncMasterKaihi.RowDelete.Execute = rowDelete; // 削除
-			FuncMasterKaihi.CopyAdd.Execute = copyAdd; // コピー追加
-			FuncMasterKaihi.Close.Execute = formClose; // 閉じる
+			funcKeys.On(FuncMasterKaihi.RowAdd, rowAdd); // 追加
+			funcKeys.On(FuncMasterKaihi.RowEdit, rowEdit); // 訂正
+			funcKeys.On(FuncMasterKaihi.RowDelete, rowDelete); // 削除
+			funcKeys.On(FuncMasterKaihi.CopyAdd, copyAdd); // コピー追加
+			funcKeys.On(FuncMasterKaihi.Close, formClose); // 閉じる
 		}
 
 		/// <summary>

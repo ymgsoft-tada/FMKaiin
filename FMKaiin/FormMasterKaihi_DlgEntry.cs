@@ -380,10 +380,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterKaihi_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterKaihi_DlgEntry.Functions);
 
-			FuncMasterKaihi_DlgEntry.Save.Execute   = saveClose;   // 登録
-			FuncMasterKaihi_DlgEntry.Cancel.Execute = closeCancel; // キャンセル
+			funcKeys.On(FuncMasterKaihi_DlgEntry.Save, saveClose);   // 登録
+			funcKeys.On(FuncMasterKaihi_DlgEntry.Cancel, closeCancel); // キャンセル
 		}
 
 		/// <summary>

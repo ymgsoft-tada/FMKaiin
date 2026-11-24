@@ -29,7 +29,7 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iDateYM = new App.UcDate();
@@ -46,12 +46,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 205);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(442, 25);
+			this.funckey.Size = new System.Drawing.Size(442, 66);
 			this.funckey.TabIndex = 56;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -223,7 +221,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(442, 230);
+			this.ClientSize = new System.Drawing.Size(442, 271);
 			this.Controls.Add(this.groupBox1);
 			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.iDate);
@@ -257,7 +255,7 @@ namespace App
 
 		#endregion
 
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private UcDate iDateYM;

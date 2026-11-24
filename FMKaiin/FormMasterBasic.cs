@@ -111,11 +111,11 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterBasic.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterBasic.Functions);
 
-			FuncMasterBasic.ShowBank.Execute = showBank;
-			FuncMasterBasic.Save.Execute = saveClose;
-			FuncMasterBasic.Cancel.Execute = cancelClose;
+			funcKeys.On(FuncMasterBasic.ShowBank, showBank);
+			funcKeys.On(FuncMasterBasic.Save, saveClose);
+			funcKeys.On(FuncMasterBasic.Cancel, cancelClose);
 
 		}
 

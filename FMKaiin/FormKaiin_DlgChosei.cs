@@ -191,12 +191,12 @@ namespace App
 
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncKaiin_DlgChosei.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncKaiin_DlgChosei.Functions);
 
-			FuncKaiin_DlgChosei.RowAdd.Execute = rowAdd;
-			FuncKaiin_DlgChosei.RowDelete.Execute = rowDelete;
-			FuncKaiin_DlgChosei.Save.Execute = saveClose;
-			FuncKaiin_DlgChosei.Cancel.Execute = formClose;
+			funcKeys.On(FuncKaiin_DlgChosei.RowAdd, rowAdd);
+			funcKeys.On(FuncKaiin_DlgChosei.RowDelete, rowDelete);
+			funcKeys.On(FuncKaiin_DlgChosei.Save, saveClose);
+			funcKeys.On(FuncKaiin_DlgChosei.Cancel, formClose);
 		}
 
 		void rowAdd()

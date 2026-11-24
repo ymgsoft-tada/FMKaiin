@@ -31,7 +31,7 @@ namespace App
 		{
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
 			this.rdoList = new System.Windows.Forms.RadioButton();
 			this.rdoJoho = new System.Windows.Forms.RadioButton();
@@ -68,12 +68,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 163);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(346, 25);
+			this.funckey.Size = new System.Drawing.Size(346, 66);
 			this.funckey.TabIndex = 429;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// ycLabelEx7
 			// 
@@ -118,7 +116,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(346, 188);
+			this.ClientSize = new System.Drawing.Size(346, 229);
 			this.Controls.Add(this.rdoJoho);
 			this.Controls.Add(this.rdoList);
 			this.Controls.Add(this.ycLabelEx7);
@@ -145,7 +143,7 @@ namespace App
 
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx ycLabelEx7;
 		private System.Windows.Forms.RadioButton rdoList;
 		private System.Windows.Forms.RadioButton rdoJoho;

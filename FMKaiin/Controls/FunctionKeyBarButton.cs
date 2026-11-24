@@ -18,8 +18,20 @@ namespace App.Controls
     }
 
     /// <summary>
+    /// <see cref="FunctionKeyBar"/> のボタンの中での、キー名（バッジ）と名称の並べ方。
+    /// </summary>
+    public enum FunctionKeyButtonLayout
+    {
+        /// <summary>2 段。キー名を上、名称を下に置く。ボタンの幅が狭くて済むので、ボタンの多い画面でも名称が収まりやすい。</summary>
+        Vertical = 0,
+        /// <summary>横並び。キー名を左、名称を右に置く。</summary>
+        Horizontal
+    }
+
+    /// <summary>
     /// <see cref="FunctionKeyBar"/> に並べるボタン 1 つ分。
-    /// 角丸のボタンの中に、キー名を入れた小さな枠（バッジ。「F5」など）と名称を横並びで表示する。
+    /// 角丸のボタンの中に、キー名を入れた小さな枠（バッジ。「F5」など）と名称を表示する。
+    /// 並べ方は 2 段（キー名が上、名称が下）と横並びがあり、<see cref="FunctionKeyBar.ButtonLayout"/> で決まる。
     /// <see cref="Emphasized"/> を true にすると、青く塗った目立つ見た目になる。
     /// 画面に直接置くものではなく、<see cref="FunctionKeyBar.AddButton"/> が作る。大きさと位置も FunctionKeyBar が決める。
     /// クリックしてもフォーカスは受け取らない（入力中のコントロールからフォーカスを奪わないため）。
@@ -38,6 +50,15 @@ namespace App.Controls
         private const float BadgePaddingX = 5f;
         /// <summary>バッジの中の、キー名の上下の余白。</summary>
         private const float BadgePaddingY = 2f;
+        /// <summary>2 段のときの、バッジの中の、キー名の上下の余白。名称と縦に並べるので、横並びのときより詰める。</summary>
+        private const float VerticalBadgePaddingY = 0.5f;
+        /// <summary>2 段のときの、バッジと名称の上下の間隔。</summary>
+        private const float VerticalGap = 5f;
+        /// <summary>
+        /// キー名と名称の文字を、計算上の位置から下へずらす量。
+        /// BIZ UDPゴシックは文字が行の中で上寄りに描かれるので、そのままだとバッジの枠やボタンの中で上に寄って見える。
+        /// </summary>
+        private const float TextOffsetY = 1f;
         /// <summary>マウスオーバー時と押下時に、枠線を強調色へ寄せる割合。</summary>
         private const float HighlightBorderBlend = 0.6f;
         /// <summary>マウスオーバー時に影を濃くする倍率。</summary>
@@ -103,6 +124,7 @@ namespace App.Controls
         private Font _badgeFont;
         private float _innerPadding = 14f;
         private float _badgeGap = 8f;
+        private FunctionKeyButtonLayout _contentLayout = FunctionKeyButtonLayout.Vertical;
 
         public FunctionKeyBarButton()
         {
@@ -183,7 +205,14 @@ namespace App.Controls
             set { _innerPadding = Math.Max(0f, value); Invalidate(); }
         }
 
-        /// <summary>バッジと名称の間隔。96 DPI 基準のピクセル。<see cref="FunctionKeyBar"/> が設定する。</summary>
+        /// <summary>バッジと名称の並べ方。<see cref="FunctionKeyBar"/> が設定する。</summary>
+        internal FunctionKeyButtonLayout ContentLayout
+        {
+            get { return _contentLayout; }
+            set { _contentLayout = value; Invalidate(); }
+        }
+
+        /// <summary>横並びのときの、バッジと名称の間隔。96 DPI 基準のピクセル。<see cref="FunctionKeyBar"/> が設定する。</summary>
         internal float BadgeGap
         {
             get { return _badgeGap; }
@@ -203,12 +232,14 @@ namespace App.Controls
         internal int MeasureWidth(float scale)
         {
             var shadow = new DropShadow(ShadowSize, scale);
-            float content =
-                _innerPadding * scale * 2f +
-                MeasureBadgeSize(scale).Width +
-                _badgeGap * scale +
-                TextRenderer.MeasureText(Text, Font, Size.Empty, MeasureFlags).Width;
-            return (int)Math.Ceiling(content) + shadow.SideInset * 2 + 1;
+            float badgeWidth = MeasureBadgeSize(scale).Width;
+            int textWidth = TextRenderer.MeasureText(Text, Font, Size.Empty, MeasureFlags).Width;
+
+            // 2 段のときは、バッジと名称のうち幅の広い方で決まる。横並びのときは両方を足す
+            float content = _contentLayout == FunctionKeyButtonLayout.Vertical
+                ? Math.Max(badgeWidth, textWidth)
+                : badgeWidth + _badgeGap * scale + textWidth;
+            return (int)Math.Ceiling(content + _innerPadding * scale * 2f) + shadow.SideInset * 2 + 1;
         }
 
         /// <summary>
@@ -278,13 +309,50 @@ namespace App.Controls
                 g.DrawPath(borderPen, frame);
             }
 
-            // バッジ（キー名）
+            // バッジ（キー名）と名称の場所を決める
             SizeF badgeSize = MeasureBadgeSize(scale);
-            var badge = new RectangleF(
-                surface.X + _innerPadding * scale,
-                surface.Y + (surface.Height - badgeSize.Height) / 2f,
-                badgeSize.Width,
-                badgeSize.Height);
+            RectangleF badge;
+            Rectangle textBounds;
+            TextFormatFlags textAlignment;
+            int contentLeft = (int)Math.Round(surface.X + _innerPadding * scale);
+            int contentRight = (int)Math.Round(surface.Right - _innerPadding * scale);
+            if (_contentLayout == FunctionKeyButtonLayout.Vertical)
+            {
+                // 2 段: バッジを上、名称を下に置き、ひとまとまりとしてボタンの上下左右の中央に置く
+                int textHeight = TextRenderer.MeasureText(Text, Font, Size.Empty, MeasureFlags).Height;
+                float gap = VerticalGap * scale;
+                float top = surface.Y + (surface.Height - (badgeSize.Height + gap + textHeight)) / 2f;
+                badge = new RectangleF(
+                    surface.X + (surface.Width - badgeSize.Width) / 2f,
+                    top,
+                    badgeSize.Width,
+                    badgeSize.Height);
+                textBounds = new Rectangle(
+                    contentLeft,
+                    (int)Math.Round(badge.Bottom + gap),
+                    contentRight - contentLeft,
+                    textHeight);
+                textAlignment = TextFormatFlags.HorizontalCenter | TextFormatFlags.Top;
+            }
+            else
+            {
+                // 横並び: バッジを左、名称をその右に置き、どちらもボタンの上下中央に置く
+                badge = new RectangleF(
+                    contentLeft,
+                    surface.Y + (surface.Height - badgeSize.Height) / 2f,
+                    badgeSize.Width,
+                    badgeSize.Height);
+                int textLeft = (int)Math.Round(badge.Right + _badgeGap * scale);
+                textBounds = new Rectangle(textLeft, (int)Math.Round(surface.Y), contentRight - textLeft, (int)Math.Round(surface.Height));
+                textAlignment = TextFormatFlags.Left | TextFormatFlags.VerticalCenter;
+            }
+
+            // 文字は上寄りに描かれるので、キー名（バッジの枠は動かさない）と名称の文字だけを少し下げる
+            int textOffset = Math.Max(1, (int)Math.Round(TextOffsetY * scale));
+            Rectangle badgeTextBounds = Rectangle.Round(badge);
+            badgeTextBounds.Offset(0, textOffset);
+            textBounds.Offset(0, textOffset);
+
             using (GraphicsPath badgePath = PaintHelper.CreateRoundedRectangle(badge, BadgeCornerRadius * scale))
             using (var badgePen = new Pen(palette.BadgeBorder, lineWidth))
             {
@@ -301,23 +369,20 @@ namespace App.Controls
                 g,
                 KeyText,
                 BadgeFont,
-                Rectangle.Round(badge),
+                badgeTextBounds,
                 palette.BadgeText,
                 MeasureFlags | TextFormatFlags.HorizontalCenter | TextFormatFlags.VerticalCenter);
 
             // 名称。幅が足りない場合は末尾を「…」で省略する
-            int textLeft = (int)Math.Round(badge.Right + _badgeGap * scale);
-            int textRight = (int)Math.Round(surface.Right - _innerPadding * scale);
-            if (textRight > textLeft)
+            if (textBounds.Width > 0)
             {
-                var textBounds = new Rectangle(textLeft, (int)Math.Round(surface.Y), textRight - textLeft, (int)Math.Round(surface.Height));
                 TextRenderer.DrawText(
                     g,
                     Text,
                     Font,
                     textBounds,
                     palette.Text,
-                    MeasureFlags | TextFormatFlags.Left | TextFormatFlags.VerticalCenter | TextFormatFlags.EndEllipsis);
+                    MeasureFlags | textAlignment | TextFormatFlags.EndEllipsis);
             }
         }
 
@@ -353,7 +418,8 @@ namespace App.Controls
         private SizeF MeasureBadgeSize(float scale)
         {
             Size text = TextRenderer.MeasureText(KeyText, BadgeFont, Size.Empty, MeasureFlags);
-            return new SizeF(text.Width + BadgePaddingX * scale * 2f, text.Height + BadgePaddingY * scale * 2f);
+            float paddingY = _contentLayout == FunctionKeyButtonLayout.Vertical ? VerticalBadgePaddingY : BadgePaddingY;
+            return new SizeF(text.Width + BadgePaddingX * scale * 2f, text.Height + paddingY * scale * 2f);
         }
 
         /// <summary>

@@ -33,7 +33,7 @@ namespace App
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.iBank = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.iShiten = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -96,9 +96,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 493);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(507, 25);
+			this.funckey.Size = new System.Drawing.Size(507, 66);
 			this.funckey.TabIndex = 49;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// iBank
 			// 
@@ -162,7 +161,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(507, 518);
+			this.ClientSize = new System.Drawing.Size(507, 559);
 			this.Controls.Add(this.iShiten);
 			this.Controls.Add(this.ycLabelEx3);
 			this.Controls.Add(this.iBank);
@@ -199,7 +198,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iBank;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private GControlGcTextBoxEx.GcTextBoxEx iShiten;

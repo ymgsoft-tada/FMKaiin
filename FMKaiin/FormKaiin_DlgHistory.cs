@@ -111,9 +111,9 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncKaiin_DlgHistory.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncKaiin_DlgHistory.Functions);
 
-			FuncKaiin_DlgHistory.Close.Execute = formClose;
+			funcKeys.On(FuncKaiin_DlgHistory.Close, formClose);
 		}
 
 		void formClose()

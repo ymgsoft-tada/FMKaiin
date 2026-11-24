@@ -86,6 +86,10 @@ namespace App
 		/// このフォームが解放するDBView
 		/// </summary>
 		List<DBView> ownedViews = new List<DBView>();
+		/// <summary>
+		/// 画面の DPI に合わせた拡大（scaleForDeviceDpi）を実行済みか
+		/// </summary>
+		bool scaledForDeviceDpi = false;
 		#endregion
 
 		#region *** Property ***
@@ -174,6 +178,74 @@ namespace App
 
 			this.BindingContext = null;
 		}
+		//¶ 2026/11/25 ClaudeCode ここから 高 DPI の環境で、文字だけが大きくなって見切れる問題への対応
+		/// <summary>
+		/// ロード処理の入口。画面の位置決め（親の中央へ寄せる処理）より前に、DPI に合わせた拡大を済ませます。
+		/// </summary>
+		protected override void OnLoad(EventArgs e)
+		{
+			scaleForDeviceDpi();
+
+			base.OnLoad(e);
+		}
+
+		/// <summary>
+		/// 画面の DPI に合わせて、フォームとコントロールを 1 回だけ拡大します。DPI が 96（等倍）の環境では何もしません。
+		/// </summary>
+		/// <remarks>
+		/// 派生フォームの Designer は 96 DPI 基準の座標で書かれていて、文字の大きさに合わせた自動拡大（AutoScaleMode = Font）を指定している。
+		/// しかし、その自動拡大を InitializeComponent の中で働かせると、Label の大きさだけが 2 回拡大されてしまう。
+		/// このクラスがフォントを先に設定しているので、Label はフォームへ追加された時点でフォントが変わり、
+		/// 自分の大きさを設定し直す。その設定し直した大きさが、もう一度拡大の対象になるため。
+		/// そこで、InitializeComponent の間は AutoScaleMode = None にして自動拡大を止めておき（FormFrame.Designer.cs）、
+		/// すべてのコントロールが追加され終わったここで、基準を設定し直して 1 回だけ拡大する。
+		/// FormFrame.Designer.cs の AutoScaleMode = None を消すと、上記の 2 回拡大が起きるので消さないこと。
+		/// </remarks>
+		void scaleForDeviceDpi()
+		{
+			if (DesignMode == true || scaledForDeviceDpi == true)
+			{
+				return;
+			}
+			scaledForDeviceDpi = true;
+
+			// 派生フォームが自動拡大を指定していない場合は対象外
+			if (this.AutoScaleMode != AutoScaleMode.Font)
+			{
+				return;
+			}
+
+			// 文字が実際に描かれる DPI を取得する。
+			// DeviceDpi プロパティは使えない（このアプリは高 DPI 対応を宣言していないので、実際の DPI にかかわらず 96 を返す）
+			float scale;
+			using (Graphics g = this.CreateGraphics())
+			{
+				scale = g.DpiX / 96f;
+			}
+			if (scale == 1f)
+			{
+				return;
+			}
+
+			// Windows フォームは「いまの文字の大きさ ÷ 基準の大きさ」を拡大率にする。
+			// 基準（AutoScaleDimensions）を 96 DPI のときの文字の大きさに設定し直すと、拡大率が DPI の比率になる。
+			// （Designer が指定した基準は、AutoScaleMode が None から Font に変わる時点で捨てられている）
+			// レイアウトを止めておかないと、基準を設定した時点で「何も拡大しない自動拡大」が走り、基準が元に戻ってしまう。
+			SizeF current = this.CurrentAutoScaleDimensions;
+			this.SuspendLayout();
+			try
+			{
+				this.AutoScaleDimensions = new SizeF(current.Width / scale, current.Height / scale);
+				this.PerformAutoScale();
+			}
+			finally
+			{
+				this.ResumeLayout(false);
+				this.PerformLayout();
+			}
+		}
+		//¶ 2026/11/25 ClaudeCode ここまで
+
 		/// <summary>
 		/// ロード処理
 		/// </summary>

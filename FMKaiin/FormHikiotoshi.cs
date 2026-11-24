@@ -172,8 +172,8 @@ namespace App
 			lblUpdateUser.Text = lbluser;
 
 			// 編集ボタンの使用可否
-			appFuncKey.SetEnabled(FuncHikiotoshi.Edit.Key, dvGrid.Count > 0);
-			appFuncKey.SetEnabled(FuncHikiotoshi.ReMake.Key, dvGrid.Count > 0);
+			funcKeys.SetEnabled(FuncHikiotoshi.Edit.Key, dvGrid.Count > 0);
+			funcKeys.SetEnabled(FuncHikiotoshi.ReMake.Key, dvGrid.Count > 0);
 		}
 
 		private void prog_DoWorkEvent(object sender, DoWorkEventArgs e)
@@ -211,12 +211,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncHikiotoshi.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncHikiotoshi.Functions);
 
-			FuncHikiotoshi.Exec.Execute = doExec;
-			FuncHikiotoshi.ReMake.Execute = reMake;
-			FuncHikiotoshi.Edit.Execute = showEdit;
-			FuncHikiotoshi.Close.Execute = formClose;
+			funcKeys.On(FuncHikiotoshi.Exec, doExec);
+			funcKeys.On(FuncHikiotoshi.ReMake, reMake);
+			funcKeys.On(FuncHikiotoshi.Edit, showEdit);
+			funcKeys.On(FuncHikiotoshi.Close, formClose);
 		}
 
 		void reMake()

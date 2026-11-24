@@ -289,13 +289,13 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterIryoKikan.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterIryoKikan.Functions);
 
-			FuncMasterIryoKikan.RowAdd.Execute = rowAdd;
-			FuncMasterIryoKikan.RowEdit.Execute = rowEdit;
-			FuncMasterIryoKikan.RowDelete.Execute = rowDelete;
-			FuncMasterIryoKikan.Preview.Execute = preview;
-			FuncMasterIryoKikan.Close.Execute = formClose;
+			funcKeys.On(FuncMasterIryoKikan.RowAdd, rowAdd);
+			funcKeys.On(FuncMasterIryoKikan.RowEdit, rowEdit);
+			funcKeys.On(FuncMasterIryoKikan.RowDelete, rowDelete);
+			funcKeys.On(FuncMasterIryoKikan.Preview, preview);
+			funcKeys.On(FuncMasterIryoKikan.Close, formClose);
 		}
 
 		/// <summary>

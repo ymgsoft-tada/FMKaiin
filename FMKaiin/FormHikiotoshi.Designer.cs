@@ -32,7 +32,7 @@ namespace App
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHikiotoshi));
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.iDateYM = new App.UcDate();
 			this.ycLabelEx14 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
@@ -75,12 +75,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 624);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(579, 25);
+			this.funckey.Size = new System.Drawing.Size(579, 66);
 			this.funckey.TabIndex = 55;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// iDateYM
 			// 
@@ -291,7 +289,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(579, 649);
+			this.ClientSize = new System.Drawing.Size(579, 690);
 			this.Controls.Add(this.lblUpdateUser);
 			this.Controls.Add(this.lblCreateDate);
 			this.Controls.Add(this.panel1);
@@ -328,7 +326,7 @@ namespace App
 		#endregion
 
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private UcDate iDateYM;
 		private YControlLabelEx.YcLabelEx ycLabelEx14;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;

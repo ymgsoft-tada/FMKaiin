@@ -185,11 +185,11 @@ namespace App
 
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncSelectorBankCode.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncSelectorBankCode.Functions);
 			
-			FuncSelectorBankCode.Clear.Execute		= filterClear;
-			FuncSelectorBankCode.Exec.Execute		= execClose;
-			FuncSelectorBankCode.Cancel.Execute		= cancelClose;
+			funcKeys.On(FuncSelectorBankCode.Clear, filterClear);
+			funcKeys.On(FuncSelectorBankCode.Exec, execClose);
+			funcKeys.On(FuncSelectorBankCode.Cancel, cancelClose);
 		}
 
 		void filterClear()

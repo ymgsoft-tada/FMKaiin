@@ -68,10 +68,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutKaihiUchiwakeYear.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutKaihiUchiwakeYear.Functions);
 
-			FuncOutKaihiUchiwakeYear.Preview.Execute = preview;
-			FuncOutKaihiUchiwakeYear.Close.Execute = formClose;
+			funcKeys.On(FuncOutKaihiUchiwakeYear.Preview, preview);
+			funcKeys.On(FuncOutKaihiUchiwakeYear.Close, formClose);
 		}
 
 		/// <summary>

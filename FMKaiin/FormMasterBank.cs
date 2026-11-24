@@ -125,12 +125,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterBank.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterBank.Functions);
 
-			FuncMasterBank.RowAdd.Execute = rowAdd;
-			FuncMasterBank.RowEdit.Execute = rowEdit;
-			FuncMasterBank.RowDelete.Execute = rowDelete;
-			FuncMasterBank.Close.Execute = formClose;
+			funcKeys.On(FuncMasterBank.RowAdd, rowAdd);
+			funcKeys.On(FuncMasterBank.RowEdit, rowEdit);
+			funcKeys.On(FuncMasterBank.RowDelete, rowDelete);
+			funcKeys.On(FuncMasterBank.Close, formClose);
 		}
 
 		/// <summary>

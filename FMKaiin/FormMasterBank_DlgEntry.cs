@@ -244,11 +244,11 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterBank_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterBank_DlgEntry.Functions);
 ;
-			FuncMasterBank_DlgEntry.ShowBankCode.Execute = showBankCode;
-			FuncMasterBank_DlgEntry.Save.Execute		= saveClose;
-			FuncMasterBank_DlgEntry.Cancel.Execute		= closeCancel;
+			funcKeys.On(FuncMasterBank_DlgEntry.ShowBankCode, showBankCode);
+			funcKeys.On(FuncMasterBank_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncMasterBank_DlgEntry.Cancel, closeCancel);
 		}
 
 		void showBankCode()

@@ -210,12 +210,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterShinryokamoku.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterShinryokamoku.Functions);
 
-			FuncMasterShinryokamoku.RowAdd.Execute		= rowAdd; // 追加
-			FuncMasterShinryokamoku.RowEdit.Execute	= rowEdit; // 訂正
-			FuncMasterShinryokamoku.RowDelete.Execute	= rowDelete; // 削除
-			FuncMasterShinryokamoku.Close.Execute		= formClose; // 閉じる
+			funcKeys.On(FuncMasterShinryokamoku.RowAdd, rowAdd); // 追加
+			funcKeys.On(FuncMasterShinryokamoku.RowEdit, rowEdit); // 訂正
+			funcKeys.On(FuncMasterShinryokamoku.RowDelete, rowDelete); // 削除
+			funcKeys.On(FuncMasterShinryokamoku.Close, formClose); // 閉じる
 		}
 
 		/// <summary>

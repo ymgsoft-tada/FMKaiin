@@ -31,7 +31,7 @@ namespace App
 		{
 			this.components = new System.ComponentModel.Container();
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.iKaiinFrom = new App.UcTableComboBox();
@@ -70,9 +70,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 234);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(491, 25);
+			this.funckey.Size = new System.Drawing.Size(491, 66);
 			this.funckey.TabIndex = 74;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -274,7 +273,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(491, 259);
+			this.ClientSize = new System.Drawing.Size(491, 300);
 			this.Controls.Add(this.iUchiwakeFrom);
 			this.Controls.Add(this.ycLabelEx4);
 			this.Controls.Add(this.iTaishoYM);
@@ -318,7 +317,7 @@ namespace App
 
 		#endregion
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private UcTableComboBox iKaiinFrom;

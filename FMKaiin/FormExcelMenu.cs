@@ -83,9 +83,9 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncExcelMenu.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncExcelMenu.Functions);
 
-			FuncExcelMenu.Close.Execute = formClose;
+			funcKeys.On(FuncExcelMenu.Close, formClose);
 		}
 
 		void formClose()

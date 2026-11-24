@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMamisImport_DlgLog));
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.lblDetail = new YControlLabelEx.YcLabelEx();
@@ -43,9 +43,8 @@
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 625);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(1100, 25);
+			this.funckey.Size = new System.Drawing.Size(1100, 66);
 			this.funckey.TabIndex = 35;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -132,7 +131,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1100, 650);
+			this.ClientSize = new System.Drawing.Size(1100, 691);
 			this.Controls.Add(this.gridDetail);
 			this.Controls.Add(this.lblDetail);
 			this.Controls.Add(this.gridHead);
@@ -161,7 +160,7 @@
 
 		#endregion
 
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private YControlLabelEx.YcLabelEx lblDetail;

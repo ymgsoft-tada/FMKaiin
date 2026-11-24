@@ -36,7 +36,7 @@ namespace App
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iAuth = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -156,9 +156,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 222);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(401, 25);
+			this.funckey.Size = new System.Drawing.Size(401, 66);
 			this.funckey.TabIndex = 74;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -251,7 +250,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(401, 247);
+			this.ClientSize = new System.Drawing.Size(401, 288);
 			this.Controls.Add(this.iShinryojo);
 			this.Controls.Add(this.ycLabelEx5);
 			this.Controls.Add(this.iPwd);
@@ -302,7 +301,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcComboBoxEx.GcComboBoxEx iAuth;
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private GControlGcTextBoxEx.GcTextBoxEx iName;
