@@ -170,7 +170,6 @@
 			((System.ComponentModel.ISupportInitialize)(this.gridHead)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.gridDetail)).EndInit();
 			this.ResumeLayout(false);
-			this.PerformLayout();
 
 		}
 
