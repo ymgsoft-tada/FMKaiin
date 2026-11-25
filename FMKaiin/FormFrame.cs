@@ -60,6 +60,12 @@ namespace App
 		/// </summary>
 		protected AppFunctionKey appFuncKey = null;
 		/// <summary>
+		/// ファンクションキー（FunctionKeyBar を使う画面用）。
+		/// GcFunctionKey を使う画面では null のままで、その場合は appFuncKey を使う。
+		/// このクラスでは参照していないので、null でも、appFuncKey と同時に設定されていても動作に影響しない。
+		/// </summary>
+		protected FunctionKeyBinder funcKeys = null;
+		/// <summary>
 		/// フォームが閉じられた時の理由
 		/// </summary>
 		protected FormCloseReason formCloseReason = FormCloseReason.None;
