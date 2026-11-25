@@ -43,14 +43,14 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutExcelNenkanChoshu.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutExcelNenkanChoshu.Functions);
 
 			iYear.UcValue = AppDate.ParseDateFirstDay(DateTime.Now);
 
 			rdoYotei.Checked = true;
 
-			FuncOutExcelNenkanChoshu.OutExcel.Execute = doExec;
-			FuncOutExcelNenkanChoshu.Close.Execute = formClose;
+			funcKeys.On(FuncOutExcelNenkanChoshu.OutExcel, doExec);
+			funcKeys.On(FuncOutExcelNenkanChoshu.Close, formClose);
 		}
 
 		void doExec()

@@ -42,12 +42,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutExcelKaihiShinsei.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutExcelKaihiShinsei.Functions);
 
 			rdoNyukai.Checked = true;
 
-			FuncOutExcelKaihiShinsei.OutExcel.Execute = doExec;
-			FuncOutExcelKaihiShinsei.Close.Execute = formClose;
+			funcKeys.On(FuncOutExcelKaihiShinsei.OutExcel, doExec);
+			funcKeys.On(FuncOutExcelKaihiShinsei.Close, formClose);
 		}
 
 		/// <summary>

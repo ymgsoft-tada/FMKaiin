@@ -52,10 +52,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncCreateBankFile.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncCreateBankFile.Functions);
 
-			FuncCreateBankFile.Exec.Execute = doExec;
-			FuncCreateBankFile.Close.Execute = formClose;
+			funcKeys.On(FuncCreateBankFile.Exec, doExec);
+			funcKeys.On(FuncCreateBankFile.Close, formClose);
 		}
 
 		void doExec()

@@ -30,7 +30,7 @@ namespace App
 		private void InitializeComponent()
 		{
 			this.btnKaiinIkai = new System.Windows.Forms.Button();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.btnKaiin = new System.Windows.Forms.Button();
 			this.btnKaiinBank = new System.Windows.Forms.Button();
 			this.btnKaihiMonth = new System.Windows.Forms.Button();
@@ -54,12 +54,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 470);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(392, 25);
+			this.funckey.Size = new System.Drawing.Size(392, 66);
 			this.funckey.TabIndex = 56;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// btnKaiin
 			// 
@@ -155,7 +153,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(392, 495);
+			this.ClientSize = new System.Drawing.Size(392, 536);
 			this.Controls.Add(this.btnChoshuYotei);
 			this.Controls.Add(this.btnIryokikanIchiran);
 			this.Controls.Add(this.btnIryokikan);
@@ -193,7 +191,7 @@ namespace App
 		#endregion
 
 		private System.Windows.Forms.Button btnKaiinIkai;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private System.Windows.Forms.Button btnKaiin;
 		private System.Windows.Forms.Button btnKaiinBank;
 		private System.Windows.Forms.Button btnKaihiMonth;

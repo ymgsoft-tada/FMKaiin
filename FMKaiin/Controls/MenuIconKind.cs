@@ -78,6 +78,8 @@
         /// <summary>新規作成の書類（右上が折れた書類に + 印）。</summary>
         FilePlus,
         /// <summary>書類と硬貨（書類の右下に硬貨を重ねる）。</summary>
-        DocumentCoin
+        DocumentCoin,
+        /// <summary>情報（丸の中に i の字）。</summary>
+        Info
     }
 }

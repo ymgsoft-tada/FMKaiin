@@ -155,7 +155,7 @@ namespace App
 			//¶ 2026/11/21 CC 取込できる会員がいない場合は実行できない
 			if (cnt_ok == 0)
 			{
-				appFuncKey.SetEnabled(FuncMamisImport_DlgConfirm.Exec.Key, false);
+				funcKeys.SetEnabled(FuncMamisImport_DlgConfirm.Exec.Key, false);
 			}
 
 			gridHead.RowColChange += GridHead_RowColChange;
@@ -233,10 +233,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMamisImport_DlgConfirm.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMamisImport_DlgConfirm.Functions);
 
-			FuncMamisImport_DlgConfirm.Exec.Execute = doExec;
-			FuncMamisImport_DlgConfirm.Cancel.Execute = formClose;
+			funcKeys.On(FuncMamisImport_DlgConfirm.Exec, doExec);
+			funcKeys.On(FuncMamisImport_DlgConfirm.Cancel, formClose);
 		}
 
 		/// <summary>

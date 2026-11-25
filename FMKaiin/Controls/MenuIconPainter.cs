@@ -168,6 +168,7 @@ namespace App.Controls
                 case MenuIconKind.FileSpreadsheet: DrawFileSpreadsheet(g, pen); break;
                 case MenuIconKind.FilePlus: DrawFilePlus(g, pen); break;
                 case MenuIconKind.DocumentCoin: DrawDocumentCoin(g, pen); break;
+                case MenuIconKind.Info: DrawInfo(g, pen, brush); break;
             }
         }
 
@@ -742,6 +743,15 @@ namespace App.Controls
             // 硬貨
             DrawCircle(g, pen, CoinX, CoinY, CoinRadius);
             g.DrawLine(pen, CoinX, CoinY - 2f, CoinX, CoinY + 2f);
+        }
+
+        private static void DrawInfo(Graphics g, Pen pen, Brush brush)
+        {
+            DrawCircle(g, pen, 12f, 12f, 9.5f);
+
+            // i の字（点と縦棒）
+            FillCircle(g, brush, 12f, 7.6f, 1.3f);
+            g.DrawLine(pen, 12f, 11.2f, 12f, 16.6f);
         }
 
         #endregion

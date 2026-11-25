@@ -31,9 +31,8 @@
 			this.components = new System.ComponentModel.Container();
 			this.dropDownButton1 = new GrapeCity.Win.Editors.DropDownButton();
 			this.cmb = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
-			this.pic = new System.Windows.Forms.PictureBox();
+			this.icoInfo = new App.Controls.IconBox();
 			((System.ComponentModel.ISupportInitialize)(this.cmb)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.pic)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// dropDownButton1
@@ -54,33 +53,33 @@
 			this.cmb.HighlightText = true;
 			this.cmb.ListHeaderPane.Height = 19;
 			this.cmb.ListHeaderPane.Visible = false;
-			this.cmb.Location = new System.Drawing.Point(21, 0);
+			this.cmb.Location = new System.Drawing.Point(0, 0);
 			this.cmb.Name = "cmb";
 			this.cmb.SingleBorderColor = System.Drawing.Color.DarkGray;
 			this.cmb.Size = new System.Drawing.Size(100, 20);
 			this.cmb.TabIndex = 0;
 			// 
-			// pic
-			// 
-			this.pic.Image = global::App.Properties.Resources.information;
-			this.pic.Location = new System.Drawing.Point(0, 0);
-			this.pic.Name = "pic";
-			this.pic.Size = new System.Drawing.Size(20, 20);
-			this.pic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-			this.pic.TabIndex = 1;
-			this.pic.TabStop = false;
+			// icoInfo
+			//
+			this.icoInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(110)))), ((int)(((byte)(190)))));
+			this.icoInfo.IconKind = App.Controls.MenuIconKind.Info;
+			this.icoInfo.Location = new System.Drawing.Point(100, 0);
+			this.icoInfo.Name = "icoInfo";
+			this.icoInfo.Padding = new System.Windows.Forms.Padding(2);
+			this.icoInfo.Size = new System.Drawing.Size(20, 20);
+			this.icoInfo.TabIndex = 1;
+			this.icoInfo.TabStop = false;
 			// 
 			// UcTableComboBox
 			// 
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.Transparent;
-			this.Controls.Add(this.pic);
+			this.Controls.Add(this.icoInfo);
 			this.Controls.Add(this.cmb);
 			this.ForeColor = System.Drawing.Color.Transparent;
 			this.Name = "UcTableComboBox";
 			this.Size = new System.Drawing.Size(120, 20);
 			((System.ComponentModel.ISupportInitialize)(this.cmb)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.pic)).EndInit();
 			this.ResumeLayout(false);
 
 		}
@@ -89,6 +88,6 @@
 
 		private GControlGcComboBoxEx.GcComboBoxEx cmb;
 		private GrapeCity.Win.Editors.DropDownButton dropDownButton1;
-		private System.Windows.Forms.PictureBox pic;
+		private App.Controls.IconBox icoInfo;
 	}
 }

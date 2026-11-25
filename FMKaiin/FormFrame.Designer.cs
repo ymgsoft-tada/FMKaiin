@@ -31,20 +31,20 @@
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormFrame));
 			this.pnlMask = new System.Windows.Forms.Panel();
 			this.SuspendLayout();
-			// 
+			//
 			// pnlMask
-			// 
-			this.pnlMask.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+			//
+			this.pnlMask.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
             | System.Windows.Forms.AnchorStyles.Right)));
 			this.pnlMask.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.pnlMask.Location = new System.Drawing.Point(0, 0);
 			this.pnlMask.Name = "pnlMask";
 			this.pnlMask.Size = new System.Drawing.Size(2043, 1132);
 			this.pnlMask.TabIndex = 0;
-			// 
+			//
 			// FormFrame
-			// 
+			//
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
 			this.BackColor = System.Drawing.Color.WhiteSmoke;
 			this.ClientSize = new System.Drawing.Size(1600, 900);

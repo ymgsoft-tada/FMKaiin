@@ -193,16 +193,16 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterTanto_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterTanto_DlgEntry.Functions);
 
 			if (Mode == eMode.Add)
 			{
-				appFuncKey.SetVisible(FuncMasterTanto_DlgEntry.ChangePWD.Key, false);
+				funcKeys.SetVisible(FuncMasterTanto_DlgEntry.ChangePWD.Key, false);
 			}
 
-			FuncMasterTanto_DlgEntry.ChangePWD.Execute = changePWD;
-			FuncMasterTanto_DlgEntry.Save.Execute = saveClose;
-			FuncMasterTanto_DlgEntry.Cancel.Execute = closeCancel;
+			funcKeys.On(FuncMasterTanto_DlgEntry.ChangePWD, changePWD);
+			funcKeys.On(FuncMasterTanto_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncMasterTanto_DlgEntry.Cancel, closeCancel);
 		}
 
 		/// <summary>

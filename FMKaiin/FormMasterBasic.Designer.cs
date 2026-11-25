@@ -36,7 +36,7 @@ namespace App
 			this.label2 = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label7 = new System.Windows.Forms.Label();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
 			this.iHojinNo = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.iNameFurigana = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -149,9 +149,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 391);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(579, 25);
+			this.funckey.Size = new System.Drawing.Size(579, 66);
 			this.funckey.TabIndex = 266;
-			this.funckey.Text = "gcFunctionKey2";
 			// 
 			// ycLabelEx7
 			// 
@@ -545,7 +544,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(579, 416);
+			this.ClientSize = new System.Drawing.Size(579, 457);
 			this.Controls.Add(this.iBank);
 			this.Controls.Add(this.ycLabelEx6);
 			this.Controls.Add(this.ycLabelEx4);
@@ -669,7 +668,7 @@ namespace App
 		private GControlGcTextBoxEx.GcTextBoxEx iPost1;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcTextBoxEx.GcTextBoxEx iName;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private GControlGcComboBoxEx.GcComboBoxEx iDispSeireki;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private YControlLabelEx.YcLabelEx ycLabelEx6;

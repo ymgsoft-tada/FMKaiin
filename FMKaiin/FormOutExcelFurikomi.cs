@@ -34,15 +34,15 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutExcelFurikomi.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutExcelFurikomi.Functions);
 
 			iDateYM.UcValue = AppDate.ParseDateFirstDay(DateTime.Now);
 			setShoribi();
 
 			iDateYM.UcValueChanged += IDateYM_UcValueChanged;
 
-			FuncOutExcelFurikomi.OutExcel.Execute = doExec;
-			FuncOutExcelFurikomi.Close.Execute = formClose;
+			funcKeys.On(FuncOutExcelFurikomi.OutExcel, doExec);
+			funcKeys.On(FuncOutExcelFurikomi.Close, formClose);
 		}
 
 		private void IDateYM_UcValueChanged(object sender, EventArgs e)

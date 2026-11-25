@@ -228,12 +228,12 @@ namespace App
 
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncHikiotoshi_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncHikiotoshi_DlgEntry.Functions);
 
-			FuncHikiotoshi_DlgEntry.RowAdd.Execute = rowAdd;
-			FuncHikiotoshi_DlgEntry.RowDelete.Execute = rowDelete;
-			FuncHikiotoshi_DlgEntry.Save.Execute = saveClose;
-			FuncHikiotoshi_DlgEntry.Cancel.Execute = formClose;
+			funcKeys.On(FuncHikiotoshi_DlgEntry.RowAdd, rowAdd);
+			funcKeys.On(FuncHikiotoshi_DlgEntry.RowDelete, rowDelete);
+			funcKeys.On(FuncHikiotoshi_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncHikiotoshi_DlgEntry.Cancel, formClose);
 		}
 
 		void rowAdd()

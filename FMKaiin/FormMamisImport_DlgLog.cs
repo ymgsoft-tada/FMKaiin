@@ -215,9 +215,9 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMamisImport_DlgLog.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMamisImport_DlgLog.Functions);
 
-			FuncMamisImport_DlgLog.Close.Execute = formClose;
+			funcKeys.On(FuncMamisImport_DlgLog.Close, formClose);
 		}
 
 		void formClose()

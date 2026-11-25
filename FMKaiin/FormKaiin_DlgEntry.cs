@@ -2265,14 +2265,14 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncKaiin_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncKaiin_DlgEntry.Functions);
 
-			FuncKaiin_DlgEntry.ShowTab1.Execute = showTab1;
-			FuncKaiin_DlgEntry.ShowTab2.Execute = showTab2;
-			FuncKaiin_DlgEntry.ShowTab3.Execute = showTab3;
+			funcKeys.On(FuncKaiin_DlgEntry.ShowTab1, showTab1);
+			funcKeys.On(FuncKaiin_DlgEntry.ShowTab2, showTab2);
+			funcKeys.On(FuncKaiin_DlgEntry.ShowTab3, showTab3);
 
-			FuncKaiin_DlgEntry.Save.Execute = saveClose;
-			FuncKaiin_DlgEntry.Cancel.Execute = closeCancel;
+			funcKeys.On(FuncKaiin_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncKaiin_DlgEntry.Cancel, closeCancel);
 
 //			bool enabled = false;
 

@@ -93,27 +93,9 @@ namespace App
 		/// セパレータ。
 		/// </summary>
 		static string   seperator = "────";
-		/// <summary>
-		/// アイコンのイメージ画像を取得、または設定します。
-		/// </summary>
-		static Image	iconImage = null;
 		#endregion
 		
 		#region *** Property ***
-		/// <summary>
-		/// アイコンのイメージ画像を取得、または設定します。
-		/// </summary>
-		public static Image IconImage
-		{
-			set
-			{
-				iconImage = value;
-			}
-			get
-			{
-				return iconImage;
-			}
-		}
 		/// <summary>
 		/// セパレータ。
 		/// </summary>
@@ -171,7 +153,7 @@ namespace App
 			set
 			{
 				iconVisible = value;
-				pic.Visible = value;
+				icoInfo.Visible = value;
 				
 				sizeRefresh();
 			}
@@ -536,11 +518,9 @@ namespace App
 		{
 			InitializeComponent();
 			
-			if (iconImage != null)
-			{
-				pic.Image = iconImage;
-			}
-			
+			//¶ 2026/11/25 ClaudeCode デザイナーの配置に頼らず、コンボとアイコンの位置をここで決める
+			sizeRefresh();
+
 			this.Load		 += new EventHandler(UcTableComboBox_Load);
 			this.SizeChanged += new EventHandler(UcTableComboBox_SizeChanged);
 		}
@@ -678,7 +658,7 @@ namespace App
 			cmb.SelectedIndexChanged += new EventHandler(cmb_SelectedIndexChanged);
 			cmb.PreviewKeyDown += new PreviewKeyDownEventHandler(cmb_PreviewKeyDown);
 			cmb.Validated += cmb_Validated;
-			pic.Click += new EventHandler(pic_Click);
+			icoInfo.Click += new EventHandler(icoInfo_Click);
 		}
 
 		/// <summary>
@@ -835,7 +815,7 @@ namespace App
 		/// <summary>
 		/// アイコン絵をクリックした時の処理
 		/// </summary>
-		void pic_Click(object sender, EventArgs e)
+		void icoInfo_Click(object sender, EventArgs e)
 		{
 			cmb.Select();
 			cmb.SelectAll();
@@ -1353,16 +1333,22 @@ namespace App
 		/// <summary>
 		/// 表示サイズをリフレッシュします。
 		/// </summary>
+		//¶ 2026/11/25 ClaudeCode アイコン（PictureBox → IconBox）をコンボの左から右へ移動。
+		//   アイコンの大きさは固定値（20）ではなく、このコントロールの高さから決める。
 		void sizeRefresh()
 		{
 			if (iconVisible == true)
 			{
-				pic.SetBounds( 0, (this.Height-20)/2, 20, 20);
-				cmb.SetBounds(20, 0, this.Width-20, this.Height);
+				// アイコンは右端に、このコントロールの高さと同じ一辺の正方形で置く。コンボは残りの幅をすべて使う。
+				// 幅が高さより狭い場合は、コンボの幅が負にならないよう、アイコンを幅に収める。
+				int iconSize = Math.Min(this.Height, this.Width);
+
+				cmb.SetBounds(0, 0, this.Width - iconSize, this.Height);
+				icoInfo.SetBounds(this.Width - iconSize, 0, iconSize, this.Height);
 			}
 			else
 			{
-				cmb.SetBounds( 0, 0, this.Width, this.Height);
+				cmb.SetBounds(0, 0, this.Width, this.Height);
 			}
 		}
 		#endregion

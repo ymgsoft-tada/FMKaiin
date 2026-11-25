@@ -38,7 +38,7 @@ namespace App
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.iSearchIsekiTorokuNo = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx5 = new YControlLabelEx.YcLabelEx();
@@ -167,9 +167,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 541);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(1084, 25);
+			this.funckey.Size = new System.Drawing.Size(1084, 66);
 			this.funckey.TabIndex = 75;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// iSearchIsekiTorokuNo
 			// 
@@ -239,7 +238,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1084, 566);
+			this.ClientSize = new System.Drawing.Size(1084, 607);
 			this.Controls.Add(this.iSearchBirthday);
 			this.Controls.Add(this.ycLabelEx5);
 			this.Controls.Add(this.iSearchIsekiTorokuNo);
@@ -290,7 +289,7 @@ namespace App
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iSearchIsekiTorokuNo;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private YControlLabelEx.YcLabelEx ycLabelEx5;

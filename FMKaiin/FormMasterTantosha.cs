@@ -120,12 +120,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterTanto.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterTanto.Functions);
 
-			FuncMasterTanto.RowAdd.Execute = rowAdd;
-			FuncMasterTanto.RowEdit.Execute = rowEdit;
-			FuncMasterTanto.RowDelete.Execute = rowDelete;
-			FuncMasterTanto.Close.Execute = formClose;
+			funcKeys.On(FuncMasterTanto.RowAdd, rowAdd);
+			funcKeys.On(FuncMasterTanto.RowEdit, rowEdit);
+			funcKeys.On(FuncMasterTanto.RowDelete, rowDelete);
+			funcKeys.On(FuncMasterTanto.Close, formClose);
 		}
 
 		/// <summary>

@@ -30,7 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterKaihi));
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.iCodeKaihi = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -54,9 +54,8 @@
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 515);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(925, 25);
+			this.funckey.Size = new System.Drawing.Size(925, 66);
 			this.funckey.TabIndex = 33;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// grid
 			// 
@@ -244,7 +243,7 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(925, 540);
+			this.ClientSize = new System.Drawing.Size(925, 581);
 			this.Controls.Add(this.iKbnUsed);
 			this.Controls.Add(this.ycLabelEx6);
 			this.Controls.Add(this.iNameKaihi);
@@ -290,7 +289,7 @@
 
 		#endregion
 
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iNameKaihi;
 		private YControlLabelEx.YcLabelEx ycLabelEx5;
 		private GControlGcComboBoxEx.GcComboBoxEx iKbnUsed;

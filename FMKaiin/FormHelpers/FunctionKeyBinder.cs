@@ -172,16 +172,22 @@ namespace App
         /// </summary>
         /// <remarks>
         /// 最後のキーが F12 のときだけ、右寄せのボタンを作る。
-        /// 左右の境目は、隣り合うキーの番号がいちばん離れている所にする（F5・F11・F12 なら F5 と F11 の間）。
+        /// ボタンが 1 つなら、それを右寄せにする。2 つなら、1 つ目を左寄せ、2 つ目を右寄せにする（F11・F12 なら F11 が左、F12 が右）。
+        /// 3 つ以上の場合は、隣り合うキーの番号がいちばん離れている所を左右の境目にする（F5・F11・F12 なら F5 と F11 の間）。
         /// キーボード上で近いキーどうしを、画面でも同じ側にまとめるため。
         /// 番号が続いている所（F11 と F12 など）は境目にしない。いちばん離れている所が複数ある場合は、右側のものを使う。
-        /// すべての番号が続いている場合（F11・F12 だけの画面など）は、全部が右寄せになる。
+        /// すべての番号が続いている場合は、全部が右寄せになる。
         /// </remarks>
         private static int FindFirstRightAlignedIndex(FuncKeyDefine[] defines)
         {
             if (defines.Length == 0 || defines[defines.Length - 1].Key != RightEndKey)
             {
                 return defines.Length;
+            }
+            if (defines.Length <= 2)
+            {
+                // 1 つなら全部（その 1 つ）が右、2 つなら最後の 1 つだけが右
+                return defines.Length - 1;
             }
 
             int splitIndex = 0;

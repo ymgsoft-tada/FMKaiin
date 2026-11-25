@@ -195,10 +195,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterBankCode_DlgEntry.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterBankCode_DlgEntry.Functions);
 ;
-			FuncMasterBankCode_DlgEntry.Save.Execute		= saveClose;
-			FuncMasterBankCode_DlgEntry.Cancel.Execute		= closeCancel;
+			funcKeys.On(FuncMasterBankCode_DlgEntry.Save, saveClose);
+			funcKeys.On(FuncMasterBankCode_DlgEntry.Cancel, closeCancel);
 		}
 
 		/// <summary>

@@ -34,7 +34,7 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutExcelNofusho.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutExcelNofusho.Functions);
 
 			iDateYM.UcValue = AppDate.ParseDateFirstDay(DateTime.Now);
 			setShoribi();
@@ -43,8 +43,8 @@ namespace App
 
 			iDateYM.UcValueChanged += IDateYM_UcValueChanged;
 
-			FuncOutExcelNofusho.OutExcel.Execute = doExec;
-			FuncOutExcelNofusho.Close.Execute = formClose;
+			funcKeys.On(FuncOutExcelNofusho.OutExcel, doExec);
+			funcKeys.On(FuncOutExcelNofusho.Close, formClose);
 		}
 
 		private void IDateYM_UcValueChanged(object sender, EventArgs e)

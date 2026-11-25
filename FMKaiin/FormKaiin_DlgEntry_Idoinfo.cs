@@ -373,10 +373,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncKaiin_DlgEntry_Idoinfo.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncKaiin_DlgEntry_Idoinfo.Functions);
 ;
-			FuncKaiin_DlgEntry_Idoinfo.Save.Execute   = saveClose;
-			FuncKaiin_DlgEntry_Idoinfo.Cancel.Execute = closeCancel;
+			funcKeys.On(FuncKaiin_DlgEntry_Idoinfo.Save, saveClose);
+			funcKeys.On(FuncKaiin_DlgEntry_Idoinfo.Cancel, closeCancel);
 		}
 
 		/// <summary>

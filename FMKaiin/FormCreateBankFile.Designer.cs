@@ -34,7 +34,7 @@ namespace App
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
 			this.iDate = new App.UcDate();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.iDateYM = new App.UcDate();
@@ -137,9 +137,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 204);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(525, 25);
+			this.funckey.Size = new System.Drawing.Size(525, 66);
 			this.funckey.TabIndex = 341;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// lblTitle
 			// 
@@ -193,7 +192,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(525, 229);
+			this.ClientSize = new System.Drawing.Size(525, 270);
 			this.Controls.Add(this.iDateYM);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.ycLabelEx2);
@@ -230,7 +229,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
 		private UcDate iDate;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private UcDate iDateYM;

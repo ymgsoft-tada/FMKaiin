@@ -30,7 +30,7 @@ namespace App
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKaiin_DlgHistory));
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.iKaiin = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx25 = new YControlLabelEx.YcLabelEx();
 			this.iTotal = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -48,9 +48,8 @@ namespace App
 			// 
 			this.funckey.Location = new System.Drawing.Point(0, 278);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(597, 25);
+			this.funckey.Size = new System.Drawing.Size(597, 66);
 			this.funckey.TabIndex = 35;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// iKaiin
 			// 
@@ -173,7 +172,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(597, 303);
+			this.ClientSize = new System.Drawing.Size(597, 344);
 			this.Controls.Add(this.iIsekiNo);
 			this.Controls.Add(this.ycLabelEx2);
 			this.Controls.Add(this.grid);
@@ -207,7 +206,7 @@ namespace App
 
 		#endregion
 
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iKaiin;
 		private YControlLabelEx.YcLabelEx ycLabelEx25;
 		private GControlGcTextBoxEx.GcTextBoxEx iTotal;

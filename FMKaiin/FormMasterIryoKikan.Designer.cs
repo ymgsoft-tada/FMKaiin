@@ -34,7 +34,7 @@ namespace App
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.iCodeIryo = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.btnClear = new System.Windows.Forms.Button();
@@ -101,12 +101,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 475);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(925, 25);
+			this.funckey.Size = new System.Drawing.Size(925, 66);
 			this.funckey.TabIndex = 51;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// iCodeIryo
 			// 
@@ -250,7 +248,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(925, 500);
+			this.ClientSize = new System.Drawing.Size(925, 541);
 			this.Controls.Add(this.iNameIryo);
 			this.Controls.Add(this.ycLabelEx5);
 			this.Controls.Add(this.iKumiCode);
@@ -299,7 +297,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx5;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iCodeIryo;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private System.Windows.Forms.Button btnClear;

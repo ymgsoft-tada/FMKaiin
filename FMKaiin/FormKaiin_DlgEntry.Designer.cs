@@ -65,7 +65,7 @@ namespace App
 			this.ycLabelEx19 = new YControlLabelEx.YcLabelEx();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.tabControl1 = new System.Windows.Forms.TabControl();
 			this.tabPage1 = new System.Windows.Forms.TabPage();
 			this.iIryoShiteiiEtc = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -824,12 +824,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 844);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(1224, 25);
+			this.funckey.Size = new System.Drawing.Size(1224, 66);
 			this.funckey.TabIndex = 379;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// tabControl1
 			// 
@@ -3650,7 +3648,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(1224, 869);
+			this.ClientSize = new System.Drawing.Size(1224, 910);
 			this.Controls.Add(this.iKaiinKbn);
 			this.Controls.Add(this.ycLabelEx56);
 			this.Controls.Add(this.iGenmen);
@@ -3940,7 +3938,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx19;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private System.Windows.Forms.TabControl tabControl1;
 		private System.Windows.Forms.TabPage tabPage1;
 		private System.Windows.Forms.TabPage tabPage2;

@@ -30,7 +30,7 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutExcelShimingyoinKaihi.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutExcelShimingyoinKaihi.Functions);
 
 			iYear.UcValue = AppDate.ParseDateFirstDay(DateTime.Now);
 
@@ -43,8 +43,8 @@ namespace App
 
 			rdoKen.Checked = true;
 
-			FuncOutExcelShimingyoinKaihi.OutExcel.Execute = doExec;
-			FuncOutExcelShimingyoinKaihi.Close.Execute = formClose;
+			funcKeys.On(FuncOutExcelShimingyoinKaihi.OutExcel, doExec);
+			funcKeys.On(FuncOutExcelShimingyoinKaihi.Close, formClose);
 		}
 
 		void doExec()

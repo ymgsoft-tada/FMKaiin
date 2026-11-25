@@ -261,12 +261,12 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncMasterBankCode.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncMasterBankCode.Functions);
 
-			FuncMasterBankCode.RowAdd.Execute = rowAdd;
-			FuncMasterBankCode.RowEdit.Execute = rowEdit;
-			FuncMasterBankCode.RowDelete.Execute = rowDelete;
-			FuncMasterBankCode.Close.Execute = formClose;
+			funcKeys.On(FuncMasterBankCode.RowAdd, rowAdd);
+			funcKeys.On(FuncMasterBankCode.RowEdit, rowEdit);
+			funcKeys.On(FuncMasterBankCode.RowDelete, rowDelete);
+			funcKeys.On(FuncMasterBankCode.Close, formClose);
 		}
 
 		/// <summary>

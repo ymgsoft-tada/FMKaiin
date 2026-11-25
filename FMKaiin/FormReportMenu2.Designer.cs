@@ -30,7 +30,7 @@ namespace App
 		private void InitializeComponent()
 		{
 			this.btnHikiIkaiShukei = new System.Windows.Forms.Button();
-			this.funckey = new GrapeCity.Win.Bars.GcFunctionKey();
+			this.funckey = new App.Controls.FunctionKeyBar();
 			this.btnHikiMeisai = new System.Windows.Forms.Button();
 			this.btnHikiIkaiMeisai = new System.Windows.Forms.Button();
 			this.btnHikiKakunin = new System.Windows.Forms.Button();
@@ -51,12 +51,10 @@ namespace App
 			// 
 			// funckey
 			// 
-			this.funckey.ImageScalingSize = new System.Drawing.Size(20, 20);
 			this.funckey.Location = new System.Drawing.Point(0, 396);
 			this.funckey.Name = "funckey";
-			this.funckey.Size = new System.Drawing.Size(392, 25);
+			this.funckey.Size = new System.Drawing.Size(392, 66);
 			this.funckey.TabIndex = 56;
-			this.funckey.Text = "gcFunctionKey1";
 			// 
 			// btnHikiMeisai
 			// 
@@ -122,7 +120,7 @@ namespace App
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(392, 421);
+			this.ClientSize = new System.Drawing.Size(392, 462);
 			this.Controls.Add(this.btnHikiShukei);
 			this.Controls.Add(this.btnChoshuMeisai);
 			this.Controls.Add(this.btnMinyukin);
@@ -154,7 +152,7 @@ namespace App
 		#endregion
 
 		private System.Windows.Forms.Button btnHikiIkaiShukei;
-		private GrapeCity.Win.Bars.GcFunctionKey funckey;
+		private App.Controls.FunctionKeyBar funckey;
 		private System.Windows.Forms.Button btnHikiMeisai;
 		private System.Windows.Forms.Button btnHikiIkaiMeisai;
 		private System.Windows.Forms.Button btnHikiKakunin;

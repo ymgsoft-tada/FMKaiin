@@ -57,10 +57,10 @@ namespace App
 		/// </summary>
 		protected override void SetFunction()
 		{
-			appFuncKey = new AppFunctionKey(funckey, FuncOutHikiotoshiKakunin.Functions);
+			funcKeys = new FunctionKeyBinder(funckey, FuncOutHikiotoshiKakunin.Functions);
 
-			FuncOutHikiotoshiKakunin.Preview.Execute = preview;
-			FuncOutHikiotoshiKakunin.Close.Execute = formClose;
+			funcKeys.On(FuncOutHikiotoshiKakunin.Preview, preview);
+			funcKeys.On(FuncOutHikiotoshiKakunin.Close, formClose);
 		}
 
 		/// <summary>
