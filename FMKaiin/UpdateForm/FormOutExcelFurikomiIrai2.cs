@@ -4,7 +4,7 @@ using App.Controls;
 namespace App
 {
     /// <summary>
-    /// 振込依頼書の Excel 出力の画面。<see cref="FormOutExcelFurikomiIrai"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 振込依頼書の Excel 出力の画面。<see cref="FormOutExcelFurikomiIrai"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。日付は <see cref="SDateBox"/> を使う。

@@ -10,7 +10,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 会員情報入力画面。<see cref="FormKaiin_DlgEntry"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 会員情報入力画面。<see cref="FormKaiin_DlgEntry"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// <para>

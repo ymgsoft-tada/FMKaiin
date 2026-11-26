@@ -5,7 +5,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 市民病院会費請求資料の Excel 出力の画面。<see cref="FormOutExcelShimingyoinKaihi"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 市民病院会費請求資料の Excel 出力の画面。<see cref="FormOutExcelShimingyoinKaihi"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。年は <see cref="SDateBox"/>、期は <see cref="SComboBox"/>、

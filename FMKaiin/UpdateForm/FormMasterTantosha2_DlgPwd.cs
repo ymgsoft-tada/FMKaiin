@@ -5,7 +5,7 @@ using App.Controls;
 namespace App
 {
     /// <summary>
-    /// 担当者マスタ（パスワード変更）。<see cref="FormMasterTantosha_DlgPwd"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 担当者マスタ（パスワード変更）。<see cref="FormMasterTantosha_DlgPwd"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系のコントロール・コードは使っていない。入力ルールは <see cref="AppSControlRule"/> を使う。

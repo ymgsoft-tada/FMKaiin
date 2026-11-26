@@ -5,7 +5,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// FB（銀行用引落）データ作成の画面。<see cref="FormCreateBankFile"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// FB（銀行用引落）データ作成の画面。<see cref="FormCreateBankFile"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。月度・引落日は <see cref="SDateBox"/>、引落元銀行は <see cref="STableComboBox"/> を使う。

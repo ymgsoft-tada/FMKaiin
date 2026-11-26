@@ -11,7 +11,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// MAMISデータ取込（取込確認）の画面。<see cref="FormMamisImport_DlgConfirm"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// MAMISデータ取込（取込確認）の画面。<see cref="FormMamisImport_DlgConfirm"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// 上段に会員ごとの照合結果、下段に選択中の会員の取込内容を表示します。
     /// </summary>
     /// <remarks>

@@ -4,7 +4,7 @@ using App.Controls;
 namespace App
 {
     /// <summary>
-    /// 会費納付書の Excel 出力の画面。<see cref="FormOutExcelNofusho"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 会費納付書の Excel 出力の画面。<see cref="FormOutExcelNofusho"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。日付は <see cref="SDateBox"/>、医師会の選択は <see cref="SRadioButton"/> を使う。

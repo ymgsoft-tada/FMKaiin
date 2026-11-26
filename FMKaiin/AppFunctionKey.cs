@@ -9,47 +9,7 @@ using System.Drawing;
 
 namespace App
 {
-	/// <summary>
-	/// [作成者 fj]
-	/// ファンクションキー情報を定義します。（一つ分）
-	/// </summary>
-	public class FuncKeyDefine
-	{
-		/// <summary>
-		/// ファンクションキーが押された時に動作するメソッドのハンドラです。
-		/// </summary>
-		public delegate void ExecuteHandler();
-		
-		/// <summary>
-		/// ファンクションキーに表示される名前です。
-		/// </summary>
-		public readonly string	Name;
-		/// <summary>
-		/// ファンクションキーに表示される説明です。
-		/// </summary>
-		public readonly string	Description;
-		/// <summary>
-		/// ファンクションキーで押すと反応するキーです。
-		/// </summary>
-		public readonly Keys	Key;
-		/// <summary>
-		/// ファンクションキーが押された時に動作するメソッドです。
-		/// </summary>
-		public ExecuteHandler	Execute;
-		
-		/// <summary>
-		/// ファンクションキーデータ定義用の内部実行コンストラクタです。
-		/// </summary>
-		/// <param name="key">キー</param>
-		/// <param name="name">表示される名称</param>
-		/// <param name="description">説明</param>
-		public FuncKeyDefine(Keys key, string name, string description)
-		{
-			Key	 = key;
-			Name = name;
-			Description = description;
-		}
-	}
+	// FuncKeyDefine（ファンクションキー 1 つ分の定義）は、comset の UI/FunctionKeyBinder.cs へ移した（名前空間は App のまま）。
 
 	/// <summary>
 	/// [作成者 K.Tada]

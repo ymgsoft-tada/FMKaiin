@@ -8,7 +8,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 医療機関マスタ編集画面。<see cref="FormMasterIryoKikan_DlgEntry"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 医療機関マスタ編集画面。<see cref="FormMasterIryoKikan_DlgEntry"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系のコントロール・コードは使っていない。項目と入力欄の受け渡しは <see cref="SControlDB"/>、

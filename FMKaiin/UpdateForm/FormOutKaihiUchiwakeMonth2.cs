@@ -5,7 +5,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 会費月別内訳の印刷条件の画面。<see cref="FormOutKaihiUchiwakeMonth"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 会費月別内訳の印刷条件の画面。<see cref="FormOutKaihiUchiwakeMonth"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。対象年月は <see cref="SDateBox"/>、会員は <see cref="STableComboBox"/>、在籍区分と月別会費内訳は <see cref="SComboBox"/> を使う。

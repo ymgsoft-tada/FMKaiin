@@ -9,7 +9,7 @@ namespace App.Controls
     /// </summary>
     /// <remarks>
     /// ロゴはこのアプリに固有の図柄なので、共通のアイコン（<see cref="MenuIconKind"/>・<see cref="IconBox"/>）には入れず、
-    /// このコントロールに分けてある。共通の部品（Controls/Common）には置かないこと。
+    /// このコントロールに分けてある。共通の部品（comset の UI）には置かないこと。
     /// </remarks>
     public class IconLogo : IconBoxBase
     {

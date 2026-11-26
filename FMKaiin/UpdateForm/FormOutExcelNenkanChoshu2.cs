@@ -8,7 +8,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 年間会費徴収書類の Excel 出力の画面。<see cref="FormOutExcelNenkanChoshu"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 年間会費徴収書類の Excel 出力の画面。<see cref="FormOutExcelNenkanChoshu"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。年は <see cref="SDateBox"/>、会員は <see cref="STableComboBox"/>、

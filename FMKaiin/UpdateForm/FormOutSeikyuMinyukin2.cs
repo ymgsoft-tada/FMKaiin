@@ -5,7 +5,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 未入金者用請求書の印刷条件の画面。<see cref="FormOutSeikyuMinyukin"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 未入金者用請求書の印刷条件の画面。<see cref="FormOutSeikyuMinyukin"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。対象年月は <see cref="SDateBox"/>、会員は <see cref="STableComboBox"/>、支払方法は <see cref="SComboBox"/> を使う。

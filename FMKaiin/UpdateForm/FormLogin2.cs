@@ -6,7 +6,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// ログイン画面。<see cref="FormLogin"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// ログイン画面。<see cref="FormLogin"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。担当者コードの入力ルールは <see cref="AppSControlRule"/> を使う。

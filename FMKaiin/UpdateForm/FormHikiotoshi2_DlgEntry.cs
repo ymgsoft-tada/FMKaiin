@@ -9,7 +9,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 引落データ編集画面。<see cref="FormHikiotoshi_DlgEntry"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 引落データ編集画面。<see cref="FormHikiotoshi_DlgEntry"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。一覧は <see cref="SGridDB"/> で、セルに入力欄を重ねて、その場で編集する

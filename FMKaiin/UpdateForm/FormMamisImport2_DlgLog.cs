@@ -10,7 +10,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// MAMISデータ取込（取込結果・取込履歴）の画面。<see cref="FormMamisImport_DlgLog"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// MAMISデータ取込（取込結果・取込履歴）の画面。<see cref="FormMamisImport_DlgLog"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// 上段に取込の一覧（処理日時・処理者）、下段に選択中の取込で変更した会員・項目を表示します。
     /// </summary>
     /// <remarks>

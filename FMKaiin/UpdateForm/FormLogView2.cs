@@ -11,7 +11,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// ログ表示画面（処理の結果を一覧で見せる）。<see cref="FormLogView"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// ログ表示画面（処理の結果を一覧で見せる）。<see cref="FormLogView"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。一覧は <see cref="SGridDB"/>、ボタンは <see cref="SButton"/> を使う。

@@ -5,7 +5,7 @@ using App.Controls;
 namespace App
 {
     /// <summary>
-    /// 医師信用組合振込データ一覧の Excel 出力の画面。<see cref="FormOutExcelFurikomi"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 医師信用組合振込データ一覧の Excel 出力の画面。<see cref="FormOutExcelFurikomi"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。日付は <see cref="SDateBox"/> を使う。

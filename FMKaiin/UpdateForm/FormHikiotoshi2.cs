@@ -10,7 +10,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 引落データの一覧画面。<see cref="FormHikiotoshi"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 引落データの一覧画面。<see cref="FormHikiotoshi"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。処理月度は <see cref="SDateBox"/>、一覧は <see cref="SGridDB"/>、

@@ -6,7 +6,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// MAMISデータ取込（取込CSVの指定）の画面。<see cref="FormMamisImport"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// MAMISデータ取込（取込CSVの指定）の画面。<see cref="FormMamisImport"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。取込 CSV は、ファイルを選ぶ入力欄（<see cref="SFileSelect"/>）で指定する。

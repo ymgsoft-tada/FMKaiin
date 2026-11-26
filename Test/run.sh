@@ -1,5 +1,5 @@
 #!/bin/sh
-# S 系コントロール（FMKaiin/Controls/Common）のテストを、ビルドして実行する。
+# S 系コントロール（comset の UI フォルダー。以前は FMKaiin/Controls/Common）のテストを、ビルドして実行する。
 #
 # 使い方:
 #   sh Test/run.sh               すべてのテストを実行する
@@ -7,7 +7,8 @@
 #
 # テストの種類:
 #   TextHarness・ComboHarness・TableHarness・NumberHarness・DateHarness・DbHarness・ToolTipHarness・MsgBoxHarness・GridHarness・CheckHarness・RadioHarness・ProgressHarness
-#     Controls/Common のソースと一緒にコンパイルして、コントロールを単体で確かめる。
+#     comset の UI フォルダーのソースと一緒にコンパイルして、コントロールを単体で確かめる
+#     （内部用のクラスも確かめるため。同じクラスが comset.dll にもあるので、ビルドの記録に CS0436 の警告が出るが、ソースのほうが使われる）。
 #     GridHarness は、グリッド（C1TrueDBGrid）を使うので、そのライセンスの情報を実行ファイルに埋め込む
 #     （Visual Studio がアプリをビルドするときと同じ仕組み。ライセンス コンパイラー lc.exe を使う）。
 #   RuleHarness・FrameHarness
@@ -17,6 +18,8 @@
 # 前提:
 #   先に FMKaiin を Debug でビルドしてあること。その出力（FMKaiin/bin/Debug）にある comset.dll などを参照する。
 #   別のフォルダーの出力を使う場合は、環境変数 FMKAIIN_OUT にそのフォルダーを指定する。
+#   comset のソースは、FMKaiin.csproj が参照しているのと同じ場所（このリポジトリの 2 つ上の _Library/_All/comset/comset）にあること。
+#   別の場所にある場合は、環境変数 COMSET_UI に、UI フォルダーを指定する。
 #   Visual Studio 2022 の C# コンパイラーを使う。場所が違う場合は、環境変数 CSC に csc.exe のパスを指定する。
 #   GridHarness は、ライセンス コンパイラーも使う。場所が違う場合は、環境変数 LC に lc.exe のパスを指定する。
 #
@@ -37,6 +40,7 @@
 
 HERE="$(cd "$(dirname "$0")" && pwd)"
 APP="$HERE/../FMKaiin"
+UI="${COMSET_UI:-$HERE/../../../_Library/_All/comset/comset/UI}"
 REF="${FMKAIIN_OUT:-$APP/bin/Debug}"
 OUT="$HERE/bin"
 CSC="${CSC:-/c/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/Roslyn/csc.exe}"
@@ -45,6 +49,11 @@ LC="${LC:-/c/Program Files (x86)/Microsoft SDKs/Windows/v10.0A/bin/NETFX 4.8 Too
 if [ ! -f "$REF/comset.dll" ]; then
   echo "comset.dll が見つかりません: $REF" >&2
   echo "先に FMKaiin を Debug でビルドするか、環境変数 FMKAIIN_OUT に出力フォルダーを指定してください。" >&2
+  exit 2
+fi
+if [ ! -d "$UI" ]; then
+  echo "comset の UI フォルダーが見つかりません: $UI" >&2
+  echo "環境変数 COMSET_UI に、UI フォルダーを指定してください。" >&2
   exit 2
 fi
 if [ ! -f "$CSC" ]; then
@@ -67,25 +76,25 @@ fi
 
 REFS="-r:System.dll -r:System.Core.dll -r:System.Data.dll -r:System.Xml.dll -r:System.Drawing.dll -r:System.Windows.Forms.dll -r:Microsoft.VisualBasic.dll"
 COMSET="-r:$(cygpath -w "$REF/comset.dll")"
-# グリッド（C1TrueDBGrid）。SGridDB が使う。Gc 系ではないので、Controls/Common から参照してよい
+# グリッド（C1TrueDBGrid）。SGridDB が使う。Gc 系ではないので、UI フォルダーから参照してよい
 C1GRID="-r:$(cygpath -w "$REF/C1.Win.C1TrueDBGrid.4.dll")"
 # 既存のルールの読み替え（SControlDBRuleConverter）は Gc 系の定義を使うので、テストでは GrapeCity の DLL も参照に入れる
 GRAPECITY="-r:$(cygpath -w "$REF/GrapeCity.Win.Editors.v60.dll")"
 CONVERTER="$(cygpath -w "$HERE/SControlDBRuleConverter.cs")"
 
 SRC=""
-for f in "$APP"/Controls/Common/*.cs; do
+for f in "$UI"/*.cs; do
   SRC="$SRC $(cygpath -w "$f")"
 done
 
 FAILED=0
 
-# Controls/Common が、Gc 系（GrapeCity の DLL）を参照せずにコンパイルできることを確かめる。
+# comset の UI フォルダーが、Gc 系（GrapeCity の DLL）を参照せずにコンパイルできることを確かめる。
 # このフォルダーのものは、将来 Gc 系を外しても動くようにしておく決まりなので、ここで見張る
 if "$CSC" -nologo -langversion:7.3 -target:library "-out:$(cygpath -w "$OUT/CommonCheck.dll")" $REFS "$COMSET" "$C1GRID" $SRC > "$OUT/CommonCheck.log" 2>&1; then
-  echo "Controls/Common: Gc 系を参照せずにコンパイルできる"
+  echo "comset/UI: Gc 系を参照せずにコンパイルできる"
 else
-  echo "Controls/Common: Gc 系を参照せずにコンパイルできない（$OUT/CommonCheck.log）"
+  echo "comset/UI: Gc 系を参照せずにコンパイルできない（$OUT/CommonCheck.log）"
   FAILED=1
 fi
 

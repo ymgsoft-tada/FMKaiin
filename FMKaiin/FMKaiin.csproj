@@ -134,141 +134,14 @@
     <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
     <Compile Include="BankCodeManager.cs" />
-    <Compile Include="Controls\BorderedComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\BufferedPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\BufferedTableLayoutPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CardTileButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\CardTileLayout.cs" />
-    <Compile Include="Controls\Common\DropShadow.cs" />
-    <Compile Include="Controls\FunctionKeyBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\FunctionKeyBarButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\GlassBackdropForm.cs">
+    <Compile Include="UI\GradientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\GradientForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\IBackdropBlurSource.cs" />
-    <Compile Include="Controls\Common\IconBox.cs">
+    <Compile Include="UI\IconLogo.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\Common\IconBoxBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\IconLogo.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\IconButtonBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\LayoutScale.cs" />
-    <Compile Include="Controls\Common\MenuIconKind.cs" />
-    <Compile Include="Controls\Common\MenuIconPainter.cs" />
-    <Compile Include="Controls\MenuTileButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\OrganizationLogoShape.cs" />
-    <Compile Include="Controls\Common\PaintHelper.cs" />
-    <Compile Include="Controls\Common\SControlStyle.cs" />
-    <Compile Include="Controls\Common\STabControl.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SFileSelect.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SFittedFont.cs" />
-    <Compile Include="Controls\Common\SPlaceholderFont.cs" />
-    <Compile Include="Controls\Common\SControlInterfaces.cs" />
-    <Compile Include="Controls\Common\SDateText.cs" />
-    <Compile Include="Controls\Common\SInputEnums.cs" />
-    <Compile Include="Controls\Common\SInputFilter.cs" />
-    <Compile Include="Controls\Common\SInputFormat.cs" />
-    <Compile Include="Controls\Common\STableRowSource.cs" />
-    <Compile Include="Controls\Common\SectionPanel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SmoothPictureBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\StepHeaderLabel.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\SideMenuButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\STextBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\STableComboBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SNumberBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\STablePopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SPopupForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SCalendarPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SToolTip.cs" />
-    <Compile Include="Controls\Common\SMsgBox.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SMsgBoxButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SCheckBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SBusyIndicator.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SProgressBar.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SCheckStyle.cs" />
-    <Compile Include="Controls\Common\SRadioButton.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SGridDB.cs" />
-    <Compile Include="Controls\Common\SGridDBColumns.cs" />
-    <Compile Include="Controls\Common\SGridDBInput.cs" />
-    <Compile Include="Controls\Common\SGridStyle.cs" />
-    <Compile Include="Controls\Common\SToolTipPopup.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SDateBox.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\Common\SEditBase.cs">
-      <SubType>Component</SubType>
-    </Compile>
-    <Compile Include="Controls\ToolbarButton.cs">
+    <Compile Include="UI\OrganizationLogoShape.cs" />
+    <Compile Include="UI\StepHeaderLabel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="DlgSplash2.cs">
@@ -325,15 +198,7 @@
     <Compile Include="FormExcelMenu.Designer.cs">
       <DependentUpon>FormExcelMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="Controls\Common\FontFallback.cs" />
-    <Compile Include="FormHelpers\FunctionKeyBinder.cs" />
-    <Compile Include="FormHelpers\ProcessingMonthChoices.cs" />
     <Compile Include="UpdateForm\RowSnapshot.cs" />
-    <Compile Include="Controls\Common\SRow.cs" />
-    <Compile Include="Controls\Common\SControlDB.cs" />
-    <Compile Include="Controls\Common\SControlDBItems.cs" />
-    <Compile Include="Controls\Common\SControlDBRule.cs" />
-    <Compile Include="Controls\Common\TitleBarColor.cs" />
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
     </Compile>

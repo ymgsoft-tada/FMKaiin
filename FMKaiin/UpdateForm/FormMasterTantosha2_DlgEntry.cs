@@ -7,7 +7,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 担当者マスタ編集画面。<see cref="FormMasterTantosha_DlgEntry"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 担当者マスタ編集画面。<see cref="FormMasterTantosha_DlgEntry"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系のコントロール・コードは使っていない。項目と入力欄の受け渡しは <see cref="SControlDB"/>、

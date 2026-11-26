@@ -9,7 +9,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 医療機関マスタ（一覧）。<see cref="FormMasterIryoKikan"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 医療機関マスタ（一覧）。<see cref="FormMasterIryoKikan"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// この画面は、Gc 系のコントロール・コードを使っていない。グリッド（C1TrueDBGrid）と列・データの結び付けは <see cref="SGridDB"/>、

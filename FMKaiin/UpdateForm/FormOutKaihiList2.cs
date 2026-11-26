@@ -5,7 +5,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 会費種別一覧表の印刷条件の画面。<see cref="FormOutKaihiList"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 会費種別一覧表の印刷条件の画面。<see cref="FormOutKaihiList"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。会費区分は <see cref="SComboBox"/>、会費は <see cref="STableComboBox"/> を使う。

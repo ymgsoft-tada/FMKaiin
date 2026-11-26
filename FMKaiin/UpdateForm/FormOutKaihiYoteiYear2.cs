@@ -5,7 +5,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 年間会費徴収予定通知書の印刷条件の画面。<see cref="FormOutKaihiYoteiYear"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 年間会費徴収予定通知書の印刷条件の画面。<see cref="FormOutKaihiYoteiYear"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。対象年月は <see cref="SDateBox"/>、会員・医療機関は <see cref="STableComboBox"/>、在籍区分は <see cref="SComboBox"/> を使う。

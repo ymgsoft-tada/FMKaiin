@@ -6,7 +6,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// 各種医会等申請書の Excel 出力の画面。<see cref="FormOutExcelKaihiShinsei"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 各種医会等申請書の Excel 出力の画面。<see cref="FormOutExcelKaihiShinsei"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。会員は <see cref="STableComboBox"/>、書類タイプの選択は <see cref="SRadioButton"/> を使う。

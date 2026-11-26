@@ -7,7 +7,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 在籍期間の表示の画面。<see cref="FormKaiin_DlgHistory"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 在籍期間の表示の画面。<see cref="FormKaiin_DlgHistory"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。会員名などは、無効にした <see cref="STextBox"/>（表示するだけ）、

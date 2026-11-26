@@ -6,7 +6,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 銀行コード選択リスト。<see cref="FormSelectorBankCode"/> と同じ内容を、S 系の部品（Controls/Common）で作ったもの。
+    /// 銀行コード選択リスト。<see cref="FormSelectorBankCode"/> と同じ内容を、S 系の部品（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系のコントロール・コードは使っていない。グリッド（C1TrueDBGrid）と列・データの結び付けは <see cref="SGridDB"/>、

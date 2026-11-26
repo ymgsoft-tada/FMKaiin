@@ -6,7 +6,7 @@ using ComponentIO;
 namespace App
 {
     /// <summary>
-    /// iFAXデータ（BizFAX 宛先リスト）作成の画面。<see cref="FormCreateIfaxFile"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// iFAXデータ（BizFAX 宛先リスト）作成の画面。<see cref="FormCreateIfaxFile"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系・Yc 系のコントロール・コードは使っていない。iFAX グループは <see cref="STableComboBox"/> で選ぶ。

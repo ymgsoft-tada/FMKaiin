@@ -7,7 +7,7 @@ using ComponentDB;
 namespace App
 {
     /// <summary>
-    /// 基本情報。<see cref="FormMasterBasic"/> と同じ内容を、S 系のコントロール（Controls/Common）で作ったもの。
+    /// 基本情報。<see cref="FormMasterBasic"/> と同じ内容を、S 系のコントロール（comset の UI）で作ったもの。
     /// </summary>
     /// <remarks>
     /// Gc 系のコントロール・コードは使っていない。項目と入力欄の受け渡しは <see cref="SControlDB"/>、
