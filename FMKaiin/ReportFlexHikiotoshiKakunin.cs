@@ -275,6 +275,7 @@ namespace App
 				int page = 1;
 				int line = 0;
 				int no = 0;
+				int preId = 0; // 集計キー
 
 				// 出力用DBViewにデータ行を追加
 				foreach (var kvp in dics) // 会員-Dic
@@ -288,8 +289,19 @@ namespace App
 						if (no < LINE_MAX_PAGE)
 						{
 							nrow = dt.NewRow();
-							nrow[F_CD_Kaiin] = kvp2.Value.CD_Kaiin;
-							nrow[F_Kaiin_Name] = kvp2.Value.Kaiin_Name;
+
+							if(preId == kin.ID && line > 0) 
+							{
+								// 前行と同じID かつ ページ先頭行以外
+								// 同じ集計キーの場合、2行目以降は空欄の仕様
+								nrow[F_CD_Kaiin] = ""; // コード:空欄
+								nrow[F_Kaiin_Name] = ""; // 名称:空欄
+							}
+							else
+							{
+								nrow[F_CD_Kaiin] = kvp2.Value.CD_Kaiin;
+								nrow[F_Kaiin_Name] = kvp2.Value.Kaiin_Name;
+							}
 							nrow[F_Kaiin_BankKozaNameKana] = kvp2.Value.Kaiin_BankKozaNameKana;
 							nrow[F_Kaiin_BankCode] = kvp2.Value.Kaiin_BankCode;
 							nrow[F_Kaiin_BankName] = kvp2.Value.Kaiin_BankName;
@@ -310,6 +322,7 @@ namespace App
 							line++;
 
 							maxPage = page;
+							preId = kin.ID; // 直近で処理したIDを保持
 						}
 
 						no++;
@@ -531,7 +544,7 @@ namespace App
 				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankNameShiten, "");
 				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaType, "");
 				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaNo, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldCostTotal, "");
+				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldCostTotal, ""); // 0を表示しないため
 			}
 		}
 
