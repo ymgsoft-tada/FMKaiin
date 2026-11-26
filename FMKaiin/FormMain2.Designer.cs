@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain2));
             this.pnlHeader = new App.Controls.SectionPanel();
-            this.iconLogo = new App.Controls.IconBox();
-            this.lblCorporateType = new App.Controls.SingleLineLabel();
-            this.lblOrganization = new App.Controls.SingleLineLabel();
+            this.iconLogo = new App.Controls.IconLogo();
+            this.lblCorporateType = new App.Controls.SLabel();
+            this.lblOrganization = new App.Controls.SLabel();
             this.sepHeaderLeft = new App.Controls.BufferedPanel();
-            this.lblAppTitle = new App.Controls.SingleLineLabel();
+            this.lblAppTitle = new App.Controls.SLabel();
             this.sepHeaderRight = new App.Controls.BufferedPanel();
-            this.lblLoginUser = new App.Controls.SingleLineLabel();
+            this.lblLoginUser = new App.Controls.SLabel();
             this.pnlHeaderBorder = new App.Controls.BufferedPanel();
             this.pnlToolbar = new App.Controls.SectionPanel();
             this.btnDataSave = new App.Controls.ToolbarButton();
@@ -104,12 +104,12 @@
             this.btnMasterShinryoka = new App.Controls.CardTileButton();
             this.btnMasterIryoKikan = new App.Controls.CardTileButton();
             this.btnMasterIkaiKaihi = new App.Controls.CardTileButton();
+            this.pnlFooter = new App.Controls.BufferedPanel();
+            this.lblVersion = new App.Controls.SLabel();
             this.pnlHeading = new App.Controls.BufferedPanel();
             this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SingleLineLabel();
+            this.lblHeading = new App.Controls.SLabel();
             this.pnlHeadingLineAccent = new App.Controls.BufferedPanel();
-            this.pnlFooter = new App.Controls.BufferedPanel();
-            this.lblVersion = new App.Controls.SingleLineLabel();
             this.pnlHeader.SuspendLayout();
             this.pnlToolbar.SuspendLayout();
             this.pnlNav.SuspendLayout();
@@ -131,8 +131,8 @@
             this.pnlPageMaster.SuspendLayout();
             this.secMaster.SuspendLayout();
             this.tblMaster.SuspendLayout();
-            this.pnlHeading.SuspendLayout();
             this.pnlFooter.SuspendLayout();
+            this.pnlHeading.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlHeader
@@ -162,8 +162,6 @@
             this.iconLogo.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(84)))), ((int)(((byte)(145)))));
             this.iconLogo.CornerRadius = 10;
             this.iconLogo.ForeColor = System.Drawing.Color.White;
-            this.iconLogo.IconKind = App.Controls.MenuIconKind.OrganizationLogo;
-            this.iconLogo.LineWeight = 0.85F;
             this.iconLogo.Location = new System.Drawing.Point(33, 9);
             this.iconLogo.Margin = new System.Windows.Forms.Padding(4);
             this.iconLogo.Name = "iconLogo";
@@ -714,7 +712,7 @@
             this.btnRepKaihiUchiwakeYear.Name = "btnRepKaihiUchiwakeYear";
             this.btnRepKaihiUchiwakeYear.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnRepKaihiUchiwakeYear.ShadowSize = 6;
-            this.btnRepKaihiUchiwakeYear.Size = new System.Drawing.Size(239, 66);
+            this.btnRepKaihiUchiwakeYear.Size = new System.Drawing.Size(242, 66);
             this.btnRepKaihiUchiwakeYear.TabIndex = 3;
             this.btnRepKaihiUchiwakeYear.Text = "年間会費内訳";
             this.btnRepKaihiUchiwakeYear.TextGap = 15;
@@ -810,7 +808,7 @@
             this.btnRepKaihiYoteiYear.Name = "btnRepKaihiYoteiYear";
             this.btnRepKaihiYoteiYear.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnRepKaihiYoteiYear.ShadowSize = 6;
-            this.btnRepKaihiYoteiYear.Size = new System.Drawing.Size(239, 66);
+            this.btnRepKaihiYoteiYear.Size = new System.Drawing.Size(242, 66);
             this.btnRepKaihiYoteiYear.TabIndex = 7;
             this.btnRepKaihiYoteiYear.Text = "年間会費徴収予定表";
             this.btnRepKaihiYoteiYear.TextGap = 15;
@@ -833,7 +831,7 @@
             this.secKaiinExcel.HeaderIconLineWeight = 0.8F;
             this.secKaiinExcel.HeaderIconSize = 22;
             this.secKaiinExcel.Location = new System.Drawing.Point(0, 402);
-            this.secKaiinExcel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.secKaiinExcel.Margin = new System.Windows.Forms.Padding(0);
             this.secKaiinExcel.Name = "secKaiinExcel";
             this.secKaiinExcel.Padding = new System.Windows.Forms.Padding(14, 12, 13, 6);
             this.secKaiinExcel.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
@@ -928,7 +926,7 @@
             this.btnXlsNenkanChoshu.Name = "btnXlsNenkanChoshu";
             this.btnXlsNenkanChoshu.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnXlsNenkanChoshu.ShadowSize = 6;
-            this.btnXlsNenkanChoshu.Size = new System.Drawing.Size(322, 66);
+            this.btnXlsNenkanChoshu.Size = new System.Drawing.Size(323, 66);
             this.btnXlsNenkanChoshu.TabIndex = 2;
             this.btnXlsNenkanChoshu.Text = "年間会費予定通知・徴収明細書";
             this.btnXlsNenkanChoshu.TextGap = 15;
@@ -1065,7 +1063,7 @@
             this.btnCreateIfaxFile.Name = "btnCreateIfaxFile";
             this.btnCreateIfaxFile.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnCreateIfaxFile.ShadowSize = 6;
-            this.btnCreateIfaxFile.Size = new System.Drawing.Size(322, 66);
+            this.btnCreateIfaxFile.Size = new System.Drawing.Size(323, 66);
             this.btnCreateIfaxFile.TabIndex = 2;
             this.btnCreateIfaxFile.Text = "iFAXデータ作成";
             this.btnCreateIfaxFile.TextGap = 15;
@@ -1214,7 +1212,7 @@
             this.btnRepHikiotoshiKakunin.Name = "btnRepHikiotoshiKakunin";
             this.btnRepHikiotoshiKakunin.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnRepHikiotoshiKakunin.ShadowSize = 6;
-            this.btnRepHikiotoshiKakunin.Size = new System.Drawing.Size(239, 66);
+            this.btnRepHikiotoshiKakunin.Size = new System.Drawing.Size(242, 66);
             this.btnRepHikiotoshiKakunin.TabIndex = 3;
             this.btnRepHikiotoshiKakunin.Text = "引落金額確認表";
             this.btnRepHikiotoshiKakunin.TextGap = 15;
@@ -1310,7 +1308,7 @@
             this.btnRepAtenaLabel.Name = "btnRepAtenaLabel";
             this.btnRepAtenaLabel.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnRepAtenaLabel.ShadowSize = 6;
-            this.btnRepAtenaLabel.Size = new System.Drawing.Size(239, 66);
+            this.btnRepAtenaLabel.Size = new System.Drawing.Size(242, 66);
             this.btnRepAtenaLabel.TabIndex = 7;
             this.btnRepAtenaLabel.Text = "宛名ラベル";
             this.btnRepAtenaLabel.TextGap = 15;
@@ -1333,7 +1331,7 @@
             this.secHikiotoshiExcel.HeaderIconLineWeight = 0.8F;
             this.secHikiotoshiExcel.HeaderIconSize = 22;
             this.secHikiotoshiExcel.Location = new System.Drawing.Point(0, 402);
-            this.secHikiotoshiExcel.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.secHikiotoshiExcel.Margin = new System.Windows.Forms.Padding(0);
             this.secHikiotoshiExcel.Name = "secHikiotoshiExcel";
             this.secHikiotoshiExcel.Padding = new System.Windows.Forms.Padding(14, 12, 13, 6);
             this.secHikiotoshiExcel.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
@@ -1428,7 +1426,7 @@
             this.btnXlsNofusho.Name = "btnXlsNofusho";
             this.btnXlsNofusho.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnXlsNofusho.ShadowSize = 6;
-            this.btnXlsNofusho.Size = new System.Drawing.Size(322, 66);
+            this.btnXlsNofusho.Size = new System.Drawing.Size(323, 66);
             this.btnXlsNofusho.TabIndex = 2;
             this.btnXlsNofusho.Text = "会費納付書";
             this.btnXlsNofusho.TextGap = 15;
@@ -1456,11 +1454,11 @@
             this.secMaster.Controls.Add(this.tblMaster);
             this.secMaster.CornerRadius = 10;
             this.secMaster.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.secMaster.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(88)))), ((int)(((byte)(200)))), ((int)(((byte)(212)))), ((int)(((byte)(230)))));
+            this.secMaster.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(108)))), ((int)(((byte)(245)))), ((int)(((byte)(245)))), ((int)(((byte)(255)))));
             this.secMaster.Font = new System.Drawing.Font("BIZ UDPゴシック", 13F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.secMaster.HeaderHeight = 0;
             this.secMaster.Location = new System.Drawing.Point(0, 0);
-            this.secMaster.Margin = new System.Windows.Forms.Padding(0, 0, 0, 0);
+            this.secMaster.Margin = new System.Windows.Forms.Padding(0);
             this.secMaster.Name = "secMaster";
             this.secMaster.Padding = new System.Windows.Forms.Padding(14, 14, 13, 8);
             this.secMaster.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
@@ -1584,7 +1582,7 @@
             this.btnMasterKaihi.Name = "btnMasterKaihi";
             this.btnMasterKaihi.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.btnMasterKaihi.ShadowSize = 6;
-            this.btnMasterKaihi.Size = new System.Drawing.Size(239, 74);
+            this.btnMasterKaihi.Size = new System.Drawing.Size(242, 74);
             this.btnMasterKaihi.TabIndex = 3;
             this.btnMasterKaihi.Text = "会費マスター";
             this.btnMasterKaihi.TextGap = 15;
@@ -1661,6 +1659,30 @@
             this.btnMasterIkaiKaihi.Text = "医会会費マスター";
             this.btnMasterIkaiKaihi.TextGap = 15;
             // 
+            // pnlFooter
+            // 
+            this.pnlFooter.Controls.Add(this.lblVersion);
+            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlFooter.Location = new System.Drawing.Point(22, 702);
+            this.pnlFooter.Margin = new System.Windows.Forms.Padding(4);
+            this.pnlFooter.Name = "pnlFooter";
+            this.pnlFooter.Size = new System.Drawing.Size(1026, 28);
+            this.pnlFooter.TabIndex = 4;
+            // 
+            // lblVersion
+            // 
+            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblVersion.Font = new System.Drawing.Font("BIZ UDPゴシック", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(60)))), ((int)(((byte)(84)))));
+            this.lblVersion.Location = new System.Drawing.Point(826, 2);
+            this.lblVersion.Margin = new System.Windows.Forms.Padding(4);
+            this.lblVersion.Name = "lblVersion";
+            this.lblVersion.Size = new System.Drawing.Size(200, 24);
+            this.lblVersion.TabIndex = 0;
+            this.lblVersion.TabStop = false;
+            this.lblVersion.Text = "Version";
+            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            // 
             // pnlHeading
             // 
             this.pnlHeading.Controls.Add(this.icoHeading);
@@ -1706,30 +1728,6 @@
             this.pnlHeadingLineAccent.Size = new System.Drawing.Size(54, 3);
             this.pnlHeadingLineAccent.TabIndex = 2;
             // 
-            // pnlFooter
-            // 
-            this.pnlFooter.Controls.Add(this.lblVersion);
-            this.pnlFooter.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnlFooter.Location = new System.Drawing.Point(22, 702);
-            this.pnlFooter.Margin = new System.Windows.Forms.Padding(4);
-            this.pnlFooter.Name = "pnlFooter";
-            this.pnlFooter.Size = new System.Drawing.Size(1026, 28);
-            this.pnlFooter.TabIndex = 4;
-            // 
-            // lblVersion
-            // 
-            this.lblVersion.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblVersion.Font = new System.Drawing.Font("BIZ UDPゴシック", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblVersion.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(60)))), ((int)(((byte)(84)))));
-            this.lblVersion.Location = new System.Drawing.Point(826, 2);
-            this.lblVersion.Margin = new System.Windows.Forms.Padding(4);
-            this.lblVersion.Name = "lblVersion";
-            this.lblVersion.Size = new System.Drawing.Size(200, 24);
-            this.lblVersion.TabIndex = 0;
-            this.lblVersion.TabStop = false;
-            this.lblVersion.Text = "Version";
-            this.lblVersion.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
             // FormMain2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(115F, 115F);
@@ -1770,8 +1768,8 @@
             this.pnlPageMaster.ResumeLayout(false);
             this.secMaster.ResumeLayout(false);
             this.tblMaster.ResumeLayout(false);
-            this.pnlHeading.ResumeLayout(false);
             this.pnlFooter.ResumeLayout(false);
+            this.pnlHeading.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -1779,13 +1777,13 @@
         #endregion
 
         private App.Controls.SectionPanel pnlHeader;
-        private App.Controls.IconBox iconLogo;
-        private App.Controls.SingleLineLabel lblCorporateType;
-        private App.Controls.SingleLineLabel lblOrganization;
+        private App.Controls.IconLogo iconLogo;
+        private App.Controls.SLabel lblCorporateType;
+        private App.Controls.SLabel lblOrganization;
         private App.Controls.BufferedPanel sepHeaderLeft;
-        private App.Controls.SingleLineLabel lblAppTitle;
+        private App.Controls.SLabel lblAppTitle;
         private App.Controls.BufferedPanel sepHeaderRight;
-        private App.Controls.SingleLineLabel lblLoginUser;
+        private App.Controls.SLabel lblLoginUser;
         private App.Controls.BufferedPanel pnlHeaderBorder;
         private App.Controls.SectionPanel pnlToolbar;
         private App.Controls.ToolbarButton btnDataSave;
@@ -1855,9 +1853,9 @@
         private App.Controls.CardTileButton btnMasterIkaiKaihi;
         private App.Controls.BufferedPanel pnlHeading;
         private App.Controls.IconBox icoHeading;
-        private App.Controls.SingleLineLabel lblHeading;
+        private App.Controls.SLabel lblHeading;
         private App.Controls.BufferedPanel pnlHeadingLineAccent;
         private App.Controls.BufferedPanel pnlFooter;
-        private App.Controls.SingleLineLabel lblVersion;
+        private App.Controls.SLabel lblVersion;
     }
 }

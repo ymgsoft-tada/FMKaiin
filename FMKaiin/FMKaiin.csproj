@@ -34,8 +34,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup>
-    <ApplicationIcon>
-    </ApplicationIcon>
+    <ApplicationIcon>Resources\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="C1.C1Excel.4, Version=4.0.20183.338, Culture=neutral, PublicKeyToken=79882d576c6336da, processorArchitecture=MSIL" />
@@ -64,7 +63,9 @@
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="PresentationCore" />
     <Reference Include="ReachFramework" />
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.8\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Windows.Forms.DataVisualization" />
@@ -92,6 +93,7 @@
     <Compile Include="AppDb.cs" />
     <Compile Include="AppDbID.cs" />
     <Compile Include="AppDbRule.cs" />
+    <Compile Include="AppSControlRule.cs" />
     <Compile Include="AppDbUpdate.cs" />
     <Compile Include="AppDbUpdate.Data.DB.cs" />
     <Compile Include="AppDbUpdateManager.cs" />
@@ -126,6 +128,9 @@
     <Compile Include="AppMsgBox.cs" />
     <Compile Include="AppKaihi.cs" />
     <Compile Include="AppTableCombo.cs" />
+    <Compile Include="AppSTableCombo.cs" />
+    <Compile Include="AppSCombo.cs" />
+    <Compile Include="AppBankCodeFilter.cs" />
     <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
     <Compile Include="BankCodeManager.cs" />
@@ -142,7 +147,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\CardTileLayout.cs" />
-    <Compile Include="Controls\DropShadow.cs" />
+    <Compile Include="Controls\Common\DropShadow.cs" />
     <Compile Include="Controls\FunctionKeyBar.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -155,34 +160,112 @@
     <Compile Include="Controls\GradientForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Controls\IBackdropBlurSource.cs" />
-    <Compile Include="Controls\IconBox.cs">
+    <Compile Include="Controls\Common\IBackdropBlurSource.cs" />
+    <Compile Include="Controls\Common\IconBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\IconBoxBase.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\IconLogo.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\IconButtonBase.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\LayoutScale.cs" />
-    <Compile Include="Controls\MenuIconKind.cs" />
-    <Compile Include="Controls\MenuIconPainter.cs" />
+    <Compile Include="Controls\Common\LayoutScale.cs" />
+    <Compile Include="Controls\Common\MenuIconKind.cs" />
+    <Compile Include="Controls\Common\MenuIconPainter.cs" />
     <Compile Include="Controls\MenuTileButton.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\OrganizationLogoShape.cs" />
-    <Compile Include="Controls\PaintHelper.cs" />
-    <Compile Include="Controls\SectionPanel.cs">
+    <Compile Include="Controls\Common\PaintHelper.cs" />
+    <Compile Include="Controls\Common\SControlStyle.cs" />
+    <Compile Include="Controls\Common\STabControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\SingleLineLabel.cs">
+    <Compile Include="Controls\Common\SFileSelect.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Controls\SmoothPictureBox.cs">
+    <Compile Include="Controls\Common\SFittedFont.cs" />
+    <Compile Include="Controls\Common\SPlaceholderFont.cs" />
+    <Compile Include="Controls\Common\SControlInterfaces.cs" />
+    <Compile Include="Controls\Common\SDateText.cs" />
+    <Compile Include="Controls\Common\SInputEnums.cs" />
+    <Compile Include="Controls\Common\SInputFilter.cs" />
+    <Compile Include="Controls\Common\SInputFormat.cs" />
+    <Compile Include="Controls\Common\STableRowSource.cs" />
+    <Compile Include="Controls\Common\SectionPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SLabel.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SmoothPictureBox.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\StepHeaderLabel.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\SideMenuButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\STextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\STableComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SNumberBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\STablePopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SPopupForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SCalendarPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SToolTip.cs" />
+    <Compile Include="Controls\Common\SMsgBox.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SMsgBoxButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SCheckBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SBusyIndicator.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SCheckStyle.cs" />
+    <Compile Include="Controls\Common\SRadioButton.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SGridDB.cs" />
+    <Compile Include="Controls\Common\SGridDBColumns.cs" />
+    <Compile Include="Controls\Common\SGridDBInput.cs" />
+    <Compile Include="Controls\Common\SGridStyle.cs" />
+    <Compile Include="Controls\Common\SToolTipPopup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SDateBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Controls\Common\SEditBase.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Controls\ToolbarButton.cs">
@@ -199,12 +282,6 @@
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FormNewMain.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FormNewMain.Designer.cs">
-      <DependentUpon>FormNewMain.cs</DependentUpon>
     </Compile>
     <Compile Include="FormCreateBankFile.cs">
       <SubType>Form</SubType>
@@ -248,10 +325,15 @@
     <Compile Include="FormExcelMenu.Designer.cs">
       <DependentUpon>FormExcelMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHelpers\FontFallback.cs" />
+    <Compile Include="Controls\Common\FontFallback.cs" />
     <Compile Include="FormHelpers\FunctionKeyBinder.cs" />
     <Compile Include="FormHelpers\ProcessingMonthChoices.cs" />
-    <Compile Include="FormHelpers\TitleBarColor.cs" />
+    <Compile Include="FormHelpers\RowSnapshot.cs" />
+    <Compile Include="Controls\Common\SRow.cs" />
+    <Compile Include="Controls\Common\SControlDB.cs" />
+    <Compile Include="Controls\Common\SControlDBItems.cs" />
+    <Compile Include="Controls\Common\SControlDBRule.cs" />
+    <Compile Include="Controls\Common\TitleBarColor.cs" />
     <Compile Include="FormHikiotoshi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -341,6 +423,270 @@
     </Compile>
     <Compile Include="FormMasterBasic.Designer.cs">
       <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBasic2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBasic2.Designer.cs">
+      <DependentUpon>FormMasterBasic2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterTantosha2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterTantosha2.Designer.cs">
+      <DependentUpon>FormMasterTantosha2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterTantosha2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterTantosha2_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterTantosha2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterTantosha2_DlgPwd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterTantosha2_DlgPwd.Designer.cs">
+      <DependentUpon>FormMasterTantosha2_DlgPwd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBasic2_Bank.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBasic2_Bank.Designer.cs">
+      <DependentUpon>FormMasterBasic2_Bank.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBasic2_Bank_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBasic2_Bank_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterBasic2_Bank_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormSelectorBankCode2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormSelectorBankCode2.Designer.cs">
+      <DependentUpon>FormSelectorBankCode2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBankCode2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBankCode2.Designer.cs">
+      <DependentUpon>FormMasterBankCode2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBankCode2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterBankCode2_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterBankCode2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterShinryoka2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterShinryoka2.Designer.cs">
+      <DependentUpon>FormMasterShinryoka2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterShinryoka2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterShinryoka2_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterShinryoka2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterIryoKikan2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterIryoKikan2.Designer.cs">
+      <DependentUpon>FormMasterIryoKikan2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterIryoKikan2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterIryoKikan2_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterIryoKikan2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterIryoKikan2_Out.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterIryoKikan2_Out.Designer.cs">
+      <DependentUpon>FormMasterIryoKikan2_Out.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterKaihi2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterKaihi2.Designer.cs">
+      <DependentUpon>FormMasterKaihi2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterKaihi2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMasterKaihi2_DlgEntry.Designer.cs">
+      <DependentUpon>FormMasterKaihi2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelNofusho2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelNofusho2.Designer.cs">
+      <DependentUpon>FormOutExcelNofusho2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutChosyuMeisaiYear2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutChosyuMeisaiYear2.Designer.cs">
+      <DependentUpon>FormOutChosyuMeisaiYear2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelNenkanChoshu2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelNenkanChoshu2.Designer.cs">
+      <DependentUpon>FormOutExcelNenkanChoshu2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelFurikomi2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelFurikomi2.Designer.cs">
+      <DependentUpon>FormOutExcelFurikomi2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelFurikomiIrai2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelFurikomiIrai2.Designer.cs">
+      <DependentUpon>FormOutExcelFurikomiIrai2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelKaihiShinsei2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelKaihiShinsei2.Designer.cs">
+      <DependentUpon>FormOutExcelKaihiShinsei2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelShimingyoinKaihi2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutExcelShimingyoinKaihi2.Designer.cs">
+      <DependentUpon>FormOutExcelShimingyoinKaihi2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutHikiotoshiKakunin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutHikiotoshiKakunin2.Designer.cs">
+      <DependentUpon>FormOutHikiotoshiKakunin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutSeikyuMinyukin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutSeikyuMinyukin2.Designer.cs">
+      <DependentUpon>FormOutSeikyuMinyukin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiList2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiList2.Designer.cs">
+      <DependentUpon>FormOutKaihiList2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiListBank2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiListBank2.Designer.cs">
+      <DependentUpon>FormOutKaihiListBank2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiUchiwakeMonth2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiUchiwakeMonth2.Designer.cs">
+      <DependentUpon>FormOutKaihiUchiwakeMonth2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiUchiwakeYear2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiUchiwakeYear2.Designer.cs">
+      <DependentUpon>FormOutKaihiUchiwakeYear2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiYoteiYear2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormOutKaihiYoteiYear2.Designer.cs">
+      <DependentUpon>FormOutKaihiYoteiYear2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormLogView2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormLogView2.Designer.cs">
+      <DependentUpon>FormLogView2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormCreateIfaxFile2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormCreateIfaxFile2.Designer.cs">
+      <DependentUpon>FormCreateIfaxFile2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormCreateBankFile2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormCreateBankFile2.Designer.cs">
+      <DependentUpon>FormCreateBankFile2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMamisImport2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMamisImport2.Designer.cs">
+      <DependentUpon>FormMamisImport2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMamisImport2_DlgConfirm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMamisImport2_DlgConfirm.Designer.cs">
+      <DependentUpon>FormMamisImport2_DlgConfirm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormMamisImport2_DlgLog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormMamisImport2_DlgLog.Designer.cs">
+      <DependentUpon>FormMamisImport2_DlgLog.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormHikiotoshi2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormHikiotoshi2.Designer.cs">
+      <DependentUpon>FormHikiotoshi2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormHikiotoshi2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormHikiotoshi2_DlgEntry.Designer.cs">
+      <DependentUpon>FormHikiotoshi2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgHistory.Designer.cs">
+      <DependentUpon>FormKaiin2_DlgHistory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgChosei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgChosei.Designer.cs">
+      <DependentUpon>FormKaiin2_DlgChosei.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgEntry_Idoinfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgEntry_Idoinfo.Designer.cs">
+      <DependentUpon>FormKaiin2_DlgEntry_Idoinfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgEntry.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2_DlgEntry.Designer.cs">
+      <DependentUpon>FormKaiin2_DlgEntry.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormKaiin2.Designer.cs">
+      <DependentUpon>FormKaiin2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateForm\FormLogin2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UpdateForm\FormLogin2.Designer.cs">
+      <DependentUpon>FormLogin2.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMasterIryoKikan_DlgEntry.cs">
       <SubType>Form</SubType>
@@ -632,9 +978,6 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormNewMain.resx">
-      <DependentUpon>FormNewMain.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FormMain2.resx">
       <DependentUpon>FormMain2.cs</DependentUpon>
     </EmbeddedResource>
@@ -700,6 +1043,138 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterBasic.resx">
       <DependentUpon>FormMasterBasic.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterBasic2.resx">
+      <DependentUpon>FormMasterBasic2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterTantosha2.resx">
+      <DependentUpon>FormMasterTantosha2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterTantosha2_DlgEntry.resx">
+      <DependentUpon>FormMasterTantosha2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterTantosha2_DlgPwd.resx">
+      <DependentUpon>FormMasterTantosha2_DlgPwd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterBasic2_Bank.resx">
+      <DependentUpon>FormMasterBasic2_Bank.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterBasic2_Bank_DlgEntry.resx">
+      <DependentUpon>FormMasterBasic2_Bank_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormSelectorBankCode2.resx">
+      <DependentUpon>FormSelectorBankCode2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterBankCode2.resx">
+      <DependentUpon>FormMasterBankCode2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterBankCode2_DlgEntry.resx">
+      <DependentUpon>FormMasterBankCode2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterShinryoka2.resx">
+      <DependentUpon>FormMasterShinryoka2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterShinryoka2_DlgEntry.resx">
+      <DependentUpon>FormMasterShinryoka2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterIryoKikan2.resx">
+      <DependentUpon>FormMasterIryoKikan2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterIryoKikan2_DlgEntry.resx">
+      <DependentUpon>FormMasterIryoKikan2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterIryoKikan2_Out.resx">
+      <DependentUpon>FormMasterIryoKikan2_Out.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterKaihi2.resx">
+      <DependentUpon>FormMasterKaihi2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMasterKaihi2_DlgEntry.resx">
+      <DependentUpon>FormMasterKaihi2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutExcelNofusho2.resx">
+      <DependentUpon>FormOutExcelNofusho2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutChosyuMeisaiYear2.resx">
+      <DependentUpon>FormOutChosyuMeisaiYear2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutExcelNenkanChoshu2.resx">
+      <DependentUpon>FormOutExcelNenkanChoshu2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutExcelFurikomi2.resx">
+      <DependentUpon>FormOutExcelFurikomi2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutExcelFurikomiIrai2.resx">
+      <DependentUpon>FormOutExcelFurikomiIrai2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutExcelKaihiShinsei2.resx">
+      <DependentUpon>FormOutExcelKaihiShinsei2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutExcelShimingyoinKaihi2.resx">
+      <DependentUpon>FormOutExcelShimingyoinKaihi2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutHikiotoshiKakunin2.resx">
+      <DependentUpon>FormOutHikiotoshiKakunin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutSeikyuMinyukin2.resx">
+      <DependentUpon>FormOutSeikyuMinyukin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutKaihiList2.resx">
+      <DependentUpon>FormOutKaihiList2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutKaihiListBank2.resx">
+      <DependentUpon>FormOutKaihiListBank2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutKaihiUchiwakeMonth2.resx">
+      <DependentUpon>FormOutKaihiUchiwakeMonth2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutKaihiUchiwakeYear2.resx">
+      <DependentUpon>FormOutKaihiUchiwakeYear2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormOutKaihiYoteiYear2.resx">
+      <DependentUpon>FormOutKaihiYoteiYear2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormLogView2.resx">
+      <DependentUpon>FormLogView2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormCreateIfaxFile2.resx">
+      <DependentUpon>FormCreateIfaxFile2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormCreateBankFile2.resx">
+      <DependentUpon>FormCreateBankFile2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMamisImport2.resx">
+      <DependentUpon>FormMamisImport2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMamisImport2_DlgConfirm.resx">
+      <DependentUpon>FormMamisImport2_DlgConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormMamisImport2_DlgLog.resx">
+      <DependentUpon>FormMamisImport2_DlgLog.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormHikiotoshi2.resx">
+      <DependentUpon>FormHikiotoshi2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormHikiotoshi2_DlgEntry.resx">
+      <DependentUpon>FormHikiotoshi2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormKaiin2_DlgHistory.resx">
+      <DependentUpon>FormKaiin2_DlgHistory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormKaiin2_DlgChosei.resx">
+      <DependentUpon>FormKaiin2_DlgChosei.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormKaiin2_DlgEntry_Idoinfo.resx">
+      <DependentUpon>FormKaiin2_DlgEntry_Idoinfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormKaiin2_DlgEntry.resx">
+      <DependentUpon>FormKaiin2_DlgEntry.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormKaiin2.resx">
+      <DependentUpon>FormKaiin2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UpdateForm\FormLogin2.resx">
+      <DependentUpon>FormLogin2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMasterIryoKikan_DlgEntry.resx">
       <DependentUpon>FormMasterIryoKikan_DlgEntry.cs</DependentUpon>
@@ -1300,6 +1775,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\BackgroundWave2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BackgroundWave.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

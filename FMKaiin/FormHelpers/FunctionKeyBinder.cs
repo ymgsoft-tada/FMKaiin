@@ -129,6 +129,8 @@ namespace App
                     continue;
                 }
 
+                CommitActiveEdit();
+
                 Action action;
                 if (_actions.TryGetValue(define, out action))
                 {
@@ -139,6 +141,32 @@ namespace App
                     define.Execute();
                 }
                 return;
+            }
+        }
+
+        /// <summary>
+        /// フォーカスがあるコントロールに入力の途中の内容があれば、値として確定させる。
+        /// </summary>
+        /// <remarks>
+        /// ファンクション キーは、クリックでもキーでもフォーカスを動かさない。日付やテーブル コンボの入力欄
+        /// （<see cref="ISEditCommit"/>）は、フォーカスがほかへ移るときに値を確定するので、そのままでは、
+        /// 実行するメソッドが「入力する前の値」を読んでしまう。メソッドを実行する前に、ここで確定させる。
+        /// </remarks>
+        private void CommitActiveEdit()
+        {
+            // フォーカスがユーザー コントロールなどの中にある場合は、中までたどる
+            ContainerControl container = _bar.FindForm();
+            Control active = null;
+            while (container != null && container.ActiveControl != null)
+            {
+                active = container.ActiveControl;
+                container = active as ContainerControl;
+            }
+
+            var pending = active as ISEditCommit;
+            if (pending != null)
+            {
+                pending.CommitEdit();
             }
         }
 

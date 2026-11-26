@@ -607,14 +607,14 @@ namespace App
 		/// <summary>
 		/// 閉じられた理由
 		/// </summary>
-		public static MsgBox.eCloseReason CloseReason
+		public static App.Controls.SMsgBox.eCloseReason CloseReason
 		{
 			get
 			{
 				return closeReason;
 			}
 		}
-		static MsgBox.eCloseReason closeReason;
+		static App.Controls.SMsgBox.eCloseReason closeReason;
 		
 		/// <summary>
 		/// メッセージボックス表示。Owner指定付。
@@ -633,7 +633,7 @@ namespace App
 			DialogResult			result;
 			
 			// 表示前に初期化しておく。
-			closeReason = MsgBox.eCloseReason.Default;
+			closeReason = App.Controls.SMsgBox.eCloseReason.Default;
 
 			// 表示するメッセージを取得
 			getMessage(index, out title, out text, out buttons, out icon, out defbutton, arglist);
@@ -644,7 +644,7 @@ namespace App
 				owner = parent;
 			}
 			
-			MsgBox form = new MsgBox(owner, text, title, buttons, icon, defbutton);
+			App.Controls.SMsgBox form = new App.Controls.SMsgBox(owner, text, title, buttons, icon, defbutton);
 			if (owner != null && owner.IsDisposed == false)
 			{
 				form.StartPosition = FormStartPosition.CenterParent;

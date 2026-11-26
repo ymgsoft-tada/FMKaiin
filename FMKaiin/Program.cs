@@ -57,7 +57,7 @@ namespace App
 				//	splash = null;
 				//}
 
-				FormLogin login = new FormLogin();
+				FormLogin2 login = new FormLogin2();
 				login.ShowDialog();
 
 				if (login.FormCloseReason == FormCloseReason.Exec)

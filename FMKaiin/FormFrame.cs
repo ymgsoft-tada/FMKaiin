@@ -246,6 +246,19 @@ namespace App
 		}
 		//¶ 2026/11/25 ClaudeCode ここまで
 
+		//¶ 2026/11/26 ClaudeCode ここから タイトルバーの色を、メイン画面（FormMain2）と同じにする
+		/// <summary>
+		/// ウィンドウ ハンドルが作られたときに、タイトルバーの色を設定します。
+		/// このクラスを継承する画面は、すべて同じ色になります。色を指定できない Windows（10 以前）では、標準の色のままです。
+		/// </summary>
+		protected override void OnHandleCreated(EventArgs e)
+		{
+			base.OnHandleCreated(e);
+
+			TitleBarColor.ApplyStandard(this);
+		}
+		//¶ 2026/11/26 ClaudeCode ここまで
+
 		/// <summary>
 		/// ロード処理
 		/// </summary>
@@ -445,7 +458,18 @@ namespace App
 		public bool CheckEnabledFormKeyPreview(Keys keycode)
 		{
 			bool	handled = false;
-			
+
+			//¶ 2026/11/25 ClaudeCode ここから S 系のコントロールへの対応
+			// 「このキーは自分で使う」と答えたコントロールには、そのキーを任せる
+			// （一覧やカレンダーを開いている間の Enter で、指している行・日を確定する、など）。
+			// コントロールの種類ごとの判定をここへ足さなくて済むよう、インターフェースで尋ねている
+			App.Controls.ISKeyUser keyUser = this.ActiveControl as App.Controls.ISKeyUser;
+			if (keyUser != null && keyUser.UsesKey(keycode) == true)
+			{
+				return true;
+			}
+			//¶ 2026/11/25 ClaudeCode ここまで
+
 			switch (keycode)
 			{
 				case Keys.Escape :

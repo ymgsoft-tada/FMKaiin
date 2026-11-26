@@ -5,7 +5,7 @@ namespace App.Controls
 {
     /// <summary>
     /// 団体のロゴ（F の字に、波と、塔のある島影を重ねた図柄）の形。
-    /// <see cref="MenuIconPainter"/> が <see cref="MenuIconKind.OrganizationLogo"/> を描くときに使う。
+    /// <see cref="IconLogo"/> が描くときに使う。このアプリに固有の図柄なので、共通の部品（Controls/Common）には入れていない。
     /// 元の画像は 3 色だが、ここでは形だけを持ち、描くときに指定された 1 色で塗る。
     /// </summary>
     /// <remarks>

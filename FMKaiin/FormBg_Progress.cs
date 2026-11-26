@@ -7,6 +7,7 @@ using System.Text;
 using System.Windows.Forms;
 using System.Diagnostics;
 
+using App.Controls;
 using ComponentDebug;
 
 namespace App
@@ -14,6 +15,7 @@ namespace App
 	/// <summary>
 	/// [作成者 fj]
 	/// バックグラウンドタスク用のフレームフォームです。
+	/// 画面は、S 系の画面の見た目（背景の画像、半透明のパネル、S 系のラベル・進捗のバー・回る輪）で作ってある。
 	/// </summary>
 	public partial class FormBg_Progress : Form
 	{
@@ -50,13 +52,9 @@ namespace App
 		/// </summary>
 		object[]	args;
 		/// <summary>
-		/// アイコンパターンリスト
+		/// メッセージの欄の幅の下限（フォームの幅を狭めるときに、これより狭くしない）。
 		/// </summary>
-		Image[]		images;
-		/// <summary>
-		/// アイコン表示パターン
-		/// </summary>
-		int			iconPat;
+		const int	MinLabelWidth = 32;
 		#endregion
 		
 		#region *** Property ***
@@ -71,11 +69,11 @@ namespace App
 			}
 			set
 			{
+				// 表示している間だけ、回す
 				IconIndicator.Visible = value;
-				iconVisible	  = value;
+				IconIndicator.Active  = value;
 			}
 		}
-		bool			iconVisible;
 		/// <summary>
 		/// BgWorkerを使わず実行するかどうかを設定します。
 		/// </summary>
@@ -125,21 +123,22 @@ namespace App
 		{
 			set
 			{
-				if (value < (324 - 235 + 32))
+				// 中の部品（パネル・メッセージ・進捗のバー）も、フォームと同じだけ広げる・狭める
+				int delta = value - this.Width;
+				if (LblInfo.Width + delta < MinLabelWidth)
 				{
-					value = 324 - 235 + 32;
+					delta = MinLabelWidth - LblInfo.Width;
 				}
 				
-				this.Width		  = value;
-				Picture.Width	  = value - 8;
-				LblInfo.Width	  =
-				ProgressBar.Width = (235 - 324) + value;
+				this.Width		  += delta;
+				secBody.Width	  += delta;
+				LblInfo.Width	  += delta;
+				ProgressBar.Width += delta;
 			}
 			get
 			{
 				return this.Width;
 			}
-			
 		}
 		/// <summary>
 		/// タイトルに表示するテキストを設定します。
@@ -205,8 +204,8 @@ namespace App
 				
 				if (value == false)
 				{
-					// ラベルを中央へ表示
-					LblInfo.Height = 45;
+					// メッセージを、バーがあった場所まで使って、上下の中央に表示する
+					LblInfo.Height = ProgressBar.Bottom - LblInfo.Top;
 				}
 			}
 			get
@@ -219,6 +218,15 @@ namespace App
 		/// 処理結果の格納先
 		/// </summary>
 		public object Result { get; private set; }
+
+		//¶ 2026/11/26 ClaudeCode ここから タイトルバーの色を、メイン画面と同じにする
+		protected override void OnHandleCreated(EventArgs e)
+		{
+			base.OnHandleCreated(e);
+			TitleBarColor.ApplyStandard(this);
+		}
+		//¶ 2026/11/26 ClaudeCode ここまで
+
 		/// <summary>
 		/// フォームの×ボタンを押せなくする対策。
 		/// </summary>
@@ -243,39 +251,15 @@ namespace App
 		{
 			InitializeComponent();
 			
+			// 背景の画像と、その上に重ねる透明なコントロールをまとめて描いて、ちらつきを抑える
+			DoubleBuffered = true;
+			
+			// BIZ UDPゴシックが PC に無いときは、Meiryo UI に差し替える
+			FontFallback.ReplaceMissingFamilies(this, "Meiryo UI");
+			
 			progress_perc = 0;
 			arg			  = null;
 			nobgworker	  = false;
-			iconVisible	  = true;
-			
-			PictureBox[]	imgctls	  = new PictureBox[]
-			{
-				img0,
-				img1,
-				img2,
-				img3,
-				img4,
-				img5,
-				img6,
-				img7,
-				img8,
-				img9,
-				img10,
-				img11,
-			};
-			
-			images = new Image[imgctls.Length];
-			
-			for (int i = 0; i < images.Length; i++)
-			{
-				images[i] = imgctls[i].Image;
-			}
-			
-			this.BackColor = AppConst.FormBackColor;
-			
-			Picture.Controls.Add(IconIndicator);
-			Picture.Controls.Add(LblInfo);
-			Picture.Controls.Add(ProgressBar);
 			
 			this.Load += new EventHandler(Form_Load);
 			this.Shown += new EventHandler(Form_Shown);
@@ -388,13 +372,6 @@ namespace App
 				}
 			}
 			
-			// デザイン時に動的な処理を実行しないように
-			if (this.DesignMode == false)
-			{
-				iconPat = 0;
-				timer.Start();
-			}
-
 			// 無効なキー操作（ファンクションキー等）を検出し、切るために KeyPreview = true にしておく
 			this.KeyPreview = true;
 			
@@ -464,35 +441,7 @@ namespace App
 				val = 100;
 			}
 			
-			//http://dobon.net/vb/dotnet/control/pbdisableanimation.html
-			// 値を増やしてから減らす方法
-
-			if (ProgressBar.Value < val)
-			{
-				//値を増やす時
-				if (val < ProgressBar.Maximum)
-				{
-					//目的の値より一つ大きくしてから、目的の値にする
-					ProgressBar.Value = val + 1;
-					ProgressBar.Value = val;
-				}
-				else
-				{
-					//最大値にする時
-					//最大値を1つ増やしてから、元に戻す
-					ProgressBar.Maximum++;
-					ProgressBar.Value = val + 1;
-					ProgressBar.Value = val;
-					ProgressBar.Maximum--;
-				}
-			}
-			else
-			{
-				//値を減らす時は、そのまま
-				ProgressBar.Value = val;
-			}
-
-			//ProgressBar.Value = val;
+			ProgressBar.Value = val;
 		}
 		
 		/// <summary>
@@ -506,24 +455,6 @@ namespace App
 			}
 			
 			this.Close();
-		}
-		#endregion
-		
-		#region *** Private Method ***
-		/// <summary>
-		/// インジケータタイマー
-		/// </summary>
-		void timer_Tick(object sender, EventArgs e)
-		{
-			if (iconVisible == true)
-			{
-				IconIndicator.Image = images[iconPat];
-				
-				if (--iconPat < 0)
-				{
-					iconPat = images.Length - 1;
-				}
-			}
 		}
 		#endregion
 	}

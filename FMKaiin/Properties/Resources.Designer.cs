@@ -63,6 +63,16 @@ namespace App.Properties {
         /// <summary>
         ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
         /// </summary>
+        internal static System.Drawing.Bitmap BackgroundWave {
+            get {
+                object obj = ResourceManager.GetObject("BackgroundWave", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   型 System.Drawing.Bitmap のローカライズされたリソースを検索します。
+        /// </summary>
         internal static System.Drawing.Bitmap BackgroundWave2 {
             get {
                 object obj = ResourceManager.GetObject("BackgroundWave2", resourceCulture);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Drawing;
@@ -143,48 +144,50 @@ namespace App
         private void RegisterMenuActions()
         {
             // 会員登録 ＞ 入力・データ作成
-            OpenOnClick(btnKaiin, () => new FormKaiin(), needsBankCode: true);
-            OpenOnClick(btnMamisImport, () => new FormMamisImport());
+            OpenSideBySideOnClick(btnKaiin, () => new FormKaiin(), () => new FormKaiin2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnMamisImport, () => new FormMamisImport(), () => new FormMamisImport2());
 
             // 会員登録 ＞ 帳票
             // 開く画面がまだ無いもの: btnRepKaiinJoho（会員情報）、btnRepKaiinList（会員一覧表）、
             //                         btnRepIryoKikanJoho（医療機関情報）、btnRepIryoKikanList（医療機関一覧表）
-            OpenOnClick(btnRepKaihiUchiwakeMonth, () => new FormOutKaihiUchiwakeMonth(), needsBankCode: true);
-            OpenOnClick(btnRepKaihiUchiwakeYear, () => new FormOutKaihiUchiwakeYear(), needsBankCode: true);
-            OpenOnClick(btnRepKaihiList, () => new FormOutKaihiList(), needsBankCode: true);
-            OpenOnClick(btnRepKaihiYoteiYear, () => new FormOutKaihiYoteiYear(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepKaihiUchiwakeMonth, () => new FormOutKaihiUchiwakeMonth(), () => new FormOutKaihiUchiwakeMonth2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepKaihiUchiwakeYear, () => new FormOutKaihiUchiwakeYear(), () => new FormOutKaihiUchiwakeYear2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepKaihiList, () => new FormOutKaihiList(), () => new FormOutKaihiList2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepKaihiYoteiYear, () => new FormOutKaihiYoteiYear(), () => new FormOutKaihiYoteiYear2(), needsBankCode: true);
 
             // 会員登録 ＞ Excel出力
-            OpenOnClick(btnXlsKaihiShinsei, () => new FormOutExcelKaihiShinsei());
-            OpenOnClick(btnXlsShiminByoin, () => new FormOutExcelShimingyoinKaihi());
-            OpenOnClick(btnXlsNenkanChoshu, () => new FormOutExcelNenkanChoshu());
+            OpenSideBySideOnClick(btnXlsKaihiShinsei, () => new FormOutExcelKaihiShinsei(), () => new FormOutExcelKaihiShinsei2());
+            OpenSideBySideOnClick(btnXlsShiminByoin, () => new FormOutExcelShimingyoinKaihi(), () => new FormOutExcelShimingyoinKaihi2());
+            OpenSideBySideOnClick(btnXlsNenkanChoshu, () => new FormOutExcelNenkanChoshu(), () => new FormOutExcelNenkanChoshu2());
 
             // 引き落とし業務 ＞ 入力・データ作成
-            OpenOnClick(btnHikiotoshi, () => new FormHikiotoshi());
-            OpenOnClick(btnCreateBankFile, () => new FormCreateBankFile(), needsBankCode: true);
-            OpenOnClick(btnCreateIfaxFile, () => new FormCreateIfaxFile());
+            OpenSideBySideOnClick(btnHikiotoshi, () => new FormHikiotoshi(), () => new FormHikiotoshi2());
+            OpenSideBySideOnClick(btnCreateBankFile, () => new FormCreateBankFile(), () => new FormCreateBankFile2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnCreateIfaxFile, () => new FormCreateIfaxFile(), () => new FormCreateIfaxFile2());
 
             // 引き落とし業務 ＞ 帳票
             // 開く画面がまだ無いもの: btnRepHikiMeisai（会員別引落明細表）、btnRepHikiIkaiMeisai（所属医会別引落明細表）、
             //                         btnRepHikiIkaiShukei（所属医会別引落集計表）、btnRepHikiKozaShukei（引落口座別集計表）、
             //                         btnRepAtenaLabel（宛名ラベル）
-            OpenOnClick(btnRepHikiotoshiKakunin, () => new FormOutHikiotoshiKakunin(), needsBankCode: true);
-            OpenOnClick(btnRepSeikyuMinyukin, () => new FormOutSeikyuMinyukin(), needsBankCode: true);
-            OpenOnClick(btnRepChosyuMeisaiYear, () => new FormOutChosyuMeisaiYear(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepHikiotoshiKakunin, () => new FormOutHikiotoshiKakunin(), () => new FormOutHikiotoshiKakunin2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepSeikyuMinyukin, () => new FormOutSeikyuMinyukin(), () => new FormOutSeikyuMinyukin2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnRepChosyuMeisaiYear, () => new FormOutChosyuMeisaiYear(), () => new FormOutChosyuMeisaiYear2(), needsBankCode: true);
 
             // 引き落とし業務 ＞ Excel出力
-            OpenOnClick(btnXlsFurikomi, () => new FormOutExcelFurikomi());
-            OpenOnClick(btnXlsFurikomiIrai, () => new FormOutExcelFurikomiIrai());
-            OpenOnClick(btnXlsNofusho, () => new FormOutExcelNofusho());
+            OpenSideBySideOnClick(btnXlsFurikomi, () => new FormOutExcelFurikomi(), () => new FormOutExcelFurikomi2());
+            OpenSideBySideOnClick(btnXlsFurikomiIrai, () => new FormOutExcelFurikomiIrai(), () => new FormOutExcelFurikomiIrai2());
+            OpenSideBySideOnClick(btnXlsNofusho, () => new FormOutExcelNofusho(), () => new FormOutExcelNofusho2());
 
             // マスター設定
             // 開く画面がまだ無いもの: btnMasterKaihi（会費マスター）
-            OpenOnClick(btnMasterBasic, () => new FormMasterBasic(), needsBankCode: true);
-            OpenOnClick(btnMasterTantosha, () => new FormMasterTantosha());
-            OpenOnClick(btnMasterBankCode, () => new FormMasterBankCode());
-            OpenOnClick(btnMasterShinryoka, () => new FormMasterShinryoka());
-            OpenOnClick(btnMasterIryoKikan, () => new FormMasterIryoKikan());
-            OpenOnClick(btnMasterIkaiKaihi, () => new FormMasterKaihi(), needsBankCode: true);
+            // 【一時対応】新しい画面（クラス名の末尾が 2 のもの）がある場合は、見比べられるよう、従来の画面と並べて開く。
+            // 新しい画面への移行が済んだら、OpenOnClick(ボタン, () => new 新しい画面(), ...) に戻す
+            OpenSideBySideOnClick(btnMasterBasic, () => new FormMasterBasic(), () => new FormMasterBasic2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnMasterTantosha, () => new FormMasterTantosha(), () => new FormMasterTantosha2(), needsBankCode: true);
+            OpenSideBySideOnClick(btnMasterBankCode, () => new FormMasterBankCode(), () => new FormMasterBankCode2());
+            OpenSideBySideOnClick(btnMasterShinryoka, () => new FormMasterShinryoka(), () => new FormMasterShinryoka2());
+            OpenSideBySideOnClick(btnMasterIryoKikan, () => new FormMasterIryoKikan(), () => new FormMasterIryoKikan2());
+            OpenSideBySideOnClick(btnMasterIkaiKaihi, () => new FormMasterKaihi(), () => new FormMasterKaihi2(), needsBankCode: true);
         }
 
         /// <summary>
@@ -234,6 +237,96 @@ namespace App
 
             AppGlobal.DB.GetReFillTable(TableProp.t_bank_code);
             AppGlobal.InitBankCodeMg();
+        }
+
+        #endregion
+
+        #region 【一時対応】従来の画面と新しい画面を並べて開く
+
+        // 新しい画面（クラス名の末尾が 2 のもの）への移行が済むまでの一時的な処理。
+        // 移行が済んだら、この region を丸ごと削除し、RegisterMenuActions の呼び出しを OpenOnClick に戻すこと。
+
+        /// <summary>
+        /// <paramref name="button"/> を押したときに、従来の画面と新しい画面の両方を、左右に並べて開くようにする。
+        /// 2 つの画面を同時に操作できるよう、<see cref="OpenOnClick"/> と違ってモードレスで開く。
+        /// そのため、開いている間もメニューを操作できる。同じボタンをもう一度押した場合は、もう 1 組開かずに、開いている画面を前面へ出す。
+        /// 新しい画面は、従来の画面の初回描画が終わってから開く（2 つの画面のデータの読み込みが、同時に走らないように）。
+        /// </summary>
+        /// <param name="needsBankCode">開く画面が銀行コードを使う場合は true。</param>
+        private void OpenSideBySideOnClick(Button button, Func<Form> createLegacyForm, Func<Form> createNewForm, bool needsBankCode = false)
+        {
+            // このボタンから開いた画面。閉じた画面は破棄済みになるので、IsDisposed で開いているかどうかを判断する
+            var openedForms = new List<Form>();
+
+            button.Click += delegate
+            {
+                openedForms.RemoveAll(form => form.IsDisposed);
+                if (openedForms.Count > 0)
+                {
+                    foreach (Form form in openedForms)
+                    {
+                        form.Activate();
+                    }
+                    return;
+                }
+
+                if (needsBankCode)
+                {
+                    EnsureBankCodeLoaded();
+                }
+
+                // モードレスで開いた画面は、閉じたときに自動で破棄されるので、using で囲まない。
+                // このメニューを所有者にしておくと、メニューの背面に隠れず、メニューを閉じたときに一緒に閉じる
+                Form legacyForm = createLegacyForm();
+                Form newForm = createNewForm();
+                openedForms.Add(legacyForm);
+
+                // 新しい画面は、従来の画面の初回描画（Shown の処理）が終わってから開く。
+                // 2 つを続けて開くと、従来の画面が初回描画の中で進行状況の画面（FormBg_Progress）を出して待っている間に、
+                // 新しい画面の初回描画が割り込み、2 つの画面のデータの読み込みが、別々のスレッドで同時に走る。
+                // データベースの接続は 1 つを共有していて、同時には使えないので、片方の読み込みが失敗する（引落データ作成で、実際に落ちた）。
+                // 画面自身の初回描画の処理は、画面のコンストラクターで Shown に登録されているので、ここで足す処理は、その後に呼ばれる
+                legacyForm.Shown += delegate
+                {
+                    if (legacyForm.IsDisposed)
+                    {
+                        // 初回描画の中で閉じられた: 新しい画面は開かない
+                        newForm.Dispose();
+                        return;
+                    }
+
+                    openedForms.Add(newForm);
+                    newForm.Show(this);
+                    ArrangeSideBySide(legacyForm, newForm);
+                };
+
+                legacyForm.Show(this);
+                if (legacyForm.IsDisposed)
+                {
+                    // 読み込み（Load）の中で閉じられた: Shown は発生しないので、新しい画面をここで破棄する
+                    newForm.Dispose();
+                    return;
+                }
+
+                // 従来の画面を、先に、並べたときの位置へ移しておく（新しい画面を開いたときに、実際の大きさでもう一度並べる）
+                ArrangeSideBySide(legacyForm, newForm);
+            };
+        }
+
+        /// <summary>
+        /// 2 つの画面を、このメニューがある画面の作業領域の中央に、左右に並べる。
+        /// 各画面が指定している「親の中央に表示」は、モードレスで開く場合には働かないので、ここで位置を決める。
+        /// 並べると作業領域に収まらない場合は、右側の画面を作業領域の右端に合わせ、左側の画面に重ねる。
+        /// </summary>
+        private void ArrangeSideBySide(Form left, Form right)
+        {
+            Rectangle area = Screen.FromControl(this).WorkingArea;
+
+            int leftX = area.Left + Math.Max(0, (area.Width - left.Width - right.Width) / 2);
+            int rightX = Math.Max(area.Left, Math.Min(leftX + left.Width, area.Right - right.Width));
+
+            left.Location = new Point(leftX, area.Top + Math.Max(0, (area.Height - left.Height) / 2));
+            right.Location = new Point(rightX, area.Top + Math.Max(0, (area.Height - right.Height) / 2));
         }
 
         #endregion
