@@ -263,7 +263,10 @@ namespace App
 								}
 
 								dics_hiki[tmprow.Hiki_Shiharai].costHiki += tmprow.Hiki_Cost; // 引落金額の加算
-								costTotal += tmprow.Hiki_Cost; // 総合計へ加算
+
+								// 総合計の処理
+								rowCount++;
+								costTotal += tmprow.Hiki_Cost;
 							}
 						}
 
@@ -316,9 +319,6 @@ namespace App
 							nrow[F_Page] = page;
 
 							dv.Add(nrow);
-
-							rowCount++; // 総合計件数
-
 							line++;
 
 							maxPage = page;
@@ -485,7 +485,7 @@ namespace App
 			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldCompanyName, AppGlobal.Basic.BAS_Name);
 
 			// 引落合計
-			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldTotalCount, $"{rowCount}件");
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldTotalCount, $"{rowCount.ToString("#,##0")}件");
 			setCost_zero(rep, CRep14_HikiotoshiKakunin.FFldCostTotalFooter, costTotal);
 
 			// 作成日時
@@ -520,30 +520,22 @@ namespace App
 
 			DataRow row = OutView[lineNo].Row;
 
-			if (row[F_CD_Kaiin] != DBNull.Value) // 会員コード空は空行と判断
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldKaiinCode, row[F_CD_Kaiin]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldKaiinName, row[F_Kaiin_Name]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaName, row[F_Kaiin_BankKozaNameKana]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankCode, row[F_Kaiin_BankCode]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankName, row[F_Kaiin_BankName]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankCodeShiten, row[F_Kaiin_BankShitenCode]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankNameShiten, row[F_Kaiin_BankShitenName]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaType, row[F_Kaiin_BankKozaType]);
+			setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaNo, row[F_Kaiin_BankKozaNo]);
+
+			if (row[F_ID_Kaiin] != DBNull.Value) // 会員IDが空を空行と判断
 			{
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldKaiinCode, row[F_CD_Kaiin]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldKaiinName, row[F_Kaiin_Name]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaName, row[F_Kaiin_BankKozaNameKana]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankCode, row[F_Kaiin_BankCode]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankName, row[F_Kaiin_BankName]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankCodeShiten, row[F_Kaiin_BankShitenCode]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankNameShiten, row[F_Kaiin_BankShitenName]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaType, row[F_Kaiin_BankKozaType]);
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaNo, row[F_Kaiin_BankKozaNo]);
 				setCost_zero(rep, CRep14_HikiotoshiKakunin.FFldCostTotal, row[F_costHiki]);
 			}
 			else
 			{
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldKaiinCode, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldKaiinName, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaName, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankCode, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankName, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankCodeShiten, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankNameShiten, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaType, "");
-				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldBankKozaNo, "");
 				setFieldValue(rep, CRep14_HikiotoshiKakunin.FFldCostTotal, ""); // 0を表示しないため
 			}
 		}
@@ -628,29 +620,6 @@ namespace App
 			else
 			{
 				ErrLog.WriteLine($"レポートフィールド「{fldname}」は見つかりません。");
-			}
-		}
-
-		/// <summary>
-		/// 列合計のDictionaryセット
-		/// </summary>
-		void AddFee(SortedDictionary<int, Dictionary<int, Decimal?>> dics, int memberId, int month, decimal? fee)
-		{
-			// ① 会員ID(key)がまだ存在しない場合は、月別Dictionaryを新規作成して登録
-			if (!dics.TryGetValue(memberId, out Dictionary<int, decimal?> monthlyFeeDics))
-			{
-				monthlyFeeDics = new Dictionary<int, decimal?>();
-				dics[memberId] = monthlyFeeDics;
-			}
-
-			// ② 該当月(key)がまだ存在しない場合は 0 として初期化、存在する場合は加算
-			if (monthlyFeeDics.TryGetValue(month, out decimal? currentFee))
-			{
-				monthlyFeeDics[month] = currentFee + fee;
-			}
-			else
-			{
-				monthlyFeeDics[month] = fee;
 			}
 		}
 	}

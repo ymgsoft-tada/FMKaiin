@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -1624,11 +1624,11 @@ namespace App
 	}
 	#endregion
 
-	#region *** FuncOutIkaiHikiotoshiMeisai ***
+	#region *** FuncOutHikiotoshiIkaiMeisai ***
 	/// <summary>
-	/// FuncOutIkaiHikiotoshiMeisaiのファンクションキー定義クラス
+	/// FuncOutHikiotoshiIkaiMeisaiのファンクションキー定義クラス
 	/// </summary>
-	public class FuncOutIkaiHikiotoshiMeisai
+	public class FuncOutHikiotoshiIkaiMeisai
 	{
 		/// <summary>
 		/// ファンクションキー定義。
@@ -1656,11 +1656,11 @@ namespace App
 	}
 	#endregion
 
-	#region *** FuncOutIkaiHikiotoshiShukei ***
+	#region *** FuncOutHikiotoshiIkaiShukei ***
 	/// <summary>
-	/// FuncOutIkaiHikiotoshiShukeiのファンクションキー定義クラス
+	/// FuncOutHikiotoshiIkaiShukeiのファンクションキー定義クラス
 	/// </summary>
-	public class FuncOutIkaiHikiotoshiShukei
+	public class FuncOutHikiotoshiIkaiShukei
 	{
 		/// <summary>
 		/// ファンクションキー定義。

@@ -1436,7 +1436,7 @@
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
         <MarginRight>10</MarginRight>
-        <Align>CenterMiddle</Align>
+        <Align>LeftMiddle</Align>
         <Font>
           <Name>ＭＳ ゴシック</Name>
           <Size>9.75</Size>
@@ -5799,7 +5799,7 @@
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
         <MarginRight>10</MarginRight>
-        <Align>CenterMiddle</Align>
+        <Align>LeftMiddle</Align>
         <Font>
           <Name>ＭＳ ゴシック</Name>
           <Size>9.75</Size>

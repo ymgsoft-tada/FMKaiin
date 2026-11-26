@@ -213,16 +213,16 @@ namespace App
 					int no		= 0;
 					for(int i = 0; i < kvp.Value.Count; i++)
 					{
-						HikiotoshiData kd = kvp.Value[i];
+						HikiotoshiData hd = kvp.Value[i];
 						DataRow nrow = null;
 
 						if (no < LINE_MAX_PAGE)
 						{
 							nrow = dt.NewRow();
-							nrow[F_KaihiName] = kd.KaihiName;
-							nrow[F_Cost] = kd.Cost;
-							nrow[F_BankIdx] = kd.BankIdx;
-							nrow[F_Biko] = kd.Biko;
+							nrow[F_KaihiName] = hd.KaihiName;
+							nrow[F_Cost] = hd.Cost;
+							nrow[F_BankIdx] = hd.BankIdx;
+							nrow[F_Biko] = hd.Biko;
 							nrow[F_ID_Kaiin] = kin.ID;
 							nrow[F_Line] = line;
 							nrow[F_Page] = page;

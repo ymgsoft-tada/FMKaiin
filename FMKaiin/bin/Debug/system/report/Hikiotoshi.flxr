@@ -1187,7 +1187,7 @@
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
         <MarginRight>10</MarginRight>
-        <Align>CenterMiddle</Align>
+        <Align>LeftMiddle</Align>
         <Font>
           <Name>ＭＳ ゴシック</Name>
           <Size>9.75</Size>
@@ -1696,7 +1696,7 @@
         <Align>CenterMiddle</Align>
         <Font>
           <Name>ＭＳ ゴシック</Name>
-          <Size>9</Size>
+          <Size>8.25</Size>
           <GdiCharSet>128</GdiCharSet>
         </Font>
         <Text>
@@ -1720,7 +1720,7 @@
           <GdiCharSet>128</GdiCharSet>
         </Font>
         <Text>
-          <Value sys="string">99999件</Value>
+          <Value sys="string">99,999件</Value>
         </Text>
       </TextField>
     </Fields>
@@ -3628,6 +3628,1555 @@
         <Height>10</Height>
         <Shape type="LineShape" />
       </ShapeField>
+    </Fields>
+  </Report>
+  <Report ref="1">
+    <Name>12_HikiotoshiIkaiMeisai</Name>
+    <DataSourceName>Main</DataSourceName>
+    <ReportInfo>
+      <Author>tada</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>15645</Width>
+      <Margin>676.8</Margin>
+      <MarginTop>561.6</MarginTop>
+      <MarginRight>561.6</MarginRight>
+      <MarginBottom>676.8</MarginBottom>
+      <Orientation>Landscape</Orientation>
+      <PaperSize>A4</PaperSize>
+    </Layout>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+      </DataSource>
+    </DataSources>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <SubSections>
+          <SubSection>
+            <Height>275</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <SubSections>
+          <SubSection>
+            <Height>1452</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <SubSections>
+          <SubSection>
+            <Height>667</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <TextField>
+        <Name>FldCompanyName</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>632</Top>
+        <Width>3200</Width>
+        <Height>320</Height>
+        <MarginLeft>10</MarginLeft>
+        <MarginRight>10</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">藤沢市医師会</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FBackColor1</Name>
+        <Background type="Solid">
+          <Color>FFDCDCDC</Color>
+        </Background>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>15430</Width>
+        <Height>280</Height>
+        <ZOrder>-3</ZOrder>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+      </TextField>
+      <ShapeField>
+        <Name>Field6</Name>
+        <Section>PageHeader</Section>
+        <Left>15430</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field11</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>lbl19</Name>
+        <Section>PageHeader</Section>
+        <Left>4300</Left>
+        <Top>1172</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">会員コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldKaiinCode</Name>
+        <Section>Detail</Section>
+        <Left>4300</Left>
+        <Top>0</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldIkaiCode</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">99999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldTitle</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>90</Top>
+        <Width>15430</Width>
+        <Height>473</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>15.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">所属医会別引落明細表</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field111</Name>
+        <Section>PageHeader</Section>
+        <Left>5820</Left>
+        <Top>563</Top>
+        <Width>3675</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field3</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>952</Top>
+        <Width>2400</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldPage</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>370</Top>
+        <Width>15430</Width>
+        <Height>275</Height>
+        <MarginLeft>10</MarginLeft>
+        <MarginRight>10</MarginRight>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">-1-</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field4</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldHikiDateYM</Name>
+        <Section>Detail</Section>
+        <Left>8200</Left>
+        <Top>0</Top>
+        <Width>1100</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">9999年99月</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field14</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1452</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field15</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field9</Name>
+        <Section>Detail</Section>
+        <Left>15430</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field17</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>275</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldDate</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>370</Top>
+        <Width>2372</Width>
+        <Height>275</Height>
+        <MarginLeft>10</MarginLeft>
+        <MarginRight>10</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">9999/12/31 00:00 作成</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl16</Name>
+        <Section>PageHeader</Section>
+        <Left>1000</Left>
+        <Top>1172</Top>
+        <Width>3300</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医　　　会　　　名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl20</Name>
+        <Section>PageHeader</Section>
+        <Left>8200</Left>
+        <Top>1167</Top>
+        <Width>1100</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">引落年月</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldCostTotal</Name>
+        <Section>Detail</Section>
+        <Left>9300</Left>
+        <Top>0</Top>
+        <Width>1395</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999,999,999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl1</Name>
+        <Section>PageHeader</Section>
+        <Left>5300</Left>
+        <Top>1172</Top>
+        <Width>2900</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">会　　　員　　　名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl4</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医会コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl3</Name>
+        <Section>PageHeader</Section>
+        <Left>9300</Left>
+        <Top>1167</Top>
+        <Width>1395</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">金額</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldKaiinName</Name>
+        <Section>Detail</Section>
+        <Left>5300</Left>
+        <Top>0</Top>
+        <Width>2900</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">会員氏名＠＠＠＠＠＠＠＠＠＠＠</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldIkaiName</Name>
+        <Section>Detail</Section>
+        <Left>1000</Left>
+        <Top>0</Top>
+        <Width>3300</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医会名称</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field1</Name>
+        <Section>PageHeader</Section>
+        <Left>1000</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field2</Name>
+        <Section>PageHeader</Section>
+        <Left>4300</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field5</Name>
+        <Section>PageHeader</Section>
+        <Left>5300</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field7</Name>
+        <Section>PageHeader</Section>
+        <Left>8200</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field13</Name>
+        <Section>PageHeader</Section>
+        <Left>8200</Left>
+        <Top>1167</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field16</Name>
+        <Section>PageHeader</Section>
+        <Left>9300</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field18</Name>
+        <Section>Detail</Section>
+        <Left>1000</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field19</Name>
+        <Section>Detail</Section>
+        <Left>4300</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field20</Name>
+        <Section>Detail</Section>
+        <Left>8200</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field21</Name>
+        <Section>Detail</Section>
+        <Left>9300</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field22</Name>
+        <Section>Detail</Section>
+        <Left>5300</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field26</Name>
+        <Section>Detail</Section>
+        <Left>10695</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field27</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field28</Name>
+        <Section>PageFooter</Section>
+        <Left>15430</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field29</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>280</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field30</Name>
+        <Section>PageFooter</Section>
+        <Left>8200</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field31</Name>
+        <Section>PageFooter</Section>
+        <Left>9300</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field32</Name>
+        <Section>PageFooter</Section>
+        <Left>10695</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldCostTotalFooter</Name>
+        <Section>PageFooter</Section>
+        <Left>9300</Left>
+        <Top>0</Top>
+        <Width>1395</Width>
+        <Height>280</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999,999,999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl6</Name>
+        <Section>PageFooter</Section>
+        <Left>5300</Left>
+        <Top>0</Top>
+        <Width>2900</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">【総合計】</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldTotalCount</Name>
+        <Section>PageFooter</Section>
+        <Left>8200</Left>
+        <Top>0</Top>
+        <Width>1100</Width>
+        <Height>280</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">99,999件</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field8</Name>
+        <Section>PageHeader</Section>
+        <Left>10695</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field10</Name>
+        <Section>PageFooter</Section>
+        <Left>5300</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+    </Fields>
+  </Report>
+  <Report ref="1">
+    <Name>13_HikiotoshiIkaiShukei</Name>
+    <DataSourceName>Main</DataSourceName>
+    <ReportInfo>
+      <Author>tada</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>15645</Width>
+      <Margin>676.8</Margin>
+      <MarginTop>561.6</MarginTop>
+      <MarginRight>561.6</MarginRight>
+      <MarginBottom>676.8</MarginBottom>
+      <Orientation>Landscape</Orientation>
+      <PaperSize>A4</PaperSize>
+    </Layout>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+      </DataSource>
+    </DataSources>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <SubSections>
+          <SubSection>
+            <Height>288</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <SubSections>
+          <SubSection>
+            <Height>1452</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <SubSections>
+          <SubSection>
+            <Height>667</Height>
+          </SubSection>
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <TextField>
+        <Name>FldCompanyName</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>632</Top>
+        <Width>3200</Width>
+        <Height>320</Height>
+        <MarginLeft>10</MarginLeft>
+        <MarginRight>10</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">藤沢市医師会</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FBackColor1</Name>
+        <Background type="Solid">
+          <Color>FFDCDCDC</Color>
+        </Background>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>15430</Width>
+        <Height>280</Height>
+        <ZOrder>-3</ZOrder>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+      </TextField>
+      <ShapeField>
+        <Name>Field6</Name>
+        <Section>PageHeader</Section>
+        <Left>15430</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field11</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>lbl19</Name>
+        <Section>PageHeader</Section>
+        <Left>3800</Left>
+        <Top>1172</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">銀行コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldBankCode</Name>
+        <Section>Detail</Section>
+        <Left>3800</Left>
+        <Top>0</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldIkaiCode</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">99999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldTitle</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>90</Top>
+        <Width>15430</Width>
+        <Height>473</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>15.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">所属医会別引落集計表</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field111</Name>
+        <Section>PageHeader</Section>
+        <Left>5820</Left>
+        <Top>563</Top>
+        <Width>3675</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field3</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>952</Top>
+        <Width>2400</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldPage</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>370</Top>
+        <Width>15430</Width>
+        <Height>275</Height>
+        <MarginLeft>10</MarginLeft>
+        <MarginRight>10</MarginRight>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">-1-</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field4</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldHikiDateYM</Name>
+        <Section>Detail</Section>
+        <Left>12935</Left>
+        <Top>0</Top>
+        <Width>1100</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">9999年99月</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field14</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1449</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field15</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field9</Name>
+        <Section>Detail</Section>
+        <Left>15430</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field17</Name>
+        <Section>Detail</Section>
+        <Left>0</Left>
+        <Top>275</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldDate</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>370</Top>
+        <Width>2372</Width>
+        <Height>275</Height>
+        <MarginLeft>10</MarginLeft>
+        <MarginRight>10</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9.75</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">9999/12/31 00:00 作成</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl16</Name>
+        <Section>PageHeader</Section>
+        <Left>1000</Left>
+        <Top>1172</Top>
+        <Width>2800</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医　　　会　　　名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl20</Name>
+        <Section>PageHeader</Section>
+        <Left>12935</Left>
+        <Top>1172</Top>
+        <Width>1100</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">引落年月</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldCostTotal</Name>
+        <Section>Detail</Section>
+        <Left>14035</Left>
+        <Top>0</Top>
+        <Width>1395</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999,999,999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl4</Name>
+        <Section>PageHeader</Section>
+        <Left>0</Left>
+        <Top>1172</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医会コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl3</Name>
+        <Section>PageHeader</Section>
+        <Left>14035</Left>
+        <Top>1172</Top>
+        <Width>1395</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">金額</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldIkaiName</Name>
+        <Section>Detail</Section>
+        <Left>1000</Left>
+        <Top>0</Top>
+        <Width>2800</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医会名称</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field1</Name>
+        <Section>PageHeader</Section>
+        <Left>1000</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field2</Name>
+        <Section>PageHeader</Section>
+        <Left>3800</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field5</Name>
+        <Section>PageHeader</Section>
+        <Left>4800</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field7</Name>
+        <Section>PageHeader</Section>
+        <Left>6550</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field13</Name>
+        <Section>PageHeader</Section>
+        <Left>7550</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field16</Name>
+        <Section>PageHeader</Section>
+        <Left>9200</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field18</Name>
+        <Section>Detail</Section>
+        <Left>1000</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field19</Name>
+        <Section>Detail</Section>
+        <Left>3800</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field20</Name>
+        <Section>Detail</Section>
+        <Left>4800</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field21</Name>
+        <Section>Detail</Section>
+        <Left>7550</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field22</Name>
+        <Section>Detail</Section>
+        <Left>6550</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field26</Name>
+        <Section>Detail</Section>
+        <Left>9200</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field27</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field28</Name>
+        <Section>PageFooter</Section>
+        <Left>15430</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field29</Name>
+        <Section>PageFooter</Section>
+        <Left>0</Left>
+        <Top>280</Top>
+        <Width>15430</Width>
+        <Height>0</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field30</Name>
+        <Section>PageFooter</Section>
+        <Left>12935</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field31</Name>
+        <Section>PageFooter</Section>
+        <Left>14035</Left>
+        <Top>0</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldCostTotalFooter</Name>
+        <Section>PageFooter</Section>
+        <Left>14035</Left>
+        <Top>0</Top>
+        <Width>1395</Width>
+        <Height>280</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999,999,999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lblTotal</Name>
+        <Section>PageFooter</Section>
+        <Left>12935</Left>
+        <Top>0</Top>
+        <Width>1100</Width>
+        <Height>280</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">【総合計】</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field8</Name>
+        <Section>PageHeader</Section>
+        <Left>10215</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>lbl2</Name>
+        <Section>PageHeader</Section>
+        <Left>4800</Left>
+        <Top>1172</Top>
+        <Width>1750</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">銀　　行　　名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl5</Name>
+        <Section>PageHeader</Section>
+        <Left>6550</Left>
+        <Top>1172</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">支店コード</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl17</Name>
+        <Section>PageHeader</Section>
+        <Left>7550</Left>
+        <Top>1172</Top>
+        <Width>1650</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">支　店　名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl6</Name>
+        <Section>PageHeader</Section>
+        <Left>9200</Left>
+        <Top>1172</Top>
+        <Width>1015</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">口座番号</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>lbl7</Name>
+        <Section>PageHeader</Section>
+        <Left>10215</Left>
+        <Top>1172</Top>
+        <Width>2720</Width>
+        <Height>275</Height>
+        <Align>CenterMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>9</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">口　座　名　義</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field12</Name>
+        <Section>PageHeader</Section>
+        <Left>12935</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field23</Name>
+        <Section>PageHeader</Section>
+        <Left>14035</Left>
+        <Top>1172</Top>
+        <Width>0</Width>
+        <Height>280</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldBankName</Name>
+        <Section>Detail</Section>
+        <Left>4800</Left>
+        <Top>0</Top>
+        <Width>1750</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">銀行名称</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldBankCodeShiten</Name>
+        <Section>Detail</Section>
+        <Left>6550</Left>
+        <Top>0</Top>
+        <Width>1000</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">999</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldBankNameShiten</Name>
+        <Section>Detail</Section>
+        <Left>7550</Left>
+        <Top>0</Top>
+        <Width>1650</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">支店名称</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldBankKozaNo</Name>
+        <Section>Detail</Section>
+        <Left>9200</Left>
+        <Top>0</Top>
+        <Width>1015</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>RightMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">9999999</Value>
+        </Text>
+      </TextField>
+      <ShapeField>
+        <Name>Field24</Name>
+        <Section>Detail</Section>
+        <Left>10215</Left>
+        <Top>13</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field25</Name>
+        <Section>Detail</Section>
+        <Left>12935</Left>
+        <Top>13</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <ShapeField>
+        <Name>Field33</Name>
+        <Section>Detail</Section>
+        <Left>14035</Left>
+        <Top>13</Top>
+        <Width>0</Width>
+        <Height>275</Height>
+        <Shape type="LineShape" />
+      </ShapeField>
+      <TextField>
+        <Name>FldBankKozaName</Name>
+        <Section>Detail</Section>
+        <Left>10215</Left>
+        <Top>0</Top>
+        <Width>2720</Width>
+        <Height>275</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <MarginBottom>30</MarginBottom>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>8.25</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">口座名義(ｶﾅ)</Value>
+        </Text>
+      </TextField>
     </Fields>
   </Report>
 </Reports>

@@ -312,7 +312,7 @@ namespace App
 			Rule.Add(memo20, t_hikiotoshi.FHiki_Memo);
 			#endregion
 
-			#region +++ t_hikiotoshi +++
+			#region +++ t_kaiin_chosei +++
 			Rule.Add(new GControlDBRuleDate(t_kaiin_chosei.FKCS_DateYM));
 			Rule.Add(curr, t_kaiin_chosei.FKCS_Cost);
 			Rule.Add(memo20, t_kaiin_chosei.FKCS_Memo);

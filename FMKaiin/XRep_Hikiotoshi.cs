@@ -1202,4 +1202,556 @@ namespace App
 		/// </summary>
 		public const string FField62 = "Field62";
 	}
+
+	/// <summary>
+	/// CRep12_HikiotoshiIkaiMeisai
+	/// </summary>
+	public class CRep12_HikiotoshiIkaiMeisai
+	{
+		/// <summary>
+		/// フィールド[FldCompanyName]。
+		/// </summary>
+		public const string FFldCompanyName = "FldCompanyName";
+
+		/// <summary>
+		/// フィールド[FBackColor1]。
+		/// </summary>
+		public const string FFBackColor1 = "FBackColor1";
+
+		/// <summary>
+		/// フィールド[lbl19]。
+		/// </summary>
+		public const string Flbl19 = "lbl19";
+
+		/// <summary>
+		/// フィールド[FldKaiinCode]。
+		/// </summary>
+		public const string FFldKaiinCode = "FldKaiinCode";
+
+		/// <summary>
+		/// フィールド[FldIkaiCode]。
+		/// </summary>
+		public const string FFldIkaiCode = "FldIkaiCode";
+
+		/// <summary>
+		/// フィールド[FldTitle]。
+		/// </summary>
+		public const string FFldTitle = "FldTitle";
+
+		/// <summary>
+		/// フィールド[FldPage]。
+		/// </summary>
+		public const string FFldPage = "FldPage";
+
+		/// <summary>
+		/// フィールド[FldHikiDateYM]。
+		/// </summary>
+		public const string FFldHikiDateYM = "FldHikiDateYM";
+
+		/// <summary>
+		/// フィールド[FldDate]。
+		/// </summary>
+		public const string FFldDate = "FldDate";
+
+		/// <summary>
+		/// フィールド[lbl16]。
+		/// </summary>
+		public const string Flbl16 = "lbl16";
+
+		/// <summary>
+		/// フィールド[lbl20]。
+		/// </summary>
+		public const string Flbl20 = "lbl20";
+
+		/// <summary>
+		/// フィールド[FldCostTotal]。
+		/// </summary>
+		public const string FFldCostTotal = "FldCostTotal";
+
+		/// <summary>
+		/// フィールド[lbl1]。
+		/// </summary>
+		public const string Flbl1 = "lbl1";
+
+		/// <summary>
+		/// フィールド[lbl4]。
+		/// </summary>
+		public const string Flbl4 = "lbl4";
+
+		/// <summary>
+		/// フィールド[lbl3]。
+		/// </summary>
+		public const string Flbl3 = "lbl3";
+
+		/// <summary>
+		/// フィールド[FldKaiinName]。
+		/// </summary>
+		public const string FFldKaiinName = "FldKaiinName";
+
+		/// <summary>
+		/// フィールド[FldIkaiName]。
+		/// </summary>
+		public const string FFldIkaiName = "FldIkaiName";
+
+		/// <summary>
+		/// フィールド[FldCostTotalFooter]。
+		/// </summary>
+		public const string FFldCostTotalFooter = "FldCostTotalFooter";
+
+		/// <summary>
+		/// フィールド[lbl6]。
+		/// </summary>
+		public const string Flbl6 = "lbl6";
+
+		/// <summary>
+		/// フィールド[FldTotalCount]。
+		/// </summary>
+		public const string FFldTotalCount = "FldTotalCount";
+
+		/// <summary>
+		/// フィールド[Field6]。
+		/// </summary>
+		public const string FField6 = "Field6";
+
+		/// <summary>
+		/// フィールド[Field11]。
+		/// </summary>
+		public const string FField11 = "Field11";
+
+		/// <summary>
+		/// フィールド[Field111]。
+		/// </summary>
+		public const string FField111 = "Field111";
+
+		/// <summary>
+		/// フィールド[Field3]。
+		/// </summary>
+		public const string FField3 = "Field3";
+
+		/// <summary>
+		/// フィールド[Field4]。
+		/// </summary>
+		public const string FField4 = "Field4";
+
+		/// <summary>
+		/// フィールド[Field14]。
+		/// </summary>
+		public const string FField14 = "Field14";
+
+		/// <summary>
+		/// フィールド[Field15]。
+		/// </summary>
+		public const string FField15 = "Field15";
+
+		/// <summary>
+		/// フィールド[Field9]。
+		/// </summary>
+		public const string FField9 = "Field9";
+
+		/// <summary>
+		/// フィールド[Field17]。
+		/// </summary>
+		public const string FField17 = "Field17";
+
+		/// <summary>
+		/// フィールド[Field1]。
+		/// </summary>
+		public const string FField1 = "Field1";
+
+		/// <summary>
+		/// フィールド[Field2]。
+		/// </summary>
+		public const string FField2 = "Field2";
+
+		/// <summary>
+		/// フィールド[Field5]。
+		/// </summary>
+		public const string FField5 = "Field5";
+
+		/// <summary>
+		/// フィールド[Field7]。
+		/// </summary>
+		public const string FField7 = "Field7";
+
+		/// <summary>
+		/// フィールド[Field13]。
+		/// </summary>
+		public const string FField13 = "Field13";
+
+		/// <summary>
+		/// フィールド[Field16]。
+		/// </summary>
+		public const string FField16 = "Field16";
+
+		/// <summary>
+		/// フィールド[Field18]。
+		/// </summary>
+		public const string FField18 = "Field18";
+
+		/// <summary>
+		/// フィールド[Field19]。
+		/// </summary>
+		public const string FField19 = "Field19";
+
+		/// <summary>
+		/// フィールド[Field20]。
+		/// </summary>
+		public const string FField20 = "Field20";
+
+		/// <summary>
+		/// フィールド[Field21]。
+		/// </summary>
+		public const string FField21 = "Field21";
+
+		/// <summary>
+		/// フィールド[Field22]。
+		/// </summary>
+		public const string FField22 = "Field22";
+
+		/// <summary>
+		/// フィールド[Field26]。
+		/// </summary>
+		public const string FField26 = "Field26";
+
+		/// <summary>
+		/// フィールド[Field27]。
+		/// </summary>
+		public const string FField27 = "Field27";
+
+		/// <summary>
+		/// フィールド[Field28]。
+		/// </summary>
+		public const string FField28 = "Field28";
+
+		/// <summary>
+		/// フィールド[Field29]。
+		/// </summary>
+		public const string FField29 = "Field29";
+
+		/// <summary>
+		/// フィールド[Field30]。
+		/// </summary>
+		public const string FField30 = "Field30";
+
+		/// <summary>
+		/// フィールド[Field31]。
+		/// </summary>
+		public const string FField31 = "Field31";
+
+		/// <summary>
+		/// フィールド[Field32]。
+		/// </summary>
+		public const string FField32 = "Field32";
+
+		/// <summary>
+		/// フィールド[Field8]。
+		/// </summary>
+		public const string FField8 = "Field8";
+
+		/// <summary>
+		/// フィールド[Field10]。
+		/// </summary>
+		public const string FField10 = "Field10";
+	}
+
+	/// <summary>
+	/// CRep13_HikiotoshiIkaiShukei
+	/// </summary>
+	public class CRep13_HikiotoshiIkaiShukei
+	{
+		/// <summary>
+		/// フィールド[FldCompanyName]。
+		/// </summary>
+		public const string FFldCompanyName = "FldCompanyName";
+
+		/// <summary>
+		/// フィールド[FBackColor1]。
+		/// </summary>
+		public const string FFBackColor1 = "FBackColor1";
+
+		/// <summary>
+		/// フィールド[lbl19]。
+		/// </summary>
+		public const string Flbl19 = "lbl19";
+
+		/// <summary>
+		/// フィールド[FldBankCode]。
+		/// </summary>
+		public const string FFldBankCode = "FldBankCode";
+
+		/// <summary>
+		/// フィールド[FldIkaiCode]。
+		/// </summary>
+		public const string FFldIkaiCode = "FldIkaiCode";
+
+		/// <summary>
+		/// フィールド[FldTitle]。
+		/// </summary>
+		public const string FFldTitle = "FldTitle";
+
+		/// <summary>
+		/// フィールド[FldPage]。
+		/// </summary>
+		public const string FFldPage = "FldPage";
+
+		/// <summary>
+		/// フィールド[FldHikiDateYM]。
+		/// </summary>
+		public const string FFldHikiDateYM = "FldHikiDateYM";
+
+		/// <summary>
+		/// フィールド[FldDate]。
+		/// </summary>
+		public const string FFldDate = "FldDate";
+
+		/// <summary>
+		/// フィールド[lbl16]。
+		/// </summary>
+		public const string Flbl16 = "lbl16";
+
+		/// <summary>
+		/// フィールド[lbl20]。
+		/// </summary>
+		public const string Flbl20 = "lbl20";
+
+		/// <summary>
+		/// フィールド[FldCostTotal]。
+		/// </summary>
+		public const string FFldCostTotal = "FldCostTotal";
+
+		/// <summary>
+		/// フィールド[lbl4]。
+		/// </summary>
+		public const string Flbl4 = "lbl4";
+
+		/// <summary>
+		/// フィールド[lbl3]。
+		/// </summary>
+		public const string Flbl3 = "lbl3";
+
+		/// <summary>
+		/// フィールド[FldIkaiName]。
+		/// </summary>
+		public const string FFldIkaiName = "FldIkaiName";
+
+		/// <summary>
+		/// フィールド[FldCostTotalFooter]。
+		/// </summary>
+		public const string FFldCostTotalFooter = "FldCostTotalFooter";
+
+		/// <summary>
+		/// フィールド[lblTotal]。
+		/// </summary>
+		public const string FlblTotal = "lblTotal";
+
+		/// <summary>
+		/// フィールド[lbl2]。
+		/// </summary>
+		public const string Flbl2 = "lbl2";
+
+		/// <summary>
+		/// フィールド[lbl5]。
+		/// </summary>
+		public const string Flbl5 = "lbl5";
+
+		/// <summary>
+		/// フィールド[lbl17]。
+		/// </summary>
+		public const string Flbl17 = "lbl17";
+
+		/// <summary>
+		/// フィールド[lbl6]。
+		/// </summary>
+		public const string Flbl6 = "lbl6";
+
+		/// <summary>
+		/// フィールド[lbl7]。
+		/// </summary>
+		public const string Flbl7 = "lbl7";
+
+		/// <summary>
+		/// フィールド[FldBankName]。
+		/// </summary>
+		public const string FFldBankName = "FldBankName";
+
+		/// <summary>
+		/// フィールド[FldBankCodeShiten]。
+		/// </summary>
+		public const string FFldBankCodeShiten = "FldBankCodeShiten";
+
+		/// <summary>
+		/// フィールド[FldBankNameShiten]。
+		/// </summary>
+		public const string FFldBankNameShiten = "FldBankNameShiten";
+
+		/// <summary>
+		/// フィールド[FldBankKozaNo]。
+		/// </summary>
+		public const string FFldBankKozaNo = "FldBankKozaNo";
+
+		/// <summary>
+		/// フィールド[FldBankKozaName]。
+		/// </summary>
+		public const string FFldBankKozaName = "FldBankKozaName";
+
+		/// <summary>
+		/// フィールド[Field6]。
+		/// </summary>
+		public const string FField6 = "Field6";
+
+		/// <summary>
+		/// フィールド[Field11]。
+		/// </summary>
+		public const string FField11 = "Field11";
+
+		/// <summary>
+		/// フィールド[Field111]。
+		/// </summary>
+		public const string FField111 = "Field111";
+
+		/// <summary>
+		/// フィールド[Field3]。
+		/// </summary>
+		public const string FField3 = "Field3";
+
+		/// <summary>
+		/// フィールド[Field4]。
+		/// </summary>
+		public const string FField4 = "Field4";
+
+		/// <summary>
+		/// フィールド[Field14]。
+		/// </summary>
+		public const string FField14 = "Field14";
+
+		/// <summary>
+		/// フィールド[Field15]。
+		/// </summary>
+		public const string FField15 = "Field15";
+
+		/// <summary>
+		/// フィールド[Field9]。
+		/// </summary>
+		public const string FField9 = "Field9";
+
+		/// <summary>
+		/// フィールド[Field17]。
+		/// </summary>
+		public const string FField17 = "Field17";
+
+		/// <summary>
+		/// フィールド[Field1]。
+		/// </summary>
+		public const string FField1 = "Field1";
+
+		/// <summary>
+		/// フィールド[Field2]。
+		/// </summary>
+		public const string FField2 = "Field2";
+
+		/// <summary>
+		/// フィールド[Field5]。
+		/// </summary>
+		public const string FField5 = "Field5";
+
+		/// <summary>
+		/// フィールド[Field7]。
+		/// </summary>
+		public const string FField7 = "Field7";
+
+		/// <summary>
+		/// フィールド[Field13]。
+		/// </summary>
+		public const string FField13 = "Field13";
+
+		/// <summary>
+		/// フィールド[Field16]。
+		/// </summary>
+		public const string FField16 = "Field16";
+
+		/// <summary>
+		/// フィールド[Field18]。
+		/// </summary>
+		public const string FField18 = "Field18";
+
+		/// <summary>
+		/// フィールド[Field19]。
+		/// </summary>
+		public const string FField19 = "Field19";
+
+		/// <summary>
+		/// フィールド[Field20]。
+		/// </summary>
+		public const string FField20 = "Field20";
+
+		/// <summary>
+		/// フィールド[Field21]。
+		/// </summary>
+		public const string FField21 = "Field21";
+
+		/// <summary>
+		/// フィールド[Field22]。
+		/// </summary>
+		public const string FField22 = "Field22";
+
+		/// <summary>
+		/// フィールド[Field26]。
+		/// </summary>
+		public const string FField26 = "Field26";
+
+		/// <summary>
+		/// フィールド[Field27]。
+		/// </summary>
+		public const string FField27 = "Field27";
+
+		/// <summary>
+		/// フィールド[Field28]。
+		/// </summary>
+		public const string FField28 = "Field28";
+
+		/// <summary>
+		/// フィールド[Field29]。
+		/// </summary>
+		public const string FField29 = "Field29";
+
+		/// <summary>
+		/// フィールド[Field30]。
+		/// </summary>
+		public const string FField30 = "Field30";
+
+		/// <summary>
+		/// フィールド[Field31]。
+		/// </summary>
+		public const string FField31 = "Field31";
+
+		/// <summary>
+		/// フィールド[Field8]。
+		/// </summary>
+		public const string FField8 = "Field8";
+
+		/// <summary>
+		/// フィールド[Field12]。
+		/// </summary>
+		public const string FField12 = "Field12";
+
+		/// <summary>
+		/// フィールド[Field23]。
+		/// </summary>
+		public const string FField23 = "Field23";
+
+		/// <summary>
+		/// フィールド[Field24]。
+		/// </summary>
+		public const string FField24 = "Field24";
+
+		/// <summary>
+		/// フィールド[Field25]。
+		/// </summary>
+		public const string FField25 = "Field25";
+
+		/// <summary>
+		/// フィールド[Field33]。
+		/// </summary>
+		public const string FField33 = "Field33";
+	}
 }

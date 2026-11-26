@@ -79,6 +79,26 @@ namespace App
 			}
 		}
 		/// <summary>
+		/// CRep12_HikiotoshiIkaiMeisai レポート名称
+		/// </summary>
+		public static string CRep12_HikiotoshiIkaiMeisai
+		{
+			get
+			{
+				return "12_HikiotoshiIkaiMeisai";
+			}
+		}
+		/// <summary>
+		/// CRep13_HikiotoshiIkaiShukei レポート名称
+		/// </summary>
+		public static string CRep13_HikiotoshiIkaiShukei
+		{
+			get
+			{
+				return "13_HikiotoshiIkaiShukei";
+			}
+		}
+		/// <summary>
 		/// CRepIryoKikanList レポート名称
 		/// </summary>
 		public static string CRepIryoKikanList
