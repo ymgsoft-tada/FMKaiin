@@ -197,19 +197,19 @@ namespace App
             // lblNameKanaBank
             // 
             this.lblNameKanaBank.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameKanaBank.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblNameKanaBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblNameKanaBank.Location = new System.Drawing.Point(26, 84);
+            this.lblNameKanaBank.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblNameKanaBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.lblNameKanaBank.Location = new System.Drawing.Point(26, 81);
             this.lblNameKanaBank.Name = "lblNameKanaBank";
             this.lblNameKanaBank.Required = true;
             this.lblNameKanaBank.Size = new System.Drawing.Size(118, 24);
             this.lblNameKanaBank.TabIndex = 106;
             this.lblNameKanaBank.TabStop = false;
-            this.lblNameKanaBank.Text = "　銀行名カナ";
+            this.lblNameKanaBank.Text = "銀行名カナ";
             // 
             // iNameKanaBank
             // 
-            this.iNameKanaBank.Location = new System.Drawing.Point(150, 84);
+            this.iNameKanaBank.Location = new System.Drawing.Point(150, 81);
             this.iNameKanaBank.Name = "iNameKanaBank";
             this.iNameKanaBank.PlaceholderText = "入力必須";
             this.iNameKanaBank.Size = new System.Drawing.Size(200, 24);
@@ -218,19 +218,19 @@ namespace App
             // lblNameKanaShiten
             // 
             this.lblNameKanaShiten.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameKanaShiten.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblNameKanaShiten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblNameKanaShiten.Location = new System.Drawing.Point(374, 84);
+            this.lblNameKanaShiten.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblNameKanaShiten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.lblNameKanaShiten.Location = new System.Drawing.Point(374, 81);
             this.lblNameKanaShiten.Name = "lblNameKanaShiten";
             this.lblNameKanaShiten.Required = true;
             this.lblNameKanaShiten.Size = new System.Drawing.Size(118, 24);
             this.lblNameKanaShiten.TabIndex = 107;
             this.lblNameKanaShiten.TabStop = false;
-            this.lblNameKanaShiten.Text = "　支店名カナ";
+            this.lblNameKanaShiten.Text = "支店名カナ";
             // 
             // iNameKanaShiten
             // 
-            this.iNameKanaShiten.Location = new System.Drawing.Point(498, 84);
+            this.iNameKanaShiten.Location = new System.Drawing.Point(498, 81);
             this.iNameKanaShiten.Name = "iNameKanaShiten";
             this.iNameKanaShiten.PlaceholderText = "入力必須";
             this.iNameKanaShiten.Size = new System.Drawing.Size(200, 24);

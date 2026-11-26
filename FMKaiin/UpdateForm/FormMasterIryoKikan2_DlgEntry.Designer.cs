@@ -267,18 +267,18 @@ namespace App
             // lblShisetsuKana
             // 
             this.lblShisetsuKana.BackColor = System.Drawing.Color.Transparent;
-            this.lblShisetsuKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblShisetsuKana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblShisetsuKana.Location = new System.Drawing.Point(26, 84);
+            this.lblShisetsuKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblShisetsuKana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.lblShisetsuKana.Location = new System.Drawing.Point(26, 81);
             this.lblShisetsuKana.Name = "lblShisetsuKana";
             this.lblShisetsuKana.Size = new System.Drawing.Size(118, 24);
             this.lblShisetsuKana.TabIndex = 105;
             this.lblShisetsuKana.TabStop = false;
-            this.lblShisetsuKana.Text = "　施設カナ";
+            this.lblShisetsuKana.Text = "施設カナ";
             // 
             // iShisetsuKana
             // 
-            this.iShisetsuKana.Location = new System.Drawing.Point(150, 84);
+            this.iShisetsuKana.Location = new System.Drawing.Point(150, 81);
             this.iShisetsuKana.Name = "iShisetsuKana";
             this.iShisetsuKana.Size = new System.Drawing.Size(350, 24);
             this.iShisetsuKana.TabIndex = 2;
@@ -305,18 +305,18 @@ namespace App
             // lblShisetsuTsushoKana
             // 
             this.lblShisetsuTsushoKana.BackColor = System.Drawing.Color.Transparent;
-            this.lblShisetsuTsushoKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblShisetsuTsushoKana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblShisetsuTsushoKana.Location = new System.Drawing.Point(26, 144);
+            this.lblShisetsuTsushoKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblShisetsuTsushoKana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.lblShisetsuTsushoKana.Location = new System.Drawing.Point(26, 141);
             this.lblShisetsuTsushoKana.Name = "lblShisetsuTsushoKana";
             this.lblShisetsuTsushoKana.Size = new System.Drawing.Size(118, 24);
             this.lblShisetsuTsushoKana.TabIndex = 107;
             this.lblShisetsuTsushoKana.TabStop = false;
-            this.lblShisetsuTsushoKana.Text = "　施設通称カナ";
+            this.lblShisetsuTsushoKana.Text = "施設通称カナ";
             // 
             // iShisetsuTsushoKana
             // 
-            this.iShisetsuTsushoKana.Location = new System.Drawing.Point(150, 144);
+            this.iShisetsuTsushoKana.Location = new System.Drawing.Point(150, 141);
             this.iShisetsuTsushoKana.Name = "iShisetsuTsushoKana";
             this.iShisetsuTsushoKana.Size = new System.Drawing.Size(280, 24);
             this.iShisetsuTsushoKana.TabIndex = 4;

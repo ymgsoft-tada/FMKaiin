@@ -355,7 +355,7 @@ namespace App
 			else
 			{
 				//プレビュー
-				FormReportPreview frm = new FormReportPreview();
+				FormReportPreview2 frm = new FormReportPreview2();
 				frm.Width = 1220;
 				frm.SetReport(repinfo);
 

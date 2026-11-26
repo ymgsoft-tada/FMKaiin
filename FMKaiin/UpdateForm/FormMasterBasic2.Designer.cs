@@ -168,19 +168,19 @@ namespace App
             // lblNameFurigana
             // 
             this.lblNameFurigana.BackColor = System.Drawing.Color.Transparent;
-            this.lblNameFurigana.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
-            this.lblNameFurigana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblNameFurigana.Location = new System.Drawing.Point(26, 53);
+            this.lblNameFurigana.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblNameFurigana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(84)))), ((int)(((byte)(120)))), ((int)(((byte)(160)))));
+            this.lblNameFurigana.Location = new System.Drawing.Point(26, 50);
             this.lblNameFurigana.Name = "lblNameFurigana";
             this.lblNameFurigana.Required = true;
             this.lblNameFurigana.Size = new System.Drawing.Size(118, 24);
             this.lblNameFurigana.TabIndex = 101;
             this.lblNameFurigana.TabStop = false;
-            this.lblNameFurigana.Text = "　フリガナ";
+            this.lblNameFurigana.Text = "フリガナ";
             // 
             // iNameFurigana
             // 
-            this.iNameFurigana.Location = new System.Drawing.Point(150, 53);
+            this.iNameFurigana.Location = new System.Drawing.Point(150, 50);
             this.iNameFurigana.Name = "iNameFurigana";
             this.iNameFurigana.PlaceholderText = "入力必須";
             this.iNameFurigana.Size = new System.Drawing.Size(350, 24);
