@@ -29,18 +29,18 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblTypeKaihi = new App.Controls.SLabel();
-            this.iTypeKaihiFrom = new App.Controls.SComboBox();
-            this.lblTypeKaihiRange = new App.Controls.SLabel();
-            this.iTypeKaihiTo = new App.Controls.SComboBox();
-            this.lblKaihi = new App.Controls.SLabel();
-            this.iKaihiFrom = new App.Controls.STableComboBox();
-            this.lblKaihiRange = new App.Controls.SLabel();
-            this.iKaihiTo = new App.Controls.STableComboBox();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblTypeKaihi = new ComponentSUI.SLabel();
+            this.iTypeKaihiFrom = new ComponentSUI.SComboBox();
+            this.lblTypeKaihiRange = new ComponentSUI.SLabel();
+            this.iTypeKaihiTo = new ComponentSUI.SComboBox();
+            this.lblKaihi = new ComponentSUI.SLabel();
+            this.iKaihiFrom = new ComponentSUI.STableComboBox();
+            this.lblKaihiRange = new ComponentSUI.SLabel();
+            this.iKaihiTo = new ComponentSUI.STableComboBox();
             this.secBody.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -207,17 +207,17 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblTypeKaihi;
-        private App.Controls.SComboBox iTypeKaihiFrom;
-        private App.Controls.SLabel lblTypeKaihiRange;
-        private App.Controls.SComboBox iTypeKaihiTo;
-        private App.Controls.SLabel lblKaihi;
-        private App.Controls.STableComboBox iKaihiFrom;
-        private App.Controls.SLabel lblKaihiRange;
-        private App.Controls.STableComboBox iKaihiTo;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblTypeKaihi;
+        private ComponentSUI.SComboBox iTypeKaihiFrom;
+        private ComponentSUI.SLabel lblTypeKaihiRange;
+        private ComponentSUI.SComboBox iTypeKaihiTo;
+        private ComponentSUI.SLabel lblKaihi;
+        private ComponentSUI.STableComboBox iKaihiFrom;
+        private ComponentSUI.SLabel lblKaihiRange;
+        private ComponentSUI.STableComboBox iKaihiTo;
     }
 }

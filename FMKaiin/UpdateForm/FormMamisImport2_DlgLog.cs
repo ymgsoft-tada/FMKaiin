@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
-using App.Controls;
+using ComponentSUI;
 using C1.Win.C1TrueDBGrid;
 using ComponentDB;
 using ComponentIO;

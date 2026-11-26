@@ -30,7 +30,7 @@ namespace App
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKaiin_DlgHistory));
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.iKaiin = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx25 = new YControlLabelEx.YcLabelEx();
 			this.iTotal = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -206,7 +206,7 @@ namespace App
 
 		#endregion
 
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iKaiin;
 		private YControlLabelEx.YcLabelEx ycLabelEx25;
 		private GControlGcTextBoxEx.GcTextBoxEx iTotal;

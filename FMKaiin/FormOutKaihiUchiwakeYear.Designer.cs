@@ -31,7 +31,7 @@ namespace App
 		{
 			this.components = new System.ComponentModel.Container();
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.iKaiinFrom = new App.UcTableComboBox();
@@ -335,7 +335,7 @@ namespace App
 
 		#endregion
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private UcTableComboBox iKaiinFrom;

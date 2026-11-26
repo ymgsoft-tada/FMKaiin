@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
-using App.Controls;
+using ComponentSUI;
 using ComponentDB;
 
 namespace App

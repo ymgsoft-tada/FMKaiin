@@ -5,7 +5,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 
 namespace App
 {

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Drawing.Imaging;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 
 internal static class DateHarness
 {

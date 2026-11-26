@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			this.components = new System.ComponentModel.Container();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iSearchUsed = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
@@ -1356,7 +1356,7 @@
 
 		#endregion
 
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcComboBoxEx.GcComboBoxEx iSearchUsed;

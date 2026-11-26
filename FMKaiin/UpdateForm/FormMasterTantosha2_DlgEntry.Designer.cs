@@ -29,18 +29,18 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblCode = new App.Controls.SLabel();
-            this.iCode = new App.Controls.STextBox();
-            this.lblName = new App.Controls.SLabel();
-            this.iName = new App.Controls.STextBox();
-            this.lblPwd = new App.Controls.SLabel();
-            this.iPwd = new App.Controls.STextBox();
-            this.lblAuth = new App.Controls.SLabel();
-            this.iAuth = new App.Controls.SComboBox();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblCode = new ComponentSUI.SLabel();
+            this.iCode = new ComponentSUI.STextBox();
+            this.lblName = new ComponentSUI.SLabel();
+            this.iName = new ComponentSUI.STextBox();
+            this.lblPwd = new ComponentSUI.SLabel();
+            this.iPwd = new ComponentSUI.STextBox();
+            this.lblAuth = new ComponentSUI.SLabel();
+            this.iAuth = new ComponentSUI.SComboBox();
             this.secBody.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -55,7 +55,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -211,17 +211,17 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblCode;
-        private App.Controls.STextBox iCode;
-        private App.Controls.SLabel lblName;
-        private App.Controls.STextBox iName;
-        private App.Controls.SLabel lblPwd;
-        private App.Controls.STextBox iPwd;
-        private App.Controls.SLabel lblAuth;
-        private App.Controls.SComboBox iAuth;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblCode;
+        private ComponentSUI.STextBox iCode;
+        private ComponentSUI.SLabel lblName;
+        private ComponentSUI.STextBox iName;
+        private ComponentSUI.SLabel lblPwd;
+        private ComponentSUI.STextBox iPwd;
+        private ComponentSUI.SLabel lblAuth;
+        private ComponentSUI.SComboBox iAuth;
     }
 }

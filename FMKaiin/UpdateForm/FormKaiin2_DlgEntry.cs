@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Text;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 using ComponentDB;
 using ComponentIO;
 

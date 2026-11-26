@@ -6,7 +6,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 
 internal static class MsgBoxHarness
 {

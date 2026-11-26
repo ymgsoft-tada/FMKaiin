@@ -12,6 +12,7 @@ using C1.Win.C1TrueDBGrid;
 using ComponentDB;
 using ComponentGGridDB;
 using ComponentIO;
+using ComponentSUI;
 
 namespace App
 {

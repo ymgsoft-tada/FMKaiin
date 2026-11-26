@@ -30,7 +30,7 @@ namespace App
 		private void InitializeComponent()
 		{
 			this.btnShiminbyoinKaihi = new System.Windows.Forms.Button();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.btnNenkanChoshu = new System.Windows.Forms.Button();
 			this.btnKaihiShinsei = new System.Windows.Forms.Button();
 			this.btnFurikomi = new System.Windows.Forms.Button();
@@ -139,7 +139,7 @@ namespace App
 		#endregion
 
 		private System.Windows.Forms.Button btnShiminbyoinKaihi;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private System.Windows.Forms.Button btnNenkanChoshu;
 		private System.Windows.Forms.Button btnKaihiShinsei;
 		private System.Windows.Forms.Button btnFurikomi;

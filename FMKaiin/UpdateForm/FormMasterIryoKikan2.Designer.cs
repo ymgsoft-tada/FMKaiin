@@ -30,19 +30,19 @@ namespace App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterIryoKikan2));
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblCodeIryo = new App.Controls.SLabel();
-            this.iCodeIryo = new App.Controls.STextBox();
-            this.lblNameIryo = new App.Controls.SLabel();
-            this.iNameIryo = new App.Controls.STextBox();
-            this.lblKumiCode = new App.Controls.SLabel();
-            this.iKumiCode = new App.Controls.STableComboBox();
-            this.lblKbnTaikai = new App.Controls.SLabel();
-            this.iKbnTaikai = new App.Controls.SComboBox();
-            this.btnClear = new App.Controls.SButton();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblCodeIryo = new ComponentSUI.SLabel();
+            this.iCodeIryo = new ComponentSUI.STextBox();
+            this.lblNameIryo = new ComponentSUI.SLabel();
+            this.iNameIryo = new ComponentSUI.STextBox();
+            this.lblKumiCode = new ComponentSUI.SLabel();
+            this.iKumiCode = new ComponentSUI.STableComboBox();
+            this.lblKbnTaikai = new ComponentSUI.SLabel();
+            this.iKbnTaikai = new ComponentSUI.SComboBox();
+            this.btnClear = new ComponentSUI.SButton();
             this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
             this.secBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -59,7 +59,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -244,19 +244,19 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblCodeIryo;
-        private App.Controls.STextBox iCodeIryo;
-        private App.Controls.SLabel lblNameIryo;
-        private App.Controls.STextBox iNameIryo;
-        private App.Controls.SLabel lblKumiCode;
-        private App.Controls.STableComboBox iKumiCode;
-        private App.Controls.SLabel lblKbnTaikai;
-        private App.Controls.SComboBox iKbnTaikai;
-        private App.Controls.SButton btnClear;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblCodeIryo;
+        private ComponentSUI.STextBox iCodeIryo;
+        private ComponentSUI.SLabel lblNameIryo;
+        private ComponentSUI.STextBox iNameIryo;
+        private ComponentSUI.SLabel lblKumiCode;
+        private ComponentSUI.STableComboBox iKumiCode;
+        private ComponentSUI.SLabel lblKbnTaikai;
+        private ComponentSUI.SComboBox iKbnTaikai;
+        private ComponentSUI.SButton btnClear;
         private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
     }
 }

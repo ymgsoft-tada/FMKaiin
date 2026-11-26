@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 using ComponentDB;
 
 namespace App

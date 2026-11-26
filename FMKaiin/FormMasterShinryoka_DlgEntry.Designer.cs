@@ -33,7 +33,7 @@ namespace App
 			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iCode = new GControlGcTextBoxEx.GcTextBoxEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			((System.ComponentModel.ISupportInitialize)(this.iShisetsuName)).BeginInit();
@@ -169,7 +169,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx7;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcTextBoxEx.GcTextBoxEx iCode;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 	}

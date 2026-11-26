@@ -33,7 +33,7 @@ namespace App
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.iBank = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.iShiten = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -209,7 +209,7 @@ namespace App
         private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
         private YControlLabelEx.YcLabelEx lblTitle;
         private YControlLabelEx.YcLabelEx ycLabelEx1;
-        private App.Controls.FunctionKeyBar funckey;
+        private ComponentSUI.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iBank;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private GControlGcTextBoxEx.GcTextBoxEx iShiten;

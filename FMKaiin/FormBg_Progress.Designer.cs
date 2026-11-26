@@ -29,10 +29,10 @@
 		private void InitializeComponent()
 		{
 			this.bgWorker = new System.ComponentModel.BackgroundWorker();
-			this.secBody = new App.Controls.SectionPanel();
-			this.IconIndicator = new App.Controls.SBusyIndicator();
-			this.LblInfo = new App.Controls.SLabel();
-			this.ProgressBar = new App.Controls.SProgressBar();
+			this.secBody = new ComponentSUI.SectionPanel();
+			this.IconIndicator = new ComponentSUI.SBusyIndicator();
+			this.LblInfo = new ComponentSUI.SLabel();
+			this.ProgressBar = new ComponentSUI.SProgressBar();
 			this.secBody.SuspendLayout();
 			this.SuspendLayout();
 			//
@@ -112,18 +112,18 @@
 		/// バックグウンドタスク実行コントロール
 		/// </summary>
 		protected System.ComponentModel.BackgroundWorker bgWorker;
-		private App.Controls.SectionPanel secBody;
+		private ComponentSUI.SectionPanel secBody;
 		/// <summary>
 		/// メッセージ
 		/// </summary>
-		public App.Controls.SLabel LblInfo;
+		public ComponentSUI.SLabel LblInfo;
 		/// <summary>
 		/// 進み具合のバー
 		/// </summary>
-		public App.Controls.SProgressBar ProgressBar;
+		public ComponentSUI.SProgressBar ProgressBar;
 		/// <summary>
 		/// 処理中であることを示す、回る輪
 		/// </summary>
-		public App.Controls.SBusyIndicator IconIndicator;
+		public ComponentSUI.SBusyIndicator IconIndicator;
 	}
 }

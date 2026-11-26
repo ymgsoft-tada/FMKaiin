@@ -29,19 +29,19 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.secIkai = new App.Controls.SectionPanel();
-            this.lblDateYM = new App.Controls.SLabel();
-            this.iDateYM = new App.Controls.SDateBox();
-            this.lblDate = new App.Controls.SLabel();
-            this.iDate = new App.Controls.SDateBox();
-            this.lblIkai = new App.Controls.SLabel();
-            this.rdoNichii = new App.Controls.SRadioButton();
-            this.rdoKeni = new App.Controls.SRadioButton();
-            this.rdoShii = new App.Controls.SRadioButton();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.secIkai = new ComponentSUI.SectionPanel();
+            this.lblDateYM = new ComponentSUI.SLabel();
+            this.iDateYM = new ComponentSUI.SDateBox();
+            this.lblDate = new ComponentSUI.SLabel();
+            this.iDate = new ComponentSUI.SDateBox();
+            this.lblIkai = new ComponentSUI.SLabel();
+            this.rdoNichii = new ComponentSUI.SRadioButton();
+            this.rdoKeni = new ComponentSUI.SRadioButton();
+            this.rdoShii = new ComponentSUI.SRadioButton();
             this.secBody.SuspendLayout();
             this.secIkai.SuspendLayout();
             this.SuspendLayout();
@@ -57,7 +57,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -113,7 +113,7 @@ namespace App
             // 
             // iDateYM
             // 
-            this.iDateYM.DateFormat = App.Controls.SDateFormat.YearMonth;
+            this.iDateYM.DateFormat = ComponentSUI.SDateFormat.YearMonth;
             this.iDateYM.Location = new System.Drawing.Point(150, 24);
             this.iDateYM.Name = "iDateYM";
             this.iDateYM.PlaceholderText = "入力必須";
@@ -228,18 +228,18 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SectionPanel secIkai;
-        private App.Controls.SLabel lblDateYM;
-        private App.Controls.SDateBox iDateYM;
-        private App.Controls.SLabel lblDate;
-        private App.Controls.SDateBox iDate;
-        private App.Controls.SLabel lblIkai;
-        private App.Controls.SRadioButton rdoNichii;
-        private App.Controls.SRadioButton rdoKeni;
-        private App.Controls.SRadioButton rdoShii;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SectionPanel secIkai;
+        private ComponentSUI.SLabel lblDateYM;
+        private ComponentSUI.SDateBox iDateYM;
+        private ComponentSUI.SLabel lblDate;
+        private ComponentSUI.SDateBox iDate;
+        private ComponentSUI.SLabel lblIkai;
+        private ComponentSUI.SRadioButton rdoNichii;
+        private ComponentSUI.SRadioButton rdoKeni;
+        private ComponentSUI.SRadioButton rdoShii;
     }
 }

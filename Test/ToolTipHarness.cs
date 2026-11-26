@@ -6,7 +6,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Threading;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 
 internal static class ToolTipHarness
 {

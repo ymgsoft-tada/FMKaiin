@@ -13,6 +13,7 @@ using ComponentGGridDB;
 using ComponentIO;
 using C1.Win.C1TrueDBGrid;
 using System.Text.RegularExpressions;
+using ComponentSUI;
 
 namespace App
 {

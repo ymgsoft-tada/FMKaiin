@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using C1.Win.C1TrueDBGrid;
 using ComponentDB;
 using ComponentGGridDB;
+using ComponentSUI;
 
 namespace App
 {

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.ComponentModel;
-using App.Controls;
+using ComponentSUI;
 
 namespace App
 {

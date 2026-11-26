@@ -29,7 +29,7 @@ namespace App
 		/// </summary>
 		private void InitializeComponent()
 		{
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iYear = new App.UcDate();
@@ -245,7 +245,7 @@ namespace App
 
 		#endregion
 
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private UcDate iYear;

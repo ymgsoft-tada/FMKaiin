@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
-using App.Controls;
+using ComponentSUI;
 
 namespace App
 {

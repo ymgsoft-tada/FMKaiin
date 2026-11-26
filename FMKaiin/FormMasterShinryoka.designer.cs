@@ -29,7 +29,7 @@
 		private void InitializeComponent()
 		{
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterShinryoka));
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.iCodeShinryoka = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -206,7 +206,7 @@
 
 		private GControlGcTextBoxEx.GcTextBoxEx iNameShinryoka;
 		private YControlLabelEx.YcLabelEx ycLabelEx5;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;

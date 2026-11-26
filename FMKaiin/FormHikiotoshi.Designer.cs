@@ -32,7 +32,7 @@ namespace App
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormHikiotoshi));
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.iDateYM = new App.UcDate();
 			this.ycLabelEx14 = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
@@ -326,7 +326,7 @@ namespace App
 		#endregion
 
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private UcDate iDateYM;
 		private YControlLabelEx.YcLabelEx ycLabelEx14;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;

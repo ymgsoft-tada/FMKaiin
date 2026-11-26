@@ -36,7 +36,7 @@ namespace App
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
 			this.iAuth = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.iName = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -301,7 +301,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcComboBoxEx.GcComboBoxEx iAuth;
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private GControlGcTextBoxEx.GcTextBoxEx iName;

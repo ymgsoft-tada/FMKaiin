@@ -2,7 +2,7 @@
 using System.ComponentModel;
 using System.Data;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 using ComponentDB;
 using ComponentDebug;
 using ComponentIO;

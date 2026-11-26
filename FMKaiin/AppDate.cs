@@ -390,7 +390,7 @@ namespace App
 			UcDate.SetKoyomiSeirekiOn(val);
 			GGridDBCommon.KoyomiSeirekiOn = val;
 			//¶ 2026/11/25 ClaudeCode S 系の日付の入力欄（SDateBox）にも、同じ設定を伝える
-			App.Controls.SDateBox.DefaultCalendarKind = val ? App.Controls.SDateCalendarKind.Western : App.Controls.SDateCalendarKind.Japanese;
+			ComponentSUI.SDateBox.DefaultCalendarKind = val ? ComponentSUI.SDateCalendarKind.Western : ComponentSUI.SDateCalendarKind.Japanese;
 		}
 
 		/// <summary>

@@ -30,15 +30,15 @@ namespace App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterShinryoka2));
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblCodeShinryoka = new App.Controls.SLabel();
-            this.iCodeShinryoka = new App.Controls.STextBox();
-            this.lblNameShinryoka = new App.Controls.SLabel();
-            this.iNameShinryoka = new App.Controls.STextBox();
-            this.btnClear = new App.Controls.SButton();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblCodeShinryoka = new ComponentSUI.SLabel();
+            this.iCodeShinryoka = new ComponentSUI.STextBox();
+            this.lblNameShinryoka = new ComponentSUI.SLabel();
+            this.iNameShinryoka = new ComponentSUI.STextBox();
+            this.btnClear = new ComponentSUI.SButton();
             this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
             this.secBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
@@ -55,7 +55,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -195,15 +195,15 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblCodeShinryoka;
-        private App.Controls.STextBox iCodeShinryoka;
-        private App.Controls.SLabel lblNameShinryoka;
-        private App.Controls.STextBox iNameShinryoka;
-        private App.Controls.SButton btnClear;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblCodeShinryoka;
+        private ComponentSUI.STextBox iCodeShinryoka;
+        private ComponentSUI.SLabel lblNameShinryoka;
+        private ComponentSUI.STextBox iNameShinryoka;
+        private ComponentSUI.SButton btnClear;
         private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
     }
 }

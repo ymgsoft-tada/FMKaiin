@@ -33,7 +33,7 @@ namespace App
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.iPwd_New2 = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
 			this.iPwd_New = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -214,7 +214,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private GControlGcTextBoxEx.GcTextBoxEx iPwd_New2;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
 		private GControlGcTextBoxEx.GcTextBoxEx iPwd_New;

@@ -29,18 +29,18 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.secType = new App.Controls.SectionPanel();
-            this.lblYear = new App.Controls.SLabel();
-            this.iYear = new App.Controls.SDateBox();
-            this.lblKaiin = new App.Controls.SLabel();
-            this.iKaiinFrom = new App.Controls.STableComboBox();
-            this.lblType = new App.Controls.SLabel();
-            this.rdoYotei = new App.Controls.SRadioButton();
-            this.rdoJisseki = new App.Controls.SRadioButton();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.secType = new ComponentSUI.SectionPanel();
+            this.lblYear = new ComponentSUI.SLabel();
+            this.iYear = new ComponentSUI.SDateBox();
+            this.lblKaiin = new ComponentSUI.SLabel();
+            this.iKaiinFrom = new ComponentSUI.STableComboBox();
+            this.lblType = new ComponentSUI.SLabel();
+            this.rdoYotei = new ComponentSUI.SRadioButton();
+            this.rdoJisseki = new ComponentSUI.SRadioButton();
             this.secBody.SuspendLayout();
             this.secType.SuspendLayout();
             this.SuspendLayout();
@@ -56,7 +56,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -112,7 +112,7 @@ namespace App
             // 
             // iYear
             // 
-            this.iYear.DateFormat = App.Controls.SDateFormat.Year;
+            this.iYear.DateFormat = ComponentSUI.SDateFormat.Year;
             this.iYear.Location = new System.Drawing.Point(150, 24);
             this.iYear.Name = "iYear";
             this.iYear.PlaceholderText = "入力必須";
@@ -216,17 +216,17 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SectionPanel secType;
-        private App.Controls.SLabel lblYear;
-        private App.Controls.SDateBox iYear;
-        private App.Controls.SLabel lblKaiin;
-        private App.Controls.STableComboBox iKaiinFrom;
-        private App.Controls.SLabel lblType;
-        private App.Controls.SRadioButton rdoYotei;
-        private App.Controls.SRadioButton rdoJisseki;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SectionPanel secType;
+        private ComponentSUI.SLabel lblYear;
+        private ComponentSUI.SDateBox iYear;
+        private ComponentSUI.SLabel lblKaiin;
+        private ComponentSUI.STableComboBox iKaiinFrom;
+        private ComponentSUI.SLabel lblType;
+        private ComponentSUI.SRadioButton rdoYotei;
+        private ComponentSUI.SRadioButton rdoJisseki;
     }
 }

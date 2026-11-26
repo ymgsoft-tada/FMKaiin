@@ -34,7 +34,7 @@ namespace App
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
 			this.iDate = new App.UcDate();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.iDateYM = new App.UcDate();
@@ -229,7 +229,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
 		private UcDate iDate;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private UcDate iDateYM;

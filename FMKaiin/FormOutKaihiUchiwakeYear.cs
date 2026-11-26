@@ -11,6 +11,7 @@ using ComponentDB;
 using ComponentGControlDB;
 using ComponentIO;
 using GControlGcTextBoxEx;
+using ComponentSUI;
 
 namespace App
 {

@@ -29,23 +29,23 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblTaishoYear = new App.Controls.SLabel();
-            this.iTaishoYear = new App.Controls.SDateBox();
-            this.lblTaishoYearNote = new App.Controls.SLabel();
-            this.lblKaiin = new App.Controls.SLabel();
-            this.iKaiinFrom = new App.Controls.STableComboBox();
-            this.lblKaiinRange = new App.Controls.SLabel();
-            this.iKaiinTo = new App.Controls.STableComboBox();
-            this.lblZaiseki = new App.Controls.SLabel();
-            this.iZaisekiFrom = new App.Controls.SComboBox();
-            this.lblZaisekiRange = new App.Controls.SLabel();
-            this.iZaisekiTo = new App.Controls.SComboBox();
-            this.lblUchiwake = new App.Controls.SLabel();
-            this.iUchiwakeFrom = new App.Controls.SComboBox();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblTaishoYear = new ComponentSUI.SLabel();
+            this.iTaishoYear = new ComponentSUI.SDateBox();
+            this.lblTaishoYearNote = new ComponentSUI.SLabel();
+            this.lblKaiin = new ComponentSUI.SLabel();
+            this.iKaiinFrom = new ComponentSUI.STableComboBox();
+            this.lblKaiinRange = new ComponentSUI.SLabel();
+            this.iKaiinTo = new ComponentSUI.STableComboBox();
+            this.lblZaiseki = new ComponentSUI.SLabel();
+            this.iZaisekiFrom = new ComponentSUI.SComboBox();
+            this.lblZaisekiRange = new ComponentSUI.SLabel();
+            this.iZaisekiTo = new ComponentSUI.SComboBox();
+            this.lblUchiwake = new ComponentSUI.SLabel();
+            this.iUchiwakeFrom = new ComponentSUI.SComboBox();
             this.secBody.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +60,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -123,7 +123,7 @@ namespace App
             // 
             // iTaishoYear
             // 
-            this.iTaishoYear.DateFormat = App.Controls.SDateFormat.Year;
+            this.iTaishoYear.DateFormat = ComponentSUI.SDateFormat.Year;
             this.iTaishoYear.Location = new System.Drawing.Point(150, 24);
             this.iTaishoYear.Name = "iTaishoYear";
             this.iTaishoYear.PlaceholderText = "入力必須";
@@ -271,22 +271,22 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblTaishoYear;
-        private App.Controls.SDateBox iTaishoYear;
-        private App.Controls.SLabel lblTaishoYearNote;
-        private App.Controls.SLabel lblKaiin;
-        private App.Controls.STableComboBox iKaiinFrom;
-        private App.Controls.SLabel lblKaiinRange;
-        private App.Controls.STableComboBox iKaiinTo;
-        private App.Controls.SLabel lblZaiseki;
-        private App.Controls.SComboBox iZaisekiFrom;
-        private App.Controls.SLabel lblZaisekiRange;
-        private App.Controls.SComboBox iZaisekiTo;
-        private App.Controls.SLabel lblUchiwake;
-        private App.Controls.SComboBox iUchiwakeFrom;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblTaishoYear;
+        private ComponentSUI.SDateBox iTaishoYear;
+        private ComponentSUI.SLabel lblTaishoYearNote;
+        private ComponentSUI.SLabel lblKaiin;
+        private ComponentSUI.STableComboBox iKaiinFrom;
+        private ComponentSUI.SLabel lblKaiinRange;
+        private ComponentSUI.STableComboBox iKaiinTo;
+        private ComponentSUI.SLabel lblZaiseki;
+        private ComponentSUI.SComboBox iZaisekiFrom;
+        private ComponentSUI.SLabel lblZaisekiRange;
+        private ComponentSUI.SComboBox iZaisekiTo;
+        private ComponentSUI.SLabel lblUchiwake;
+        private ComponentSUI.SComboBox iUchiwakeFrom;
     }
 }

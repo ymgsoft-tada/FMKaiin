@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 using ComponentGControlDB;
 
 namespace App

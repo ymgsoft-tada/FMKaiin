@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using ComponentDB;
 using ComponentGControlDB;
 using GControlGcTextBoxEx;
+using ComponentSUI;
 
 namespace App
 {

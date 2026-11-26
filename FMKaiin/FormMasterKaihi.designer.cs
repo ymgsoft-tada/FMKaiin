@@ -30,7 +30,7 @@
 		{
 			this.components = new System.ComponentModel.Container();
 			System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMasterKaihi));
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.btnClear = new System.Windows.Forms.Button();
 			this.iCodeKaihi = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -289,7 +289,7 @@
 
 		#endregion
 
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iNameKaihi;
 		private YControlLabelEx.YcLabelEx ycLabelEx5;
 		private GControlGcComboBoxEx.GcComboBoxEx iKbnUsed;

@@ -14,6 +14,7 @@ using ComponentRegistry;
 using ComponentIO;
 using ComponentGControlDB;
 using ComponentDB;
+using ComponentSUI;
 
 namespace App
 {
@@ -463,7 +464,7 @@ namespace App
 			// 「このキーは自分で使う」と答えたコントロールには、そのキーを任せる
 			// （一覧やカレンダーを開いている間の Enter で、指している行・日を確定する、など）。
 			// コントロールの種類ごとの判定をここへ足さなくて済むよう、インターフェースで尋ねている
-			App.Controls.ISKeyUser keyUser = this.ActiveControl as App.Controls.ISKeyUser;
+			ComponentSUI.ISKeyUser keyUser = this.ActiveControl as ComponentSUI.ISKeyUser;
 			if (keyUser != null && keyUser.UsesKey(keycode) == true)
 			{
 				return true;

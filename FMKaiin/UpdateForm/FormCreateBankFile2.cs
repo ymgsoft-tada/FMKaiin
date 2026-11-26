@@ -1,5 +1,5 @@
 ﻿using System;
-using App.Controls;
+using ComponentSUI;
 using ComponentIO;
 
 namespace App

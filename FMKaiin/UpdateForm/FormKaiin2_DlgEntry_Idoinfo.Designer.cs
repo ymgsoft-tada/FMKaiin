@@ -29,29 +29,29 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblIdoDate = new App.Controls.SLabel();
-            this.iIdoDate = new App.Controls.SDateBox();
-            this.lblIdoKbn = new App.Controls.SLabel();
-            this.iIdoKbn = new App.Controls.SComboBox();
-            this.lblIdoDetail = new App.Controls.SLabel();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblIdoDate = new ComponentSUI.SLabel();
+            this.iIdoDate = new ComponentSUI.SDateBox();
+            this.lblIdoKbn = new ComponentSUI.SLabel();
+            this.iIdoKbn = new ComponentSUI.SComboBox();
+            this.lblIdoDetail = new ComponentSUI.SLabel();
             this.pnl_Ido = new System.Windows.Forms.Panel();
-            this.iIdoIdo = new App.Controls.SComboBox();
-            this.iIdoIdoMemo = new App.Controls.STextBox();
+            this.iIdoIdo = new ComponentSUI.SComboBox();
+            this.iIdoIdoMemo = new ComponentSUI.STextBox();
             this.pnl_Kaiin = new System.Windows.Forms.Panel();
-            this.iIdoKaiin = new App.Controls.SComboBox();
+            this.iIdoKaiin = new ComponentSUI.SComboBox();
             this.pnl_Shozai = new System.Windows.Forms.Panel();
-            this.iIdoShozai = new App.Controls.SComboBox();
-            this.iIdoShozaiMemo = new App.Controls.STextBox();
+            this.iIdoShozai = new ComponentSUI.SComboBox();
+            this.iIdoShozaiMemo = new ComponentSUI.STextBox();
             this.pnl_Address = new System.Windows.Forms.Panel();
-            this.iIdoAddress = new App.Controls.SComboBox();
-            this.iIdoAddressMemo = new App.Controls.STextBox();
+            this.iIdoAddress = new ComponentSUI.SComboBox();
+            this.iIdoAddressMemo = new ComponentSUI.STextBox();
             this.pnl_Etc = new System.Windows.Forms.Panel();
-            this.iIdoEtc = new App.Controls.SComboBox();
-            this.iIdoEtcMemo = new App.Controls.STextBox();
+            this.iIdoEtc = new ComponentSUI.SComboBox();
+            this.iIdoEtcMemo = new ComponentSUI.STextBox();
             this.secBody.SuspendLayout();
             this.pnl_Ido.SuspendLayout();
             this.pnl_Kaiin.SuspendLayout();
@@ -71,7 +71,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -318,28 +318,28 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblIdoDate;
-        private App.Controls.SDateBox iIdoDate;
-        private App.Controls.SLabel lblIdoKbn;
-        private App.Controls.SComboBox iIdoKbn;
-        private App.Controls.SLabel lblIdoDetail;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblIdoDate;
+        private ComponentSUI.SDateBox iIdoDate;
+        private ComponentSUI.SLabel lblIdoKbn;
+        private ComponentSUI.SComboBox iIdoKbn;
+        private ComponentSUI.SLabel lblIdoDetail;
         private System.Windows.Forms.Panel pnl_Ido;
-        private App.Controls.SComboBox iIdoIdo;
-        private App.Controls.STextBox iIdoIdoMemo;
+        private ComponentSUI.SComboBox iIdoIdo;
+        private ComponentSUI.STextBox iIdoIdoMemo;
         private System.Windows.Forms.Panel pnl_Kaiin;
-        private App.Controls.SComboBox iIdoKaiin;
+        private ComponentSUI.SComboBox iIdoKaiin;
         private System.Windows.Forms.Panel pnl_Shozai;
-        private App.Controls.SComboBox iIdoShozai;
-        private App.Controls.STextBox iIdoShozaiMemo;
+        private ComponentSUI.SComboBox iIdoShozai;
+        private ComponentSUI.STextBox iIdoShozaiMemo;
         private System.Windows.Forms.Panel pnl_Address;
-        private App.Controls.SComboBox iIdoAddress;
-        private App.Controls.STextBox iIdoAddressMemo;
+        private ComponentSUI.SComboBox iIdoAddress;
+        private ComponentSUI.STextBox iIdoAddressMemo;
         private System.Windows.Forms.Panel pnl_Etc;
-        private App.Controls.SComboBox iIdoEtc;
-        private App.Controls.STextBox iIdoEtcMemo;
+        private ComponentSUI.SComboBox iIdoEtc;
+        private ComponentSUI.STextBox iIdoEtcMemo;
     }
 }

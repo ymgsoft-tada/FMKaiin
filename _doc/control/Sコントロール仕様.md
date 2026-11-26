@@ -2,7 +2,7 @@
 
 Gc 系コントロール(InputMan)の置き換えとして作った、名前が S で始まるコントロールの仕様をまとめる。置き換え前の使われ方は [GcControl仕様一覧.md](GcControl仕様一覧.md)、これらの部品で作った画面の仕様は [S画面仕様.md](S画面仕様.md) にある。
 
-- 1 章: 全体(進み具合、ファイル、共通の見た目、SControlDB の設計方針、収まらない文字を縮める表示)
+- 1 章: 全体(進み具合、ファイル、共通の見た目、SControlDB の設計方針、収まらない文字を縮める表示、comset への移動と名前空間の変更)
 - 2 章: STextBox(GcTextBoxEx の代わり)
 - 3 章: SComboBox(GcComboBoxEx の代わり)
 - 4 章: STableComboBox(UcTableComboBox の代わり)
@@ -28,7 +28,7 @@ Gc 系コントロール(InputMan)の置き換えとして作った、名前が 
 | --- | --- |
 | 記載日 | 2026-11-25。2026-11-26 に、その日までの変更を反映して、番号を付け直した |
 | 状態 | 作成済み。これらの部品を使う画面の一覧は、[S画面仕様.md](S画面仕様.md) にある |
-| 置き場所 | `FMKaiin/Controls/Common/`。コントロールの名前空間は `App.Controls`、SControlDB は `App`。このフォルダーにあるものは、最終的に comset へ移す予定 |
+| 置き場所 | 共通ライブラリー comset の `UI/` フォルダー(`_Library/_All/comset/comset/UI/`。FMKaiin とは別のリポジトリ Library にあり、FMKaiin.sln からプロジェクト参照している)。名前空間は `ComponentSUI`。2026-11-26 に、FMKaiin の `Controls/Common/` から移して、名前空間を変えた(1.6) |
 
 ---
 
@@ -63,7 +63,7 @@ S 系の部品で作った画面の進み具合と、メニューからの開き
 
 ### 1.2 ファイル
 
-すべて `Controls/Common/` にある。SControlDB のファイルは 7 章に書く。
+すべて comset の `UI/` フォルダーにある(2026-11-26 に、FMKaiin の `Controls/Common/` から移した。1.6。この文書で、ファイルを `comset/UI/○○.cs` と書いているのは、このフォルダーのこと)。SControlDB のファイルは 7 章に書く。
 
 | ファイル | 内容 |
 | --- | --- |
@@ -97,14 +97,14 @@ S 系の部品で作った画面の進み具合と、メニューからの開き
 | `SControlStyle.cs` | 既定の見た目(フォント・色・寸法)と、枠・矢印の描画 |
 | `SControlInterfaces.cs` | コントロールが外へ見せる約束ごと。`ISEditCommit`(入力の途中の内容の確定)と `ISKeyUser`(フォームより先にキーを使う。S画面仕様の 1.3) |
 
-S 系のコントロール・S 系の画面が使っている、既存の共通の部品。comset へ一緒に移せるよう、`Controls/` と `FormHelpers/` から `Controls/Common/` へ移した(2026-11-25。`SLabel`・`SectionPanel`・`DropShadow`・`IBackdropBlurSource`・`SmoothPictureBox` は、2026-11-26 に移した。移したときには、中身と名前空間は変えていない。`SLabel` には、その後 `Required` を足した。15 章)。
+S 系のコントロール・S 系の画面が使っている、既存の共通の部品。comset へ一緒に移せるよう、いったん FMKaiin の `Controls/` と `FormHelpers/` から `Controls/Common/` へ集め、2026-11-26 に、S 系のコントロールと一緒に comset の `UI/` へ移した(1.6)。`Controls/Common/` へ集めたときの経過: (2026-11-25。`SLabel`・`SectionPanel`・`DropShadow`・`IBackdropBlurSource`・`SmoothPictureBox` は、2026-11-26 に移した。移したときには、中身と名前空間は変えていない。`SLabel` には、その後 `Required` を足した。15 章)。
 
 | ファイル | 内容 | 使っているところ |
 | --- | --- | --- |
 | `PaintHelper.cs` | 親コントロールと同じ見た目で背景を描く、などの描画の補助 | 角丸の外側の描画 |
 | `LayoutScale.cs` | 表示倍率の取得 | 枠・余白・矢印の寸法 |
 | `FontFallback.cs` | PC にあるフォントの中から、使えるものを選ぶ | 既定のフォント |
-| `TitleBarColor.cs` | ウィンドウのタイトル バーの色を設定する(Windows 11 以降)。画面で共通の色(濃い紺色に白い文字)も、ここに持つ。2026-11-26 に `FormHelpers/` から移した(名前空間は `App` のまま) | `SMsgBox`。アプリの側では、`FormFrame`・`FormBg_Progress`・`FormMain2` |
+| `TitleBarColor.cs` | ウィンドウのタイトル バーの色を設定する(Windows 11 以降)。画面で共通の色(濃い紺色に白い文字)も、ここに持つ。2026-11-26 に `FormHelpers/` から移した(このときは名前空間 `App` のまま。その後、comset へ移したときに `ComponentSUI` にした。1.6) | `SMsgBox`。アプリの側では、`FormFrame`・`FormBg_Progress`・`FormMain2` |
 | `MenuIconPainter.cs` / `MenuIconKind.cs` | アイコンの描画と、その種類 | `SDateBox` のカレンダーのボタン、`SToolTip` のアイコン |
 | `SLabel.cs` | 1 行の文字列を表示するラベル(文字の高さを基準に配置するので、フォントが変わっても、隣の入力欄と高さがそろう)。入力必須の項目名に印を付けられる(15 章)。以前の名前は `SingleLineLabel` | S 系の画面の、見出し・項目名・入力欄の間の「－」・表示するだけの文字 |
 | `SectionPanel.cs` | 見出し帯付きの角丸のパネル(半透明の色・影に対応) | S 系の画面の、入力欄を置くパネル(`secBody`) |
@@ -114,7 +114,7 @@ S 系のコントロール・S 系の画面が使っている、既存の共通�
 
 団体のロゴ(`OrganizationLogoShape`)は、このアプリに固有の図柄なので、共通の部品には入れていない。以前は、アイコンの種類の 1 つ(`MenuIconKind.OrganizationLogo`)として `MenuIconPainter` に組み込まれていたが、ロゴ専用のコントロール `IconLogo`(`Controls/`)に分けた。`IconLogo` は、`IconBox` と同じ土台(`IconBoxBase`)の上に作ってあり、`MenuIconPainter.FillShape`(アイコンと同じ大きさの決め方で、渡された形を塗る)でロゴを描く。分ける前後で、描いた結果が同じであることを画素ごとに比べて確かめた。
 
-`Controls/Common/` は、このフォルダーのファイルと、comset・グリッド(`C1.Win.C1TrueDBGrid.4.dll`。`SGridDB` が使う)だけでコンパイルできる(GrapeCity の DLL を参照に入れずにコンパイルして確かめた)。新しく足すものも、FMKaiin に固有のもの(テーブルの項目名、`AppGlobal` など)と Gc 系に依存させないこと。
+comset の `UI/` フォルダーは、このフォルダーのファイルと、comset のほかの部分(`DBView` など)・グリッド(`C1.Win.C1TrueDBGrid.4.dll`。`SGridDB` が使う)だけでコンパイルできる(GrapeCity の DLL を参照に入れずにコンパイルして確かめた。8.4 の CommonCheck)。comset そのものは、Gc 系のコントロール(`GcTextBoxEx` など)も持っているので、GrapeCity の DLL を参照している。`UI/` の中だけを、Gc 系に依存させない。新しく足すものも、FMKaiin に固有のもの(テーブルの項目名、`AppGlobal` など)と Gc 系に依存させないこと。
 
 継承の関係:
 
@@ -195,7 +195,7 @@ Form ─┬─ SMsgBox ──(ボタン)── SMsgBoxButton
 着手時に確認したこと:
 
 - フックを使っている 4 か所のうち、`FormKaiin_DlgEntry.cs` の `KaisetsuShutaiEx` / `ByoshoUmuEx` / `KumiCodeEx` は、行を使っていない(渡された値を名称に変えるだけ)。`FormHikiotoshi_DlgEntry.cs` の `cmbUpdateRunEx` は、行を型付きのクラス(`t_hikiotoshi`)で包んで、別の項目(支払方法)に書き込んでいる。`row[項目名]` の書き込みに書き直せる内容で、`DataRow` のほかの機能は使っていない。
-- 置き場所は FMKaiin(`Controls/Common/`)にした。S 系のコントロールが FMKaiin にあり、comset からは参照できないため。comset は変更していない。最終的には、S 系のコントロールと一緒に comset へ移す予定。
+- 置き場所は、当初は FMKaiin(`Controls/Common/`)にした。S 系のコントロールが FMKaiin にあり、comset からは参照できなかったため。2026-11-26 に、S 系のコントロールと一緒に comset の `UI/` へ移した(1.6)。
 
 ### 1.5 収まらない文字を縮める表示(ShrinkTextToFit)
 
@@ -222,6 +222,33 @@ Form ─┬─ SMsgBox ──(ボタン)── SMsgBoxButton
 `STextBox`・`STableComboBox`・`SDateBox`・`SNumberBox`・`SFileSelect` では、設定は土台の `SEditBase` の 1 か所にあり、部品ごとの既定値は `DefaultShrinkTextToFit`(protected virtual。`SNumberBox` だけが false を返す)で決める。標準のテキスト ボックスは、描くフォントを文字列ごとに変えられないので、縮めて表示する間は、入力部分を自前で描いている(背景と文字を、標準と同じ色で描く。上下は中央)。フォーカスが入ると標準の描画に戻り、元のフォントで、収まらない分は横に送られる。IME で変換している最中も縮めない。パスワードの欄(`PasswordChar`)では、伏せ字の文字列の幅で判定する。
 
 フォントは、描くたびに作らないよう、直前の結果(文字列・幅・元のフォントの組)を `SFittedFont` が覚えている。
+
+### 1.6 comset への移動と、名前空間の変更(2026-11-26)
+
+S 系の部品を、FMKaiin から共通ライブラリー comset へ移した。利用者の指示による。
+
+| 項目 | 内容 |
+| --- | --- |
+| 移した先 | `_Library/_All/comset/comset/UI/`(comset のプロジェクトの `UI` フォルダー。62 ファイル)。comset は、FMKaiin とは別のリポジトリ(Library)にあり、FMKaiin.sln からプロジェクト参照している。comset は、ほかのアプリ(NAS など 40 以上のプロジェクト)も参照している |
+| 移したもの | FMKaiin の `Controls/Common/` の 51 ファイルすべてと、`Controls/` の `FunctionKeyBar`・`FunctionKeyBarButton`・`IconButtonBase`・`BufferedPanel`・`BufferedTableLayoutPanel`・`GlassBackdropForm`・`CardTileButton`・`CardTileLayout`・`SideMenuButton`・`ToolbarButton`、`FormHelpers/` の `FunctionKeyBinder` |
+| FMKaiin に残したもの | このアプリに固有のロゴ(`IconLogo`・`OrganizationLogoShape`)と、どの画面も使っていない `GradientForm`・`StepHeaderLabel`。FMKaiin の `UI/` フォルダーにあり(以前の `Controls/`)、名前空間は `App.Controls` のまま。`FormHelpers/` フォルダーは無くした(残っていた `ProcessingMonthChoices` は、どこからも使われていなかったので削除した) |
+| 名前空間 | `UI/` のファイルは、すべて `ComponentSUI`。移す前は、コントロールが `App.Controls`、`SControlDB`・`SControlDBRule`・`ISRow`・`FontFallback`・`TitleBarColor`・`FunctionKeyBinder` などが `App` だった。使う側は、`using ComponentSUI;` を書く。Designer.cs は `ComponentSUI.STextBox` のように書く |
+| public にしたもの | `FontFallback`・`PaintHelper`・`LayoutScale`・`DropShadow`・`TitleBarColor`。FMKaiin の画面やコントロールが使っているが、internal のままでは、別のアセンブリになった FMKaiin から見えないため。ほかの内部用のクラス(`SControlStyle`・`SPopupForm` など)は internal のまま |
+| `FuncKeyDefine` | ファンクション キー 1 つ分の定義。FMKaiin の `AppFunctionKey.cs` から、`UI/FunctionKeyBinder.cs` へ移した(`FunctionKeyBinder` が使うため)。FMKaiin の `AppFunctionKey`(Gc 系用)と、自動で作られる `AppFormFuncKey.cs` は、comset の定義を使う |
+| `FunctionKeyBinder` の直し | 主な操作のボタン(登録・実行)を強調するために、画面ごとの定義(Func○○ クラス)を探す所を直した。以前は「`FuncKeyDefine` と同じアセンブリ」を調べていたが、comset へ移すと、アプリの側にある Func○○ が見つからなくなる(エラーにならず、強調だけが消える)。comset を参照している読み込み済みのアセンブリを調べる形にした |
+| XML コメント | comset は XML ドキュメントを出力する設定で、警告が 0 件だった。移したファイルで出た 333 件(コメントの無い public メンバーと、`param` の不足)に、最低限のコメントを足した。override には `<inheritdoc />` を付けた |
+| 自動で作られるファイル | `AppFormFuncKey.cs`・`AppMsgBox.cs`・`AppToolTip.cs` と、その元のテンプレート(`_doc/` の `.template`)も、`ComponentSUI` に合わせて直した(テンプレートを直さないと、作り直したときにビルドできなくなる) |
+| テスト | `Test/` は FMKaiin に残した。`Test/run.sh` が、comset の `UI/` のソースを読む(8.4) |
+
+確認: FMKaiin と comset のビルド(comset の警告 0 件)、テスト 799 件の合格、ファンクション キーの強調が出ること、S 系の画面 8 つが開くこと(見本のデータ)。
+
+未確認の点:
+
+| # | 内容 |
+| ---: | --- |
+| 1 | 実際のデータベースでの動作 |
+| 2 | Visual Studio のデザイナーで、画面を開くこと(部品が comset.dll から読まれるようになった。先に Visual Studio でリビルドしておくこと) |
+| 3 | comset を参照する、ほかのアプリのビルド。同じ名前の型が、ほかのアプリに無いことは調べた(名前空間も `ComponentSUI` なので、ほかのアプリの `App` には入らない) |
 
 ---
 
@@ -957,7 +984,7 @@ SDateBox.DefaultCalendarKind = val ? SDateCalendarKind.Western : SDateCalendarKi
 
 `GControlDB`(comset)の代わり。画面のコントロールと、行(1 件分のデータ)の間で値を受け渡す。入力ルールの表(`GControlDBRule` の代わり)も含む。設計の方針は 1.4。
 
-置き場所は `FMKaiin/Controls/Common/`(名前空間は `App`)。S 系のコントロールが FMKaiin にあり、comset からは参照できないので、FMKaiin に置いた。`SControlDBRuleConverter.cs` は、FMKaiin のプロジェクトには入れず、テスト用として `Test/` に置いている(7.2.4)。
+置き場所は comset の `UI/`(名前空間は `ComponentSUI`。2026-11-26 に、FMKaiin の `Controls/Common/`・名前空間 `App` から移した。1.6)。`SControlDBRuleConverter.cs` は、FMKaiin のプロジェクトには入れず、テスト用として `Test/` に置いている(7.2.4)。
 
 | ファイル | 内容 |
 | --- | --- |
@@ -1220,7 +1247,7 @@ S 系の画面のルールは、S 系だけで書いた定義 `AppSControlRule`(
 | FormMasterBasic2 の見た目 | 画面を表示して、スクリーンショットで確認(配置、文字が欄に収まること、背景の上の白いパネル、銀行の一覧を開いた状態)。データベースにはつながず、入力欄に見本の値を入れた状態での確認(S画面仕様の 1.5) |
 | 2026-11-26 に足した見た目 | 画面に表示して、スクリーンショットで確認した(開発 PC、表示倍率 120%)。プレースホルダーの色と大きさ(医会会費の追加の画面)、収まらない文字を縮める表示(コンボ・テーブル コンボ・日付。通常・フォーカス時・切り替え後)、カレンダーの見出しの太字と送りの記号の色(日・月・年の表示)、年を選ぶカレンダー、入力必須の印(8 画面。ほかの画面の項目名は、文字と印が幅に収まることを計算で確かめた)、タブ(会員の入力画面) |
 | `AppDbID.GetNewCode` | 確認用のプログラムで、会員コード・医療機関コード・担当者コードの上限の手前で次の番号が返り、上限を超えると null が返ることを確かめた(7.2.7) |
-| `Controls/Common/` のコンパイル | Gc 系の DLL を参照せずにコンパイルできる(8.4 の CommonCheck)。`STabControl` と、`SLabel` の `Required` を足した後の状態で確かめた |
+| comset の `UI/` のコンパイル | Gc 系の DLL を参照せずにコンパイルできる(8.4 の CommonCheck)。comset へ移して、名前空間を `ComponentSUI` に変えた後の状態で確かめた |
 | `SCheckBox` / `SRadioButton` / `SProgressBar`・`SBusyIndicator` のテスト | `CheckHarness` 20 件、`RadioHarness` 21 件、`ProgressHarness` 25 件が合格 |
 
 テストは、検証用のプログラムからコントロールを実際のフォームに置き、ウィンドウ メッセージを送って結果を調べる方法で行った。検証用のプログラムは、リポジトリの `Test/` にある(8.4)。件数は、8.3 の修正の後のもの(修正した不具合ごとに、再発を防ぐテストを足してある)。件数は、2026-11-26 に、すべてのテストをまとめて実行したときのもの(`sh Test/run.sh`。合わせて 799 件が合格)。`SLabel`・`STabControl`・`SFileSelect` には、自動のテストが無い。
@@ -1291,8 +1318,8 @@ S 系の画面のルールは、S 系だけで書いた定義 `AppSControlRule`(
 | 内容 | 扱い |
 | --- | --- |
 | 新しいフォームには、Gc 系のコントロール・コードを入れない(将来 Gc 系を外しても動くようにする)。2026-11-25 に決定 | S 系だけで書いたルールの定義 `AppSControlRule` を用意した(7.2.4)。既存のフォームが残っている間は `AppDbRule` と並べて持ち、すべて移し終えたら `AppDbRule` をやめる。採番(`AppDbID.GetNewCode`)も `AppSControlRule` を見るようにした(7.2.7)。`Controls/Common/` が Gc 系を参照せずにコンパイルできることは、テストの実行のたびに確かめている(8.4)。S 系の画面に残っている間接の依存は、8.3.4 |
-| `Controls/Common/` にあるものは、最終的に comset へ移す予定(2026-11-25) | S 系のコントロールが使っている共通の部品(`PaintHelper`・`LayoutScale`・`MenuIconPainter`・`MenuIconKind`・`FontFallback`)、`IconBox` と、SControlDB を `Controls/Common/` へ移した(1.2)。このアプリのロゴは、共通のアイコンから外して `IconLogo` に分けた |
-| グリッド(`GGridDB`)の S 系版 `SGridDB` を作る。グリッド本体(ComponentOne の `C1TrueDBGrid`)は使い続ける。置き場所は `Controls/Common/`(2026-11-25 に決定) | 作った(10 章)。セルに重ねた入力欄へ最初のキーを渡す処理も、Gc 系を参照せずに作った(10.7) |
+| `Controls/Common/` にあるものは、最終的に comset へ移す予定(2026-11-25) | 2026-11-26 に、comset の `UI/` へ移した(1.6)。それまでの経過: S 系のコントロールが使っている共通の部品(`PaintHelper`・`LayoutScale`・`MenuIconPainter`・`MenuIconKind`・`FontFallback`)、`IconBox` と、SControlDB を `Controls/Common/` へ移した(1.2)。このアプリのロゴは、共通のアイコンから外して `IconLogo` に分けた |
+| グリッド(`GGridDB`)の S 系版 `SGridDB` を作る。グリッド本体(ComponentOne の `C1TrueDBGrid`)は使い続ける。置き場所は `Controls/Common/`(2026-11-25 に決定。その後、comset の `UI/` へ移した) | 作った(10 章)。セルに重ねた入力欄へ最初のキーを渡す処理も、Gc 系を参照せずに作った(10.7) |
 | `FormFrame` は、Enter をコントロールより先に処理して次の項目へ移す。カレンダーや一覧を開いている間の Enter(指している日・行の確定)が、コントロールに届かない可能性がある | 対応した(S画面仕様の 1.3)。コントロールが「このキーは自分が使う」と答えるインターフェース `ISKeyUser` を設け、`FormFrame` はそれを尋ねる |
 | ファンクション キーでの処理の前に、フォーカスがあるコントロールの入力を確定させる処理が、`SControlDB` を使わない画面(条件を入力する画面)にも要る | 対応した(S画面仕様の 1.3)。ファンクション キーの処理(`FunctionKeyBinder`)が、メソッドを実行する前に、フォーカスがあるコントロールの入力を確定する |
 | グリッドのセルに重ねる使い方は、FormMasterBasic には無い | 医療機関マスタの入力の画面で確かめた(10.7)。数値・日付の入力欄を重ねる使い方は、10.7.4 の 4 |
@@ -1344,8 +1371,9 @@ sh Test/run.sh DateHarness    # 指定したものだけ
 - 先に、FMKaiin を Debug でビルドしておく(`FMKaiin/bin/Debug` の comset.dll などを参照する)。`RuleHarness` と `FrameHarness` は、ビルドした FMKaiin.exe の中のクラスを使うので、FMKaiin.exe が古いと、古い内容を確かめることになる。
 - どのテストも、データベースには接続しない。
 - 各テストは 1 つの実行ファイルになる。画面の外にフォームを作ってコントロールを置き、キー入力を送ったり値を設定したりして、結果が期待どおりかを 1 件ずつ比べる。すべて通ると、テストごとに「○ 件合格」と表示する。
-- あわせて、`Controls/Common/` が Gc 系(GrapeCity の DLL)を参照せずにコンパイルできることを確かめる(CommonCheck)。`Controls/Common/` のすべての .cs を、comset.dll とグリッドの DLL(`C1.Win.C1TrueDBGrid.4.dll`)だけを参照に入れて、ライブラリ(`Test/bin/CommonCheck.dll`)としてコンパイルする。結果は「Controls/Common: Gc 系を参照せずにコンパイルできる」と表示し、できなければ `Test/bin/CommonCheck.log` に理由を書く。テストの名前を指定したときも、毎回行う。
+- あわせて、comset の `UI/` が Gc 系(GrapeCity の DLL)を参照せずにコンパイルできることを確かめる(CommonCheck)。`UI/` のすべての .cs を、comset.dll とグリッドの DLL(`C1.Win.C1TrueDBGrid.4.dll`)だけを参照に入れて、ライブラリ(`Test/bin/CommonCheck.dll`)としてコンパイルする。結果は「comset/UI: Gc 系を参照せずにコンパイルできる」と表示し、できなければ `Test/bin/CommonCheck.log` に理由を書く。テストの名前を指定したときも、毎回行う。
 - `SLabel`・`STabControl`・`SFileSelect` のテストは無い(`SLabel` の入力必須の印と `STabControl` は、画面に表示して確かめた。8.1)。
+- comset の `UI/` のソースは、`Test/` から見て `../../../_Library/_All/comset/comset/UI`(FMKaiin.csproj が参照しているのと同じ場所)から読む。別の場所にある場合は、環境変数 `COMSET_UI` に、`UI` フォルダーを指定する。コントロールを単体で確かめるテストは、内部用のクラスも確かめるので、`UI/` のソースをテストと一緒にコンパイルする。同じクラスが comset.dll にもあるので、ビルドの記録に CS0436 の警告が出るが、ソースのほうが使われる。
 - 実機の IME、実際のマウス操作、見た目は確かめられない(8.2)。
 - コントロールを直したときは、これを実行して、ほかの動きを壊していないことを確かめる。不具合を直したときは、その不具合を再現するテストを足す。
 - 実行するのは、変更した部分に関係するテストだけでよい(名前を指定する)。アイコンや色・配置だけの変更では、テストは実行せず、ビルドと画面の表示で確かめる。すべてを実行するのは、共通の土台(`SEditBase` など)や、複数のコントロールにまたがる変更のとき(2026-11-25 に決定)。
@@ -1364,12 +1392,12 @@ comset の `ComponentForm.ToolTip` の代わり。フォームの上に、アイ
 
 | ファイル | 内容 |
 | --- | --- |
-| `Controls/Common/SToolTip.cs` | 表示・非表示の管理。画面からは、このクラスを使う(public) |
-| `Controls/Common/SToolTipPopup.cs` | ツールチップのウィンドウ(描画)。`SPopupForm` を継承。フォームから直接は使わない |
+| `comset/UI/SToolTip.cs` | 表示・非表示の管理。画面からは、このクラスを使う(public) |
+| `comset/UI/SToolTipPopup.cs` | ツールチップのウィンドウ(描画)。`SPopupForm` を継承。フォームから直接は使わない |
 
 画面は、これまでどおり `appToolTip.Show(ctl, AppToolTipIndex.CannotUseBlank)` のように呼ぶ(`appToolTip` は `FormFrame` が持つ `AppToolTip`)。`AppToolTip` が中で使うクラスを、`ComponentForm.ToolTip` から `SToolTip` に差し替えた(2026-11-25)。画面のコードは変えていないが、**`AppToolTip` を使うすべての画面(30 ファイル)のツールチップが、新しい見た目になる**。
 
-`AppToolTip.cs` は、`_doc/AppToolTip.xlsx` と `_doc/AppToolTip.cs.template` から自動で作られるファイルなので、テンプレートも同じように直してある(作り直しても元に戻らない)。差し替えたのは、クラス名の 4 か所だけ。元に戻すときは、両方のファイルで `App.Controls.SToolTip` を `ComponentForm.ToolTip` に戻す。
+`AppToolTip.cs` は、`_doc/AppToolTip.xlsx` と `_doc/AppToolTip.cs.template` から自動で作られるファイルなので、テンプレートも同じように直してある(作り直しても元に戻らない)。差し替えたのは、クラス名の 4 か所だけ。元に戻すときは、両方のファイルで `ComponentSUI.SToolTip` を `ComponentForm.ToolTip` に戻す。
 
 `UcImgButton`・`UcImgButton2`(以前のメイン画面のボタン)は、`ComponentForm.ToolTip` のまま(どの画面も、ツールチップを設定していない)。
 
@@ -1443,12 +1471,12 @@ comset の `GGridDBCommon`(ファイルは GGridDB.cs)の代わり。グリッ�
 
 | ファイル | 内容 |
 | --- | --- |
-| `Controls/Common/SGridDB.cs` | 本体。列の登録、グリッドへの列の作成、データの結び付け、列の幅、セルのツールチップ |
-| `Controls/Common/SGridDBInput.cs` | 本体の続き(同じクラスを 2 つのファイルに分けてある)。セルの中で入力する機能(10.7) |
-| `Controls/Common/SGridDBColumns.cs` | 列の定義(土台の `SGridDBColumn` と、`SGridDBText`・`SGridDBNumber`・`SGridDBCurrency`・`SGridDBDate`・`SGridDBUnbound`)、文字の横位置(`SGridDBCellDisp`)、文字列を作る関数の型(`SGridDBUnboundFetch`)、行ごとの見た目を決める関数の型(`SGridDBRowStyle`) |
-| `Controls/Common/SGridStyle.cs` | グリッドの既定の見た目と動き(10.3) |
+| `comset/UI/SGridDB.cs` | 本体。列の登録、グリッドへの列の作成、データの結び付け、列の幅、セルのツールチップ |
+| `comset/UI/SGridDBInput.cs` | 本体の続き(同じクラスを 2 つのファイルに分けてある)。セルの中で入力する機能(10.7) |
+| `comset/UI/SGridDBColumns.cs` | 列の定義(土台の `SGridDBColumn` と、`SGridDBText`・`SGridDBNumber`・`SGridDBCurrency`・`SGridDBDate`・`SGridDBUnbound`)、文字の横位置(`SGridDBCellDisp`)、文字列を作る関数の型(`SGridDBUnboundFetch`)、行ごとの見た目を決める関数の型(`SGridDBRowStyle`) |
+| `comset/UI/SGridStyle.cs` | グリッドの既定の見た目と動き(10.3) |
 
-名前空間は `App.Controls`。comset の `DBView`(`ComponentDB`)と、`C1.Win.C1TrueDBGrid.4.dll` を参照する。
+名前空間は `ComponentSUI`。comset の `DBView`(`ComponentDB`)と、`C1.Win.C1TrueDBGrid.4.dll` を参照する。
 
 ### 10.2 対応
 
@@ -1682,12 +1710,12 @@ comset の `ComponentForm.MsgBox` の代わり。メッセージ ボックス(�
 
 | ファイル | 内容 |
 | --- | --- |
-| `Controls/Common/SMsgBox.cs` | メッセージ ボックス(フォーム)。デザイナーのファイルは無く、配置はコードで計算する |
-| `Controls/Common/SMsgBoxButton.cs` | メッセージ ボックスのボタン。フォームから直接は使わない |
+| `comset/UI/SMsgBox.cs` | メッセージ ボックス(フォーム)。デザイナーのファイルは無く、配置はコードで計算する |
+| `comset/UI/SMsgBoxButton.cs` | メッセージ ボックスのボタン。フォームから直接は使わない |
 
 画面は、これまでどおり `AppMsgBox.Show(AppMsgBoxIndex.CancelClose)` のように呼ぶ。`AppMsgBox` が中で使うクラスを、`ComponentForm.MsgBox` から `SMsgBox` に差し替えた(2026-11-25)。画面のコードは変えていないが、**`AppMsgBox` を使うすべての画面(114 か所)のメッセージ ボックスが、新しい見た目になる**。
 
-`AppMsgBox.cs` は、`_doc/AppMsgBox.xlsx` と `_doc/AppMsgBox.cs.template` から自動で作られるファイルなので、テンプレートも同じように直してある。差し替えたのは、クラス名の 5 か所だけ。元に戻すときは、両方のファイルで `App.Controls.SMsgBox` を `MsgBox` に戻す。
+`AppMsgBox.cs` は、`_doc/AppMsgBox.xlsx` と `_doc/AppMsgBox.cs.template` から自動で作られるファイルなので、テンプレートも同じように直してある。差し替えたのは、クラス名の 5 か所だけ。元に戻すときは、両方のファイルで `ComponentSUI.SMsgBox` を `MsgBox` に戻す。
 
 `FormMasterImport.cs` の 3 か所は、`ComponentForm.MsgBox.Show(…)` を直接呼んでいるので、これまでの見た目のまま。
 
@@ -1778,9 +1806,9 @@ comset の `ComponentForm.MsgBox` の代わり。メッセージ ボックス(�
 
 | ファイル | 内容 |
 | --- | --- |
-| `Controls/Common/SCheckBox.cs` | チェック ボックスの本体。名前空間は `App.Controls` |
-| `Controls/Common/SRadioButton.cs` | ラジオ ボタンの本体(13.6) |
-| `Controls/Common/SCheckStyle.cs` | 2 つに共通のもの。印(四角・丸)の大きさと色の既定値、印と文字の配置、背景と文字の描画、状態(フォーカス・マウス・無効)ごとの色の決め方。印の形を描く部分だけを、それぞれの本体が持つ |
+| `comset/UI/SCheckBox.cs` | チェック ボックスの本体。名前空間は `ComponentSUI` |
+| `comset/UI/SRadioButton.cs` | ラジオ ボタンの本体(13.6) |
+| `comset/UI/SCheckStyle.cs` | 2 つに共通のもの。印(四角・丸)の大きさと色の既定値、印と文字の配置、背景と文字の描画、状態(フォーカス・マウス・無効)ごとの色の決め方。印の形を描く部分だけを、それぞれの本体が持つ |
 | `Test/CheckHarness.cs` / `Test/RadioHarness.cs` | テスト(8.4) |
 
 ### 13.2 プロパティ
@@ -1892,13 +1920,13 @@ comset の `ComponentForm.MsgBox` の代わり。メッセージ ボックス(�
 
 ## 15. SLabel
 
-1 行の文字列を表示するラベル。以前の `SingleLineLabel`(`Controls/`)を、名前を変えて `Controls/Common/` へ移した(1.2)。S 系の画面の、見出し・項目名・入力欄の間の「－」・範囲の「～」・表示するだけの文字に使う。`Control` を継承している(標準の `Label` ではない)。
+1 行の文字列を表示するラベル。以前の `SingleLineLabel`(FMKaiin の `Controls/`)を、名前を変えて `Controls/Common/` へ移し(1.2)、その後、ほかの部品と一緒に comset の `UI/` へ移した(1.6)。S 系の画面の、見出し・項目名・入力欄の間の「－」・範囲の「～」・表示するだけの文字に使う。`Control` を継承している(標準の `Label` ではない)。
 
 ### 15.1 対応
 
 | SingleLineLabel / 標準の Label | SLabel |
 | --- | --- |
-| `SingleLineLabel` | `SLabel`(中身は同じ。名前空間は `App.Controls`) |
+| `SingleLineLabel` | `SLabel`(中身は同じ。名前空間は、当時は `App.Controls`。いまは `ComponentSUI`) |
 | `Text`・`Font`・`ForeColor`・`Enabled`・`Padding` | 標準のものをそのまま使う |
 | `TextAlign`(`ContentAlignment`) | `TextAlign`(既定 MiddleLeft) |
 | 必須の項目名を橙色にする(元の画面のラベル) | `Required`(印を付ける。15.2) |

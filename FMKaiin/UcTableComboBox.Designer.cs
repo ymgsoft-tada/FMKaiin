@@ -31,7 +31,7 @@
 			this.components = new System.ComponentModel.Container();
 			this.dropDownButton1 = new GrapeCity.Win.Editors.DropDownButton();
 			this.cmb = new GControlGcComboBoxEx.GcComboBoxEx(this.components);
-			this.icoInfo = new App.Controls.IconBox();
+			this.icoInfo = new ComponentSUI.IconBox();
 			((System.ComponentModel.ISupportInitialize)(this.cmb)).BeginInit();
 			this.SuspendLayout();
 			// 
@@ -62,7 +62,7 @@
 			// icoInfo
 			//
 			this.icoInfo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(110)))), ((int)(((byte)(190)))));
-			this.icoInfo.IconKind = App.Controls.MenuIconKind.Info;
+			this.icoInfo.IconKind = ComponentSUI.MenuIconKind.Info;
 			this.icoInfo.Location = new System.Drawing.Point(100, 0);
 			this.icoInfo.Name = "icoInfo";
 			this.icoInfo.Padding = new System.Windows.Forms.Padding(2);
@@ -88,6 +88,6 @@
 
 		private GControlGcComboBoxEx.GcComboBoxEx cmb;
 		private GrapeCity.Win.Editors.DropDownButton dropDownButton1;
-		private App.Controls.IconBox icoInfo;
+		private ComponentSUI.IconBox icoInfo;
 	}
 }

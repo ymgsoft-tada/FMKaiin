@@ -30,19 +30,19 @@ namespace App
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormKaiin2));
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblSearch = new App.Controls.SLabel();
-            this.iSearch = new App.Controls.STextBox();
-            this.lblSearchBirthday = new App.Controls.SLabel();
-            this.iSearchBirthday = new App.Controls.SDateBox();
-            this.lblSearchIsekiTorokuNo = new App.Controls.SLabel();
-            this.iSearchIsekiTorokuNo = new App.Controls.STextBox();
-            this.btnClear = new App.Controls.SButton();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblSearch = new ComponentSUI.SLabel();
+            this.iSearch = new ComponentSUI.STextBox();
+            this.lblSearchBirthday = new ComponentSUI.SLabel();
+            this.iSearchBirthday = new ComponentSUI.SDateBox();
+            this.lblSearchIsekiTorokuNo = new ComponentSUI.SLabel();
+            this.iSearchIsekiTorokuNo = new ComponentSUI.STextBox();
+            this.btnClear = new ComponentSUI.SButton();
             this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
-            this.chkUnUsed = new App.Controls.SCheckBox();
+            this.chkUnUsed = new ComponentSUI.SCheckBox();
             this.secBody.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grid)).BeginInit();
             this.SuspendLayout();
@@ -58,7 +58,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -232,18 +232,18 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblSearch;
-        private App.Controls.STextBox iSearch;
-        private App.Controls.SLabel lblSearchBirthday;
-        private App.Controls.SDateBox iSearchBirthday;
-        private App.Controls.SLabel lblSearchIsekiTorokuNo;
-        private App.Controls.STextBox iSearchIsekiTorokuNo;
-        private App.Controls.SButton btnClear;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblSearch;
+        private ComponentSUI.STextBox iSearch;
+        private ComponentSUI.SLabel lblSearchBirthday;
+        private ComponentSUI.SDateBox iSearchBirthday;
+        private ComponentSUI.SLabel lblSearchIsekiTorokuNo;
+        private ComponentSUI.STextBox iSearchIsekiTorokuNo;
+        private ComponentSUI.SButton btnClear;
         private C1.Win.C1TrueDBGrid.C1TrueDBGrid grid;
-        private App.Controls.SCheckBox chkUnUsed;
+        private ComponentSUI.SCheckBox chkUnUsed;
     }
 }

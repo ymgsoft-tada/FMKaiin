@@ -1,6 +1,6 @@
 ﻿using System;
 using System.IO;
-using App.Controls;
+using ComponentSUI;
 using ComponentIO;
 
 namespace App

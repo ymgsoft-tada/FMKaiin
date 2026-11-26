@@ -21,7 +21,7 @@ S 系のコントロール(名前が S で始まる部品)で作り直した画�
 - 16 章: MAMIS データ取込(FormMamisImport2 と、確認・取込結果の画面)
 - 17 章: 会員情報(FormKaiin2 と、入力・異動情報・会費調整・在籍期間の画面。タブ STabControl を使う、最初の画面)
 - 18 章: ログイン(FormLogin2)
-- 19 章: 画面全体に関わること(並べて開く仕組み、アプリのアイコン、Gc 系の残り、デザイナーで開く前の注意)
+- 19 章: 画面全体に関わること(並べて開く仕組み、アプリのアイコン、Gc 系の残り、デザイナーで開く前の注意、S 系の部品の置き場所と名前空間)
 
 章と節の番号は、2026-11-26 に、文書ごとに 1 から付け直した(それまでは、Sコントロール仕様.md と分ける前の、通しの番号だった)。この文書の中を指す参照は、「1.7」「6 章」のように番号だけで書く。Sコントロール仕様.md の章・節を指すときは、「Sコントロール仕様の 7.2.4」のように、文書の名前を付けて書く。章を足すときは、最後の章の次の番号にする。
 
@@ -31,7 +31,7 @@ S 系のコントロール(名前が S で始まる部品)で作り直した画�
 | --- | --- |
 | 記載日 | 2026-11-26(Sコントロール仕様.md から分けた日)。同じ日に、その時点までに作った画面を反映して、番号を付け直した |
 | 状態 | 作成済み。S 系の画面は、`FMKaiin/UpdateForm/` の 44 画面(下の「画面の一覧」)。進行状況の画面(8 章)は、名前を変えずに、見た目を作り替えた。S 系の画面を作っていない画面も、「画面の一覧」に書いた |
-| 置き場所 | 新しい画面は `FMKaiin/UpdateForm/`。進行状況の画面(`FormBg_Progress`)だけは、名前と置き場所を変えていないので、`FMKaiin/` の直下。S 系の画面のために足した、アプリの側のコード(`AppSControlRule.cs`・`AppSTableCombo.cs`・`AppSCombo.cs`・`AppBankCodeFilter.cs`・`RowSnapshot.cs`)も、`FMKaiin/UpdateForm/` にある(2026-11-26 に、`FMKaiin/` の直下と `FormHelpers/` から移した。名前空間は `App` のまま) |
+| 置き場所 | 新しい画面は `FMKaiin/UpdateForm/`。進行状況の画面(`FormBg_Progress`)だけは、名前と置き場所を変えていないので、`FMKaiin/` の直下。S 系の画面のために足した、アプリの側のコード(`AppSControlRule.cs`・`AppSTableCombo.cs`・`AppSCombo.cs`・`AppBankCodeFilter.cs`・`RowSnapshot.cs`)も、`FMKaiin/UpdateForm/` にある(2026-11-26 に、`FMKaiin/` の直下と `FormHelpers/` から移した。名前空間は `App` のまま)。S 系の部品そのものは、共通ライブラリー comset の `UI/` フォルダーにある(名前空間 `ComponentSUI`。19.5) |
 
 ---
 
@@ -175,7 +175,7 @@ FormMasterBasic2 を作ったときの手順。ほかの画面を移すときも
 | 15 | `YcCheckBoxEx` は、`SCheckBox` にする(Sコントロール仕様の 13 章)。`GControlDBCheckBox` → `SControlDBCheckBox` |
 | 16 | 標準の `RadioButton` は、`SRadioButton` にする(Sコントロール仕様の 13.6)。Designer.cs の `BackColor`・`Font`・`ForeColor`・`UseVisualStyleBackColor` の行は、要らない(既定で、S 系の見た目になる) |
 | 17 | `GroupBox`(項目のまとまり)は、置かない。ラジオ ボタンを囲んでいた `GroupBox` は、グループを示す小さな `SectionPanel` にして、ラジオ ボタンをその子にする(1.7 の「ラジオ ボタン」)。ほかの項目のまとまりは、まとまりの見出しを太字の文字(`SLabel`)で置く(1.7 の「項目のまとまり」) |
-| 18 | 入力の画面を閉じるときの、破棄の確認(「入力内容をキャンセルします。編集した内容は破棄されますがよろしいですか？」)は、画面を表示してから、何か入力したときだけ出す。元の画面は、追加のときは、何も入力していなくても、必ず出していた(条件が「`Mode == eMode.Add` または `AppDb.CheckModified(srcrow, editrow)`」。追加のときは、元の行と編集する行が同じなので、この 2 つを比べても、入力があったかが分からないため)。S 系の画面では、`FormFrame_Shown` の最後で、編集する行の内容を控えて(`shownrow = new RowSnapshot(editrow)`。`FormHelpers/RowSnapshot.cs`)、閉じるときに `shownrow.IsModified(editrow)` で比べる。追加・訂正・コピー追加のどれも、同じ書き方。入力してから元の内容に戻したときは、出ない。2026-11-26 に、確認を出している 5 つの入力の画面(担当者・銀行情報・銀行コード・診療科・医会会費)を、この形にした。医会会費の入力の画面で、開いてすぐ閉じる・入力して閉じる(「いいえ」「はい」)・入力して元に戻す・金額を入れる・コンボを選ぶ、を確かめた。医療機関の入力の画面は、元の画面と同じく、確認そのものを出していない。そのあと、会員の 2 つの入力の画面(`FormKaiin2_DlgEntry`・`FormKaiin2_DlgEntry_Idoinfo`)も同じ形にした。会員の入力の画面は、子の一覧(医師会の会費・診療科目・所属学会・参加医会・異動情報)の行も比べる(17.3)。子の一覧の行は、追加のときなどに、呼び出し側(一覧の画面)が、この画面を開く前に足しているので、テーブルの変更の有無(`HasChanges`)では、入力があったかが分からないため。行を編集するだけの画面(`FormHikiotoshi2_DlgEntry`・`FormKaiin2_DlgChosei`)は、元の画面と同じく、ビューの `HasChanges` で調べる |
+| 18 | 入力の画面を閉じるときの、破棄の確認(「入力内容をキャンセルします。編集した内容は破棄されますがよろしいですか？」)は、画面を表示してから、何か入力したときだけ出す。元の画面は、追加のときは、何も入力していなくても、必ず出していた(条件が「`Mode == eMode.Add` または `AppDb.CheckModified(srcrow, editrow)`」。追加のときは、元の行と編集する行が同じなので、この 2 つを比べても、入力があったかが分からないため)。S 系の画面では、`FormFrame_Shown` の最後で、編集する行の内容を控えて(`shownrow = new RowSnapshot(editrow)`。`UpdateForm/RowSnapshot.cs`)、閉じるときに `shownrow.IsModified(editrow)` で比べる。追加・訂正・コピー追加のどれも、同じ書き方。入力してから元の内容に戻したときは、出ない。2026-11-26 に、確認を出している 5 つの入力の画面(担当者・銀行情報・銀行コード・診療科・医会会費)を、この形にした。医会会費の入力の画面で、開いてすぐ閉じる・入力して閉じる(「いいえ」「はい」)・入力して元に戻す・金額を入れる・コンボを選ぶ、を確かめた。医療機関の入力の画面は、元の画面と同じく、確認そのものを出していない。そのあと、会員の 2 つの入力の画面(`FormKaiin2_DlgEntry`・`FormKaiin2_DlgEntry_Idoinfo`)も同じ形にした。会員の入力の画面は、子の一覧(医師会の会費・診療科目・所属学会・参加医会・異動情報)の行も比べる(17.3)。子の一覧の行は、追加のときなどに、呼び出し側(一覧の画面)が、この画面を開く前に足しているので、テーブルの変更の有無(`HasChanges`)では、入力があったかが分からないため。行を編集するだけの画面(`FormHikiotoshi2_DlgEntry`・`FormKaiin2_DlgChosei`)は、元の画面と同じく、ビューの `HasChanges` で調べる |
 | 19 | 入力必須の欄には、プレースホルダー(`PlaceholderText`)を付ける。テキスト・日付・数値・ファイルの欄は「入力必須」、コンボ(`SComboBox`・`STableComboBox`)は「選択必須」。その欄の項目名(`SLabel`)は `Required = true` にする(1.7)。元の画面で、項目名の色で必須を示していた欄が対象。範囲指定(○○ ～ ○○)の行は、項目名に 1 つだけ付ける |
 | 20 | 値の範囲で指定する区分のコンボ(在籍区分・支払方法・会費区分の From ～ To)は、`AppSCombo.SetComboBoxWithCode` で、「1：在籍」のように、値と名称を並べて表示する(帳票へ渡す値は、値そのもの。元の画面と同じ)。範囲に何が入るかを、値の並びで読めるようにするため(2026-11-26 に利用者と決めた) |
 | 21 | 部品にプロパティを足したあと(たとえば `SLabel.Required`)に、その画面を Visual Studio のデザイナーで開くときは、先に Visual Studio でリビルドする(19.4) |
@@ -359,7 +359,7 @@ FormMasterBasic2 の「銀行情報」(F5)は、`FormMasterBasic2_Bank` を開�
 | `UpdateForm/FormMasterBankCode2`(.cs / .Designer.cs / .resx) | `FormMasterBankCode` | 銀行コードの一覧。検索欄(銀行・支店)、検索クリアのボタン、追加(F2)・訂正(F3、Enter、ダブルクリック)・削除(F4)・閉じる(F12) |
 | `UpdateForm/FormMasterBankCode2_DlgEntry`(同上) | `FormMasterBankCode_DlgEntry` | 銀行コード 1 件の入力。登録(F11)・キャンセル(F12) |
 | `UpdateForm/AppBankCodeFilter.cs` | (各画面の中の `viewFilter`) | 検索欄の内容から、絞り込みの条件を作る。銀行コード選択(`FormSelectorBankCode2`)と共用 |
-| `Controls/Common/SButton.cs` | 標準の `Button` | 角丸のボタン(Sコントロール仕様の 12.1) |
+| `comset/UI/SButton.cs` | 標準の `Button` | 角丸のボタン(Sコントロール仕様の 12.1) |
 
 処理は、元の画面と同じ構成(同じメソッド名)にしてある。ファンクション キーの定義(`FuncMasterBankCode` など)と、入力ルール(`AppSControlRule`)は、すでにあるものを使う。2 つとも、Gc 系のコントロール・コードは使っていない。
 
@@ -472,7 +472,7 @@ FormMasterBasic2 の「銀行情報」(F5)は、`FormMasterBasic2_Bank` を開�
 | `UpdateForm/FormMasterIryoKikan2_DlgEntry`(同上) | `FormMasterIryoKikan_DlgEntry` | 医療機関 1 件の入力と、その標榜科目(診療科)の入力。登録(F11)・キャンセル(F12) |
 | `UpdateForm/FormMasterIryoKikan2_Out`(同上) | `FormOutIryoKikan` | 印刷プレビュー(出力する帳票の選択)。印刷プレビュー(F9)・閉じる(F12)。6.6 |
 | `UpdateForm/AppSTableCombo.cs` の `SetComboBox_KumiCode`・`SetComboBox_Kaisetsushutai`・`SetComboBox_Shinryoka` | `AppTableCombo` の同じ名前のメソッド | 組コード・開設主体・診療科の一覧の内容(どれも、コード・名称の 2 列、コードの順、選択後は名称を表示、値は ID)。引数は、元と同じく、コントロールと、表のビュー |
-| `Controls/Common/SGridDBInput.cs` | (comset の `GGridDBCommon`) | グリッドのセルの中で入力する機能(Sコントロール仕様の 10.7) |
+| `comset/UI/SGridDBInput.cs` | (comset の `GGridDBCommon`) | グリッドのセルの中で入力する機能(Sコントロール仕様の 10.7) |
 
 処理は、元の画面と同じ構成(同じメソッド名)にしてある。ファンクション キーの定義(`FuncMasterIryoKikan`・`FuncMasterIryoKikan_DlgEntry`・`FuncOutIryoKikan`)と、入力ルール(`AppSControlRule`)は、すでにあるものを使う。3 つとも、Gc 系のコントロール・コードは使っていない。
 
@@ -725,8 +725,8 @@ FormMasterBasic2 の「銀行情報」(F5)は、`FormMasterBasic2_Bank` を開�
 | `FMKaiin/FormBg_Progress.cs` | 処理。文字コードは Shift-JIS、改行は LF(元のまま。書き換えるときは、文字コードを保つこと) |
 | `FMKaiin/FormBg_Progress.Designer.cs` | 画面の構成。BOM 付き UTF-8、改行は LF(元のまま) |
 | `FMKaiin/FormBg_Progress.resx` | 回転アイコンの画像(13 枚)を持っていたが、使わなくなったので、取り除いた |
-| `Controls/Common/SProgressBar.cs` | 進み具合のバー(Sコントロール仕様の 14.1) |
-| `Controls/Common/SBusyIndicator.cs` | 回る輪(Sコントロール仕様の 14.2) |
+| `comset/UI/SProgressBar.cs` | 進み具合のバー(Sコントロール仕様の 14.1) |
+| `comset/UI/SBusyIndicator.cs` | 回る輪(Sコントロール仕様の 14.2) |
 | `Test/ProgressHarness.cs` | `SProgressBar`・`SBusyIndicator` のテスト(Sコントロール仕様の 8.4) |
 
 ### 8.2 画面の構成と、使い方
@@ -1186,7 +1186,7 @@ MAMIS の CSV を取り込む 3 つの画面(ファイルの指定・取込確�
 | `FormKaiin2_DlgChosei`(同上) | `FormKaiin_DlgChosei` | 会費予定額の調整(セルの中で入力する)。追加(F2)・削除(F4)・登録(F11)・キャンセル(F12) |
 | `FormKaiin2_DlgHistory`(同上) | `FormKaiin_DlgHistory` | 在籍期間の表示。閉じる(F12) |
 | `UpdateForm/AppSTableCombo.cs` の `SetComboBox_Kaihi2`・`SetComboBox_Ishikai`・`SetComboBox_Gakkai`・`SetComboBox_Shisetsugyomu` | `AppTableCombo` の同じ名前のメソッド | 会費(区分つき)・医師会・学会・施設業務の一覧の内容。元と同じ列・幅・並び順 |
-| `Controls/Common/STabControl.cs` | 標準の `TabControl` | 入力の画面の、情報1 ～ 情報3 の切り替え(Sコントロール仕様の 16 章) |
+| `comset/UI/STabControl.cs` | 標準の `TabControl` | 入力の画面の、情報1 ～ 情報3 の切り替え(Sコントロール仕様の 16 章) |
 
 ファンクション キーの定義(`FuncKaiin`・`FuncKaiin_DlgEntry`・`FuncKaiin_DlgEntry_Idoinfo`・`FuncKaiin_DlgChosei`・`FuncKaiin_DlgHistory`)と、入力ルール(`AppSControlRule`)は、すでにあるものを使う。処理は、元の画面と同じ構成(同じメソッド名)にしてある。
 
@@ -1401,7 +1401,7 @@ FormMain2 のメニューは、これまでの画面と S 系の画面を、左�
 
 | 対象 | 結果 |
 | --- | --- |
-| Gc 系・Yc 系・Uc 系のコントロールや型の直接の使用 | 無い。using は `App.Controls`・`C1.Win.C1TrueDBGrid`・`ComponentDB`・`ComponentDebug`・`ComponentIO`・`System.*` だけ。Designer.cs の部品は、S 系と `SectionPanel`・`IconBox`・`IconLogo`・`FunctionKeyBar`・`BufferedPanel`・`C1TrueDBGrid`・`Panel`・`TabPage` だけ。resx の埋め込みのデータにも、Gc 系・Yc 系の型は無い |
+| Gc 系・Yc 系・Uc 系のコントロールや型の直接の使用 | 無い。using は `ComponentSUI`(S 系の部品の名前空間。検査の時点では `App.Controls` だった。19.5)・`C1.Win.C1TrueDBGrid`・`ComponentDB`・`ComponentDebug`・`ComponentIO`・`System.*` だけ。Designer.cs の部品は、S 系と `SectionPanel`・`IconBox`・`IconLogo`・`FunctionKeyBar`・`BufferedPanel`・`C1TrueDBGrid`・`Panel`・`TabPage` だけ。resx の埋め込みのデータにも、Gc 系・Yc 系の型は無い |
 | 標準のコントロール(TextBox・ComboBox・Label・Button・CheckBox・RadioButton など)の直接の配置 | 無い(`FormLogView2` が、保存先を尋ねるのに `SaveFileDialog` を使っているだけ) |
 | 2 系の画面から開く、移行前の画面 | `FormBg_Progress`(S 系の見た目に作り替え済み。8 章)と、帳票クラス(`ReportFlex～`)を経由して開く `FormReportPreview`(Gc 系ではないが、S 系の見た目でもない。C1 のビューアと標準の ToolStrip)だけ。`FormSelector～` などは開かない |
 
@@ -1419,3 +1419,20 @@ FormMain2 のメニューは、これまでの画面と S 系の画面を、左�
 部品にプロパティを足したあと(たとえば `SLabel.Required`)は、Visual Studio でリビルドしてから、その部品を使う画面をデザイナーで開く。デザイナーは、Visual Studio 自身のビルドの結果(作業で使うビルドとは別のもの)を使うので、それが古いままだと、新しいプロパティの行を読めない。その状態で開くと、エラーになるか、保存したときに、その行が消える(FormMasterBasic2 で、作業者が足した項目名の `Required` の行が、デザイナーの保存で消えたことがある。原因は、これと考えられる)。
 
 作業者が Designer.cs を書き換えた画面を、Visual Studio のデザイナーで開いたままにしていると、デザイナーが古い内容で上書きすることがある。Designer.cs を書き換えたときは、利用者に、その画面を読み込み直してもらう。`FMKaiin.csproj` を書き換えたときは、Visual Studio の再読み込みの確認で「破棄」を選んでもらう。
+
+### 19.5 S 系の部品の置き場所と名前空間(2026-11-26)
+
+S 系の部品は、2026-11-26 に、FMKaiin の `Controls/Common/` から、共通ライブラリー comset の `UI/` フォルダーへ移し、名前空間を `ComponentSUI` に変えた(移したものの一覧と経過は、Sコントロール仕様の 1.6)。画面の側に関わることを、ここに書く。
+
+| 項目 | 内容 |
+| --- | --- |
+| 画面の .cs | `using ComponentSUI;` を書く。S 系のコントロールのほか、`SControlDB`・`SGridDB`・`FontFallback`・`FunctionKeyBinder`・`FuncKeyDefine` なども、この名前空間にある。以前の `using App.Controls;` は要らない(ロゴの `IconLogo` を使う画面だけ、残してある) |
+| Designer.cs | 型を `ComponentSUI.STextBox` のように書く(以前は `App.Controls.STextBox`)。Visual Studio のデザイナーで保存すると、この形で書き出される |
+| FMKaiin に残っている部品 | `FMKaiin/UI/` の `IconLogo`・`OrganizationLogoShape`(このアプリのロゴ)と、使っていない `GradientForm`・`StepHeaderLabel`。名前空間は `App.Controls` のまま |
+| アプリの側のコード | `AppSControlRule`・`AppSTableCombo`・`AppSCombo`・`AppBankCodeFilter`・`RowSnapshot` は、`FMKaiin/UpdateForm/` にある(名前空間 `App`)。comset へは移していない(テーブルの項目名など、このアプリに固有のものを使うため) |
+| 部品を直すとき | comset(別のリポジトリ Library)のファイルを直すことになる。FMKaiin.sln に comset のプロジェクトが入っているので、Visual Studio では、これまでと同じようにビルドできる。コミットは、FMKaiin と Library の 2 つのリポジトリで、対にして行う |
+| デザイナー | 部品は comset.dll から読まれる。部品を直したあとは、Visual Studio でリビルドしてから、画面をデザイナーで開く(19.4) |
+
+名前空間を変えたときに書き換えたのは、FMKaiin の 213 ファイル(`App.Controls.○○` を `ComponentSUI.○○` に 2,026 か所、`using` の置き換え 62 か所、`using ComponentSUI;` の追加 52 ファイル)と、`Test/` のファイル、自動で作られる `AppFormFuncKey.cs`・`AppMsgBox.cs`・`AppToolTip.cs` のテンプレート(`_doc/` の `.template`)。
+
+未確認の点: Visual Studio のデザイナーで、画面を開いて保存すること(名前空間を変えた後)。実際のデータベースでの動作。

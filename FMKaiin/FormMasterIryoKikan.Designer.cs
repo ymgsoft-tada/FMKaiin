@@ -34,7 +34,7 @@ namespace App
 			this.grid = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx1 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.iCodeIryo = new GControlGcTextBoxEx.GcTextBoxEx();
 			this.ycLabelEx4 = new YControlLabelEx.YcLabelEx();
 			this.btnClear = new System.Windows.Forms.Button();
@@ -297,7 +297,7 @@ namespace App
 		private YControlLabelEx.YcLabelEx ycLabelEx5;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private GControlGcTextBoxEx.GcTextBoxEx iCodeIryo;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private System.Windows.Forms.Button btnClear;

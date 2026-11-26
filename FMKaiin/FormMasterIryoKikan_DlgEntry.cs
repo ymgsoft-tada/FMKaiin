@@ -12,6 +12,7 @@ using ComponentDB;
 using ComponentGControlDB;
 using ComponentGGridDB;
 using ComponentIO;
+using ComponentSUI;
 
 namespace App
 {

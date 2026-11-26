@@ -5,7 +5,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using App;
-using App.Controls;
+using ComponentSUI;
 using ComponentGControlDB;
 
 internal static class DbHarness

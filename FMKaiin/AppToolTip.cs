@@ -230,7 +230,7 @@ namespace App
 		/// <summary>
 		/// ツールチップ
 		/// </summary>
-		App.Controls.SToolTip	toolTip;
+		ComponentSUI.SToolTip	toolTip;
 		#endregion
 		
 		#region *** Constructor ***
@@ -240,16 +240,16 @@ namespace App
 		/// <param name="form">ツールチップを表示するフォーム</param>
 		public AppToolTip(Form form)
 		{
-			toolTip = new App.Controls.SToolTip(form);
+			toolTip = new ComponentSUI.SToolTip(form);
 		}
 		#endregion
 		
 		#region *** Property ***
 		/// <summary>
-		/// AppToolTip で使用している App.Controls.SToolTip クラスを取得します。
+		/// AppToolTip で使用している ComponentSUI.SToolTip クラスを取得します。
 		/// 特に理由がない場合、このプロパティは使用しないでください。
 		/// </summary>
-		public App.Controls.SToolTip	ToolTip
+		public ComponentSUI.SToolTip	ToolTip
 		{
 			get
 			{

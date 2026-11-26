@@ -29,16 +29,16 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblPwd_Old = new App.Controls.SLabel();
-            this.iPwd_Old = new App.Controls.STextBox();
-            this.lblPwd_New = new App.Controls.SLabel();
-            this.iPwd_New = new App.Controls.STextBox();
-            this.lblPwd_New2 = new App.Controls.SLabel();
-            this.iPwd_New2 = new App.Controls.STextBox();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblPwd_Old = new ComponentSUI.SLabel();
+            this.iPwd_Old = new ComponentSUI.STextBox();
+            this.lblPwd_New = new ComponentSUI.SLabel();
+            this.iPwd_New = new ComponentSUI.STextBox();
+            this.lblPwd_New2 = new ComponentSUI.SLabel();
+            this.iPwd_New2 = new ComponentSUI.STextBox();
             this.secBody.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +53,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -188,15 +188,15 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblPwd_Old;
-        private App.Controls.STextBox iPwd_Old;
-        private App.Controls.SLabel lblPwd_New;
-        private App.Controls.STextBox iPwd_New;
-        private App.Controls.SLabel lblPwd_New2;
-        private App.Controls.STextBox iPwd_New2;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblPwd_Old;
+        private ComponentSUI.STextBox iPwd_Old;
+        private ComponentSUI.SLabel lblPwd_New;
+        private ComponentSUI.STextBox iPwd_New;
+        private ComponentSUI.SLabel lblPwd_New2;
+        private ComponentSUI.STextBox iPwd_New2;
     }
 }

@@ -31,7 +31,7 @@ namespace App
 		{
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx3 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
 			this.rdoList = new System.Windows.Forms.RadioButton();
 			this.rdoJoho = new System.Windows.Forms.RadioButton();
@@ -143,7 +143,7 @@ namespace App
 
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx3;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx ycLabelEx7;
 		private System.Windows.Forms.RadioButton rdoList;
 		private System.Windows.Forms.RadioButton rdoJoho;

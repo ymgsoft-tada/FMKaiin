@@ -2,7 +2,7 @@
 using System.Data;
 using System.Text.RegularExpressions;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 using ComponentDB;
 using ComponentIO;
 

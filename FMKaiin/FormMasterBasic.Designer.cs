@@ -36,7 +36,7 @@ namespace App
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.funckey = new App.Controls.FunctionKeyBar();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
             this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
             this.iHojinNo = new GControlGcTextBoxEx.GcTextBoxEx();
             this.iNameFurigana = new GControlGcTextBoxEx.GcTextBoxEx();
@@ -668,7 +668,7 @@ namespace App
 		private GControlGcTextBoxEx.GcTextBoxEx iPost1;
 		private YControlLabelEx.YcLabelEx ycLabelEx1;
 		private GControlGcTextBoxEx.GcTextBoxEx iName;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private GControlGcComboBoxEx.GcComboBoxEx iDispSeireki;
 		private YControlLabelEx.YcLabelEx ycLabelEx4;
 		private YControlLabelEx.YcLabelEx ycLabelEx6;

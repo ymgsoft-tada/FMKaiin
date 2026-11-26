@@ -2,7 +2,7 @@
 using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
-using App.Controls;
+using ComponentSUI;
 using C1.Win.C1TrueDBGrid;
 using ComponentDB;
 using ComponentDebug;

@@ -1,5 +1,6 @@
 ﻿using System;
 using ComponentDB;
+using ComponentSUI;
 
 namespace App
 {
@@ -7,7 +8,7 @@ namespace App
     /// 医療機関マスタの印刷プレビュー（出力する帳票を選ぶ画面）。<see cref="FormOutIryoKikan"/> と同じ内容を、S 系の画面の見た目（S画面仕様.md の 1.7）で作ったもの。
     /// </summary>
     /// <remarks>
-    /// Gc 系・Yc 系のコントロール・コードは使っていない。帳票の選択は、S 系のラジオ ボタン（<see cref="App.Controls.SRadioButton"/>）で行う。
+    /// Gc 系・Yc 系のコントロール・コードは使っていない。帳票の選択は、S 系のラジオ ボタン（<see cref="ComponentSUI.SRadioButton"/>）で行う。
     /// 帳票は、元の画面と同じもの（<see cref="ReportFlexIryoKikan"/>・<see cref="ReportFlexIryoKikanJoho"/>）を使う。
     /// </remarks>
     public partial class FormMasterIryoKikan2_Out : FormFrame

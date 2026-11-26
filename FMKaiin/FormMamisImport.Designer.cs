@@ -30,7 +30,7 @@
 		{
 			this.iFile = new App.UcFileSelect();
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
-			this.funckey = new App.Controls.FunctionKeyBar();
+			this.funckey = new ComponentSUI.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.SuspendLayout();
@@ -128,7 +128,7 @@
 		#endregion
 		private UcFileSelect iFile;
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
-		private App.Controls.FunctionKeyBar funckey;
+		private ComponentSUI.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 	}

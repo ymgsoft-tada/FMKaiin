@@ -8,7 +8,7 @@ using System.Drawing;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using App;
-using App.Controls;
+using ComponentSUI;
 
 internal static class FrameHarness
 {

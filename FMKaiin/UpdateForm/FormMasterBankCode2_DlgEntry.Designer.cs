@@ -29,24 +29,24 @@ namespace App
         /// </summary>
         private void InitializeComponent()
         {
-            this.funckey = new App.Controls.FunctionKeyBar();
-            this.icoHeading = new App.Controls.IconBox();
-            this.lblHeading = new App.Controls.SLabel();
-            this.secBody = new App.Controls.SectionPanel();
-            this.lblBankCode = new App.Controls.SLabel();
-            this.iBankCode = new App.Controls.STextBox();
-            this.lblShitenCode = new App.Controls.SLabel();
-            this.iShitenCode = new App.Controls.STextBox();
-            this.lblNameBank = new App.Controls.SLabel();
-            this.iNameBank = new App.Controls.STextBox();
-            this.lblNameShiten = new App.Controls.SLabel();
-            this.iNameShiten = new App.Controls.STextBox();
-            this.lblNameKanaBank = new App.Controls.SLabel();
-            this.iNameKanaBank = new App.Controls.STextBox();
-            this.lblNameKanaShiten = new App.Controls.SLabel();
-            this.iNameKanaShiten = new App.Controls.STextBox();
-            this.lblFullNameBank = new App.Controls.SLabel();
-            this.iFullNameBank = new App.Controls.STextBox();
+            this.funckey = new ComponentSUI.FunctionKeyBar();
+            this.icoHeading = new ComponentSUI.IconBox();
+            this.lblHeading = new ComponentSUI.SLabel();
+            this.secBody = new ComponentSUI.SectionPanel();
+            this.lblBankCode = new ComponentSUI.SLabel();
+            this.iBankCode = new ComponentSUI.STextBox();
+            this.lblShitenCode = new ComponentSUI.SLabel();
+            this.iShitenCode = new ComponentSUI.STextBox();
+            this.lblNameBank = new ComponentSUI.SLabel();
+            this.iNameBank = new ComponentSUI.STextBox();
+            this.lblNameShiten = new ComponentSUI.SLabel();
+            this.iNameShiten = new ComponentSUI.STextBox();
+            this.lblNameKanaBank = new ComponentSUI.SLabel();
+            this.iNameKanaBank = new ComponentSUI.STextBox();
+            this.lblNameKanaShiten = new ComponentSUI.SLabel();
+            this.iNameKanaShiten = new ComponentSUI.STextBox();
+            this.lblFullNameBank = new ComponentSUI.SLabel();
+            this.iFullNameBank = new ComponentSUI.STextBox();
             this.secBody.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,7 +61,7 @@ namespace App
             // 
             this.icoHeading.BackColor = System.Drawing.Color.Transparent;
             this.icoHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(100)))), ((int)(((byte)(161)))));
-            this.icoHeading.IconKind = App.Controls.MenuIconKind.DoubleSlash;
+            this.icoHeading.IconKind = ComponentSUI.MenuIconKind.DoubleSlash;
             this.icoHeading.LineWeight = 0.9F;
             this.icoHeading.Location = new System.Drawing.Point(16, 13);
             this.icoHeading.Name = "icoHeading";
@@ -286,23 +286,23 @@ namespace App
 
         #endregion
 
-        private App.Controls.FunctionKeyBar funckey;
-        private App.Controls.IconBox icoHeading;
-        private App.Controls.SLabel lblHeading;
-        private App.Controls.SectionPanel secBody;
-        private App.Controls.SLabel lblBankCode;
-        private App.Controls.STextBox iBankCode;
-        private App.Controls.SLabel lblShitenCode;
-        private App.Controls.STextBox iShitenCode;
-        private App.Controls.SLabel lblNameBank;
-        private App.Controls.STextBox iNameBank;
-        private App.Controls.SLabel lblNameShiten;
-        private App.Controls.STextBox iNameShiten;
-        private App.Controls.SLabel lblNameKanaBank;
-        private App.Controls.STextBox iNameKanaBank;
-        private App.Controls.SLabel lblNameKanaShiten;
-        private App.Controls.STextBox iNameKanaShiten;
-        private App.Controls.SLabel lblFullNameBank;
-        private App.Controls.STextBox iFullNameBank;
+        private ComponentSUI.FunctionKeyBar funckey;
+        private ComponentSUI.IconBox icoHeading;
+        private ComponentSUI.SLabel lblHeading;
+        private ComponentSUI.SectionPanel secBody;
+        private ComponentSUI.SLabel lblBankCode;
+        private ComponentSUI.STextBox iBankCode;
+        private ComponentSUI.SLabel lblShitenCode;
+        private ComponentSUI.STextBox iShitenCode;
+        private ComponentSUI.SLabel lblNameBank;
+        private ComponentSUI.STextBox iNameBank;
+        private ComponentSUI.SLabel lblNameShiten;
+        private ComponentSUI.STextBox iNameShiten;
+        private ComponentSUI.SLabel lblNameKanaBank;
+        private ComponentSUI.STextBox iNameKanaBank;
+        private ComponentSUI.SLabel lblNameKanaShiten;
+        private ComponentSUI.STextBox iNameKanaShiten;
+        private ComponentSUI.SLabel lblFullNameBank;
+        private ComponentSUI.STextBox iFullNameBank;
     }
 }
