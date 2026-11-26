@@ -107,12 +107,13 @@ namespace App
             this.lblSearch.BackColor = System.Drawing.Color.Transparent;
             this.lblSearch.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSearch.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblSearch.Location = new System.Drawing.Point(26, 20);
+            this.lblSearch.Location = new System.Drawing.Point(16, 20);
             this.lblSearch.Name = "lblSearch";
-            this.lblSearch.Size = new System.Drawing.Size(32, 24);
+            this.lblSearch.Size = new System.Drawing.Size(38, 24);
             this.lblSearch.TabIndex = 189;
             this.lblSearch.TabStop = false;
             this.lblSearch.Text = "検索";
+            this.lblSearch.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iSearch
             // 
@@ -127,12 +128,13 @@ namespace App
             this.lblSearchBirthday.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchBirthday.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSearchBirthday.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblSearchBirthday.Location = new System.Drawing.Point(346, 20);
+            this.lblSearchBirthday.Location = new System.Drawing.Point(328, 20);
             this.lblSearchBirthday.Name = "lblSearchBirthday";
-            this.lblSearchBirthday.Size = new System.Drawing.Size(60, 24);
+            this.lblSearchBirthday.Size = new System.Drawing.Size(74, 24);
             this.lblSearchBirthday.TabIndex = 190;
             this.lblSearchBirthday.TabStop = false;
             this.lblSearchBirthday.Text = "生年月日";
+            this.lblSearchBirthday.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iSearchBirthday
             // 
@@ -146,12 +148,13 @@ namespace App
             this.lblSearchIsekiTorokuNo.BackColor = System.Drawing.Color.Transparent;
             this.lblSearchIsekiTorokuNo.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblSearchIsekiTorokuNo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblSearchIsekiTorokuNo.Location = new System.Drawing.Point(630, 20);
+            this.lblSearchIsekiTorokuNo.Location = new System.Drawing.Point(606, 20);
             this.lblSearchIsekiTorokuNo.Name = "lblSearchIsekiTorokuNo";
-            this.lblSearchIsekiTorokuNo.Size = new System.Drawing.Size(88, 24);
+            this.lblSearchIsekiTorokuNo.Size = new System.Drawing.Size(108, 24);
             this.lblSearchIsekiTorokuNo.TabIndex = 191;
             this.lblSearchIsekiTorokuNo.TabStop = false;
             this.lblSearchIsekiTorokuNo.Text = "医籍登録番号";
+            this.lblSearchIsekiTorokuNo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iSearchIsekiTorokuNo
             // 
@@ -193,7 +196,7 @@ namespace App
             // 
             this.chkUnUsed.Location = new System.Drawing.Point(20, 469);
             this.chkUnUsed.Name = "chkUnUsed";
-            this.chkUnUsed.Size = new System.Drawing.Size(134, 24);
+            this.chkUnUsed.Size = new System.Drawing.Size(160, 24);
             this.chkUnUsed.TabIndex = 20;
             this.chkUnUsed.TabStop = false;
             this.chkUnUsed.Text = "退会者を含める";

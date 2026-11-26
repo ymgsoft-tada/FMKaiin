@@ -101,12 +101,13 @@ namespace App
             this.lblCodeShinryoka.BackColor = System.Drawing.Color.Transparent;
             this.lblCodeShinryoka.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblCodeShinryoka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblCodeShinryoka.Location = new System.Drawing.Point(26, 20);
+            this.lblCodeShinryoka.Location = new System.Drawing.Point(16, 20);
             this.lblCodeShinryoka.Name = "lblCodeShinryoka";
-            this.lblCodeShinryoka.Size = new System.Drawing.Size(46, 24);
+            this.lblCodeShinryoka.Size = new System.Drawing.Size(52, 24);
             this.lblCodeShinryoka.TabIndex = 100;
             this.lblCodeShinryoka.TabStop = false;
             this.lblCodeShinryoka.Text = "コード";
+            this.lblCodeShinryoka.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iCodeShinryoka
             // 
@@ -120,12 +121,13 @@ namespace App
             this.lblNameShinryoka.BackColor = System.Drawing.Color.Transparent;
             this.lblNameShinryoka.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblNameShinryoka.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblNameShinryoka.Location = new System.Drawing.Point(170, 20);
+            this.lblNameShinryoka.Location = new System.Drawing.Point(158, 20);
             this.lblNameShinryoka.Name = "lblNameShinryoka";
-            this.lblNameShinryoka.Size = new System.Drawing.Size(32, 24);
+            this.lblNameShinryoka.Size = new System.Drawing.Size(40, 24);
             this.lblNameShinryoka.TabIndex = 101;
             this.lblNameShinryoka.TabStop = false;
             this.lblNameShinryoka.Text = "名称";
+            this.lblNameShinryoka.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iNameShinryoka
             // 

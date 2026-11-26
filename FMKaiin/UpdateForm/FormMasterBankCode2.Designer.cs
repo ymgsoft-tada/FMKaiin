@@ -101,12 +101,13 @@ namespace App
             this.lblBank.BackColor = System.Drawing.Color.Transparent;
             this.lblBank.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblBank.Location = new System.Drawing.Point(26, 20);
+            this.lblBank.Location = new System.Drawing.Point(10, 20);
             this.lblBank.Name = "lblBank";
-            this.lblBank.Size = new System.Drawing.Size(60, 24);
+            this.lblBank.Size = new System.Drawing.Size(72, 24);
             this.lblBank.TabIndex = 100;
             this.lblBank.TabStop = false;
             this.lblBank.Text = "銀行検索";
+            this.lblBank.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iBank
             // 
@@ -120,12 +121,13 @@ namespace App
             this.lblShiten.BackColor = System.Drawing.Color.Transparent;
             this.lblShiten.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblShiten.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblShiten.Location = new System.Drawing.Point(310, 20);
+            this.lblShiten.Location = new System.Drawing.Point(292, 20);
             this.lblShiten.Name = "lblShiten";
-            this.lblShiten.Size = new System.Drawing.Size(60, 24);
+            this.lblShiten.Size = new System.Drawing.Size(74, 24);
             this.lblShiten.TabIndex = 101;
             this.lblShiten.TabStop = false;
             this.lblShiten.Text = "支店検索";
+            this.lblShiten.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iShiten
             // 

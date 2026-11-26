@@ -54,7 +54,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 237);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(710, 66);
+            this.funckey.Size = new System.Drawing.Size(744, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -107,7 +107,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(690, 171);
+            this.secBody.Size = new System.Drawing.Size(724, 171);
             this.secBody.TabIndex = 0;
             // 
             // lblBankCode
@@ -139,14 +139,14 @@ namespace App
             this.lblShitenCode.Location = new System.Drawing.Point(374, 24);
             this.lblShitenCode.Name = "lblShitenCode";
             this.lblShitenCode.Required = true;
-            this.lblShitenCode.Size = new System.Drawing.Size(84, 24);
+            this.lblShitenCode.Size = new System.Drawing.Size(118, 24);
             this.lblShitenCode.TabIndex = 103;
             this.lblShitenCode.TabStop = false;
             this.lblShitenCode.Text = "支店コード";
             // 
             // iShitenCode
             // 
-            this.iShitenCode.Location = new System.Drawing.Point(464, 24);
+            this.iShitenCode.Location = new System.Drawing.Point(498, 24);
             this.iShitenCode.Name = "iShitenCode";
             this.iShitenCode.PlaceholderText = "入力必須";
             this.iShitenCode.Size = new System.Drawing.Size(80, 24);
@@ -181,14 +181,14 @@ namespace App
             this.lblNameShiten.Location = new System.Drawing.Point(374, 55);
             this.lblNameShiten.Name = "lblNameShiten";
             this.lblNameShiten.Required = true;
-            this.lblNameShiten.Size = new System.Drawing.Size(84, 24);
+            this.lblNameShiten.Size = new System.Drawing.Size(118, 24);
             this.lblNameShiten.TabIndex = 105;
             this.lblNameShiten.TabStop = false;
             this.lblNameShiten.Text = "支店名";
             // 
             // iNameShiten
             // 
-            this.iNameShiten.Location = new System.Drawing.Point(464, 55);
+            this.iNameShiten.Location = new System.Drawing.Point(498, 55);
             this.iNameShiten.Name = "iNameShiten";
             this.iNameShiten.PlaceholderText = "入力必須";
             this.iNameShiten.Size = new System.Drawing.Size(200, 24);
@@ -205,7 +205,7 @@ namespace App
             this.lblNameKanaBank.Size = new System.Drawing.Size(118, 24);
             this.lblNameKanaBank.TabIndex = 106;
             this.lblNameKanaBank.TabStop = false;
-            this.lblNameKanaBank.Text = "銀行名カナ";
+            this.lblNameKanaBank.Text = "　銀行名カナ";
             // 
             // iNameKanaBank
             // 
@@ -223,14 +223,14 @@ namespace App
             this.lblNameKanaShiten.Location = new System.Drawing.Point(374, 84);
             this.lblNameKanaShiten.Name = "lblNameKanaShiten";
             this.lblNameKanaShiten.Required = true;
-            this.lblNameKanaShiten.Size = new System.Drawing.Size(88, 24);
+            this.lblNameKanaShiten.Size = new System.Drawing.Size(118, 24);
             this.lblNameKanaShiten.TabIndex = 107;
             this.lblNameKanaShiten.TabStop = false;
-            this.lblNameKanaShiten.Text = "支店名カナ";
+            this.lblNameKanaShiten.Text = "　支店名カナ";
             // 
             // iNameKanaShiten
             // 
-            this.iNameKanaShiten.Location = new System.Drawing.Point(464, 84);
+            this.iNameKanaShiten.Location = new System.Drawing.Point(498, 84);
             this.iNameKanaShiten.Name = "iNameKanaShiten";
             this.iNameKanaShiten.PlaceholderText = "入力必須";
             this.iNameKanaShiten.Size = new System.Drawing.Size(200, 24);
@@ -263,7 +263,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(710, 303);
+            this.ClientSize = new System.Drawing.Size(744, 303);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.icoHeading);

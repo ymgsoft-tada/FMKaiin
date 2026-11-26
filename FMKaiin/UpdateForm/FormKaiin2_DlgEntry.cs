@@ -2186,7 +2186,7 @@ namespace App
             if (Row != null)
             {
                 sctl.FetchAll();
-                
+
                 // 医療機関-指定医のセット
                 fetchIryoShiteii();
             }
@@ -2257,8 +2257,6 @@ namespace App
             //	enabled = true;
             //}
 
-//			appFuncKey.SetEnabled(FuncStaff_DlgEntry.ShowMyno.Key, enabled);
-//			appFuncKey.SetVisible(FuncStaff_DlgEntry.ShowMyno.Key, enabled);
         }
 
         /// <summary>

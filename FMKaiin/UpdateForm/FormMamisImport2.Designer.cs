@@ -42,7 +42,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 146);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(620, 66);
+            this.funckey.Size = new System.Drawing.Size(642, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -83,7 +83,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(600, 80);
+            this.secBody.Size = new System.Drawing.Size(622, 80);
             this.secBody.TabIndex = 0;
             // 
             // lblFile
@@ -94,7 +94,7 @@ namespace App
             this.lblFile.Location = new System.Drawing.Point(26, 24);
             this.lblFile.Name = "lblFile";
             this.lblFile.Required = true;
-            this.lblFile.Size = new System.Drawing.Size(128, 24);
+            this.lblFile.Size = new System.Drawing.Size(150, 24);
             this.lblFile.TabIndex = 100;
             this.lblFile.TabStop = false;
             this.lblFile.Text = "取込CSVファイル";
@@ -102,7 +102,7 @@ namespace App
             // iFile
             // 
             this.iFile.FileFilter = "CSVファイル|*.csv";
-            this.iFile.Location = new System.Drawing.Point(160, 24);
+            this.iFile.Location = new System.Drawing.Point(182, 24);
             this.iFile.Name = "iFile";
             this.iFile.PlaceholderText = "入力必須";
             this.iFile.Size = new System.Drawing.Size(370, 24);
@@ -114,7 +114,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(620, 212);
+            this.ClientSize = new System.Drawing.Size(642, 212);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.icoHeading);

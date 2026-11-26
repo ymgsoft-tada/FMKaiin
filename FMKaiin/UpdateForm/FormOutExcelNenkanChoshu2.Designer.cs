@@ -170,7 +170,7 @@ namespace App
             // 
             this.rdoYotei.Location = new System.Drawing.Point(10, 5);
             this.rdoYotei.Name = "rdoYotei";
-            this.rdoYotei.Size = new System.Drawing.Size(164, 24);
+            this.rdoYotei.Size = new System.Drawing.Size(180, 24);
             this.rdoYotei.TabIndex = 0;
             this.rdoYotei.TabStop = true;
             this.rdoYotei.Text = "予定通知書";
@@ -180,7 +180,7 @@ namespace App
             // 
             this.rdoJisseki.Location = new System.Drawing.Point(10, 36);
             this.rdoJisseki.Name = "rdoJisseki";
-            this.rdoJisseki.Size = new System.Drawing.Size(164, 24);
+            this.rdoJisseki.Size = new System.Drawing.Size(180, 24);
             this.rdoJisseki.TabIndex = 1;
             this.rdoJisseki.TabStop = true;
             this.rdoJisseki.Text = "徴収明細書（実績）";

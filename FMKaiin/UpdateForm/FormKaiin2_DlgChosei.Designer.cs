@@ -127,9 +127,9 @@ namespace App
             this.lblNote.BackColor = System.Drawing.Color.Transparent;
             this.lblNote.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.lblNote.Location = new System.Drawing.Point(604, 24);
+            this.lblNote.Location = new System.Drawing.Point(578, 24);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(200, 24);
+            this.lblNote.Size = new System.Drawing.Size(226, 24);
             this.lblNote.TabIndex = 104;
             this.lblNote.TabStop = false;
             this.lblNote.Text = "グリッドで直接編集できます。";

@@ -50,7 +50,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 213);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(470, 66);
+            this.funckey.Size = new System.Drawing.Size(500, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -95,7 +95,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(450, 147);
+            this.secBody.Size = new System.Drawing.Size(480, 147);
             this.secBody.TabIndex = 0;
             // 
             // lblDateYM
@@ -165,14 +165,14 @@ namespace App
             this.secIkai.HeaderHeight = 0;
             this.secIkai.Location = new System.Drawing.Point(150, 86);
             this.secIkai.Name = "secIkai";
-            this.secIkai.Size = new System.Drawing.Size(230, 34);
+            this.secIkai.Size = new System.Drawing.Size(260, 34);
             this.secIkai.TabIndex = 2;
             // 
             // rdoNichii
             // 
             this.rdoNichii.Location = new System.Drawing.Point(10, 5);
             this.rdoNichii.Name = "rdoNichii";
-            this.rdoNichii.Size = new System.Drawing.Size(66, 24);
+            this.rdoNichii.Size = new System.Drawing.Size(76, 24);
             this.rdoNichii.TabIndex = 0;
             this.rdoNichii.TabStop = true;
             this.rdoNichii.Text = "日医";
@@ -180,9 +180,9 @@ namespace App
             // 
             // rdoKeni
             // 
-            this.rdoKeni.Location = new System.Drawing.Point(82, 5);
+            this.rdoKeni.Location = new System.Drawing.Point(92, 5);
             this.rdoKeni.Name = "rdoKeni";
-            this.rdoKeni.Size = new System.Drawing.Size(66, 24);
+            this.rdoKeni.Size = new System.Drawing.Size(76, 24);
             this.rdoKeni.TabIndex = 1;
             this.rdoKeni.TabStop = true;
             this.rdoKeni.Text = "県医";
@@ -190,9 +190,9 @@ namespace App
             // 
             // rdoShii
             // 
-            this.rdoShii.Location = new System.Drawing.Point(154, 5);
+            this.rdoShii.Location = new System.Drawing.Point(174, 5);
             this.rdoShii.Name = "rdoShii";
-            this.rdoShii.Size = new System.Drawing.Size(66, 24);
+            this.rdoShii.Size = new System.Drawing.Size(76, 24);
             this.rdoShii.TabIndex = 2;
             this.rdoShii.TabStop = true;
             this.rdoShii.Text = "市医";
@@ -204,7 +204,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(470, 279);
+            this.ClientSize = new System.Drawing.Size(500, 279);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.icoHeading);

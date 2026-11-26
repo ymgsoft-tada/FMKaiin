@@ -131,13 +131,14 @@ namespace App
             this.lblDateYM.BackColor = System.Drawing.Color.Transparent;
             this.lblDateYM.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblDateYM.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblDateYM.Location = new System.Drawing.Point(26, 20);
+            this.lblDateYM.Location = new System.Drawing.Point(12, 20);
             this.lblDateYM.Name = "lblDateYM";
             this.lblDateYM.Required = true;
-            this.lblDateYM.Size = new System.Drawing.Size(74, 24);
+            this.lblDateYM.Size = new System.Drawing.Size(84, 24);
             this.lblDateYM.TabIndex = 100;
             this.lblDateYM.TabStop = false;
             this.lblDateYM.Text = "処理月度";
+            this.lblDateYM.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iDateYM
             // 
@@ -173,12 +174,13 @@ namespace App
             this.lblTotalCount.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalCount.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblTotalCount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblTotalCount.Location = new System.Drawing.Point(214, 539);
+            this.lblTotalCount.Location = new System.Drawing.Point(196, 539);
             this.lblTotalCount.Name = "lblTotalCount";
-            this.lblTotalCount.Size = new System.Drawing.Size(60, 24);
+            this.lblTotalCount.Size = new System.Drawing.Size(74, 24);
             this.lblTotalCount.TabIndex = 101;
             this.lblTotalCount.TabStop = false;
             this.lblTotalCount.Text = "合計人数";
+            this.lblTotalCount.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iTotalCount
             // 
@@ -193,12 +195,13 @@ namespace App
             this.lblTotalCost.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalCost.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblTotalCost.Location = new System.Drawing.Point(394, 539);
+            this.lblTotalCost.Location = new System.Drawing.Point(378, 539);
             this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(46, 24);
+            this.lblTotalCost.Size = new System.Drawing.Size(58, 24);
             this.lblTotalCost.TabIndex = 102;
             this.lblTotalCost.TabStop = false;
             this.lblTotalCost.Text = "月額計";
+            this.lblTotalCost.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iTotalCost
             // 

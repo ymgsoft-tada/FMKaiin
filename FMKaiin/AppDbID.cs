@@ -91,20 +91,20 @@ namespace App
 			{
 				val += 1;
 
-				ComponentGControlDB.GControlDBRuleBase rule = AppDbRule.Rule.GetRule(fld);
+				// コードの桁数の上限は、入力ルール（S 系）から引く。ルールが無い項目と、桁数の指定が無い項目は、上限を調べない
+				SControlRule rule = AppSControlRule.Rule.GetRule(fld);
+				int digits = rule != null ? rule.Parts[0].MaxLength : 0;
 
-				if (rule != null)
+				if (digits > 0)
 				{
-					int max = rule.MaxLength[0];
-				
-					max = (int)Math.Pow(10, (double)max);
+					// 桁数が多いと int に収まらないので、long で比べる
+					long limit = (long)Math.Pow(10, (double)digits);
 
-					if (val >= max)
+					if (val >= limit)
 					{
 						AppLog.WriteLine("最大桁数を超えています。");
 						return null;
 					}
-
 				}
 
 				return val;

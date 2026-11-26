@@ -66,7 +66,7 @@ namespace App
             this.lblHeading.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(17)))), ((int)(((byte)(42)))), ((int)(((byte)(74)))));
             this.lblHeading.Location = new System.Drawing.Point(46, 10);
             this.lblHeading.Name = "lblHeading";
-            this.lblHeading.Size = new System.Drawing.Size(300, 30);
+            this.lblHeading.Size = new System.Drawing.Size(360, 30);
             this.lblHeading.TabIndex = 3;
             this.lblHeading.TabStop = false;
             this.lblHeading.Text = "医師信用組合振込データ一覧";

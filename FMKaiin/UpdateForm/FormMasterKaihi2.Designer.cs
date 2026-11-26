@@ -109,12 +109,13 @@ namespace App
             this.lblKbnKaihi.BackColor = System.Drawing.Color.Transparent;
             this.lblKbnKaihi.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblKbnKaihi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblKbnKaihi.Location = new System.Drawing.Point(26, 20);
+            this.lblKbnKaihi.Location = new System.Drawing.Point(16, 20);
             this.lblKbnKaihi.Name = "lblKbnKaihi";
-            this.lblKbnKaihi.Size = new System.Drawing.Size(32, 24);
+            this.lblKbnKaihi.Size = new System.Drawing.Size(38, 24);
             this.lblKbnKaihi.TabIndex = 100;
             this.lblKbnKaihi.TabStop = false;
             this.lblKbnKaihi.Text = "区分";
+            this.lblKbnKaihi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iKbnKaihi
             // 
@@ -129,12 +130,13 @@ namespace App
             this.lblCodeKaihi.BackColor = System.Drawing.Color.Transparent;
             this.lblCodeKaihi.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblCodeKaihi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblCodeKaihi.Location = new System.Drawing.Point(216, 20);
+            this.lblCodeKaihi.Location = new System.Drawing.Point(206, 20);
             this.lblCodeKaihi.Name = "lblCodeKaihi";
-            this.lblCodeKaihi.Size = new System.Drawing.Size(46, 24);
+            this.lblCodeKaihi.Size = new System.Drawing.Size(52, 24);
             this.lblCodeKaihi.TabIndex = 101;
             this.lblCodeKaihi.TabStop = false;
             this.lblCodeKaihi.Text = "コード";
+            this.lblCodeKaihi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iCodeKaihi
             // 
@@ -148,12 +150,13 @@ namespace App
             this.lblNameKaihi.BackColor = System.Drawing.Color.Transparent;
             this.lblNameKaihi.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblNameKaihi.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblNameKaihi.Location = new System.Drawing.Point(376, 20);
+            this.lblNameKaihi.Location = new System.Drawing.Point(364, 20);
             this.lblNameKaihi.Name = "lblNameKaihi";
-            this.lblNameKaihi.Size = new System.Drawing.Size(32, 24);
+            this.lblNameKaihi.Size = new System.Drawing.Size(40, 24);
             this.lblNameKaihi.TabIndex = 102;
             this.lblNameKaihi.TabStop = false;
             this.lblNameKaihi.Text = "名称";
+            this.lblNameKaihi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iNameKaihi
             // 
@@ -167,12 +170,13 @@ namespace App
             this.lblKbnUsed.BackColor = System.Drawing.Color.Transparent;
             this.lblKbnUsed.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblKbnUsed.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblKbnUsed.Location = new System.Drawing.Point(676, 20);
+            this.lblKbnUsed.Location = new System.Drawing.Point(658, 20);
             this.lblKbnUsed.Name = "lblKbnUsed";
-            this.lblKbnUsed.Size = new System.Drawing.Size(60, 24);
+            this.lblKbnUsed.Size = new System.Drawing.Size(74, 24);
             this.lblKbnUsed.TabIndex = 103;
             this.lblKbnUsed.TabStop = false;
             this.lblKbnUsed.Text = "検索表示";
+            this.lblKbnUsed.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iKbnUsed
             // 

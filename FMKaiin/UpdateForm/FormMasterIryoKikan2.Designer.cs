@@ -109,12 +109,13 @@ namespace App
             this.lblCodeIryo.BackColor = System.Drawing.Color.Transparent;
             this.lblCodeIryo.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblCodeIryo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblCodeIryo.Location = new System.Drawing.Point(26, 20);
+            this.lblCodeIryo.Location = new System.Drawing.Point(16, 20);
             this.lblCodeIryo.Name = "lblCodeIryo";
-            this.lblCodeIryo.Size = new System.Drawing.Size(46, 24);
+            this.lblCodeIryo.Size = new System.Drawing.Size(52, 24);
             this.lblCodeIryo.TabIndex = 100;
             this.lblCodeIryo.TabStop = false;
             this.lblCodeIryo.Text = "コード";
+            this.lblCodeIryo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iCodeIryo
             // 
@@ -128,12 +129,13 @@ namespace App
             this.lblNameIryo.BackColor = System.Drawing.Color.Transparent;
             this.lblNameIryo.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblNameIryo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblNameIryo.Location = new System.Drawing.Point(186, 20);
+            this.lblNameIryo.Location = new System.Drawing.Point(174, 20);
             this.lblNameIryo.Name = "lblNameIryo";
-            this.lblNameIryo.Size = new System.Drawing.Size(32, 24);
+            this.lblNameIryo.Size = new System.Drawing.Size(40, 24);
             this.lblNameIryo.TabIndex = 101;
             this.lblNameIryo.TabStop = false;
             this.lblNameIryo.Text = "名称";
+            this.lblNameIryo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iNameIryo
             // 
@@ -147,12 +149,13 @@ namespace App
             this.lblKumiCode.BackColor = System.Drawing.Color.Transparent;
             this.lblKumiCode.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblKumiCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblKumiCode.Location = new System.Drawing.Point(478, 20);
+            this.lblKumiCode.Location = new System.Drawing.Point(466, 20);
             this.lblKumiCode.Name = "lblKumiCode";
-            this.lblKumiCode.Size = new System.Drawing.Size(60, 24);
+            this.lblKumiCode.Size = new System.Drawing.Size(68, 24);
             this.lblKumiCode.TabIndex = 102;
             this.lblKumiCode.TabStop = false;
             this.lblKumiCode.Text = "組コード";
+            this.lblKumiCode.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iKumiCode
             // 
@@ -166,12 +169,13 @@ namespace App
             this.lblKbnTaikai.BackColor = System.Drawing.Color.Transparent;
             this.lblKbnTaikai.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblKbnTaikai.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblKbnTaikai.Location = new System.Drawing.Point(716, 20);
+            this.lblKbnTaikai.Location = new System.Drawing.Point(698, 20);
             this.lblKbnTaikai.Name = "lblKbnTaikai";
-            this.lblKbnTaikai.Size = new System.Drawing.Size(60, 24);
+            this.lblKbnTaikai.Size = new System.Drawing.Size(74, 24);
             this.lblKbnTaikai.TabIndex = 103;
             this.lblKbnTaikai.TabStop = false;
             this.lblKbnTaikai.Text = "退会区分";
+            this.lblKbnTaikai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // iKbnTaikai
             // 

@@ -166,11 +166,11 @@ namespace App.Controls
         }
 
         /// <summary>
-        /// 扱う日付の形（年月日・年月・年）。年月・年の形では、カレンダーが月を選ぶ表示になる。
+        /// 扱う日付の形（年月日・年月・年）。年月の形では、カレンダーが月を選ぶ表示になり、年の形では、年を選ぶ表示になる。
         /// </summary>
         [Category("Appearance")]
         [DefaultValue(SDateFormat.YearMonthDay)]
-        [Description("扱う日付の形（年月日・年月・年）。年月・年の形では、カレンダーが月を選ぶ表示になる。")]
+        [Description("扱う日付の形（年月日・年月・年）。年月の形では、カレンダーが月を選ぶ表示になり、年の形では、年を選ぶ表示になる。")]
         public SDateFormat DateFormat
         {
             get { return _dateFormat; }

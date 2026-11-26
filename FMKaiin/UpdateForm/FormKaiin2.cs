@@ -354,14 +354,12 @@ namespace App
 
             //bool enabled = false;
 
-            //if (AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.Admin || 
+            //if (AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.Admin ||
             //	AppGlobal.LoginUser.XRow.TNT_Auth == eAuth.SU)
             //{
             //	enabled = true;
             //}
 
-            //appFuncKey.SetEnabled(FuncStaff.ShowMyno.Key, enabled);
-            //appFuncKey.SetVisible(FuncStaff.ShowMyno.Key, enabled);
 
         }
 
@@ -902,7 +900,7 @@ namespace App
                 t_kaiin xrow = new t_kaiin(dvKaiin.CurrentRow);
 
                 // 削除対象テーブル以外で他に会員IDが使用されているかチェック
-                if (AppGlobal.DB.CheckUsedOtherTable(TableProp.t_kaiin, t_kaiin.FID_Kaiin, xrow.ID_Kaiin, 
+                if (AppGlobal.DB.CheckUsedOtherTable(TableProp.t_kaiin, t_kaiin.FID_Kaiin, xrow.ID_Kaiin,
                     TableProp.t_kaiin, TableProp.t_kaiin_shinryoka, TableProp.t_kaiin_gakkai, TableProp.t_kaiin_kaihi, TableProp.t_kaiin_ido) == true)
                 {
                     AppMsgBox.Show(AppMsgBoxIndex.UsedOtherTable);

@@ -46,7 +46,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 208);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(462, 66);
+            this.funckey.Size = new System.Drawing.Size(486, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -91,7 +91,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(442, 142);
+            this.secBody.Size = new System.Drawing.Size(466, 142);
             this.secBody.TabIndex = 0;
             // 
             // lblPwd_Old
@@ -102,14 +102,14 @@ namespace App
             this.lblPwd_Old.Location = new System.Drawing.Point(26, 24);
             this.lblPwd_Old.Name = "lblPwd_Old";
             this.lblPwd_Old.Required = true;
-            this.lblPwd_Old.Size = new System.Drawing.Size(140, 24);
+            this.lblPwd_Old.Size = new System.Drawing.Size(164, 24);
             this.lblPwd_Old.TabIndex = 100;
             this.lblPwd_Old.TabStop = false;
             this.lblPwd_Old.Text = "現在のパスワード";
             // 
             // iPwd_Old
             // 
-            this.iPwd_Old.Location = new System.Drawing.Point(172, 24);
+            this.iPwd_Old.Location = new System.Drawing.Point(196, 24);
             this.iPwd_Old.Name = "iPwd_Old";
             this.iPwd_Old.PlaceholderText = "入力必須";
             this.iPwd_Old.Size = new System.Drawing.Size(200, 24);
@@ -123,14 +123,14 @@ namespace App
             this.lblPwd_New.Location = new System.Drawing.Point(26, 55);
             this.lblPwd_New.Name = "lblPwd_New";
             this.lblPwd_New.Required = true;
-            this.lblPwd_New.Size = new System.Drawing.Size(140, 24);
+            this.lblPwd_New.Size = new System.Drawing.Size(164, 24);
             this.lblPwd_New.TabIndex = 101;
             this.lblPwd_New.TabStop = false;
             this.lblPwd_New.Text = "新パスワード";
             // 
             // iPwd_New
             // 
-            this.iPwd_New.Location = new System.Drawing.Point(172, 55);
+            this.iPwd_New.Location = new System.Drawing.Point(196, 55);
             this.iPwd_New.Name = "iPwd_New";
             this.iPwd_New.PasswordChar = '*';
             this.iPwd_New.PlaceholderText = "入力必須";
@@ -145,14 +145,14 @@ namespace App
             this.lblPwd_New2.Location = new System.Drawing.Point(26, 86);
             this.lblPwd_New2.Name = "lblPwd_New2";
             this.lblPwd_New2.Required = true;
-            this.lblPwd_New2.Size = new System.Drawing.Size(140, 24);
+            this.lblPwd_New2.Size = new System.Drawing.Size(164, 24);
             this.lblPwd_New2.TabIndex = 102;
             this.lblPwd_New2.TabStop = false;
             this.lblPwd_New2.Text = "新パスワード(確認)";
             // 
             // iPwd_New2
             // 
-            this.iPwd_New2.Location = new System.Drawing.Point(172, 86);
+            this.iPwd_New2.Location = new System.Drawing.Point(196, 86);
             this.iPwd_New2.Name = "iPwd_New2";
             this.iPwd_New2.PasswordChar = '*';
             this.iPwd_New2.PlaceholderText = "入力必須";
@@ -165,7 +165,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(462, 274);
+            this.ClientSize = new System.Drawing.Size(486, 274);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.icoHeading);

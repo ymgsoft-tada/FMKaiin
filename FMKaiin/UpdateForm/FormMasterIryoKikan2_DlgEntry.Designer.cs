@@ -94,7 +94,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 604);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(890, 66);
+            this.funckey.Size = new System.Drawing.Size(924, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -126,7 +126,7 @@ namespace App
             this.lblLastUpdate.BackColor = System.Drawing.Color.Transparent;
             this.lblLastUpdate.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblLastUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblLastUpdate.Location = new System.Drawing.Point(640, 6);
+            this.lblLastUpdate.Location = new System.Drawing.Point(674, 6);
             this.lblLastUpdate.Name = "lblLastUpdate";
             this.lblLastUpdate.Size = new System.Drawing.Size(106, 18);
             this.lblLastUpdate.TabIndex = 100;
@@ -139,7 +139,7 @@ namespace App
             this.oLastUpdate.BackColor = System.Drawing.Color.Transparent;
             this.oLastUpdate.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.oLastUpdate.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.oLastUpdate.Location = new System.Drawing.Point(750, 6);
+            this.oLastUpdate.Location = new System.Drawing.Point(784, 6);
             this.oLastUpdate.Name = "oLastUpdate";
             this.oLastUpdate.Size = new System.Drawing.Size(130, 18);
             this.oLastUpdate.TabIndex = 101;
@@ -152,7 +152,7 @@ namespace App
             this.oLastUpdateUser.BackColor = System.Drawing.Color.Transparent;
             this.oLastUpdateUser.Font = new System.Drawing.Font("BIZ UDPゴシック", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.oLastUpdateUser.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.oLastUpdateUser.Location = new System.Drawing.Point(570, 24);
+            this.oLastUpdateUser.Location = new System.Drawing.Point(604, 24);
             this.oLastUpdateUser.Name = "oLastUpdateUser";
             this.oLastUpdateUser.Size = new System.Drawing.Size(310, 18);
             this.oLastUpdateUser.TabIndex = 102;
@@ -221,7 +221,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(870, 538);
+            this.secBody.Size = new System.Drawing.Size(904, 538);
             this.secBody.TabIndex = 0;
             // 
             // lblCode
@@ -267,14 +267,14 @@ namespace App
             // lblShisetsuKana
             // 
             this.lblShisetsuKana.BackColor = System.Drawing.Color.Transparent;
-            this.lblShisetsuKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 8.765218F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblShisetsuKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblShisetsuKana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
             this.lblShisetsuKana.Location = new System.Drawing.Point(26, 84);
             this.lblShisetsuKana.Name = "lblShisetsuKana";
             this.lblShisetsuKana.Size = new System.Drawing.Size(118, 24);
             this.lblShisetsuKana.TabIndex = 105;
             this.lblShisetsuKana.TabStop = false;
-            this.lblShisetsuKana.Text = "施設カナ";
+            this.lblShisetsuKana.Text = "　施設カナ";
             // 
             // iShisetsuKana
             // 
@@ -305,14 +305,14 @@ namespace App
             // lblShisetsuTsushoKana
             // 
             this.lblShisetsuTsushoKana.BackColor = System.Drawing.Color.Transparent;
-            this.lblShisetsuTsushoKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 8.765218F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
+            this.lblShisetsuTsushoKana.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblShisetsuTsushoKana.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
             this.lblShisetsuTsushoKana.Location = new System.Drawing.Point(26, 144);
             this.lblShisetsuTsushoKana.Name = "lblShisetsuTsushoKana";
             this.lblShisetsuTsushoKana.Size = new System.Drawing.Size(118, 24);
             this.lblShisetsuTsushoKana.TabIndex = 107;
             this.lblShisetsuTsushoKana.TabStop = false;
-            this.lblShisetsuTsushoKana.Text = "施設通称カナ";
+            this.lblShisetsuTsushoKana.Text = "　施設通称カナ";
             // 
             // iShisetsuTsushoKana
             // 
@@ -580,23 +580,23 @@ namespace App
             // 
             this.chkKaigo.Location = new System.Drawing.Point(150, 420);
             this.chkKaigo.Name = "chkKaigo";
-            this.chkKaigo.Size = new System.Drawing.Size(92, 24);
+            this.chkKaigo.Size = new System.Drawing.Size(110, 24);
             this.chkKaigo.TabIndex = 18;
             this.chkKaigo.Text = "介護施設";
             this.chkKaigo.UseVisualStyleBackColor = false;
             // 
             // chkEtc
             // 
-            this.chkEtc.Location = new System.Drawing.Point(248, 420);
+            this.chkEtc.Location = new System.Drawing.Point(266, 420);
             this.chkEtc.Name = "chkEtc";
-            this.chkEtc.Size = new System.Drawing.Size(76, 24);
+            this.chkEtc.Size = new System.Drawing.Size(92, 24);
             this.chkEtc.TabIndex = 19;
             this.chkEtc.Text = "その他";
             this.chkEtc.UseVisualStyleBackColor = false;
             // 
             // iHeisetsu
             // 
-            this.iHeisetsu.Location = new System.Drawing.Point(328, 420);
+            this.iHeisetsu.Location = new System.Drawing.Point(362, 420);
             this.iHeisetsu.Name = "iHeisetsu";
             this.iHeisetsu.Size = new System.Drawing.Size(172, 24);
             this.iHeisetsu.TabIndex = 20;
@@ -647,7 +647,7 @@ namespace App
             this.lblHyoboKamoku.BackColor = System.Drawing.Color.Transparent;
             this.lblHyoboKamoku.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblHyoboKamoku.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblHyoboKamoku.Location = new System.Drawing.Point(524, 24);
+            this.lblHyoboKamoku.Location = new System.Drawing.Point(558, 24);
             this.lblHyoboKamoku.Name = "lblHyoboKamoku";
             this.lblHyoboKamoku.Size = new System.Drawing.Size(84, 24);
             this.lblHyoboKamoku.TabIndex = 123;
@@ -656,7 +656,7 @@ namespace App
             // 
             // btnKamokuAdd
             // 
-            this.btnKamokuAdd.Location = new System.Drawing.Point(726, 24);
+            this.btnKamokuAdd.Location = new System.Drawing.Point(760, 24);
             this.btnKamokuAdd.Name = "btnKamokuAdd";
             this.btnKamokuAdd.Size = new System.Drawing.Size(56, 24);
             this.btnKamokuAdd.TabIndex = 26;
@@ -666,7 +666,7 @@ namespace App
             // 
             // btnKamokuDel
             // 
-            this.btnKamokuDel.Location = new System.Drawing.Point(788, 24);
+            this.btnKamokuDel.Location = new System.Drawing.Point(822, 24);
             this.btnKamokuDel.Name = "btnKamokuDel";
             this.btnKamokuDel.Size = new System.Drawing.Size(56, 24);
             this.btnKamokuDel.TabIndex = 27;
@@ -677,7 +677,7 @@ namespace App
             // iHyoboKamoku
             // 
             this.iHyoboKamoku.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.iHyoboKamoku.Location = new System.Drawing.Point(534, 95);
+            this.iHyoboKamoku.Location = new System.Drawing.Point(568, 95);
             this.iHyoboKamoku.Name = "iHyoboKamoku";
             this.iHyoboKamoku.Size = new System.Drawing.Size(180, 24);
             this.iHyoboKamoku.TabIndex = 24;
@@ -686,7 +686,7 @@ namespace App
             // 
             this.iShinryoKamokuChk.BackColor = System.Drawing.Color.White;
             this.iShinryoKamokuChk.CheckAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.iShinryoKamokuChk.Location = new System.Drawing.Point(774, 95);
+            this.iShinryoKamokuChk.Location = new System.Drawing.Point(808, 95);
             this.iShinryoKamokuChk.Name = "iShinryoKamokuChk";
             this.iShinryoKamokuChk.Size = new System.Drawing.Size(24, 24);
             this.iShinryoKamokuChk.TabIndex = 25;
@@ -697,7 +697,7 @@ namespace App
             this.grid_Sinryo.CaptionHeight = 16;
             this.grid_Sinryo.GroupByCaption = "列でグループ化するには、ここに列ヘッダをドラッグします。";
             this.grid_Sinryo.Images.Add(((System.Drawing.Image)(resources.GetObject("grid_Sinryo.Images"))));
-            this.grid_Sinryo.Location = new System.Drawing.Point(524, 55);
+            this.grid_Sinryo.Location = new System.Drawing.Point(558, 55);
             this.grid_Sinryo.Name = "grid_Sinryo";
             this.grid_Sinryo.PreviewInfo.Caption = "印刷プレビューウィンドウ";
             this.grid_Sinryo.PreviewInfo.Location = new System.Drawing.Point(0, 0);
@@ -718,7 +718,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(890, 670);
+            this.ClientSize = new System.Drawing.Size(924, 670);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.oLastUpdateUser);
             this.Controls.Add(this.oLastUpdate);

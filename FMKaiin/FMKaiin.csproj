@@ -93,7 +93,7 @@
     <Compile Include="AppDb.cs" />
     <Compile Include="AppDbID.cs" />
     <Compile Include="AppDbRule.cs" />
-    <Compile Include="AppSControlRule.cs" />
+    <Compile Include="UpdateForm\AppSControlRule.cs" />
     <Compile Include="AppDbUpdate.cs" />
     <Compile Include="AppDbUpdate.Data.DB.cs" />
     <Compile Include="AppDbUpdateManager.cs" />
@@ -128,9 +128,9 @@
     <Compile Include="AppMsgBox.cs" />
     <Compile Include="AppKaihi.cs" />
     <Compile Include="AppTableCombo.cs" />
-    <Compile Include="AppSTableCombo.cs" />
-    <Compile Include="AppSCombo.cs" />
-    <Compile Include="AppBankCodeFilter.cs" />
+    <Compile Include="UpdateForm\AppSTableCombo.cs" />
+    <Compile Include="UpdateForm\AppSCombo.cs" />
+    <Compile Include="UpdateForm\AppBankCodeFilter.cs" />
     <Compile Include="AppTanto.cs" />
     <Compile Include="AppToolTip.cs" />
     <Compile Include="BankCodeManager.cs" />
@@ -328,7 +328,7 @@
     <Compile Include="Controls\Common\FontFallback.cs" />
     <Compile Include="FormHelpers\FunctionKeyBinder.cs" />
     <Compile Include="FormHelpers\ProcessingMonthChoices.cs" />
-    <Compile Include="FormHelpers\RowSnapshot.cs" />
+    <Compile Include="UpdateForm\RowSnapshot.cs" />
     <Compile Include="Controls\Common\SRow.cs" />
     <Compile Include="Controls\Common\SControlDB.cs" />
     <Compile Include="Controls\Common\SControlDBItems.cs" />

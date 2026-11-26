@@ -434,7 +434,7 @@ namespace App
             this.lblBank.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
             this.lblBank.Location = new System.Drawing.Point(26, 331);
             this.lblBank.Name = "lblBank";
-            this.lblBank.Size = new System.Drawing.Size(98, 24);
+            this.lblBank.Size = new System.Drawing.Size(118, 24);
             this.lblBank.TabIndex = 114;
             this.lblBank.TabStop = false;
             this.lblBank.Text = "振込元銀行";

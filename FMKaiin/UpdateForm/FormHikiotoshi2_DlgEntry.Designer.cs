@@ -53,7 +53,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 428);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(664, 66);
+            this.funckey.Size = new System.Drawing.Size(688, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -103,7 +103,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(644, 362);
+            this.secBody.Size = new System.Drawing.Size(668, 362);
             this.secBody.TabIndex = 0;
             // 
             // lblDateYM
@@ -151,9 +151,9 @@ namespace App
             this.lblNote.BackColor = System.Drawing.Color.Transparent;
             this.lblNote.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblNote.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(38)))), ((int)(((byte)(62)))));
-            this.lblNote.Location = new System.Drawing.Point(428, 55);
+            this.lblNote.Location = new System.Drawing.Point(426, 55);
             this.lblNote.Name = "lblNote";
-            this.lblNote.Size = new System.Drawing.Size(200, 24);
+            this.lblNote.Size = new System.Drawing.Size(226, 24);
             this.lblNote.TabIndex = 107;
             this.lblNote.TabStop = false;
             this.lblNote.Text = "グリッドで直接編集できます。";
@@ -199,7 +199,7 @@ namespace App
             this.grid.PrintInfo.PageSettings = ((System.Drawing.Printing.PageSettings)(resources.GetObject("grid.PrintInfo.PageSettings")));
             this.grid.PropBag = resources.GetString("grid.PropBag");
             this.grid.RowHeight = 14;
-            this.grid.Size = new System.Drawing.Size(612, 214);
+            this.grid.Size = new System.Drawing.Size(636, 214);
             this.grid.TabIndex = 0;
             this.grid.UseCompatibleTextRendering = false;
             // 
@@ -208,9 +208,9 @@ namespace App
             this.lblTotalCost.BackColor = System.Drawing.Color.Transparent;
             this.lblTotalCost.Font = new System.Drawing.Font("BIZ UDPゴシック", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lblTotalCost.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(86)))), ((int)(((byte)(134)))));
-            this.lblTotalCost.Location = new System.Drawing.Point(432, 316);
+            this.lblTotalCost.Location = new System.Drawing.Point(442, 316);
             this.lblTotalCost.Name = "lblTotalCost";
-            this.lblTotalCost.Size = new System.Drawing.Size(60, 24);
+            this.lblTotalCost.Size = new System.Drawing.Size(74, 24);
             this.lblTotalCost.TabIndex = 108;
             this.lblTotalCost.TabStop = false;
             this.lblTotalCost.Text = "引落金額";
@@ -218,7 +218,7 @@ namespace App
             // iTotalCost
             // 
             this.iTotalCost.Enabled = false;
-            this.iTotalCost.Location = new System.Drawing.Point(498, 316);
+            this.iTotalCost.Location = new System.Drawing.Point(522, 316);
             this.iTotalCost.Name = "iTotalCost";
             this.iTotalCost.Size = new System.Drawing.Size(130, 24);
             this.iTotalCost.TabIndex = 12;
@@ -229,7 +229,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(664, 494);
+            this.ClientSize = new System.Drawing.Size(688, 494);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.icoHeading);

@@ -45,7 +45,7 @@ namespace App
             // 
             this.funckey.Location = new System.Drawing.Point(0, 182);
             this.funckey.Name = "funckey";
-            this.funckey.Size = new System.Drawing.Size(400, 66);
+            this.funckey.Size = new System.Drawing.Size(420, 66);
             this.funckey.TabIndex = 1;
             // 
             // icoHeading
@@ -86,7 +86,7 @@ namespace App
             this.secBody.Name = "secBody";
             this.secBody.ShadowColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(84)))), ((int)(((byte)(120)))));
             this.secBody.ShadowSize = 6;
-            this.secBody.Size = new System.Drawing.Size(380, 116);
+            this.secBody.Size = new System.Drawing.Size(400, 116);
             this.secBody.TabIndex = 0;
             // 
             // lblHani
@@ -112,14 +112,14 @@ namespace App
             this.secHani.HeaderHeight = 0;
             this.secHani.Location = new System.Drawing.Point(150, 24);
             this.secHani.Name = "secHani";
-            this.secHani.Size = new System.Drawing.Size(160, 65);
+            this.secHani.Size = new System.Drawing.Size(180, 65);
             this.secHani.TabIndex = 0;
             // 
             // rdoList
             // 
             this.rdoList.Location = new System.Drawing.Point(10, 5);
             this.rdoList.Name = "rdoList";
-            this.rdoList.Size = new System.Drawing.Size(140, 24);
+            this.rdoList.Size = new System.Drawing.Size(160, 24);
             this.rdoList.TabIndex = 0;
             this.rdoList.TabStop = true;
             this.rdoList.Text = "医療機関一覧表";
@@ -129,7 +129,7 @@ namespace App
             // 
             this.rdoJoho.Location = new System.Drawing.Point(10, 36);
             this.rdoJoho.Name = "rdoJoho";
-            this.rdoJoho.Size = new System.Drawing.Size(140, 24);
+            this.rdoJoho.Size = new System.Drawing.Size(160, 24);
             this.rdoJoho.TabIndex = 1;
             this.rdoJoho.TabStop = true;
             this.rdoJoho.Text = "医療機関情報";
@@ -141,7 +141,7 @@ namespace App
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::App.Properties.Resources.BackgroundWave;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(400, 248);
+            this.ClientSize = new System.Drawing.Size(420, 248);
             this.Controls.Add(this.secBody);
             this.Controls.Add(this.lblHeading);
             this.Controls.Add(this.icoHeading);

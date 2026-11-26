@@ -155,7 +155,7 @@ namespace App
             // 
             this.rdoKen.Location = new System.Drawing.Point(10, 5);
             this.rdoKen.Name = "rdoKen";
-            this.rdoKen.Size = new System.Drawing.Size(66, 24);
+            this.rdoKen.Size = new System.Drawing.Size(76, 24);
             this.rdoKen.TabIndex = 0;
             this.rdoKen.TabStop = true;
             this.rdoKen.Text = "県医";
@@ -163,9 +163,9 @@ namespace App
             // 
             // rdoShi
             // 
-            this.rdoShi.Location = new System.Drawing.Point(82, 5);
+            this.rdoShi.Location = new System.Drawing.Point(92, 5);
             this.rdoShi.Name = "rdoShi";
-            this.rdoShi.Size = new System.Drawing.Size(66, 24);
+            this.rdoShi.Size = new System.Drawing.Size(76, 24);
             this.rdoShi.TabIndex = 1;
             this.rdoShi.TabStop = true;
             this.rdoShi.Text = "市医";
