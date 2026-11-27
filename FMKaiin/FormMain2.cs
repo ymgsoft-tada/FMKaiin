@@ -164,11 +164,13 @@ namespace App
             OpenOnClick(btnCreateBankFile, () => new FormCreateBankFile(), needsBankCode: true);
             OpenOnClick(btnCreateIfaxFile, () => new FormCreateIfaxFile());
 
-            // 引き落とし業務 ＞ 帳票
-            // 開く画面がまだ無いもの: btnRepHikiMeisai（会員別引落明細表）、btnRepHikiIkaiMeisai（所属医会別引落明細表）、
-            //                         btnRepHikiIkaiShukei（所属医会別引落集計表）、btnRepHikiKozaShukei（引落口座別集計表）、
-            //                         btnRepAtenaLabel（宛名ラベル）
-            OpenOnClick(btnRepHikiotoshiKakunin, () => new FormOutHikiotoshiKakunin(), needsBankCode: true);
+			// 引き落とし業務 ＞ 帳票
+			// 開く画面がまだ無いもの: btnRepHikiMeisai（会員別引落明細表）、btnRepHikiIkaiMeisai（所属医会別引落明細表）、
+			//                         btnRepHikiIkaiShukei（所属医会別引落集計表）、btnRepHikiKozaShukei（引落口座別集計表）、
+			//                         btnRepAtenaLabel（宛名ラベル）
+			OpenOnClick(btnRepHikiIkaiMeisai, () => new FormOutHikiotoshiIkaiMeisai(), needsBankCode: false);
+			OpenOnClick(btnRepHikiIkaiShukei, () => new FormOutHikiotoshiIkaiShukei(), needsBankCode: true);
+			OpenOnClick(btnRepHikiotoshiKakunin, () => new FormOutHikiotoshiKakunin(), needsBankCode: true);
             OpenOnClick(btnRepSeikyuMinyukin, () => new FormOutSeikyuMinyukin(), needsBankCode: true);
             OpenOnClick(btnRepChosyuMeisaiYear, () => new FormOutChosyuMeisaiYear(), needsBankCode: true);
 

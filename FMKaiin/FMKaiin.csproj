@@ -230,6 +230,18 @@
     <Compile Include="FormMain2.Designer.cs">
       <DependentUpon>FormMain2.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutHikiotoshiIkaiMeisai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutHikiotoshiIkaiMeisai.Designer.cs">
+      <DependentUpon>FormOutHikiotoshiIkaiMeisai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutHikiotoshiIkaiShukei.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutHikiotoshiIkaiShukei.Designer.cs">
+      <DependentUpon>FormOutHikiotoshiIkaiShukei.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormReportMenu2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -545,6 +557,8 @@
     <Compile Include="ReportFlex.cs" />
     <Compile Include="ReportFlexChoshuMeisaiYear.cs" />
     <Compile Include="ReportFlexCommon.cs" />
+    <Compile Include="ReportFlexHikiotoshiIkaiMeisai.cs" />
+    <Compile Include="ReportFlexHikiotoshiIkaiShukei.cs" />
     <Compile Include="ReportFlexHikiotoshiKakunin.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
     <Compile Include="ReportFlexIryoKikanJoho.cs" />
@@ -652,6 +666,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutHikiotoshiIkaiMeisai.resx">
+      <DependentUpon>FormOutHikiotoshiIkaiMeisai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutHikiotoshiIkaiShukei.resx">
+      <DependentUpon>FormOutHikiotoshiIkaiShukei.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormReportMenu2.resx">
       <DependentUpon>FormReportMenu2.cs</DependentUpon>

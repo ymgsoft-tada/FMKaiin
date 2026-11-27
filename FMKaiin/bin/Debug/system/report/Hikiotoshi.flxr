@@ -3687,7 +3687,7 @@
         <Name>PageFooter</Name>
         <SubSections>
           <SubSection>
-            <Height>667</Height>
+            <Height>690</Height>
           </SubSection>
         </SubSections>
         <Type>PageFooter</Type>
@@ -3841,7 +3841,7 @@
         <Name>FldPage</Name>
         <Section>PageFooter</Section>
         <Left>0</Left>
-        <Top>370</Top>
+        <Top>365</Top>
         <Width>15430</Width>
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
@@ -3925,7 +3925,7 @@
         <Name>FldDate</Name>
         <Section>PageFooter</Section>
         <Left>0</Left>
-        <Top>370</Top>
+        <Top>365</Top>
         <Width>2372</Width>
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
@@ -4352,7 +4352,7 @@
         <Name>Detail</Name>
         <SubSections>
           <SubSection>
-            <Height>288</Height>
+            <Height>275</Height>
           </SubSection>
         </SubSections>
         <Type>Detail</Type>
@@ -4384,7 +4384,7 @@
         <Name>PageFooter</Name>
         <SubSections>
           <SubSection>
-            <Height>667</Height>
+            <Height>690</Height>
           </SubSection>
         </SubSections>
         <Type>PageFooter</Type>
@@ -4538,7 +4538,7 @@
         <Name>FldPage</Name>
         <Section>PageFooter</Section>
         <Left>0</Left>
-        <Top>370</Top>
+        <Top>365</Top>
         <Width>15430</Width>
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
@@ -4622,7 +4622,7 @@
         <Name>FldDate</Name>
         <Section>PageFooter</Section>
         <Left>0</Left>
-        <Top>370</Top>
+        <Top>365</Top>
         <Width>2372</Width>
         <Height>275</Height>
         <MarginLeft>10</MarginLeft>
@@ -5134,7 +5134,7 @@
         <Name>Field24</Name>
         <Section>Detail</Section>
         <Left>10215</Left>
-        <Top>13</Top>
+        <Top>0</Top>
         <Width>0</Width>
         <Height>275</Height>
         <Shape type="LineShape" />
@@ -5143,7 +5143,7 @@
         <Name>Field25</Name>
         <Section>Detail</Section>
         <Left>12935</Left>
-        <Top>13</Top>
+        <Top>0</Top>
         <Width>0</Width>
         <Height>275</Height>
         <Shape type="LineShape" />
@@ -5152,7 +5152,7 @@
         <Name>Field33</Name>
         <Section>Detail</Section>
         <Left>14035</Left>
-        <Top>13</Top>
+        <Top>0</Top>
         <Width>0</Width>
         <Height>275</Height>
         <Shape type="LineShape" />
