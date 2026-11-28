@@ -33,6 +33,7 @@
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
 			this.lblSummary = new YControlLabelEx.YcLabelEx();
+			this.lblSetting = new YControlLabelEx.YcLabelEx();
 			this.lblDetail = new YControlLabelEx.YcLabelEx();
 			this.gridHead = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
 			this.gridDetail = new C1.Win.C1TrueDBGrid.C1TrueDBGrid();
@@ -87,6 +88,20 @@
 			this.lblSummary.Size = new System.Drawing.Size(1048, 23);
 			this.lblSummary.TabIndex = 344;
 			this.lblSummary.Text = "CSVの会員数";
+			// 
+			// lblSetting
+			// 
+			this.lblSetting.BackColor2 = System.Drawing.Color.Empty;
+			this.lblSetting.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblSetting.ForeShadowColor = System.Drawing.Color.Empty;
+			this.lblSetting.IconImage = null;
+			this.lblSetting.Location = new System.Drawing.Point(350, 25);
+			this.lblSetting.Name = "lblSetting";
+			this.lblSetting.SingleBorderColor = System.Drawing.Color.Empty;
+			this.lblSetting.Size = new System.Drawing.Size(724, 23);
+			this.lblSetting.TabIndex = 346;
+			this.lblSetting.Text = "取込項目";
+			this.lblSetting.TextAlign = System.Drawing.ContentAlignment.TopRight;
 			// 
 			// lblDetail
 			// 
@@ -150,6 +165,7 @@
 			this.Controls.Add(this.lblDetail);
 			this.Controls.Add(this.gridHead);
 			this.Controls.Add(this.lblSummary);
+			this.Controls.Add(this.lblSetting);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.ycLabelEx2);
 			this.Controls.Add(this.funckey);
@@ -164,6 +180,7 @@
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
 			this.Controls.SetChildIndex(this.lblTitle, 0);
 			this.Controls.SetChildIndex(this.lblSummary, 0);
+			this.Controls.SetChildIndex(this.lblSetting, 0);
 			this.Controls.SetChildIndex(this.gridHead, 0);
 			this.Controls.SetChildIndex(this.lblDetail, 0);
 			this.Controls.SetChildIndex(this.gridDetail, 0);
@@ -179,6 +196,7 @@
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;
 		private YControlLabelEx.YcLabelEx lblSummary;
+		private YControlLabelEx.YcLabelEx lblSetting;
 		private YControlLabelEx.YcLabelEx lblDetail;
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid gridHead;
 		private C1.Win.C1TrueDBGrid.C1TrueDBGrid gridDetail;

@@ -1,6 +1,6 @@
-ï»¿
+
 //
-// â€»ã“ã®ãƒ—ãƒ­ã‚°ãƒ©ãƒ ã¯DBAutoProperties2Access2000ã«ã‚ˆã‚Šè‡ªå‹•çš„ã«ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚(fj)
+// ¦‚±‚ÌƒvƒƒOƒ‰ƒ€‚ÍDBAutoProperties2Access2000‚É‚æ‚è©“®“I‚É¶¬‚³‚ê‚Ü‚µ‚½B(fj)
 //
 // MDB File :
 //		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\FMKaiin\bin\Debug\system\Data.mdb
@@ -16,17 +16,17 @@ using ComponentIO;
 namespace App
 {
 	/// <summary>
-	/// [ä½œæˆè€… fj]
-	/// ãƒ†ãƒ¼ãƒ–ãƒ«ç·¨é›†ã®éš›ã«ä½¿ã†ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
+	/// [ì¬Ò fj]
+	/// ƒe[ƒuƒ‹•ÒW‚ÌÛ‚Ég‚¤ƒNƒ‰ƒX‚Å‚·B
 	/// </summary>
 	public partial class t_mamis_log_detail : FieldProp
 	{
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[Access é«˜é€Ÿæ¤œç´¢ç”¨]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[Access ‚‘¬ŒŸõ—p]B
 		/// </summary>
 		public const string FID_Auto = "ID_Auto";
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨
+		/// Access ‚‘¬ŒŸõ—p
 		/// </summary>
 		public int ID_Auto
 		{
@@ -35,7 +35,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// Access é«˜é€Ÿæ¤œç´¢ç”¨ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// Access ‚‘¬ŒŸõ—pBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Auto_Null
 		{
@@ -44,11 +44,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å–è¾¼å±¥æ­´ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[æ—š—ğID]B
 		/// </summary>
 		public const string FID_MamisLog = "ID_MamisLog";
 		/// <summary>
-		/// å–è¾¼å±¥æ­´ID
+		/// æ—š—ğID
 		/// </summary>
 		public int ID_MamisLog
 		{
@@ -57,7 +57,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å–è¾¼å±¥æ­´IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// æ—š—ğIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_MamisLog_Null
 		{
@@ -66,11 +66,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ˜ç´°ç•ªå·ï¼ˆå–è¾¼å†…ã®é€£ç•ªï¼‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[–¾×”Ô†iæ“à‚Ì˜A”Ôj]B
 		/// </summary>
 		public const string FMLD_No = "MLD_No";
 		/// <summary>
-		/// æ˜ç´°ç•ªå·ï¼ˆå–è¾¼å†…ã®é€£ç•ªï¼‰
+		/// –¾×”Ô†iæ“à‚Ì˜A”Ôj
 		/// </summary>
 		public int MLD_No
 		{
@@ -79,7 +79,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ˜ç´°ç•ªå·ï¼ˆå–è¾¼å†…ã®é€£ç•ªï¼‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// –¾×”Ô†iæ“à‚Ì˜A”ÔjBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? MLD_No_Null
 		{
@@ -88,11 +88,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡ID]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõID]B
 		/// </summary>
 		public const string FID_Kaiin = "ID_Kaiin";
 		/// <summary>
-		/// ä¼šå“¡ID
+		/// ‰ïˆõID
 		/// </summary>
 		public int ID_Kaiin
 		{
@@ -101,7 +101,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡IDã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõIDBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? ID_Kaiin_Null
 		{
@@ -110,11 +110,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[ä¼šå“¡ã‚³ãƒ¼ãƒ‰ï¼ˆå–è¾¼æ™‚ç‚¹ï¼‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[‰ïˆõƒR[ƒhiæ“_j]B
 		/// </summary>
 		public const string FCD_Kaiin = "CD_Kaiin";
 		/// <summary>
-		/// ä¼šå“¡ã‚³ãƒ¼ãƒ‰ï¼ˆå–è¾¼æ™‚ç‚¹ï¼‰
+		/// ‰ïˆõƒR[ƒhiæ“_j
 		/// </summary>
 		public int CD_Kaiin
 		{
@@ -123,7 +123,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ä¼šå“¡ã‚³ãƒ¼ãƒ‰ï¼ˆå–è¾¼æ™‚ç‚¹ï¼‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// ‰ïˆõƒR[ƒhiæ“_jBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? CD_Kaiin_Null
 		{
@@ -132,11 +132,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[æ°åï¼ˆå–è¾¼æ™‚ç‚¹ï¼‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[–¼iæ“_j]B
 		/// </summary>
 		public const string FMLD_KaiinName = "MLD_KaiinName";
 		/// <summary>
-		/// æ°åï¼ˆå–è¾¼æ™‚ç‚¹ï¼‰
+		/// –¼iæ“_j
 		/// </summary>
 		public string MLD_KaiinName
 		{
@@ -145,7 +145,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// æ°åï¼ˆå–è¾¼æ™‚ç‚¹ï¼‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// –¼iæ“_jBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string MLD_KaiinName_Null
 		{
@@ -154,11 +154,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[	é …ç›®åï¼ˆç”»é¢ã®é …ç›®åï¼‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[	€–Ú–¼i‰æ–Ê‚Ì€–Ú–¼j]B
 		/// </summary>
 		public const string FMLD_ItemName = "MLD_ItemName";
 		/// <summary>
-		/// 	é …ç›®åï¼ˆç”»é¢ã®é …ç›®åï¼‰
+		/// 	€–Ú–¼i‰æ–Ê‚Ì€–Ú–¼j
 		/// </summary>
 		public string MLD_ItemName
 		{
@@ -167,7 +167,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 	é …ç›®åï¼ˆç”»é¢ã®é …ç›®åï¼‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// 	€–Ú–¼i‰æ–Ê‚Ì€–Ú–¼jBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string MLD_ItemName_Null
 		{
@@ -176,11 +176,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å¤‰æ›´åŒºåˆ† 0/None/ 1/Add/è¿½åŠ  2/Replace/ç½®æ›]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[•ÏX‹æ•ª 0/None/ 1/Add/’Ç‰Á 2/Replace/’uŠ·]B
 		/// </summary>
 		public const string FMLD_Type = "MLD_Type";
 		/// <summary>
-		/// å¤‰æ›´åŒºåˆ† 0/None/ 1/Add/è¿½åŠ  2/Replace/ç½®æ›
+		/// •ÏX‹æ•ª 0/None/ 1/Add/’Ç‰Á 2/Replace/’uŠ·
 		/// </summary>
 		public int MLD_Type
 		{
@@ -189,7 +189,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å¤‰æ›´åŒºåˆ† 0/None/ 1/Add/è¿½åŠ  2/Replace/ç½®æ›ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// •ÏX‹æ•ª 0/None/ 1/Add/’Ç‰Á 2/Replace/’uŠ·BSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public int? MLD_Type_Null
 		{
@@ -198,11 +198,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[å¤‰æ›´å‰]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[•ÏX‘O]B
 		/// </summary>
 		public const string FMLD_Before = "MLD_Before";
 		/// <summary>
-		/// å¤‰æ›´å‰
+		/// •ÏX‘O
 		/// </summary>
 		public string MLD_Before
 		{
@@ -211,7 +211,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// å¤‰æ›´å‰ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// •ÏX‘OBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string MLD_Before_Null
 		{
@@ -220,11 +220,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[	å¤‰æ›´å¾Œ]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[	•ÏXŒã]B
 		/// </summary>
 		public const string FMLD_After = "MLD_After";
 		/// <summary>
-		/// 	å¤‰æ›´å¾Œ
+		/// 	•ÏXŒã
 		/// </summary>
 		public string MLD_After
 		{
@@ -233,7 +233,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 	å¤‰æ›´å¾Œã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// 	•ÏXŒãBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public string MLD_After_Null
 		{
@@ -242,11 +242,11 @@ namespace App
 		}
 		
 		/// <summary>
-		/// ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[	[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚]ã€‚
+		/// ƒtƒB[ƒ‹ƒh[	[—vŠÔ]ÅIXV“ú]B
 		/// </summary>
 		public const string FLastUpdate = "LastUpdate";
 		/// <summary>
-		/// 	[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚
+		/// 	[—vŠÔ]ÅIXV“ú
 		/// </summary>
 		public DateTime LastUpdate
 		{
@@ -255,7 +255,7 @@ namespace App
 		}
 		
 		/// <summary>
-		/// 	[è¦æ™‚é–“]æœ€çµ‚æ›´æ–°æ—¥æ™‚ã€‚System.DBNull.Value ã®å ´åˆ null ã‚’ç¤ºã—ã¾ã™ã€‚
+		/// 	[—vŠÔ]ÅIXV“úBSystem.DBNull.Value ‚Ìê‡ null ‚ğ¦‚µ‚Ü‚·B
 		/// </summary>
 		public DateTime? LastUpdate_Null
 		{
@@ -265,15 +265,15 @@ namespace App
 		
 		#region *** Constructor ***
 		/// <summary>
-		/// ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
+		/// ƒRƒ“ƒXƒgƒ‰ƒNƒ^
 		/// </summary>
-		/// <param name="o">ç·¨é›†ã™ã‚‹è¡Œã®DataRowã€DataRowViewã€DBViewã®ã©ã‚Œã‹ã€‚DBViewã®å ´åˆã€ç¾åœ¨æŒ‡ã—ã¦ã„ã‚‹è¡Œã®ãƒ‡ãƒ¼ã‚¿ã«ãªã‚Šã¾ã™ã€‚</param>
+		/// <param name="o">•ÒW‚·‚és‚ÌDataRowADataRowViewADBView‚Ì‚Ç‚ê‚©BDBView‚Ìê‡AŒ»İw‚µ‚Ä‚¢‚és‚Ìƒf[ƒ^‚É‚È‚è‚Ü‚·B</param>
 		public t_mamis_log_detail(object o) : base(o) {}
 		#endregion
 		/// <summary>
-		/// t_mamis_log_detail å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«ã‚’ä½œæˆã—ã€è¿”ã—ã¾ã™ã€‚
+		/// t_mamis_log_detail Œ^‚Ì‹óƒe[ƒuƒ‹‚ğì¬‚µA•Ô‚µ‚Ü‚·B
 		/// </summary>
-		/// <returns>t_mamis_log_detail å‹ã®ç©ºãƒ†ãƒ¼ãƒ–ãƒ«</returns>
+		/// <returns>t_mamis_log_detail Œ^‚Ì‹óƒe[ƒuƒ‹</returns>
 		public static DataTable GetTable()
 		{
 			DataTable	dt = new DataTable("t_mamis_log_detail");

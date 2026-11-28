@@ -257,6 +257,176 @@ namespace App
 			Persons = new List<Person>();
 		}
 
+		#region *** 取込設定（取り込む項目の選択） ***
+		/// <summary>
+		/// 取込設定で選択する項目（会員情報入力画面の項目を、一緒に更新する単位でまとめたもの）
+		/// </summary>
+		public class ItemGroup
+		{
+			/// <summary>設定に保存するキー</summary>
+			public string Key;
+			/// <summary>画面に表示する名称</summary>
+			public string Name;
+			/// <summary>画面の場所（基本情報・情報1・情報3）</summary>
+			public string Category;
+			/// <summary>常に取り込む（選択できない）：true</summary>
+			public bool Fixed;
+			/// <summary>このグループに含まれる取込項目の名称</summary>
+			public string[] Items;
+		}
+
+		public const string CATEGORY_Kihon = "基本情報";
+		public const string CATEGORY_Joho1 = "情報1（診療科・医療機関）";
+		public const string CATEGORY_Joho3 = "情報3（学会・退会）";
+
+		const string KEY_IsekiNo = "IsekiNo";
+		const string KEY_ShinryoMain = "ShinryoMain";
+		const string KEY_Shinryo = "Shinryo";
+		const string KEY_Kikan = "Kikan";
+		const string KEY_Gyomu = "Gyomu";
+		const string KEY_Gakkai = "Gakkai";
+		const string KEY_Taikai = "Taikai";
+
+		/// <summary>
+		/// 取込設定で選択する項目の一覧。
+		/// 片方だけ更新すると食い違う項目は1つにまとめています（ユーザー了承）。
+		/// </summary>
+		public static readonly ItemGroup[] ItemGroups =
+		{
+			new ItemGroup() { Key = "Name",			Category = CATEGORY_Kihon, Name = "氏名・フリガナ",				Items = new string[] { "氏名", "フリガナ" } },
+			new ItemGroup() { Key = "NameOld",		Category = CATEGORY_Kihon, Name = "旧氏名・フリガナ",			Items = new string[] { "旧氏名", "旧氏名フリガナ" } },
+			new ItemGroup() { Key = "Sex",			Category = CATEGORY_Kihon, Name = "性別",						Items = new string[] { "性別" } },
+			new ItemGroup() { Key = "Birth",		Category = CATEGORY_Kihon, Name = "生年月日",					Items = new string[] { "生年月日" } },
+			new ItemGroup() { Key = "Addr",			Category = CATEGORY_Kihon, Name = "郵便番号・住所",				Items = new string[] { "郵便番号", "住所", "住所（建物名）" } },
+			new ItemGroup() { Key = "Tel",			Category = CATEGORY_Kihon, Name = "電話番号",					Items = new string[] { "電話番号" } },
+			new ItemGroup() { Key = "Mobile",		Category = CATEGORY_Kihon, Name = "携帯電話番号",				Items = new string[] { "携帯電話番号" } },
+			new ItemGroup() { Key = "Fax",			Category = CATEGORY_Kihon, Name = "FAX",						Items = new string[] { "FAX" } },
+			new ItemGroup() { Key = "Mail",			Category = CATEGORY_Kihon, Name = "メールアドレス",				Items = new string[] { "メールアドレス" } },
+			//¶ 2026/11/28 CC 医籍登録番号は、氏名等で照合した会員を次回から番号で照合するために必要なので、常に取り込む（ユーザー了承）
+			new ItemGroup() { Key = KEY_IsekiNo,	Category = CATEGORY_Kihon, Name = "医籍登録番号",				Items = new string[] { "医籍登録番号" }, Fixed = true },
+			new ItemGroup() { Key = "IsekiDate",	Category = CATEGORY_Kihon, Name = "医籍登録年月日",				Items = new string[] { "医籍登録年月日" } },
+			new ItemGroup() { Key = "School",		Category = CATEGORY_Kihon, Name = "出身校・卒業年月",			Items = new string[] { "出身校", "卒業年月" } },
+			new ItemGroup() { Key = "GradSchool",	Category = CATEGORY_Kihon, Name = "出身校（大学院）・修了年月",	Items = new string[] { "出身校（大学院）", "修了年月" } },
+			new ItemGroup() { Key = "Gakui",		Category = CATEGORY_Kihon, Name = "学位取得年月",				Items = new string[] { "学位取得年月" } },
+			new ItemGroup() { Key = "Nyukai",		Category = CATEGORY_Kihon, Name = "入会年月日",					Items = new string[] { "入会年月日" } },
+			new ItemGroup() { Key = "Shinsei",		Category = CATEGORY_Kihon, Name = "申請年月日",					Items = new string[] { "申請年月日" } },
+
+			new ItemGroup() { Key = KEY_ShinryoMain,	Category = CATEGORY_Joho1, Name = "診療科目（主）",			Items = new string[] { "診療科目（主）" } },
+			new ItemGroup() { Key = KEY_Shinryo,		Category = CATEGORY_Joho1, Name = "診療科目（担当）",			Items = new string[] { "診療科目（担当）" } },
+			new ItemGroup() { Key = KEY_Kikan,			Category = CATEGORY_Joho1, Name = "医療機関",					Items = new string[] { "医療機関" } },
+			new ItemGroup() { Key = KEY_Gyomu,			Category = CATEGORY_Joho1, Name = "施設・業務",				Items = new string[] { "施設・業務" } },
+			new ItemGroup() { Key = "Shiteii",			Category = CATEGORY_Joho1, Name = "指定医",					Items = new string[] { "指定医" } },
+
+			new ItemGroup() { Key = KEY_Gakkai,			Category = CATEGORY_Joho3, Name = "所属学会",					Items = new string[] { "所属学会" } },
+			new ItemGroup() { Key = KEY_Taikai,			Category = CATEGORY_Joho3, Name = "退会（年月日・事由・異動先医師会）",	Items = new string[] { "退会年月日", "退会事由", "退会事由：その他の内容", "異動先医師会" } },
+		};
+
+		/// <summary>今回の取込で取り込まない項目のキー</summary>
+		List<string> offKeys = new List<string>();
+
+		/// <summary>
+		/// 取込設定（取り込まない項目のキー）を取得します。
+		/// 基本情報に、取り込まない項目のキーをカンマ区切りで保存しています。未設定の場合は全ての項目を取り込みます。
+		/// </summary>
+		public static List<string> GetOffKeys()
+		{
+			List<string> keys = new List<string>();
+
+			//¶ 2026/11/28 CC 使用中のDBに項目がまだ無い場合は、未設定（全て取込）として扱う
+			if (AppGlobal.Basic.Row.Table.Columns.Contains(t_basic.FBAS_MamisOffItems) == false)
+			{
+				return keys;
+			}
+
+			string src = Cast.String(AppGlobal.Basic.Row[t_basic.FBAS_MamisOffItems]);
+
+			foreach (string key in src.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
+			{
+				//¶ 2026/11/28 CC 一覧にないキーと、常に取り込む項目のキーは無視する
+				ItemGroup grp = ItemGroups.FirstOrDefault(x => x.Key == key.Trim());
+
+				if (grp != null && grp.Fixed == false && keys.Contains(grp.Key) == false)
+				{
+					keys.Add(grp.Key);
+				}
+			}
+
+			return keys;
+		}
+
+		/// <summary>
+		/// 取込設定（取り込まない項目のキー）を保存します。
+		/// </summary>
+		/// <returns>保存できた場合：true</returns>
+		public static bool SaveOffKeys(List<string> keys)
+		{
+			DataTable tbl = AppGlobal.DB.GetFillTable(TableProp.t_basic);
+
+			if (tbl == null || tbl.Rows.Count == 0 || tbl.Columns.Contains(t_basic.FBAS_MamisOffItems) == false)
+			{
+				return false;
+			}
+
+			string val = string.Join(",", ItemGroups.Where(x => x.Fixed == false && keys.Contains(x.Key) == true).Select(x => x.Key));
+
+			tbl.Rows[0][t_basic.FBAS_MamisOffItems] = (val == "") ? (object)DBNull.Value : val;
+
+			if (AppGlobal.DB.UpdateTable(TableProp.t_basic) == false)
+			{
+				tbl.RejectChanges();
+				return false;
+			}
+
+			// 基本情報(共通)の再取得
+			AppGlobal.InitBasic();
+
+			return true;
+		}
+
+		/// <summary>
+		/// 取込設定の内容を1行の文章で取得します。
+		/// </summary>
+		public static string GetSettingText()
+		{
+			List<string> keys = GetOffKeys();
+			int total = ItemGroups.Length;
+
+			if (keys.Count == 0)
+			{
+				return $"{total}項目すべてを取り込みます";
+			}
+
+			//¶ 2026/11/28 CC 画面の1～2行に収めるため、名称は3つまで表示する
+			List<string> offs = ItemGroups.Where(x => keys.Contains(x.Key) == true).Select(x => x.Name).ToList();
+			string names = string.Join("、", offs.Take(3));
+
+			if (offs.Count > 3)
+			{
+				names += $" ほか{offs.Count - 3}項目";
+			}
+
+			return $"{total}項目中 {total - keys.Count}項目を取り込みます（取り込まない：{names}）";
+		}
+
+		/// <summary>
+		/// 取込項目の名称から、取込設定のキーを取得します。
+		/// </summary>
+		string getItemKey(string name)
+		{
+			ItemGroup grp = ItemGroups.FirstOrDefault(x => x.Items.Contains(name) == true);
+
+			return (grp == null) ? null : grp.Key;
+		}
+
+		/// <summary>
+		/// 取込設定で取り込む項目かどうかを取得します。
+		/// </summary>
+		bool isOn(string key)
+		{
+			return key == null || offKeys.Contains(key) == false;
+		}
+		#endregion
+
 		#region *** 読込・照合・差分作成 ***
 		/// <summary>
 		/// CSVを読み込み、会員と照合して取込内容を作成します。データベースは更新しません。
@@ -266,6 +436,7 @@ namespace App
 		{
 			execResult = eResult.Error;
 			Persons = new List<Person>();
+			offKeys = GetOffKeys(); //¶ 2026/11/28 CC 取込設定（取り込まない項目）
 			FileName = Path.GetFileName(path);
 
 			FormBg_Progress prog = new FormBg_Progress();
@@ -700,7 +871,7 @@ namespace App
 				}
 				else
 				{
-					addWarning(p, $"診療科コード「{cd_main}」が診療科マスターにないため、診療科目（主）は取り込みません");
+					addWarning(p, KEY_ShinryoMain, $"診療科コード「{cd_main}」が診療科マスターにないため、診療科目（主）は取り込みません");
 				}
 			}
 
@@ -716,7 +887,7 @@ namespace App
 				Shinryoka sk = AppGlobal.Shinryokas.GetCode(cd);
 				if (sk == null)
 				{
-					addWarning(p, $"診療科コード「{cd}」が診療科マスターにないため、取り込みません");
+					addWarning(p, KEY_Shinryo, $"診療科コード「{cd}」が診療科マスターにないため、取り込みません");
 				}
 				else
 				if (shinryos.Contains(sk.ID) == false)
@@ -738,7 +909,7 @@ namespace App
 				}
 				else
 				{
-					addWarning(p, $"施設業務コード「{cd_gyomu}」が施設業務マスターにないため、施設・業務は取り込みません");
+					addWarning(p, KEY_Gyomu, $"施設業務コード「{cd_gyomu}」が施設業務マスターにないため、施設・業務は取り込みません");
 				}
 			}
 
@@ -766,7 +937,7 @@ namespace App
 				Gakkai gk = AppGlobal.Gakkais.GetCode(cd);
 				if (gk == null)
 				{
-					addWarning(p, $"学会コード「{cd}」が学会マスターにないため、取り込みません");
+					addWarning(p, KEY_Gakkai, $"学会コード「{cd}」が学会マスターにないため、取り込みません");
 				}
 				else
 				if (gakkais.Contains(gk.ID) == false)
@@ -805,7 +976,7 @@ namespace App
 
 			if (kid == 0)
 			{
-				addWarning(p, $"所属の医療機関「{name}」が医療機関マスターにないため、医療機関は取り込みません");
+				addWarning(p, KEY_Kikan, $"所属の医療機関「{name}」が医療機関マスターにないため、医療機関は取り込みません");
 				return;
 			}
 
@@ -869,7 +1040,7 @@ namespace App
 					}
 					else
 					{
-						addWarning(p, $"医師会コード「{cd}」が医師会マスターにないため、異動先医師会は取り込みません");
+						addWarning(p, KEY_Taikai, $"医師会コード「{cd}」が医師会マスターにないため、異動先医師会は取り込みません");
 					}
 				}
 			}
@@ -879,12 +1050,24 @@ namespace App
 		#region *** 取込項目の追加 ***
 		void addItem(Person p, Item item)
 		{
+			//¶ 2026/11/28 CC 取込設定で外した項目は、差分にも履歴にも含めない
+			if (isOn(getItemKey(item.Name)) == false)
+			{
+				return;
+			}
+
 			item.Type = (item.Before == "") ? eMamisLogType.Add : eMamisLogType.Replace;
 			p.Items.Add(item);
 		}
 
-		void addWarning(Person p, string msg)
+		void addWarning(Person p, string key, string msg)
 		{
+			//¶ 2026/11/28 CC 取込設定で外した項目の注意は出さない
+			if (isOn(key) == false)
+			{
+				return;
+			}
+
 			p.Warning = true;
 			if (p.Notes.Contains(msg) == false)
 			{

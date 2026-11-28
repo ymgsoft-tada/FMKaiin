@@ -30,6 +30,8 @@
 		{
 			this.iFile = new App.UcFileSelect();
 			this.ycLabelEx6 = new YControlLabelEx.YcLabelEx();
+			this.ycLabelEx7 = new YControlLabelEx.YcLabelEx();
+			this.lblSetting = new YControlLabelEx.YcLabelEx();
 			this.funckey = new App.Controls.FunctionKeyBar();
 			this.lblTitle = new YControlLabelEx.YcLabelEx();
 			this.ycLabelEx2 = new YControlLabelEx.YcLabelEx();
@@ -63,9 +65,39 @@
 			this.ycLabelEx6.Text = "取込CSVファイル";
 			this.ycLabelEx6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
+			// ycLabelEx7
+			// 
+			this.ycLabelEx7.BackColor = System.Drawing.Color.SteelBlue;
+			this.ycLabelEx7.BackColor2 = System.Drawing.Color.Empty;
+			this.ycLabelEx7.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.ycLabelEx7.ForeColor = System.Drawing.Color.White;
+			this.ycLabelEx7.ForeShadowColor = System.Drawing.Color.Empty;
+			this.ycLabelEx7.IconImage = null;
+			this.ycLabelEx7.LabelBorderStyle = YControlLabelEx.YcLabelEx.SingleBorderStyle.FixedRoundLeft;
+			this.ycLabelEx7.Location = new System.Drawing.Point(42, 117);
+			this.ycLabelEx7.Name = "ycLabelEx7";
+			this.ycLabelEx7.SingleBorderColor = System.Drawing.Color.Empty;
+			this.ycLabelEx7.Size = new System.Drawing.Size(132, 25);
+			this.ycLabelEx7.TabIndex = 338;
+			this.ycLabelEx7.Text = "取込項目";
+			this.ycLabelEx7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+			// 
+			// lblSetting
+			// 
+			this.lblSetting.BackColor2 = System.Drawing.Color.Empty;
+			this.lblSetting.DisabledBackColor = System.Drawing.SystemColors.ControlDark;
+			this.lblSetting.ForeShadowColor = System.Drawing.Color.Empty;
+			this.lblSetting.IconImage = null;
+			this.lblSetting.Location = new System.Drawing.Point(180, 119);
+			this.lblSetting.Name = "lblSetting";
+			this.lblSetting.SingleBorderColor = System.Drawing.Color.Empty;
+			this.lblSetting.Size = new System.Drawing.Size(400, 44);
+			this.lblSetting.TabIndex = 339;
+			this.lblSetting.Text = "取込項目";
+			// 
 			// funckey
 			// 
-			this.funckey.Location = new System.Drawing.Point(0, 136);
+			this.funckey.Location = new System.Drawing.Point(0, 172);
 			this.funckey.Name = "funckey";
 			this.funckey.Size = new System.Drawing.Size(602, 66);
 			this.funckey.TabIndex = 341;
@@ -102,12 +134,14 @@
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-			this.ClientSize = new System.Drawing.Size(602, 202);
+			this.ClientSize = new System.Drawing.Size(602, 238);
 			this.Controls.Add(this.lblTitle);
 			this.Controls.Add(this.ycLabelEx2);
 			this.Controls.Add(this.funckey);
 			this.Controls.Add(this.iFile);
 			this.Controls.Add(this.ycLabelEx6);
+			this.Controls.Add(this.ycLabelEx7);
+			this.Controls.Add(this.lblSetting);
 			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
 			this.KeyPreview = true;
 			this.MaximizeBox = false;
@@ -116,6 +150,8 @@
 			this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
 			this.Text = "MAMISデータ取込";
 			this.Controls.SetChildIndex(this.ycLabelEx6, 0);
+			this.Controls.SetChildIndex(this.ycLabelEx7, 0);
+			this.Controls.SetChildIndex(this.lblSetting, 0);
 			this.Controls.SetChildIndex(this.iFile, 0);
 			this.Controls.SetChildIndex(this.funckey, 0);
 			this.Controls.SetChildIndex(this.ycLabelEx2, 0);
@@ -128,6 +164,8 @@
 		#endregion
 		private UcFileSelect iFile;
 		private YControlLabelEx.YcLabelEx ycLabelEx6;
+		private YControlLabelEx.YcLabelEx ycLabelEx7;
+		private YControlLabelEx.YcLabelEx lblSetting;
 		private App.Controls.FunctionKeyBar funckey;
 		private YControlLabelEx.YcLabelEx lblTitle;
 		private YControlLabelEx.YcLabelEx ycLabelEx2;

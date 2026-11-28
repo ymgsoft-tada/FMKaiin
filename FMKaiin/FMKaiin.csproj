@@ -378,6 +378,12 @@
     <Compile Include="FormMamisImport_DlgConfirm.Designer.cs">
       <DependentUpon>FormMamisImport_DlgConfirm.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMamisImport_DlgItems.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMamisImport_DlgItems.Designer.cs">
+      <DependentUpon>FormMamisImport_DlgItems.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMamisImport_DlgLog.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -732,6 +738,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormMamisImport_DlgConfirm.resx">
       <DependentUpon>FormMamisImport_DlgConfirm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMamisImport_DlgItems.resx">
+      <DependentUpon>FormMamisImport_DlgItems.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMamisImport_DlgLog.resx">
       <DependentUpon>FormMamisImport_DlgLog.cs</DependentUpon>

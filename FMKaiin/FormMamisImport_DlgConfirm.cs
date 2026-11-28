@@ -151,6 +151,7 @@ namespace App
 			int cnt_ng = Import.Persons.Count - cnt_ok - cnt_same;
 
 			lblSummary.Text = $"CSVの会員数：{Import.Persons.Count}名　／　取込できる：{cnt_ok}名　／　変更なし：{cnt_same}名　／　取込できない：{cnt_ng}名";
+			lblSetting.Text = $"取込項目：{AppMamisImport.GetSettingText()}"; //¶ 2026/11/28 CC どの設定で差分を作ったかを表示
 
 			//¶ 2026/11/21 CC 取込できる会員がいない場合は実行できない
 			if (cnt_ok == 0)

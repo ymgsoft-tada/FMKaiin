@@ -31,6 +31,8 @@ namespace App
 		/// </summary>
 		protected override void FormFrame_Shown(object sender, EventArgs e)
 		{
+			showSettingText();
+
 			iFile.Select();
 
 			base.FormFrame_Shown(sender, e);
@@ -43,6 +45,7 @@ namespace App
 		{
 			funcKeys = new FunctionKeyBinder(funckey, FuncMamisImport.Functions);
 
+			funcKeys.On(FuncMamisImport.Setting, showSetting); //¶ 2026/11/28 CC 取込設定
 			funcKeys.On(FuncMamisImport.History, showHistory);
 			funcKeys.On(FuncMamisImport.Exec, doExec);
 			funcKeys.On(FuncMamisImport.Close, formClose);
@@ -114,6 +117,27 @@ namespace App
 
 			//¶ 2026/11/21 CC 取込結果
 			showLog(imp.LogID);
+		}
+
+		/// <summary>
+		/// 取込設定（取り込む項目の選択）
+		/// </summary>
+		void showSetting()
+		{
+			FormMamisImport_DlgItems frm = new FormMamisImport_DlgItems();
+			frm.ShowDialog();
+			frm.Dispose();
+			frm = null;
+
+			showSettingText();
+		}
+
+		/// <summary>
+		/// 現在の取込設定を表示します。
+		/// </summary>
+		void showSettingText()
+		{
+			lblSetting.Text = AppMamisImport.GetSettingText();
 		}
 
 		/// <summary>

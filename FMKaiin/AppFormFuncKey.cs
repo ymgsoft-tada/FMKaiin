@@ -3,9 +3,9 @@
 // ※このプログラムはSrcMakerForApplicationFuncKeyにより自動的に生成されました。(K.Tada)
 //
 // Inport File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFuncKey.xlsx
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFuncKey.xlsx
 // Template File :
-//		G:\client\DotNet4.6\Ishikai\FMKaiin\_doc\AppFormFuncKey.cs.template
+//		D:\client\DotNet4.6_YMGLib5\FujisawaIshikai\FMKaiin\_doc\AppFormFuncKey.cs.template
 //
 
 using System;
@@ -1700,6 +1700,10 @@ namespace App
 		public readonly static FuncKeyDefine[]	Functions =
 		{
 			new FuncKeyDefine(
+					Keys.F8,	
+					"取込設定",	
+					""),
+			new FuncKeyDefine(
 					Keys.F9,	
 					"履歴",	
 					""),
@@ -1714,17 +1718,21 @@ namespace App
 		};
 
 		/// <summary>
+		/// 取込設定
+		/// </summary>
+		public readonly static FuncKeyDefine Setting = Functions[0];
+		/// <summary>
 		/// 履歴
 		/// </summary>
-		public readonly static FuncKeyDefine History = Functions[0];
+		public readonly static FuncKeyDefine History = Functions[1];
 		/// <summary>
 		/// 取込開始
 		/// </summary>
-		public readonly static FuncKeyDefine Exec = Functions[1];
+		public readonly static FuncKeyDefine Exec = Functions[2];
 		/// <summary>
 		/// 閉じる
 		/// </summary>
-		public readonly static FuncKeyDefine Close = Functions[2];
+		public readonly static FuncKeyDefine Close = Functions[3];
 	}
 	#endregion
 
@@ -1781,6 +1789,46 @@ namespace App
 		/// 閉じる
 		/// </summary>
 		public readonly static FuncKeyDefine Close = Functions[0];
+	}
+	#endregion
+
+	#region *** FuncMamisImport_DlgItems ***
+	/// <summary>
+	/// FuncMamisImport_DlgItemsのファンクションキー定義クラス
+	/// </summary>
+	public class FuncMamisImport_DlgItems
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F2,	
+					"全て選択",	
+					""),
+			new FuncKeyDefine(
+					Keys.F11,	
+					"登録",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 全て選択
+		/// </summary>
+		public readonly static FuncKeyDefine SelectAll = Functions[0];
+		/// <summary>
+		/// 登録
+		/// </summary>
+		public readonly static FuncKeyDefine Save = Functions[1];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[2];
 	}
 	#endregion
 
