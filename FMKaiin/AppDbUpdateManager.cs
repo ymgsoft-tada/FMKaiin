@@ -7,6 +7,7 @@ using System.Diagnostics;
 using ComponentDB;
 using ComponentIO;
 using ComponentFile;
+using ComponentDebug;
 
 namespace App
 {
@@ -106,12 +107,12 @@ namespace App
 			// の２つなら、1.00.05 までデータベースを更新しなければいけない。
 			
 			//■ 変換参照の HistoryList を検索。
-			int[]	seever = AppDbUpdateHistory.VersionToArray(AppConst.AppDBVersion);
 			int		seehis;
 			
 			for (seehis = 0; seehis < AppDbUpdate.History.Length; seehis++)
 			{
-				if (AppDbUpdate.History[seehis].Version == seever)
+				//¶ 2026/11/28 CC int[] 同士の == は参照比較で常に false になるため、CheckVersion で比較する
+				if (AppDbUpdateHistory.CheckVersion(AppDbUpdate.History[seehis].VersionStr, AppConst.AppDBVersion) == AppDbUpdateHistory.eVersion.Same)
 				{
 					// mod 0.99.00 see 0.99.07 で、リストが
 					//		0.99.07
@@ -125,6 +126,8 @@ namespace App
 			for (int i = modhis; i < seehis; i++)
 			{
 				// verupでdbが変更されている可能性があるので、毎回取得する
+				//¶ 2026/11/28 CC 前の接続を閉じてから取り直す
+				moddb.Close();
 				moddb = new DB(modfile, AppConst.AppDBPassword);
 
 				bool succeed = AppDbUpdate.History[i].UpdateMethod(moddb, seedb);
@@ -155,6 +158,9 @@ namespace App
 				modsys.BAS_DBVersion = AppConst.AppDBVersion;
 				moddv_sys.Update();
 			}
+
+			//¶ 2026/11/28 CC バージョンアップ前の状態を backup フォルダに残す
+			saveBackupBeforeUpdate(backupfile, modver_str);
 			
 			// 進捗バーの更新。
 			if (bgform != null) bgform.FinishProgress();
@@ -239,6 +245,45 @@ namespace App
 		#endregion
 		
 		#region *** Private Method ***
+		/// <summary>
+		/// バージョンアップ前の DB を、世代管理バックアップと同じ圧縮形式で backup フォルダに残します。
+		/// 失敗してもバージョンアップは続行します。
+		/// </summary>
+		/// <param name="backupfile">バージョンアップ前の DB ファイル。</param>
+		/// <param name="ver">バージョンアップ前のバージョン。</param>
+		static void saveBackupBeforeUpdate(string backupfile, string ver)
+		{
+			try
+			{
+				if (DirectoryIO.Exists(AppConst.BackupFolder) == false)
+				{
+					DirectoryIO.Make(AppConst.BackupFolder);
+				}
+
+				DirectoryIO.Make(AppConst.TempBackupFolder);
+
+				if (DirectoryIO.Exists(AppConst.TempBackupFolder) == true)
+				{
+					//¶ 2026/11/28 CC 復元処理が読める形（Data.db を圧縮した dbz）にそろえる
+					FileIO.Copy(backupfile, string.Format(@"{0}\{1}", AppConst.TempBackupFolder, AppConst.DBPath));
+
+					string name		= string.Format("{0}_verup{1}.{2}", DateTime.Now.ToString("yyyyMMddHHmmss"), ver, AppConst.BackUpFileExt);
+					string dstpath	= string.Format(@"{0}\{1}", AppConst.BackupFolder, name);
+
+					if (SharpZip.Compress(dstpath, AppConst.TempBackupFolder) == false)
+					{
+						ErrLog.WriteLine("バージョンアップ前のバックアップ作成に失敗しました。{0}", dstpath);
+					}
+
+					DirectoryIO.Delete(AppConst.TempBackupFolder);
+				}
+			}
+			catch (Exception ex)
+			{
+				ErrLog.WriteException(ex);
+			}
+		}
+
 		/// <summary>
 		/// エラー表示。DEBUG環境でのみ有効です
 		/// </summary>

@@ -26,6 +26,7 @@ namespace App
 																	//■ 参考例
 			//new AppDbUpdateHistory("0.51.00", DataDB_05100),		// Field追加。
 
+			new AppDbUpdateHistory("0.2.0", DataDB_0200),	//¶ 2026/11/28 CC t_basicにMAMIS取込の対象外項目を追加
 		};
 		#endregion	
 
@@ -40,6 +41,87 @@ namespace App
 
 			// アップデート実行
 			AppDbUpdateManager.UpdateVersion(sender, e);
+		}
+		#endregion
+
+		#region *** Private Method (更新メソッド共通) ***
+		/// <summary>
+		/// 変換対象 DB を DAO で開き、更新処理を実行します。オープン・クローズ・例外処理をまとめます。
+		/// </summary>
+		/// <param name="moddb">アップデートを行う DB。</param>
+		/// <param name="action">DAO を使った更新処理。</param>
+		/// <returns>true..成功, false..失敗</returns>
+		static bool execDAO(DB moddb, Action<DAO.Database> action)
+		{
+			DAO.Database db = null;
+			DAO.DBEngine de = new DAO.DBEngine();
+			DAO.Workspace ws = de.Workspaces[0];
+
+			try
+			{
+				// DBLocation は mdb へのパス
+				db = ws.OpenDatabase(moddb.DBLocation, null, null, "MS Access;PWD=" + AppConst.AppDBPassword);
+
+				action(db);
+
+				db.Close();
+				db = null;
+			}
+			catch (Exception ex)
+			{
+				if (db != null)
+				{
+					db.Close();
+					db = null;
+				}
+
+				ErrLog.WriteException(ex);
+
+				return false;
+			}
+
+			return true;
+		}
+
+		/// <summary>
+		/// テーブルにフィールドを追加します。すでに存在する場合は何もしません。
+		/// </summary>
+		/// <param name="db">DAO の DB</param>
+		/// <param name="tbl">テーブル名</param>
+		/// <param name="fld">フィールド名</param>
+		/// <param name="type">型。例：LONG、TEXT(255)、DATETIME、YESNO、CURRENCY</param>
+		/// <param name="allowZeroLength">true..空文字列を許可する（テキスト型のみ）</param>
+		static void addColumn(DAO.Database db, string tbl, string fld, string type, bool allowZeroLength = false)
+		{
+			//¶ 2026/11/28 CC 新規インストール時は最新構造のテンプレートに全履歴が流れるため、存在チェックは必須
+			if (checkExistFieldForDAO(db, tbl, fld) == true)
+			{
+				return;
+			}
+
+			string sql = DBQuery.GetSql("ALTER TABLE {0} Add Column {1} {2}", tbl, fld, type);
+			db.Execute(sql, null);
+			db.TableDefs[tbl].Fields.Refresh();
+
+			if (allowZeroLength == true)
+			{
+				db.TableDefs[tbl].Fields[fld].AllowZeroLength = true;
+				db.TableDefs[tbl].Fields.Refresh();
+			}
+		}
+		#endregion
+
+		#region >>> 0.2.0
+		/// <summary>
+		/// 0.2.0更新メソッド。
+		/// </summary>
+		static bool DataDB_0200(DB moddb, DB seedb)
+		{
+			return execDAO(moddb, delegate(DAO.Database db)
+			{
+				//¶ 2026/11/28 CC MAMIS取込の対象外項目。テンプレートと同じくテキスト255・空文字列許可
+				addColumn(db, TableProp.t_basic, t_basic.FBAS_MamisOffItems, "TEXT(255)", true);
+			});
 		}
 		#endregion
 

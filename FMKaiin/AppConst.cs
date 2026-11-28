@@ -22,7 +22,7 @@ namespace App
 		/// <summary>
 		/// マイナーバージョン
 		/// </summary>
-		public const string AppMinor = ".1";
+		public const string AppMinor = ".7";
 		/// <summary>
 		/// リビジョン
 		/// </summary>
@@ -34,7 +34,7 @@ namespace App
 		/// <summary></summary>
 		public const string AppDBPassword = "ymg884";
 		/// <summary></summary>
-		public const string AppDBVersion = "0.1.0";
+		public const string AppDBVersion = "0.2.0";
 		/// <summary></summary>
 		public const string AppTitle = "藤沢市医師会 会員管理システム";
 
