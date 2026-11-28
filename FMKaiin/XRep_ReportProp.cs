@@ -8,6 +8,16 @@ namespace App
 	{
 		#region *** Property ***
 		/// <summary>
+		/// AtenaLabelのファイル名称
+		/// </summary>
+		public static string CRepAtenaLabelFilename
+		{
+			get
+			{
+				return "AtenaLabel.flxr";
+			}
+		}
+		/// <summary>
 		/// Hikiotoshiのファイル名称
 		/// </summary>
 		public static string CRepHikiotoshiFilename
@@ -48,6 +58,16 @@ namespace App
 			}
 		}
 		
+		/// <summary>
+		/// CRepAtenaLabel レポート名称
+		/// </summary>
+		public static string CRepAtenaLabel
+		{
+			get
+			{
+				return "AtenaLabel";
+			}
+		}
 		/// <summary>
 		/// CRep15_SeikyuMinyukin レポート名称
 		/// </summary>

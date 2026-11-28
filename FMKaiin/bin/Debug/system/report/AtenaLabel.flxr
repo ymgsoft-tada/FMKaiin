@@ -1,0 +1,302 @@
+<?xml version="1.0"?>
+<Reports>
+  <FormatVersion>1.0 1.0.0.0</FormatVersion>
+  <Report ref="1">
+    <Name>AtenaLabel</Name>
+    <DataSourceName>Main</DataSourceName>
+    <ReportInfo>
+      <Author>CC</Author>
+    </ReportInfo>
+    <Layout>
+      <Width>9796</Width>
+      <Margin>1054</Margin>
+      <MarginTop>1219</MarginTop>
+      <MarginRight>1054</MarginRight>
+      <MarginBottom>1100</MarginBottom>
+      <Orientation>Portrait</Orientation>
+      <PaperSize>A4</PaperSize>
+    </Layout>
+    <DataSources>
+      <DataSource>
+        <Name>Main</Name>
+      </DataSource>
+    </DataSources>
+    <Sections>
+      <Section>
+        <Name>Detail</Name>
+        <SubSections>
+          <SubSection>
+            <Height>2398</Height>
+          </SubSection>
+        </SubSections>
+        <Type>Detail</Type>
+      </Section>
+      <Section>
+        <Name>Header</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Header</Type>
+      </Section>
+      <Section>
+        <Name>Footer</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>Footer</Type>
+      </Section>
+      <Section>
+        <Name>PageHeader</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>PageHeader</Type>
+      </Section>
+      <Section>
+        <Name>PageFooter</Name>
+        <SubSections>
+          <SubSection />
+        </SubSections>
+        <Type>PageFooter</Type>
+      </Section>
+    </Sections>
+    <Fields>
+      <TextField>
+        <Name>FldPost0</Name>
+        <Section>Detail</Section>
+        <Left>145</Left>
+        <Top>93</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">251-0000</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldAddA0</Name>
+        <Section>Detail</Section>
+        <Left>145</Left>
+        <Top>320</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">住所１</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldAddB0</Name>
+        <Section>Detail</Section>
+        <Left>145</Left>
+        <Top>546</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">住所２</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldShisetsu0</Name>
+        <Section>Detail</Section>
+        <Left>145</Left>
+        <Top>1000</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医療機関名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldName0</Name>
+        <Section>Detail</Section>
+        <Left>145</Left>
+        <Top>1340</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">氏名 様</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldCode0</Name>
+        <Section>Detail</Section>
+        <Left>145</Left>
+        <Top>1680</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">000000</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldPost1</Name>
+        <Section>Detail</Section>
+        <Left>5021</Left>
+        <Top>93</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">251-0000</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldAddA1</Name>
+        <Section>Detail</Section>
+        <Left>5021</Left>
+        <Top>320</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">住所１</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldAddB1</Name>
+        <Section>Detail</Section>
+        <Left>5021</Left>
+        <Top>546</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">住所２</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldShisetsu1</Name>
+        <Section>Detail</Section>
+        <Left>5021</Left>
+        <Top>1000</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">医療機関名</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldName1</Name>
+        <Section>Detail</Section>
+        <Left>5021</Left>
+        <Top>1340</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <TextFitMode>AutoFontSize</TextFitMode>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">氏名 様</Value>
+        </Text>
+      </TextField>
+      <TextField>
+        <Name>FldCode1</Name>
+        <Section>Detail</Section>
+        <Left>5021</Left>
+        <Top>1680</Top>
+        <Width>4600</Width>
+        <Height>227</Height>
+        <MarginLeft>50</MarginLeft>
+        <MarginRight>50</MarginRight>
+        <Align>LeftMiddle</Align>
+        <Font>
+          <Name>ＭＳ ゴシック</Name>
+          <Size>10.5</Size>
+          <GdiCharSet>128</GdiCharSet>
+        </Font>
+        <Text>
+          <Value sys="string">000000</Value>
+        </Text>
+      </TextField>
+    </Fields>
+  </Report>
+</Reports>

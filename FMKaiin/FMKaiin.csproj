@@ -486,6 +486,18 @@
     <Compile Include="FormOutHikiotoshiKakunin.Designer.cs">
       <DependentUpon>FormOutHikiotoshiKakunin.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormOutAtenaLabel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutAtenaLabel.Designer.cs">
+      <DependentUpon>FormOutAtenaLabel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormOutAtenaLabel_DlgIkai.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormOutAtenaLabel_DlgIkai.Designer.cs">
+      <DependentUpon>FormOutAtenaLabel_DlgIkai.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormOutIryoKikan.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -566,6 +578,7 @@
     <Compile Include="ReportFlexHikiotoshiIkaiMeisai.cs" />
     <Compile Include="ReportFlexHikiotoshiIkaiShukei.cs" />
     <Compile Include="ReportFlexHikiotoshiKakunin.cs" />
+    <Compile Include="ReportFlexAtenaLabel.cs" />
     <Compile Include="ReportFlexIryoKikan.cs" />
     <Compile Include="ReportFlexIryoKikanJoho.cs" />
     <Compile Include="ReportFlexKaihiList.cs" />
@@ -641,6 +654,7 @@
     <Compile Include="XApp_t_shisetsugyomu.cs" />
     <Compile Include="XApp_t_tantosha.cs" />
     <Compile Include="XApp_t_zentodoufuken.cs" />
+    <Compile Include="XRep_AtenaLabel.cs" />
     <Compile Include="XRep_Hikiotoshi.cs" />
     <Compile Include="XRep_IryoKikan.cs" />
     <Compile Include="XRep_Kaihi.cs" />
@@ -792,6 +806,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutHikiotoshiKakunin.resx">
       <DependentUpon>FormOutHikiotoshiKakunin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutAtenaLabel.resx">
+      <DependentUpon>FormOutAtenaLabel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormOutAtenaLabel_DlgIkai.resx">
+      <DependentUpon>FormOutAtenaLabel_DlgIkai.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormOutIryoKikan.resx">
       <DependentUpon>FormOutIryoKikan.cs</DependentUpon>

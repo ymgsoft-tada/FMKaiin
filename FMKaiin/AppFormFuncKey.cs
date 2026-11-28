@@ -1832,6 +1832,86 @@ namespace App
 	}
 	#endregion
 
+	#region *** FuncOutAtenaLabel ***
+	/// <summary>
+	/// FuncOutAtenaLabelのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutAtenaLabel
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F9,	
+					"印刷プレビュー",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"閉じる",	
+					""),
+		};
+
+		/// <summary>
+		/// 印刷プレビュー
+		/// </summary>
+		public readonly static FuncKeyDefine Preview = Functions[0];
+		/// <summary>
+		/// 閉じる
+		/// </summary>
+		public readonly static FuncKeyDefine Close = Functions[1];
+	}
+	#endregion
+
+	#region *** FuncOutAtenaLabel_DlgIkai ***
+	/// <summary>
+	/// FuncOutAtenaLabel_DlgIkaiのファンクションキー定義クラス
+	/// </summary>
+	public class FuncOutAtenaLabel_DlgIkai
+	{
+		/// <summary>
+		/// ファンクションキー定義。
+		/// </summary>
+		public readonly static FuncKeyDefine[]	Functions =
+		{
+			new FuncKeyDefine(
+					Keys.F2,	
+					"全て選択",	
+					""),
+			new FuncKeyDefine(
+					Keys.F3,	
+					"全て解除",	
+					""),
+			new FuncKeyDefine(
+					Keys.F11,	
+					"登録",	
+					""),
+			new FuncKeyDefine(
+					Keys.F12,	
+					"キャンセル",	
+					""),
+		};
+
+		/// <summary>
+		/// 全て選択
+		/// </summary>
+		public readonly static FuncKeyDefine SelectAll = Functions[0];
+		/// <summary>
+		/// 全て解除
+		/// </summary>
+		public readonly static FuncKeyDefine ClearAll = Functions[1];
+		/// <summary>
+		/// 登録
+		/// </summary>
+		public readonly static FuncKeyDefine Save = Functions[2];
+		/// <summary>
+		/// キャンセル
+		/// </summary>
+		public readonly static FuncKeyDefine Cancel = Functions[3];
+	}
+	#endregion
+
 
 }
 

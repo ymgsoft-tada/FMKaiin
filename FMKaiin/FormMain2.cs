@@ -166,9 +166,9 @@ namespace App
 
 			// 引き落とし業務 ＞ 帳票
 			// 開く画面がまだ無いもの: btnRepHikiMeisai（会員別引落明細表）、btnRepHikiIkaiMeisai（所属医会別引落明細表）、
-			//                         btnRepHikiIkaiShukei（所属医会別引落集計表）、btnRepHikiKozaShukei（引落口座別集計表）、
-			//                         btnRepAtenaLabel（宛名ラベル）
+			//                         btnRepHikiIkaiShukei（所属医会別引落集計表）、btnRepHikiKozaShukei（引落口座別集計表）
 			OpenOnClick(btnRepHikiIkaiMeisai, () => new FormOutHikiotoshiIkaiMeisai(), needsBankCode: false);
+			OpenOnClick(btnRepAtenaLabel, () => new FormOutAtenaLabel()); //¶ 2026/11/28 CC 宛名ラベル
 			OpenOnClick(btnRepHikiIkaiShukei, () => new FormOutHikiotoshiIkaiShukei(), needsBankCode: true);
 			OpenOnClick(btnRepHikiotoshiKakunin, () => new FormOutHikiotoshiKakunin(), needsBankCode: true);
             OpenOnClick(btnRepSeikyuMinyukin, () => new FormOutSeikyuMinyukin(), needsBankCode: true);
